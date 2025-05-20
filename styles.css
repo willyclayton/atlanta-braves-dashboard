@@ -142,4 +142,349 @@ footer {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Loading State Styles */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--braves-navy);
+    font-weight: 500;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 3px solid var(--braves-navy);
+    border-top-color: var(--braves-red);
+    border-radius: 50%;
+    margin: 1rem auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Player Stats Styles */
+.player-stats {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.stat {
+    font-size: 0.875rem;
+    color: var(--text-dark);
+    background: var(--background-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.player-position {
+    font-size: 0.875rem;
+    color: var(--braves-navy);
+    margin-top: 0.25rem;
+}
+
+/* Update player card styles to accommodate stats */
+.player-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.player-card:hover {
+    background: #f5f5f5;
+    transform: translateX(5px);
+    border-color: var(--braves-navy);
+}
+
+.player-number {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--braves-red);
+    min-width: 40px;
+    padding-top: 0.25rem;
+}
+
+.player-info {
+    flex-grow: 1;
+}
+
+.player-name {
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+    color: var(--braves-navy);
+}
+
+.player-status {
+    font-size: 0.875rem;
+    color: var(--braves-red);
+    margin-bottom: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .player-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .stat {
+        font-size: 0.75rem;
+    }
+}
+
+/* Error State Styles */
+.error-message {
+    color: var(--braves-red);
+    text-align: center;
+    padding: 1rem;
+    font-weight: 500;
+    background-color: rgba(206, 17, 65, 0.1);
+    border-radius: 8px;
+    margin: 1rem 0;
+}
+
+/* Loading Text Animation */
+@keyframes ellipsis {
+    0% { content: ''; }
+    25% { content: '.'; }
+    50% { content: '..'; }
+    75% { content: '...'; }
+}
+
+.stat-card p:contains('Loading') {
+    position: relative;
+}
+
+.stat-card p:contains('Loading')::after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    animation: ellipsis 1.5s infinite;
+    margin-left: 2px;
+}
+
+/* Season Note Styles */
+.stat-card.note {
+    grid-column: 1 / -1;
+    background-color: var(--braves-navy);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.stat-card.note.error {
+    background-color: var(--braves-red);
+}
+
+.season-note {
+    font-size: 1.1rem !important;
+    color: white !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    padding: 0.5rem !important;
+}
+
+/* Year Selector Styles */
+.year-selector {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.year-selector label {
+    color: var(--braves-navy);
+    font-weight: 500;
+}
+
+.season-dropdown {
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--braves-navy);
+    border-radius: 4px;
+    background-color: white;
+    color: var(--braves-navy);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.season-dropdown:hover {
+    border-color: var(--braves-red);
+}
+
+.season-dropdown:focus {
+    outline: none;
+    border-color: var(--braves-red);
+    box-shadow: 0 0 0 2px rgba(206, 17, 65, 0.2);
+}
+
+/* Roster Container Layout */
+.roster-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.roster-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+}
+
+.roster-content {
+    flex-grow: 1;
+    max-width: 800px;
+}
+
+/* Position List Styles */
+.position-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+}
+
+.position-item {
+    border-bottom: 1px solid #eee;
+}
+
+.position-item:last-child {
+    border-bottom: none;
+}
+
+.position-button {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.position-button:hover {
+    background: #f5f5f5;
+}
+
+.position-button.active {
+    background: var(--braves-navy);
+    color: white;
+}
+
+.position-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--braves-red);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.position-name {
+    flex-grow: 1;
+}
+
+.position-count {
+    background: var(--background-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    color: var(--text-dark);
+}
+
+.position-button.active .position-count {
+    background: var(--braves-red);
+    color: white;
+}
+
+/* Player Details Styles */
+.player-details {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-out;
+}
+
+.player-details.expanded {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.player-details h3 {
+    color: var(--braves-navy);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.player-list {
+    display: grid;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .roster-container {
+        flex-direction: column;
+    }
+
+    .roster-sidebar {
+        width: 100%;
+    }
+
+    .roster-content {
+        margin-top: 1rem;
+    }
+}
+
+.cors-message {
+    background-color: var(--braves-navy);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.cors-button {
+    background-color: var(--braves-red);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cors-button:hover {
+    background-color: #a50d33;
 } 

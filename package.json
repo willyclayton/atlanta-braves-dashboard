@@ -1,0 +1,9 @@
+{
+  "name": "atlanta-braves-dashboard",
+  "version": "1.0.0",
+  "description": "Atlanta Braves Baseball Statistics Dashboard",
+  "main": "app.js",
+  "scripts": {
+    "start": "open index.html"
+  }
+} 

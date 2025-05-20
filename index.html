@@ -50,14 +50,23 @@
 
         <section id="roster" class="dashboard-section">
             <h2>Team Roster</h2>
-            <div id="player-roster" class="roster-grid">
-                <!-- Will be populated by JavaScript -->
+            <div class="roster-container">
+                <div class="roster-sidebar">
+                    <ul id="position-list" class="position-list">
+                        <!-- Will be populated by JavaScript -->
+                    </ul>
+                </div>
+                <div class="roster-content">
+                    <div id="player-details" class="player-details">
+                        <!-- Will be populated when position is clicked -->
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Atlanta Braves Dashboard</p>
+        <p>&copy; 2025 Atlanta Braves Dashboard</p>
     </footer>
 
     <script src="app.js"></script>
