@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlanta Braves Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/braves-logo.png" alt="Atlanta Braves Logo" id="braves-logo">
+                <h1>Atlanta Braves Dashboard</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#team-stats">Team Stats</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#roster">Roster</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="team-stats" class="dashboard-section">
+            <h2>Team Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Season Record</h3>
+                    <p id="season-record">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Team Batting Avg</h3>
+                    <p id="team-avg">Loading...</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Team ERA</h3>
+                    <p id="team-era">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="schedule" class="dashboard-section">
+            <h2>Upcoming Games</h2>
+            <div id="upcoming-games" class="schedule-grid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section id="roster" class="dashboard-section">
+            <h2>Team Roster</h2>
+            <div id="player-roster" class="roster-grid">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Atlanta Braves Dashboard</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
