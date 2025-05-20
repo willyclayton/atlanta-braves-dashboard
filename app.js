@@ -1,7 +1,59 @@
 // MLB Stats API Configuration
 const MLB_API = 'https://statsapi.mlb.com/api/v1';
-const CORS_PROXY = 'https://corsproxy.io/?';
-const API_BASE = `${CORS_PROXY}${encodeURIComponent(MLB_API)}`;
+const CORS_PROXIES = [
+    'https://corsproxy.io/?',
+    'https://api.allorigins.win/raw?url='
+];
+let currentProxyIndex = 0;
+
+// Function to get API base URL with fallback proxies
+function getApiBaseUrl() {
+    return `${CORS_PROXIES[currentProxyIndex]}${encodeURIComponent(MLB_API)}`;
+}
+
+// Function to switch to next proxy if current one fails
+function switchToNextProxy() {
+    currentProxyIndex = (currentProxyIndex + 1) % CORS_PROXIES.length;
+    return getApiBaseUrl();
+}
+
+// Helper function to make API calls with proxy fallback
+async function fetchMLBData(endpoint) {
+    let attempts = 0;
+    const maxAttempts = CORS_PROXIES.length;
+
+    while (attempts < maxAttempts) {
+        try {
+            const API_BASE = getApiBaseUrl();
+            console.log(`Attempting to fetch with proxy ${currentProxyIndex + 1}/${maxAttempts}`);
+            
+            const response = await fetch(`${API_BASE}/${endpoint}`, {
+                method: 'GET',
+                headers: {
+                    'Accept': 'application/json',
+                    'Origin': window.location.origin
+                }
+            });
+            
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            return await response.json();
+        } catch (error) {
+            console.error(`Proxy ${currentProxyIndex + 1} failed:`, error);
+            attempts++;
+            
+            if (attempts < maxAttempts) {
+                console.log('Switching to next proxy...');
+                switchToNextProxy();
+            } else {
+                throw new Error('All proxies failed to fetch data');
+            }
+        }
+    }
+}
+
 const BRAVES_ID = 144;
 const CURRENT_SEASON = 2025;
 
@@ -35,33 +87,11 @@ let currentRosterData = null;
 let activePosition = null;
 let playerStats = new Map();
 
-// Helper function to make API calls
-async function fetchMLBData(endpoint) {
-    try {
-        const response = await fetch(`${API_BASE}/${endpoint}`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Origin': window.location.origin
-            }
-        });
-        
-        if (!response.ok) {
-            console.error(`HTTP error! status: ${response.status}`);
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('API call failed:', error);
-        throw error;
-    }
-}
-
 // Fetch player statistics
 async function fetchPlayerStats(playerId) {
     try {
         console.log(`Fetching stats for player ${playerId}`);
-        const response = await fetch(`${API_BASE}/${ENDPOINTS.playerStats(playerId)}`);
+        const response = await fetch(`${getApiBaseUrl()}/${ENDPOINTS.playerStats(playerId)}`);
         if (!response.ok) throw new Error('Failed to fetch player stats');
         
         const data = await response.json();
@@ -104,85 +134,74 @@ async function fetchPlayerStats(playerId) {
 async function updateTeamStats(year = CURRENT_SEASON) {
     try {
         document.getElementById('season-record').textContent = 'Loading...';
-        document.getElementById('team-avg').textContent = 'Loading...';
-        document.getElementById('team-era').textContent = 'Loading...';
-
-        const data = await fetchMLBData(`teams/${BRAVES_ID}?hydrate=stats(group=[hitting,pitching],type=[yearByYear])`);
-        const team = data.teams[0];
         
-        if (!team) throw new Error('Team data not found');
-
-        const stats = {
-            record: 'TBD',
-            batting_avg: '---',
-            era: '---',
-            ops: '---',
-            slugging: '---',
-            note: `${year} Season Statistics`
-        };
-
-        const hitting = team.stats?.find(s => s.group.displayName === 'hitting')?.splits[0]?.stat;
-        if (hitting) {
-            stats.batting_avg = hitting.avg?.toFixed(3).replace(/^0/, '') || '---';
-            stats.ops = hitting.ops?.toFixed(3).replace(/^0/, '') || '---';
-            stats.slugging = hitting.slg?.toFixed(3).replace(/^0/, '') || '---';
-        }
-
-        const pitching = team.stats?.find(s => s.group.displayName === 'pitching')?.splits[0]?.stat;
-        if (pitching) {
-            stats.era = pitching.era?.toFixed(2) || '---';
-        }
-
+        // Get standings data for record
         const standingsData = await fetchMLBData(`standings?leagueId=104&season=${year}`);
         const bravesRecord = standingsData.records
             .flatMap(r => r.teamRecords)
             .find(t => t.team.id === BRAVES_ID);
+
+        // Get team stats for home runs
+        const teamData = await fetchMLBData(`teams/${BRAVES_ID}/stats?stats=season&group=hitting&season=${year}`);
+        const teamStats = teamData.stats[0]?.splits[0]?.stat || {};
+
+        // Get last 5 completed games
+        const scheduleData = await fetchMLBData(`schedule/games/?sportId=1&teamId=${BRAVES_ID}&season=${year}&gameTypes=R,F&scheduleTypes=games,events,xref&hydrate=decisions,probablePitcher(note),linescore&fields=dates,games,status,teams,isWinner,score`);
         
-        if (bravesRecord) {
-            stats.record = `${bravesRecord.wins}-${bravesRecord.losses}`;
-            if (bravesRecord.divisionRank === '1') {
-                stats.note = 'NL East Leaders';
+        // Filter and sort games by date, most recent first
+        const completedGames = scheduleData.dates
+            .flatMap(date => date.games)
+            .filter(game => game.status.statusCode === 'F')  // Only completed games
+            .sort((a, b) => new Date(b.gameDate) - new Date(a.gameDate))
+            .slice(0, 5);  // Take last 5 games
+
+        let wins = 0;
+        let losses = 0;
+        let gamesCount = 0;
+
+        completedGames.forEach(game => {
+            const braves = game.teams.away.team.id === BRAVES_ID ? game.teams.away : game.teams.home;
+            if (braves.isWinner) {
+                wins++;
+            } else {
+                losses++;
             }
-        }
+            gamesCount++;
+        });
+
+        const stats = {
+            record: bravesRecord ? `${bravesRecord.wins}-${bravesRecord.losses}` : 'TBD',
+            last5: gamesCount > 0 ? `${wins}-${losses}` : 'No games',
+            homeRuns: teamStats.homeRuns || 0
+        };
 
         updateStatsDisplay(stats);
     } catch (error) {
         console.error('Error updating team stats:', error);
         updateStatsDisplay({
             record: 'Error',
-            batting_avg: '---',
-            era: '---',
-            ops: '---',
-            slugging: '---',
-            note: 'Error loading statistics'
+            last5: '-',
+            homeRuns: '-'
         });
     }
 }
 
 // Helper function to update stats display
 function updateStatsDisplay(stats) {
-    document.getElementById('season-record').textContent = stats.record;
-    document.getElementById('team-avg').textContent = stats.batting_avg;
-    document.getElementById('team-era').textContent = stats.era;
-
     const statsGrid = document.querySelector('.stats-grid');
-    const existingAdditionalStats = statsGrid.querySelectorAll('.additional-stat');
-    existingAdditionalStats.forEach(stat => stat.remove());
-
-    statsGrid.innerHTML += `
-        <div class="stat-card additional-stat">
-            <h3>OPS</h3>
-            <p>${stats.ops}</p>
+    statsGrid.innerHTML = `
+        <div class="stat-card">
+            <h3>Season Record</h3>
+            <p id="season-record">${stats.record}</p>
         </div>
-        <div class="stat-card additional-stat">
-            <h3>Slugging %</h3>
-            <p>${stats.slugging}</p>
+        <div class="stat-card">
+            <h3>Last 5 Games</h3>
+            <p id="team-last5">${stats.last5}</p>
         </div>
-        ${stats.note ? `
-        <div class="stat-card additional-stat note">
-            <p class="season-note">${stats.note}</p>
+        <div class="stat-card">
+            <h3>Team HRs</h3>
+            <p id="team-hrs">${stats.homeRuns}</p>
         </div>
-        ` : ''}
     `;
 }
 

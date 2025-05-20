@@ -139,9 +139,116 @@ footer {
         gap: 1rem;
     }
 
+    .logo {
+        flex-direction: column;
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .roster-container {
+        flex-direction: column;
+    }
+
+    .roster-sidebar {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 1rem;
+    }
+
+    .roster-content {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .player-card {
+        padding: 0.75rem;
+    }
+
+    .player-stats {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .stat {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.3rem;
+    }
+
+    .player-details {
+        max-height: none;
+        overflow: visible;
+    }
+
+    .player-details.expanded {
+        max-height: none;
+    }
+
+    main {
+        margin: 1rem auto;
+        padding: 0 0.5rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .stat-card {
+        padding: 1rem;
+    }
+
+    .stat-card h3 {
+        font-size: 1rem;
+    }
+
+    .stat-card p {
+        font-size: 1.25rem;
+    }
+
+    #braves-logo {
+        height: 40px;
+    }
+
+    .position-button {
+        padding: 0.5rem;
+    }
+}
+
+/* Add specific iPhone/iOS fixes */
+@media screen and (max-width: 428px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    input, select, textarea {
+        font-size: 16px; /* Prevents zoom on input focus in iOS */
+    }
+
+    .player-card {
+        margin: 0.5rem 0;
+    }
+
+    .player-details {
+        border-radius: 0;
+    }
+}
+
+/* Fix for iOS momentum scrolling */
+.player-details, .roster-sidebar {
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Loading State Styles */
