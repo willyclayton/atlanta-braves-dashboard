@@ -1867,4 +1867,184 @@ footer {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+}
+
+/* Season History Styles */
+.stat-card.clickable {
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.stat-card.clickable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.season-history-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    background: white;
+    border-radius: 8px;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.season-history-container.expanded {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid rgba(19, 39, 79, 0.1);
+}
+
+.game-history-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 80px 70px;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--braves-navy);
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.game-history-list {
+    padding: 0.5rem;
+}
+
+.game-history-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 100px 80px 70px;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid rgba(19, 39, 79, 0.1);
+    font-size: 0.9rem;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+
+.game-history-item:hover {
+    background-color: rgba(19, 39, 79, 0.02);
+}
+
+.game-history-item:last-child {
+    border-bottom: none;
+}
+
+.game-history-item.w {
+    background-color: rgba(40, 167, 69, 0.1);
+}
+
+.game-history-item.l {
+    background-color: rgba(206, 17, 65, 0.05);
+}
+
+.game-date {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.game-opponent {
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-result {
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.game-history-item.w .game-result {
+    color: var(--braves-navy);
+}
+
+.game-history-item.l .game-result {
+    color: var(--braves-red);
+}
+
+.game-score {
+    color: var(--text-dark);
+    font-weight: 500;
+    text-align: center;
+}
+
+.game-record {
+    color: var(--braves-red);
+    font-weight: 500;
+    text-align: right;
+}
+
+.game-streak {
+    color: var(--text-dark);
+    font-weight: 600;
+    text-align: center;
+}
+
+.game-history-item.w .game-streak {
+    color: #28a745;
+}
+
+.game-history-item.l .game-streak {
+    color: var(--braves-red);
+}
+
+/* Mobile adjustments for season history */
+@media (max-width: 768px) {
+    .game-history-header,
+    .game-history-item {
+        grid-template-columns: 70px 1fr 90px 70px 60px;
+        gap: 0.5rem;
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .season-history-container.expanded {
+        max-height: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .game-history-header,
+    .game-history-item {
+        grid-template-columns: 60px 1fr 85px 60px 50px;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .season-history-container.expanded {
+        max-height: 300px;
+    }
+}
+
+.sweep-indicator {
+    font-size: 0.9em;
+    opacity: 0.8;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 0.25rem;
+    transform: rotate(-15deg);
+    transition: transform 0.2s ease;
+}
+
+.sweep-indicator:hover {
+    transform: rotate(0deg);
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .sweep-indicator {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .sweep-indicator {
+        font-size: 0.75em;
+    }
 } 

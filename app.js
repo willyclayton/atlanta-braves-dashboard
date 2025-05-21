@@ -254,21 +254,221 @@ async function updateTeamStats(year = CURRENT_SEASON) {
     }
 }
 
-// Helper function to update stats display
+// Helper function to get team name without city
+function getTeamNameWithoutCity(fullName) {
+    const teamNamesMap = {
+        'Atlanta Braves': 'Braves',
+        'New York Mets': 'Mets',
+        'Philadelphia Phillies': 'Phillies',
+        'Washington Nationals': 'Nationals',
+        'Miami Marlins': 'Marlins',
+        'St. Louis Cardinals': 'Cardinals',
+        'Chicago Cubs': 'Cubs',
+        'Milwaukee Brewers': 'Brewers',
+        'Pittsburgh Pirates': 'Pirates',
+        'Cincinnati Reds': 'Reds',
+        'Los Angeles Dodgers': 'Dodgers',
+        'San Francisco Giants': 'Giants',
+        'San Diego Padres': 'Padres',
+        'Colorado Rockies': 'Rockies',
+        'Arizona Diamondbacks': 'Diamondbacks',
+        'New York Yankees': 'Yankees',
+        'Boston Red Sox': 'Red Sox',
+        'Tampa Bay Rays': 'Rays',
+        'Toronto Blue Jays': 'Blue Jays',
+        'Baltimore Orioles': 'Orioles',
+        'Chicago White Sox': 'White Sox',
+        'Cleveland Guardians': 'Guardians',
+        'Detroit Tigers': 'Tigers',
+        'Kansas City Royals': 'Royals',
+        'Minnesota Twins': 'Twins',
+        'Houston Astros': 'Astros',
+        'Los Angeles Angels': 'Angels',
+        'Oakland Athletics': 'Athletics',
+        'Seattle Mariners': 'Mariners',
+        'Texas Rangers': 'Rangers'
+    };
+    return teamNamesMap[fullName] || fullName;
+}
+
+// Add new function to fetch season history
+async function fetchSeasonHistory(year = CURRENT_SEASON) {
+    try {
+        const seasonStart = `${year}-03-01`; // Start from March 1st
+        const today = new Date().toISOString().split('T')[0];
+        
+        const scheduleData = await fetchMLBData(
+            `schedule?teamId=${BRAVES_ID}&startDate=${seasonStart}&endDate=${today}&sportId=1&gameType=R`
+        );
+        
+        let games = [];
+        let currentRecord = { wins: 0, losses: 0 };
+        let currentStreak = { type: null, count: 0 };
+        let seriesTracker = { opponent: null, wins: 0, gamesInSeries: 0 };
+        
+        if (scheduleData.dates) {
+            // First pass: collect all games to track series
+            const allGames = [];
+            for (const date of scheduleData.dates) {
+                for (const game of date.games) {
+                    if (game.gameType === 'R' && 
+                        (game.status.codedGameState === 'F' || 
+                         game.status.codedGameState === 'FT' ||
+                         game.status.codedGameState === 'FR' ||
+                         game.status.detailedState === 'Final')) {
+                        allGames.push(game);
+                    }
+                }
+            }
+            
+            // Sort games by date
+            allGames.sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate));
+            
+            // Process games and detect sweeps
+            for (let i = 0; i < allGames.length; i++) {
+                const game = allGames[i];
+                const bravesTeam = game.teams.home.team.id === BRAVES_ID ? game.teams.home : game.teams.away;
+                const opponentTeam = game.teams.home.team.id === BRAVES_ID ? game.teams.away : game.teams.home;
+                const isHome = game.teams.home.team.id === BRAVES_ID;
+                const isWin = bravesTeam.score > opponentTeam.score;
+                
+                // Check if this is a new series
+                if (opponentTeam.team.id !== seriesTracker.opponent) {
+                    seriesTracker = {
+                        opponent: opponentTeam.team.id,
+                        wins: isWin ? 1 : 0,
+                        gamesInSeries: 1
+                    };
+                } else {
+                    seriesTracker.wins += isWin ? 1 : 0;
+                    seriesTracker.gamesInSeries++;
+                }
+                
+                // Check if next game is against a different opponent (series end)
+                const isSeriesEnd = i === allGames.length - 1 || 
+                    (allGames[i + 1].teams.home.team.id === BRAVES_ID ? 
+                        allGames[i + 1].teams.away.team.id : 
+                        allGames[i + 1].teams.home.team.id) !== seriesTracker.opponent;
+                
+                const isSweep = isSeriesEnd && 
+                    seriesTracker.wins === seriesTracker.gamesInSeries && 
+                    seriesTracker.gamesInSeries >= 2;
+                
+                // Update streak
+                if (currentStreak.type === null) {
+                    currentStreak.type = isWin ? 'W' : 'L';
+                    currentStreak.count = 1;
+                } else if (currentStreak.type === (isWin ? 'W' : 'L')) {
+                    currentStreak.count++;
+                } else {
+                    currentStreak.type = isWin ? 'W' : 'L';
+                    currentStreak.count = 1;
+                }
+                
+                if (isWin) {
+                    currentRecord.wins++;
+                } else {
+                    currentRecord.losses++;
+                }
+                
+                games.push({
+                    date: new Date(game.gameDate),
+                    opponent: getTeamNameWithoutCity(opponentTeam.team.name),
+                    isHome: isHome,
+                    bravesScore: bravesTeam.score,
+                    opponentScore: opponentTeam.score,
+                    record: `${currentRecord.wins}-${currentRecord.losses}`,
+                    streak: `${currentStreak.type}${currentStreak.count}`,
+                    isSweep: isSweep
+                });
+            }
+        }
+        
+        return games.sort((a, b) => b.date - a.date);
+    } catch (error) {
+        console.error('Error fetching season history:', error);
+        return [];
+    }
+}
+
+// Update the stats display function to include the history container outside the grid
 function updateStatsDisplay(stats) {
-    const statsGrid = document.querySelector('.stats-grid');
-    statsGrid.innerHTML = `
-        <div class="stat-card">
-            <h3>Season Record</h3>
-            <p id="season-record">${stats.record}</p>
+    const container = document.querySelector('.dashboard-section');
+    container.innerHTML = `
+        <div class="stats-grid">
+            <div class="stat-card clickable" id="record-card">
+                <h3>Season Record</h3>
+                <p id="season-record">${stats.record}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Last 5 Games</h3>
+                <p id="team-last5">${stats.last5}</p>
+            </div>
+            <div class="stat-card">
+                <h3>Team HRs</h3>
+                <p id="team-hrs">${stats.homeRuns}</p>
+            </div>
         </div>
-        <div class="stat-card">
-            <h3>Last 5 Games</h3>
-            <p id="team-last5">${stats.last5}</p>
+        <div id="season-history" class="season-history-container"></div>
+    `;
+    
+    // Add click handler for the record card
+    const recordCard = document.getElementById('record-card');
+    const historyContainer = document.getElementById('season-history');
+    
+    recordCard.addEventListener('click', async () => {
+        if (historyContainer.classList.contains('expanded')) {
+            historyContainer.classList.remove('expanded');
+            return;
+        }
+        
+        historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
+        historyContainer.classList.add('expanded');
+        
+        const games = await fetchSeasonHistory();
+        displaySeasonHistory(games);
+    });
+}
+
+// Update the display season history function to include sweep indicator
+function displaySeasonHistory(games) {
+    const historyContainer = document.getElementById('season-history');
+    if (!historyContainer) return;
+    
+    const gamesList = games.map(game => {
+        const dateStr = game.date.toLocaleDateString('en-US', { 
+            month: 'short', 
+            day: 'numeric'
+        });
+        const locationStr = game.isHome ? 'vs.' : '@';
+        const result = game.bravesScore > game.opponentScore ? 'W' : 'L';
+        const combinedResult = `${result} ${game.bravesScore}-${game.opponentScore}`;
+        
+        // Add sweep indicator if applicable
+        const sweepIndicator = game.isSweep ? 
+            '<span class="sweep-indicator" title="Series Sweep">🧹</span>' : '';
+        
+        return `
+            <div class="game-history-item ${result.toLowerCase()}">
+                <span class="game-date">${dateStr}</span>
+                <span class="game-opponent">${locationStr} ${game.opponent}${sweepIndicator}</span>
+                <span class="game-result">${combinedResult}</span>
+                <span class="game-record">${game.record}</span>
+                <span class="game-streak">${game.streak}</span>
+            </div>
+        `;
+    }).reverse().join('');
+    
+    historyContainer.innerHTML = `
+        <div class="game-history-header">
+            <span>Date</span>
+            <span>Opponent</span>
+            <span>Result</span>
+            <span>Record</span>
+            <span>Streak</span>
         </div>
-        <div class="stat-card">
-            <h3>Team HRs</h3>
-            <p id="team-hrs">${stats.homeRuns}</p>
+        <div class="game-history-list">
+            ${gamesList}
         </div>
     `;
 }
