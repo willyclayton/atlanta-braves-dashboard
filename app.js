@@ -446,41 +446,90 @@ async function updateSchedule() {
             return;
         }
 
-        // Get current date and start of the current week
+        // Get current date and find the start of the current week (Sunday)
         const today = new Date();
-        const currentWeekStart = new Date(today);
-        currentWeekStart.setDate(today.getDate() - today.getDay()); // Start from Sunday
-        currentWeekStart.setHours(0, 0, 0, 0);
+        today.setHours(0, 0, 0, 0);  // Set to start of day for comparison
+        
+        // Find the Sunday of the current week
+        const startDate = new Date(today);
+        startDate.setDate(today.getDate() - today.getDay());
 
-        // Create a map of games by date string
-        const gamesByDate = new Map();
-        data.dates.forEach(date => {
-            date.games.forEach(game => {
-                const gameDate = new Date(game.gameDate);
-                const dateStr = gameDate.toDateString();
-                gamesByDate.set(dateStr, game);
-            });
-        });
-
-        // Generate 14 days (2 weeks) of calendar
         let calendarHTML = '';
-        for (let i = 0; i < 14; i++) {
-            const currentDate = new Date(currentWeekStart);
-            currentDate.setDate(currentWeekStart.getDate() + i);
+        
+        // Add "This Week" label
+        calendarHTML += '<div class="week-label">This Week</div>';
+        
+        // Generate first week (Sunday to Saturday)
+        for (let i = 0; i < 7; i++) {
+            const currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + i);
             const dateStr = currentDate.toDateString();
-            const game = gamesByDate.get(dateStr);
             
-            // Add week separator
-            if (i === 0) {
-                calendarHTML += '<div class="week-label">This Week</div>';
-            } else if (i === 7) {
-                calendarHTML += '<div class="week-label">Next Week</div>';
-            }
-            
+            // Only look for games for current and future dates
+            const isPastDate = currentDate < today;
+            const game = !isPastDate ? data.dates
+                .flatMap(date => date.games)
+                .find(game => new Date(game.gameDate).toDateString() === dateStr) : null;
+
             const isToday = currentDate.toDateString() === today.toDateString();
             
             let dayClasses = ['calendar-day'];
             if (isToday) dayClasses.push('today');
+            if (game) dayClasses.push('has-game');
+            if (isPastDate) dayClasses.push('past-date');
+
+            let gameHTML = '';
+            if (game && !isPastDate) {
+                const gameDate = new Date(game.gameDate);
+                const isHome = game.teams.home.team.id === BRAVES_ID;
+                const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+                
+                gameHTML = `
+                    <div class="game-details">
+                        <div class="game-time">
+                            ${gameDate.toLocaleTimeString('en-US', { 
+                                hour: 'numeric',
+                                minute: '2-digit',
+                                hour12: true
+                            })}
+                        </div>
+                        <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                            ${isHome ? 
+                                `<span class="home-indicator"></span> vs ${opponent.name}` : 
+                                `@ ${opponent.name}`
+                            }
+                        </div>
+                    </div>
+                `;
+            }
+
+            calendarHTML += `
+                <div class="${dayClasses.join(' ')}">
+                    <div class="day-header">
+                        <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                        <span class="day-number">${currentDate.getDate()}</span>
+                    </div>
+                    ${gameHTML}
+                </div>
+            `;
+        }
+
+        // Add "Next Week" label
+        calendarHTML += '<div class="week-label">Next Week</div>';
+        
+        // Generate next week (Sunday to Saturday)
+        const nextWeekStart = new Date(startDate);
+        nextWeekStart.setDate(startDate.getDate() + 7);
+        
+        for (let i = 0; i < 7; i++) {
+            const currentDate = new Date(nextWeekStart);
+            currentDate.setDate(nextWeekStart.getDate() + i);
+            const dateStr = currentDate.toDateString();
+            const game = data.dates
+                .flatMap(date => date.games)
+                .find(game => new Date(game.gameDate).toDateString() === dateStr);
+
+            let dayClasses = ['calendar-day'];
             if (game) dayClasses.push('has-game');
 
             let gameHTML = '';
