@@ -491,19 +491,6 @@ function generatePlayerCard(player, position) {
     const specificPosition = position === 'Outfielders' ? 
         `<span class="specific-position">${player.specificPosition}</span>` : '';
     
-    // Simplified stats display for mobile
-    const mobileStats = isPitcher ? 
-        `ERA: ${stats.era || '-.--'}` :
-        `AVG: ${stats.avg || '.---'}`;
-    
-    const fullStats = isPitcher ? `
-        <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
-        <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
-    ` : `
-        <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
-        <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
-    `;
-
     return `
         <div class="player-card" data-player-id="${player.person.id}">
             <div class="player-card-header">
@@ -515,7 +502,13 @@ function generatePlayerCard(player, position) {
                     </div>
                 </div>
                 <div class="player-quick-stats">
-                    ${isMobile ? mobileStats : fullStats}
+                    ${isPitcher ? `
+                        <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
+                        <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
+                    ` : `
+                        <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
+                        <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
+                    `}
                 </div>
             </div>
             <div class="player-details">
@@ -759,19 +752,13 @@ async function updateSchedule() {
         const startDate = new Date(today);
         startDate.setDate(today.getDate() - today.getDay());
 
-        // On mobile, show one week starting from Sunday
-        if (isMobile) {
-            const calendarHTML = generateCalendarWeek(data, startDate, today);
-            gamesContainer.innerHTML = calendarHTML;
-        } else {
-            // Show two weeks for desktop
-            const firstWeekHTML = generateCalendarWeek(data, startDate, today);
-            const nextWeekStart = new Date(startDate);
-            nextWeekStart.setDate(startDate.getDate() + 7);
-            const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today);
-            
-            gamesContainer.innerHTML = firstWeekHTML + secondWeekHTML;
-        }
+        // Show two weeks of schedule
+        const firstWeekHTML = generateCalendarWeek(data, startDate, today);
+        const nextWeekStart = new Date(startDate);
+        nextWeekStart.setDate(startDate.getDate() + 7);
+        const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today);
+        
+        gamesContainer.innerHTML = firstWeekHTML + secondWeekHTML;
     } catch (error) {
         console.error('Error updating schedule:', error);
         document.getElementById('upcoming-games').innerHTML = 
@@ -1095,27 +1082,21 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSchedule();
 
     // Refresh data periodically (every 5 minutes)
-    // Use longer interval on mobile to save battery
-    const refreshInterval = isMobile ? 600000 : 300000;
     setInterval(() => {
         updateTeamStats(CURRENT_SEASON);
         updateRoster();
         updateSchedule();
-    }, refreshInterval);
+    }, 300000);
 
-    // Add smooth scrolling for iOS
-    if (isMobile) {
+    // Add smooth scrolling for touch devices
+    if ('ontouchstart' in window) {
         document.querySelectorAll('.player-list, .detailed-stats').forEach(element => {
             element.style.WebkitOverflowScrolling = 'touch';
         });
-
-        // Optimize animations for mobile
-        document.documentElement.style.setProperty('--transition-duration', '0.2s');
     }
 
     // Handle orientation changes
     const handleOrientationChange = debounce(() => {
-        // Recalculate layout-dependent values
         document.querySelectorAll('.player-details.expanded').forEach(details => {
             details.style.maxHeight = `${details.scrollHeight}px`;
         });

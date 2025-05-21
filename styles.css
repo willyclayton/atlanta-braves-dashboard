@@ -345,68 +345,93 @@ footer {
         font-size: 1rem;
     }
 
-    /* Mobile Calendar Optimizations */
+    /* Mobile Calendar Styles */
     .schedule-grid {
-        display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 1px;
-        padding: 0;
+        gap: 0.75rem;
+        padding: 1rem;
         margin: 0;
-        width: 100%;
-        background: #eee;
+        background: white;
     }
 
     .calendar-day {
-        min-height: 45px;
-        padding: 0.25rem;
-        background: white;
+        min-height: 100px;
+        padding: 0.75rem;
         display: flex;
         flex-direction: column;
-        gap: 0.25rem;
     }
 
     .day-header {
-        margin: 0;
-        padding: 0;
-        border: none;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid #eee;
     }
 
     .day-name {
-        display: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: var(--braves-navy);
     }
 
     .day-number {
-        font-size: 0.8rem;
-        color: #666;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .game-details {
+        margin-top: auto;
     }
 
     .game-time {
-        display: none;
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
+        display: block;
     }
 
     .game-indicator {
-        font-size: 0.7rem;
-        padding: 0;
-        text-align: center;
-        color: var(--braves-navy);
-        background: none;
-    }
-
-    .game-indicator.home {
-        color: var(--braves-red);
+        font-size: 0.8rem;
+        padding: 0.5rem;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
     }
 
     .home-indicator {
-        display: none;
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .schedule-grid {
+        gap: 0.5rem;
+        padding: 0.75rem;
     }
 
-    .calendar-day.today {
-        background: rgba(19, 39, 79, 0.05);
+    .calendar-day {
+        min-height: 90px;
+        padding: 0.5rem;
     }
 
-    .calendar-day.today::before {
-        display: none;
+    .day-header {
+        margin-bottom: 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+
+    .game-time {
+        font-size: 0.75rem;
+    }
+
+    .game-indicator {
+        font-size: 0.75rem;
+        padding: 0.35rem;
     }
 }
 
@@ -423,101 +448,6 @@ footer {
 
     .game-indicator {
         font-size: 0.65rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .stats-grid {
-        gap: 0.35rem;
-    }
-
-    .stat-card {
-        padding: 0.5rem 0.35rem;
-    }
-
-    .stat-card h3 {
-        font-size: 0.75rem;
-    }
-
-    .stat-card p {
-        font-size: 0.9rem;
-    }
-
-    .schedule-grid {
-        grid-template-columns: repeat(7, 1fr);
-        gap: 0.5rem;
-        padding: 0.75rem;
-        margin: 0 -0.5rem;
-        overflow-x: hidden;
-    }
-
-    .calendar-day {
-        min-height: 80px;
-        padding: 0.5rem;
-        touch-action: manipulation;
-        -webkit-tap-highlight-color: transparent;
-    }
-
-    .calendar-day.has-game {
-        background: linear-gradient(to bottom, rgba(19, 39, 79, 0.05), white);
-    }
-
-    .game-indicator {
-        font-size: 0.7rem;
-        padding: 0.25rem;
-        margin-top: 0.25rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .game-time {
-        font-size: 0.65rem;
-        margin-top: 0.25rem;
-    }
-
-    .day-header {
-        margin-bottom: 0.25rem;
-    }
-
-    .day-name {
-        font-size: 0.7rem;
-        font-weight: 600;
-    }
-
-    .day-number {
-        font-size: 0.9rem;
-    }
-
-    .calendar-day.today::before {
-        font-size: 0.6rem;
-        padding: 1px 6px;
-        top: -8px;
-    }
-}
-
-@media (max-width: 360px) {
-    .schedule-grid {
-        gap: 0.25rem;
-        padding: 0.5rem;
-    }
-
-    .calendar-day {
-        min-height: 70px;
-        padding: 0.35rem;
-    }
-
-    .game-indicator {
-        font-size: 0.65rem;
-        padding: 0.2rem;
-    }
-
-    .day-name {
-        font-size: 0.65rem;
-    }
-
-    .day-number {
-        font-size: 0.8rem;
     }
 }
 
@@ -1215,21 +1145,133 @@ footer {
 @media (max-width: 768px) {
     .position-header {
         padding: 0.6rem 0.75rem;
-        grid-template-columns: auto 1fr;
-        gap: 0.75rem;
-        align-items: center;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 1rem;
     }
 
     .position-title {
         font-size: 0.9rem;
-        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .position-number {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
     }
 
     .position-aggregate-stats {
-        justify-content: flex-end;
-        gap: 1rem;
+        display: flex;
+        gap: 1.5rem;
         font-size: 0.85rem;
+    }
+
+    .aggregate-stat {
+        min-width: 70px;
+        text-align: center;
+    }
+
+    .player-card {
+        border-bottom: 1px solid rgba(19, 39, 79, 0.1);
         margin: 0;
+        border-radius: 0;
+    }
+
+    .player-card-header {
+        padding: 0.75rem;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .player-number {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: var(--braves-navy);
+        min-width: 25px;
+        text-align: center;
+    }
+
+    .player-name-position {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .player-name {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+
+    .specific-position {
+        font-size: 0.8rem;
+        color: var(--braves-red);
+        background: rgba(206, 17, 65, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
+    }
+
+    .player-quick-stats {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .quick-stat {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 70px;
+    }
+
+    .player-details {
+        background: rgba(19, 39, 79, 0.02);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .player-details.expanded {
+        padding: 1rem;
+        max-height: 500px;
+    }
+
+    .player-bio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .detailed-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: white;
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .position-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .position-title {
+        font-size: 0.85rem;
+    }
+
+    .position-aggregate-stats {
+        gap: 1rem;
+        font-size: 0.8rem;
     }
 
     .aggregate-stat {
@@ -1238,214 +1280,78 @@ footer {
 
     .player-card-header {
         padding: 0.5rem 0.75rem;
-        grid-template-columns: auto 1fr auto;
-        gap: 0.75rem;
     }
 
-    .player-basic-info {
-        gap: 0.5rem;
+    .player-name {
+        font-size: 0.85rem;
     }
 
-    .player-name-position {
-        gap: 0.5rem;
-        align-items: center;
+    .specific-position {
+        font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
     }
 
     .player-quick-stats {
-        display: flex;
         gap: 1rem;
-        font-size: 0.85rem;
-        margin: 0;
-        padding: 0;
-        background: none;
+        font-size: 0.8rem;
     }
 
     .quick-stat {
-        min-width: auto;
-        gap: 0.25rem;
+        min-width: 60px;
     }
 
     .player-details.expanded {
         padding: 0.75rem;
     }
-}
-
-@media (max-width: 480px) {
-    .position-header {
-        padding: 0.5rem;
-        grid-template-columns: auto 1fr;
-        text-align: left;
-    }
-
-    .position-title {
-        justify-content: flex-start;
-        font-size: 0.85rem;
-    }
-
-    .position-aggregate-stats {
-        gap: 0.75rem;
-        padding: 0;
-        border: none;
-        font-size: 0.8rem;
-    }
-
-    .aggregate-stat {
-        min-width: 50px;
-        font-size: 0.75rem;
-    }
-
-    .player-card-header {
-        padding: 0.4rem 0.5rem;
-        gap: 0.5rem;
-        grid-template-columns: auto 1fr auto;
-    }
-
-    .player-number {
-        font-size: 0.8rem;
-        min-width: 25px;
-    }
-
-    .player-name {
-        font-size: 0.85rem;
-    }
-
-    .specific-position {
-        font-size: 0.75rem;
-        padding: 0.1rem 0.3rem;
-    }
-
-    .player-quick-stats {
-        font-size: 0.75rem;
-        gap: 0.75rem;
-    }
-
-    .player-details {
-        padding: 0.5rem;
-    }
 
     .player-bio {
-        padding: 0.5rem;
-        gap: 0.5rem;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-
-    .bio-item {
-        flex: 1 1 auto;
-        min-width: calc(50% - 0.25rem);
-    }
-
-    .detailed-stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.35rem;
-        padding: 0.35rem;
-    }
-
-    .detailed-stat {
-        min-width: 0;
-        padding: 0.35rem;
-    }
-}
-
-@media (max-width: 360px) {
-    .position-header {
-        padding: 0.4rem;
-    }
-
-    .position-title {
-        font-size: 0.8rem;
-    }
-
-    .position-aggregate-stats {
-        gap: 0.5rem;
-    }
-
-    .aggregate-stat {
-        min-width: 45px;
-        font-size: 0.7rem;
-    }
-
-    .player-card-header {
-        padding: 0.35rem;
-    }
-
-    .player-number {
-        font-size: 0.75rem;
-        min-width: 20px;
-    }
-
-    .player-name {
-        font-size: 0.8rem;
-    }
-
-    .specific-position {
-        font-size: 0.7rem;
-        padding: 0.1rem 0.25rem;
-    }
-
-    .player-quick-stats {
-        font-size: 0.7rem;
-        gap: 0.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
 
     .detailed-stats {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.25rem;
-        padding: 0.25rem;
-    }
-
-    .detailed-stat {
-        padding: 0.25rem;
-    }
-
-    .detailed-stat-label {
-        font-size: 0.65rem;
-    }
-
-    .detailed-stat-value {
-        font-size: 0.75rem;
+        gap: 0.5rem;
+        padding: 0.5rem;
     }
 }
 
-/* Touch Optimizations */
 @media (hover: none) and (pointer: coarse) {
-    .player-card-header,
-    .position-header {
+    .player-card-header {
         cursor: pointer;
         -webkit-tap-highlight-color: transparent;
-        touch-action: manipulation;
-    }
-
-    .player-list,
-    .player-details,
-    .detailed-stats {
-        -webkit-overflow-scrolling: touch;
-        overscroll-behavior: contain;
-    }
-
-    .calendar-day.has-game {
-        transform: none;
-    }
-
-    .calendar-day.has-game:active {
-        transform: scale(0.98);
-    }
-
-    .player-card:hover {
-        transform: none;
     }
 
     .player-card:active {
-        background: #f5f5f5;
+        transform: scale(0.98);
     }
 
-    .detailed-stat:hover {
+    .player-card.expanded {
         transform: none;
     }
 
-    .detailed-stat:active {
-        background: rgba(19, 39, 79, 0.06);
+    .player-quick-stats {
+        touch-action: manipulation;
+    }
+}
+
+.loading-skeleton {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0)
+    );
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    from {
+        background-position: 200% 0;
+    }
+    to {
+        background-position: -200% 0;
     }
 }
 
@@ -1586,46 +1492,75 @@ footer {
 
 @media (max-width: 768px) {
     .roster-container {
-        padding: 0.5rem;
+        padding: 0.75rem;
+    }
+
+    .position-section {
+        margin-bottom: 1rem;
+    }
+
+    .position-header {
+        padding: 0.75rem;
+        grid-template-columns: auto 1fr auto auto;
+        gap: 1rem;
+    }
+
+    .position-title {
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .position-number {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+        font-size: 0.8rem;
+    }
+
+    .position-aggregate-stats {
+        display: flex;
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .aggregate-stat {
+        min-width: 70px;
+        text-align: center;
     }
 
     .player-card {
-        margin-bottom: 0.75rem;
-        border-radius: 8px;
-        background: white;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        border-bottom: 1px solid rgba(19, 39, 79, 0.1);
+        margin: 0;
+        border-radius: 0;
     }
 
     .player-card-header {
         padding: 0.75rem;
         display: grid;
         grid-template-columns: auto 1fr auto;
-        gap: 0.75rem;
+        gap: 1rem;
         align-items: center;
-        border-radius: 8px;
-        touch-action: manipulation;
     }
 
     .player-number {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 600;
         color: var(--braves-navy);
-        min-width: 30px;
+        min-width: 25px;
         text-align: center;
-        padding: 0.25rem;
-        border-radius: 4px;
-        background: rgba(19, 39, 79, 0.05);
     }
 
     .player-name-position {
         display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.75rem;
     }
 
     .player-name {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 500;
         color: var(--text-dark);
     }
@@ -1633,105 +1568,96 @@ footer {
     .specific-position {
         font-size: 0.8rem;
         color: var(--braves-red);
-        font-weight: 500;
+        background: rgba(206, 17, 65, 0.1);
+        padding: 0.2rem 0.5rem;
+        border-radius: 12px;
     }
 
     .player-quick-stats {
         display: flex;
-        gap: 1rem;
-        font-size: 0.9rem;
+        gap: 1.5rem;
+        font-size: 0.85rem;
     }
 
     .quick-stat {
         display: flex;
-        gap: 0.25rem;
-        align-items: baseline;
-    }
-
-    .quick-stat-label {
-        color: var(--text-dark);
-        opacity: 0.7;
-        font-size: 0.75rem;
-    }
-
-    .quick-stat-value {
-        font-weight: 500;
-        color: var(--braves-navy);
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 70px;
     }
 
     .player-details {
-        height: 0;
-        overflow: hidden;
-        transition: height 0.3s ease;
         background: rgba(19, 39, 79, 0.02);
-        border-radius: 0 0 8px 8px;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
     }
 
     .player-details.expanded {
-        height: auto;
         padding: 1rem;
+        max-height: 500px;
     }
 
     .player-bio {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.75rem;
+        gap: 1rem;
         margin-bottom: 1rem;
     }
 
-    .bio-item {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-    }
-
-    .bio-label {
-        font-size: 0.75rem;
-        color: var(--text-dark);
-        opacity: 0.7;
-    }
-
-    .bio-value {
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--braves-navy);
+    .detailed-stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+        padding: 0.75rem;
+        background: white;
+        border-radius: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .roster-container {
-        padding: 0.25rem;
+        padding: 0.5rem;
     }
 
-    .player-card {
-        margin-bottom: 0.5rem;
+    .position-header {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .position-title {
+        font-size: 0.85rem;
+    }
+
+    .position-aggregate-stats {
+        gap: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .aggregate-stat {
+        min-width: 60px;
     }
 
     .player-card-header {
-        padding: 0.5rem;
-        gap: 0.5rem;
-    }
-
-    .player-number {
-        font-size: 0.9rem;
-        min-width: 25px;
+        padding: 0.5rem 0.75rem;
     }
 
     .player-name {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .specific-position {
         font-size: 0.75rem;
+        padding: 0.15rem 0.4rem;
     }
 
     .player-quick-stats {
+        gap: 1rem;
         font-size: 0.8rem;
-        gap: 0.75rem;
     }
 
-    .quick-stat-label {
-        font-size: 0.7rem;
+    .quick-stat {
+        min-width: 60px;
     }
 
     .player-details.expanded {
@@ -1739,8 +1665,14 @@ footer {
     }
 
     .player-bio {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .detailed-stats {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.5rem;
+        padding: 0.5rem;
     }
 }
 
