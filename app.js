@@ -406,7 +406,6 @@ function updateRosterByPosition(roster, container) {
 }
 
 function updateRosterByName(roster, container) {
-    // Sort players alphabetically by last name
     const sortedPlayers = [...roster].sort((a, b) => {
         const nameA = a.person.fullName.split(' ').pop();
         const nameB = b.person.fullName.split(' ').pop();
@@ -419,6 +418,19 @@ function updateRosterByName(roster, container) {
                 const stats = playerStats.get(player.person.id) || {};
                 const isPitcher = player.position.name === 'Pitcher';
                 
+                // Simplified mobile view
+                const mobileStats = isPitcher ? 
+                    `ERA: ${stats.era || '-.--'}` :
+                    `AVG: ${stats.avg || '.---'}`;
+                
+                const fullStats = isPitcher ? `
+                    <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
+                    <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
+                ` : `
+                    <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
+                    <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
+                `;
+
                 return `
                     <div class="player-card alphabetical" data-player-id="${player.person.id}">
                         <div class="player-card-header">
@@ -430,13 +442,7 @@ function updateRosterByName(roster, container) {
                                 </div>
                             </div>
                             <div class="player-quick-stats">
-                                ${isPitcher ? `
-                                    <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
-                                    <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
-                                ` : `
-                                    <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
-                                    <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
-                                `}
+                                ${isMobile ? mobileStats : fullStats}
                             </div>
                         </div>
                         <div class="player-details">
@@ -485,6 +491,19 @@ function generatePlayerCard(player, position) {
     const specificPosition = position === 'Outfielders' ? 
         `<span class="specific-position">${player.specificPosition}</span>` : '';
     
+    // Simplified stats display for mobile
+    const mobileStats = isPitcher ? 
+        `ERA: ${stats.era || '-.--'}` :
+        `AVG: ${stats.avg || '.---'}`;
+    
+    const fullStats = isPitcher ? `
+        <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
+        <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
+    ` : `
+        <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
+        <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
+    `;
+
     return `
         <div class="player-card" data-player-id="${player.person.id}">
             <div class="player-card-header">
@@ -496,13 +515,7 @@ function generatePlayerCard(player, position) {
                     </div>
                 </div>
                 <div class="player-quick-stats">
-                    ${isPitcher ? `
-                        <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
-                        <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
-                    ` : `
-                        <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
-                        <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
-                    `}
+                    ${isMobile ? mobileStats : fullStats}
                 </div>
             </div>
             <div class="player-details">
@@ -812,6 +825,11 @@ function generateCalendarDay(date, game, isToday, isPastDate) {
         const isHome = game.teams.home.team.id === BRAVES_ID;
         const opponent = isHome ? game.teams.away.team : game.teams.home.team;
         
+        // Use shorter team names on mobile
+        const opponentName = isMobile ? 
+            opponent.teamName.replace(/\s/g, '').substring(0, 3).toUpperCase() : 
+            opponent.name;
+        
         gameHTML = `
             <div class="game-details">
                 <div class="game-time">
@@ -823,8 +841,8 @@ function generateCalendarDay(date, game, isToday, isPastDate) {
                 </div>
                 <div class="game-indicator ${isHome ? 'home' : 'away'}">
                     ${isHome ? 
-                        `<span class="home-indicator"></span>${isMobile ? opponent.teamName : opponent.name}` : 
-                        `@ ${isMobile ? opponent.teamName : opponent.name}`
+                        `<span class="home-indicator"></span>${opponentName}` : 
+                        `@${opponentName}`
                     }
                 </div>
             </div>
