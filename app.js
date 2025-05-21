@@ -827,6 +827,9 @@ function generateCalendarDay(date, game, isToday) {
     const dayClasses = ['calendar-day'];
     if (isToday) dayClasses.push('today');
     if (!game) dayClasses.push('empty');
+    if (game && game.teams.home.team.id === BRAVES_ID) {
+        dayClasses.push('has-home-game');
+    }
 
     return `
         <div class="${dayClasses.join(' ')}">
@@ -837,6 +840,53 @@ function generateCalendarDay(date, game, isToday) {
             ${game ? generateGameDetails(game) : '<div class="no-games"></div>'}
         </div>
     `;
+}
+
+// Helper function to get team abbreviation
+function getTeamAbbreviation(teamName) {
+    const cityTeamMap = {
+        'Atlanta Braves': 'ATL',
+        'New York Mets': 'NYM',
+        'Philadelphia Phillies': 'PHI',
+        'Washington Nationals': 'WSH',
+        'Miami Marlins': 'MIA',
+        'St. Louis Cardinals': 'STL',
+        'Chicago Cubs': 'CHC',
+        'Milwaukee Brewers': 'MIL',
+        'Pittsburgh Pirates': 'PIT',
+        'Cincinnati Reds': 'CIN',
+        'Los Angeles Dodgers': 'LAD',
+        'San Francisco Giants': 'SF',
+        'San Diego Padres': 'SD',
+        'Colorado Rockies': 'COL',
+        'Arizona Diamondbacks': 'ARI',
+        'New York Yankees': 'NYY',
+        'Boston Red Sox': 'BOS',
+        'Tampa Bay Rays': 'TB',
+        'Toronto Blue Jays': 'TOR',
+        'Baltimore Orioles': 'BAL',
+        'Chicago White Sox': 'CWS',
+        'Cleveland Guardians': 'CLE',
+        'Detroit Tigers': 'DET',
+        'Kansas City Royals': 'KC',
+        'Minnesota Twins': 'MIN',
+        'Houston Astros': 'HOU',
+        'Los Angeles Angels': 'LAA',
+        'Oakland Athletics': 'OAK',
+        'Seattle Mariners': 'SEA',
+        'Texas Rangers': 'TEX'
+    };
+    
+    return cityTeamMap[teamName] || '';
+}
+
+// Update the getTeamLogoUrl function to use relative paths
+function getTeamLogoUrl(teamName) {
+    const abbreviation = getTeamAbbreviation(teamName);
+    if (!abbreviation) return null;
+    
+    // Use relative path to logos directory
+    return `./logos/${abbreviation}.svg`;
 }
 
 // Helper function to generate game details
@@ -853,7 +903,14 @@ function generateGameDetails(game) {
         
         // Format opponent name for mobile - use abbreviation if available
         const opponentName = opponent.teamName || opponent.name || '';
-        const shortName = opponent.abbreviation || opponentName.split(' ').pop() || opponentName;
+        const logoUrl = getTeamLogoUrl(opponentName);
+        
+        // Add console.log to debug team name mapping
+        console.log('Team name mapping:', {
+            originalName: opponentName,
+            abbreviation: getTeamAbbreviation(opponentName),
+            logoUrl: logoUrl
+        });
         
         return `
             <div class="game-time">
@@ -864,8 +921,7 @@ function generateGameDetails(game) {
                 })}
             </div>
             <div class="game-indicator ${isHome ? 'home' : ''}">
-                <span>${isHome ? 'vs' : '@'}</span>
-                <span class="opponent-name" data-full-name="${opponentName}">${isMobile ? shortName : opponentName}</span>
+                ${logoUrl ? `<div class="team-logo"><img src="${logoUrl}" alt="${opponentName} logo" /></div>` : ''}
             </div>
         `;
     } catch (error) {

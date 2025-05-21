@@ -5,5 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "open index.html"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "react-mlb-logos": "^1.1.2"
   }
-} 
+}
