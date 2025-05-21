@@ -851,6 +851,10 @@ function generateGameDetails(game) {
         const isHome = game.teams.home.team.id === BRAVES_ID;
         const opponent = isHome ? game.teams.away.team : game.teams.home.team;
         
+        // Format opponent name for mobile - use abbreviation if available
+        const opponentName = opponent.teamName || opponent.name || '';
+        const shortName = opponent.abbreviation || opponentName.split(' ').pop() || opponentName;
+        
         return `
             <div class="game-time">
                 ${gameDate.toLocaleTimeString('en-US', { 
@@ -861,7 +865,7 @@ function generateGameDetails(game) {
             </div>
             <div class="game-indicator ${isHome ? 'home' : ''}">
                 <span>${isHome ? 'vs' : '@'}</span>
-                <span>${opponent.name}</span>
+                <span class="opponent-name" data-full-name="${opponentName}">${isMobile ? shortName : opponentName}</span>
             </div>
         `;
     } catch (error) {
