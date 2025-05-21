@@ -771,8 +771,7 @@ async function updateSchedule() {
         startDate.setDate(today.getDate() - today.getDay());
         console.log('Start date (Sunday):', startDate);
 
-        // Show two weeks of schedule
-        console.log('Generating calendar weeks...');
+        // Generate calendar for two weeks
         const nextWeekStart = new Date(startDate);
         nextWeekStart.setDate(startDate.getDate() + 7);
         
@@ -794,37 +793,6 @@ async function updateSchedule() {
                 <button onclick="updateSchedule()" class="retry-button">Retry</button>
             </div>
         `;
-    }
-}
-
-// Helper function to generate a week of calendar
-function generateCalendarWeek(data, startDate, today) {
-    try {
-        console.log('Generating calendar week for:', startDate);
-        let calendarHTML = '';
-        
-        // Add week label
-        const isCurrentWeek = startDate.getTime() <= today.getTime() && 
-            startDate.getTime() + (7 * 24 * 60 * 60 * 1000) > today.getTime();
-        calendarHTML += `<div class="week-label">${isCurrentWeek ? 'This Week' : 'Next Week'}</div>`;
-        
-        // Generate all seven days of the week
-        for (let i = 0; i < 7; i++) {
-            const currentDate = new Date(startDate);
-            currentDate.setDate(startDate.getDate() + i);
-            const dateStr = currentDate.toDateString();
-            console.log('Processing date:', dateStr);
-            
-            const game = findGameForDate(data, dateStr);
-            const isToday = currentDate.toDateString() === today.toDateString();
-            
-            calendarHTML += generateCalendarDay(currentDate, game, isToday);
-        }
-        
-        return calendarHTML;
-    } catch (error) {
-        console.error('Error in generateCalendarWeek:', error);
-        throw error;
     }
 }
 
@@ -856,24 +824,19 @@ function findGameForDate(data, dateStr) {
 
 // Helper function to generate a calendar day
 function generateCalendarDay(date, game, isToday) {
-    try {
-        const dayClasses = ['calendar-day'];
-        if (isToday) dayClasses.push('today');
-        if (game) dayClasses.push('has-game');
+    const dayClasses = ['calendar-day'];
+    if (isToday) dayClasses.push('today');
+    if (!game) dayClasses.push('empty');
 
-        return `
-            <div class="${dayClasses.join(' ')}">
-                <div class="day-header">
-                    <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                    <span class="day-number">${date.getDate()}</span>
-                </div>
-                ${game ? generateGameDetails(game) : ''}
+    return `
+        <div class="${dayClasses.join(' ')}">
+            <div class="day-header">
+                <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                <span class="day-number">${date.getDate()}</span>
             </div>
-        `;
-    } catch (error) {
-        console.error('Error in generateCalendarDay:', error);
-        return '<div class="calendar-day"><div class="error">Error generating day</div></div>';
-    }
+            ${game ? generateGameDetails(game) : '<div class="no-games"></div>'}
+        </div>
+    `;
 }
 
 // Helper function to generate game details
@@ -889,25 +852,56 @@ function generateGameDetails(game) {
         const opponent = isHome ? game.teams.away.team : game.teams.home.team;
         
         return `
-            <div class="game-details">
-                <div class="game-time">
-                    ${gameDate.toLocaleTimeString('en-US', { 
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        hour12: true
-                    })}
-                </div>
-                <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                    ${isHome ? 
-                        `<span class="home-indicator"></span>vs ${opponent.name}` : 
-                        `@ ${opponent.name}`
-                    }
-                </div>
+            <div class="game-time">
+                ${gameDate.toLocaleTimeString('en-US', { 
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                })}
+            </div>
+            <div class="game-indicator ${isHome ? 'home' : ''}">
+                ${isHome ? 'vs ' : '@ '}${opponent.name}
             </div>
         `;
     } catch (error) {
         console.error('Error in generateGameDetails:', error);
-        return '<div class="error">Error generating game details</div>';
+        return '';
+    }
+}
+
+// Helper function to generate a week of calendar
+function generateCalendarWeek(data, startDate, today) {
+    try {
+        const isCurrentWeek = startDate.getTime() <= today.getTime() && 
+            startDate.getTime() + (7 * 24 * 60 * 60 * 1000) > today.getTime();
+        
+        let weekHTML = `
+            <div class="week-section">
+                <div class="week-label">${isCurrentWeek ? 'This Week' : 'Next Week'}</div>
+                <div class="week-days">
+        `;
+        
+        // Generate all seven days of the week
+        for (let i = 0; i < 7; i++) {
+            const currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + i);
+            const dateStr = currentDate.toDateString();
+            
+            const game = findGameForDate(data, dateStr);
+            const isToday = currentDate.toDateString() === today.toDateString();
+            
+            weekHTML += generateCalendarDay(currentDate, game, isToday);
+        }
+        
+        weekHTML += `
+                </div>
+            </div>
+        `;
+        
+        return weekHTML;
+    } catch (error) {
+        console.error('Error in generateCalendarWeek:', error);
+        throw error;
     }
 }
 
