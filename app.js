@@ -751,22 +751,24 @@ async function updateSchedule() {
             return;
         }
 
-        // Get current date
+        // Get current date and find the start of the current week (Sunday)
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
-        // On mobile, only show current week starting from today
+        // Find the previous Sunday
         const startDate = new Date(today);
+        startDate.setDate(today.getDate() - today.getDay());
+
+        // On mobile, show one week starting from Sunday
         if (isMobile) {
-            // Show next 7 days from today
-            const calendarHTML = generateCalendarWeek(data, startDate, today, true);
+            const calendarHTML = generateCalendarWeek(data, startDate, today);
             gamesContainer.innerHTML = calendarHTML;
         } else {
             // Show two weeks for desktop
-            const firstWeekHTML = generateCalendarWeek(data, startDate, today, true);
+            const firstWeekHTML = generateCalendarWeek(data, startDate, today);
             const nextWeekStart = new Date(startDate);
             nextWeekStart.setDate(startDate.getDate() + 7);
-            const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today, false);
+            const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today);
             
             gamesContainer.innerHTML = firstWeekHTML + secondWeekHTML;
         }
@@ -778,28 +780,25 @@ async function updateSchedule() {
 }
 
 // Helper function to generate a week of calendar
-function generateCalendarWeek(data, startDate, today, isCurrentWeek) {
+function generateCalendarWeek(data, startDate, today) {
     let calendarHTML = '';
     
-    // Add week label
+    // Add week label only for desktop
     if (!isMobile) {
+        const isCurrentWeek = startDate.getTime() <= today.getTime() && 
+            startDate.getTime() + (7 * 24 * 60 * 60 * 1000) > today.getTime();
         calendarHTML += `<div class="week-label">${isCurrentWeek ? 'This Week' : 'Next Week'}</div>`;
     }
     
-    // Generate days
+    // Generate all seven days of the week
     for (let i = 0; i < 7; i++) {
         const currentDate = new Date(startDate);
         currentDate.setDate(startDate.getDate() + i);
-        
-        // Skip past dates on mobile
-        if (isMobile && currentDate < today) continue;
-        
         const dateStr = currentDate.toDateString();
-        const isPastDate = currentDate < today;
-        const game = !isPastDate ? findGameForDate(data, dateStr) : null;
+        const game = findGameForDate(data, dateStr);
         const isToday = currentDate.toDateString() === today.toDateString();
         
-        calendarHTML += generateCalendarDay(currentDate, game, isToday, isPastDate);
+        calendarHTML += generateCalendarDay(currentDate, game, isToday);
     }
     
     return calendarHTML;
@@ -813,49 +812,69 @@ function findGameForDate(data, dateStr) {
 }
 
 // Helper function to generate a calendar day
-function generateCalendarDay(date, game, isToday, isPastDate) {
+function generateCalendarDay(date, game, isToday) {
     const dayClasses = ['calendar-day'];
     if (isToday) dayClasses.push('today');
     if (game) dayClasses.push('has-game');
-    if (isPastDate) dayClasses.push('past-date');
 
-    let gameHTML = '';
-    if (game && !isPastDate) {
-        const gameDate = new Date(game.gameDate);
-        const isHome = game.teams.home.team.id === BRAVES_ID;
-        const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-        
-        // Use shorter team names on mobile
-        const opponentName = isMobile ? 
-            opponent.teamName.replace(/\s/g, '').substring(0, 3).toUpperCase() : 
-            opponent.name;
-        
-        gameHTML = `
-            <div class="game-details">
-                <div class="game-time">
-                    ${gameDate.toLocaleTimeString('en-US', { 
-                        hour: 'numeric',
-                        minute: '2-digit',
-                        hour12: true
-                    })}
+    // Simplified mobile view
+    if (isMobile) {
+        return `
+            <div class="${dayClasses.join(' ')}">
+                <div class="day-header">
+                    <span class="day-number">${date.getDate()}</span>
                 </div>
-                <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                    ${isHome ? 
-                        `<span class="home-indicator"></span>${opponentName}` : 
-                        `@${opponentName}`
-                    }
-                </div>
+                ${game ? generateGameIndicator(game) : ''}
             </div>
         `;
     }
 
+    // Desktop view
     return `
         <div class="${dayClasses.join(' ')}">
             <div class="day-header">
                 <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
                 <span class="day-number">${date.getDate()}</span>
             </div>
-            ${gameHTML}
+            ${game ? generateGameDetails(game) : ''}
+        </div>
+    `;
+}
+
+// Helper function to generate game indicator (mobile)
+function generateGameIndicator(game) {
+    const isHome = game.teams.home.team.id === BRAVES_ID;
+    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+    const opponentAbbr = opponent.teamName.replace(/\s/g, '').substring(0, 3).toUpperCase();
+    
+    return `
+        <div class="game-indicator ${isHome ? 'home' : 'away'}">
+            ${isHome ? 'v' : '@'}${opponentAbbr}
+        </div>
+    `;
+}
+
+// Helper function to generate full game details (desktop)
+function generateGameDetails(game) {
+    const gameDate = new Date(game.gameDate);
+    const isHome = game.teams.home.team.id === BRAVES_ID;
+    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+    
+    return `
+        <div class="game-details">
+            <div class="game-time">
+                ${gameDate.toLocaleTimeString('en-US', { 
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                })}
+            </div>
+            <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                ${isHome ? 
+                    `<span class="home-indicator"></span>vs ${opponent.name}` : 
+                    `@ ${opponent.name}`
+                }
+            </div>
         </div>
     `;
 }
@@ -905,10 +924,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Performance optimizations for mobile
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+// Add performance optimizations for mobile
+const isMobile = window.matchMedia('(max-width: 768px)').matches;
+const supportsIntersectionObserver = 'IntersectionObserver' in window;
 
-// Debounce helper
+// Lazy loading for player cards
+if (supportsIntersectionObserver) {
+    const playerCardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const playerCard = entry.target;
+                if (!playerCard.dataset.loaded) {
+                    loadPlayerDetails(playerCard);
+                    playerCard.dataset.loaded = 'true';
+                }
+            }
+        });
+    }, {
+        rootMargin: '50px',
+        threshold: 0.1
+    });
+
+    document.querySelectorAll('.player-card').forEach(card => {
+        playerCardObserver.observe(card);
+    });
+}
+
+// Debounce function for performance
 function debounce(func, wait) {
     let timeout;
     return function executedFunction(...args) {
@@ -920,6 +962,130 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
+// Throttle function for performance
+function throttle(func, limit) {
+    let inThrottle;
+    return function(...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+
+// Optimize scroll handling
+const handleScroll = throttle(() => {
+    // Your scroll handling code here
+}, 100);
+
+window.addEventListener('scroll', handleScroll, { passive: true });
+
+// Optimize touch interactions
+if (isMobile) {
+    document.addEventListener('touchstart', () => {}, { passive: true });
+    
+    // Use pointer events instead of mouse events for better touch performance
+    document.querySelectorAll('.player-card-header').forEach(header => {
+        header.addEventListener('pointerdown', handlePlayerCardClick, { passive: true });
+    });
+    
+    document.querySelectorAll('.calendar-day').forEach(day => {
+        day.addEventListener('pointerdown', handleCalendarDayClick, { passive: true });
+    });
+}
+
+// Optimize animations
+if (isMobile) {
+    document.documentElement.style.setProperty('--transition-duration', '0.2s');
+}
+
+// Add loading states
+function showLoadingState(element) {
+    element.classList.add('loading-skeleton');
+}
+
+function hideLoadingState(element) {
+    element.classList.remove('loading-skeleton');
+}
+
+// Optimize data fetching
+async function fetchMLBData(endpoint) {
+    showLoadingState(document.querySelector('.roster-container'));
+    
+    try {
+        const response = await fetch(`${getApiBaseUrl()}/${endpoint}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Origin': window.location.origin
+            }
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        hideLoadingState(document.querySelector('.roster-container'));
+        return data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        hideLoadingState(document.querySelector('.roster-container'));
+        throw error;
+    }
+}
+
+// Cache frequently accessed DOM elements
+const domCache = {
+    rosterContainer: document.querySelector('.roster-container'),
+    calendarGrid: document.querySelector('.schedule-grid'),
+    playerCards: document.querySelectorAll('.player-card'),
+    calendarDays: document.querySelectorAll('.calendar-day')
+};
+
+// Use ResizeObserver for responsive updates
+if ('ResizeObserver' in window) {
+    const resizeObserver = new ResizeObserver(debounce((entries) => {
+        for (const entry of entries) {
+            if (entry.target === domCache.rosterContainer) {
+                updateLayoutForScreenSize();
+            }
+        }
+    }, 250));
+
+    resizeObserver.observe(domCache.rosterContainer);
+}
+
+// Update layout based on screen size
+function updateLayoutForScreenSize() {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isSmallMobile = window.matchMedia('(max-width: 480px)').matches;
+    
+    if (isSmallMobile) {
+        // Apply small mobile optimizations
+        document.documentElement.style.setProperty('--calendar-day-height', '70px');
+        document.documentElement.style.setProperty('--player-card-padding', '0.5rem');
+    } else if (isMobile) {
+        // Apply regular mobile optimizations
+        document.documentElement.style.setProperty('--calendar-day-height', '80px');
+        document.documentElement.style.setProperty('--player-card-padding', '0.75rem');
+    } else {
+        // Apply desktop styles
+        document.documentElement.style.setProperty('--calendar-day-height', '120px');
+        document.documentElement.style.setProperty('--player-card-padding', '1rem');
+    }
+}
+
+// Initialize performance optimizations
+function initializePerformanceOptimizations() {
+    updateLayoutForScreenSize();
+    window.addEventListener('resize', debounce(updateLayoutForScreenSize, 250));
+}
+
+// Call initialization when DOM is ready
+document.addEventListener('DOMContentLoaded', initializePerformanceOptimizations);
 
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
