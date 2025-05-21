@@ -160,51 +160,87 @@ async function updateTeamStats(year = CURRENT_SEASON) {
         const teamData = await fetchMLBData(`teams/${BRAVES_ID}/stats?stats=season&group=hitting&season=${year}`);
         const teamStats = teamData.stats[0]?.splits[0]?.stat || {};
 
-        // Get last 5 completed games - include both regular season (R) and postseason (P) games
-        const scheduleData = await fetchMLBData(`schedule/games/?sportId=1&teamId=${BRAVES_ID}&season=${year}&gameTypes=R,P&scheduleTypes=games,events,xref&hydrate=decisions,probablePitcher(note),linescore&fields=dates,games,status,teams,isWinner,score`);
+        // Calculate date range for schedule query
+        const today = new Date();
+        const startDate = new Date(today);
+        startDate.setMonth(startDate.getMonth() - 1); // Look back one month
         
-        // Get all games from all dates and sort by date
-        const allGames = scheduleData.dates
-            ? scheduleData.dates
-                .flatMap(date => date.games.map(game => ({
-                    ...game,
-                    dateTime: new Date(game.gameDate)
-                })))
-                .sort((a, b) => b.dateTime - a.dateTime)
-            : [];
+        const formattedStartDate = startDate.toISOString().split('T')[0];
+        const formattedEndDate = today.toISOString().split('T')[0];
 
-        // Filter for completed games and take the last 5
-        const completedGames = allGames
-            .filter(game => game.status.statusCode === 'F')
-            .slice(0, 5);
+        // Get schedule data with a simpler query first
+        const scheduleData = await fetchMLBData(
+            `schedule?teamId=${BRAVES_ID}&startDate=${formattedStartDate}&endDate=${formattedEndDate}&sportId=1`
+        );
+        
+        console.log('Raw schedule data:', scheduleData);
+        
+        let completedGames = [];
+        if (scheduleData.dates && scheduleData.dates.length > 0) {
+            // Process all dates
+            for (const date of scheduleData.dates) {
+                if (date.games) {
+                    for (const game of date.games) {
+                        // Check if game is completed
+                        if (game.status && 
+                            (game.status.codedGameState === 'F' || 
+                             game.status.codedGameState === 'FT' ||
+                             game.status.codedGameState === 'FR' ||
+                             game.status.detailedState === 'Final' ||
+                             game.status.statusCode === 'F' ||
+                             game.status.abstractGameState === 'Final')) {
+                            
+                            console.log('Found completed game:', {
+                                date: date.date,
+                                status: game.status,
+                                teams: game.teams
+                            });
+                            
+                            completedGames.push(game);
+                        }
+                    }
+                }
+            }
+
+            // Sort games by date (most recent first) and take last 5
+            completedGames.sort((a, b) => new Date(b.gameDate) - new Date(a.gameDate));
+            completedGames = completedGames.slice(0, 5);
+            
+            console.log('Processed completed games:', completedGames);
+        }
 
         let wins = 0;
         let losses = 0;
 
         completedGames.forEach(game => {
-            const braves = game.teams.away.team.id === BRAVES_ID 
-                ? game.teams.away 
-                : game.teams.home;
+            // Check both home and away teams
+            const braves = game.teams.home.team.id === BRAVES_ID ? game.teams.home : game.teams.away;
+            const isWinner = braves.isWinner || (braves.score > (game.teams.home.team.id === BRAVES_ID ? game.teams.away.score : game.teams.home.score));
             
-            if (braves.isWinner) {
+            if (isWinner) {
                 wins++;
             } else {
                 losses++;
             }
+            
+            console.log(`Game result: ${isWinner ? 'Win' : 'Loss'}, Score: ${game.teams.home.score}-${game.teams.away.score}`);
         });
+
+        console.log(`Final last 5 record: ${wins}-${losses} (${completedGames.length} games found)`);
 
         const stats = {
             record: bravesRecord ? `${bravesRecord.wins}-${bravesRecord.losses}` : 'TBD',
-            last5: completedGames.length > 0 ? `${wins}-${losses}` : 'No games',
+            last5: completedGames.length > 0 ? `${wins}-${losses}` : 'Loading...',
             homeRuns: teamStats.homeRuns || 0
         };
 
         updateStatsDisplay(stats);
     } catch (error) {
         console.error('Error updating team stats:', error);
+        console.error('Error details:', error.message);
         updateStatsDisplay({
             record: 'Error',
-            last5: '-',
+            last5: 'Error',
             homeRuns: '-'
         });
     }
@@ -459,7 +495,11 @@ async function updateRoster() {
 
         // Add click handlers
         rosterContainer.querySelectorAll('.position-header').forEach(header => {
-            header.addEventListener('click', () => {
+            header.addEventListener('click', (e) => {
+                // Prevent double-firing on mobile
+                e.preventDefault();
+                e.stopPropagation();
+                
                 const section = header.closest('.position-section');
                 const wasExpanded = section.classList.contains('expanded');
                 
@@ -473,11 +513,23 @@ async function updateRoster() {
                     section.classList.add('expanded');
                 }
             });
+
+            // Add touch feedback
+            header.addEventListener('touchstart', () => {
+                header.style.opacity = '0.8';
+            }, { passive: true });
+
+            header.addEventListener('touchend', () => {
+                header.style.opacity = '1';
+            }, { passive: true });
         });
 
         rosterContainer.querySelectorAll('.player-card-header').forEach(header => {
             header.addEventListener('click', (e) => {
+                // Prevent double-firing on mobile
+                e.preventDefault();
                 e.stopPropagation();
+                
                 const card = header.closest('.player-card');
                 const wasExpanded = card.classList.contains('expanded');
                 
@@ -492,6 +544,15 @@ async function updateRoster() {
                     card.classList.add('expanded');
                 }
             });
+
+            // Add touch feedback
+            header.addEventListener('touchstart', () => {
+                header.style.backgroundColor = 'rgba(19, 39, 79, 0.04)';
+            }, { passive: true });
+
+            header.addEventListener('touchend', () => {
+                header.style.backgroundColor = '';
+            }, { passive: true });
         });
 
     } catch (error) {
@@ -710,6 +771,22 @@ async function updateSchedule() {
     }
 }
 
+// Performance optimizations for mobile
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+// Debounce helper
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
     // Load initial data
@@ -718,9 +795,32 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSchedule();
 
     // Refresh data periodically (every 5 minutes)
+    // Use longer interval on mobile to save battery
+    const refreshInterval = isMobile ? 600000 : 300000;
     setInterval(() => {
         updateTeamStats(CURRENT_SEASON);
         updateRoster();
         updateSchedule();
-    }, 300000);
+    }, refreshInterval);
+
+    // Add smooth scrolling for iOS
+    if (isMobile) {
+        document.querySelectorAll('.player-list, .detailed-stats').forEach(element => {
+            element.style.WebkitOverflowScrolling = 'touch';
+        });
+
+        // Optimize animations for mobile
+        document.documentElement.style.setProperty('--transition-duration', '0.2s');
+    }
+
+    // Handle orientation changes
+    const handleOrientationChange = debounce(() => {
+        // Recalculate layout-dependent values
+        document.querySelectorAll('.player-details.expanded').forEach(details => {
+            details.style.maxHeight = `${details.scrollHeight}px`;
+        });
+    }, 250);
+
+    window.addEventListener('orientationchange', handleOrientationChange);
+    window.addEventListener('resize', handleOrientationChange);
 }); 

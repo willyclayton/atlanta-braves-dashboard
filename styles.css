@@ -540,30 +540,94 @@ footer {
 /* Additional optimizations for very small screens */
 @media (max-width: 360px) {
     .dashboard-section {
-        padding: 0.5rem;
-        margin-bottom: 0.5rem;
+        padding: 0.35rem;
+        margin-bottom: 0.35rem;
     }
 
     .stats-grid {
-        gap: 0.35rem;
+        gap: 0.25rem;
     }
 
     .calendar-day {
-        min-height: 60px;
+        min-height: 55px;
+        padding: 0.25rem;
+    }
+
+    .day-header {
+        margin-bottom: 0.15rem;
+        padding-bottom: 0.15rem;
+    }
+
+    .day-name {
+        font-size: 0.7rem;
+    }
+
+    .day-number {
+        font-size: 0.8rem;
+    }
+
+    .game-time {
+        font-size: 0.7rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .game-indicator {
+        font-size: 0.7rem;
+        padding: 0.15rem;
+    }
+
+    .position-header {
+        padding: 0.35rem;
+    }
+
+    .position-title {
+        font-size: 0.8rem;
     }
 
     .position-aggregate-stats {
-        gap: 0.5rem;
+        gap: 0.35rem;
+        padding: 0.15rem 0;
     }
 
-    .detailed-stat {
-        flex: 1 1 calc(50% - 0.35rem);
+    .aggregate-stat {
+        min-width: 55px;
+        font-size: 0.75rem;
+    }
+
+    .player-card-header {
+        padding: 0.35rem;
+    }
+
+    .player-name {
+        font-size: 0.8rem;
     }
 
     .player-quick-stats {
-        flex-direction: column;
+        font-size: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .detailed-stats {
         gap: 0.25rem;
-        align-items: flex-start;
+    }
+
+    .detailed-stat {
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 50px;
+        padding: 0.25rem;
+    }
+
+    .detailed-stat-label {
+        font-size: 0.65rem;
+    }
+
+    .detailed-stat-value {
+        font-size: 0.8rem;
+    }
+
+    .bio-label,
+    .bio-value {
+        font-size: 0.75rem;
     }
 }
 
@@ -1274,5 +1338,46 @@ footer {
 
     .expand-indicator {
         display: none;
+    }
+}
+
+/* Touch Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .player-card-header,
+    .position-header {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+
+    .player-list,
+    .player-details,
+    .detailed-stats {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+
+    .calendar-day.has-game {
+        transform: none;
+    }
+
+    .calendar-day.has-game:active {
+        transform: scale(0.98);
+    }
+
+    .player-card:hover {
+        transform: none;
+    }
+
+    .player-card:active {
+        background: #f5f5f5;
+    }
+
+    .detailed-stat:hover {
+        transform: none;
+    }
+
+    .detailed-stat:active {
+        background: rgba(19, 39, 79, 0.06);
     }
 } 
