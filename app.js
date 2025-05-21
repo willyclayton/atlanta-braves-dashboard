@@ -446,48 +446,80 @@ async function updateSchedule() {
             return;
         }
 
-        // Get next 5 games
-        const upcomingGames = data.dates
-            .flatMap(date => date.games)
-            .filter(game => new Date(game.gameDate) >= new Date())
-            .slice(0, 5);
+        // Get current date and start of the current week
+        const today = new Date();
+        const currentWeekStart = new Date(today);
+        currentWeekStart.setDate(today.getDate() - today.getDay()); // Start from Sunday
+        currentWeekStart.setHours(0, 0, 0, 0);
 
-        if (upcomingGames.length === 0) {
-            gamesContainer.innerHTML = '<p>No upcoming games scheduled</p>';
-            return;
-        }
+        // Create a map of games by date string
+        const gamesByDate = new Map();
+        data.dates.forEach(date => {
+            date.games.forEach(game => {
+                const gameDate = new Date(game.gameDate);
+                const dateStr = gameDate.toDateString();
+                gamesByDate.set(dateStr, game);
+            });
+        });
 
-        const gamesHTML = upcomingGames.map(game => {
-            const gameDate = new Date(game.gameDate);
-            const isHome = game.teams.home.team.id === BRAVES_ID;
-            const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+        // Generate 14 days (2 weeks) of calendar
+        let calendarHTML = '';
+        for (let i = 0; i < 14; i++) {
+            const currentDate = new Date(currentWeekStart);
+            currentDate.setDate(currentWeekStart.getDate() + i);
+            const dateStr = currentDate.toDateString();
+            const game = gamesByDate.get(dateStr);
             
-            return `
-                <div class="game-card">
-                    <div class="game-date">
-                        ${gameDate.toLocaleDateString('en-US', { 
-                            weekday: 'short', 
-                            month: 'short', 
-                            day: 'numeric' 
-                        })}
+            // Add week separator
+            if (i === 0) {
+                calendarHTML += '<div class="week-label">This Week</div>';
+            } else if (i === 7) {
+                calendarHTML += '<div class="week-label">Next Week</div>';
+            }
+            
+            const isToday = currentDate.toDateString() === today.toDateString();
+            
+            let dayClasses = ['calendar-day'];
+            if (isToday) dayClasses.push('today');
+            if (game) dayClasses.push('has-game');
+
+            let gameHTML = '';
+            if (game) {
+                const gameDate = new Date(game.gameDate);
+                const isHome = game.teams.home.team.id === BRAVES_ID;
+                const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+                
+                gameHTML = `
+                    <div class="game-details">
+                        <div class="game-time">
+                            ${gameDate.toLocaleTimeString('en-US', { 
+                                hour: 'numeric',
+                                minute: '2-digit',
+                                hour12: true
+                            })}
+                        </div>
+                        <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                            ${isHome ? 
+                                `<span class="home-indicator"></span> vs ${opponent.name}` : 
+                                `@ ${opponent.name}`
+                            }
+                        </div>
                     </div>
-                    <div class="game-time">
-                        ${gameDate.toLocaleTimeString('en-US', { 
-                            hour: 'numeric', 
-                            minute: '2-digit' 
-                        })}
+                `;
+            }
+
+            calendarHTML += `
+                <div class="${dayClasses.join(' ')}">
+                    <div class="day-header">
+                        <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                        <span class="day-number">${currentDate.getDate()}</span>
                     </div>
-                    <div class="game-teams">
-                        ${isHome ? 'vs' : '@'} ${opponent.name}
-                    </div>
-                    <div class="game-venue">
-                        ${game.venue.name}
-                    </div>
+                    ${gameHTML}
                 </div>
             `;
-        }).join('');
+        }
 
-        gamesContainer.innerHTML = gamesHTML;
+        gamesContainer.innerHTML = calendarHTML;
     } catch (error) {
         console.error('Error updating schedule:', error);
         document.getElementById('upcoming-games').innerHTML = 

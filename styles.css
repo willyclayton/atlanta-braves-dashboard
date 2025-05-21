@@ -109,8 +109,149 @@ h2 {
 
 .schedule-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(7, 1fr);
     gap: 1rem;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.week-label {
+    grid-column: 1 / -1;
+    color: var(--braves-navy);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--braves-navy);
+}
+
+.week-label:first-child {
+    margin-top: 0;
+}
+
+.calendar-day {
+    background: white;
+    padding: 0.75rem;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+    transition: all 0.2s ease;
+}
+
+.calendar-day.has-game {
+    border-color: var(--braves-navy);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.has-game:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day.today {
+    background-color: rgba(19, 39, 79, 0.05);
+    border-color: var(--braves-red);
+    border-width: 3px;
+    position: relative;
+}
+
+.calendar-day.today::before {
+    content: 'TODAY';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--braves-red);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.calendar-day.today .day-header {
+    color: var(--braves-red);
+}
+
+.calendar-day.today .day-name,
+.calendar-day.today .day-number {
+    color: var(--braves-red);
+    font-weight: 700;
+}
+
+.day-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.day-name {
+    font-weight: 500;
+    color: var(--braves-navy);
+    font-size: 0.9rem;
+}
+
+.day-number {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.game-details {
+    margin-top: auto;
+}
+
+.game-time {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.25rem;
+}
+
+.game-indicator {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    text-align: center;
+}
+
+.game-indicator.home {
+    background: var(--braves-navy);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.game-indicator.away {
+    background: white;
+    color: var(--braves-navy);
+    border: 1px solid var(--braves-navy);
+}
+
+.home-indicator {
+    width: 16px;
+    height: 16px;
+    background-image: url('assets/home.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+    vertical-align: middle;
+    filter: invert(100%);
+}
+
+.game-venue {
+    font-size: 0.9rem;
+    opacity: 0.8;
 }
 
 .roster-grid {
@@ -149,7 +290,8 @@ footer {
     }
 
     .schedule-grid {
-        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        padding: 1rem;
     }
 
     .dashboard-section {
@@ -218,12 +360,62 @@ footer {
         font-size: 1.25rem;
     }
 
+    .game-card {
+        padding: 1rem;
+    }
+
+    .game-date {
+        font-size: 1rem;
+    }
+
+    .game-teams {
+        font-size: 1.1rem;
+    }
+
     #braves-logo {
         height: 40px;
     }
 
     .position-button {
         padding: 0.5rem;
+    }
+
+    .calendar-day {
+        padding: 0.5rem;
+        min-height: 100px;
+    }
+
+    .day-header {
+        margin-bottom: 0.25rem;
+        padding-bottom: 0.25rem;
+    }
+
+    .day-name {
+        font-size: 0.8rem;
+    }
+
+    .day-number {
+        font-size: 0.9rem;
+    }
+
+    .game-time {
+        font-size: 0.75rem;
+    }
+
+    .game-indicator {
+        font-size: 0.75rem;
+        padding: 0.35rem;
+    }
+
+    .week-label {
+        font-size: 1rem;
+        margin: 0.75rem 0 0.25rem;
+    }
+
+    .calendar-day.today::before {
+        font-size: 0.65rem;
+        padding: 2px 6px;
+        top: -8px;
     }
 }
 
@@ -594,4 +786,32 @@ footer {
 
 .cors-button:hover {
     background-color: #a50d33;
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .schedule-grid {
+        gap: 0.25rem;
+        padding: 0.5rem;
+    }
+
+    .calendar-day {
+        padding: 0.25rem;
+        min-height: 80px;
+    }
+
+    .game-indicator {
+        padding: 0.25rem;
+    }
+
+    .home-indicator {
+        width: 14px;
+        height: 14px;
+    }
+
+    .calendar-day.today::before {
+        font-size: 0.6rem;
+        padding: 1px 4px;
+        top: -6px;
+    }
 } 
