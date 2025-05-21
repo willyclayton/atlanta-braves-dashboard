@@ -860,7 +860,8 @@ function generateGameDetails(game) {
                 })}
             </div>
             <div class="game-indicator ${isHome ? 'home' : ''}">
-                ${isHome ? 'vs ' : '@ '}${opponent.name}
+                <span>${isHome ? 'vs' : '@'}</span>
+                <span>${opponent.name}</span>
             </div>
         `;
     } catch (error) {
