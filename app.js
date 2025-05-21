@@ -709,58 +709,61 @@ async function updateSchedule() {
             `;
         }
 
-        // Add "Next Week" label
-        calendarHTML += '<div class="week-label">Next Week</div>';
-        
-        // Generate next week (Sunday to Saturday)
-        const nextWeekStart = new Date(startDate);
-        nextWeekStart.setDate(startDate.getDate() + 7);
-        
-        for (let i = 0; i < 7; i++) {
-            const currentDate = new Date(nextWeekStart);
-            currentDate.setDate(nextWeekStart.getDate() + i);
-            const dateStr = currentDate.toDateString();
-            const game = data.dates
-                .flatMap(date => date.games)
-                .find(game => new Date(game.gameDate).toDateString() === dateStr);
+        // Only show next week if not on mobile
+        if (!isMobile) {
+            // Add "Next Week" label
+            calendarHTML += '<div class="week-label">Next Week</div>';
+            
+            // Generate next week (Sunday to Saturday)
+            const nextWeekStart = new Date(startDate);
+            nextWeekStart.setDate(startDate.getDate() + 7);
+            
+            for (let i = 0; i < 7; i++) {
+                const currentDate = new Date(nextWeekStart);
+                currentDate.setDate(nextWeekStart.getDate() + i);
+                const dateStr = currentDate.toDateString();
+                const game = data.dates
+                    .flatMap(date => date.games)
+                    .find(game => new Date(game.gameDate).toDateString() === dateStr);
 
-            let dayClasses = ['calendar-day'];
-            if (game) dayClasses.push('has-game');
+                let dayClasses = ['calendar-day'];
+                if (game) dayClasses.push('has-game');
 
-            let gameHTML = '';
-            if (game) {
-                const gameDate = new Date(game.gameDate);
-                const isHome = game.teams.home.team.id === BRAVES_ID;
-                const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-                
-                gameHTML = `
-                    <div class="game-details">
-                        <div class="game-time">
-                            ${gameDate.toLocaleTimeString('en-US', { 
-                                hour: 'numeric',
-                                minute: '2-digit',
-                                hour12: true
-                            })}
+                let gameHTML = '';
+                if (game) {
+                    const gameDate = new Date(game.gameDate);
+                    const isHome = game.teams.home.team.id === BRAVES_ID;
+                    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+                    
+                    gameHTML = `
+                        <div class="game-details">
+                            <div class="game-time">
+                                ${gameDate.toLocaleTimeString('en-US', { 
+                                    hour: 'numeric',
+                                    minute: '2-digit',
+                                    hour12: true
+                                })}
+                            </div>
+                            <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                                ${isHome ? 
+                                    `<span class="home-indicator"></span> vs ${opponent.name}` : 
+                                    `@ ${opponent.name}`
+                                }
+                            </div>
                         </div>
-                        <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                            ${isHome ? 
-                                `<span class="home-indicator"></span> vs ${opponent.name}` : 
-                                `@ ${opponent.name}`
-                            }
+                    `;
+                }
+
+                calendarHTML += `
+                    <div class="${dayClasses.join(' ')}">
+                        <div class="day-header">
+                            <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                            <span class="day-number">${currentDate.getDate()}</span>
                         </div>
+                        ${gameHTML}
                     </div>
                 `;
             }
-
-            calendarHTML += `
-                <div class="${dayClasses.join(' ')}">
-                    <div class="day-header">
-                        <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                        <span class="day-number">${currentDate.getDate()}</span>
-                    </div>
-                    ${gameHTML}
-                </div>
-            `;
         }
 
         gamesContainer.innerHTML = calendarHTML;
