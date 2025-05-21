@@ -301,13 +301,12 @@ footer {
     }
 
     h2 {
-        font-size: 1.25rem;
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
     }
 
     .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
+        gap: 0.75rem;
     }
 
     .stat-card {
@@ -316,7 +315,7 @@ footer {
 
     .stat-card h3 {
         font-size: 0.85rem;
-        margin-bottom: 0.15rem;
+        margin-bottom: 0.25rem;
     }
 
     .stat-card p {
@@ -324,19 +323,91 @@ footer {
     }
 
     .schedule-grid {
-        padding: 0.75rem;
         gap: 0.5rem;
-    }
-
-    .week-label {
-        font-size: 0.9rem;
-        margin: 0.5rem 0 0.25rem;
-        padding-bottom: 0.25rem;
     }
 
     .calendar-day {
         padding: 0.5rem;
         min-height: 90px;
+    }
+
+    .position-section {
+        margin-bottom: 0.75rem;
+    }
+
+    .position-header {
+        padding: 0.6rem 0.75rem;
+    }
+
+    .player-card {
+        margin-bottom: 0.5rem;
+    }
+
+    .player-details.expanded {
+        padding: 0.75rem;
+    }
+
+    .player-bio {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .detailed-stats {
+        padding: 0.5rem;
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        margin: 1rem auto;
+    }
+
+    .dashboard-section {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+        border-radius: 6px;
+    }
+
+    h2 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .stats-grid {
+        gap: 0.5rem;
+    }
+
+    .stat-card {
+        padding: 0.5rem;
+    }
+
+    .stat-card h3 {
+        font-size: 0.75rem;
+    }
+
+    .stat-card p {
+        font-size: 1rem;
+    }
+
+    /* Calendar optimizations */
+    .schedule-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.35rem;
+    }
+
+    .week-label {
+        width: 100%;
+        font-size: 0.9rem;
+        margin: 0.75rem 0 0.35rem;
+        padding-bottom: 0.35rem;
+    }
+
+    .calendar-day {
+        flex: 1 1 calc(100% / 7 - 0.35rem);
+        min-height: 70px;
+        padding: 0.35rem;
     }
 
     .day-header {
@@ -362,171 +433,151 @@ footer {
         padding: 0.25rem;
     }
 
-    .home-indicator {
-        width: 12px;
-        height: 12px;
-    }
-
-    .calendar-day.today::before {
-        font-size: 0.6rem;
-        padding: 1px 6px;
-        top: -8px;
-    }
-
-    .roster-container {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .roster-sidebar {
-        width: 100%;
-        max-width: none;
+    /* Roster optimizations */
+    .position-section {
         margin-bottom: 0.5rem;
     }
 
-    .roster-content {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    .position-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 0.5rem;
-    }
-
-    .player-details {
-        max-height: none;
-        overflow: visible;
-        margin-top: 0.5rem;
-    }
-
-    .player-details.expanded {
-        max-height: none;
-        padding: 0.75rem;
-    }
-
-    .player-list {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 0.75rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .schedule-grid {
-        grid-template-columns: repeat(7, 1fr);
+    .position-header {
         padding: 0.5rem;
-        gap: 0.25rem;
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
     }
 
-    .calendar-day {
-        padding: 0.25rem;
-        min-height: 70px;
+    .position-title {
+        font-size: 0.85rem;
     }
 
-    .game-indicator {
-        padding: 0.15rem;
-        font-size: 0.7rem;
+    .position-number {
+        width: 20px;
+        height: 20px;
+        font-size: 0.75rem;
     }
 
-    .home-indicator {
-        width: 10px;
-        height: 10px;
+    .position-aggregate-stats {
+        padding: 0.25rem 0;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    .aggregate-stat {
+        min-width: 60px;
     }
 
     .player-card {
-        padding: 0.75rem;
+        margin-bottom: 0.35rem;
     }
 
-    .player-stats {
-        flex-wrap: wrap;
-        gap: 0.25rem;
-    }
-
-    .stat {
-        font-size: 0.75rem;
-        padding: 0.15rem 0.3rem;
-    }
-
-    .player-name {
-        font-size: 0.9rem;
+    .player-card-header {
+        padding: 0.5rem;
+        gap: 0.5rem;
     }
 
     .player-number {
-        font-size: 0.8rem;
-        padding: 0.15rem 0.3rem;
-    }
-
-    .roster-sidebar {
-        padding: 0.5rem;
-    }
-
-    .position-button {
-        padding: 0.5rem;
-    }
-
-    .position-name {
+        min-width: 25px;
+        height: 25px;
         font-size: 0.8rem;
     }
 
-    .position-count {
-        font-size: 0.7rem;
-        padding: 0.1rem 0.3rem;
+    .player-name {
+        font-size: 0.85rem;
     }
 
-    nav {
-        padding: 0.25rem;
+    .player-quick-stats {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
+        gap: 1rem;
     }
 
-    .nav-links {
-        gap: 0.75rem;
-    }
-
-    #braves-logo {
-        height: 35px;
-    }
-
-    .position-list {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 0.35rem;
-    }
-
-    .player-list {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
+    .quick-stat {
+        min-width: auto;
     }
 
     .player-details.expanded {
         padding: 0.5rem;
     }
 
+    .player-bio {
+        padding: 0.5rem;
+        gap: 0.35rem;
+        flex-direction: column;
+    }
+
+    .bio-item {
+        justify-content: space-between;
+    }
+
+    .bio-label {
+        font-size: 0.75rem;
+    }
+
+    .bio-value {
+        font-size: 0.8rem;
+    }
+
+    .detailed-stats {
+        padding: 0.35rem;
+        gap: 0.35rem;
+        flex-wrap: wrap;
+    }
+
+    .detailed-stat {
+        flex: 1 1 calc(33.33% - 0.35rem);
+        min-width: 60px;
+        padding: 0.35rem;
+    }
+
+    .detailed-stat-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .detailed-stat-value {
+        font-size: 0.85rem;
+    }
+}
+
+/* Additional optimizations for very small screens */
+@media (max-width: 360px) {
+    .dashboard-section {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
     .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
         gap: 0.35rem;
     }
 
-    .stat-card {
-        padding: 0.5rem;
+    .calendar-day {
+        min-height: 60px;
     }
 
-    .stat-card h3 {
-        font-size: 0.75rem;
-        margin-bottom: 0.1rem;
+    .position-aggregate-stats {
+        gap: 0.5rem;
     }
 
-    .stat-card p {
-        font-size: 1rem;
+    .detailed-stat {
+        flex: 1 1 calc(50% - 0.35rem);
     }
 
-    .dashboard-section {
-        padding: 0.75rem;
-        margin-bottom: 0.75rem;
+    .player-quick-stats {
+        flex-direction: column;
+        gap: 0.25rem;
+        align-items: flex-start;
+    }
+}
+
+/* Optimize scrolling and touch interactions */
+@supports (-webkit-touch-callout: none) {
+    .player-details, 
+    .position-section, 
+    .calendar-day {
+        -webkit-overflow-scrolling: touch;
     }
 
-    h2 {
-        font-size: 1.1rem;
-        margin-bottom: 0.75rem;
+    .position-header,
+    .player-card-header {
+        -webkit-tap-highlight-color: transparent;
     }
 }
 
@@ -547,11 +598,6 @@ footer {
     .player-details {
         border-radius: 0;
     }
-}
-
-/* Fix for iOS momentum scrolling */
-.player-details, .roster-sidebar {
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Loading State Styles */
@@ -607,12 +653,10 @@ footer {
 
 /* Update player card styles to accommodate stats */
 .player-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem;
-    border: 1px solid #eee;
+    border: 1px solid rgba(19, 39, 79, 0.1);
     border-radius: 8px;
+    margin-bottom: 0.5rem;
+    overflow: hidden;
     transition: all 0.3s ease;
     background: white;
 }
@@ -623,255 +667,275 @@ footer {
     border-color: var(--braves-navy);
 }
 
-.player-number {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--braves-red);
-    min-width: 40px;
-    padding-top: 0.25rem;
+.player-card-header {
+    padding: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    background: rgba(19, 39, 79, 0.02);
+    transition: background-color 0.2s ease;
 }
 
-.player-info {
-    flex-grow: 1;
+.player-basic-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-number {
+    color: var(--braves-red);
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(206, 17, 65, 0.1);
+    border-radius: 50%;
+}
+
+.player-name-position {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 
 .player-name {
     font-weight: 500;
+    color: var(--braves-navy);
+    font-size: 1rem;
+}
+
+.specific-position {
+    font-size: 0.85rem;
+    color: #666;
+    background: #f0f0f0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 12px;
+}
+
+.player-quick-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    padding: 0.35rem 0.75rem;
+    border-radius: 16px;
+    background: rgba(19, 39, 79, 0.05);
+}
+
+.quick-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.player-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+    background: white;
+}
+
+.player-card.expanded .player-details {
+    max-height: 500px;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(19, 39, 79, 0.1);
+}
+
+/* Player Bio Styles */
+.player-bio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(19, 39, 79, 0.02);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.bio-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.bio-label {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.bio-value {
+    color: var(--braves-navy);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Update Detailed Stats Layout */
+.detailed-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background: white;
+    border-radius: 8px;
+}
+
+.detailed-stats.batting-stats {
+    justify-content: space-between;
+}
+
+.detailed-stat {
+    flex: 0 1 auto;
+    min-width: 80px;
+    background: rgba(19, 39, 79, 0.02);
+    padding: 0.75rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid rgba(19, 39, 79, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.detailed-stat:hover {
+    transform: translateY(-2px);
+    background: rgba(19, 39, 79, 0.04);
+}
+
+.detailed-stat-label {
+    font-size: 0.75rem;
+    color: #666;
     margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detailed-stat-value {
+    font-size: 1.1rem;
+    font-weight: 600;
     color: var(--braves-navy);
 }
 
-.player-status {
-    font-size: 0.875rem;
-    color: var(--braves-red);
-    margin-bottom: 0.25rem;
-}
-
+/* Mobile Adjustments */
 @media (max-width: 768px) {
-    .player-stats {
-        flex-direction: row;
-        flex-wrap: wrap;
+    .player-bio {
+        padding: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .bio-label {
+        font-size: 0.8rem;
+    }
+
+    .bio-value {
+        font-size: 0.85rem;
+    }
+
+    .detailed-stats {
+        padding: 0.5rem;
         gap: 0.5rem;
     }
 
-    .stat {
-        font-size: 0.75rem;
+    .detailed-stat {
+        min-width: 70px;
+        padding: 0.5rem;
+    }
+
+    .detailed-stat-value {
+        font-size: 1rem;
+    }
+
+    .player-card-header {
+        padding: 0.5rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .player-number {
+        min-width: 30px;
+        height: 30px;
+        font-size: 0.9rem;
+    }
+
+    .player-name {
+        font-size: 0.95rem;
+    }
+
+    .specific-position {
+        font-size: 0.8rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .player-quick-stats {
+        padding: 0.25rem 0.5rem;
+        gap: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .quick-stat {
+        min-width: 70px;
     }
 }
 
-/* Error State Styles */
-.error-message {
-    color: var(--braves-red);
-    text-align: center;
-    padding: 1rem;
-    font-weight: 500;
-    background-color: rgba(206, 17, 65, 0.1);
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-/* Loading Text Animation */
-@keyframes ellipsis {
-    0% { content: ''; }
-    25% { content: '.'; }
-    50% { content: '..'; }
-    75% { content: '...'; }
-}
-
-.stat-card p:contains('Loading') {
-    position: relative;
-}
-
-.stat-card p:contains('Loading')::after {
-    content: '';
-    position: absolute;
-    display: inline-block;
-    animation: ellipsis 1.5s infinite;
-    margin-left: 2px;
-}
-
-/* Season Note Styles */
-.stat-card.note {
-    grid-column: 1 / -1;
-    background-color: var(--braves-navy);
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.stat-card.note.error {
-    background-color: var(--braves-red);
-}
-
-.season-note {
-    font-size: 1.1rem !important;
-    color: white !important;
-    font-weight: 500 !important;
-    margin: 0 !important;
-    padding: 0.5rem !important;
-}
-
-/* Year Selector Styles */
-.year-selector {
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.year-selector label {
-    color: var(--braves-navy);
-    font-weight: 500;
-}
-
-.season-dropdown {
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--braves-navy);
-    border-radius: 4px;
-    background-color: white;
-    color: var(--braves-navy);
-    font-size: 1rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.season-dropdown:hover {
-    border-color: var(--braves-red);
-}
-
-.season-dropdown:focus {
-    outline: none;
-    border-color: var(--braves-red);
-    box-shadow: 0 0 0 2px rgba(206, 17, 65, 0.2);
-}
-
-/* Roster Container Layout */
-.roster-container {
-    display: flex;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.roster-sidebar {
-    width: 250px;
-    flex-shrink: 0;
-}
-
-.roster-content {
-    flex-grow: 1;
-    max-width: 800px;
-}
-
-/* Position List Styles */
-.position-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: var(--card-shadow);
-}
-
-.position-item {
-    border-bottom: 1px solid #eee;
-}
-
-.position-item:last-child {
-    border-bottom: none;
-}
-
-.position-button {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    font-size: 1rem;
-    color: var(--text-dark);
-    transition: all 0.3s ease;
-}
-
-.position-button:hover {
-    background: #f5f5f5;
-}
-
-.position-button.active {
-    background: var(--braves-navy);
-    color: white;
-}
-
-.position-number {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--braves-red);
-    color: white;
-    border-radius: 50%;
-    font-weight: bold;
-}
-
-.position-name {
-    flex-grow: 1;
-}
-
-.position-count {
-    background: var(--background-light);
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-size: 0.875rem;
-    color: var(--text-dark);
-}
-
-.position-button.active .position-count {
-    background: var(--braves-red);
-    color: white;
-}
-
-/* Player Details Styles */
-.player-details {
-    background: white;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: var(--card-shadow);
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease-out;
-}
-
-.player-details.expanded {
-    opacity: 1;
-    max-height: 2000px;
-}
-
-.player-details h3 {
-    color: var(--braves-navy);
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
-
-.player-list {
-    display: grid;
-    gap: 1rem;
-}
-
-@media (max-width: 768px) {
-    .roster-container {
+@media (max-width: 480px) {
+    .player-bio {
+        padding: 0.5rem;
+        gap: 0.5rem;
         flex-direction: column;
     }
 
-    .roster-sidebar {
-        width: 100%;
+    .bio-item {
+        justify-content: space-between;
     }
 
-    .roster-content {
-        margin-top: 1rem;
+    .detailed-stats {
+        padding: 0.35rem;
+        gap: 0.35rem;
+    }
+
+    .detailed-stat {
+        min-width: 60px;
+        padding: 0.35rem;
+    }
+
+    .detailed-stat-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .detailed-stat-value {
+        font-size: 0.9rem;
+    }
+
+    .player-card-header {
+        grid-template-columns: auto 1fr;
+    }
+
+    .player-quick-stats {
+        grid-column: 1 / -1;
+        margin-top: 0.5rem;
+        justify-content: space-between;
+    }
+
+    .quick-stat {
+        min-width: auto;
+    }
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+    .position-header,
+    .player-card-header {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .player-list {
+        -webkit-overflow-scrolling: touch;
     }
 }
 
@@ -924,5 +988,291 @@ footer {
         font-size: 0.6rem;
         padding: 1px 4px;
         top: -6px;
+    }
+}
+
+/* Select Message Styles */
+.select-message {
+    text-align: center;
+    color: var(--text-dark);
+    padding: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Custom Select Styles */
+.position-dropdown {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 0.65em auto;
+    padding-right: 2.5rem;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    .select-message {
+        padding: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .position-dropdown {
+        background-position: right 0.75rem center;
+        padding-right: 2rem;
+    }
+
+    .player-card {
+        margin-bottom: 0.5rem;
+    }
+
+    .player-card:last-child {
+        margin-bottom: 0;
+    }
+
+    .player-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .select-message {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .position-dropdown {
+        background-position: right 0.5rem center;
+        padding-right: 1.75rem;
+    }
+
+    .player-card {
+        margin-bottom: 0.35rem;
+    }
+
+    .player-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+    }
+
+    .stat {
+        padding: 0.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.1rem;
+    }
+
+    .stat-value {
+        font-size: 0.8rem;
+    }
+
+    .expand-indicator {
+        font-size: 1rem;
+    }
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+    .position-dropdown {
+        background-color: var(--braves-navy);
+        color: white;
+        border: none;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .player-card {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .player-details {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+.position-section {
+    background: white;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.position-header {
+    background: var(--braves-navy);
+    color: white;
+    padding: 0.75rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.position-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.position-aggregate-stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 0.9rem;
+    margin: 0 auto;
+}
+
+.aggregate-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 100px;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.player-list {
+    background: #f8f9fa;
+}
+
+.player-card {
+    border-bottom: 1px solid rgba(19, 39, 79, 0.1);
+    background: white;
+}
+
+.player-card:last-child {
+    border-bottom: none;
+}
+
+.player-card-header {
+    padding: 0.6rem 1rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.player-card-header:hover {
+    background: rgba(19, 39, 79, 0.02);
+}
+
+.player-basic-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 1rem;
+}
+
+.player-number {
+    color: var(--braves-red);
+    font-weight: 500;
+    font-size: 0.9rem;
+    min-width: 30px;
+}
+
+.player-name-position {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.player-name {
+    font-weight: 500;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.specific-position {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.player-quick-stats {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.quick-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 80px;
+}
+
+.expand-indicator {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+    margin-left: auto;
+}
+
+.position-section.expanded .expand-indicator {
+    transform: rotate(180deg);
+}
+
+.position-section.expanded .player-list {
+    display: block;
+}
+
+.player-list {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .position-header {
+        padding: 0.6rem 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .position-title {
+        font-size: 0.9rem;
+    }
+
+    .position-aggregate-stats {
+        gap: 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .aggregate-stat {
+        min-width: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    .position-header {
+        padding: 0.5rem;
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .position-title {
+        justify-content: center;
+    }
+
+    .position-aggregate-stats {
+        gap: 1rem;
+        padding: 0.25rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .aggregate-stat {
+        min-width: 70px;
+        font-size: 0.8rem;
+    }
+
+    .expand-indicator {
+        display: none;
     }
 } 
