@@ -2,18 +2,22 @@
 const MLB_API = 'https://statsapi.mlb.com/api/v1';
 const CORS_PROXIES = [
     'https://corsproxy.io/?',
-    'https://api.allorigins.win/raw?url='
+    'https://api.allorigins.win/raw?url=',
+    'https://cors-anywhere.herokuapp.com/'  // Added backup proxy
 ];
 let currentProxyIndex = 0;
 
 // Function to get API base URL with fallback proxies
 function getApiBaseUrl() {
-    return `${CORS_PROXIES[currentProxyIndex]}${encodeURIComponent(MLB_API)}`;
+    const baseUrl = `${CORS_PROXIES[currentProxyIndex]}${encodeURIComponent(MLB_API)}`;
+    console.log('Using API base URL:', baseUrl);
+    return baseUrl;
 }
 
 // Function to switch to next proxy if current one fails
-function switchToNextProxy() {
+async function switchToNextProxy() {
     currentProxyIndex = (currentProxyIndex + 1) % CORS_PROXIES.length;
+    console.log(`Switching to proxy ${currentProxyIndex + 1}/${CORS_PROXIES.length}`);
     return getApiBaseUrl();
 }
 
@@ -21,34 +25,37 @@ function switchToNextProxy() {
 async function fetchMLBData(endpoint) {
     let attempts = 0;
     const maxAttempts = CORS_PROXIES.length;
-
+    
     while (attempts < maxAttempts) {
         try {
             const API_BASE = getApiBaseUrl();
-            console.log(`Attempting to fetch with proxy ${currentProxyIndex + 1}/${maxAttempts}`);
+            console.log(`Attempting to fetch ${endpoint} with proxy ${currentProxyIndex + 1}/${maxAttempts}`);
             
             const response = await fetch(`${API_BASE}/${endpoint}`, {
                 method: 'GET',
                 headers: {
                     'Accept': 'application/json',
                     'Origin': window.location.origin
-                }
+                },
+                mode: 'cors'
             });
             
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             
-            return await response.json();
+            const data = await response.json();
+            console.log(`Successfully fetched data from ${endpoint}`);
+            return data;
         } catch (error) {
             console.error(`Proxy ${currentProxyIndex + 1} failed:`, error);
             attempts++;
             
             if (attempts < maxAttempts) {
                 console.log('Switching to next proxy...');
-                switchToNextProxy();
+                await switchToNextProxy();
             } else {
-                throw new Error('All proxies failed to fetch data');
+                throw new Error(`All proxies failed to fetch data: ${error.message}`);
             }
         }
     }
@@ -733,137 +740,175 @@ function updateFieldPositions(playersByPosition) {
     });
 }
 
-// Update schedule
+// Update schedule with better error handling
 async function updateSchedule() {
+    const gamesContainer = document.getElementById('upcoming-games');
+    
     try {
-        const data = await fetchMLBData(ENDPOINTS.schedule);
-        const gamesContainer = document.getElementById('upcoming-games');
+        // Show loading state
+        gamesContainer.innerHTML = '<div class="loading">Loading schedule...</div>';
         
-        if (!data.dates || !data.dates.length) {
-            gamesContainer.innerHTML = '<p class="error-message">No schedule data available</p>';
+        console.log('Fetching schedule data...');
+        const data = await fetchMLBData(ENDPOINTS.schedule);
+        console.log('Schedule data received:', data);
+        
+        if (!data || !data.dates) {
+            throw new Error('Invalid schedule data format received');
+        }
+        
+        if (!data.dates.length) {
+            gamesContainer.innerHTML = '<p class="error-message">No games scheduled at this time</p>';
             return;
         }
 
         // Get current date and find the start of the current week (Sunday)
         const today = new Date();
         today.setHours(0, 0, 0, 0);
+        console.log('Current date:', today);
 
         // Find the previous Sunday
         const startDate = new Date(today);
         startDate.setDate(today.getDate() - today.getDay());
+        console.log('Start date (Sunday):', startDate);
 
         // Show two weeks of schedule
-        const firstWeekHTML = generateCalendarWeek(data, startDate, today);
+        console.log('Generating calendar weeks...');
         const nextWeekStart = new Date(startDate);
         nextWeekStart.setDate(startDate.getDate() + 7);
-        const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today);
         
-        gamesContainer.innerHTML = firstWeekHTML + secondWeekHTML;
+        const calendar = document.createElement('div');
+        calendar.className = 'schedule-grid';
+        calendar.innerHTML = generateCalendarWeek(data, startDate, today) + 
+                           generateCalendarWeek(data, nextWeekStart, today);
+        
+        // Clear loading state and update container
+        gamesContainer.innerHTML = '';
+        gamesContainer.appendChild(calendar);
+        
+        console.log('Schedule update complete');
     } catch (error) {
         console.error('Error updating schedule:', error);
-        document.getElementById('upcoming-games').innerHTML = 
-            '<p class="error-message">Error loading schedule data</p>';
+        gamesContainer.innerHTML = `
+            <div class="error-message">
+                <p>Unable to load schedule data</p>
+                <button onclick="updateSchedule()" class="retry-button">Retry</button>
+            </div>
+        `;
     }
 }
 
 // Helper function to generate a week of calendar
 function generateCalendarWeek(data, startDate, today) {
-    let calendarHTML = '';
-    
-    // Add week label only for desktop
-    if (!isMobile) {
+    try {
+        console.log('Generating calendar week for:', startDate);
+        let calendarHTML = '';
+        
+        // Add week label
         const isCurrentWeek = startDate.getTime() <= today.getTime() && 
             startDate.getTime() + (7 * 24 * 60 * 60 * 1000) > today.getTime();
         calendarHTML += `<div class="week-label">${isCurrentWeek ? 'This Week' : 'Next Week'}</div>`;
-    }
-    
-    // Generate all seven days of the week
-    for (let i = 0; i < 7; i++) {
-        const currentDate = new Date(startDate);
-        currentDate.setDate(startDate.getDate() + i);
-        const dateStr = currentDate.toDateString();
-        const game = findGameForDate(data, dateStr);
-        const isToday = currentDate.toDateString() === today.toDateString();
         
-        calendarHTML += generateCalendarDay(currentDate, game, isToday);
+        // Generate all seven days of the week
+        for (let i = 0; i < 7; i++) {
+            const currentDate = new Date(startDate);
+            currentDate.setDate(startDate.getDate() + i);
+            const dateStr = currentDate.toDateString();
+            console.log('Processing date:', dateStr);
+            
+            const game = findGameForDate(data, dateStr);
+            const isToday = currentDate.toDateString() === today.toDateString();
+            
+            calendarHTML += generateCalendarDay(currentDate, game, isToday);
+        }
+        
+        return calendarHTML;
+    } catch (error) {
+        console.error('Error in generateCalendarWeek:', error);
+        throw error;
     }
-    
-    return calendarHTML;
 }
 
 // Helper function to find a game for a specific date
 function findGameForDate(data, dateStr) {
-    return data.dates
-        .flatMap(date => date.games)
-        .find(game => new Date(game.gameDate).toDateString() === dateStr);
+    try {
+        if (!data.dates) {
+            console.log('No dates array in data:', data);
+            return null;
+        }
+        
+        const game = data.dates
+            .flatMap(date => {
+                console.log('Processing date:', date.date);
+                return date.games || [];
+            })
+            .find(game => {
+                const gameDate = new Date(game.gameDate).toDateString();
+                console.log('Comparing dates:', { gameDate, dateStr });
+                return gameDate === dateStr;
+            });
+            
+        return game;
+    } catch (error) {
+        console.error('Error in findGameForDate:', error);
+        return null;
+    }
 }
 
 // Helper function to generate a calendar day
 function generateCalendarDay(date, game, isToday) {
-    const dayClasses = ['calendar-day'];
-    if (isToday) dayClasses.push('today');
-    if (game) dayClasses.push('has-game');
+    try {
+        const dayClasses = ['calendar-day'];
+        if (isToday) dayClasses.push('today');
+        if (game) dayClasses.push('has-game');
 
-    // Simplified mobile view
-    if (isMobile) {
         return `
             <div class="${dayClasses.join(' ')}">
                 <div class="day-header">
+                    <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
                     <span class="day-number">${date.getDate()}</span>
                 </div>
-                ${game ? generateGameIndicator(game) : ''}
+                ${game ? generateGameDetails(game) : ''}
             </div>
         `;
+    } catch (error) {
+        console.error('Error in generateCalendarDay:', error);
+        return '<div class="calendar-day"><div class="error">Error generating day</div></div>';
     }
-
-    // Desktop view
-    return `
-        <div class="${dayClasses.join(' ')}">
-            <div class="day-header">
-                <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                <span class="day-number">${date.getDate()}</span>
-            </div>
-            ${game ? generateGameDetails(game) : ''}
-        </div>
-    `;
 }
 
-// Helper function to generate game indicator (mobile)
-function generateGameIndicator(game) {
-    const isHome = game.teams.home.team.id === BRAVES_ID;
-    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-    const opponentAbbr = opponent.teamName.replace(/\s/g, '').substring(0, 3).toUpperCase();
-    
-    return `
-        <div class="game-indicator ${isHome ? 'home' : 'away'}">
-            ${isHome ? 'v' : '@'}${opponentAbbr}
-        </div>
-    `;
-}
-
-// Helper function to generate full game details (desktop)
+// Helper function to generate game details
 function generateGameDetails(game) {
-    const gameDate = new Date(game.gameDate);
-    const isHome = game.teams.home.team.id === BRAVES_ID;
-    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-    
-    return `
-        <div class="game-details">
-            <div class="game-time">
-                ${gameDate.toLocaleTimeString('en-US', { 
-                    hour: 'numeric',
-                    minute: '2-digit',
-                    hour12: true
-                })}
+    try {
+        if (!game || !game.gameDate) {
+            console.error('Invalid game data:', game);
+            return '';
+        }
+
+        const gameDate = new Date(game.gameDate);
+        const isHome = game.teams.home.team.id === BRAVES_ID;
+        const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+        
+        return `
+            <div class="game-details">
+                <div class="game-time">
+                    ${gameDate.toLocaleTimeString('en-US', { 
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true
+                    })}
+                </div>
+                <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                    ${isHome ? 
+                        `<span class="home-indicator"></span>vs ${opponent.name}` : 
+                        `@ ${opponent.name}`
+                    }
+                </div>
             </div>
-            <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                ${isHome ? 
-                    `<span class="home-indicator"></span>vs ${opponent.name}` : 
-                    `@ ${opponent.name}`
-                }
-            </div>
-        </div>
-    `;
+        `;
+    } catch (error) {
+        console.error('Error in generateGameDetails:', error);
+        return '<div class="error">Error generating game details</div>';
+    }
 }
 
 // Update the roster view toggle to be more efficient
