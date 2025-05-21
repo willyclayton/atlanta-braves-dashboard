@@ -738,138 +738,154 @@ async function updateSchedule() {
             return;
         }
 
-        // Get current date and find the start of the current week (Sunday)
+        // Get current date
         const today = new Date();
-        today.setHours(0, 0, 0, 0);  // Set to start of day for comparison
-        
-        // Find the Sunday of the current week
+        today.setHours(0, 0, 0, 0);
+
+        // On mobile, only show current week starting from today
         const startDate = new Date(today);
-        startDate.setDate(today.getDate() - today.getDay());
-
-        let calendarHTML = '';
-        
-        // Add "This Week" label
-        calendarHTML += '<div class="week-label">This Week</div>';
-        
-        // Generate first week (Sunday to Saturday)
-        for (let i = 0; i < 7; i++) {
-            const currentDate = new Date(startDate);
-            currentDate.setDate(startDate.getDate() + i);
-            const dateStr = currentDate.toDateString();
-            
-            // Only look for games for current and future dates
-            const isPastDate = currentDate < today;
-            const game = !isPastDate ? data.dates
-                .flatMap(date => date.games)
-                .find(game => new Date(game.gameDate).toDateString() === dateStr) : null;
-
-            const isToday = currentDate.toDateString() === today.toDateString();
-            
-            let dayClasses = ['calendar-day'];
-            if (isToday) dayClasses.push('today');
-            if (game) dayClasses.push('has-game');
-            if (isPastDate) dayClasses.push('past-date');
-
-            let gameHTML = '';
-            if (game && !isPastDate) {
-                const gameDate = new Date(game.gameDate);
-                const isHome = game.teams.home.team.id === BRAVES_ID;
-                const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-                
-                gameHTML = `
-                    <div class="game-details">
-                        <div class="game-time">
-                            ${gameDate.toLocaleTimeString('en-US', { 
-                                hour: 'numeric',
-                                minute: '2-digit',
-                                hour12: true
-                            })}
-                        </div>
-                        <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                            ${isHome ? 
-                                `<span class="home-indicator"></span> vs ${opponent.name}` : 
-                                `@ ${opponent.name}`
-                            }
-                        </div>
-                    </div>
-                `;
-            }
-
-            calendarHTML += `
-                <div class="${dayClasses.join(' ')}">
-                    <div class="day-header">
-                        <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                        <span class="day-number">${currentDate.getDate()}</span>
-                    </div>
-                    ${gameHTML}
-                </div>
-            `;
-        }
-
-        // Only show next week if not on mobile
-        if (!isMobile) {
-            // Add "Next Week" label
-            calendarHTML += '<div class="week-label">Next Week</div>';
-            
-            // Generate next week (Sunday to Saturday)
+        if (isMobile) {
+            // Show next 7 days from today
+            const calendarHTML = generateCalendarWeek(data, startDate, today, true);
+            gamesContainer.innerHTML = calendarHTML;
+        } else {
+            // Show two weeks for desktop
+            const firstWeekHTML = generateCalendarWeek(data, startDate, today, true);
             const nextWeekStart = new Date(startDate);
             nextWeekStart.setDate(startDate.getDate() + 7);
+            const secondWeekHTML = generateCalendarWeek(data, nextWeekStart, today, false);
             
-            for (let i = 0; i < 7; i++) {
-                const currentDate = new Date(nextWeekStart);
-                currentDate.setDate(nextWeekStart.getDate() + i);
-                const dateStr = currentDate.toDateString();
-                const game = data.dates
-                    .flatMap(date => date.games)
-                    .find(game => new Date(game.gameDate).toDateString() === dateStr);
-
-                let dayClasses = ['calendar-day'];
-                if (game) dayClasses.push('has-game');
-
-                let gameHTML = '';
-                if (game) {
-                    const gameDate = new Date(game.gameDate);
-                    const isHome = game.teams.home.team.id === BRAVES_ID;
-                    const opponent = isHome ? game.teams.away.team : game.teams.home.team;
-                    
-                    gameHTML = `
-                        <div class="game-details">
-                            <div class="game-time">
-                                ${gameDate.toLocaleTimeString('en-US', { 
-                                    hour: 'numeric',
-                                    minute: '2-digit',
-                                    hour12: true
-                                })}
-                            </div>
-                            <div class="game-indicator ${isHome ? 'home' : 'away'}">
-                                ${isHome ? 
-                                    `<span class="home-indicator"></span> vs ${opponent.name}` : 
-                                    `@ ${opponent.name}`
-                                }
-                            </div>
-                        </div>
-                    `;
-                }
-
-                calendarHTML += `
-                    <div class="${dayClasses.join(' ')}">
-                        <div class="day-header">
-                            <span class="day-name">${currentDate.toLocaleDateString('en-US', { weekday: 'short' })}</span>
-                            <span class="day-number">${currentDate.getDate()}</span>
-                        </div>
-                        ${gameHTML}
-                    </div>
-                `;
-            }
+            gamesContainer.innerHTML = firstWeekHTML + secondWeekHTML;
         }
-
-        gamesContainer.innerHTML = calendarHTML;
     } catch (error) {
         console.error('Error updating schedule:', error);
         document.getElementById('upcoming-games').innerHTML = 
             '<p class="error-message">Error loading schedule data</p>';
     }
 }
+
+// Helper function to generate a week of calendar
+function generateCalendarWeek(data, startDate, today, isCurrentWeek) {
+    let calendarHTML = '';
+    
+    // Add week label
+    if (!isMobile) {
+        calendarHTML += `<div class="week-label">${isCurrentWeek ? 'This Week' : 'Next Week'}</div>`;
+    }
+    
+    // Generate days
+    for (let i = 0; i < 7; i++) {
+        const currentDate = new Date(startDate);
+        currentDate.setDate(startDate.getDate() + i);
+        
+        // Skip past dates on mobile
+        if (isMobile && currentDate < today) continue;
+        
+        const dateStr = currentDate.toDateString();
+        const isPastDate = currentDate < today;
+        const game = !isPastDate ? findGameForDate(data, dateStr) : null;
+        const isToday = currentDate.toDateString() === today.toDateString();
+        
+        calendarHTML += generateCalendarDay(currentDate, game, isToday, isPastDate);
+    }
+    
+    return calendarHTML;
+}
+
+// Helper function to find a game for a specific date
+function findGameForDate(data, dateStr) {
+    return data.dates
+        .flatMap(date => date.games)
+        .find(game => new Date(game.gameDate).toDateString() === dateStr);
+}
+
+// Helper function to generate a calendar day
+function generateCalendarDay(date, game, isToday, isPastDate) {
+    const dayClasses = ['calendar-day'];
+    if (isToday) dayClasses.push('today');
+    if (game) dayClasses.push('has-game');
+    if (isPastDate) dayClasses.push('past-date');
+
+    let gameHTML = '';
+    if (game && !isPastDate) {
+        const gameDate = new Date(game.gameDate);
+        const isHome = game.teams.home.team.id === BRAVES_ID;
+        const opponent = isHome ? game.teams.away.team : game.teams.home.team;
+        
+        gameHTML = `
+            <div class="game-details">
+                <div class="game-time">
+                    ${gameDate.toLocaleTimeString('en-US', { 
+                        hour: 'numeric',
+                        minute: '2-digit',
+                        hour12: true
+                    })}
+                </div>
+                <div class="game-indicator ${isHome ? 'home' : 'away'}">
+                    ${isHome ? 
+                        `<span class="home-indicator"></span>${isMobile ? opponent.teamName : opponent.name}` : 
+                        `@ ${isMobile ? opponent.teamName : opponent.name}`
+                    }
+                </div>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="${dayClasses.join(' ')}">
+            <div class="day-header">
+                <span class="day-name">${date.toLocaleDateString('en-US', { weekday: 'short' })}</span>
+                <span class="day-number">${date.getDate()}</span>
+            </div>
+            ${gameHTML}
+        </div>
+    `;
+}
+
+// Update the roster view toggle to be more efficient
+function updateRosterView() {
+    const container = document.getElementById('roster-container');
+    const data = currentRosterData;
+    
+    if (!data || !data.roster || !data.roster.length) {
+        container.innerHTML = '<p class="error-message">No roster data available</p>';
+        return;
+    }
+
+    // Add transition class before changing content
+    container.classList.add('view-transition');
+    
+    // Use requestAnimationFrame to ensure smooth transition
+    requestAnimationFrame(() => {
+        if (currentRosterView === 'position') {
+            updateRosterByPosition(data.roster, container);
+        } else {
+            updateRosterByName(data.roster, container);
+        }
+        
+        // Remove transition class after content change
+        setTimeout(() => {
+            container.classList.remove('view-transition');
+        }, 300);
+    });
+}
+
+// Update click handlers for roster view toggle
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!btn.classList.contains('active')) {
+                // Update toggle buttons
+                document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                // Update view with transition
+                currentRosterView = btn.dataset.view;
+                updateRosterView();
+            }
+        });
+    });
+});
 
 // Performance optimizations for mobile
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
