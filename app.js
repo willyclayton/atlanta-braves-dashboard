@@ -87,6 +87,7 @@ const POSITION_MAP = {
 let currentRosterData = null;
 let activePosition = null;
 let playerStats = new Map();
+let currentRosterView = 'position';
 
 // Helper function to calculate age
 function calculateAge(birthDate) {
@@ -293,266 +294,26 @@ async function updateRoster() {
             }
         });
 
-        // Group players by position
-        const playersByPosition = {};
-        data.roster.forEach(player => {
-            let position = player.position.name;
-            
-            // Group all outfielders together
-            if (position === 'Outfield' || position === 'Outfielder' || 
-                position === 'Left Fielder' || position === 'Center Fielder' || position === 'Right Fielder') {
-                position = 'Outfielders';
-            }
-            
-            if (!playersByPosition[position]) {
-                playersByPosition[position] = [];
-            }
-            playersByPosition[position].push({
-                ...player,
-                specificPosition: player.position.name // Store original position for display
-            });
-        });
+        if (currentRosterView === 'position') {
+            updateRosterByPosition(data.roster, rosterContainer);
+        } else {
+            updateRosterByName(data.roster, rosterContainer);
+        }
 
-        // Calculate position stats
-        const positionStats = {};
-        Object.entries(playersByPosition).forEach(([position, players]) => {
-            const stats = players.reduce((acc, player) => {
-                const playerStat = playerStats.get(player.person.id) || {};
-                if (position === 'Pitcher') {
-                    // Only include valid ERA values in the calculation
-                    const eraValue = parseFloat(playerStat.era);
-                    if (!isNaN(eraValue)) {
-                        acc.era.push(eraValue);
+        // Add click handlers for toggle buttons
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                if (!btn.classList.contains('active')) {
+                    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentRosterView = btn.dataset.view;
+                    if (currentRosterView === 'position') {
+                        updateRosterByPosition(data.roster, rosterContainer);
+                    } else {
+                        updateRosterByName(data.roster, rosterContainer);
                     }
-                    acc.wins += playerStat.wins || 0;
-                    acc.strikeOuts += playerStat.strikeOuts || 0;
-                } else {
-                    // Only include valid AVG values in the calculation
-                    const avgValue = parseFloat(playerStat.avg);
-                    if (!isNaN(avgValue)) {
-                        acc.avg.push(avgValue);
-                    }
-                    acc.hits += parseInt(playerStat.hits) || 0;
-                    acc.rbi += parseInt(playerStat.rbi) || 0;
-                }
-                return acc;
-            }, { era: [], avg: [], wins: 0, strikeOuts: 0, hits: 0, rbi: 0 });
-
-            if (position === 'Pitcher') {
-                const validEraValues = stats.era.filter(era => !isNaN(era));
-                const avgEra = validEraValues.length ? 
-                    (validEraValues.reduce((a, b) => a + b, 0) / validEraValues.length).toFixed(2) : '-.--';
-                positionStats[position] = {
-                    primary: avgEra,
-                    secondary: stats.wins,
-                    tertiary: stats.strikeOuts
-                };
-            } else {
-                const validAvgValues = stats.avg.filter(avg => !isNaN(avg));
-                const avgBa = validAvgValues.length ? 
-                    (validAvgValues.reduce((a, b) => a + b, 0) / validAvgValues.length).toFixed(3).replace(/^0/, '') : '.---';
-                positionStats[position] = {
-                    primary: avgBa,
-                    secondary: stats.hits,
-                    tertiary: stats.rbi
-                };
-            }
-        });
-
-        // Create position sections
-        const positions = [
-            'Pitcher', 'Catcher', 'First Base', 'Second Base', 'Third Base', 
-            'Shortstop', 'Outfielders'
-        ];
-
-        rosterContainer.innerHTML = positions.map(position => {
-            const players = playersByPosition[position] || [];
-            const stats = positionStats[position] || {};
-            const info = POSITION_MAP[position];
-            
-            return `
-                <div class="position-section" data-position="${position}">
-                    <div class="position-header">
-                        <div class="position-title">
-                            <span class="position-number">${info.number}</span>
-                            ${info.label} (${players.length})
-                        </div>
-                        <div class="position-aggregate-stats">
-                            ${position === 'Pitcher' ? `
-                                <span class="aggregate-stat">ERA ${stats.primary}</span>
-                                <span class="aggregate-stat">W ${stats.secondary}</span>
-                                <span class="aggregate-stat">SO ${stats.tertiary}</span>
-                            ` : `
-                                <span class="aggregate-stat">AVG ${stats.primary}</span>
-                                <span class="aggregate-stat">H ${stats.secondary}</span>
-                                <span class="aggregate-stat">RBI ${stats.tertiary}</span>
-                            `}
-                        </div>
-                        <span class="expand-indicator">▼</span>
-                    </div>
-                    <div class="player-list">
-                        ${players.map(player => {
-                            const stats = playerStats.get(player.person.id) || {};
-                            const isPitcher = position === 'Pitcher';
-                            const specificPosition = position === 'Outfielders' ? 
-                                `<span class="specific-position">${player.specificPosition}</span>` : '';
-                            
-                            return `
-                                <div class="player-card" data-player-id="${player.person.id}">
-                                    <div class="player-card-header">
-                                        <div class="player-basic-info">
-                                            <span class="player-number">#${player.jerseyNumber || '??'}</span>
-                                            <div class="player-name-position">
-                                                <span class="player-name">${player.person.fullName}</span>
-                                                ${specificPosition}
-                                            </div>
-                                        </div>
-                                        <div class="player-quick-stats">
-                                            ${isPitcher ? `
-                                                <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
-                                                <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
-                                            ` : `
-                                                <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
-                                                <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
-                                            `}
-                                        </div>
-                                    </div>
-                                    <div class="player-details">
-                                        ${player.status?.description ? 
-                                            `<div class="player-status">${player.status.description}</div>` : 
-                                            ''}
-                                        <div class="player-bio">
-                                            <div class="bio-item">
-                                                <span class="bio-label">Born:</span>
-                                                <span class="bio-value">${player.person.birthDate || 'N/A'}${player.person.birthDate ? ` (${calculateAge(player.person.birthDate)})` : ''}</span>
-                                            </div>
-                                            <div class="bio-item">
-                                                <span class="bio-label">From:</span>
-                                                <span class="bio-value">${player.person.birthCity || 'N/A'}, ${player.person.birthStateProvince || ''} ${player.person.birthCountry || ''}</span>
-                                            </div>
-                                            <div class="bio-item">
-                                                <span class="bio-label">Height:</span>
-                                                <span class="bio-value">${player.person.height || 'N/A'}</span>
-                                            </div>
-                                        </div>
-                                        <div class="detailed-stats ${isPitcher ? 'pitching-stats' : 'batting-stats'}">
-                                            ${isPitcher ? `
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">ERA</div>
-                                                    <div class="detailed-stat-value">${stats.era || '-.--'}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Wins</div>
-                                                    <div class="detailed-stat-value">${stats.wins || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Losses</div>
-                                                    <div class="detailed-stat-value">${stats.losses || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Strikeouts</div>
-                                                    <div class="detailed-stat-value">${stats.strikeOuts || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Saves</div>
-                                                    <div class="detailed-stat-value">${stats.saves || 0}</div>
-                                                </div>
-                                            ` : `
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">AVG</div>
-                                                    <div class="detailed-stat-value">${stats.avg || '.---'}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">HR</div>
-                                                    <div class="detailed-stat-value">${stats.homeRuns || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Hits</div>
-                                                    <div class="detailed-stat-value">${stats.hits || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">RBI</div>
-                                                    <div class="detailed-stat-value">${stats.rbi || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">Runs</div>
-                                                    <div class="detailed-stat-value">${stats.runs || 0}</div>
-                                                </div>
-                                                <div class="detailed-stat">
-                                                    <div class="detailed-stat-label">2B</div>
-                                                    <div class="detailed-stat-value">${stats.doubles || 0}</div>
-                                                </div>
-                                            `}
-                                        </div>
-                                    </div>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
-                </div>
-            `;
-        }).join('');
-
-        // Add click handlers
-        rosterContainer.querySelectorAll('.position-header').forEach(header => {
-            header.addEventListener('click', (e) => {
-                // Prevent double-firing on mobile
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const section = header.closest('.position-section');
-                const wasExpanded = section.classList.contains('expanded');
-                
-                // First collapse all sections
-                rosterContainer.querySelectorAll('.position-section').forEach(s => {
-                    s.classList.remove('expanded');
-                });
-                
-                // Then expand the clicked section if it wasn't already expanded
-                if (!wasExpanded) {
-                    section.classList.add('expanded');
                 }
             });
-
-            // Add touch feedback
-            header.addEventListener('touchstart', () => {
-                header.style.opacity = '0.8';
-            }, { passive: true });
-
-            header.addEventListener('touchend', () => {
-                header.style.opacity = '1';
-            }, { passive: true });
-        });
-
-        rosterContainer.querySelectorAll('.player-card-header').forEach(header => {
-            header.addEventListener('click', (e) => {
-                // Prevent double-firing on mobile
-                e.preventDefault();
-                e.stopPropagation();
-                
-                const card = header.closest('.player-card');
-                const wasExpanded = card.classList.contains('expanded');
-                
-                // Collapse all cards in the same position group
-                const positionSection = card.closest('.position-section');
-                positionSection.querySelectorAll('.player-card').forEach(c => {
-                    c.classList.remove('expanded');
-                });
-                
-                // Then expand the clicked card if it wasn't already expanded
-                if (!wasExpanded) {
-                    card.classList.add('expanded');
-                }
-            });
-
-            // Add touch feedback
-            header.addEventListener('touchstart', () => {
-                header.style.backgroundColor = 'rgba(19, 39, 79, 0.04)';
-            }, { passive: true });
-
-            header.addEventListener('touchend', () => {
-                header.style.backgroundColor = '';
-            }, { passive: true });
         });
 
     } catch (error) {
@@ -560,6 +321,342 @@ async function updateRoster() {
         document.getElementById('roster-container').innerHTML = 
             '<p class="error-message">Error loading roster data</p>';
     }
+}
+
+function updateRosterByPosition(roster, container) {
+    // Group players by position
+    const playersByPosition = {};
+    roster.forEach(player => {
+        let position = player.position.name;
+        
+        // Group all outfielders together
+        if (position === 'Outfield' || position === 'Outfielder' || 
+            position === 'Left Fielder' || position === 'Center Fielder' || position === 'Right Fielder') {
+            position = 'Outfielders';
+        }
+        
+        if (!playersByPosition[position]) {
+            playersByPosition[position] = [];
+        }
+        playersByPosition[position].push({
+            ...player,
+            specificPosition: player.position.name // Store original position for display
+        });
+    });
+
+    // Calculate position stats
+    const positionStats = {};
+    Object.entries(playersByPosition).forEach(([position, players]) => {
+        const stats = players.reduce((acc, player) => {
+            const playerStat = playerStats.get(player.person.id) || {};
+            if (position === 'Pitcher') {
+                const eraValue = parseFloat(playerStat.era);
+                if (!isNaN(eraValue)) {
+                    acc.era.push(eraValue);
+                }
+                acc.wins += playerStat.wins || 0;
+                acc.strikeOuts += playerStat.strikeOuts || 0;
+            } else {
+                const avgValue = parseFloat(playerStat.avg);
+                if (!isNaN(avgValue)) {
+                    acc.avg.push(avgValue);
+                }
+                acc.hits += parseInt(playerStat.hits) || 0;
+                acc.rbi += parseInt(playerStat.rbi) || 0;
+            }
+            return acc;
+        }, { era: [], avg: [], wins: 0, strikeOuts: 0, hits: 0, rbi: 0 });
+
+        if (position === 'Pitcher') {
+            const validEraValues = stats.era.filter(era => !isNaN(era));
+            const avgEra = validEraValues.length ? 
+                (validEraValues.reduce((a, b) => a + b, 0) / validEraValues.length).toFixed(2) : '-.--';
+            positionStats[position] = {
+                primary: avgEra,
+                secondary: stats.wins,
+                tertiary: stats.strikeOuts
+            };
+        } else {
+            const validAvgValues = stats.avg.filter(avg => !isNaN(avg));
+            const avgBa = validAvgValues.length ? 
+                (validAvgValues.reduce((a, b) => a + b, 0) / validAvgValues.length).toFixed(3).replace(/^0/, '') : '.---';
+            positionStats[position] = {
+                primary: avgBa,
+                secondary: stats.hits,
+                tertiary: stats.rbi
+            };
+        }
+    });
+
+    // Create position sections
+    const positions = [
+        'Pitcher', 'Catcher', 'First Base', 'Second Base', 'Third Base', 
+        'Shortstop', 'Outfielders'
+    ];
+
+    container.innerHTML = positions.map(position => {
+        const players = playersByPosition[position] || [];
+        const stats = positionStats[position] || {};
+        const info = POSITION_MAP[position];
+        
+        return generatePositionSection(position, players, stats, info);
+    }).join('');
+
+    addPositionEventListeners(container);
+}
+
+function updateRosterByName(roster, container) {
+    // Sort players alphabetically by last name
+    const sortedPlayers = [...roster].sort((a, b) => {
+        const nameA = a.person.fullName.split(' ').pop();
+        const nameB = b.person.fullName.split(' ').pop();
+        return nameA.localeCompare(nameB);
+    });
+
+    container.innerHTML = `
+        <div class="roster-alphabetical">
+            ${sortedPlayers.map(player => {
+                const stats = playerStats.get(player.person.id) || {};
+                const isPitcher = player.position.name === 'Pitcher';
+                
+                return `
+                    <div class="player-card alphabetical" data-player-id="${player.person.id}">
+                        <div class="player-card-header">
+                            <div class="player-basic-info">
+                                <span class="player-number">#${player.jerseyNumber || '??'}</span>
+                                <div class="player-name-position">
+                                    <span class="player-name">${player.person.fullName}</span>
+                                    <span class="specific-position">${player.position.name}</span>
+                                </div>
+                            </div>
+                            <div class="player-quick-stats">
+                                ${isPitcher ? `
+                                    <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
+                                    <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
+                                ` : `
+                                    <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
+                                    <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
+                                `}
+                            </div>
+                        </div>
+                        <div class="player-details">
+                            ${generatePlayerDetails(player, stats, isPitcher)}
+                        </div>
+                    </div>
+                `;
+            }).join('')}
+        </div>
+    `;
+
+    addPlayerEventListeners(container);
+}
+
+function generatePositionSection(position, players, stats, info) {
+    return `
+        <div class="position-section" data-position="${position}">
+            <div class="position-header">
+                <div class="position-title">
+                    <span class="position-number">${info.number}</span>
+                    ${info.label} (${players.length})
+                </div>
+                <div class="position-aggregate-stats">
+                    ${position === 'Pitcher' ? `
+                        <span class="aggregate-stat">ERA ${stats.primary}</span>
+                        <span class="aggregate-stat">W ${stats.secondary}</span>
+                        <span class="aggregate-stat">SO ${stats.tertiary}</span>
+                    ` : `
+                        <span class="aggregate-stat">AVG ${stats.primary}</span>
+                        <span class="aggregate-stat">H ${stats.secondary}</span>
+                        <span class="aggregate-stat">RBI ${stats.tertiary}</span>
+                    `}
+                </div>
+                <span class="expand-indicator">▼</span>
+            </div>
+            <div class="player-list">
+                ${players.map(player => generatePlayerCard(player, position)).join('')}
+            </div>
+        </div>
+    `;
+}
+
+function generatePlayerCard(player, position) {
+    const stats = playerStats.get(player.person.id) || {};
+    const isPitcher = position === 'Pitcher';
+    const specificPosition = position === 'Outfielders' ? 
+        `<span class="specific-position">${player.specificPosition}</span>` : '';
+    
+    return `
+        <div class="player-card" data-player-id="${player.person.id}">
+            <div class="player-card-header">
+                <div class="player-basic-info">
+                    <span class="player-number">#${player.jerseyNumber || '??'}</span>
+                    <div class="player-name-position">
+                        <span class="player-name">${player.person.fullName}</span>
+                        ${specificPosition}
+                    </div>
+                </div>
+                <div class="player-quick-stats">
+                    ${isPitcher ? `
+                        <span class="quick-stat">ERA: ${stats.era || '-.--'}</span>
+                        <span class="quick-stat">W-L: ${stats.wins || 0}-${stats.losses || 0}</span>
+                    ` : `
+                        <span class="quick-stat">AVG: ${stats.avg || '.---'}</span>
+                        <span class="quick-stat">HR: ${stats.homeRuns || 0}</span>
+                    `}
+                </div>
+            </div>
+            <div class="player-details">
+                ${generatePlayerDetails(player, stats, isPitcher)}
+            </div>
+        </div>
+    `;
+}
+
+function generatePlayerDetails(player, stats, isPitcher) {
+    return `
+        ${player.status?.description ? 
+            `<div class="player-status">${player.status.description}</div>` : 
+            ''}
+        <div class="player-bio">
+            <div class="bio-item">
+                <span class="bio-label">Born:</span>
+                <span class="bio-value">${player.person.birthDate || 'N/A'}${player.person.birthDate ? ` (${calculateAge(player.person.birthDate)})` : ''}</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">From:</span>
+                <span class="bio-value">${player.person.birthCity || 'N/A'}, ${player.person.birthStateProvince || ''} ${player.person.birthCountry || ''}</span>
+            </div>
+            <div class="bio-item">
+                <span class="bio-label">Height:</span>
+                <span class="bio-value">${player.person.height || 'N/A'}</span>
+            </div>
+        </div>
+        <div class="detailed-stats ${isPitcher ? 'pitching-stats' : 'batting-stats'}">
+            ${isPitcher ? generatePitchingStats(stats) : generateBattingStats(stats)}
+        </div>
+    `;
+}
+
+function generatePitchingStats(stats) {
+    return `
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">ERA</div>
+            <div class="detailed-stat-value">${stats.era || '-.--'}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Wins</div>
+            <div class="detailed-stat-value">${stats.wins || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Losses</div>
+            <div class="detailed-stat-value">${stats.losses || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Strikeouts</div>
+            <div class="detailed-stat-value">${stats.strikeOuts || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Saves</div>
+            <div class="detailed-stat-value">${stats.saves || 0}</div>
+        </div>
+    `;
+}
+
+function generateBattingStats(stats) {
+    return `
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">AVG</div>
+            <div class="detailed-stat-value">${stats.avg || '.---'}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">HR</div>
+            <div class="detailed-stat-value">${stats.homeRuns || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Hits</div>
+            <div class="detailed-stat-value">${stats.hits || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">RBI</div>
+            <div class="detailed-stat-value">${stats.rbi || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">Runs</div>
+            <div class="detailed-stat-value">${stats.runs || 0}</div>
+        </div>
+        <div class="detailed-stat">
+            <div class="detailed-stat-label">2B</div>
+            <div class="detailed-stat-value">${stats.doubles || 0}</div>
+        </div>
+    `;
+}
+
+function addPositionEventListeners(container) {
+    // Add click handlers for position headers
+    container.querySelectorAll('.position-header').forEach(header => {
+        header.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const section = header.closest('.position-section');
+            const wasExpanded = section.classList.contains('expanded');
+            
+            container.querySelectorAll('.position-section').forEach(s => {
+                s.classList.remove('expanded');
+            });
+            
+            if (!wasExpanded) {
+                section.classList.add('expanded');
+            }
+        });
+
+        // Add touch feedback
+        header.addEventListener('touchstart', () => {
+            header.style.opacity = '0.8';
+        }, { passive: true });
+
+        header.addEventListener('touchend', () => {
+            header.style.opacity = '1';
+        }, { passive: true });
+    });
+
+    addPlayerEventListeners(container);
+}
+
+function addPlayerEventListeners(container) {
+    // Add click handlers for player cards
+    container.querySelectorAll('.player-card-header').forEach(header => {
+        header.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const card = header.closest('.player-card');
+            const wasExpanded = card.classList.contains('expanded');
+            
+            // In alphabetical view, we can have multiple cards expanded
+            if (currentRosterView === 'position') {
+                const positionSection = card.closest('.position-section');
+                positionSection.querySelectorAll('.player-card').forEach(c => {
+                    c.classList.remove('expanded');
+                });
+            }
+            
+            if (!wasExpanded) {
+                card.classList.add('expanded');
+            } else {
+                card.classList.remove('expanded');
+            }
+        });
+
+        // Add touch feedback
+        header.addEventListener('touchstart', () => {
+            header.style.backgroundColor = 'rgba(19, 39, 79, 0.04)';
+        }, { passive: true });
+
+        header.addEventListener('touchend', () => {
+            header.style.backgroundColor = '';
+        }, { passive: true });
+    });
 }
 
 // Process player stats from hydrated data

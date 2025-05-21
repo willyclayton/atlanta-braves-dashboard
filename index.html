@@ -49,7 +49,16 @@
         </section>
 
         <section id="roster" class="dashboard-section">
-            <h2>Team Roster</h2>
+            <div class="roster-header">
+                <h2>Team Roster</h2>
+                <div class="view-toggle">
+                    <label class="toggle-label">View by:</label>
+                    <div class="toggle-buttons">
+                        <button class="toggle-btn active" data-view="position">Position</button>
+                        <button class="toggle-btn" data-view="name">Name</button>
+                    </div>
+                </div>
+            </div>
             <div id="roster-container" class="roster-container">
                 <!-- Will be populated by JavaScript -->
             </div>

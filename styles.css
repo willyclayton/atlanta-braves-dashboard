@@ -346,13 +346,18 @@ footer {
     .schedule-grid {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
-        gap: 0.35rem;
-        padding: 0.75rem;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        margin: 0 -0.5rem;
+        width: calc(100% + 1rem);
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
     .calendar-day {
         min-height: 70px;
         padding: 0.35rem;
+        font-size: 0.9rem;
     }
 
     .day-header {
@@ -361,29 +366,91 @@ footer {
     }
 
     .day-name {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     .day-number {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .game-time {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         margin-bottom: 0.15rem;
     }
 
     .game-indicator {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         padding: 0.25rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        max-width: calc(100% - 4px);
     }
 
     .home-indicator {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
+        min-width: 10px;
+    }
+
+    .game-details {
+        margin-top: 0.25rem;
+    }
+
+    .position-header {
+        padding: 0.6rem 0.75rem;
+        grid-template-columns: auto 1fr;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .position-title {
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .position-aggregate-stats {
+        justify-content: flex-end;
+        gap: 1rem;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+    .aggregate-stat {
+        min-width: 60px;
+    }
+
+    .player-card-header {
+        padding: 0.5rem 0.75rem;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.75rem;
+    }
+
+    .player-basic-info {
+        gap: 0.5rem;
+    }
+
+    .player-name-position {
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .player-quick-stats {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+
+    .quick-stat {
+        min-width: auto;
+        gap: 0.25rem;
+    }
+
+    .player-details.expanded {
+        padding: 0.75rem;
     }
 }
 
@@ -405,8 +472,8 @@ footer {
     }
 
     .schedule-grid {
-        gap: 0.25rem;
-        padding: 0.5rem;
+        gap: 0.15rem;
+        padding: 0.35rem;
     }
 
     .calendar-day {
@@ -414,20 +481,119 @@ footer {
         min-height: 60px;
     }
 
+    .day-header {
+        margin-bottom: 0.15rem;
+        padding-bottom: 0.15rem;
+    }
+
+    .day-name {
+        font-size: 0.6rem;
+    }
+
+    .day-number {
+        font-size: 0.7rem;
+    }
+
+    .game-time {
+        font-size: 0.6rem;
+        margin-bottom: 0.1rem;
+    }
+
     .game-indicator {
-        padding: 0.25rem;
-        font-size: 0.65rem;
+        padding: 0.15rem;
+        font-size: 0.6rem;
     }
 
     .home-indicator {
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
+        min-width: 8px;
+    }
+
+    .game-details {
+        margin-top: 0.15rem;
     }
 
     .calendar-day.today::before {
-        font-size: 0.6rem;
-        padding: 1px 4px;
-        top: -6px;
+        font-size: 0.55rem;
+        padding: 1px 3px;
+        top: -5px;
+    }
+
+    .position-header {
+        padding: 0.5rem;
+        grid-template-columns: auto 1fr;
+        text-align: left;
+    }
+
+    .position-title {
+        justify-content: flex-start;
+        font-size: 0.85rem;
+    }
+
+    .position-aggregate-stats {
+        gap: 0.75rem;
+        padding: 0;
+        border: none;
+        font-size: 0.8rem;
+    }
+
+    .aggregate-stat {
+        min-width: 50px;
+        font-size: 0.75rem;
+    }
+
+    .player-card-header {
+        padding: 0.4rem 0.5rem;
+        gap: 0.5rem;
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .player-number {
+        font-size: 0.8rem;
+        min-width: 25px;
+    }
+
+    .player-name {
+        font-size: 0.85rem;
+    }
+
+    .specific-position {
+        font-size: 0.75rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .player-quick-stats {
+        font-size: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .player-details {
+        padding: 0.5rem;
+    }
+
+    .player-bio {
+        padding: 0.5rem;
+        gap: 0.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .bio-item {
+        flex: 1 1 auto;
+        min-width: calc(50% - 0.25rem);
+    }
+
+    .detailed-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+        padding: 0.35rem;
+    }
+
+    .detailed-stat {
+        min-width: 0;
+        padding: 0.35rem;
     }
 }
 
@@ -443,35 +609,34 @@ footer {
     }
 
     .calendar-day {
-        min-height: 70px;
-        padding: 0.35rem;
+        min-height: 55px;
+        padding: 0.2rem;
     }
 
     .day-header {
-        margin-bottom: 0.2rem;
-        padding-bottom: 0.2rem;
+        margin-bottom: 0.1rem;
+        padding-bottom: 0.1rem;
     }
 
     .day-name {
-        font-size: 0.7rem;
+        font-size: 0.55rem;
     }
 
     .day-number {
-        font-size: 0.75rem;
+        font-size: 0.65rem;
     }
 
     .game-time {
-        font-size: 0.65rem;
-        margin-bottom: 0.15rem;
+        font-size: 0.55rem;
     }
 
     .game-indicator {
-        font-size: 0.65rem;
-        padding: 0.25rem;
+        padding: 0.1rem;
+        font-size: 0.55rem;
     }
 
     .position-header {
-        padding: 0.35rem;
+        padding: 0.4rem;
     }
 
     .position-title {
@@ -479,35 +644,44 @@ footer {
     }
 
     .position-aggregate-stats {
-        gap: 0.35rem;
-        padding: 0.15rem 0;
+        gap: 0.5rem;
     }
 
     .aggregate-stat {
-        min-width: 55px;
-        font-size: 0.75rem;
+        min-width: 45px;
+        font-size: 0.7rem;
     }
 
     .player-card-header {
         padding: 0.35rem;
     }
 
+    .player-number {
+        font-size: 0.75rem;
+        min-width: 20px;
+    }
+
     .player-name {
         font-size: 0.8rem;
     }
 
+    .specific-position {
+        font-size: 0.7rem;
+        padding: 0.1rem 0.25rem;
+    }
+
     .player-quick-stats {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         gap: 0.5rem;
     }
 
     .detailed-stats {
+        grid-template-columns: repeat(2, 1fr);
         gap: 0.25rem;
+        padding: 0.25rem;
     }
 
     .detailed-stat {
-        flex: 1 1 calc(50% - 0.25rem);
-        min-width: 50px;
         padding: 0.25rem;
     }
 
@@ -516,7 +690,7 @@ footer {
     }
 
     .detailed-stat-value {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .bio-label,
@@ -1189,49 +1363,196 @@ footer {
 @media (max-width: 768px) {
     .position-header {
         padding: 0.6rem 0.75rem;
+        grid-template-columns: auto 1fr;
         gap: 0.75rem;
+        align-items: center;
     }
 
     .position-title {
         font-size: 0.9rem;
+        white-space: nowrap;
     }
 
     .position-aggregate-stats {
-        gap: 1.5rem;
+        justify-content: flex-end;
+        gap: 1rem;
         font-size: 0.85rem;
+        margin: 0;
     }
 
     .aggregate-stat {
-        min-width: 80px;
+        min-width: 60px;
+    }
+
+    .player-card-header {
+        padding: 0.5rem 0.75rem;
+        grid-template-columns: auto 1fr auto;
+        gap: 0.75rem;
+    }
+
+    .player-basic-info {
+        gap: 0.5rem;
+    }
+
+    .player-name-position {
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .player-quick-stats {
+        display: flex;
+        gap: 1rem;
+        font-size: 0.85rem;
+        margin: 0;
+        padding: 0;
+        background: none;
+    }
+
+    .quick-stat {
+        min-width: auto;
+        gap: 0.25rem;
+    }
+
+    .player-details.expanded {
+        padding: 0.75rem;
     }
 }
 
 @media (max-width: 480px) {
     .position-header {
         padding: 0.5rem;
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-        text-align: center;
+        grid-template-columns: auto 1fr;
+        text-align: left;
     }
 
     .position-title {
-        justify-content: center;
+        justify-content: flex-start;
+        font-size: 0.85rem;
     }
 
     .position-aggregate-stats {
-        gap: 1rem;
-        padding: 0.25rem 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .aggregate-stat {
-        min-width: 70px;
+        gap: 0.75rem;
+        padding: 0;
+        border: none;
         font-size: 0.8rem;
     }
 
-    .expand-indicator {
-        display: none;
+    .aggregate-stat {
+        min-width: 50px;
+        font-size: 0.75rem;
+    }
+
+    .player-card-header {
+        padding: 0.4rem 0.5rem;
+        gap: 0.5rem;
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .player-number {
+        font-size: 0.8rem;
+        min-width: 25px;
+    }
+
+    .player-name {
+        font-size: 0.85rem;
+    }
+
+    .specific-position {
+        font-size: 0.75rem;
+        padding: 0.1rem 0.3rem;
+    }
+
+    .player-quick-stats {
+        font-size: 0.75rem;
+        gap: 0.75rem;
+    }
+
+    .player-details {
+        padding: 0.5rem;
+    }
+
+    .player-bio {
+        padding: 0.5rem;
+        gap: 0.5rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .bio-item {
+        flex: 1 1 auto;
+        min-width: calc(50% - 0.25rem);
+    }
+
+    .detailed-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+        padding: 0.35rem;
+    }
+
+    .detailed-stat {
+        min-width: 0;
+        padding: 0.35rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .position-header {
+        padding: 0.4rem;
+    }
+
+    .position-title {
+        font-size: 0.8rem;
+    }
+
+    .position-aggregate-stats {
+        gap: 0.5rem;
+    }
+
+    .aggregate-stat {
+        min-width: 45px;
+        font-size: 0.7rem;
+    }
+
+    .player-card-header {
+        padding: 0.35rem;
+    }
+
+    .player-number {
+        font-size: 0.75rem;
+        min-width: 20px;
+    }
+
+    .player-name {
+        font-size: 0.8rem;
+    }
+
+    .specific-position {
+        font-size: 0.7rem;
+        padding: 0.1rem 0.25rem;
+    }
+
+    .player-quick-stats {
+        font-size: 0.7rem;
+        gap: 0.5rem;
+    }
+
+    .detailed-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.25rem;
+        padding: 0.25rem;
+    }
+
+    .detailed-stat {
+        padding: 0.25rem;
+    }
+
+    .detailed-stat-label {
+        font-size: 0.65rem;
+    }
+
+    .detailed-stat-value {
+        font-size: 0.75rem;
     }
 }
 
@@ -1274,4 +1595,91 @@ footer {
     .detailed-stat:active {
         background: rgba(19, 39, 79, 0.06);
     }
+}
+
+/* Roster View Toggle Styles */
+.roster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.roster-header h2 {
+    margin-bottom: 0;
+}
+
+.view-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.toggle-label {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+}
+
+.toggle-buttons {
+    display: flex;
+    background: #f0f0f0;
+    border-radius: 20px;
+    padding: 0.25rem;
+}
+
+.toggle-btn {
+    border: none;
+    background: none;
+    padding: 0.5rem 1rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+    background: var(--braves-navy);
+    color: white;
+}
+
+.toggle-btn:hover:not(.active) {
+    background: rgba(19, 39, 79, 0.1);
+}
+
+/* Mobile adjustments for toggle */
+@media (max-width: 480px) {
+    .roster-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .view-toggle {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .toggle-buttons {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .toggle-btn {
+        flex: 1;
+        text-align: center;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Alphabetical roster styles */
+.roster-alphabetical {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.player-card.alphabetical {
+    margin: 0;
+    border-radius: 8px;
 } 
