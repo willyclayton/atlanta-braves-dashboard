@@ -245,6 +245,8 @@ async function fetchSeasonHistory(year = CURRENT_SEASON) {
             // Process games and detect sweeps
             for (let i = 0; i < allGames.length; i++) {
                 const game = allGames[i];
+                // Only include games that are final
+                if (game.status.detailedState !== 'Final') continue;
                 const bravesTeam = game.teams.home.team.id === BRAVES_ID ? game.teams.home : game.teams.away;
                 const opponentTeam = game.teams.home.team.id === BRAVES_ID ? game.teams.away : game.teams.home;
                 const isHome = game.teams.home.team.id === BRAVES_ID;
@@ -297,7 +299,8 @@ async function fetchSeasonHistory(year = CURRENT_SEASON) {
                     opponentScore: opponentTeam.score,
                     record: `${currentRecord.wins}-${currentRecord.losses}`,
                     streak: `${currentStreak.type}${currentStreak.count}`,
-                    isSweep: isSweep
+                    isSweep: isSweep,
+                    gamePk: game.gamePk
                 });
             }
         }
@@ -1357,6 +1360,24 @@ async function getTeamRankings() {
     }
 }
 
+// Add function to calculate longest win streak
+function calculateLongestWinStreak(games) {
+    let currentStreak = 0;
+    let longestStreak = 0;
+    
+    games.forEach(game => {
+        const isWin = game.bravesScore > game.opponentScore;
+        if (isWin) {
+            currentStreak++;
+            longestStreak = Math.max(longestStreak, currentStreak);
+        } else {
+            currentStreak = 0;
+        }
+    });
+    
+    return longestStreak;
+}
+
 // Update the stats display function
 function updateStatsDisplay(stats) {
     const container = document.querySelector('.dashboard-section');
@@ -1373,11 +1394,11 @@ function updateStatsDisplay(stats) {
                     <span>${stats.overallRank}</span>
                 </p>
             </div>
-            <div class="stat-card">
-                <h3>Team HRs</h3>
-                <p id="team-hrs">${stats.homeRuns}</p>
+            <div class="stat-card clickable" id="whos-hot-card">
+                <h3>Who's hot?</h3>
             </div>
         </div>
+        <div id="whos-hot-expansion-anchor"></div>
         <div id="season-history" class="season-history-container"></div>
         <div id="league-overview" class="league-overview-container">
             <div class="division-standings">
@@ -1394,152 +1415,304 @@ function updateStatsDisplay(stats) {
         </div>
     `;
     
-    // Add click handlers
-    const recordCard = document.getElementById('record-card');
-    const leagueCard = document.getElementById('league-card');
-    const historyContainer = document.getElementById('season-history');
-    const leagueContainer = document.getElementById('league-overview');
-    
-    recordCard.addEventListener('click', async () => {
-        if (historyContainer.classList.contains('expanded')) {
-            historyContainer.classList.remove('expanded');
-            return;
-        }
-        
-        // Close league overview if open
-        leagueContainer.classList.remove('expanded');
-        
-        historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
-        historyContainer.classList.add('expanded');
-        
-        const games = await fetchSeasonHistory();
-        displaySeasonHistory(games);
-    });
-    
-    leagueCard.addEventListener('click', async () => {
-        if (leagueContainer.classList.contains('expanded')) {
-            leagueContainer.classList.remove('expanded');
-            return;
-        }
-        
-        // Close season history if open
-        historyContainer.classList.remove('expanded');
-        
-        const standingsDiv = leagueContainer.querySelector('.standings-content');
-        
-        standingsDiv.innerHTML = '<div class="loading">Loading standings...</div>';
-        
-        leagueContainer.classList.add('expanded');
-        
-        // Fetch and display data
-        const [rankings, teamStats] = await Promise.all([
-            getTeamRankings(),
-            getTeamStats()
-        ]);
+    // Collapse all expansions function
+    function collapseAllExpansions() {
+        // Collapse season history
+        const historyContainer = document.getElementById('season-history');
+        if (historyContainer) historyContainer.classList.remove('expanded');
+        // Collapse league overview
+        const leagueContainer = document.getElementById('league-overview');
+        if (leagueContainer) leagueContainer.classList.remove('expanded');
+        // Collapse whos-hot-expansion
+        const whosHotExpansion = document.getElementById('whos-hot-expansion');
+        if (whosHotExpansion) whosHotExpansion.style.display = 'none';
+    }
 
-        // Add standings toggle functionality
-        const standingsToggle = leagueContainer.querySelector('.standings-toggle');
-        let currentView = 'division';
-        
-        function updateStandingsView(view, standings, teamStats) {
-            if (!standings) return;
-            if (view === 'rankings' && teamStats) {
-                if (!teamStats || !teamStats.stats || !teamStats.rankings || !teamStats.averages) {
-                    standingsDiv.innerHTML = '<div class="error-message">No rankings data available.</div>';
+    // Update record card click handler
+    const recordCard = document.getElementById('record-card');
+    if (recordCard) {
+        recordCard.addEventListener('click', async () => {
+            collapseAllExpansions();
+            const historyContainer = document.getElementById('season-history');
+            if (historyContainer) {
+                if (historyContainer.classList.contains('expanded')) {
+                    historyContainer.classList.remove('expanded');
                     return;
                 }
-                const { stats, rankings: statRankings, averages } = teamStats;
-                const statList = [
-                    { key: 'homeRuns', label: 'Home Runs', value: stats.homeRuns, avg: averages.homeRuns, rank: statRankings.homeRuns },
-                    { key: 'runs', label: 'Runs', value: stats.runs, avg: averages.runs, rank: statRankings.runs },
-                    { key: 'hits', label: 'Hits', value: stats.hits, avg: averages.hits, rank: statRankings.hits },
-                    { key: 'era', label: 'ERA', value: stats.era, avg: averages.era, rank: statRankings.era },
-                    { key: 'strikeOuts', label: 'Strikeouts', value: stats.strikeOuts, avg: averages.strikeOuts, rank: statRankings.strikeOuts },
-                ];
-                standingsDiv.innerHTML = `
-                    <div class="team-rankings-list">
-                        <h3>Team Rankings</h3>
-                        <ul class="rankings-list-vertical">
-                            ${statList.map(stat => `
-                                <li class="ranking-item-vertical">
-                                    <span class="stat-label">${stat.label}:</span>
-                                    <span class="stat-value">${stat.value}</span>
-                                    <span class="stat-avg">MLB Avg: ${stat.avg}</span>
-                                    <span class="stat-rank">Rank: ${stat.rank}</span>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                `;
-                return;
+                historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
+                historyContainer.classList.add('expanded');
+                const games = await fetchSeasonHistory();
+                displaySeasonHistory(games);
             }
-            const teams = view === 'division' 
-                ? standings.divisionStandings
-                : standings.allTeams;
-            
-            standingsDiv.innerHTML = `
-                <div class="standings-scroll">
-                    <div class="standings-list">
-                        <div class="standings-header">
-                            <span class="rank-header">#</span>
-                            <span class="team-header">Team</span>
-                            <span class="record-header">W-L</span>
-                            <span class="gb-header">GB</span>
-                            <span class="pct-header">PCT</span>
-                            <span class="streak-header">Streak</span>
-                        </div>
-                        ${teams.map((team, index) => {
-                            if (!team || !team.teamName) return '';
-                            const winPct = (team.wins / (team.wins + team.losses)).toFixed(3);
-                            const isBraves = team.team.id === BRAVES_ID;
-                            const logoUrl2 = getTeamLogoUrl(team.teamName);
-                            return `
-                                <div class="standings-row ${isBraves ? 'braves' : ''}">
-                                    <span class="rank-number">${index + 1}</span>
-                                    <span class="team-name">
-                                        ${logoUrl2 ? `<img src="${logoUrl2}" alt="${team.teamName}" class="team-mini-logo" onerror="this.style.display='none'">` : ''}
-                                        <span>${getTeamNameWithoutCity(team.teamName)}</span>
-                                    </span>
-                                    <span class="team-record">${team.wins}-${team.losses}</span>
-                                    <span class="games-back">${team.gamesBack === '0.0' ? '-' : team.gamesBack}</span>
-                                    <span class="win-pct">${winPct}</span>
-                                    <span class="team-streak ${team.streak?.streakCode?.startsWith('W') ? 'winning' : 'losing'}">${team.streak?.streakCode || ''}</span>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
-                </div>
-            `;
-        }
-        
-        standingsToggle.addEventListener('click', (e) => {
-            if (e.target.classList.contains('toggle-btn')) {
-                const view = e.target.dataset.view;
-                if (view !== currentView) {
-                    currentView = view;
-                    standingsToggle.querySelectorAll('.toggle-btn').forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.view === view);
-                    });
-                    if (view === 'rankings') {
-                        let teamStatsRaw = null;
-                        if (teamStats) {
-                            teamStatsRaw = teamStats;
+        });
+    }
+
+    // Update league card click handler
+    const leagueCard = document.getElementById('league-card');
+    if (leagueCard) {
+        leagueCard.addEventListener('click', async () => {
+            collapseAllExpansions();
+            const leagueContainer = document.getElementById('league-overview');
+            if (leagueContainer) {
+                if (leagueContainer.classList.contains('expanded')) {
+                    leagueContainer.classList.remove('expanded');
+                    return;
+                }
+                const standingsDiv = leagueContainer.querySelector('.standings-content');
+                standingsDiv.innerHTML = '<div class="loading">Loading standings...</div>';
+                leagueContainer.classList.add('expanded');
+                const [rankings, teamStats] = await Promise.all([
+                    getTeamRankings(),
+                    getTeamStats()
+                ]);
+                // Render initial standings view (division)
+                let currentView = 'division';
+                function updateStandingsView(view) {
+                    if (!rankings) return;
+                    if (view === 'rankings' && teamStats) {
+                        if (!teamStats || !teamStats.stats || !teamStats.rankings || !teamStats.averages) {
+                            standingsDiv.innerHTML = '<div class="error-message">No rankings data available.</div>';
+                            return;
                         }
-                        updateStandingsView(view, rankings, teamStatsRaw);
-                    } else {
-                        updateStandingsView(view, rankings);
+                        const { stats, rankings: statRankings, averages } = teamStats;
+                        const statList = [
+                            { key: 'homeRuns', label: 'Home Runs', value: stats.homeRuns, avg: averages.homeRuns, rank: statRankings.homeRuns },
+                            { key: 'runs', label: 'Runs', value: stats.runs, avg: averages.runs, rank: statRankings.runs },
+                            { key: 'hits', label: 'Hits', value: stats.hits, avg: averages.hits, rank: statRankings.hits },
+                            { key: 'era', label: 'ERA', value: stats.era, avg: averages.era, rank: statRankings.era },
+                            { key: 'strikeOuts', label: 'Strikeouts', value: stats.strikeOuts, avg: averages.strikeOuts, rank: statRankings.strikeOuts },
+                        ];
+                        standingsDiv.innerHTML = `
+                            <div class="team-rankings-list">
+                                <h3>Team Rankings</h3>
+                                <ul class="rankings-list-vertical">
+                                    ${statList.map(stat => `
+                                        <li class="ranking-item-vertical">
+                                            <span class="stat-label">${stat.label}:</span>
+                                            <span class="stat-value">${stat.value}</span>
+                                            <span class="stat-avg">MLB Avg: ${stat.avg}</span>
+                                            <span class="stat-rank">Rank: ${stat.rank}</span>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        `;
+                        return;
                     }
+                    const teams = view === 'division' 
+                        ? rankings.divisionStandings
+                        : rankings.allTeams;
+                    standingsDiv.innerHTML = `
+                        <div class="standings-scroll">
+                            <div class="standings-list">
+                                <div class="standings-header">
+                                    <span class="rank-header">#</span>
+                                    <span class="team-header">Team</span>
+                                    <span class="record-header">W-L</span>
+                                    <span class="gb-header">GB</span>
+                                    <span class="pct-header">PCT</span>
+                                    <span class="streak-header">Streak</span>
+                                </div>
+                                ${teams.map((team, index) => {
+                                    if (!team || !team.teamName) return '';
+                                    const winPct = (team.wins / (team.wins + team.losses)).toFixed(3);
+                                    const isBraves = team.team.id === BRAVES_ID;
+                                    const logoUrl2 = getTeamLogoUrl(team.teamName);
+                                    return `
+                                        <div class="standings-row ${isBraves ? 'braves' : ''}">
+                                            <span class="rank-number">${index + 1}</span>
+                                            <span class="team-name">
+                                                ${logoUrl2 ? `<img src="${logoUrl2}" alt="${team.teamName}" class="team-mini-logo" onerror="this.style.display='none'">` : ''}
+                                                <span>${getTeamNameWithoutCity(team.teamName)}</span>
+                                            </span>
+                                            <span class="team-record">${team.wins}-${team.losses}</span>
+                                            <span class="games-back">${team.gamesBack === '0.0' ? '-' : team.gamesBack}</span>
+                                            <span class="win-pct">${winPct}</span>
+                                            <span class="team-streak ${team.streak?.streakCode?.startsWith('W') ? 'winning' : 'losing'}">${team.streak?.streakCode || ''}</span>
+                                        </div>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </div>
+                    `;
+                }
+                // Initial render
+                updateStandingsView(currentView);
+                // Attach toggle button event listeners
+                const standingsToggle = leagueContainer.querySelector('.standings-toggle');
+                if (standingsToggle) {
+                    standingsToggle.querySelectorAll('.toggle-btn').forEach(btn => {
+                        btn.addEventListener('click', (e) => {
+                            const view = btn.dataset.view;
+                            if (view !== currentView) {
+                                standingsToggle.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+                                btn.classList.add('active');
+                                currentView = view;
+                                updateStandingsView(currentView);
+                            }
+                        });
+                    });
                 }
             }
         });
-        
-        // Initial standings display
-        let teamStatsRaw = null;
-        if (teamStats) {
-            teamStatsRaw = teamStats;
+    }
+
+    // Update Who's hot card click handler
+    const whosHotCard = document.getElementById('whos-hot-card');
+    if (whosHotCard) {
+        whosHotCard.addEventListener('click', async () => {
+            collapseAllExpansions();
+            let expansion = document.getElementById('whos-hot-expansion');
+            if (expansion && expansion.style.display === 'block') {
+                expansion.style.display = 'none';
+                return;
+            }
+            await showWhosHotExpansion();
+        });
+    }
+}
+
+// Helper: Get last 10 games (already sorted by date descending)
+async function getLast10Games(year = CURRENT_SEASON) {
+    const games = await fetchSeasonHistory(year);
+    // Only include games that are completed (status 'Final') and have a valid gamePk
+    const completed = games.filter(g => g.gamePk && typeof g.bravesScore === 'number' && typeof g.opponentScore === 'number');
+    return completed.slice(0, 10).reverse(); // oldest to newest
+}
+
+// Helper: Fetch boxscore for a gameId
+async function fetchBoxscore(gamePk) {
+    try {
+        const data = await fetchMLBData(`game/${gamePk}/boxscore`);
+        return data;
+    } catch (e) {
+        // Suppress 404 errors for boxscore fetches
+        if (e && e.message && e.message.includes('404')) {
+            // Do nothing
+        } else {
+            console.error('Error fetching boxscore for game', gamePk, e);
         }
-        updateStandingsView('division', rankings, teamStatsRaw);
+        return null;
+    }
+}
+
+// Helper: Aggregate player stats over last 10 games
+async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
+    const last10 = await getLast10Games(year);
+    const playerStats = {};
+    for (const game of last10) {
+        if (!game.gamePk) continue;
+        let boxscore = null;
+        try {
+            boxscore = await fetchBoxscore(game.gamePk);
+        } catch (e) {
+            // Suppress 404 errors for boxscore fetches
+            if (e && e.message && e.message.includes('404')) {
+                // Do nothing
+            } else {
+                console.error('Skipping game', game.gamePk, 'due to boxscore fetch error:', e);
+            }
+            continue;
+        }
+        if (!boxscore || !boxscore.teams || !boxscore.teams.home || !boxscore.teams.away) continue;
+        // Determine if Braves are home or away
+        const bravesSide = boxscore.teams.home.team.id === BRAVES_ID ? 'home' : 'away';
+        const batters = boxscore.teams[bravesSide].players;
+        for (const pid in batters) {
+            const p = batters[pid];
+            if (!p.stats || !p.stats.batting) continue;
+            const { atBats = 0, hits = 0, homeRuns = 0 } = p.stats.batting;
+            if (!playerStats[pid]) {
+                playerStats[pid] = {
+                    name: p.person.fullName,
+                    atBats: 0,
+                    hits: 0,
+                    homeRuns: 0
+                };
+            }
+            playerStats[pid].atBats += atBats;
+            playerStats[pid].hits += hits;
+            playerStats[pid].homeRuns += homeRuns;
+        }
+    }
+    // Compute averages and sort
+    const playersArr = Object.values(playerStats).filter(p => p.atBats > 0);
+    playersArr.forEach(p => {
+        p.avg = (p.hits / p.atBats).toFixed(3).replace(/^0/, '') || '.000';
+        p.hr = p.homeRuns;
     });
+    // Top 3 by avg (min 10 AB)
+    const topAvg = playersArr.filter(p => p.atBats >= 10)
+        .sort((a, b) => b.avg - a.avg)
+        .slice(0, 3);
+    // Most HR
+    const maxHR = Math.max(0, ...playersArr.map(p => p.hr));
+    const topHR = playersArr.filter(p => p.hr === maxHR && maxHR > 0);
+    return { topAvg, topHR };
+}
+
+// --- UI Expansion Logic ---
+async function showWhosHotExpansion() {
+    let expansion = document.getElementById('whos-hot-expansion');
+    if (!expansion) {
+        expansion = document.createElement('div');
+        expansion.id = 'whos-hot-expansion';
+        expansion.className = 'expansion-window whos-hot-expansion';
+    }
+    // Insert after the anchor
+    const anchor = document.getElementById('whos-hot-expansion-anchor');
+    if (anchor && anchor.parentNode) {
+        anchor.parentNode.insertBefore(expansion, anchor.nextSibling);
+    }
+    expansion.innerHTML = `<div class="expansion-loading">Loading team leader...</div>`;
+    expansion.style.display = 'block';
+
+    // Fetch roster and find the hitter with the highest AVG (min 10 AB)
+    let data;
+    try {
+        data = await fetchMLBData(`teams/${BRAVES_ID}/roster/active?hydrate=person(stats(type=season))`);
+    } catch (e) {
+        expansion.innerHTML = `<div class="expansion-error">Error loading roster data.</div>`;
+        return;
+    }
+    if (!data || !data.roster || !data.roster.length) {
+        expansion.innerHTML = `<div class="expansion-error">No roster data available.</div>`;
+        return;
+    }
+    // Find hitter with highest AVG (min 10 AB)
+    let bestHitter = null;
+    let bestAvg = 0;
+    data.roster.forEach(player => {
+        const stats = player.person.stats
+            ?.find(s => s.group.displayName === 'hitting')
+            ?.splits?.[0]?.stat;
+        if (stats && stats.atBats >= 10) {
+            const avg = parseFloat(stats.avg);
+            if (!isNaN(avg) && avg > bestAvg) {
+                bestAvg = avg;
+                bestHitter = {
+                    name: player.person.fullName,
+                    avg: avg.toFixed(3).replace(/^0/, ''),
+                    ab: stats.atBats,
+                    hits: stats.hits,
+                    hr: stats.homeRuns,
+                    rbi: stats.rbi
+                };
+            }
+        }
+    });
+    if (bestHitter) {
+        expansion.innerHTML = `
+            <div class="expansion-section">
+                <h4>Hottest Hitter (Season)</h4>
+                <div><b>${bestHitter.name}</b></div>
+                <div>AVG: <b>${bestHitter.avg}</b> (${bestHitter.hits} H / ${bestHitter.ab} AB)</div>
+                <div>HR: <b>${bestHitter.hr}</b> &nbsp; RBI: <b>${bestHitter.rbi}</b></div>
+            </div>
+        `;
+    } else {
+        expansion.innerHTML = `<div class="expansion-error">No qualifying hitters (min 10 AB).</div>`;
+    }
 }
 
 // Update getTeamStats to include averages and runs
@@ -1676,12 +1849,16 @@ async function updateTeamStats(year = CURRENT_SEASON) {
         // Get rankings
         const rankings = await getTeamRankings();
         
+        // Get season history to calculate longest streak
+        const seasonHistory = await fetchSeasonHistory(year);
+        const longestStreak = calculateLongestWinStreak(seasonHistory);
+        
         const stats = {
             record: bravesRecord ? 
                 `${bravesRecord.wins}-${bravesRecord.losses} (.${calculateWinningPercentage(bravesRecord.wins, bravesRecord.losses)})` : 
                 'TBD',
             rankings: rankings ? `${rankings.divisionRank} • ${rankings.overallRank}` : 'Loading...',
-            homeRuns: bravesRecord?.homeRuns || 0,
+            longestStreak: longestStreak,
             divisionRank: rankings ? rankings.divisionRank : '',
             overallRank: rankings ? rankings.overallRank : '',
         };
@@ -1692,7 +1869,7 @@ async function updateTeamStats(year = CURRENT_SEASON) {
         updateStatsDisplay({
             record: 'Error',
             rankings: 'Error',
-            homeRuns: '-'
+            longestStreak: '0'
         });
     }
 }
