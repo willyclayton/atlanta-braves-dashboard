@@ -4,10 +4,12 @@
   "description": "Atlanta Braves Baseball Statistics Dashboard",
   "main": "app.js",
   "scripts": {
-    "start": "open index.html"
+    "start": "open index.html",
+    "fetch-stats": "node fetch-stats.js"
   },
   "dependencies": {
     "express": "^5.1.0",
-    "react-mlb-logos": "^1.1.2"
+    "react-mlb-logos": "^1.1.2",
+    "axios": "^1.6.7"
   }
 }
