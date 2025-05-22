@@ -119,6 +119,7 @@ h2 {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: monospace;
 }
 
 .dashboard-section:has(#upcoming-games) {
@@ -423,7 +424,7 @@ footer {
     }
 
     .stat-card p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     /* Mobile Calendar Styles */
@@ -1121,6 +1122,11 @@ footer {
 
     .expand-indicator {
         font-size: 1rem;
+    }
+
+    .pct-header,
+    .win-pct {
+        display: none;
     }
 }
 
@@ -1889,11 +1895,13 @@ footer {
     border-radius: 8px;
     margin-top: 1rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .season-history-container.expanded {
     max-height: 400px;
-    overflow-y: auto;
+    overflow: hidden;
     border: 1px solid rgba(19, 39, 79, 0.1);
 }
 
@@ -1912,7 +1920,23 @@ footer {
 }
 
 .game-history-list {
-    padding: 0.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    scrollbar-width: thin;
+    scrollbar-color: var(--braves-navy) transparent;
+}
+
+.game-history-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.game-history-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.game-history-list::-webkit-scrollbar-thumb {
+    background-color: var(--braves-navy);
+    border-radius: 3px;
 }
 
 .game-history-item {
@@ -2047,4 +2071,669 @@ footer {
     .sweep-indicator {
         font-size: 0.75em;
     }
+}
+
+/* Update League Overview Container */
+.league-overview-container {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+    border-radius: 8px;
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.league-overview-container.expanded {
+    max-height: 500px;
+    padding: 1rem;
+    border: 1px solid rgba(202, 208, 219, 0.1);
+}
+
+.division-standings {
+    background: var(--background-light);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.division-standings h3 {
+    color: var(--braves-navy);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--braves-navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.standings-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0;
+    gap: 0.1rem;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+}
+.standings-toggle .toggle-btn {
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
+    padding: 0.18rem 0.1rem;
+    font-size: 0.92rem;
+    border-radius: 16px;
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    font-weight: 500;
+    height: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.standings-toggle .toggle-btn.active {
+    background: var(--braves-navy);
+    color: white;
+    border-radius: 16px;
+}
+.standings-toggle .toggle-btn:hover:not(.active) {
+    background: rgba(19, 39, 79, 0.08);
+}
+@media (max-width: 480px) {
+    .standings-toggle {
+        max-width: 100vw;
+        padding: 0;
+        gap: 0.05rem;
+    }
+    .standings-toggle .toggle-btn {
+        font-size: 0.75rem;
+        height: 1.2rem;
+        padding: 0.08rem 0.05rem;
+        border-radius: 10px;
+    }
+    .standings-toggle .toggle-btn.active {
+        border-radius: 10px;
+    }
+}
+
+.standings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+
+.standings-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background: transparent;
+    color: inherit;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    min-height: 0;
+    height: auto;
+}
+
+.standings-row {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    padding: 0.75rem 0.5rem;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.standings-row:last-child {
+    border-bottom: none;
+}
+
+.standings-row.braves {
+    background-color: rgba(19, 39, 79, 0.05);
+    font-weight: 500;
+}
+
+.standings-row.braves:hover {
+    background-color: rgba(19, 39, 79, 0.1);
+}
+
+.rank-number {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--braves-navy);
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 0.875rem;
+    margin: 0 auto;
+}
+
+.braves .rank-number {
+    background: var(--braves-red);
+}
+
+.team-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.team-mini-logo {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.team-record, .games-back, .win-pct {
+    font-family: monospace;
+    font-size: 0.9375rem;
+}
+
+.team-streak {
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 0.875rem;
+}
+
+.team-streak.winning {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.team-streak.losing {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+@media (max-width: 768px) {
+    .standings-header, .standings-row {
+        grid-template-columns: 32px 2fr 1fr 1fr 1fr 1fr;
+        font-size: 0.8125rem;
+        gap: 0.5rem;
+    }
+    .standings-header .stat-header,
+    .standings-row .team-stat {
+        font-size: 0.8125rem;
+        min-width: 28px;
+        padding: 0 0.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .standings-header, .standings-row {
+        grid-template-columns: 20px 1.2fr 1fr 0.7fr 1fr;
+        font-size: 0.75rem;
+        gap: 0.1rem;
+        padding: 0.25rem 0.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    .standings-header span, .standings-row span {
+        padding: 0 0.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 0.75rem;
+    }
+    .team-mini-logo {
+        width: 12px;
+        height: 12px;
+        margin-right: 0.15rem;
+    }
+    .team-name {
+        gap: 0.2rem;
+        font-size: 0.75rem;
+        align-items: center;
+    }
+    .rank-number {
+        width: 16px;
+        height: 16px;
+        font-size: 0.7rem;
+    }
+    .team-record, .games-back {
+        font-size: 0.75rem;
+    }
+    .team-streak {
+        padding: 0.05rem 0.25rem;
+        font-size: 0.7rem;
+        min-width: 1.5em;
+        border-radius: 3px;
+    }
+    .standings-row {
+        min-height: 24px;
+        padding: 0.15rem 0.1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    .standings-row:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Compact View for Rankings */
+.rankings-list.compact {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.35rem;
+}
+
+.rankings-list.compact .ranking-item {
+    padding: 0.5rem;
+}
+
+.rankings-list.compact .stat-label {
+    font-size: 0.75rem;
+}
+
+.rankings-list.compact .stat-value {
+    font-size: 0.95rem;
+}
+
+.rankings-list.compact .stat-rank,
+.rankings-list.compact .stat-avg {
+    font-size: 0.7rem;
+}
+
+.rankings-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.ranking-group {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+}
+
+.ranking-group h3 {
+    color: var(--braves-navy);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--braves-navy);
+}
+
+.ranking-item {
+    margin-bottom: 1rem;
+}
+
+.ranking-item:last-child {
+    margin-bottom: 0;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.stat-rank {
+    color: var(--braves-red);
+    font-weight: 600;
+    font-size: 0.875rem;
+}
+
+.stat-content {
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.stat-bar-container {
+    position: relative;
+    height: 32px;
+    background: var(--background-light);
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.stat-bar {
+    height: 100%;
+    background: var(--braves-navy);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    transition: width 0.3s ease;
+}
+
+.stat-bar-container.reverse .stat-bar {
+    background: var(--braves-red);
+}
+
+.stat-value {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    font-family: monospace;
+}
+
+.mlb-average {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: -1px;
+}
+
+.mlb-average::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    height: 64px;
+    width: 2px;
+    background: #666;
+    z-index: 1;
+}
+
+.avg-label {
+    font-size: 0.6875rem;
+    color: #666;
+    margin-top: -24px;
+    background: white;
+    padding: 0 0.25rem;
+    z-index: 2;
+}
+
+.avg-value {
+    font-size: 0.75rem;
+    color: #666;
+    font-weight: 500;
+    margin-top: 24px;
+    background: white;
+    padding: 0 0.25rem;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .rankings-list {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0.75rem;
+    }
+
+    .ranking-group {
+        padding: 0.75rem;
+    }
+
+    .ranking-group h3 {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .stat-bar-container {
+        height: 28px;
+    }
+
+    .stat-value {
+        font-size: 0.8125rem;
+    }
+
+    .avg-label {
+        font-size: 0.625rem;
+    }
+
+    .avg-value {
+        font-size: 0.6875rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rankings-list {
+        padding: 0.5rem;
+    }
+
+    .ranking-group {
+        padding: 0.5rem;
+    }
+
+    .stat-bar-container {
+        height: 24px;
+    }
+
+    .stat-value {
+        font-size: 0.75rem;
+    }
+
+    .mlb-average::before {
+        top: -12px;
+        height: 48px;
+    }
+
+    .avg-label {
+        margin-top: -18px;
+        font-size: 0.5625rem;
+    }
+
+    .avg-value {
+        margin-top: 18px;
+        font-size: 0.625rem;
+    }
+}
+
+.standings-scroll {
+    max-height: 420px;
+    overflow-y: auto;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+}
+@media (max-width: 768px) {
+    .standings-scroll {
+        max-height: 300px;
+    }
+}
+@media (max-width: 480px) {
+    .standings-scroll {
+        max-height: 200px;
+    }
+}
+
+.team-rankings-list {
+    padding: 1.5rem 1rem 1rem 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    margin-top: 1rem;
+}
+.team-rankings-list h3 {
+    color: var(--braves-navy);
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+.rankings-list-vertical {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.ranking-item-vertical {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+.ranking-item-vertical:last-child {
+    border-bottom: none;
+}
+.ranking-item-vertical .stat-label {
+    font-weight: 500;
+    color: var(--braves-navy);
+    min-width: 120px;
+}
+.ranking-item-vertical .stat-value {
+    color: var(--braves-red);
+    font-weight: 600;
+    min-width: 60px;
+}
+.ranking-item-vertical .stat-avg {
+    color: #666;
+    font-size: 0.95em;
+    min-width: 110px;
+}
+.ranking-item-vertical .stat-rank {
+    color: var(--braves-red);
+    font-weight: 600;
+    min-width: 80px;
+}
+@media (max-width: 768px) {
+    .team-rankings-list {
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+    .ranking-item-vertical {
+        font-size: 0.95rem;
+        gap: 1rem;
+    }
+    .ranking-item-vertical .stat-label {
+        min-width: 90px;
+    }
+    .ranking-item-vertical .stat-value,
+    .ranking-item-vertical .stat-avg,
+    .ranking-item-vertical .stat-rank {
+        min-width: 50px;
+    }
+}
+@media (max-width: 480px) {
+    .team-rankings-list {
+        padding: 0.25rem 0.1rem 0.1rem 0.1rem;
+    }
+    .ranking-item-vertical {
+        font-size: 0.82rem;
+        gap: 0.25rem;
+        flex-direction: row;
+        align-items: center;
+        padding: 0.15rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .ranking-item-vertical .stat-label,
+    .ranking-item-vertical .stat-value,
+    .ranking-item-vertical .stat-avg,
+    .ranking-item-vertical .stat-rank {
+        min-width: 0;
+        font-size: 0.82rem;
+        padding: 0 0.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .ranking-item-vertical .stat-label {
+        font-weight: 500;
+        color: var(--braves-navy);
+    }
+    .ranking-item-vertical .stat-value {
+        color: var(--braves-red);
+        font-weight: 600;
+    }
+    .ranking-item-vertical .stat-avg {
+        color: #666;
+    }
+    .ranking-item-vertical .stat-rank {
+        color: var(--braves-red);
+        font-weight: 600;
+    }
+    .stat-card p, .stat-card h3 {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding: 0 0.1rem;
+    }
+    #team-rankings {
+        font-size: 0.85rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+        display: block;
+    }
+    .stat-card {
+        padding: 0.5rem 0.2rem;
+        min-width: 0;
+    }
+}
+
+#team-rankings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    line-height: 1.1;
+    white-space: normal;
+    padding: 0.1rem 0;
+    text-align: center;
+    width: 100%;
+}
+#team-rankings span {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.stat-card h3 {
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+@media (max-width: 480px) {
+    #team-rankings {
+        font-size: 0.7rem;
+    }
+    #team-rankings span {
+        font-size: 0.7rem;
+    }
+    .stat-card h3 {
+        font-size: 0.8rem;
+    }
+}
+
+.standings-header > :not(.standings-toggle) {
+    display: none !important;
 } 

@@ -90,6 +90,40 @@ const POSITION_MAP = {
     'Outfielder': { abbr: 'OF', label: 'Outfield', number: '7-9' }
 };
 
+// Team abbreviation mapping (make this global)
+const cityTeamMap = {
+    'Atlanta Braves': 'ATL',
+    'New York Mets': 'NYM',
+    'Philadelphia Phillies': 'PHI',
+    'Washington Nationals': 'WSH',
+    'Miami Marlins': 'MIA',
+    'St. Louis Cardinals': 'STL',
+    'Chicago Cubs': 'CHC',
+    'Milwaukee Brewers': 'MIL',
+    'Pittsburgh Pirates': 'PIT',
+    'Cincinnati Reds': 'CIN',
+    'Los Angeles Dodgers': 'LAD',
+    'San Francisco Giants': 'SF',
+    'San Diego Padres': 'SD',
+    'Colorado Rockies': 'COL',
+    'Arizona Diamondbacks': 'ARI',
+    'New York Yankees': 'NYY',
+    'Boston Red Sox': 'BOS',
+    'Tampa Bay Rays': 'TB',
+    'Toronto Blue Jays': 'TOR',
+    'Baltimore Orioles': 'BAL',
+    'Chicago White Sox': 'CWS',
+    'Cleveland Guardians': 'CLE',
+    'Detroit Tigers': 'DET',
+    'Kansas City Royals': 'KC',
+    'Minnesota Twins': 'MIN',
+    'Houston Astros': 'HOU',
+    'Los Angeles Angels': 'LAA',
+    'Oakland Athletics': 'OAK',
+    'Seattle Mariners': 'SEA',
+    'Texas Rangers': 'TEX'
+};
+
 // Store roster data globally for position clicks
 let currentRosterData = null;
 let activePosition = null;
@@ -153,142 +187,26 @@ async function fetchPlayerStats(playerId) {
     }
 }
 
-// Update team stats based on selected season
-async function updateTeamStats(year = CURRENT_SEASON) {
-    try {
-        document.getElementById('season-record').textContent = 'Loading...';
-        
-        // Get standings data for record
-        const standingsData = await fetchMLBData(`standings?leagueId=104&season=${year}`);
-        const bravesRecord = standingsData.records
-            .flatMap(r => r.teamRecords)
-            .find(t => t.team.id === BRAVES_ID);
+// Helper function to calculate winning percentage
+function calculateWinningPercentage(wins, losses) {
+    if (wins === 0 && losses === 0) return '000';
+    const percentage = wins / (wins + losses);
+    return percentage.toFixed(3).substring(2); // Remove '0.' from the start
+}
 
-        // Get team stats for home runs
-        const teamData = await fetchMLBData(`teams/${BRAVES_ID}/stats?stats=season&group=hitting&season=${year}`);
-        const teamStats = teamData.stats[0]?.splits[0]?.stat || {};
-
-        // Calculate date range for schedule query
-        const today = new Date();
-        const startDate = new Date(today);
-        startDate.setMonth(startDate.getMonth() - 1); // Look back one month
-        
-        const formattedStartDate = startDate.toISOString().split('T')[0];
-        const formattedEndDate = today.toISOString().split('T')[0];
-
-        // Get schedule data with a simpler query first
-        const scheduleData = await fetchMLBData(
-            `schedule?teamId=${BRAVES_ID}&startDate=${formattedStartDate}&endDate=${formattedEndDate}&sportId=1`
-        );
-        
-        console.log('Raw schedule data:', scheduleData);
-        
-        let completedGames = [];
-        if (scheduleData.dates && scheduleData.dates.length > 0) {
-            // Process all dates
-            for (const date of scheduleData.dates) {
-                if (date.games) {
-                    for (const game of date.games) {
-                        // Check if game is completed
-                        if (game.status && 
-                            (game.status.codedGameState === 'F' || 
-                             game.status.codedGameState === 'FT' ||
-                             game.status.codedGameState === 'FR' ||
-                             game.status.detailedState === 'Final' ||
-                             game.status.statusCode === 'F' ||
-                             game.status.abstractGameState === 'Final')) {
-                            
-                            console.log('Found completed game:', {
-                                date: date.date,
-                                status: game.status,
-                                teams: game.teams
-                            });
-                            
-                            completedGames.push(game);
-                        }
-                    }
-                }
-            }
-
-            // Sort games by date (most recent first) and take last 5
-            completedGames.sort((a, b) => new Date(b.gameDate) - new Date(a.gameDate));
-            completedGames = completedGames.slice(0, 5);
-            
-            console.log('Processed completed games:', completedGames);
-        }
-
-        let wins = 0;
-        let losses = 0;
-
-        completedGames.forEach(game => {
-            // Check both home and away teams
-            const braves = game.teams.home.team.id === BRAVES_ID ? game.teams.home : game.teams.away;
-            const isWinner = braves.isWinner || (braves.score > (game.teams.home.team.id === BRAVES_ID ? game.teams.away.score : game.teams.home.score));
-            
-            if (isWinner) {
-                wins++;
-            } else {
-                losses++;
-            }
-            
-            console.log(`Game result: ${isWinner ? 'Win' : 'Loss'}, Score: ${game.teams.home.score}-${game.teams.away.score}`);
-        });
-
-        console.log(`Final last 5 record: ${wins}-${losses} (${completedGames.length} games found)`);
-
-        const stats = {
-            record: bravesRecord ? `${bravesRecord.wins}-${bravesRecord.losses}` : 'TBD',
-            last5: completedGames.length > 0 ? `${wins}-${losses}` : 'Loading...',
-            homeRuns: teamStats.homeRuns || 0
-        };
-
-        updateStatsDisplay(stats);
-    } catch (error) {
-        console.error('Error updating team stats:', error);
-        console.error('Error details:', error.message);
-        updateStatsDisplay({
-            record: 'Error',
-            last5: 'Error',
-            homeRuns: '-'
-        });
-    }
+// Helper function to get ordinal suffix
+function getOrdinalSuffix(number) {
+    const j = number % 10;
+    const k = number % 100;
+    if (j == 1 && k != 11) return number + "st";
+    if (j == 2 && k != 12) return number + "nd";
+    if (j == 3 && k != 13) return number + "rd";
+    return number + "th";
 }
 
 // Helper function to get team name without city
 function getTeamNameWithoutCity(fullName) {
-    const teamNamesMap = {
-        'Atlanta Braves': 'Braves',
-        'New York Mets': 'Mets',
-        'Philadelphia Phillies': 'Phillies',
-        'Washington Nationals': 'Nationals',
-        'Miami Marlins': 'Marlins',
-        'St. Louis Cardinals': 'Cardinals',
-        'Chicago Cubs': 'Cubs',
-        'Milwaukee Brewers': 'Brewers',
-        'Pittsburgh Pirates': 'Pirates',
-        'Cincinnati Reds': 'Reds',
-        'Los Angeles Dodgers': 'Dodgers',
-        'San Francisco Giants': 'Giants',
-        'San Diego Padres': 'Padres',
-        'Colorado Rockies': 'Rockies',
-        'Arizona Diamondbacks': 'Diamondbacks',
-        'New York Yankees': 'Yankees',
-        'Boston Red Sox': 'Red Sox',
-        'Tampa Bay Rays': 'Rays',
-        'Toronto Blue Jays': 'Blue Jays',
-        'Baltimore Orioles': 'Orioles',
-        'Chicago White Sox': 'White Sox',
-        'Cleveland Guardians': 'Guardians',
-        'Detroit Tigers': 'Tigers',
-        'Kansas City Royals': 'Royals',
-        'Minnesota Twins': 'Twins',
-        'Houston Astros': 'Astros',
-        'Los Angeles Angels': 'Angels',
-        'Oakland Athletics': 'Athletics',
-        'Seattle Mariners': 'Mariners',
-        'Texas Rangers': 'Rangers'
-    };
-    return teamNamesMap[fullName] || fullName;
+    return cityTeamMap[fullName] || fullName;
 }
 
 // Add new function to fetch season history
@@ -391,45 +309,6 @@ async function fetchSeasonHistory(year = CURRENT_SEASON) {
     }
 }
 
-// Update the stats display function to include the history container outside the grid
-function updateStatsDisplay(stats) {
-    const container = document.querySelector('.dashboard-section');
-    container.innerHTML = `
-        <div class="stats-grid">
-            <div class="stat-card clickable" id="record-card">
-                <h3>Season Record</h3>
-                <p id="season-record">${stats.record}</p>
-            </div>
-            <div class="stat-card">
-                <h3>Last 5 Games</h3>
-                <p id="team-last5">${stats.last5}</p>
-            </div>
-            <div class="stat-card">
-                <h3>Team HRs</h3>
-                <p id="team-hrs">${stats.homeRuns}</p>
-            </div>
-        </div>
-        <div id="season-history" class="season-history-container"></div>
-    `;
-    
-    // Add click handler for the record card
-    const recordCard = document.getElementById('record-card');
-    const historyContainer = document.getElementById('season-history');
-    
-    recordCard.addEventListener('click', async () => {
-        if (historyContainer.classList.contains('expanded')) {
-            historyContainer.classList.remove('expanded');
-            return;
-        }
-        
-        historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
-        historyContainer.classList.add('expanded');
-        
-        const games = await fetchSeasonHistory();
-        displaySeasonHistory(games);
-    });
-}
-
 // Update the display season history function to include sweep indicator
 function displaySeasonHistory(games) {
     const historyContainer = document.getElementById('season-history');
@@ -471,6 +350,15 @@ function displaySeasonHistory(games) {
             ${gamesList}
         </div>
     `;
+
+    // After rendering, scroll to the bottom
+    const gameHistoryList = historyContainer.querySelector('.game-history-list');
+    if (gameHistoryList) {
+        // Use requestAnimationFrame to ensure the DOM has updated
+        requestAnimationFrame(() => {
+            gameHistoryList.scrollTop = gameHistoryList.scrollHeight;
+        });
+    }
 }
 
 // Update roster with player stats
@@ -1042,51 +930,11 @@ function generateCalendarDay(date, game, isToday) {
     `;
 }
 
-// Helper function to get team abbreviation
-function getTeamAbbreviation(teamName) {
-    const cityTeamMap = {
-        'Atlanta Braves': 'ATL',
-        'New York Mets': 'NYM',
-        'Philadelphia Phillies': 'PHI',
-        'Washington Nationals': 'WSH',
-        'Miami Marlins': 'MIA',
-        'St. Louis Cardinals': 'STL',
-        'Chicago Cubs': 'CHC',
-        'Milwaukee Brewers': 'MIL',
-        'Pittsburgh Pirates': 'PIT',
-        'Cincinnati Reds': 'CIN',
-        'Los Angeles Dodgers': 'LAD',
-        'San Francisco Giants': 'SF',
-        'San Diego Padres': 'SD',
-        'Colorado Rockies': 'COL',
-        'Arizona Diamondbacks': 'ARI',
-        'New York Yankees': 'NYY',
-        'Boston Red Sox': 'BOS',
-        'Tampa Bay Rays': 'TB',
-        'Toronto Blue Jays': 'TOR',
-        'Baltimore Orioles': 'BAL',
-        'Chicago White Sox': 'CWS',
-        'Cleveland Guardians': 'CLE',
-        'Detroit Tigers': 'DET',
-        'Kansas City Royals': 'KC',
-        'Minnesota Twins': 'MIN',
-        'Houston Astros': 'HOU',
-        'Los Angeles Angels': 'LAA',
-        'Oakland Athletics': 'OAK',
-        'Seattle Mariners': 'SEA',
-        'Texas Rangers': 'TEX'
-    };
-    
-    return cityTeamMap[teamName] || '';
-}
-
-// Update the getTeamLogoUrl function to use relative paths
+// Update the getTeamLogoUrl function to use .svg and cityTeamMap
 function getTeamLogoUrl(teamName) {
     const abbreviation = getTeamAbbreviation(teamName);
     if (!abbreviation) return null;
-    
-    // Use relative path to logos directory
-    return `./logos/${abbreviation}.svg`;
+    return `./logos/${abbreviation.toLowerCase()}.svg`;
 }
 
 // Helper function to generate game details
@@ -1404,4 +1252,451 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('orientationchange', handleOrientationChange);
     window.addEventListener('resize', handleOrientationChange);
-}); 
+});
+
+// Update getTeamRankings function to include all teams
+async function getTeamRankings() {
+    try {
+        // Get all MLB standings
+        const standingsData = await fetchMLBData('standings?leagueId=103,104&season=' + CURRENT_SEASON);
+        console.log('Full standings data:', standingsData);
+        
+        if (!standingsData || !standingsData.records) {
+            throw new Error('Invalid standings data received');
+        }
+        
+        let divisionRank = '';
+        let overallRank = 0;
+        let divisionStandings = [];
+        let allTeams = [];
+        
+        // Process standings data
+        allTeams = standingsData.records.flatMap(record => {
+            if (!record || !record.teamRecords) return [];
+            
+            const division = record.division?.name || 'Unknown Division';
+            return record.teamRecords.map(team => ({
+                ...team,
+                division,
+                divisionRank: team.divisionRank || 0,
+                winningPct: parseFloat(team.winningPercentage || '0'),
+                teamName: team.team?.name || '',
+            }));
+        });
+        
+        // Sort all teams by winning percentage for overall MLB rank
+        const sortedTeams = [...allTeams].sort((a, b) => b.winningPct - a.winningPct);
+        
+        // Find NL East division data - try multiple possible division names
+        console.log('Division names/IDs in API:', standingsData.records.map(r => ({
+            name: r?.division?.name,
+            id: r?.division?.id
+        })));
+
+        const nlEastDivision = standingsData.records.find(record => {
+            if (!record || !record.division || !record.division.name) return false;
+            const divName = record.division.name.toLowerCase();
+            return divName.includes('national') && divName.includes('east') ||
+                   divName === 'nl east' ||
+                   record.division.id === 204; // NL East division ID
+        });
+        if (!nlEastDivision) {
+            console.warn('NL East Division not found in API, using manual fallback.');
+        }
+        
+        console.log('NL East Division data:', nlEastDivision);
+        
+        if (nlEastDivision && nlEastDivision.teamRecords) {
+            divisionStandings = nlEastDivision.teamRecords.map(team => ({
+                ...team,
+                division: nlEastDivision.division.name,
+                divisionRank: team.divisionRank || 0,
+                winningPct: parseFloat(team.winningPercentage || '0')
+            }));
+            
+            // Sort division standings by division rank
+            divisionStandings.sort((a, b) => a.divisionRank - b.divisionRank);
+        } else {
+            console.log('Falling back to manual NL East team filtering');
+            // Fallback: manually filter NL East teams
+            const nlEastTeamIds = [144, 121, 146, 120, 143];
+            divisionStandings = allTeams
+                .filter(team => nlEastTeamIds.includes(team.team.id))
+                .sort((a, b) => b.winningPct - a.winningPct)
+                .map((team, index) => ({
+                    ...team,
+                    divisionRank: index + 1,
+                    teamName: team.team?.name || '',
+                }));
+        }
+        
+        console.log('Division standings:', divisionStandings);
+        
+        // Find Braves' rankings
+        const bravesInfo = divisionStandings.find(team => team.team.id === BRAVES_ID);
+        if (bravesInfo) {
+            divisionRank = `${getOrdinalSuffix(bravesInfo.divisionRank)} NL East`;
+            overallRank = sortedTeams.findIndex(team => team.team.id === BRAVES_ID) + 1;
+        }
+        
+        return {
+            divisionRank,
+            overallRank: getOrdinalSuffix(overallRank) + ' MLB',
+            divisionStandings,
+            allTeams: sortedTeams
+        };
+    } catch (error) {
+        console.error('Error getting team rankings:', error);
+        return {
+            divisionRank: '-',
+            overallRank: '-',
+            divisionStandings: [],
+            allTeams: []
+        };
+    }
+}
+
+// Update the stats display function
+function updateStatsDisplay(stats) {
+    const container = document.querySelector('.dashboard-section');
+    container.innerHTML = `
+        <div class="stats-grid">
+            <div class="stat-card clickable" id="record-card">
+                <h3>Season Record</h3>
+                <p id="season-record">${stats.record}</p>
+            </div>
+            <div class="stat-card clickable" id="league-card">
+                <h3>Around the League</h3>
+                <p id="team-rankings" class="around-league-multiline">
+                    <span>${stats.divisionRank}</span>
+                    <span>${stats.overallRank}</span>
+                </p>
+            </div>
+            <div class="stat-card">
+                <h3>Team HRs</h3>
+                <p id="team-hrs">${stats.homeRuns}</p>
+            </div>
+        </div>
+        <div id="season-history" class="season-history-container"></div>
+        <div id="league-overview" class="league-overview-container">
+            <div class="division-standings">
+                <div class="standings-header">
+                    <h3>Standings</h3>
+                    <div class="standings-toggle">
+                        <button class="toggle-btn active" data-view="division">Division</button>
+                        <button class="toggle-btn" data-view="league">League</button>
+                        <button class="toggle-btn" data-view="rankings">Rankings</button>
+                    </div>
+                </div>
+                <div class="standings-content"></div>
+            </div>
+        </div>
+    `;
+    
+    // Add click handlers
+    const recordCard = document.getElementById('record-card');
+    const leagueCard = document.getElementById('league-card');
+    const historyContainer = document.getElementById('season-history');
+    const leagueContainer = document.getElementById('league-overview');
+    
+    recordCard.addEventListener('click', async () => {
+        if (historyContainer.classList.contains('expanded')) {
+            historyContainer.classList.remove('expanded');
+            return;
+        }
+        
+        // Close league overview if open
+        leagueContainer.classList.remove('expanded');
+        
+        historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
+        historyContainer.classList.add('expanded');
+        
+        const games = await fetchSeasonHistory();
+        displaySeasonHistory(games);
+    });
+    
+    leagueCard.addEventListener('click', async () => {
+        if (leagueContainer.classList.contains('expanded')) {
+            leagueContainer.classList.remove('expanded');
+            return;
+        }
+        
+        // Close season history if open
+        historyContainer.classList.remove('expanded');
+        
+        const standingsDiv = leagueContainer.querySelector('.standings-content');
+        
+        standingsDiv.innerHTML = '<div class="loading">Loading standings...</div>';
+        
+        leagueContainer.classList.add('expanded');
+        
+        // Fetch and display data
+        const [rankings, teamStats] = await Promise.all([
+            getTeamRankings(),
+            getTeamStats()
+        ]);
+
+        // Add standings toggle functionality
+        const standingsToggle = leagueContainer.querySelector('.standings-toggle');
+        let currentView = 'division';
+        
+        function updateStandingsView(view, standings, teamStats) {
+            if (!standings) return;
+            if (view === 'rankings' && teamStats) {
+                if (!teamStats || !teamStats.stats || !teamStats.rankings || !teamStats.averages) {
+                    standingsDiv.innerHTML = '<div class="error-message">No rankings data available.</div>';
+                    return;
+                }
+                const { stats, rankings: statRankings, averages } = teamStats;
+                const statList = [
+                    { key: 'homeRuns', label: 'Home Runs', value: stats.homeRuns, avg: averages.homeRuns, rank: statRankings.homeRuns },
+                    { key: 'runs', label: 'Runs', value: stats.runs, avg: averages.runs, rank: statRankings.runs },
+                    { key: 'hits', label: 'Hits', value: stats.hits, avg: averages.hits, rank: statRankings.hits },
+                    { key: 'era', label: 'ERA', value: stats.era, avg: averages.era, rank: statRankings.era },
+                    { key: 'strikeOuts', label: 'Strikeouts', value: stats.strikeOuts, avg: averages.strikeOuts, rank: statRankings.strikeOuts },
+                ];
+                standingsDiv.innerHTML = `
+                    <div class="team-rankings-list">
+                        <h3>Team Rankings</h3>
+                        <ul class="rankings-list-vertical">
+                            ${statList.map(stat => `
+                                <li class="ranking-item-vertical">
+                                    <span class="stat-label">${stat.label}:</span>
+                                    <span class="stat-value">${stat.value}</span>
+                                    <span class="stat-avg">MLB Avg: ${stat.avg}</span>
+                                    <span class="stat-rank">Rank: ${stat.rank}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                `;
+                return;
+            }
+            const teams = view === 'division' 
+                ? standings.divisionStandings
+                : standings.allTeams;
+            
+            standingsDiv.innerHTML = `
+                <div class="standings-scroll">
+                    <div class="standings-list">
+                        <div class="standings-header">
+                            <span class="rank-header">#</span>
+                            <span class="team-header">Team</span>
+                            <span class="record-header">W-L</span>
+                            <span class="gb-header">GB</span>
+                            <span class="pct-header">PCT</span>
+                            <span class="streak-header">Streak</span>
+                        </div>
+                        ${teams.map((team, index) => {
+                            if (!team || !team.teamName) return '';
+                            const winPct = (team.wins / (team.wins + team.losses)).toFixed(3);
+                            const isBraves = team.team.id === BRAVES_ID;
+                            const logoUrl2 = getTeamLogoUrl(team.teamName);
+                            return `
+                                <div class="standings-row ${isBraves ? 'braves' : ''}">
+                                    <span class="rank-number">${index + 1}</span>
+                                    <span class="team-name">
+                                        ${logoUrl2 ? `<img src="${logoUrl2}" alt="${team.teamName}" class="team-mini-logo" onerror="this.style.display='none'">` : ''}
+                                        <span>${getTeamNameWithoutCity(team.teamName)}</span>
+                                    </span>
+                                    <span class="team-record">${team.wins}-${team.losses}</span>
+                                    <span class="games-back">${team.gamesBack === '0.0' ? '-' : team.gamesBack}</span>
+                                    <span class="win-pct">${winPct}</span>
+                                    <span class="team-streak ${team.streak?.streakCode?.startsWith('W') ? 'winning' : 'losing'}">${team.streak?.streakCode || ''}</span>
+                                </div>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
+        }
+        
+        standingsToggle.addEventListener('click', (e) => {
+            if (e.target.classList.contains('toggle-btn')) {
+                const view = e.target.dataset.view;
+                if (view !== currentView) {
+                    currentView = view;
+                    standingsToggle.querySelectorAll('.toggle-btn').forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.view === view);
+                    });
+                    if (view === 'rankings') {
+                        let teamStatsRaw = null;
+                        if (teamStats) {
+                            teamStatsRaw = teamStats;
+                        }
+                        updateStandingsView(view, rankings, teamStatsRaw);
+                    } else {
+                        updateStandingsView(view, rankings);
+                    }
+                }
+            }
+        });
+        
+        // Initial standings display
+        let teamStatsRaw = null;
+        if (teamStats) {
+            teamStatsRaw = teamStats;
+        }
+        updateStandingsView('division', rankings, teamStatsRaw);
+    });
+}
+
+// Update getTeamStats to include averages and runs
+async function getTeamStats() {
+    try {
+        // Fetch hitting stats
+        const hittingStats = await fetchMLBData(
+            `teams/stats?stats=season&group=hitting&season=${CURRENT_SEASON}&sportIds=1`
+        );
+        
+        // Fetch pitching stats
+        const pitchingStats = await fetchMLBData(
+            `teams/stats?stats=season&group=pitching&season=${CURRENT_SEASON}&sportIds=1`
+        );
+        
+        console.log('Pitching stats response:', pitchingStats); // Debug log
+        
+        // Process hitting stats
+        const allTeamHitting = hittingStats.stats[0].splits.map(team => ({
+            teamId: team.team.id,
+            homeRuns: team.stat.homeRuns || 0,
+            hits: team.stat.hits || 0,
+            runs: team.stat.runs || 0
+        }));
+        
+        // Process pitching stats
+        const allTeamPitching = pitchingStats.stats[0].splits.map(team => ({
+            teamId: team.team.id,
+            era: parseFloat(team.stat.era) || 0,
+            strikeOuts: team.stat.strikeOuts || 0
+        }));
+        
+        // Calculate averages
+        const calculateAverage = (arr, prop) => {
+            const sum = arr.reduce((acc, curr) => acc + (curr[prop] || 0), 0);
+            return (sum / arr.length).toFixed(2);
+        };
+
+        const averages = {
+            homeRuns: calculateAverage(allTeamHitting, 'homeRuns'),
+            hits: calculateAverage(allTeamHitting, 'hits'),
+            runs: calculateAverage(allTeamHitting, 'runs'),
+            era: calculateAverage(allTeamPitching, 'era'),
+            strikeOuts: calculateAverage(allTeamPitching, 'strikeOuts')
+        };
+
+        // Find Braves' stats and rankings
+        const bravesHitting = allTeamHitting.find(team => team.teamId === BRAVES_ID);
+        const bravesPitching = allTeamPitching.find(team => team.teamId === BRAVES_ID);
+        
+        // Sort teams for rankings
+        const sortedHR = [...allTeamHitting].sort((a, b) => b.homeRuns - a.homeRuns);
+        const sortedHits = [...allTeamHitting].sort((a, b) => b.hits - a.hits);
+        const sortedRuns = [...allTeamHitting].sort((a, b) => b.runs - a.runs);
+        const sortedERA = [...allTeamPitching].sort((a, b) => a.era - b.era);
+        const sortedSO = [...allTeamPitching].sort((a, b) => b.strikeOuts - a.strikeOuts);
+        
+        // Format ERA with proper error handling
+        const formatERA = (era) => {
+            if (typeof era === 'number' && !isNaN(era)) {
+                return era.toFixed(2);
+            }
+            return '0.00';
+        };
+        
+        return {
+            stats: {
+                homeRuns: bravesHitting?.homeRuns || 0,
+                hits: bravesHitting?.hits || 0,
+                runs: bravesHitting?.runs || 0,
+                era: formatERA(bravesPitching?.era),
+                strikeOuts: bravesPitching?.strikeOuts || 0
+            },
+            rankings: {
+                homeRuns: getOrdinalSuffix(sortedHR.findIndex(team => team.teamId === BRAVES_ID) + 1),
+                hits: getOrdinalSuffix(sortedHits.findIndex(team => team.teamId === BRAVES_ID) + 1),
+                runs: getOrdinalSuffix(sortedRuns.findIndex(team => team.teamId === BRAVES_ID) + 1),
+                era: getOrdinalSuffix(sortedERA.findIndex(team => team.teamId === BRAVES_ID) + 1),
+                strikeOuts: getOrdinalSuffix(sortedSO.findIndex(team => team.teamId === BRAVES_ID) + 1)
+            },
+            averages,
+            allTeamHitting: allTeamHitting.map(team => ({
+                ...team,
+                teamName: team.team?.name || team.teamName || '',
+                teamAbbr: getTeamAbbreviation(team.team?.name || team.teamName || ''),
+            })),
+            allTeamPitching: allTeamPitching.map(team => ({
+                ...team,
+                teamName: team.team?.name || team.teamName || '',
+                teamAbbr: getTeamAbbreviation(team.team?.name || team.teamName || ''),
+            })),
+        };
+    } catch (error) {
+        console.error('Error getting team stats:', error);
+        return {
+            stats: {
+                homeRuns: 0,
+                hits: 0,
+                runs: 0,
+                era: '0.00',
+                strikeOuts: 0
+            },
+            rankings: {
+                homeRuns: '-',
+                hits: '-',
+                runs: '-',
+                era: '-',
+                strikeOuts: '-'
+            },
+            averages: {
+                homeRuns: '0',
+                hits: '0',
+                runs: '0',
+                era: '0.00',
+                strikeOuts: '0'
+            },
+            allTeamHitting: [],
+            allTeamPitching: []
+        };
+    }
+}
+
+// Update team stats based on selected season
+async function updateTeamStats(year = CURRENT_SEASON) {
+    try {
+        document.getElementById('season-record').textContent = 'Loading...';
+        
+        // Get standings data for record
+        const standingsData = await fetchMLBData(`standings?leagueId=104&season=${year}`);
+        const bravesRecord = standingsData.records
+            .flatMap(r => r.teamRecords)
+            .find(t => t.team.id === BRAVES_ID);
+
+        // Get rankings
+        const rankings = await getTeamRankings();
+        
+        const stats = {
+            record: bravesRecord ? 
+                `${bravesRecord.wins}-${bravesRecord.losses} (.${calculateWinningPercentage(bravesRecord.wins, bravesRecord.losses)})` : 
+                'TBD',
+            rankings: rankings ? `${rankings.divisionRank} • ${rankings.overallRank}` : 'Loading...',
+            homeRuns: bravesRecord?.homeRuns || 0,
+            divisionRank: rankings ? rankings.divisionRank : '',
+            overallRank: rankings ? rankings.overallRank : '',
+        };
+
+        updateStatsDisplay(stats);
+    } catch (error) {
+        console.error('Error updating team stats:', error);
+        updateStatsDisplay({
+            record: 'Error',
+            rankings: 'Error',
+            homeRuns: '-'
+        });
+    }
+}
+
+// Update getTeamAbbreviation to use cityTeamMap
+function getTeamAbbreviation(teamName) {
+    return cityTeamMap[teamName] || '';
+} 
