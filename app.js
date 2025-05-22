@@ -930,12 +930,12 @@ function generateCalendarDay(date, game, isToday) {
     `;
 }
 
-// Update the getTeamLogoUrl function to use relative paths
+// Update the getTeamLogoUrl function to use paths relative to repository root
 function getTeamLogoUrl(teamName) {
     const abbreviation = getTeamAbbreviation(teamName);
     if (!abbreviation) return null;
-    // Use relative path for GitHub Pages
-    return `logos/${abbreviation}.svg`;
+    // Use path relative to repository root for GitHub Pages
+    return `./logos/${abbreviation}.svg`;
 }
 
 // Helper function to generate game details
