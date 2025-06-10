@@ -1230,7 +1230,8 @@ document.addEventListener('DOMContentLoaded', initializePerformanceOptimizations
 async function updateDailyRundown() {
     try {
         console.log('Loading daily rundown...');
-        const response = await fetch('./data/daily-rundown.json');
+        // Add cache-busting parameter
+        const response = await fetch('./data/daily-rundown.json?t=' + new Date().getTime());
         
         if (!response.ok) {
             throw new Error(`Failed to fetch daily rundown: ${response.status}`);
@@ -1281,10 +1282,14 @@ async function updateDailyRundown() {
     } catch (error) {
         console.error('Error loading daily rundown:', error);
         
-        // Fallback to placeholder text
+        // Fallback to placeholder text with helpful message for local development
         const rundownElement = document.querySelector('.daily-rundown-content p');
         if (rundownElement) {
-            rundownElement.textContent = 'Daily rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+            if (window.location.protocol === 'file:') {
+                rundownElement.textContent = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the daily rundown feature.';
+            } else {
+                rundownElement.textContent = 'Daily rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+            }
             rundownElement.style.fontStyle = 'italic';
         }
     }

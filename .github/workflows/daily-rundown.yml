@@ -52,132 +52,111 @@ jobs:
               .slice(0, 1); // Get last game only
             
             if (recentGames.length === 0) {
-              console.log('No recent completed games found - using mock data for testing');
-              
-              // Create mock data for off-season testing
-              const mockRundownText = "Braves W 8-3 vs Phillies. Sale earned the win (7 IP, 2 ER), Iglesias recorded the save. Acuña Jr. led with 3 hits and 2 RBI. Braves out-hit Philadelphia 12-7 with 1 error.";
-              
-              const mockData = {
-                date: new Date().toISOString().split('T')[0],
-                timestamp: new Date().toISOString(),
-                rundown: mockRundownText,
-                lastGame: {
-                  date: new Date().toISOString(),
-                  opponent: "Philadelphia Phillies",
-                  result: "W",
-                  score: "8-3",
-                  homeAway: "vs",
-                  pitching: {
-                    winner: "Chris Sale",
-                    loser: "Zack Wheeler", 
-                    save: "Raisel Iglesias"
-                  },
-                  hitting: {
-                    bravesHits: 12,
-                    bravesRuns: 8,
-                    topHitter: {
-                      name: "Ronald Acuña Jr.",
-                      hits: 3,
-                      rbi: 2
-                    }
-                  }
-                },
-                mockData: true
-              };
-              
-              if (!fs.existsSync('data')) {
-                fs.mkdirSync('data');
-              }
-              
-              fs.writeFileSync('data/daily-rundown.json', JSON.stringify(mockData, null, 2));
-              console.log('Mock daily rundown created for testing');
-              return;
+              throw new Error('No recent completed games found');
             }
             
             const lastGame = recentGames[0];
             console.log('Fetching detailed boxscore for game:', lastGame.gamePk);
             
-            // Get detailed boxscore data
+            // Get detailed boxscore data with specific hydration
             const boxscoreResponse = await axios.get(
               `https://statsapi.mlb.com/api/v1/game/${lastGame.gamePk}/boxscore`,
-              { timeout: 10000 }
+              { timeout: 15000 }
+            );
+            
+            // Also get game summary for more accurate data
+            const gameResponse = await axios.get(
+              `https://statsapi.mlb.com/api/v1/game/${lastGame.gamePk}/linescore`,
+              { timeout: 15000 }
             );
             
             const boxscore = boxscoreResponse.data;
-            const bravesTeam = boxscore.teams.away.team.id === 144 ? boxscore.teams.away : boxscore.teams.home;
-            const opponentTeam = boxscore.teams.away.team.id === 144 ? boxscore.teams.home : boxscore.teams.away;
-            const gameResult = bravesTeam.teamStats.batting.runs > opponentTeam.teamStats.batting.runs ? 'W' : 'L';
-            const score = `${bravesTeam.teamStats.batting.runs}-${opponentTeam.teamStats.batting.runs}`;
-            const homeAway = boxscore.teams.away.team.id === 144 ? '@' : 'vs';
+            const gameData = gameResponse.data;
             
-            // Get winning/losing pitcher info
-            const winningPitcher = boxscore.teams.away.pitchers.find(p => 
-              boxscore.teams.away.players[`ID${p}`]?.stats?.pitching?.decisions?.wins === 1
-            ) || boxscore.teams.home.pitchers.find(p => 
-              boxscore.teams.home.players[`ID${p}`]?.stats?.pitching?.decisions?.wins === 1
-            );
+            // Determine Braves team and opponent from the boxscore
+            const isAway = boxscore.teams.away.team.id === 144;
+            const bravesTeam = isAway ? boxscore.teams.away : boxscore.teams.home;
+            const opponentTeam = isAway ? boxscore.teams.home : boxscore.teams.away;
             
-            const losingPitcher = boxscore.teams.away.pitchers.find(p => 
-              boxscore.teams.away.players[`ID${p}`]?.stats?.pitching?.decisions?.losses === 1
-            ) || boxscore.teams.home.pitchers.find(p => 
-              boxscore.teams.home.players[`ID${p}`]?.stats?.pitching?.decisions?.losses === 1
-            );
+            // Get accurate game result
+            const bravesRuns = bravesTeam.teamStats.batting.runs;
+            const oppRuns = opponentTeam.teamStats.batting.runs;
+            const gameResult = bravesRuns > oppRuns ? 'W' : 'L';
+            const score = `${bravesRuns}-${oppRuns}`;
+            const homeAway = isAway ? '@' : 'vs';
             
-            // Get save pitcher if exists
-            const savePitcher = boxscore.teams.away.pitchers.find(p => 
-              boxscore.teams.away.players[`ID${p}`]?.stats?.pitching?.decisions?.saves === 1
-            ) || boxscore.teams.home.pitchers.find(p => 
-              boxscore.teams.home.players[`ID${p}`]?.stats?.pitching?.decisions?.saves === 1
-            );
+            // Extract pitcher decisions more accurately from game decisions
+            const decisions = gameData.decisions || {};
+            const winnerInfo = decisions.winner ? `${decisions.winner.fullName}` : null;
+            const loserInfo = decisions.loser ? `${decisions.loser.fullName}` : null;
+            const saveInfo = decisions.save ? `${decisions.save.fullName}` : null;
             
-            // Get top offensive performers for Braves
-            let topHitter = null;
-            let maxHits = 0;
+            // Find Braves' best offensive performer
+            let topBravesHitter = null;
+            let bestOffensiveValue = 0;
+            
             Object.values(bravesTeam.players).forEach(player => {
-              if (player.stats?.batting?.hits > maxHits) {
-                maxHits = player.stats.batting.hits;
-                topHitter = player;
+              if (player.stats?.batting) {
+                const hits = player.stats.batting.hits || 0;
+                const rbi = player.stats.batting.rbi || 0;
+                const runs = player.stats.batting.runs || 0;
+                // Weighted score: hits + (2 * RBI) + runs
+                const offensiveValue = hits + (rbi * 2) + runs;
+                
+                if (offensiveValue > bestOffensiveValue && hits > 0) {
+                  bestOffensiveValue = offensiveValue;
+                  topBravesHitter = player;
+                }
               }
             });
             
-            // Build concise game summary
-            const gameContext = `
-            GAME RESULT: Atlanta Braves ${gameResult} ${score} ${homeAway} ${opponentTeam.team.name}
-            DATE: ${new Date(lastGame.gameDate).toLocaleDateString()}
-            
-            PITCHING:
-            ${winningPitcher ? `Win: ${boxscore.teams.away.players[`ID${winningPitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${winningPitcher}`]?.person?.fullName}` : ''}
-            ${losingPitcher ? `Loss: ${boxscore.teams.away.players[`ID${losingPitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${losingPitcher}`]?.person?.fullName}` : ''}
-            ${savePitcher ? `Save: ${boxscore.teams.away.players[`ID${savePitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${savePitcher}`]?.person?.fullName}` : ''}
-            
-            BRAVES HITTING:
-            Team Total: ${bravesTeam.teamStats.batting.hits} hits, ${bravesTeam.teamStats.batting.runs} runs
-            ${topHitter ? `Top Hitter: ${topHitter.person.fullName} (${topHitter.stats.batting.hits} hits, ${topHitter.stats.batting.rbi} RBI)` : ''}
-            
-            TEAM STATS:
-            Braves: ${bravesTeam.teamStats.batting.hits}H-${bravesTeam.teamStats.fielding.errors}E
-            ${opponentTeam.team.name}: ${opponentTeam.teamStats.batting.hits}H-${opponentTeam.teamStats.fielding.errors}E
-            `;
+            // Build accurate, concise game data for AI
+            const gameContext = JSON.stringify({
+              gameResult: `Atlanta Braves ${gameResult} ${score} ${homeAway} ${opponentTeam.team.name}`,
+              date: new Date(lastGame.gameDate).toLocaleDateString(),
+              pitchingDecisions: {
+                winner: winnerInfo,
+                loser: loserInfo,
+                save: saveInfo
+              },
+              bravesOffense: {
+                runs: bravesRuns,
+                hits: bravesTeam.teamStats.batting.hits,
+                errors: bravesTeam.teamStats.fielding.errors,
+                topPerformer: topBravesHitter ? {
+                  name: topBravesHitter.person.fullName,
+                  hits: topBravesHitter.stats.batting.hits,
+                  rbi: topBravesHitter.stats.batting.rbi,
+                  runs: topBravesHitter.stats.batting.runs
+                } : null
+              },
+              opponentStats: {
+                team: opponentTeam.team.name,
+                runs: oppRuns,
+                hits: opponentTeam.teamStats.batting.hits,
+                errors: opponentTeam.teamStats.fielding.errors
+              }
+            }, null, 2);
             
             console.log('Calling OpenAI API for concise summary...');
             
-            // Call OpenAI API with strict instructions for conciseness
+            // Call OpenAI API with GPT-4 for better accuracy
             const openaiResponse = await axios.post(
               'https://api.openai.com/v1/chat/completions',
               {
-                model: 'gpt-3.5-turbo',
+                model: 'gpt-4o-mini',
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a concise sports reporter. Write EXTREMELY brief game summaries for fans who missed the game. Focus ONLY on: final score, key pitching performances, top batting performances, and any notable plays. NO fluff, NO filler. Maximum 3-4 sentences. Be direct and factual.'
+                    content: 'You are a precise sports reporter. Write extremely concise game summaries using ONLY the provided data. Format: "Braves [W/L] [score] [vs/@] [opponent]. [Winner] earned the win[, Loser took the loss][, Save recorded save]. [Top hitter] led with [stats]. [Notable detail if any]." Maximum 2-3 sentences. Use exact names and numbers from the data provided.'
                   },
                   {
                     role: 'user',
-                    content: `Write a concise daily rundown for someone who missed this Braves game. Include only essential facts:\n\n${gameContext}`
+                    content: `Write a concise game summary using only this verified boxscore data. Do not add information not provided:\n\n${gameContext}`
                   }
                 ],
-                max_tokens: 100,
-                temperature: 0.3
+                max_tokens: 120,
+                temperature: 0.1
               },
               {
                 headers: {
@@ -195,7 +174,7 @@ jobs:
               fs.mkdirSync('data');
             }
             
-            // Save the daily rundown
+            // Save the daily rundown with accurate data
             const dailyData = {
               date: new Date().toISOString().split('T')[0],
               timestamp: new Date().toISOString(),
@@ -207,17 +186,18 @@ jobs:
                 score: score,
                 homeAway: homeAway,
                 pitching: {
-                  winner: winningPitcher ? (boxscore.teams.away.players[`ID${winningPitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${winningPitcher}`]?.person?.fullName) : null,
-                  loser: losingPitcher ? (boxscore.teams.away.players[`ID${losingPitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${losingPitcher}`]?.person?.fullName) : null,
-                  save: savePitcher ? (boxscore.teams.away.players[`ID${savePitcher}`]?.person?.fullName || boxscore.teams.home.players[`ID${savePitcher}`]?.person?.fullName) : null
+                  winner: winnerInfo,
+                  loser: loserInfo,
+                  save: saveInfo
                 },
                 hitting: {
                   bravesHits: bravesTeam.teamStats.batting.hits,
-                  bravesRuns: bravesTeam.teamStats.batting.runs,
-                  topHitter: topHitter ? {
-                    name: topHitter.person.fullName,
-                    hits: topHitter.stats.batting.hits,
-                    rbi: topHitter.stats.batting.rbi
+                  bravesRuns: bravesRuns,
+                  topHitter: topBravesHitter ? {
+                    name: topBravesHitter.person.fullName,
+                    hits: topBravesHitter.stats.batting.hits,
+                    rbi: topBravesHitter.stats.batting.rbi,
+                    runs: topBravesHitter.stats.batting.runs
                   } : null
                 }
               }
