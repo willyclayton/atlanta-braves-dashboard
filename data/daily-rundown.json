@@ -1,7 +1,26 @@
 {
-  "date": "2025-01-28",
-  "timestamp": "2025-01-28T09:00:00.000Z",
-  "rundown": "Welcome to your Daily Braves Rundown! This section will be automatically updated each morning at 4 AM EST with AI-generated insights about the team's recent performance, game highlights, and notable developments. Stay tuned for fresh content after each game!",
-  "lastGame": null,
-  "initialized": true
-} 
+  "date": "2025-06-10",
+  "timestamp": "2025-06-10T18:44:12.283Z",
+  "rundown": "Braves dominate Brewers with a 7-1 win. Austin Riley leads the offense with 3 hits. Pitching staff holds Brewers to just 1 run on 5 hits.",
+  "lastGame": {
+    "date": "2025-06-09T23:40:00Z",
+    "opponent": "Milwaukee Brewers",
+    "result": "W",
+    "score": "7-1",
+    "homeAway": "@",
+    "pitching": {
+      "winner": null,
+      "loser": null,
+      "save": null
+    },
+    "hitting": {
+      "bravesHits": 11,
+      "bravesRuns": 7,
+      "topHitter": {
+        "name": "Austin Riley",
+        "hits": 3,
+        "rbi": 0
+      }
+    }
+  }
+}
