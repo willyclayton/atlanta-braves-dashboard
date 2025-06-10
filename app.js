@@ -1247,10 +1247,24 @@ async function updateDailyRundown() {
             if (data.lastGame) {
                 const gameInfo = document.createElement('div');
                 gameInfo.className = 'daily-rundown-meta';
+                
+                // Build detailed game info
+                let gameDetails = `${data.lastGame.result.toUpperCase()} ${data.lastGame.score} ${data.lastGame.homeAway} ${data.lastGame.opponent}`;
+                let pitchingInfo = '';
+                
+                if (data.lastGame.pitching) {
+                    const pitchers = [];
+                    if (data.lastGame.pitching.winner) pitchers.push(`W: ${data.lastGame.pitching.winner.split(' ').slice(-1)[0]}`);
+                    if (data.lastGame.pitching.loser) pitchers.push(`L: ${data.lastGame.pitching.loser.split(' ').slice(-1)[0]}`);
+                    if (data.lastGame.pitching.save) pitchers.push(`S: ${data.lastGame.pitching.save.split(' ').slice(-1)[0]}`);
+                    if (pitchers.length > 0) pitchingInfo = ` • ${pitchers.join(', ')}`;
+                }
+                
                 gameInfo.innerHTML = `
                     <small style="color: var(--text-dark); opacity: 0.7;">
-                        Last updated: ${new Date(data.timestamp).toLocaleDateString()}
-                        ${data.lastGame ? ` • Last game: ${data.lastGame.result.toUpperCase()} ${data.lastGame.score} vs ${data.lastGame.opponent}` : ''}
+                        ${gameDetails}${pitchingInfo}
+                        <br>
+                        Updated: ${new Date(data.timestamp).toLocaleDateString()}
                     </small>
                 `;
                 
