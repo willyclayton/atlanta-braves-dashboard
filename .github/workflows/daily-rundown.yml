@@ -1,0 +1,162 @@
+name: Daily Rundown
+
+on:
+  schedule:
+    # Runs at 4:00 AM EST (9:00 AM UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+jobs:
+  generate-daily-rundown:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: npm install axios
+    
+    - name: Generate Daily Rundown
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node << 'EOF'
+        const axios = require('axios');
+        const fs = require('fs');
+        
+        async function generateDailyRundown() {
+          try {
+            console.log('Fetching recent Braves game data...');
+            
+            // Fetch recent Braves games from MLB API
+            const mlbResponse = await axios.get(
+              'https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=144&season=2025&gameType=R&hydrate=game(content(editorial(recap)))',
+              { timeout: 10000 }
+            );
+            
+            const games = mlbResponse.data.dates.flatMap(date => date.games);
+            const recentGames = games
+              .filter(game => game.status.statusCode === 'F') // Only completed games
+              .sort((a, b) => new Date(b.gameDate) - new Date(a.gameDate))
+              .slice(0, 3); // Get last 3 games
+            
+            if (recentGames.length === 0) {
+              throw new Error('No recent completed games found');
+            }
+            
+            const lastGame = recentGames[0];
+            const bravesTeam = lastGame.teams.away.team.id === 144 ? lastGame.teams.away : lastGame.teams.home;
+            const opponentTeam = lastGame.teams.away.team.id === 144 ? lastGame.teams.home : lastGame.teams.away;
+            
+            const gameResult = bravesTeam.score > opponentTeam.score ? 'won' : 'lost';
+            const score = `${bravesTeam.score}-${opponentTeam.score}`;
+            
+            // Prepare game context for OpenAI
+            const gameContext = `
+            Last Game: Atlanta Braves ${gameResult} against ${opponentTeam.team.name} ${score}
+            Date: ${new Date(lastGame.gameDate).toLocaleDateString()}
+            
+            Recent games context:
+            ${recentGames.map(game => {
+              const braves = game.teams.away.team.id === 144 ? game.teams.away : game.teams.home;
+              const opponent = game.teams.away.team.id === 144 ? game.teams.home : game.teams.away;
+              const result = braves.score > opponent.score ? 'W' : 'L';
+              return `${result} ${braves.score}-${opponent.score} vs ${opponent.team.name}`;
+            }).join('\n')}
+            `;
+            
+            console.log('Calling OpenAI API...');
+            
+            // Call OpenAI API
+            const openaiResponse = await axios.post(
+              'https://api.openai.com/v1/chat/completions',
+              {
+                model: 'gpt-3.5-turbo',
+                messages: [
+                  {
+                    role: 'system',
+                    content: 'You are a sports reporter covering the Atlanta Braves. Provide concise, engaging daily rundowns focusing on recent performance, notable plays, and key insights. Keep responses under 150 words and write in an enthusiastic but professional tone.'
+                  },
+                  {
+                    role: 'user',
+                    content: `Based on this recent game data, write a daily rundown for Atlanta Braves fans about how the team performed in their last game and anything notable. Include the game result and key highlights:\n\n${gameContext}`
+                  }
+                ],
+                max_tokens: 200,
+                temperature: 0.7
+              },
+              {
+                headers: {
+                  'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                  'Content-Type': 'application/json'
+                },
+                timeout: 30000
+              }
+            );
+            
+            const rundownText = openaiResponse.data.choices[0].message.content.trim();
+            
+            // Create data directory if it doesn't exist
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            // Save the daily rundown
+            const dailyData = {
+              date: new Date().toISOString().split('T')[0],
+              timestamp: new Date().toISOString(),
+              rundown: rundownText,
+              lastGame: {
+                date: lastGame.gameDate,
+                opponent: opponentTeam.team.name,
+                result: gameResult,
+                score: score
+              }
+            };
+            
+            fs.writeFileSync('data/daily-rundown.json', JSON.stringify(dailyData, null, 2));
+            
+            console.log('Daily rundown generated successfully');
+            console.log('Content:', rundownText);
+            
+          } catch (error) {
+            console.error('Error generating daily rundown:', error.message);
+            
+            // Create fallback content
+            const fallbackData = {
+              date: new Date().toISOString().split('T')[0],
+              timestamp: new Date().toISOString(),
+              rundown: "Stay tuned for the latest Atlanta Braves updates! Check back soon for today's game analysis and team news.",
+              lastGame: null,
+              error: true
+            };
+            
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            fs.writeFileSync('data/daily-rundown.json', JSON.stringify(fallbackData, null, 2));
+            
+            // Don't fail the workflow, just log the error
+            console.log('Fallback content created');
+          }
+        }
+        
+        generateDailyRundown();
+        EOF
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/daily-rundown.json
+        git diff --staged --quiet || git commit -m "Update daily rundown - $(date '+%Y-%m-%d')"
+        git push

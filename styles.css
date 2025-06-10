@@ -122,6 +122,35 @@ h2 {
     font-family: monospace;
 }
 
+/* Daily Rundown Section Styles */
+.daily-rundown-content {
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background: var(--background-light);
+    border-radius: 6px;
+    border: 1px solid #eee;
+}
+
+.daily-rundown-content p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+.daily-rundown-meta {
+    margin-top: 0.75rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+.daily-rundown-meta small {
+    font-size: 0.85rem;
+}
+
 .dashboard-section:has(#upcoming-games) {
     background: white;
     padding: 0;

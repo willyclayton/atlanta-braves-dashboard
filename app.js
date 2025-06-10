@@ -1226,12 +1226,63 @@ function initializePerformanceOptimizations() {
 // Call initialization when DOM is ready
 document.addEventListener('DOMContentLoaded', initializePerformanceOptimizations);
 
+// Function to load and display daily rundown
+async function updateDailyRundown() {
+    try {
+        console.log('Loading daily rundown...');
+        const response = await fetch('./data/daily-rundown.json');
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch daily rundown: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const rundownElement = document.querySelector('.daily-rundown-content p');
+        
+        if (rundownElement && data.rundown) {
+            rundownElement.textContent = data.rundown;
+            rundownElement.style.fontStyle = 'normal';
+            
+            // Add timestamp info
+            if (data.lastGame) {
+                const gameInfo = document.createElement('div');
+                gameInfo.className = 'daily-rundown-meta';
+                gameInfo.innerHTML = `
+                    <small style="color: var(--text-dark); opacity: 0.7;">
+                        Last updated: ${new Date(data.timestamp).toLocaleDateString()}
+                        ${data.lastGame ? ` • Last game: ${data.lastGame.result.toUpperCase()} ${data.lastGame.score} vs ${data.lastGame.opponent}` : ''}
+                    </small>
+                `;
+                
+                const existingMeta = document.querySelector('.daily-rundown-meta');
+                if (existingMeta) {
+                    existingMeta.remove();
+                }
+                
+                rundownElement.parentNode.appendChild(gameInfo);
+            }
+            
+            console.log('Daily rundown updated successfully');
+        }
+    } catch (error) {
+        console.error('Error loading daily rundown:', error);
+        
+        // Fallback to placeholder text
+        const rundownElement = document.querySelector('.daily-rundown-content p');
+        if (rundownElement) {
+            rundownElement.textContent = 'Daily rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+            rundownElement.style.fontStyle = 'italic';
+        }
+    }
+}
+
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
     // Load initial data
     updateTeamStats(CURRENT_SEASON);
     updateRoster();
     updateSchedule();
+    updateDailyRundown();
 
     // Refresh data periodically (every 5 minutes)
     setInterval(() => {
