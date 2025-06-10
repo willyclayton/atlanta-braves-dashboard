@@ -1,7 +1,11 @@
 {
-  "date": "2025-01-28",
-  "timestamp": "2025-01-28T09:00:00.000Z",
-  "rundown": "Welcome to your Daily Braves Rundown! This section will be automatically updated each morning at 4 AM EST with AI-generated insights about the team's recent performance, game highlights, and notable developments. Stay tuned for fresh content after each game!",
-  "lastGame": null,
-  "initialized": true
-} 
+  "date": "2025-06-10",
+  "timestamp": "2025-06-10T18:31:36.998Z",
+  "rundown": "Good evening, Braves fans! In their latest game on 6/9/2025, your Atlanta Braves dominated the Milwaukee Brewers with a fantastic 7-1 victory! The team showcased their strength and depth, delivering an impressive performance on both offense and defense. Key highlights included stellar pitching to limit the Brewers to just one run and explosive hitting that secured the win. After a couple of tough losses against the San Francisco Giants, this win is a great bounce-back for the Braves. Stay tuned for more thrilling action as our Braves continue to strive for success on the field! #ChopOn",
+  "lastGame": {
+    "date": "2025-06-09T23:40:00Z",
+    "opponent": "Milwaukee Brewers",
+    "result": "won",
+    "score": "7-1"
+  }
+}
