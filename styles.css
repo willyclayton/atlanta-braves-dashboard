@@ -3454,3 +3454,172 @@ footer {
         min-width: 60px;
     }
 }
+
+/* Games Slider Styles */
+.games-slider-container {
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(19, 39, 79, 0.1);
+    background: rgba(19, 39, 79, 0.02);
+}
+
+.season-history-container .games-slider-container {
+    margin-top: 0;
+    border-top: 1px solid rgba(19, 39, 79, 0.1);
+    background: white;
+}
+
+.slider-label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.games-slider {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(19, 39, 79, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.games-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--braves-red);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.games-slider::-webkit-slider-thumb:hover {
+    background: var(--braves-navy);
+    transform: scale(1.1);
+}
+
+.games-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--braves-red);
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.games-slider::-moz-range-thumb:hover {
+    background: var(--braves-navy);
+    transform: scale(1.1);
+}
+
+.slider-info {
+    font-size: 0.75rem;
+    color: var(--text-dark);
+    text-align: center;
+    font-weight: 500;
+}
+
+#slider-value {
+    color: var(--braves-red);
+    font-weight: 600;
+}
+
+#last-n-record {
+    color: var(--braves-navy);
+    font-weight: 600;
+}
+
+/* Mobile adjustments for slider */
+@media (max-width: 768px) {
+    .games-slider-container {
+        margin-top: 0.5rem;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .slider-label,
+    .slider-info {
+        font-size: 0.7rem;
+    }
+    
+    .games-slider::-webkit-slider-thumb {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .games-slider::-moz-range-thumb {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Collapse Button Styles */
+.collapse-button-container {
+    display: flex;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid rgba(19, 39, 79, 0.1);
+    background: rgba(19, 39, 79, 0.02);
+}
+
+.collapse-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--braves-red);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.collapse-button:hover {
+    background: var(--braves-navy);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.collapse-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.collapse-icon {
+    font-size: 0.9rem;
+    transition: transform 0.2s ease;
+}
+
+.collapse-button:hover .collapse-icon {
+    transform: translateY(-1px);
+}
+
+/* Mobile adjustments for collapse button */
+@media (max-width: 768px) {
+    .collapse-button-container {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .collapse-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .collapse-icon {
+        font-size: 0.8rem;
+    }
+}

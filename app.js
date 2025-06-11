@@ -352,6 +352,17 @@ function displaySeasonHistory(games) {
         <div class="game-history-list">
             ${gamesList}
         </div>
+        <div class="games-slider-container">
+            <input type="range" id="games-slider" min="1" max="30" value="10" class="games-slider">
+            <div class="slider-info">
+                Last <span id="slider-value">10</span> games: <span id="last-n-record">--</span>
+            </div>
+        </div>
+        <div class="collapse-button-container">
+            <button class="collapse-button" onclick="collapseSeasonHistory()">
+                <span class="collapse-icon">▲</span> Collapse
+            </button>
+        </div>
     `;
 
     // After rendering, scroll to the bottom
@@ -362,6 +373,9 @@ function displaySeasonHistory(games) {
             gameHistoryList.scrollTop = gameHistoryList.scrollHeight;
         });
     }
+
+    // Initialize the slider after the HTML is rendered
+    initializeGamesSlider(games);
 }
 
 // Update roster with player stats
@@ -1865,13 +1879,16 @@ function updateStatsDisplay(stats) {
     const recordCard = document.getElementById('record-card');
     if (recordCard) {
         recordCard.addEventListener('click', async () => {
-            collapseAllExpansions();
             const historyContainer = document.getElementById('season-history');
             if (historyContainer) {
+                // Check if this expansion is already open
                 if (historyContainer.classList.contains('expanded')) {
                     historyContainer.classList.remove('expanded');
                     return;
                 }
+                // Close all other expansions first
+                collapseAllExpansions();
+                // Then open this one
                 historyContainer.innerHTML = '<div class="loading">Loading season history...</div>';
                 historyContainer.classList.add('expanded');
                 const games = await fetchSeasonHistory();
@@ -1884,13 +1901,16 @@ function updateStatsDisplay(stats) {
     const leagueCard = document.getElementById('league-card');
     if (leagueCard) {
         leagueCard.addEventListener('click', async () => {
-            collapseAllExpansions();
             const leagueContainer = document.getElementById('league-overview');
             if (leagueContainer) {
+                // Check if this expansion is already open
                 if (leagueContainer.classList.contains('expanded')) {
                     leagueContainer.classList.remove('expanded');
                     return;
                 }
+                // Close all other expansions first
+                collapseAllExpansions();
+                // Then open this one
                 const standingsDiv = leagueContainer.querySelector('.standings-content');
                 standingsDiv.innerHTML = '<div class="loading">Loading standings...</div>';
                 leagueContainer.classList.add('expanded');
@@ -1928,6 +1948,11 @@ function updateStatsDisplay(stats) {
                                         </li>
                                     `).join('')}
                                 </ul>
+                            </div>
+                            <div class="collapse-button-container">
+                                <button class="collapse-button" onclick="collapseLeagueOverview()">
+                                    <span class="collapse-icon">▲</span> Collapse
+                                </button>
                             </div>
                         `;
                         return;
@@ -1967,6 +1992,11 @@ function updateStatsDisplay(stats) {
                                 }).join('')}
                             </div>
                         </div>
+                        <div class="collapse-button-container">
+                            <button class="collapse-button" onclick="collapseLeagueOverview()">
+                                <span class="collapse-icon">▲</span> Collapse
+                            </button>
+                        </div>
                     `;
                 }
                 // Initial render
@@ -1994,12 +2024,15 @@ function updateStatsDisplay(stats) {
     const whosHotCard = document.getElementById('whos-hot-card');
     if (whosHotCard) {
         whosHotCard.addEventListener('click', async () => {
-            collapseAllExpansions();
             let expansion = document.getElementById('whos-hot-expansion');
+            // Check if this expansion is already open
             if (expansion && expansion.style.display === 'block') {
                 expansion.style.display = 'none';
                 return;
             }
+            // Close all other expansions first
+            collapseAllExpansions();
+            // Then open this one
             await showWhosHotExpansion();
         });
     }
@@ -2011,6 +2044,59 @@ async function getLast10Games(year = CURRENT_SEASON) {
     // Only include games that are completed (status 'Final') and have a valid gamePk
     const completed = games.filter(g => g.gamePk && typeof g.bravesScore === 'number' && typeof g.opponentScore === 'number');
     return completed.slice(0, 10).reverse(); // oldest to newest
+}
+
+// Helper: Get record for last N games (using cached games data)
+function getLastNGamesRecord(n, gamesData) {
+    if (!gamesData || gamesData.length === 0) {
+        return { wins: 0, losses: 0, record: '0-0' };
+    }
+    
+    // Only include games that are completed (status 'Final') and have a valid gamePk
+    const completed = gamesData.filter(g => g.gamePk && typeof g.bravesScore === 'number' && typeof g.opponentScore === 'number');
+    const lastNGames = completed.slice(0, n);
+    
+    let wins = 0;
+    let losses = 0;
+    
+    lastNGames.forEach(game => {
+        if (game.bravesScore > game.opponentScore) {
+            wins++;
+        } else {
+            losses++;
+        }
+    });
+    
+    return { wins, losses, record: `${wins}-${losses}` };
+}
+
+// Function to initialize and handle the games slider
+function initializeGamesSlider(gamesData) {
+    const slider = document.getElementById('games-slider');
+    const sliderValue = document.getElementById('slider-value');
+    const lastNRecord = document.getElementById('last-n-record');
+    
+    if (!slider || !sliderValue || !lastNRecord) return;
+    
+    // Update the display when slider changes
+    const updateSliderDisplay = () => {
+        const n = parseInt(slider.value);
+        sliderValue.textContent = n;
+        
+        try {
+            const recordData = getLastNGamesRecord(n, gamesData);
+            lastNRecord.textContent = recordData.record;
+        } catch (error) {
+            console.error('Error calculating last N games record:', error);
+            lastNRecord.textContent = 'Error';
+        }
+    };
+    
+    // Initialize with default value (10)
+    updateSliderDisplay();
+    
+    // Add event listener for slider changes
+    slider.addEventListener('input', updateSliderDisplay);
 }
 
 // Helper: Fetch boxscore for a gameId
@@ -2411,7 +2497,13 @@ async function showWhosHotExpansion() {
             </div>
         `;
         
-        contentHTML += '</div>';
+        contentHTML += `
+            <div class="collapse-button-container">
+                <button class="collapse-button" onclick="collapseWhosHot()">
+                    <span class="collapse-icon">▲</span> Collapse
+                </button>
+            </div>
+        </div>`;
         expansion.innerHTML = contentHTML;
         
     } catch (error) {
@@ -2611,4 +2703,45 @@ async function updateTeamStats(year = CURRENT_SEASON) {
 // Update getTeamAbbreviation to use cityTeamMap
 function getTeamAbbreviation(teamName) {
     return cityTeamMap[teamName] || '';
-} 
+}
+
+// Collapse functions for each expansion
+function collapseSeasonHistory() {
+    const historyContainer = document.getElementById('season-history');
+    if (historyContainer) {
+        historyContainer.classList.remove('expanded');
+    }
+}
+
+function collapseLeagueOverview() {
+    const leagueContainer = document.getElementById('league-overview');
+    if (leagueContainer) {
+        leagueContainer.classList.remove('expanded');
+    }
+}
+
+function collapseWhosHot() {
+    const expansion = document.getElementById('whos-hot-expansion');
+    if (expansion) {
+        expansion.style.display = 'none';
+    }
+}
+
+// Initialize the application
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Initialize the games slider
+        initializeGamesSlider();
+        
+        // Load main dashboard data
+        await updateTeamStats();
+        await updateSchedule();
+        await updateRoster();
+        await updateDailyRundown();
+        await updateWeeklyRundown();
+        
+        console.log('Dashboard initialized successfully');
+    } catch (error) {
+        console.error('Error initializing dashboard:', error);
+    }
+}); 
