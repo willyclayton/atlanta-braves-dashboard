@@ -261,4 +261,5 @@ jobs:
         git config --local user.name "GitHub Action"
         git add data/daily-rundown.json
         git diff --staged --quiet || git commit -m "Update daily rundown - $(date '+%Y-%m-%d')"
+        git pull --rebase origin main || true
         git push

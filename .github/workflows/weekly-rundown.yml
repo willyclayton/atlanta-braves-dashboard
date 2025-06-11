@@ -304,4 +304,5 @@ jobs:
         git config --local user.name "GitHub Action"
         git add -A
         git commit -m "Update weekly rundown data" || exit 0
+        git pull --rebase origin main || true
         git push 
