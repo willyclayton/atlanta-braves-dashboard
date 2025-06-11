@@ -100,6 +100,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     min-width: 0; /* Prevent overflow on small screens */
+    position: relative; /* For absolutely positioned tap icon */
 }
 
 .stat-card h3 {
@@ -569,6 +570,12 @@ h2 {
         font-size: 0.7rem;
         min-width: 60px;
     }
+    
+    .tap-icon {
+        font-size: 0.9rem;
+        top: 0.4rem;
+        right: 0.4rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -613,6 +620,12 @@ h2 {
         padding: 0.25rem 0.5rem;
         font-size: 0.65rem;
         min-width: 55px;
+    }
+    
+    .tap-icon {
+        font-size: 0.8rem;
+        top: 0.3rem;
+        right: 0.3rem;
     }
     
     .daily-rundown-content p,
@@ -2443,6 +2456,21 @@ footer {
 .stat-card.clickable:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tap-icon {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+    transform: scale(1);
+}
+
+.stat-card:hover .tap-icon {
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .season-history-container {

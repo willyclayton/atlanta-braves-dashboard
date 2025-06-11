@@ -418,8 +418,8 @@ async function updateRoster() {
 // Global variables for roster state
 let currentRosterType = 'batters';
 let rosterData = null;
-let battersSortState = { column: null, direction: 'asc' };
-let pitchersSortState = { column: null, direction: 'asc' };
+let battersSortState = { column: 'avg', direction: 'desc' }; // Default sort by batting average descending
+let pitchersSortState = { column: 'ip', direction: 'desc' }; // Default sort by innings pitched descending
 
 function updateRosterTables(roster, container) {
     // Store roster data globally
@@ -1953,6 +1953,7 @@ function updateStatsDisplay(stats) {
             </div>
             <div class="stat-card clickable" id="whos-hot-card">
                 <h3>Who's hot?</h3>
+                <span class="tap-icon">👆</span>
             </div>
         </div>
         <div id="whos-hot-expansion-anchor"></div>
@@ -2351,7 +2352,7 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
         p.ops = (onBase + slugging).toFixed(3);
     });
     
-    // 🔥 HOT BATTERS: Must meet ANY criteria
+    // 🔥 HOT BATTERS: Must meet ANY criteria - sorted by batting average (descending)
     const topBatters = battersArray
         .filter(p => 
             parseFloat(p.avg) >= 0.300 ||
@@ -2359,12 +2360,12 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
             p.rbi >= 8 ||
             p.hits >= 10
         )
-        .sort((a, b) => b.productionScore - a.productionScore);
+        .sort((a, b) => parseFloat(b.avg) - parseFloat(a.avg));
     
-    // 🧊 COLD BATTERS: Only batting average below .200
+    // 🧊 COLD BATTERS: Only batting average below .200 - sorted by batting average (ascending - worst first)
     const coldBatters = battersArray
         .filter(p => parseFloat(p.avg) < 0.200)
-        .sort((a, b) => a.productionScore - b.productionScore); // Sort by worst performance first
+        .sort((a, b) => parseFloat(a.avg) - parseFloat(b.avg)); // Sort by worst batting average first
     
     // Process pitchers - calculate advanced stats
     const pitchersArray = Object.values(pitcherStats).filter(p => p.inningsPitched >= 3); // Min 3 IP for starters
@@ -2387,18 +2388,18 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
         p.performanceScore = (p.strikeOuts / p.inningsPitched) - (parseFloat(p.era) / 10) + (p.wins * 2) + (p.saves * 1.5);
     });
     
-    // 🔥 HOT PITCHERS: Must meet ANY criteria for starting pitchers
+    // 🔥 HOT PITCHERS: Must meet ANY criteria - sorted by innings pitched (descending)
     const topPitchers = pitchersArray
         .filter(p => 
             parseFloat(p.era) < 2.50 ||
             p.strikeOuts >= 15
         )
-        .sort((a, b) => b.performanceScore - a.performanceScore);
+        .sort((a, b) => b.inningsPitched - a.inningsPitched);
     
-    // 🧊 COLD PITCHERS: Only ERA over 6.00
+    // 🧊 COLD PITCHERS: Only ERA over 6.00 - sorted by ERA (descending - worst first)
     const coldPitchers = pitchersArray
         .filter(p => parseFloat(p.era) > 6.00)
-        .sort((a, b) => a.performanceScore - b.performanceScore); // Sort by worst performance first
+        .sort((a, b) => parseFloat(b.era) - parseFloat(a.era)); // Sort by worst ERA first
     
     return { topBatters, topPitchers, coldBatters, coldPitchers };
 }
