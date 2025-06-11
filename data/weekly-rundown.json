@@ -1,19 +1,19 @@
 {
   "date": "2025-06-11",
-  "timestamp": "2025-06-11T19:45:47.133Z",
-  "rundown": "Record: 1-6 (0.143)  \nSeries: Lost series vs Diamondbacks 0-2, lost series @ Giants 0-3, split series @ Brewers 1-1  \nTrend: It was a challenging week overall, with the team struggling to find consistency.",
+  "timestamp": "2025-06-11T20:48:30.195Z",
+  "rundown": "**Record:** 2-7 (0.222)  \n**Series:** Lost series to Arizona Diamondbacks (0-3), Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1)  \n\n**Highlights:**  \n- The week started with a high-scoring loss to the Arizona Diamondbacks, falling 3-8, followed by a nail-biter where they lost 10-11.  \n- Despite the struggles, they bounced back to dominate the Milwaukee Brewers with a 7-1 victory on June 9, showcasing their offensive potential.  \n- Chris Sale had a standout performance this week, striking out 21 batters over 13 innings with an impressive ERA of 1.38",
   "weeklyStats": {
-    "dateRange": "2025-06-04 to 2025-06-11",
-    "record": "1-6",
-    "wins": 1,
-    "losses": 6,
-    "winPct": "0.143",
-    "totalGames": 7,
-    "momentum": "challenging week overall",
+    "dateRange": "2025-06-03 to 2025-06-11",
+    "record": "2-7",
+    "wins": 2,
+    "losses": 7,
+    "winPct": "0.222",
+    "totalGames": 9,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 7,
+        "appearances": 9,
         "inningsPitched": 3.3,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -25,50 +25,79 @@
       },
       {
         "name": "Enyel De Los Santos",
-        "appearances": 7,
-        "inningsPitched": 2.2,
+        "appearances": 9,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 1,
-        "hits": 0,
+        "strikeouts": 2,
+        "hits": 1,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
+      },
+      {
+        "name": "Chris Sale",
+        "appearances": 9,
+        "inningsPitched": 13,
+        "earnedRuns": 2,
+        "strikeouts": 21,
+        "hits": 8,
+        "wins": 1,
+        "losses": 1,
+        "saves": 0,
+        "era": "1.38"
       }
     ],
     "topBatters": [
       {
-        "name": "Matt Olson",
-        "games": 7,
-        "hits": 5,
-        "homeRuns": 2,
-        "rbi": 8,
-        "runs": 5,
-        "atBats": 23,
-        "avg": "0.217"
+        "name": "Ronald Acuña Jr.",
+        "games": 9,
+        "hits": 13,
+        "homeRuns": 3,
+        "rbi": 5,
+        "runs": 7,
+        "atBats": 34,
+        "avg": "0.382"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 7,
+        "name": "Matt Olson",
+        "games": 9,
+        "hits": 7,
+        "homeRuns": 2,
+        "rbi": 8,
+        "runs": 6,
+        "atBats": 30,
+        "avg": "0.233"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 9,
         "hits": 8,
         "homeRuns": 2,
-        "rbi": 3,
-        "runs": 6,
-        "atBats": 25,
-        "avg": "0.320"
+        "rbi": 5,
+        "runs": 2,
+        "atBats": 35,
+        "avg": "0.229"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
-        "hits": 10,
+        "games": 9,
+        "hits": 12,
         "homeRuns": 1,
         "rbi": 2,
-        "runs": 6,
-        "atBats": 31,
-        "avg": "0.323"
+        "runs": 7,
+        "atBats": 39,
+        "avg": "0.308"
       }
     ],
     "gameResults": [
+      {
+        "date": "6/3/2025",
+        "result": "L",
+        "score": "3-8",
+        "opponent": "Arizona Diamondbacks",
+        "homeAway": "vs"
+      },
       {
         "date": "6/4/2025",
         "result": "L",
@@ -117,15 +146,27 @@
         "score": "1-4",
         "opponent": "Milwaukee Brewers",
         "homeAway": "@"
+      },
+      {
+        "date": "6/11/2025",
+        "result": "W",
+        "score": "6-2",
+        "opponent": "Milwaukee Brewers",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
       {
         "opponent": "Arizona Diamondbacks",
         "homeAway": "vs",
-        "record": "0-2",
-        "outcome": "losing series",
+        "record": "0-3",
+        "outcome": "lost series",
         "games": [
+          {
+            "date": "6/3/2025",
+            "result": "L",
+            "score": "3-8"
+          },
           {
             "date": "6/4/2025",
             "result": "L",
@@ -164,8 +205,8 @@
       {
         "opponent": "Milwaukee Brewers",
         "homeAway": "@",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "2-1",
+        "outcome": "won series",
         "games": [
           {
             "date": "6/9/2025",
@@ -176,9 +217,22 @@
             "date": "6/10/2025",
             "result": "L",
             "score": "1-4"
+          },
+          {
+            "date": "6/11/2025",
+            "result": "W",
+            "score": "6-2"
           }
         ]
       }
+    ],
+    "highlights": [
+      "High-scoring L 3-8 vs Arizona Diamondbacks",
+      "High-scoring L 10-11 vs Arizona Diamondbacks",
+      "Close L 1-2 vs Arizona Diamondbacks",
+      "Close L 10-11 vs Arizona Diamondbacks",
+      "Close L 4-5 @ San Francisco Giants",
+      "Close L 2-3 @ San Francisco Giants"
     ]
   }
 }

@@ -1,42 +1,49 @@
 {
   "date": "2025-06-11",
-  "timestamp": "2025-06-11T19:45:54.986Z",
-  "rundown": "1-4 L @ Milwaukee Brewers  \nGrant Holmes: 5.1 innings, 3 earned runs, 5 hits, 2 HR, 9 strikeouts  \nRonald Acuña Jr.: 3 hits, 0 HR, 1 RBI  \nSean Murphy: 2 hits, 0 HR, 0 RBI  \nThe Braves fell to the Brewers, managing only one run despite a strong performance from Grant Holmes on the mound. Ronald Acuña Jr. led the offense with three hits.",
+  "timestamp": "2025-06-11T20:48:27.984Z",
+  "rundown": "6-2 W @ Milwaukee Brewers  \nPitcher Name: N/A  \nBatter Name: Ronald Acuña Jr.: 3 hits, 1 HR, 2 RBI  \nBatter Name: Michael Harris II: 1 hit, 1 HR, 2 RBI  \nBatter Name: Drake Baldwin: 1 hit, 0 HR, 1 RBI  \nThe Braves secured a 6-2 victory against the Milwaukee Brewers, highlighted by Ronald Acuña Jr.'s three hits and a home run. Michael Harris II also contributed with a home run and two RBIs.",
   "lastGame": {
-    "date": "2025-06-10T23:40:00Z",
+    "date": "2025-06-11T18:10:00Z",
     "opponent": "Milwaukee Brewers",
-    "result": "L",
-    "score": "1-4",
+    "result": "W",
+    "score": "6-2",
     "homeAway": "@",
-    "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "5.1",
-      "earnedRuns": 3,
-      "hits": 5,
-      "homeRuns": 2,
-      "strikeOuts": 9
-    },
+    "startingPitcher": null,
     "significantHitters": [
       {
         "name": "Ronald Acuña Jr.",
         "hits": 3,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Sean Murphy",
-        "hits": 2,
+        "name": "Ozzie Albies",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 1,
         "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 8,
-      "opponentRuns": 4,
-      "opponentHits": 6
+      "bravesRuns": 6,
+      "bravesHits": 10,
+      "opponentRuns": 2,
+      "opponentHits": 5
     }
   }
 }
