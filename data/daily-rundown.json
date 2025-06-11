@@ -1,27 +1,42 @@
 {
   "date": "2025-06-11",
-  "timestamp": "2025-06-11T09:18:53.242Z",
-  "rundown": "Braves L 1-4 @ Milwaukee Brewers. Milwaukee Brewers earned the win. Ronald Acuña Jr. led with 3 hits and 1 RBI.",
+  "timestamp": "2025-06-11T18:20:25.750Z",
+  "rundown": "1. Result line: \"1-4 L @ Milwaukee Brewers\"\n2. Pitcher highlight: \"Grant Holmes: 5.1 innings, 3 earned runs, 5 hits, 2 HR, 9 strikeouts\"\n3. Batter highlights: \"Ronald Acuña Jr.: 3 hits, 0 HR, 1 RBI\"  \n   \"Sean Murphy: 2 hits, 0 HR, 0 RBI\"\n4. Brief game summary: The Braves struggled to capitalize on their 8 hits, managing only one run, while Grant Holmes allowed 3 earned runs",
   "lastGame": {
     "date": "2025-06-10T23:40:00Z",
     "opponent": "Milwaukee Brewers",
     "result": "L",
     "score": "1-4",
     "homeAway": "@",
-    "pitching": {
-      "winner": null,
-      "loser": null,
-      "save": null
+    "startingPitcher": {
+      "name": "Grant Holmes",
+      "inningsPitched": "5.1",
+      "earnedRuns": 3,
+      "hits": 5,
+      "homeRuns": 2,
+      "strikeOuts": 9
     },
-    "hitting": {
-      "bravesHits": 8,
-      "bravesRuns": 1,
-      "topHitter": {
+    "significantHitters": [
+      {
         "name": "Ronald Acuña Jr.",
         "hits": 3,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 0
+      },
+      {
+        "name": "Sean Murphy",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
+    ],
+    "teamStats": {
+      "bravesRuns": 1,
+      "bravesHits": 8,
+      "opponentRuns": 4,
+      "opponentHits": 6
     }
   }
 }
