@@ -1,12 +1,12 @@
 {
-  "date": "2025-06-10",
-  "timestamp": "2025-06-10T18:48:38.547Z",
-  "rundown": "Braves dominate Brewers with a 7-1 win. Pitcher Max Fried throws 7 innings, allowing only 1 run. Austin Riley leads Braves' offense with 3 hits. Notable play: Ronald Acuna Jr. hits a 2-run homer in the 5th inning.",
+  "date": "2025-06-11",
+  "timestamp": "2025-06-11T09:18:53.242Z",
+  "rundown": "Braves L 1-4 @ Milwaukee Brewers. Milwaukee Brewers earned the win. Ronald Acuña Jr. led with 3 hits and 1 RBI.",
   "lastGame": {
-    "date": "2025-06-09T23:40:00Z",
+    "date": "2025-06-10T23:40:00Z",
     "opponent": "Milwaukee Brewers",
-    "result": "W",
-    "score": "7-1",
+    "result": "L",
+    "score": "1-4",
     "homeAway": "@",
     "pitching": {
       "winner": null,
@@ -14,12 +14,13 @@
       "save": null
     },
     "hitting": {
-      "bravesHits": 11,
-      "bravesRuns": 7,
+      "bravesHits": 8,
+      "bravesRuns": 1,
       "topHitter": {
-        "name": "Austin Riley",
+        "name": "Ronald Acuña Jr.",
         "hits": 3,
-        "rbi": 0
+        "rbi": 1,
+        "runs": 0
       }
     }
   }
