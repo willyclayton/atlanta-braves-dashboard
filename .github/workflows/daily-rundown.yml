@@ -85,56 +85,77 @@ jobs:
             const score = `${bravesRuns}-${oppRuns}`;
             const homeAway = isAway ? '@' : 'vs';
             
-            // Extract pitcher decisions more accurately from game decisions
-            const decisions = gameData.decisions || {};
-            const winnerInfo = decisions.winner ? `${decisions.winner.fullName}` : null;
-            const loserInfo = decisions.loser ? `${decisions.loser.fullName}` : null;
-            const saveInfo = decisions.save ? `${decisions.save.fullName}` : null;
-            
-            // Find Braves' best offensive performer
-            let topBravesHitter = null;
-            let bestOffensiveValue = 0;
-            
+            // Get Braves starting pitcher stats
+            let bravesStartingPitcher = null;
             Object.values(bravesTeam.players).forEach(player => {
-              if (player.stats?.batting) {
-                const hits = player.stats.batting.hits || 0;
-                const rbi = player.stats.batting.rbi || 0;
-                const runs = player.stats.batting.runs || 0;
-                // Weighted score: hits + (2 * RBI) + runs
-                const offensiveValue = hits + (rbi * 2) + runs;
-                
-                if (offensiveValue > bestOffensiveValue && hits > 0) {
-                  bestOffensiveValue = offensiveValue;
-                  topBravesHitter = player;
+              if (player.stats?.pitching && player.gameStatus?.isCurrentPitcher === false) {
+                const pitchingStats = player.stats.pitching;
+                // Starting pitcher typically has the most innings pitched
+                if (pitchingStats.inningsPitched && parseFloat(pitchingStats.inningsPitched) >= 1) {
+                  if (!bravesStartingPitcher || 
+                      parseFloat(pitchingStats.inningsPitched) > parseFloat(bravesStartingPitcher.stats.pitching.inningsPitched)) {
+                    bravesStartingPitcher = player;
+                  }
                 }
               }
             });
             
-            // Build accurate, concise game data for AI
+            // Find significant Braves offensive contributors
+            const significantHitters = [];
+            Object.values(bravesTeam.players).forEach(player => {
+              if (player.stats?.batting) {
+                const stats = player.stats.batting;
+                const hits = stats.hits || 0;
+                const homeRuns = stats.homeRuns || 0;
+                const rbi = stats.rbi || 0;
+                
+                // Consider significant if: 2+ hits, 1+ HR, 2+ RBI, or multiple categories
+                const isSignificant = hits >= 2 || homeRuns >= 1 || rbi >= 2 || 
+                                    (hits >= 1 && rbi >= 1) || (hits >= 1 && homeRuns >= 1);
+                
+                if (isSignificant) {
+                  significantHitters.push({
+                    name: player.person.fullName,
+                    hits: hits,
+                    homeRuns: homeRuns,
+                    rbi: rbi,
+                    runs: stats.runs || 0
+                  });
+                }
+              }
+            });
+            
+            // Sort hitters by contribution (HR worth 3, RBI worth 2, hits worth 1)
+            significantHitters.sort((a, b) => {
+              const scoreA = (a.homeRuns * 3) + (a.rbi * 2) + a.hits;
+              const scoreB = (b.homeRuns * 3) + (b.rbi * 2) + b.hits;
+              return scoreB - scoreA;
+            });
+            
+            // Build structured game data
             const gameContext = JSON.stringify({
-              gameResult: `Atlanta Braves ${gameResult} ${score} ${homeAway} ${opponentTeam.team.name}`,
+              gameResult: {
+                result: gameResult,
+                score: score,
+                homeAway: homeAway,
+                opponent: opponentTeam.team.name,
+                fullResult: `${score} ${gameResult} ${homeAway} ${opponentTeam.team.name}`
+              },
               date: new Date(lastGame.gameDate).toLocaleDateString(),
-              pitchingDecisions: {
-                winner: winnerInfo,
-                loser: loserInfo,
-                save: saveInfo
-              },
-              bravesOffense: {
-                runs: bravesRuns,
-                hits: bravesTeam.teamStats.batting.hits,
-                errors: bravesTeam.teamStats.fielding.errors,
-                topPerformer: topBravesHitter ? {
-                  name: topBravesHitter.person.fullName,
-                  hits: topBravesHitter.stats.batting.hits,
-                  rbi: topBravesHitter.stats.batting.rbi,
-                  runs: topBravesHitter.stats.batting.runs
-                } : null
-              },
-              opponentStats: {
-                team: opponentTeam.team.name,
-                runs: oppRuns,
-                hits: opponentTeam.teamStats.batting.hits,
-                errors: opponentTeam.teamStats.fielding.errors
+              bravesStartingPitcher: bravesStartingPitcher ? {
+                name: bravesStartingPitcher.person.fullName,
+                inningsPitched: bravesStartingPitcher.stats.pitching.inningsPitched,
+                earnedRuns: bravesStartingPitcher.stats.pitching.earnedRuns,
+                hits: bravesStartingPitcher.stats.pitching.hits,
+                homeRuns: bravesStartingPitcher.stats.pitching.homeRuns,
+                strikeOuts: bravesStartingPitcher.stats.pitching.strikeOuts
+              } : null,
+              significantHitters: significantHitters.slice(0, 3), // Top 3 contributors
+              teamStats: {
+                bravesRuns: bravesRuns,
+                bravesHits: bravesTeam.teamStats.batting.hits,
+                opponentRuns: oppRuns,
+                opponentHits: opponentTeam.teamStats.batting.hits
               }
             }, null, 2);
             
@@ -148,11 +169,11 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a precise sports reporter. Write extremely concise game summaries using ONLY the provided data. Format: "Braves [W/L] [score] [vs/@] [opponent]. [Winner] earned the win[, Loser took the loss][, Save recorded save]. [Top hitter] led with [stats]. [Notable detail if any]." Maximum 2-3 sentences. Use exact names and numbers from the data provided.'
+                    content: 'You are a precise sports reporter. Write game summaries in this EXACT format using ONLY the provided data:\n\n1. Result line: "[score] [W/L] [vs/@] [opponent]" (e.g. "7-1 L @ Brewers")\n2. Pitcher highlight: "[Name]: [innings] innings, [earned runs] earned runs, [hits] hits, [HR] HR, [strikeouts] strikeouts"\n3. Batter highlights: "[Name]: [hits] hits, [HR] HR, [RBI] RBI" (only if significant contributors provided)\n4. Brief game summary: 1-2 sentences about key moments/plays. No fluff, no "Go Braves".\n\nUse exact numbers from the data. Do not add information not provided.'
                   },
                   {
                     role: 'user',
-                    content: `Write a concise game summary using only this verified boxscore data. Do not add information not provided:\n\n${gameContext}`
+                    content: `Write a game summary in the specified format using only this verified data:\n\n${gameContext}`
                   }
                 ],
                 max_tokens: 120,
@@ -174,7 +195,7 @@ jobs:
               fs.mkdirSync('data');
             }
             
-            // Save the daily rundown with accurate data
+            // Save the daily rundown with structured data
             const dailyData = {
               date: new Date().toISOString().split('T')[0],
               timestamp: new Date().toISOString(),
@@ -185,20 +206,20 @@ jobs:
                 result: gameResult,
                 score: score,
                 homeAway: homeAway,
-                pitching: {
-                  winner: winnerInfo,
-                  loser: loserInfo,
-                  save: saveInfo
-                },
-                hitting: {
-                  bravesHits: bravesTeam.teamStats.batting.hits,
+                startingPitcher: bravesStartingPitcher ? {
+                  name: bravesStartingPitcher.person.fullName,
+                  inningsPitched: bravesStartingPitcher.stats.pitching.inningsPitched,
+                  earnedRuns: bravesStartingPitcher.stats.pitching.earnedRuns,
+                  hits: bravesStartingPitcher.stats.pitching.hits,
+                  homeRuns: bravesStartingPitcher.stats.pitching.homeRuns,
+                  strikeOuts: bravesStartingPitcher.stats.pitching.strikeOuts
+                } : null,
+                significantHitters: significantHitters,
+                teamStats: {
                   bravesRuns: bravesRuns,
-                  topHitter: topBravesHitter ? {
-                    name: topBravesHitter.person.fullName,
-                    hits: topBravesHitter.stats.batting.hits,
-                    rbi: topBravesHitter.stats.batting.rbi,
-                    runs: topBravesHitter.stats.batting.runs
-                  } : null
+                  bravesHits: bravesTeam.teamStats.batting.hits,
+                  opponentRuns: oppRuns,
+                  opponentHits: opponentTeam.teamStats.batting.hits
                 }
               }
             };
