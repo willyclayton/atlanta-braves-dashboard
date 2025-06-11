@@ -2095,8 +2095,27 @@ function initializeGamesSlider(gamesData) {
     // Initialize with default value (10)
     updateSliderDisplay();
     
-    // Add event listener for slider changes
+    // Add event listeners for both input and change events (better mobile support)
     slider.addEventListener('input', updateSliderDisplay);
+    slider.addEventListener('change', updateSliderDisplay);
+    
+    // Add touch-specific optimizations for mobile
+    if ('ontouchstart' in window) {
+        // Prevent page scrolling when using slider on mobile
+        slider.addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+        });
+        
+        slider.addEventListener('touchmove', function(e) {
+            e.stopPropagation();
+            updateSliderDisplay();
+        });
+        
+        slider.addEventListener('touchend', function(e) {
+            e.stopPropagation();
+            updateSliderDisplay();
+        });
+    }
 }
 
 // Helper: Fetch boxscore for a gameId

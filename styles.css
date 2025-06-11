@@ -3563,6 +3563,35 @@ footer {
     }
 }
 
+@media (max-width: 480px) {
+    .games-slider-container {
+        margin-top: 0.4rem;
+        padding: 0.4rem 0.5rem;
+    }
+    
+    .slider-label,
+    .slider-info {
+        font-size: 0.65rem;
+    }
+    
+    .games-slider {
+        height: 6px;
+        margin-bottom: 0.4rem;
+    }
+    
+    .games-slider::-webkit-slider-thumb {
+        width: 18px;
+        height: 18px;
+        border: 3px solid white;
+    }
+    
+    .games-slider::-moz-range-thumb {
+        width: 18px;
+        height: 18px;
+        border: 3px solid white;
+    }
+}
+
 /* Collapse Button Styles */
 .collapse-button-container {
     display: flex;
@@ -3586,6 +3615,7 @@ footer {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 44px; /* Touch target for mobile */
 }
 
 .collapse-button:hover {
@@ -3615,11 +3645,100 @@ footer {
     }
     
     .collapse-button {
-        padding: 0.4rem 0.8rem;
+        padding: 0.5rem 1rem;
         font-size: 0.75rem;
+        min-height: 48px; /* Larger touch target on mobile */
     }
     
     .collapse-icon {
         font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .collapse-button-container {
+        padding: 0.4rem 0.5rem;
+    }
+    
+    .collapse-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        min-height: 52px; /* Even larger touch target on small screens */
+        border-radius: 8px;
+    }
+    
+    .collapse-icon {
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch-friendly optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .games-slider {
+        height: 8px; /* Thicker slider for easier touch */
+    }
+    
+    .games-slider::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+        border: 3px solid white;
+    }
+    
+    .games-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border: 3px solid white;
+    }
+    
+    .collapse-button {
+        min-height: 56px; /* Minimum 44px for touch, with extra padding */
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .collapse-button:active {
+        transform: scale(0.95);
+        background: var(--braves-navy);
+    }
+}
+
+/* iOS specific optimizations */
+@supports (-webkit-touch-callout: none) {
+    .games-slider {
+        -webkit-appearance: none;
+        background: rgba(19, 39, 79, 0.2);
+    }
+    
+    .games-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+    }
+    
+    .collapse-button {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Expansion containers mobile optimization */
+@media (max-width: 768px) {
+    .season-history-container.expanded,
+    .league-overview-container.expanded,
+    .whos-hot-content.expanded {
+        max-height: 70vh; /* Limit height on mobile to prevent excessive scrolling */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 480px) {
+    .season-history-container.expanded,
+    .league-overview-container.expanded,
+    .whos-hot-content.expanded {
+        max-height: 60vh; /* Even more limited on small screens */
+    }
+    
+    /* Ensure game history doesn't get too tall on mobile */
+    .game-history-list {
+        max-height: 200px;
     }
 }
