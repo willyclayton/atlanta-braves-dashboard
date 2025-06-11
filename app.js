@@ -1264,11 +1264,33 @@ function generateGameDetails(game) {
         const opponentName = opponent.teamName || opponent.name || '';
         const logoUrl = getTeamLogoUrl(opponentName);
         
+        // Check if game is completed and determine result
+        let gameResult = '';
+        let resultClass = '';
+        if (game.status && (game.status.codedGameState === 'F' || 
+                           game.status.codedGameState === 'FT' || 
+                           game.status.codedGameState === 'FR' ||
+                           game.status.detailedState === 'Final')) {
+            // Game is completed, determine W or L
+            const bravesScore = isHome ? game.teams.home.score : game.teams.away.score;
+            const opponentScore = isHome ? game.teams.away.score : game.teams.home.score;
+            
+            if (bravesScore > opponentScore) {
+                gameResult = 'W';
+                resultClass = 'win';
+            } else {
+                gameResult = 'L';
+                resultClass = 'loss';
+            }
+        }
+        
         // Add console.log to debug team name mapping
         console.log('Team name mapping:', {
             originalName: opponentName,
             abbreviation: getTeamAbbreviation(opponentName),
-            logoUrl: logoUrl
+            logoUrl: logoUrl,
+            gameResult: gameResult,
+            status: game.status
         });
         
         return `
@@ -1279,8 +1301,9 @@ function generateGameDetails(game) {
                     hour12: true
                 })}
             </div>
-            <div class="game-indicator ${isHome ? 'home' : ''}">
+            <div class="game-indicator ${isHome ? 'home' : ''} ${resultClass}">
                 ${logoUrl ? `<div class="team-logo"><img src="${logoUrl}" alt="${opponentName} logo" /></div>` : ''}
+                ${gameResult ? `<div class="game-result ${resultClass}">${gameResult}</div>` : ''}
             </div>
         `;
     } catch (error) {
@@ -1577,8 +1600,6 @@ async function updateDailyRundown() {
                 gameInfo.innerHTML = `
                     <small style="color: var(--text-dark); opacity: 0.7;">
                         ${gameDetails}${pitchingInfo}
-                        <br>
-                        Updated: ${new Date(data.timestamp).toLocaleDateString()}
                     </small>
                 `;
                 
@@ -1640,8 +1661,6 @@ async function updateWeeklyRundown() {
                 weekInfo.innerHTML = `
                     <small style="color: var(--text-dark); opacity: 0.7;">
                         Week: ${data.weeklyStats.dateRange}
-                        <br>
-                        Updated: ${new Date(data.timestamp).toLocaleDateString()}
                     </small>
                 `;
                 

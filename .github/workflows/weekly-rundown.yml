@@ -37,28 +37,77 @@ jobs:
         
         async function generateWeeklyRundown() {
           try {
-            console.log('Fetching last 7 Braves games...');
+            console.log('Fetching recent Braves games to ensure complete series...');
             
-            // Get current date and calculate date 7 days ago
+            // Get current date and calculate date range with buffer for complete series
             const endDate = new Date();
             const startDate = new Date();
-            startDate.setDate(startDate.getDate() - 7);
+            startDate.setDate(startDate.getDate() - 10); // Start with 10 days to capture full series
             
             const formatDate = (date) => date.toISOString().split('T')[0];
             
-            // Fetch recent Braves games from MLB API
+            // Fetch recent Braves games from MLB API with expanded range
             const mlbResponse = await axios.get(
               `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=144&season=2025&gameType=R&startDate=${formatDate(startDate)}&endDate=${formatDate(endDate)}&hydrate=boxscore,decisions`,
               { timeout: 15000 }
             );
             
-            const games = mlbResponse.data.dates.flatMap(date => date.games);
-            const completedGames = games
+            const allGames = mlbResponse.data.dates.flatMap(date => date.games);
+            const allCompletedGames = allGames
               .filter(game => game.status.statusCode === 'F') // Only completed games
               .sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate)); // Sort chronologically
             
+            if (allCompletedGames.length === 0) {
+              throw new Error('No completed games found in the expanded date range');
+            }
+            
+            // Identify series and ensure we have complete series from the last week
+            const seriesMap = new Map();
+            const oneWeekAgo = new Date();
+            oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+            
+            // Group games by opponent and home/away status to identify series
+            allCompletedGames.forEach(game => {
+              const gameDate = new Date(game.gameDate);
+              const isAway = game.teams.away.team.id === 144;
+              const opponentId = isAway ? game.teams.home.team.id : game.teams.away.team.id;
+              const opponentName = isAway ? game.teams.home.team.name : game.teams.away.team.name;
+              const homeAway = isAway ? 'away' : 'home';
+              const seriesKey = `${opponentId}_${homeAway}`;
+              
+              if (!seriesMap.has(seriesKey)) {
+                seriesMap.set(seriesKey, {
+                  opponent: opponentName,
+                  homeAway,
+                  games: []
+                });
+              }
+              
+              seriesMap.get(seriesKey).games.push({
+                ...game,
+                gameDate: gameDate
+              });
+            });
+            
+            // Find series that have games within the last week and ensure we include complete series
+            const relevantGames = [];
+            seriesMap.forEach((series, key) => {
+              const hasRecentGame = series.games.some(game => game.gameDate >= oneWeekAgo);
+              if (hasRecentGame) {
+                // Include all games from this series to ensure completeness
+                relevantGames.push(...series.games);
+                console.log(`Including complete series: ${series.homeAway} ${series.opponent} (${series.games.length} games)`);
+              }
+            });
+            
+            // Remove duplicates and sort by date
+            const completedGames = [...new Set(relevantGames)]
+              .sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate));
+              
+            console.log(`Found ${completedGames.length} completed games in complete series from the last week`);
+            
             if (completedGames.length === 0) {
-              throw new Error('No completed games found in the last 7 days');
+              throw new Error('No completed series found in the last week');
             }
             
             console.log(`Found ${completedGames.length} completed games in the last week`);
@@ -192,7 +241,7 @@ jobs:
               }
             }
             
-            // Find top performers
+            // Find top performers and highlights
             const topPitchers = Array.from(pitchers.entries())
               .filter(([name, stats]) => stats.inningsPitched >= 2) // Minimum 2 innings
               .sort((a, b) => {
@@ -204,7 +253,7 @@ jobs:
                 }
                 return eraA - eraB;
               })
-              .slice(0, 2)
+              .slice(0, 3)
               .map(([name, stats]) => ({
                 name,
                 ...stats,
@@ -219,12 +268,57 @@ jobs:
                 const valueB = b[1].hits + (b[1].homeRuns * 2) + b[1].rbi;
                 return valueB - valueA;
               })
-              .slice(0, 3)
+              .slice(0, 4)
               .map(([name, stats]) => ({
                 name,
                 ...stats,
                 avg: (stats.hits / stats.atBats).toFixed(3)
               }));
+            
+            // Capture notable highlights from the week
+            const highlights = [];
+            
+            // High-scoring games (8+ runs)
+            gameResults.forEach(game => {
+              const totalRuns = parseInt(game.score.split('-')[0]) + parseInt(game.score.split('-')[1]);
+              if (totalRuns >= 10) {
+                highlights.push(`High-scoring ${game.result} ${game.score} ${game.homeAway} ${game.opponent}`);
+              }
+            });
+            
+            // Shutout wins
+            gameResults.forEach(game => {
+              if (game.result === 'W' && game.score.endsWith('-0')) {
+                highlights.push(`Shutout victory ${game.score} ${game.homeAway} ${game.opponent}`);
+              }
+            });
+            
+            // Close games (1-run margin)
+            gameResults.forEach(game => {
+              const runs = game.score.split('-').map(r => parseInt(r));
+              if (Math.abs(runs[0] - runs[1]) === 1) {
+                highlights.push(`Close ${game.result} ${game.score} ${game.homeAway} ${game.opponent}`);
+              }
+            });
+            
+            // Outstanding individual performances
+            topBatters.forEach(batter => {
+              if (batter.homeRuns >= 3) {
+                highlights.push(`${batter.name}: ${batter.homeRuns} HRs in the week`);
+              }
+              if (parseFloat(batter.avg) >= 0.400 && batter.hits >= 6) {
+                highlights.push(`${batter.name}: ${batter.avg} avg, ${batter.hits} hits`);
+              }
+            });
+            
+            topPitchers.forEach(pitcher => {
+              if (parseFloat(pitcher.era) <= 1.50 && pitcher.inningsPitched >= 5) {
+                highlights.push(`${pitcher.name}: ${pitcher.era} ERA, ${pitcher.strikeouts} strikeouts`);
+              }
+              if (pitcher.strikeouts >= 15) {
+                highlights.push(`${pitcher.name}: ${pitcher.strikeouts} strikeouts`);
+              }
+            });
             
             // Analyze series results
             const seriesResults = Array.from(seriesTracker.values()).map(series => {
@@ -268,6 +362,9 @@ jobs:
             }
             
             // Build structured weekly data
+            const actualStartDate = new Date(Math.min(...completedGames.map(g => new Date(g.gameDate))));
+            const actualEndDate = new Date(Math.max(...completedGames.map(g => new Date(g.gameDate))));
+            
             const weeklyContext = JSON.stringify({
               weeklyRecord: {
                 wins,
@@ -275,12 +372,13 @@ jobs:
                 record: `${wins}-${losses}`,
                 winPct: (wins / (wins + losses)).toFixed(3)
               },
-              dateRange: `${formatDate(startDate)} to ${formatDate(endDate)}`,
+              dateRange: `${formatDate(actualStartDate)} to ${formatDate(actualEndDate)}`,
               momentum: momentumDescription,
               topPitchers,
               topBatters,
               gameResults,
               seriesResults,
+              highlights: highlights.slice(0, 6), // Include top 6 highlights
               totalGames: completedGames.length
             }, null, 2);
             
@@ -294,7 +392,7 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a sports reporter writing a compact summary for someone who missed all the games. Write a concise weekly catch-up in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries: [opponent record - outcome]. Example: "Won series vs Phillies 2-1, lost series @ Mets 1-2"\nTrend: [Brief description of momentum and team performance - if struggling/hot streak/cold streak]\n\nUse conversational language like "Braves won the series", "struggled against", "on a hot streak", "offense came alive", "pitching dominated". Keep it under 3 lines total. Focus on series results and overall team performance, not individual player stats.'
+                    content: 'You are a sports reporter writing a comprehensive weekly catch-up for someone who missed all the games. Write in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries: [Brief series results with outcomes]\nHighlights: [2-3 key highlights from the week]\nTrend: [Brief momentum description]\n\nUse conversational language like "Braves won the series", "dominated", "struggled", "offensive explosion", "pitching clinic". Include notable individual performances and game highlights when available. Keep each section concise but informative. Focus on what made this week memorable.'
                   },
                   {
                     role: 'user',
@@ -326,7 +424,7 @@ jobs:
               timestamp: new Date().toISOString(),
               rundown: rundownText,
               weeklyStats: {
-                dateRange: `${formatDate(startDate)} to ${formatDate(endDate)}`,
+                dateRange: `${formatDate(actualStartDate)} to ${formatDate(actualEndDate)}`,
                 record: `${wins}-${losses}`,
                 wins,
                 losses,
@@ -336,7 +434,8 @@ jobs:
                 topPitchers,
                 topBatters,
                 gameResults,
-                seriesResults
+                seriesResults,
+                highlights: highlights.slice(0, 6)
               }
             };
             
