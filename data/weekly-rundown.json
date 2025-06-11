@@ -1,7 +1,7 @@
 {
   "date": "2025-06-11",
-  "timestamp": "2025-06-11T18:38:51.330Z",
-  "rundown": "Record: 1-6 (0.143)  \nTop Pitchers: Dylan Lee: 0.00 ERA, 4 K in 3.3 IP; Enyel De Los Santos: 0.00 ERA, 1 K in 2.2 IP  \nTop Batters: Matt Olson: 0.217 AVG, 5 hits, 2 HR, 8 RBI; Ronald Acuña Jr.: 0.320 AVG, 8 hits, 2 HR, 3 RBI; Austin Riley: 0.323 AVG, 10 hits, 1 HR, 2 RBI  \nMomentum: negative",
+  "timestamp": "2025-06-11T19:45:47.133Z",
+  "rundown": "Record: 1-6 (0.143)  \nSeries: Lost series vs Diamondbacks 0-2, lost series @ Giants 0-3, split series @ Brewers 1-1  \nTrend: It was a challenging week overall, with the team struggling to find consistency.",
   "weeklyStats": {
     "dateRange": "2025-06-04 to 2025-06-11",
     "record": "1-6",
@@ -9,6 +9,7 @@
     "losses": 6,
     "winPct": "0.143",
     "totalGames": 7,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Dylan Lee",
@@ -116,6 +117,67 @@
         "score": "1-4",
         "opponent": "Milwaukee Brewers",
         "homeAway": "@"
+      }
+    ],
+    "seriesResults": [
+      {
+        "opponent": "Arizona Diamondbacks",
+        "homeAway": "vs",
+        "record": "0-2",
+        "outcome": "losing series",
+        "games": [
+          {
+            "date": "6/4/2025",
+            "result": "L",
+            "score": "1-2"
+          },
+          {
+            "date": "6/5/2025",
+            "result": "L",
+            "score": "10-11"
+          }
+        ]
+      },
+      {
+        "opponent": "San Francisco Giants",
+        "homeAway": "@",
+        "record": "0-3",
+        "outcome": "lost series",
+        "games": [
+          {
+            "date": "6/7/2025",
+            "result": "L",
+            "score": "4-5"
+          },
+          {
+            "date": "6/7/2025",
+            "result": "L",
+            "score": "2-3"
+          },
+          {
+            "date": "6/8/2025",
+            "result": "L",
+            "score": "3-4"
+          }
+        ]
+      },
+      {
+        "opponent": "Milwaukee Brewers",
+        "homeAway": "@",
+        "record": "1-1",
+        "outcome": "split series",
+        "games": [
+          {
+            "date": "6/9/2025",
+            "result": "W",
+            "score": "7-1"
+          },
+          {
+            "date": "6/10/2025",
+            "result": "L",
+            "score": "1-4"
+          }
+        ]
       }
     ]
   }
