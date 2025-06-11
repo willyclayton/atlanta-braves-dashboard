@@ -1,0 +1,307 @@
+name: Weekly Rundown
+
+on:
+  schedule:
+    # Runs daily at 4:00 AM EST (9:00 AM UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  generate-weekly-rundown:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: npm install axios
+    
+    - name: Generate Weekly Rundown
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node << 'EOF'
+        const axios = require('axios');
+        const fs = require('fs');
+        
+        async function generateWeeklyRundown() {
+          try {
+            console.log('Fetching last 7 Braves games...');
+            
+            // Get current date and calculate date 7 days ago
+            const endDate = new Date();
+            const startDate = new Date();
+            startDate.setDate(startDate.getDate() - 7);
+            
+            const formatDate = (date) => date.toISOString().split('T')[0];
+            
+            // Fetch recent Braves games from MLB API
+            const mlbResponse = await axios.get(
+              `https://statsapi.mlb.com/api/v1/schedule/games/?sportId=1&teamId=144&season=2025&gameType=R&startDate=${formatDate(startDate)}&endDate=${formatDate(endDate)}&hydrate=boxscore,decisions`,
+              { timeout: 15000 }
+            );
+            
+            const games = mlbResponse.data.dates.flatMap(date => date.games);
+            const completedGames = games
+              .filter(game => game.status.statusCode === 'F') // Only completed games
+              .sort((a, b) => new Date(a.gameDate) - new Date(b.gameDate)); // Sort chronologically
+            
+            if (completedGames.length === 0) {
+              throw new Error('No completed games found in the last 7 days');
+            }
+            
+            console.log(`Found ${completedGames.length} completed games in the last week`);
+            
+            // Analyze each game to build weekly stats
+            let wins = 0;
+            let losses = 0;
+            const pitchers = new Map();
+            const batters = new Map();
+            const gameResults = [];
+            
+            for (const game of completedGames) {
+              try {
+                // Get detailed boxscore data
+                const boxscoreResponse = await axios.get(
+                  `https://statsapi.mlb.com/api/v1/game/${game.gamePk}/boxscore`,
+                  { timeout: 15000 }
+                );
+                
+                const boxscore = boxscoreResponse.data;
+                const isAway = boxscore.teams.away.team.id === 144;
+                const bravesTeam = isAway ? boxscore.teams.away : boxscore.teams.home;
+                const opponentTeam = isAway ? boxscore.teams.home : boxscore.teams.away;
+                
+                const bravesRuns = bravesTeam.teamStats.batting.runs;
+                const oppRuns = opponentTeam.teamStats.batting.runs;
+                const gameResult = bravesRuns > oppRuns ? 'W' : 'L';
+                
+                if (gameResult === 'W') wins++;
+                else losses++;
+                
+                gameResults.push({
+                  date: new Date(game.gameDate).toLocaleDateString(),
+                  result: gameResult,
+                  score: `${bravesRuns}-${oppRuns}`,
+                  opponent: opponentTeam.team.name,
+                  homeAway: isAway ? '@' : 'vs'
+                });
+                
+                // Aggregate pitcher stats
+                Object.values(bravesTeam.players).forEach(player => {
+                  if (player.stats?.pitching) {
+                    const name = player.person.fullName;
+                    const stats = player.stats.pitching;
+                    
+                    if (!pitchers.has(name)) {
+                      pitchers.set(name, {
+                        appearances: 0,
+                        inningsPitched: 0,
+                        earnedRuns: 0,
+                        strikeouts: 0,
+                        hits: 0,
+                        wins: 0,
+                        losses: 0,
+                        saves: 0
+                      });
+                    }
+                    
+                    const pitcher = pitchers.get(name);
+                    pitcher.appearances += 1;
+                    pitcher.inningsPitched += parseFloat(stats.inningsPitched || 0);
+                    pitcher.earnedRuns += parseInt(stats.earnedRuns || 0);
+                    pitcher.strikeouts += parseInt(stats.strikeOuts || 0);
+                    pitcher.hits += parseInt(stats.hits || 0);
+                    pitcher.wins += parseInt(stats.wins || 0);
+                    pitcher.losses += parseInt(stats.losses || 0);
+                    pitcher.saves += parseInt(stats.saves || 0);
+                  }
+                });
+                
+                // Aggregate batter stats
+                Object.values(bravesTeam.players).forEach(player => {
+                  if (player.stats?.batting) {
+                    const name = player.person.fullName;
+                    const stats = player.stats.batting;
+                    
+                    if (!batters.has(name)) {
+                      batters.set(name, {
+                        games: 0,
+                        hits: 0,
+                        homeRuns: 0,
+                        rbi: 0,
+                        runs: 0,
+                        atBats: 0
+                      });
+                    }
+                    
+                    const batter = batters.get(name);
+                    if (parseInt(stats.atBats || 0) > 0) {
+                      batter.games += 1;
+                    }
+                    batter.hits += parseInt(stats.hits || 0);
+                    batter.homeRuns += parseInt(stats.homeRuns || 0);
+                    batter.rbi += parseInt(stats.rbi || 0);
+                    batter.runs += parseInt(stats.runs || 0);
+                    batter.atBats += parseInt(stats.atBats || 0);
+                  }
+                });
+                
+                console.log(`Processed game: ${gameResult} ${bravesRuns}-${oppRuns} ${isAway ? '@' : 'vs'} ${opponentTeam.team.name}`);
+              } catch (gameError) {
+                console.error(`Error processing game ${game.gamePk}:`, gameError.message);
+              }
+            }
+            
+            // Find top performers
+            const topPitchers = Array.from(pitchers.entries())
+              .filter(([name, stats]) => stats.inningsPitched >= 2) // Minimum 2 innings
+              .sort((a, b) => {
+                // Sort by ERA (lower is better), then by strikeouts
+                const eraA = a[1].earnedRuns / (a[1].inningsPitched / 9);
+                const eraB = b[1].earnedRuns / (b[1].inningsPitched / 9);
+                if (Math.abs(eraA - eraB) < 0.5) {
+                  return b[1].strikeouts - a[1].strikeouts;
+                }
+                return eraA - eraB;
+              })
+              .slice(0, 2)
+              .map(([name, stats]) => ({
+                name,
+                ...stats,
+                era: (stats.earnedRuns / (stats.inningsPitched / 9)).toFixed(2)
+              }));
+            
+            const topBatters = Array.from(batters.entries())
+              .filter(([name, stats]) => stats.atBats >= 5) // Minimum 5 at-bats
+              .sort((a, b) => {
+                // Sort by production value: (hits + (2 * HR) + RBI)
+                const valueA = a[1].hits + (a[1].homeRuns * 2) + a[1].rbi;
+                const valueB = b[1].hits + (b[1].homeRuns * 2) + b[1].rbi;
+                return valueB - valueA;
+              })
+              .slice(0, 3)
+              .map(([name, stats]) => ({
+                name,
+                ...stats,
+                avg: (stats.hits / stats.atBats).toFixed(3)
+              }));
+            
+            // Build structured weekly data
+            const weeklyContext = JSON.stringify({
+              weeklyRecord: {
+                wins,
+                losses,
+                record: `${wins}-${losses}`,
+                winPct: (wins / (wins + losses)).toFixed(3)
+              },
+              dateRange: `${formatDate(startDate)} to ${formatDate(endDate)}`,
+              momentum: wins > losses ? 'positive' : wins < losses ? 'negative' : 'neutral',
+              topPitchers,
+              topBatters,
+              gameResults,
+              totalGames: completedGames.length
+            }, null, 2);
+            
+            console.log('Calling OpenAI API for weekly summary...');
+            
+            // Call OpenAI API
+            const openaiResponse = await axios.post(
+              'https://api.openai.com/v1/chat/completions',
+              {
+                model: 'gpt-4o-mini',
+                messages: [
+                  {
+                    role: 'system',
+                    content: 'You are a precise sports reporter. Write weekly summaries in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nTop Pitchers: [Name]: [ERA] ERA, [strikeouts] K in [inningsPitched] IP; [Name2]: [ERA] ERA, [strikeouts] K in [inningsPitched] IP\nTop Batters: [Name]: [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI; [Name2]: [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI\nMomentum: [Brief description based on recent performance]\n\nEach section must be on its own line. Use exact numbers from the data. No fluff.'
+                  },
+                  {
+                    role: 'user',
+                    content: `Write a weekly summary in the specified format using only this verified data:\n\n${weeklyContext}`
+                  }
+                ],
+                max_tokens: 200,
+                temperature: 0.1
+              },
+              {
+                headers: {
+                  'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                  'Content-Type': 'application/json'
+                },
+                timeout: 30000
+              }
+            );
+            
+            const rundownText = openaiResponse.data.choices[0].message.content.trim();
+            
+            // Create data directory if it doesn't exist
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            // Save the weekly rundown
+            const weeklyData = {
+              date: new Date().toISOString().split('T')[0],
+              timestamp: new Date().toISOString(),
+              rundown: rundownText,
+              weeklyStats: {
+                dateRange: `${formatDate(startDate)} to ${formatDate(endDate)}`,
+                record: `${wins}-${losses}`,
+                wins,
+                losses,
+                winPct: (wins / (wins + losses)).toFixed(3),
+                totalGames: completedGames.length,
+                topPitchers,
+                topBatters,
+                gameResults
+              }
+            };
+            
+            fs.writeFileSync('data/weekly-rundown.json', JSON.stringify(weeklyData, null, 2));
+            console.log('Weekly rundown saved successfully');
+            
+          } catch (error) {
+            console.error('Error generating weekly rundown:', error);
+            
+            // Create fallback data file
+            const fallbackData = {
+              date: new Date().toISOString().split('T')[0],
+              timestamp: new Date().toISOString(),
+              rundown: 'Weekly rundown temporarily unavailable during off-season. Check back during the regular season for comprehensive weekly analysis!',
+              weeklyStats: {
+                dateRange: 'N/A',
+                record: 'N/A',
+                totalGames: 0
+              }
+            };
+            
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            fs.writeFileSync('data/weekly-rundown.json', JSON.stringify(fallbackData, null, 2));
+            console.log('Fallback weekly rundown created');
+          }
+        }
+        
+        generateWeeklyRundown();
+        EOF
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -A
+        git commit -m "Update weekly rundown data" || exit 0
+        git push 

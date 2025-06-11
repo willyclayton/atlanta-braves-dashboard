@@ -1295,6 +1295,63 @@ async function updateDailyRundown() {
     }
 }
 
+// Function to load and display weekly rundown
+async function updateWeeklyRundown() {
+    try {
+        console.log('Loading weekly rundown...');
+        // Add cache-busting parameter
+        const response = await fetch('./data/weekly-rundown.json?t=' + new Date().getTime());
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch weekly rundown: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const rundownElement = document.querySelector('.weekly-rundown-content p');
+        
+        if (rundownElement && data.rundown) {
+            rundownElement.textContent = data.rundown;
+            rundownElement.style.fontStyle = 'normal';
+            
+            // Add timestamp info
+            if (data.weeklyStats) {
+                const weekInfo = document.createElement('div');
+                weekInfo.className = 'weekly-rundown-meta';
+                
+                weekInfo.innerHTML = `
+                    <small style="color: var(--text-dark); opacity: 0.7;">
+                        Week: ${data.weeklyStats.dateRange}
+                        <br>
+                        Updated: ${new Date(data.timestamp).toLocaleDateString()}
+                    </small>
+                `;
+                
+                const existingMeta = document.querySelector('.weekly-rundown-meta');
+                if (existingMeta) {
+                    existingMeta.remove();
+                }
+                
+                rundownElement.parentNode.appendChild(weekInfo);
+            }
+            
+            console.log('Weekly rundown updated successfully');
+        }
+    } catch (error) {
+        console.error('Error loading weekly rundown:', error);
+        
+        // Fallback to placeholder text with helpful message for local development
+        const rundownElement = document.querySelector('.weekly-rundown-content p');
+        if (rundownElement) {
+            if (window.location.protocol === 'file:') {
+                rundownElement.textContent = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the weekly rundown feature.';
+            } else {
+                rundownElement.textContent = 'Weekly rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+            }
+            rundownElement.style.fontStyle = 'italic';
+        }
+    }
+}
+
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
     // Load initial data
@@ -1302,6 +1359,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateRoster();
     updateSchedule();
     updateDailyRundown();
+    updateWeeklyRundown();
 
     // Refresh data periodically (every 5 minutes)
     setInterval(() => {
@@ -1669,7 +1727,9 @@ async function fetchBoxscore(gamePk) {
 // Helper: Aggregate player stats over last 10 games
 async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
     const last10 = await getLast10Games(year);
-    const playerStats = {};
+    const batterStats = {};
+    const pitcherStats = {};
+    
     for (const game of last10) {
         if (!game.gamePk) continue;
         let boxscore = null;
@@ -1685,40 +1745,95 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
             continue;
         }
         if (!boxscore || !boxscore.teams || !boxscore.teams.home || !boxscore.teams.away) continue;
+        
         // Determine if Braves are home or away
         const bravesSide = boxscore.teams.home.team.id === BRAVES_ID ? 'home' : 'away';
-        const batters = boxscore.teams[bravesSide].players;
-        for (const pid in batters) {
-            const p = batters[pid];
-            if (!p.stats || !p.stats.batting) continue;
-            const { atBats = 0, hits = 0, homeRuns = 0 } = p.stats.batting;
-            if (!playerStats[pid]) {
-                playerStats[pid] = {
-                    name: p.person.fullName,
-                    atBats: 0,
-                    hits: 0,
-                    homeRuns: 0
-                };
+        const players = boxscore.teams[bravesSide].players;
+        
+        for (const pid in players) {
+            const player = players[pid];
+            
+            // Process batting stats
+            if (player.stats && player.stats.batting) {
+                const { atBats = 0, hits = 0, homeRuns = 0, rbi = 0, runs = 0 } = player.stats.batting;
+                if (!batterStats[pid]) {
+                    batterStats[pid] = {
+                        name: player.person.fullName,
+                        atBats: 0,
+                        hits: 0,
+                        homeRuns: 0,
+                        rbi: 0,
+                        runs: 0
+                    };
+                }
+                batterStats[pid].atBats += atBats;
+                batterStats[pid].hits += hits;
+                batterStats[pid].homeRuns += homeRuns;
+                batterStats[pid].rbi += rbi;
+                batterStats[pid].runs += runs;
             }
-            playerStats[pid].atBats += atBats;
-            playerStats[pid].hits += hits;
-            playerStats[pid].homeRuns += homeRuns;
+            
+            // Process pitching stats
+            if (player.stats && player.stats.pitching) {
+                const { 
+                    inningsPitched = 0, 
+                    earnedRuns = 0, 
+                    strikeOuts = 0, 
+                    hits = 0, 
+                    wins = 0,
+                    saves = 0 
+                } = player.stats.pitching;
+                
+                if (parseFloat(inningsPitched) > 0) { // Only include pitchers who pitched
+                    if (!pitcherStats[pid]) {
+                        pitcherStats[pid] = {
+                            name: player.person.fullName,
+                            inningsPitched: 0,
+                            earnedRuns: 0,
+                            strikeOuts: 0,
+                            hits: 0,
+                            wins: 0,
+                            saves: 0,
+                            appearances: 0
+                        };
+                    }
+                    pitcherStats[pid].inningsPitched += parseFloat(inningsPitched);
+                    pitcherStats[pid].earnedRuns += earnedRuns;
+                    pitcherStats[pid].strikeOuts += strikeOuts;
+                    pitcherStats[pid].hits += hits;
+                    pitcherStats[pid].wins += wins;
+                    pitcherStats[pid].saves += saves;
+                    pitcherStats[pid].appearances += 1;
+                }
+            }
         }
     }
-    // Compute averages and sort
-    const playersArr = Object.values(playerStats).filter(p => p.atBats > 0);
-    playersArr.forEach(p => {
-        p.avg = (p.hits / p.atBats).toFixed(3).replace(/^0/, '') || '.000';
-        p.hr = p.homeRuns;
+    
+    // Process batters - top 3 by performance
+    const battersArray = Object.values(batterStats).filter(p => p.atBats >= 5); // Min 5 AB
+    battersArray.forEach(p => {
+        p.avg = (p.hits / p.atBats).toFixed(3);
+        p.productionScore = p.hits + (p.homeRuns * 2) + p.rbi; // Performance metric
     });
-    // Top 3 by avg (min 10 AB)
-    const topAvg = playersArr.filter(p => p.atBats >= 10)
-        .sort((a, b) => b.avg - a.avg)
+    
+    const topBatters = battersArray
+        .sort((a, b) => b.productionScore - a.productionScore)
         .slice(0, 3);
-    // Most HR
-    const maxHR = Math.max(0, ...playersArr.map(p => p.hr));
-    const topHR = playersArr.filter(p => p.hr === maxHR && maxHR > 0);
-    return { topAvg, topHR };
+    
+    // Process pitchers - top 2 by performance
+    const pitchersArray = Object.values(pitcherStats).filter(p => p.inningsPitched >= 1); // Min 1 IP
+    pitchersArray.forEach(p => {
+        p.era = p.inningsPitched > 0 ? ((p.earnedRuns / p.inningsPitched) * 9).toFixed(2) : '0.00';
+        p.whip = p.inningsPitched > 0 ? ((p.hits + (p.earnedRuns * 0.3)) / p.inningsPitched).toFixed(2) : '0.00';
+        // Performance metric: strikeouts per inning, minus ERA impact, plus wins/saves
+        p.performanceScore = (p.strikeOuts / p.inningsPitched) - (parseFloat(p.era) / 10) + (p.wins * 2) + (p.saves * 1.5);
+    });
+    
+    const topPitchers = pitchersArray
+        .sort((a, b) => b.performanceScore - a.performanceScore)
+        .slice(0, 2);
+    
+    return { topBatters, topPitchers };
 }
 
 // --- UI Expansion Logic ---
@@ -1734,54 +1849,104 @@ async function showWhosHotExpansion() {
     if (anchor && anchor.parentNode) {
         anchor.parentNode.insertBefore(expansion, anchor.nextSibling);
     }
-    expansion.innerHTML = `<div class="expansion-loading">Loading team leader...</div>`;
+    expansion.innerHTML = `<div class="expansion-loading">Loading hot performers from last 10 games...</div>`;
     expansion.style.display = 'block';
 
-    // Fetch roster and find the hitter with the highest AVG (min 10 AB)
-    let data;
     try {
-        data = await fetchMLBData(`teams/${BRAVES_ID}/roster/active?hydrate=person(stats(type=season))`);
-    } catch (e) {
-        expansion.innerHTML = `<div class="expansion-error">Error loading roster data.</div>`;
-        return;
-    }
-    if (!data || !data.roster || !data.roster.length) {
-        expansion.innerHTML = `<div class="expansion-error">No roster data available.</div>`;
-        return;
-    }
-    // Find hitter with highest AVG (min 10 AB)
-    let bestHitter = null;
-    let bestAvg = 0;
-    data.roster.forEach(player => {
-        const stats = player.person.stats
-            ?.find(s => s.group.displayName === 'hitting')
-            ?.splits?.[0]?.stat;
-        if (stats && stats.atBats >= 10) {
-            const avg = parseFloat(stats.avg);
-            if (!isNaN(avg) && avg > bestAvg) {
-                bestAvg = avg;
-                bestHitter = {
-                    name: player.person.fullName,
-                    avg: avg.toFixed(3).replace(/^0/, ''),
-                    ab: stats.atBats,
-                    hits: stats.hits,
-                    hr: stats.homeRuns,
-                    rbi: stats.rbi
-                };
-            }
+        const { topBatters, topPitchers } = await getBravesStatsLast10Games(CURRENT_SEASON);
+        
+        let contentHTML = '<div class="whos-hot-content">';
+        
+        // Top Batters Section
+        contentHTML += `
+            <div class="hot-performers-section">
+                <h4 class="section-title">🔥 Hot Batters (Last 10 Games)</h4>
+                <div class="performers-grid">
+        `;
+        
+        if (topBatters.length > 0) {
+            topBatters.forEach((batter, index) => {
+                const rank = index + 1;
+                contentHTML += `
+                    <div class="performer-card batter-card">
+                        <div class="performer-rank">#${rank}</div>
+                        <div class="performer-name">${batter.name}</div>
+                        <div class="performer-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">AVG:</span>
+                                <span class="stat-value">${batter.avg}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Hits:</span>
+                                <span class="stat-value">${batter.hits}/${batter.atBats}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">HR:</span>
+                                <span class="stat-value">${batter.homeRuns}</span>
+                                <span class="stat-label">RBI:</span>
+                                <span class="stat-value">${batter.rbi}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            contentHTML += '<div class="no-data">No qualifying batters (min 5 AB)</div>';
         }
-    });
-    if (bestHitter) {
-        expansion.innerHTML = `
-            <div class="expansion-section">
-                <h4>Hottest Hitter (Season)</h4>
-                <div><b>${bestHitter.name}</b></div>
-                <div>AVG: <b>${bestHitter.avg}</b> (${bestHitter.hits} H / ${bestHitter.ab} AB)</div>
-                <div>HR: <b>${bestHitter.hr}</b> &nbsp; RBI: <b>${bestHitter.rbi}</b></div>
+        
+        contentHTML += `
+                </div>
             </div>
         `;
-    } else {
-        expansion.innerHTML = `<div class="expansion-error">No qualifying hitters (min 10 AB).</div>`;
+        
+        // Top Pitchers Section
+        contentHTML += `
+            <div class="hot-performers-section">
+                <h4 class="section-title">🔥 Hot Pitchers (Last 10 Games)</h4>
+                <div class="performers-grid">
+        `;
+        
+        if (topPitchers.length > 0) {
+            topPitchers.forEach((pitcher, index) => {
+                const rank = index + 1;
+                contentHTML += `
+                    <div class="performer-card pitcher-card">
+                        <div class="performer-rank">#${rank}</div>
+                        <div class="performer-name">${pitcher.name}</div>
+                        <div class="performer-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">ERA:</span>
+                                <span class="stat-value">${pitcher.era}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">IP:</span>
+                                <span class="stat-value">${pitcher.inningsPitched.toFixed(1)}</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">K:</span>
+                                <span class="stat-value">${pitcher.strikeOuts}</span>
+                                <span class="stat-label">W:</span>
+                                <span class="stat-value">${pitcher.wins}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            contentHTML += '<div class="no-data">No qualifying pitchers (min 1 IP)</div>';
+        }
+        
+        contentHTML += `
+                </div>
+            </div>
+        `;
+        
+        contentHTML += '</div>';
+        expansion.innerHTML = contentHTML;
+        
+    } catch (error) {
+        console.error('Error loading hot performers:', error);
+        expansion.innerHTML = `<div class="expansion-error">Error loading hot performers data.</div>`;
     }
 }
 

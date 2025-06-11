@@ -169,7 +169,7 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a precise sports reporter. Write game summaries in this EXACT format using ONLY the provided data:\n\n1. Result line: "[score] [W/L] [vs/@] [opponent]" (e.g. "7-1 L @ Brewers")\n2. Pitcher highlight: "[Name]: [innings] innings, [earned runs] earned runs, [hits] hits, [HR] HR, [strikeouts] strikeouts"\n3. Batter highlights: "[Name]: [hits] hits, [HR] HR, [RBI] RBI" (only if significant contributors provided)\n4. Brief game summary: 1-2 sentences about key moments/plays. No fluff, no "Go Braves".\n\nUse exact numbers from the data. Do not add information not provided.'
+                    content: 'You are a precise sports reporter. Write game summaries in this EXACT format using ONLY the provided data:\n\n[score] [W/L] [vs/@] [opponent]\n[Pitcher Name]: [innings] innings, [earned runs] earned runs, [hits] hits, [HR] HR, [strikeouts] strikeouts\n[Batter Name]: [hits] hits, [HR] HR, [RBI] RBI\n[Brief game summary in 1-2 sentences]\n\nEach section must be on its own line. Use exact numbers from the data. Do not add information not provided. No fluff or "Go Braves".'
                   },
                   {
                     role: 'user',

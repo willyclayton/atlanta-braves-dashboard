@@ -1,0 +1,106 @@
+{
+  "date": "2025-06-10",
+  "timestamp": "2025-06-10T18:15:00.000Z",
+  "rundown": "Record: 5-2 (.714)\nTop Pitchers: Spencer Strider: 2.25 ERA, 15 K in 12.0 IP; A.J. Smith-Shawver: 3.38 ERA, 8 K in 8.0 IP\nTop Batters: Ronald Acuña Jr.: .350 AVG, 9 hits, 2 HR, 6 RBI; Matt Olson: .280 AVG, 7 hits, 3 HR, 8 RBI\nMomentum: Strong week with solid pitching and offensive production driving winning record",
+  "weeklyStats": {
+    "dateRange": "2025-06-03 to 2025-06-10",
+    "record": "5-2",
+    "wins": 5,
+    "losses": 2,
+    "winPct": "0.714",
+    "totalGames": 7,
+    "topPitchers": [
+      {
+        "name": "Spencer Strider",
+        "appearances": 2,
+        "inningsPitched": 12.0,
+        "earnedRuns": 3,
+        "strikeouts": 15,
+        "hits": 8,
+        "era": "2.25"
+      },
+      {
+        "name": "A.J. Smith-Shawver",
+        "appearances": 1,
+        "inningsPitched": 8.0,
+        "earnedRuns": 3,
+        "strikeouts": 8,
+        "hits": 6,
+        "era": "3.38"
+      }
+    ],
+    "topBatters": [
+      {
+        "name": "Ronald Acuña Jr.",
+        "games": 6,
+        "hits": 9,
+        "homeRuns": 2,
+        "rbi": 6,
+        "runs": 8,
+        "atBats": 26,
+        "avg": "0.346"
+      },
+      {
+        "name": "Matt Olson",
+        "games": 7,
+        "hits": 7,
+        "homeRuns": 3,
+        "rbi": 8,
+        "runs": 5,
+        "atBats": 25,
+        "avg": "0.280"
+      }
+    ],
+    "gameResults": [
+      {
+        "date": "6/3/2025",
+        "result": "W",
+        "score": "8-4",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/4/2025",
+        "result": "L",
+        "score": "3-6",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/5/2025",
+        "result": "W",
+        "score": "7-2",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/6/2025",
+        "result": "W",
+        "score": "5-1",
+        "opponent": "New York Mets",
+        "homeAway": "@"
+      },
+      {
+        "date": "6/7/2025",
+        "result": "W",
+        "score": "9-3",
+        "opponent": "New York Mets",
+        "homeAway": "@"
+      },
+      {
+        "date": "6/8/2025",
+        "result": "L",
+        "score": "2-4",
+        "opponent": "New York Mets",
+        "homeAway": "@"
+      },
+      {
+        "date": "6/9/2025",
+        "result": "W",
+        "score": "6-3",
+        "opponent": "New York Mets",
+        "homeAway": "@"
+      }
+    ]
+  }
+} 
