@@ -354,6 +354,57 @@ h2 {
     box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
 }
 
+/* New table header with toggle styling */
+.table-header-with-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background: linear-gradient(135deg, #132747 0%, #1e3a5f 100%);
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table-title-only {
+    color: white;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.table-toggle {
+    display: flex;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.table-toggle-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 70px;
+}
+
+.table-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.table-toggle-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
+}
+
 /* Sortable Table Headers */
 .roster-table th.sortable {
     cursor: pointer;
@@ -503,6 +554,21 @@ h2 {
         padding: 0.4rem 0.8rem;
         font-size: 0.8rem;
     }
+    
+    .table-header-with-toggle {
+        padding: 0.5rem 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .table-title-only {
+        font-size: 0.9rem;
+    }
+    
+    .table-toggle-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.7rem;
+        min-width: 60px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -524,6 +590,33 @@ h2 {
     .daily-rundown-content p,
     .weekly-rundown-content p {
         font-size: 0.65rem;
+    }
+    
+    .table-header-with-toggle {
+        padding: 0.4rem 0.6rem;
+        margin-bottom: 0.6rem;
+        flex-direction: column;
+        gap: 0.4rem;
+        align-items: stretch;
+    }
+    
+    .table-title-only {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    
+    .table-toggle {
+        align-self: center;
+    }
+    
+    .table-toggle-btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.65rem;
+        min-width: 55px;
+    }
+    
+    .daily-rundown-content p,
+    .weekly-rundown-content p {
         line-height: 1.1;
     }
     

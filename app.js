@@ -462,14 +462,21 @@ function renderActiveRosterTable(container) {
         </div>
     `;
     
-    // Add click event listeners for expandable rows and sorting
+    // Add click event listeners for expandable rows, sorting, and toggle buttons
     addRosterTableEventListeners(container);
     addSortEventListeners(container);
+    addRosterToggleEventListeners(container);
 }
 
 function generateBattersTable(batters, sortState) {
     return `
-        <h3 class="table-title">🥎 Batters (${batters.length})</h3>
+        <div class="table-header-with-toggle">
+            <h3 class="table-title-only">Batters (${batters.length})</h3>
+            <div class="table-toggle">
+                <button class="table-toggle-btn active" data-table="batters">Batters</button>
+                <button class="table-toggle-btn" data-table="pitchers">Pitchers</button>
+            </div>
+        </div>
         <div class="roster-table-container">
             <table class="roster-table batters-table">
                 <thead>
@@ -477,10 +484,15 @@ function generateBattersTable(batters, sortState) {
                         <th class="sortable ${sortState.column === 'jersey' ? `sort-${sortState.direction}` : ''}" data-column="jersey">#</th>
                         <th class="sortable ${sortState.column === 'name' ? `sort-${sortState.direction}` : ''}" data-column="name">Player</th>
                         <th>Pos</th>
+                        <th class="sortable ${sortState.column === 'ab' ? `sort-${sortState.direction}` : ''}" data-column="ab">AB</th>
                         <th class="sortable ${sortState.column === 'avg' ? `sort-${sortState.direction}` : ''}" data-column="avg">AVG</th>
+                        <th class="sortable ${sortState.column === 'hits' ? `sort-${sortState.direction}` : ''}" data-column="hits">H</th>
+                        <th class="sortable ${sortState.column === 'runs' ? `sort-${sortState.direction}` : ''}" data-column="runs">R</th>
                         <th class="sortable ${sortState.column === 'hr' ? `sort-${sortState.direction}` : ''}" data-column="hr">HR</th>
                         <th class="sortable ${sortState.column === 'rbi' ? `sort-${sortState.direction}` : ''}" data-column="rbi">RBI</th>
-                        <th class="sortable ${sortState.column === 'ops' ? `sort-${sortState.direction}` : ''}" data-column="ops">OPS</th>
+                        <th class="sortable ${sortState.column === 'k' ? `sort-${sortState.direction}` : ''}" data-column="k">SO</th>
+                        <th class="sortable ${sortState.column === 'bb' ? `sort-${sortState.direction}` : ''}" data-column="bb">BB</th>
+                        <th class="sortable ${sortState.column === 'sb' ? `sort-${sortState.direction}` : ''}" data-column="sb">SB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -493,7 +505,13 @@ function generateBattersTable(batters, sortState) {
 
 function generatePitchersTable(pitchers, sortState) {
     return `
-        <h3 class="table-title">⚾ Pitchers (${pitchers.length})</h3>
+        <div class="table-header-with-toggle">
+            <h3 class="table-title-only">Pitchers (${pitchers.length})</h3>
+            <div class="table-toggle">
+                <button class="table-toggle-btn" data-table="batters">Batters</button>
+                <button class="table-toggle-btn active" data-table="pitchers">Pitchers</button>
+            </div>
+        </div>
         <div class="roster-table-container">
             <table class="roster-table pitchers-table">
                 <thead>
@@ -501,10 +519,14 @@ function generatePitchersTable(pitchers, sortState) {
                         <th class="sortable ${sortState.column === 'jersey' ? `sort-${sortState.direction}` : ''}" data-column="jersey">#</th>
                         <th class="sortable ${sortState.column === 'name' ? `sort-${sortState.direction}` : ''}" data-column="name">Player</th>
                         <th>Role</th>
+                        <th class="sortable ${sortState.column === 'games' ? `sort-${sortState.direction}` : ''}" data-column="games">G</th>
                         <th class="sortable ${sortState.column === 'era' ? `sort-${sortState.direction}` : ''}" data-column="era">ERA</th>
+                        <th class="sortable ${sortState.column === 'ip' ? `sort-${sortState.direction}` : ''}" data-column="ip">IP</th>
                         <th class="sortable ${sortState.column === 'wins' ? `sort-${sortState.direction}` : ''}" data-column="wins">W-L</th>
                         <th class="sortable ${sortState.column === 'strikeouts' ? `sort-${sortState.direction}` : ''}" data-column="strikeouts">K</th>
-                        <th class="sortable ${sortState.column === 'whip' ? `sort-${sortState.direction}` : ''}" data-column="whip">WHIP</th>
+                        <th class="sortable ${sortState.column === 'walks' ? `sort-${sortState.direction}` : ''}" data-column="walks">BB</th>
+                        <th class="sortable ${sortState.column === 'er' ? `sort-${sortState.direction}` : ''}" data-column="er">ER</th>
+                        <th class="sortable ${sortState.column === 'pitcherhr' ? `sort-${sortState.direction}` : ''}" data-column="pitcherhr">HR</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -528,9 +550,22 @@ function sortPlayers(players, column, direction, isBatters) {
                 aVal = a.person.fullName.toLowerCase();
                 bVal = b.person.fullName.toLowerCase();
                 break;
+            // Batting stats
+            case 'ab':
+                aVal = parseInt(playerStats.get(a.person.id)?.atBats) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.atBats) || 0;
+                break;
             case 'avg':
                 aVal = parseFloat(playerStats.get(a.person.id)?.avg) || 0;
                 bVal = parseFloat(playerStats.get(b.person.id)?.avg) || 0;
+                break;
+            case 'hits':
+                aVal = parseInt(playerStats.get(a.person.id)?.hits) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.hits) || 0;
+                break;
+            case 'runs':
+                aVal = parseInt(playerStats.get(a.person.id)?.runs) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.runs) || 0;
                 break;
             case 'hr':
                 aVal = parseInt(playerStats.get(a.person.id)?.homeRuns) || 0;
@@ -540,25 +575,50 @@ function sortPlayers(players, column, direction, isBatters) {
                 aVal = parseInt(playerStats.get(a.person.id)?.rbi) || 0;
                 bVal = parseInt(playerStats.get(b.person.id)?.rbi) || 0;
                 break;
-            case 'ops':
-                aVal = parseFloat(playerStats.get(a.person.id)?.ops) || 0;
-                bVal = parseFloat(playerStats.get(b.person.id)?.ops) || 0;
+            case 'k':
+                aVal = parseInt(playerStats.get(a.person.id)?.strikeOuts) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.strikeOuts) || 0;
+                break;
+            case 'bb':
+                aVal = parseInt(playerStats.get(a.person.id)?.baseOnBalls) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.baseOnBalls) || 0;
+                break;
+            case 'sb':
+                aVal = parseInt(playerStats.get(a.person.id)?.stolenBases) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.stolenBases) || 0;
+                break;
+            // Pitching stats
+            case 'games':
+                aVal = parseInt(playerStats.get(a.person.id)?.gamesPlayed) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.gamesPlayed) || 0;
                 break;
             case 'era':
                 aVal = parseFloat(playerStats.get(a.person.id)?.era) || 99;
                 bVal = parseFloat(playerStats.get(b.person.id)?.era) || 99;
+                break;
+            case 'ip':
+                aVal = parseFloat(playerStats.get(a.person.id)?.inningsPitched) || 0;
+                bVal = parseFloat(playerStats.get(b.person.id)?.inningsPitched) || 0;
                 break;
             case 'wins':
                 aVal = parseInt(playerStats.get(a.person.id)?.wins) || 0;
                 bVal = parseInt(playerStats.get(b.person.id)?.wins) || 0;
                 break;
             case 'strikeouts':
-                aVal = parseInt(playerStats.get(a.person.id)?.strikeOuts) || 0;
-                bVal = parseInt(playerStats.get(b.person.id)?.strikeOuts) || 0;
+                aVal = parseInt(playerStats.get(a.person.id)?.pitcherStrikeOuts) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.pitcherStrikeOuts) || 0;
                 break;
-            case 'whip':
-                aVal = parseFloat(playerStats.get(a.person.id)?.whip) || 99;
-                bVal = parseFloat(playerStats.get(b.person.id)?.whip) || 99;
+            case 'walks':
+                aVal = parseInt(playerStats.get(a.person.id)?.pitcherWalks) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.pitcherWalks) || 0;
+                break;
+            case 'er':
+                aVal = parseInt(playerStats.get(a.person.id)?.earnedRuns) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.earnedRuns) || 0;
+                break;
+            case 'pitcherhr':
+                aVal = parseInt(playerStats.get(a.person.id)?.pitcherHomeRuns) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.pitcherHomeRuns) || 0;
                 break;
             default:
                 return 0;
@@ -573,13 +633,13 @@ function sortPlayers(players, column, direction, isBatters) {
 }
 
 function addRosterToggleEventListeners(container) {
-    const toggleButtons = document.querySelectorAll('.roster-toggle-btn');
+    const toggleButtons = container.querySelectorAll('.table-toggle-btn');
     
     toggleButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active state
-            toggleButtons.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            // Update active state for both toggle groups
+            container.querySelectorAll('.table-toggle-btn').forEach(b => b.classList.remove('active'));
+            container.querySelectorAll(`.table-toggle-btn[data-table="${btn.dataset.table}"]`).forEach(b => b.classList.add('active'));
             
             // Update current roster type
             currentRosterType = btn.dataset.table;
@@ -615,20 +675,33 @@ function addSortEventListeners(container) {
 
 function generateBatterRow(player) {
     const stats = playerStats.get(player.person.id) || {};
-    const expanded = false; // Track if row is expanded
+    
+    // Enhanced debug logging for missing stats
+    console.log(`Processing batter: ${player.person.fullName}`);
+    console.log(`Player stats:`, stats);
+    console.log(`HR: ${stats.homeRuns}, SO: ${stats.strikeOuts}, BB: ${stats.baseOnBalls}`);
+    
+    if (!stats.homeRuns && !stats.strikeOuts && !stats.baseOnBalls) {
+        console.log(`⚠️ Missing batter stats for ${player.person.fullName}:`, stats);
+    }
     
     return `
         <tr class="roster-row batter-row" data-player-id="${player.person.id}" data-expanded="false">
             <td class="jersey-number">#${player.jerseyNumber || '??'}</td>
             <td class="player-name">${player.person.fullName}</td>
             <td class="position">${getShortPosition(player.position.name)}</td>
+            <td class="stat-cell">${stats.atBats || '0'}</td>
             <td class="stat-cell">${stats.avg || '.---'}</td>
+            <td class="stat-cell">${stats.hits || '0'}</td>
+            <td class="stat-cell">${stats.runs || '0'}</td>
             <td class="stat-cell">${stats.homeRuns || '0'}</td>
             <td class="stat-cell">${stats.rbi || '0'}</td>
-            <td class="stat-cell">${stats.ops || '.---'}</td>
+            <td class="stat-cell">${stats.strikeOuts || '0'}</td>
+            <td class="stat-cell">${stats.baseOnBalls || '0'}</td>
+            <td class="stat-cell">${stats.stolenBases || '0'}</td>
         </tr>
         <tr class="player-details-row" data-player-id="${player.person.id}" style="display: none;">
-            <td colspan="7">
+            <td colspan="12">
                 <div class="expanded-player-info">
                     ${generatePlayerDetails(player, stats, false)}
                 </div>
@@ -645,13 +718,17 @@ function generatePitcherRow(player) {
             <td class="jersey-number">#${player.jerseyNumber || '??'}</td>
             <td class="player-name">${player.person.fullName}</td>
             <td class="position">${getPitcherRole(stats)}</td>
+            <td class="stat-cell">${stats.gamesPlayed || '0'}</td>
             <td class="stat-cell">${stats.era || '-.--'}</td>
+            <td class="stat-cell">${stats.inningsPitched || '0.0'}</td>
             <td class="stat-cell">${stats.wins || '0'}-${stats.losses || '0'}</td>
-            <td class="stat-cell">${stats.strikeOuts || '0'}</td>
-            <td class="stat-cell">${stats.whip || '-.--'}</td>
+            <td class="stat-cell">${stats.pitcherStrikeOuts || '0'}</td>
+            <td class="stat-cell">${stats.pitcherWalks || '0'}</td>
+            <td class="stat-cell">${stats.earnedRuns || '0'}</td>
+            <td class="stat-cell">${stats.pitcherHomeRuns || '0'}</td>
         </tr>
         <tr class="player-details-row" data-player-id="${player.person.id}" style="display: none;">
-            <td colspan="7">
+            <td colspan="11">
                 <div class="expanded-player-info">
                     ${generatePlayerDetails(player, stats, true)}
                 </div>
@@ -689,9 +766,13 @@ function getPitcherRole(stats) {
     const starts = parseInt(stats.gamesStarted) || 0;
     const appearances = parseInt(stats.gamesPlayed) || 0;
     
-    if (saves >= 5) return 'CL'; // Closer
-    if (holds >= 5) return 'SU'; // Setup
-    if (starts >= appearances * 0.5) return 'SP'; // Starter
+    // If no stats available, return default
+    if (appearances === 0) return 'P';
+    
+    // Determine role based on usage patterns
+    if (saves >= 3) return 'CL'; // Closer (lowered threshold)
+    if (holds >= 3) return 'SU'; // Setup (lowered threshold) 
+    if (starts >= Math.max(1, appearances * 0.4)) return 'SP'; // Starter (lowered threshold)
     return 'RP'; // Relief Pitcher
 }
 
@@ -760,7 +841,7 @@ function updateRosterByPosition(roster, container) {
                     acc.era.push(eraValue);
                 }
                 acc.wins += playerStat.wins || 0;
-                acc.strikeOuts += playerStat.strikeOuts || 0;
+                acc.strikeOuts += playerStat.pitcherStrikeOuts || 0;
             } else {
                 const avgValue = parseFloat(playerStat.avg);
                 if (!isNaN(avgValue)) {
@@ -1103,25 +1184,35 @@ function processPlayerStats(person) {
     // Convert string stats to numbers before using toFixed
     const era = typeof pitchingStats.era === 'string' ? parseFloat(pitchingStats.era) : pitchingStats.era;
     const avg = typeof hittingStats.avg === 'string' ? parseFloat(hittingStats.avg) : hittingStats.avg;
+    const inningsPitched = typeof pitchingStats.inningsPitched === 'string' ? parseFloat(pitchingStats.inningsPitched) : pitchingStats.inningsPitched;
 
     return {
         // Hitting stats
         avg: avg ? avg.toFixed(3).replace(/^0/, '') : '.---',
+        atBats: hittingStats.atBats || 0,
         hits: hittingStats.hits || 0,
         runs: hittingStats.runs || 0,
         homeRuns: hittingStats.homeRuns || 0,
-        stolenBases: hittingStats.stolenBases || 0,
+        rbi: hittingStats.rbi || 0,
         strikeOuts: hittingStats.strikeOuts || 0,
+        baseOnBalls: hittingStats.baseOnBalls || 0,
+        stolenBases: hittingStats.stolenBases || 0,
         doubles: hittingStats.doubles || 0,
         triples: hittingStats.triples || 0,
-        rbi: hittingStats.rbi || 0,
         
-        // Pitching stats
+        // Pitching stats (with different names to avoid conflicts)
+        gamesPlayed: pitchingStats.gamesPlayed || 0,
+        gamesStarted: pitchingStats.gamesStarted || 0,
         era: era ? era.toFixed(2) : '-.--',
+        inningsPitched: inningsPitched ? inningsPitched.toFixed(1) : '0.0',
         wins: pitchingStats.wins || 0,
         losses: pitchingStats.losses || 0,
+        pitcherStrikeOuts: pitchingStats.strikeOuts || 0,
+        pitcherWalks: pitchingStats.baseOnBalls || 0,
+        earnedRuns: pitchingStats.earnedRuns || 0,
+        pitcherHomeRuns: pitchingStats.homeRuns || 0,
         saves: pitchingStats.saves || 0,
-        strikeOuts: pitchingStats.strikeOuts || 0
+        holds: pitchingStats.holds || 0
     };
 }
 

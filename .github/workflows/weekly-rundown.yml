@@ -392,7 +392,7 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a sports reporter writing a comprehensive weekly catch-up for someone who missed all the games. Write in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries: [Brief series results with outcomes]\nHighlights: [2-3 key highlights from the week]\nTrend: [Brief momentum description]\n\nUse conversational language like "Braves won the series", "dominated", "struggled", "offensive explosion", "pitching clinic". Include notable individual performances and game highlights when available. Keep each section concise but informative. Focus on what made this week memorable.'
+                    content: 'You are a sports reporter writing a comprehensive weekly catch-up for someone who missed all the games. Write in this EXACT format using ONLY the provided data:\n\n<b>Record:</b> [wins]-[losses] ([winPct])\n<b>Series:</b> [Brief series results with outcomes]\n<b>Highlights:</b> [2-3 key highlights from the week]\n<b>Trend:</b> [Brief momentum description]\n\nUse HTML bold tags (<b></b>) not markdown. Use conversational language like "Braves won the series", "dominated", "struggled", "offensive explosion", "pitching clinic". Include notable individual performances and game highlights when available. Keep each section concise but informative. Focus on what made this week memorable.'
                   },
                   {
                     role: 'user',
