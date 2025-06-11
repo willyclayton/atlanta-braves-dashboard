@@ -294,14 +294,14 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a sports reporter writing for someone who missed all the games. Write a concise weekly catch-up in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries Results: [opponent homeAway record - outcome]. Example: "Phillies @ 2-1 - won series, Mets vs 1-2 - lost series"\nTop Pitchers: [Name] is hot with [ERA] ERA, [strikeouts] K in [inningsPitched] IP; [Name2] contributed [ERA] ERA, [strikeouts] K in [inningsPitched] IP  \nTop Batters: [Name] led the way with [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI; [Name2] also produced with [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI\nMomentum: [Conversational description explaining what happened and current trajectory - mention if struggling/hot streak]\n\nUse conversational language like "Player A is hot", "we struggled against X team", "offense came alive". Each section on its own line. Be specific about performance.'
+                    content: 'You are a sports reporter writing a compact summary for someone who missed all the games. Write a concise weekly catch-up in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries: [opponent record - outcome]. Example: "Won series vs Phillies 2-1, lost series @ Mets 1-2"\nTrend: [Brief description of momentum and team performance - if struggling/hot streak/cold streak]\n\nUse conversational language like "Braves won the series", "struggled against", "on a hot streak", "offense came alive", "pitching dominated". Keep it under 3 lines total. Focus on series results and overall team performance, not individual player stats.'
                   },
                   {
                     role: 'user',
                     content: `Write a weekly catch-up summary as if I missed all the games this week. Use only this verified data:\n\n${weeklyContext}`
                   }
                 ],
-                max_tokens: 350,
+                max_tokens: 150,
                 temperature: 0.1
               },
               {
