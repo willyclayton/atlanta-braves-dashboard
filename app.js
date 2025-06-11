@@ -1241,7 +1241,7 @@ async function updateDailyRundown() {
         const rundownElement = document.querySelector('.daily-rundown-content p');
         
         if (rundownElement && data.rundown) {
-            rundownElement.textContent = data.rundown;
+            rundownElement.innerHTML = data.rundown.replace(/\n/g, '<br>');
             rundownElement.style.fontStyle = 'normal';
             
             // Add timestamp info
@@ -1286,9 +1286,9 @@ async function updateDailyRundown() {
         const rundownElement = document.querySelector('.daily-rundown-content p');
         if (rundownElement) {
             if (window.location.protocol === 'file:') {
-                rundownElement.textContent = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the daily rundown feature.';
+                rundownElement.innerHTML = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the daily rundown feature.';
             } else {
-                rundownElement.textContent = 'Daily rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+                rundownElement.innerHTML = 'Daily rundown temporarily unavailable. Check back soon for the latest Braves updates!';
             }
             rundownElement.style.fontStyle = 'italic';
         }
@@ -1310,7 +1310,7 @@ async function updateWeeklyRundown() {
         const rundownElement = document.querySelector('.weekly-rundown-content p');
         
         if (rundownElement && data.rundown) {
-            rundownElement.textContent = data.rundown;
+            rundownElement.innerHTML = data.rundown.replace(/\n/g, '<br>');
             rundownElement.style.fontStyle = 'normal';
             
             // Add timestamp info
@@ -1343,9 +1343,9 @@ async function updateWeeklyRundown() {
         const rundownElement = document.querySelector('.weekly-rundown-content p');
         if (rundownElement) {
             if (window.location.protocol === 'file:') {
-                rundownElement.textContent = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the weekly rundown feature.';
+                rundownElement.innerHTML = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the weekly rundown feature.';
             } else {
-                rundownElement.textContent = 'Weekly rundown temporarily unavailable. Check back soon for the latest Braves updates!';
+                rundownElement.innerHTML = 'Weekly rundown temporarily unavailable. Check back soon for the latest Braves updates!';
             }
             rundownElement.style.fontStyle = 'italic';
         }
@@ -1781,7 +1781,8 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
                     strikeOuts = 0, 
                     hits = 0, 
                     wins = 0,
-                    saves = 0 
+                    saves = 0,
+                    homeRuns = 0
                 } = player.stats.pitching;
                 
                 if (parseFloat(inningsPitched) > 0) { // Only include pitchers who pitched
@@ -1794,6 +1795,7 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
                             hits: 0,
                             wins: 0,
                             saves: 0,
+                            homeRuns: 0,
                             appearances: 0
                         };
                     }
@@ -1803,37 +1805,82 @@ async function getBravesStatsLast10Games(year = CURRENT_SEASON) {
                     pitcherStats[pid].hits += hits;
                     pitcherStats[pid].wins += wins;
                     pitcherStats[pid].saves += saves;
+                    pitcherStats[pid].homeRuns += homeRuns;
                     pitcherStats[pid].appearances += 1;
                 }
             }
         }
     }
     
-    // Process batters - top 3 by performance
+    // Process batters - calculate advanced stats
     const battersArray = Object.values(batterStats).filter(p => p.atBats >= 5); // Min 5 AB
     battersArray.forEach(p => {
         p.avg = (p.hits / p.atBats).toFixed(3);
         p.productionScore = p.hits + (p.homeRuns * 2) + p.rbi; // Performance metric
+        
+        // Calculate OPS (On-base Plus Slugging)
+        const singles = p.hits - p.doubles - p.triples - p.homeRuns;
+        const totalBases = singles + (p.doubles * 2) + (p.triples * 3) + (p.homeRuns * 4);
+        const slugging = p.atBats > 0 ? totalBases / p.atBats : 0;
+        
+        // Estimate walks and HBP based on typical ratios (since we don't have exact data from boxscores)
+        const estimatedWalks = Math.round(p.atBats * 0.1); // Rough estimate
+        const plateAppearances = p.atBats + estimatedWalks;
+        const onBase = plateAppearances > 0 ? (p.hits + estimatedWalks) / plateAppearances : 0;
+        
+        p.ops = (onBase + slugging).toFixed(3);
     });
     
+    // 🔥 HOT BATTERS: Must meet ANY criteria
     const topBatters = battersArray
-        .sort((a, b) => b.productionScore - a.productionScore)
-        .slice(0, 3);
+        .filter(p => 
+            parseFloat(p.avg) >= 0.300 ||
+            p.homeRuns >= 3 ||
+            p.rbi >= 8 ||
+            p.hits >= 10
+        )
+        .sort((a, b) => b.productionScore - a.productionScore);
     
-    // Process pitchers - top 2 by performance
-    const pitchersArray = Object.values(pitcherStats).filter(p => p.inningsPitched >= 1); // Min 1 IP
+    // 🧊 COLD BATTERS: Only batting average below .200
+    const coldBatters = battersArray
+        .filter(p => parseFloat(p.avg) < 0.200)
+        .sort((a, b) => a.productionScore - b.productionScore); // Sort by worst performance first
+    
+    // Process pitchers - calculate advanced stats
+    const pitchersArray = Object.values(pitcherStats).filter(p => p.inningsPitched >= 3); // Min 3 IP for starters
     pitchersArray.forEach(p => {
         p.era = p.inningsPitched > 0 ? ((p.earnedRuns / p.inningsPitched) * 9).toFixed(2) : '0.00';
-        p.whip = p.inningsPitched > 0 ? ((p.hits + (p.earnedRuns * 0.3)) / p.inningsPitched).toFixed(2) : '0.00';
-        // Performance metric: strikeouts per inning, minus ERA impact, plus wins/saves
+        
+        // Estimate walks based on typical ratios (since we don't have exact walk data)
+        p.estimatedWalks = Math.round(p.inningsPitched * 0.3); // Rough estimate based on league averages
+        p.whip = p.inningsPitched > 0 ? ((p.hits + p.estimatedWalks) / p.inningsPitched).toFixed(2) : '0.00';
+        p.walksPerGame = p.appearances > 0 ? (p.estimatedWalks / p.appearances).toFixed(1) : '0.0';
+        p.inningsPerStart = p.appearances > 0 ? (p.inningsPitched / p.appearances).toFixed(1) : '0.0';
+        
+        // Check for quality starts (6+ IP, ≤ 3 ER) - estimate based on stats
+        p.qualityStarts = 0;
+        if (p.appearances > 0 && parseFloat(p.inningsPerStart) >= 6.0 && (p.earnedRuns / p.appearances) <= 3) {
+            p.qualityStarts = p.appearances; // If criteria met, assume all were quality starts
+        }
+        
+        // Performance metric
         p.performanceScore = (p.strikeOuts / p.inningsPitched) - (parseFloat(p.era) / 10) + (p.wins * 2) + (p.saves * 1.5);
     });
     
+    // 🔥 HOT PITCHERS: Must meet ANY criteria for starting pitchers
     const topPitchers = pitchersArray
-        .sort((a, b) => b.performanceScore - a.performanceScore)
-        .slice(0, 2);
+        .filter(p => 
+            parseFloat(p.era) < 2.50 ||
+            p.strikeOuts >= 15
+        )
+        .sort((a, b) => b.performanceScore - a.performanceScore);
     
-    return { topBatters, topPitchers };
+    // 🧊 COLD PITCHERS: Only ERA over 6.00
+    const coldPitchers = pitchersArray
+        .filter(p => parseFloat(p.era) > 6.00)
+        .sort((a, b) => a.performanceScore - b.performanceScore); // Sort by worst performance first
+    
+    return { topBatters, topPitchers, coldBatters, coldPitchers };
 }
 
 // --- UI Expansion Logic ---
@@ -1853,48 +1900,60 @@ async function showWhosHotExpansion() {
     expansion.style.display = 'block';
 
     try {
-        const { topBatters, topPitchers } = await getBravesStatsLast10Games(CURRENT_SEASON);
+        const { topBatters, topPitchers, coldBatters, coldPitchers } = await getBravesStatsLast10Games(CURRENT_SEASON);
         
-        let contentHTML = '<div class="whos-hot-content">';
+        let contentHTML = `
+        <div class="whos-hot-content">
+            <div class="performance-toggle">
+                <button id="hot-toggle" class="toggle-btn active" onclick="showHotPerformers()">🔥 Hot</button>
+                <button id="cold-toggle" class="toggle-btn" onclick="showColdPerformers()">🧊 Cold</button>
+            </div>
+            
+            <div id="hot-performers" class="performers-view">
+        `;
         
         // Top Batters Section
         contentHTML += `
             <div class="hot-performers-section">
                 <h4 class="section-title">🔥 Hot Batters (Last 10 Games)</h4>
-                <div class="performers-grid">
+                <div class="performers-table-container">
+                    <table class="performers-table batters-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>AVG</th>
+                                <th>AB</th>
+                                <th>HR</th>
+                                <th>RBI</th>
+                                <th>Hits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
         `;
         
         if (topBatters.length > 0) {
             topBatters.forEach((batter, index) => {
                 const rank = index + 1;
                 contentHTML += `
-                    <div class="performer-card batter-card">
-                        <div class="performer-rank">#${rank}</div>
-                        <div class="performer-name">${batter.name}</div>
-                        <div class="performer-stats">
-                            <div class="stat-row">
-                                <span class="stat-label">AVG:</span>
-                                <span class="stat-value">${batter.avg}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">Hits:</span>
-                                <span class="stat-value">${batter.hits}/${batter.atBats}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">HR:</span>
-                                <span class="stat-value">${batter.homeRuns}</span>
-                                <span class="stat-label">RBI:</span>
-                                <span class="stat-value">${batter.rbi}</span>
-                            </div>
-                        </div>
-                    </div>
+                    <tr class="batter-row">
+                        <td class="rank-cell">#${rank}</td>
+                        <td class="player-cell">${batter.name}</td>
+                        <td class="stat-cell">${batter.avg}</td>
+                        <td class="stat-cell">${batter.atBats}</td>
+                        <td class="stat-cell">${batter.homeRuns}</td>
+                        <td class="stat-cell">${batter.rbi}</td>
+                        <td class="stat-cell">${batter.hits}</td>
+                    </tr>
                 `;
             });
         } else {
-            contentHTML += '<div class="no-data">No qualifying batters (min 5 AB)</div>';
+            contentHTML += '<tr><td colspan="7" class="no-data-cell">No hot batters (.300+ AVG, 3+ HR, 8+ RBI, or 10+ hits)</td></tr>';
         }
         
         contentHTML += `
+                        </tbody>
+                    </table>
                 </div>
             </div>
         `;
@@ -1902,42 +1961,148 @@ async function showWhosHotExpansion() {
         // Top Pitchers Section
         contentHTML += `
             <div class="hot-performers-section">
-                <h4 class="section-title">🔥 Hot Pitchers (Last 10 Games)</h4>
-                <div class="performers-grid">
+                <h4 class="section-title">⚾ Hot Pitchers (Last 10 Games)</h4>
+                <div class="performers-table-container">
+                    <table class="performers-table pitchers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>ERA</th>
+                                <th>ER</th>
+                                <th>HR</th>
+                                <th>IP</th>
+                                <th>K</th>
+                            </tr>
+                        </thead>
+                        <tbody>
         `;
         
         if (topPitchers.length > 0) {
             topPitchers.forEach((pitcher, index) => {
                 const rank = index + 1;
                 contentHTML += `
-                    <div class="performer-card pitcher-card">
-                        <div class="performer-rank">#${rank}</div>
-                        <div class="performer-name">${pitcher.name}</div>
-                        <div class="performer-stats">
-                            <div class="stat-row">
-                                <span class="stat-label">ERA:</span>
-                                <span class="stat-value">${pitcher.era}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">IP:</span>
-                                <span class="stat-value">${pitcher.inningsPitched.toFixed(1)}</span>
-                            </div>
-                            <div class="stat-row">
-                                <span class="stat-label">K:</span>
-                                <span class="stat-value">${pitcher.strikeOuts}</span>
-                                <span class="stat-label">W:</span>
-                                <span class="stat-value">${pitcher.wins}</span>
-                            </div>
-                        </div>
-                    </div>
+                    <tr class="pitcher-row">
+                        <td class="rank-cell">#${rank}</td>
+                        <td class="player-cell">${pitcher.name}</td>
+                        <td class="stat-cell">${pitcher.era}</td>
+                        <td class="stat-cell">${pitcher.earnedRuns}</td>
+                        <td class="stat-cell">${pitcher.homeRuns}</td>
+                        <td class="stat-cell">${pitcher.inningsPitched.toFixed(1)}</td>
+                        <td class="stat-cell">${pitcher.strikeOuts}</td>
+                    </tr>
                 `;
             });
         } else {
-            contentHTML += '<div class="no-data">No qualifying pitchers (min 1 IP)</div>';
+            contentHTML += '<tr><td colspan="7" class="no-data-cell">No hot pitchers (< 2.50 ERA or 15+ K)</td></tr>';
         }
         
         contentHTML += `
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        `;
+        
+        contentHTML += `
+            </div>
+        `;
+        
+        // Cold Performers Section
+        contentHTML += `
+            <div id="cold-performers" class="performers-view" style="display: none;">
+        `;
+        
+        // Cold Batters Section
+        contentHTML += `
+            <div class="hot-performers-section">
+                <h4 class="section-title">🥶 Cold Batters (Last 10 Games)</h4>
+                <div class="performers-table-container">
+                    <table class="performers-table cold-batters-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>AVG</th>
+                                <th>AB</th>
+                                <th>HR</th>
+                                <th>RBI</th>
+                                <th>Hits</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+        
+        if (coldBatters.length > 0) {
+            coldBatters.forEach((batter, index) => {
+                const rank = index + 1;
+                contentHTML += `
+                    <tr class="cold-batter-row">
+                        <td class="rank-cell">#${rank}</td>
+                        <td class="player-cell">${batter.name}</td>
+                        <td class="stat-cell">${batter.avg}</td>
+                        <td class="stat-cell">${batter.atBats}</td>
+                        <td class="stat-cell">${batter.homeRuns}</td>
+                        <td class="stat-cell">${batter.rbi}</td>
+                        <td class="stat-cell">${batter.hits}</td>
+                    </tr>
+                `;
+            });
+        } else {
+            contentHTML += '<tr><td colspan="7" class="no-data-cell">No struggling batters (everyone hitting .200+!)</td></tr>';
+        }
+        
+        contentHTML += `
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        
+        // Cold Pitchers Section
+        contentHTML += `
+            <div class="hot-performers-section">
+                <h4 class="section-title">🧊 Cold Pitchers (Last 10 Games)</h4>
+                <div class="performers-table-container">
+                    <table class="performers-table cold-pitchers-table">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player</th>
+                                <th>ERA</th>
+                                <th>ER</th>
+                                <th>HR</th>
+                                <th>IP</th>
+                                <th>K</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+        
+        if (coldPitchers.length > 0) {
+            coldPitchers.forEach((pitcher, index) => {
+                const rank = index + 1;
+                contentHTML += `
+                    <tr class="cold-pitcher-row">
+                        <td class="rank-cell">#${rank}</td>
+                        <td class="player-cell">${pitcher.name}</td>
+                        <td class="stat-cell">${pitcher.era}</td>
+                        <td class="stat-cell">${pitcher.earnedRuns}</td>
+                        <td class="stat-cell">${pitcher.homeRuns}</td>
+                        <td class="stat-cell">${pitcher.inningsPitched.toFixed(1)}</td>
+                        <td class="stat-cell">${pitcher.strikeOuts}</td>
+                    </tr>
+                `;
+            });
+        } else {
+            contentHTML += '<tr><td colspan="7" class="no-data-cell">No struggling pitchers (everyone pitching well!)</td></tr>';
+        }
+        
+        contentHTML += `
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             </div>
         `;
         
@@ -1947,6 +2112,35 @@ async function showWhosHotExpansion() {
     } catch (error) {
         console.error('Error loading hot performers:', error);
         expansion.innerHTML = `<div class="expansion-error">Error loading hot performers data.</div>`;
+    }
+}
+
+// Toggle functions for Hot/Cold performers
+function showHotPerformers() {
+    const hotBtn = document.getElementById('hot-toggle');
+    const coldBtn = document.getElementById('cold-toggle');
+    const hotView = document.getElementById('hot-performers');
+    const coldView = document.getElementById('cold-performers');
+    
+    if (hotBtn && coldBtn && hotView && coldView) {
+        hotBtn.classList.add('active');
+        coldBtn.classList.remove('active');
+        hotView.style.display = 'block';
+        coldView.style.display = 'none';
+    }
+}
+
+function showColdPerformers() {
+    const hotBtn = document.getElementById('hot-toggle');
+    const coldBtn = document.getElementById('cold-toggle');
+    const hotView = document.getElementById('hot-performers');
+    const coldView = document.getElementById('cold-performers');
+    
+    if (hotBtn && coldBtn && hotView && coldView) {
+        hotBtn.classList.remove('active');
+        coldBtn.classList.add('active');
+        hotView.style.display = 'none';
+        coldView.style.display = 'block';
     }
 }
 

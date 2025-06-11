@@ -69,6 +69,7 @@ jobs:
             const pitchers = new Map();
             const batters = new Map();
             const gameResults = [];
+            const seriesTracker = new Map(); // Track series records
             
             for (const game of completedGames) {
               try {
@@ -90,12 +91,39 @@ jobs:
                 if (gameResult === 'W') wins++;
                 else losses++;
                 
+                const opponentName = opponentTeam.team.name;
+                const homeAway = isAway ? '@' : 'vs';
+                
+                // Track series results for each opponent
+                const seriesKey = `${opponentName}_${isAway ? 'away' : 'home'}`;
+                if (!seriesTracker.has(seriesKey)) {
+                  seriesTracker.set(seriesKey, {
+                    opponent: opponentName,
+                    homeAway,
+                    wins: 0,
+                    losses: 0,
+                    games: []
+                  });
+                }
+                
+                const series = seriesTracker.get(seriesKey);
+                if (gameResult === 'W') {
+                  series.wins++;
+                } else {
+                  series.losses++;
+                }
+                series.games.push({
+                  date: new Date(game.gameDate).toLocaleDateString(),
+                  result: gameResult,
+                  score: `${bravesRuns}-${oppRuns}`
+                });
+                
                 gameResults.push({
                   date: new Date(game.gameDate).toLocaleDateString(),
                   result: gameResult,
                   score: `${bravesRuns}-${oppRuns}`,
-                  opponent: opponentTeam.team.name,
-                  homeAway: isAway ? '@' : 'vs'
+                  opponent: opponentName,
+                  homeAway: homeAway
                 });
                 
                 // Aggregate pitcher stats
@@ -198,6 +226,47 @@ jobs:
                 avg: (stats.hits / stats.atBats).toFixed(3)
               }));
             
+            // Analyze series results
+            const seriesResults = Array.from(seriesTracker.values()).map(series => {
+              const totalGames = series.wins + series.losses;
+              let seriesOutcome = '';
+              
+              if (totalGames >= 2) {
+                if (series.wins > series.losses) {
+                  seriesOutcome = totalGames >= 3 ? 'won series' : 'winning series';
+                } else if (series.losses > series.wins) {
+                  seriesOutcome = totalGames >= 3 ? 'lost series' : 'losing series';
+                } else {
+                  seriesOutcome = 'split series';
+                }
+              } else {
+                seriesOutcome = series.wins > series.losses ? 'won game' : 'lost game';
+              }
+              
+              return {
+                opponent: series.opponent,
+                homeAway: series.homeAway,
+                record: `${series.wins}-${series.losses}`,
+                outcome: seriesOutcome,
+                games: series.games
+              };
+            });
+            
+            // Calculate momentum indicators
+            const recentGames = gameResults.slice(-3); // Last 3 games
+            const recentWins = recentGames.filter(g => g.result === 'W').length;
+            let momentumDescription = '';
+            
+            if (recentWins === 3) {
+              momentumDescription = 'hot streak with 3 straight wins';
+            } else if (recentWins === 0) {
+              momentumDescription = 'struggling with 3 straight losses';
+            } else if (recentWins === 2) {
+              momentumDescription = 'building momentum with recent solid play';
+            } else {
+              momentumDescription = wins > losses ? 'positive overall week' : 'challenging week overall';
+            }
+            
             // Build structured weekly data
             const weeklyContext = JSON.stringify({
               weeklyRecord: {
@@ -207,10 +276,11 @@ jobs:
                 winPct: (wins / (wins + losses)).toFixed(3)
               },
               dateRange: `${formatDate(startDate)} to ${formatDate(endDate)}`,
-              momentum: wins > losses ? 'positive' : wins < losses ? 'negative' : 'neutral',
+              momentum: momentumDescription,
               topPitchers,
               topBatters,
               gameResults,
+              seriesResults,
               totalGames: completedGames.length
             }, null, 2);
             
@@ -224,14 +294,14 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a precise sports reporter. Write weekly summaries in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nTop Pitchers: [Name]: [ERA] ERA, [strikeouts] K in [inningsPitched] IP; [Name2]: [ERA] ERA, [strikeouts] K in [inningsPitched] IP\nTop Batters: [Name]: [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI; [Name2]: [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI\nMomentum: [Brief description based on recent performance]\n\nEach section must be on its own line. Use exact numbers from the data. No fluff.'
+                    content: 'You are a sports reporter writing for someone who missed all the games. Write a concise weekly catch-up in this EXACT format using ONLY the provided data:\n\nRecord: [wins]-[losses] ([winPct])\nSeries Results: [opponent homeAway record - outcome]. Example: "Phillies @ 2-1 - won series, Mets vs 1-2 - lost series"\nTop Pitchers: [Name] is hot with [ERA] ERA, [strikeouts] K in [inningsPitched] IP; [Name2] contributed [ERA] ERA, [strikeouts] K in [inningsPitched] IP  \nTop Batters: [Name] led the way with [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI; [Name2] also produced with [avg] AVG, [hits] hits, [HR] HR, [RBI] RBI\nMomentum: [Conversational description explaining what happened and current trajectory - mention if struggling/hot streak]\n\nUse conversational language like "Player A is hot", "we struggled against X team", "offense came alive". Each section on its own line. Be specific about performance.'
                   },
                   {
                     role: 'user',
-                    content: `Write a weekly summary in the specified format using only this verified data:\n\n${weeklyContext}`
+                    content: `Write a weekly catch-up summary as if I missed all the games this week. Use only this verified data:\n\n${weeklyContext}`
                   }
                 ],
-                max_tokens: 200,
+                max_tokens: 350,
                 temperature: 0.1
               },
               {
@@ -262,9 +332,11 @@ jobs:
                 losses,
                 winPct: (wins / (wins + losses)).toFixed(3),
                 totalGames: completedGames.length,
+                momentum: momentumDescription,
                 topPitchers,
                 topBatters,
-                gameResults
+                gameResults,
+                seriesResults
               }
             };
             
