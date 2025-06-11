@@ -392,33 +392,326 @@ async function updateRoster() {
             }
         });
 
-        if (currentRosterView === 'position') {
-            updateRosterByPosition(data.roster, rosterContainer);
-        } else {
-            updateRosterByName(data.roster, rosterContainer);
-        }
-
-        // Add click handlers for toggle buttons
-        document.querySelectorAll('.toggle-btn').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (!btn.classList.contains('active')) {
-                    document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    currentRosterView = btn.dataset.view;
-                    if (currentRosterView === 'position') {
-                        updateRosterByPosition(data.roster, rosterContainer);
-                    } else {
-                        updateRosterByName(data.roster, rosterContainer);
-                    }
-                }
-            });
-        });
+        updateRosterTables(data.roster, rosterContainer);
 
     } catch (error) {
         console.error('Error updating roster:', error);
         document.getElementById('roster-container').innerHTML = 
             '<p class="error-message">Error loading roster data</p>';
     }
+}
+
+// Global variables for roster state
+let currentRosterType = 'batters';
+let rosterData = null;
+let battersSortState = { column: null, direction: 'asc' };
+let pitchersSortState = { column: null, direction: 'asc' };
+
+function updateRosterTables(roster, container) {
+    // Store roster data globally
+    rosterData = roster;
+    
+    // Separate players into batters and pitchers
+    const pitchers = roster.filter(player => player.position.name === 'Pitcher');
+    const batters = roster.filter(player => player.position.name !== 'Pitcher');
+    
+    // Store separated data globally
+    window.battersData = batters;
+    window.pitchersData = pitchers;
+    
+    // Show the active table
+    renderActiveRosterTable(container);
+    
+    // Add click event listeners for toggle buttons
+    addRosterToggleEventListeners(container);
+}
+
+function renderActiveRosterTable(container) {
+    const isShowingBatters = currentRosterType === 'batters';
+    const players = isShowingBatters ? window.battersData : window.pitchersData;
+    const sortState = isShowingBatters ? battersSortState : pitchersSortState;
+    
+    // Sort players if a sort column is set
+    const sortedPlayers = sortState.column ? 
+        sortPlayers(players, sortState.column, sortState.direction, isShowingBatters) : 
+        [...players].sort((a, b) => (parseInt(a.jerseyNumber) || 99) - (parseInt(b.jerseyNumber) || 99));
+    
+    const tableHTML = isShowingBatters ? 
+        generateBattersTable(sortedPlayers, sortState) : 
+        generatePitchersTable(sortedPlayers, sortState);
+    
+    container.innerHTML = `
+        <div class="roster-tables">
+            <div class="roster-table-section">
+                ${tableHTML}
+            </div>
+        </div>
+    `;
+    
+    // Add click event listeners for expandable rows and sorting
+    addRosterTableEventListeners(container);
+    addSortEventListeners(container);
+}
+
+function generateBattersTable(batters, sortState) {
+    return `
+        <h3 class="table-title">🥎 Batters (${batters.length})</h3>
+        <div class="roster-table-container">
+            <table class="roster-table batters-table">
+                <thead>
+                    <tr>
+                        <th class="sortable ${sortState.column === 'jersey' ? `sort-${sortState.direction}` : ''}" data-column="jersey">#</th>
+                        <th class="sortable ${sortState.column === 'name' ? `sort-${sortState.direction}` : ''}" data-column="name">Player</th>
+                        <th>Pos</th>
+                        <th class="sortable ${sortState.column === 'avg' ? `sort-${sortState.direction}` : ''}" data-column="avg">AVG</th>
+                        <th class="sortable ${sortState.column === 'hr' ? `sort-${sortState.direction}` : ''}" data-column="hr">HR</th>
+                        <th class="sortable ${sortState.column === 'rbi' ? `sort-${sortState.direction}` : ''}" data-column="rbi">RBI</th>
+                        <th class="sortable ${sortState.column === 'ops' ? `sort-${sortState.direction}` : ''}" data-column="ops">OPS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${batters.map(player => generateBatterRow(player)).join('')}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+function generatePitchersTable(pitchers, sortState) {
+    return `
+        <h3 class="table-title">⚾ Pitchers (${pitchers.length})</h3>
+        <div class="roster-table-container">
+            <table class="roster-table pitchers-table">
+                <thead>
+                    <tr>
+                        <th class="sortable ${sortState.column === 'jersey' ? `sort-${sortState.direction}` : ''}" data-column="jersey">#</th>
+                        <th class="sortable ${sortState.column === 'name' ? `sort-${sortState.direction}` : ''}" data-column="name">Player</th>
+                        <th>Role</th>
+                        <th class="sortable ${sortState.column === 'era' ? `sort-${sortState.direction}` : ''}" data-column="era">ERA</th>
+                        <th class="sortable ${sortState.column === 'wins' ? `sort-${sortState.direction}` : ''}" data-column="wins">W-L</th>
+                        <th class="sortable ${sortState.column === 'strikeouts' ? `sort-${sortState.direction}` : ''}" data-column="strikeouts">K</th>
+                        <th class="sortable ${sortState.column === 'whip' ? `sort-${sortState.direction}` : ''}" data-column="whip">WHIP</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    ${pitchers.map(player => generatePitcherRow(player)).join('')}
+                </tbody>
+            </table>
+        </div>
+    `;
+}
+
+function sortPlayers(players, column, direction, isBatters) {
+    return [...players].sort((a, b) => {
+        let aVal, bVal;
+        
+        switch(column) {
+            case 'jersey':
+                aVal = parseInt(a.jerseyNumber) || 99;
+                bVal = parseInt(b.jerseyNumber) || 99;
+                break;
+            case 'name':
+                aVal = a.person.fullName.toLowerCase();
+                bVal = b.person.fullName.toLowerCase();
+                break;
+            case 'avg':
+                aVal = parseFloat(playerStats.get(a.person.id)?.avg) || 0;
+                bVal = parseFloat(playerStats.get(b.person.id)?.avg) || 0;
+                break;
+            case 'hr':
+                aVal = parseInt(playerStats.get(a.person.id)?.homeRuns) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.homeRuns) || 0;
+                break;
+            case 'rbi':
+                aVal = parseInt(playerStats.get(a.person.id)?.rbi) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.rbi) || 0;
+                break;
+            case 'ops':
+                aVal = parseFloat(playerStats.get(a.person.id)?.ops) || 0;
+                bVal = parseFloat(playerStats.get(b.person.id)?.ops) || 0;
+                break;
+            case 'era':
+                aVal = parseFloat(playerStats.get(a.person.id)?.era) || 99;
+                bVal = parseFloat(playerStats.get(b.person.id)?.era) || 99;
+                break;
+            case 'wins':
+                aVal = parseInt(playerStats.get(a.person.id)?.wins) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.wins) || 0;
+                break;
+            case 'strikeouts':
+                aVal = parseInt(playerStats.get(a.person.id)?.strikeOuts) || 0;
+                bVal = parseInt(playerStats.get(b.person.id)?.strikeOuts) || 0;
+                break;
+            case 'whip':
+                aVal = parseFloat(playerStats.get(a.person.id)?.whip) || 99;
+                bVal = parseFloat(playerStats.get(b.person.id)?.whip) || 99;
+                break;
+            default:
+                return 0;
+        }
+        
+        if (column === 'name') {
+            return direction === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+        }
+        
+        return direction === 'asc' ? aVal - bVal : bVal - aVal;
+    });
+}
+
+function addRosterToggleEventListeners(container) {
+    const toggleButtons = document.querySelectorAll('.roster-toggle-btn');
+    
+    toggleButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Update active state
+            toggleButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Update current roster type
+            currentRosterType = btn.dataset.table;
+            
+            // Re-render the table
+            renderActiveRosterTable(container);
+        });
+    });
+}
+
+function addSortEventListeners(container) {
+    const sortableHeaders = container.querySelectorAll('.sortable');
+    
+    sortableHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const column = header.dataset.column;
+            const isShowingBatters = currentRosterType === 'batters';
+            const sortState = isShowingBatters ? battersSortState : pitchersSortState;
+            
+            // Toggle sort direction
+            if (sortState.column === column) {
+                sortState.direction = sortState.direction === 'asc' ? 'desc' : 'asc';
+            } else {
+                sortState.column = column;
+                sortState.direction = 'asc';
+            }
+            
+            // Re-render the table
+            renderActiveRosterTable(container);
+        });
+    });
+}
+
+function generateBatterRow(player) {
+    const stats = playerStats.get(player.person.id) || {};
+    const expanded = false; // Track if row is expanded
+    
+    return `
+        <tr class="roster-row batter-row" data-player-id="${player.person.id}" data-expanded="false">
+            <td class="jersey-number">#${player.jerseyNumber || '??'}</td>
+            <td class="player-name">${player.person.fullName}</td>
+            <td class="position">${getShortPosition(player.position.name)}</td>
+            <td class="stat-cell">${stats.avg || '.---'}</td>
+            <td class="stat-cell">${stats.homeRuns || '0'}</td>
+            <td class="stat-cell">${stats.rbi || '0'}</td>
+            <td class="stat-cell">${stats.ops || '.---'}</td>
+        </tr>
+        <tr class="player-details-row" data-player-id="${player.person.id}" style="display: none;">
+            <td colspan="7">
+                <div class="expanded-player-info">
+                    ${generatePlayerDetails(player, stats, false)}
+                </div>
+            </td>
+        </tr>
+    `;
+}
+
+function generatePitcherRow(player) {
+    const stats = playerStats.get(player.person.id) || {};
+    
+    return `
+        <tr class="roster-row pitcher-row" data-player-id="${player.person.id}" data-expanded="false">
+            <td class="jersey-number">#${player.jerseyNumber || '??'}</td>
+            <td class="player-name">${player.person.fullName}</td>
+            <td class="position">${getPitcherRole(stats)}</td>
+            <td class="stat-cell">${stats.era || '-.--'}</td>
+            <td class="stat-cell">${stats.wins || '0'}-${stats.losses || '0'}</td>
+            <td class="stat-cell">${stats.strikeOuts || '0'}</td>
+            <td class="stat-cell">${stats.whip || '-.--'}</td>
+        </tr>
+        <tr class="player-details-row" data-player-id="${player.person.id}" style="display: none;">
+            <td colspan="7">
+                <div class="expanded-player-info">
+                    ${generatePlayerDetails(player, stats, true)}
+                </div>
+            </td>
+        </tr>
+    `;
+}
+
+function getShortPosition(position) {
+    const positionMap = {
+        'Catcher': 'C',
+        'First Base': '1B',
+        'First Baseman': '1B',
+        'Second Base': '2B',
+        'Second Baseman': '2B',
+        'Third Base': '3B',
+        'Third Baseman': '3B',
+        'Shortstop': 'SS',
+        'Left Field': 'LF',
+        'Left Fielder': 'LF',
+        'Center Field': 'CF',
+        'Center Fielder': 'CF',
+        'Right Field': 'RF',
+        'Right Fielder': 'RF',
+        'Outfield': 'OF',
+        'Outfielder': 'OF',
+        'Designated Hitter': 'DH'
+    };
+    return positionMap[position] || position;
+}
+
+function getPitcherRole(stats) {
+    const saves = parseInt(stats.saves) || 0;
+    const holds = parseInt(stats.holds) || 0;
+    const starts = parseInt(stats.gamesStarted) || 0;
+    const appearances = parseInt(stats.gamesPlayed) || 0;
+    
+    if (saves >= 5) return 'CL'; // Closer
+    if (holds >= 5) return 'SU'; // Setup
+    if (starts >= appearances * 0.5) return 'SP'; // Starter
+    return 'RP'; // Relief Pitcher
+}
+
+function addRosterTableEventListeners(container) {
+    const rosterRows = container.querySelectorAll('.roster-row');
+    
+    rosterRows.forEach(row => {
+        row.addEventListener('click', () => {
+            const playerId = row.dataset.playerId;
+            const isExpanded = row.dataset.expanded === 'true';
+            const detailsRow = container.querySelector(`.player-details-row[data-player-id="${playerId}"]`);
+            
+            if (isExpanded) {
+                // Collapse
+                row.dataset.expanded = 'false';
+                row.classList.remove('expanded');
+                detailsRow.style.display = 'none';
+            } else {
+                // Expand
+                row.dataset.expanded = 'true';
+                row.classList.add('expanded');
+                detailsRow.style.display = 'table-row';
+            }
+        });
+        
+        // Add hover effect
+        row.addEventListener('mouseenter', () => {
+            row.classList.add('hovered');
+        });
+        
+        row.addEventListener('mouseleave', () => {
+            row.classList.remove('hovered');
+        });
+    });
 }
 
 function updateRosterByPosition(roster, container) {
@@ -1241,7 +1534,13 @@ async function updateDailyRundown() {
         const rundownElement = document.querySelector('.daily-rundown-content p');
         
         if (rundownElement && data.rundown) {
-            rundownElement.innerHTML = data.rundown.replace(/\n/g, '<br>');
+            // Format text with bullets and left alignment
+            const formattedRundown = data.rundown
+                .split('\n')
+                .filter(line => line.trim())
+                .map(line => line.trim().startsWith('-') ? line : '- ' + line.trim())
+                .join('<br>');
+            rundownElement.innerHTML = formattedRundown;
             rundownElement.style.fontStyle = 'normal';
             
             // Add timestamp info
@@ -1310,7 +1609,13 @@ async function updateWeeklyRundown() {
         const rundownElement = document.querySelector('.weekly-rundown-content p');
         
         if (rundownElement && data.rundown) {
-            rundownElement.innerHTML = data.rundown.replace(/\n/g, '<br>');
+            // Format text with bullets and left alignment
+            const formattedRundown = data.rundown
+                .split('\n')
+                .filter(line => line.trim())
+                .map(line => line.trim().startsWith('-') ? line : '- ' + line.trim())
+                .join('<br>');
+            rundownElement.innerHTML = formattedRundown;
             rundownElement.style.fontStyle = 'normal';
             
             // Add timestamp info

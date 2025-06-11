@@ -41,17 +41,21 @@
             </div>
         </section>
 
-        <section id="daily-rundown" class="dashboard-section">
-            <h2>Daily Rundown</h2>
-            <div class="daily-rundown-content">
-                <p>Placeholder for Daily Rundown</p>
-            </div>
-        </section>
-
-        <section id="weekly-rundown" class="dashboard-section">
-            <h2>Weekly Rundown</h2>
-            <div class="weekly-rundown-content">
-                <p>Placeholder for Weekly Rundown</p>
+        <section id="rundown" class="dashboard-section">
+            <h2>Rundown</h2>
+            <div class="rundown-container">
+                <div class="rundown-section">
+                    <h3>Daily</h3>
+                    <div class="daily-rundown-content">
+                        <p>Placeholder for Daily Rundown</p>
+                    </div>
+                </div>
+                <div class="rundown-section">
+                    <h3>Weekly</h3>
+                    <div class="weekly-rundown-content">
+                        <p>Placeholder for Weekly Rundown</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -65,12 +69,9 @@
         <section id="roster" class="dashboard-section">
             <div class="roster-header">
                 <h2>Team Roster</h2>
-                <div class="view-toggle">
-                    <label class="toggle-label">View by:</label>
-                    <div class="toggle-buttons">
-                        <button class="toggle-btn active" data-view="position">Position</button>
-                        <button class="toggle-btn" data-view="name">Name</button>
-                    </div>
+                <div class="roster-toggle">
+                    <button class="roster-toggle-btn active" data-table="batters">🥎 Batters</button>
+                    <button class="roster-toggle-btn" data-table="pitchers">⚾ Pitchers</button>
                 </div>
             </div>
             <div id="roster-container" class="roster-container">

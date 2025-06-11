@@ -122,53 +122,47 @@ h2 {
     font-family: monospace;
 }
 
-/* Daily Rundown Section Styles */
-.daily-rundown-content {
+/* Rundown Section Styles */
+.rundown-container {
+    display: flex;
+    gap: 1rem;
     width: 100%;
-    padding: 0.5rem;
-    text-align: center;
+}
+
+.rundown-section {
+    flex: 1;
     background: var(--background-light);
     border-radius: 4px;
     border: 1px solid #eee;
+    overflow: hidden;
 }
 
-.daily-rundown-content p {
-    color: var(--text-dark);
-    font-size: 0.8rem;
+.rundown-section h3 {
+    color: var(--braves-navy);
+    font-size: 0.9rem;
+    font-weight: 600;
     margin: 0;
-    font-style: italic;
-    line-height: 1.3;
-}
-
-.daily-rundown-meta {
-    margin-top: 0.4rem;
-    padding-top: 0.3rem;
-    border-top: 1px solid #eee;
-    text-align: center;
-}
-
-.daily-rundown-meta small {
-    font-size: 0.65rem;
-}
-
-/* Weekly Rundown Section Styles */
-.weekly-rundown-content {
-    width: 100%;
     padding: 0.5rem;
+    background: white;
+    border-bottom: 2px solid var(--braves-red);
     text-align: center;
-    background: var(--background-light);
-    border-radius: 4px;
-    border: 1px solid #eee;
 }
 
+.daily-rundown-content,
+.weekly-rundown-content {
+    padding: 0.5rem;
+}
+
+.daily-rundown-content p,
 .weekly-rundown-content p {
     color: var(--text-dark);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     margin: 0;
-    font-style: italic;
-    line-height: 1.3;
+    text-align: left;
+    line-height: 1.4;
 }
 
+.daily-rundown-meta,
 .weekly-rundown-meta {
     margin-top: 0.4rem;
     padding-top: 0.3rem;
@@ -176,74 +170,382 @@ h2 {
     text-align: center;
 }
 
+.daily-rundown-meta small,
 .weekly-rundown-meta small {
-    font-size: 0.65rem;
+    font-size: 0.6rem;
 }
 
-/* Mobile adjustments for rundowns */
+/* Roster Tables Styles */
+.roster-tables {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.roster-table-section {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.table-title {
+    color: var(--braves-navy);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 1rem;
+    background: var(--background-light);
+    border-bottom: 2px solid var(--braves-red);
+}
+
+.roster-table-container {
+    overflow-x: auto;
+}
+
+.roster-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.roster-table thead {
+    background: linear-gradient(135deg, var(--braves-navy) 0%, #374151 100%);
+    color: white;
+}
+
+.roster-table th {
+    padding: 12px 8px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.roster-table th:first-child {
+    width: 50px;
+    text-align: center;
+}
+
+.roster-table th:nth-child(3) {
+    width: 60px;
+    text-align: center;
+}
+
+.roster-table th:nth-child(n+4) {
+    width: 70px;
+    text-align: center;
+}
+
+.roster-row {
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.roster-row:hover {
+    background-color: #f9fafb;
+}
+
+.roster-row.hovered {
+    background-color: #f3f4f6;
+    transform: translateX(2px);
+}
+
+.roster-row.expanded {
+    background-color: #eff6ff;
+    border-left: 3px solid var(--braves-red);
+}
+
+.roster-table td {
+    padding: 10px 8px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.jersey-number {
+    font-weight: bold;
+    color: var(--braves-red);
+    text-align: center;
+    width: 50px;
+}
+
+.player-name {
+    font-weight: 600;
+    color: var(--braves-navy);
+    min-width: 150px;
+}
+
+.position {
+    font-weight: 500;
+    color: #6b7280;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.stat-cell {
+    font-weight: 500;
+    color: #374151;
+    text-align: center;
+    font-family: monospace;
+}
+
+.player-details-row {
+    background-color: #f8fafc;
+    border-left: 3px solid var(--braves-red);
+}
+
+.expanded-player-info {
+    padding: 1rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* Batter vs Pitcher table styling */
+.batters-table thead {
+    background: linear-gradient(135deg, var(--braves-red) 0%, #c82333 100%);
+}
+
+.pitchers-table thead {
+    background: linear-gradient(135deg, var(--braves-navy) 0%, #374151 100%);
+}
+
+.batter-row.expanded {
+    border-left-color: var(--braves-red);
+}
+
+.pitcher-row.expanded {
+    border-left-color: var(--braves-navy);
+}
+
+/* Roster Toggle Styles */
+.roster-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.roster-toggle {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.roster-toggle-btn {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    color: #6c757d;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.roster-toggle-btn:hover {
+    background: #e9ecef;
+    border-color: #ced4da;
+}
+
+.roster-toggle-btn.active {
+    background: linear-gradient(135deg, var(--braves-red) 0%, #c82333 100%);
+    border-color: var(--braves-red);
+    color: white;
+    box-shadow: 0 2px 6px rgba(220, 53, 69, 0.3);
+}
+
+/* Sortable Table Headers */
+.roster-table th.sortable {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+}
+
+.roster-table th.sortable:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.roster-table th.sortable::after {
+    content: '↕';
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+.roster-table th.sortable.sort-asc::after {
+    content: '↑';
+    opacity: 1;
+}
+
+.roster-table th.sortable.sort-desc::after {
+    content: '↓';
+    opacity: 1;
+}
+
+/* Mobile adjustments for roster tables */
 @media (max-width: 768px) {
-    .daily-rundown-content {
-        padding: 0.4rem;
+    .roster-tables {
+        gap: 1rem;
     }
     
-    .daily-rundown-content p {
-        font-size: 0.7rem;
-        line-height: 1.2;
+    .table-title {
+        font-size: 1rem;
+        padding: 0.8rem;
     }
     
-    .daily-rundown-meta small {
-        font-size: 0.6rem;
+    .roster-table th {
+        padding: 8px 4px;
+        font-size: 0.8rem;
     }
     
-    .weekly-rundown-content {
-        padding: 0.4rem;
+    .roster-table td {
+        padding: 8px 4px;
+        font-size: 0.75rem;
     }
     
-    .weekly-rundown-content p {
-        font-size: 0.7rem;
-        line-height: 1.2;
+    .player-name {
+        min-width: 120px;
     }
     
-    .weekly-rundown-meta small {
-        font-size: 0.6rem;
+    .roster-table th:nth-child(n+4) {
+        width: 60px;
+    }
+    
+    .expanded-player-info {
+        padding: 0.8rem;
     }
 }
 
 @media (max-width: 480px) {
-    .daily-rundown-content {
-        padding: 0.3rem;
+    .table-title {
+        font-size: 0.9rem;
+        padding: 0.6rem;
     }
     
-    .daily-rundown-content p {
+    .roster-table th {
+        padding: 6px 3px;
+        font-size: 0.7rem;
+    }
+    
+    .roster-table td {
+        padding: 6px 3px;
         font-size: 0.65rem;
-        line-height: 1.1;
     }
     
-    .daily-rundown-meta {
-        margin-top: 0.3rem;
-        padding-top: 0.2rem;
+    .player-name {
+        min-width: 100px;
+        font-size: 0.7rem;
     }
     
-    .daily-rundown-meta small {
+    .jersey-number {
+        width: 40px;
+    }
+    
+    .roster-table th:first-child {
+        width: 40px;
+    }
+    
+    .roster-table th:nth-child(3) {
+        width: 50px;
+    }
+    
+    .roster-table th:nth-child(n+4) {
+        width: 50px;
+    }
+    
+    .expanded-player-info {
+        padding: 0.6rem;
+    }
+    
+    .roster-row.hovered {
+        transform: none; /* Disable transform on mobile for better performance */
+    }
+}
+
+/* Mobile adjustments for rundowns */
+@media (max-width: 768px) {
+    .rundown-container {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .rundown-section h3 {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+    
+    .daily-rundown-content,
+    .weekly-rundown-content {
+        padding: 0.4rem;
+    }
+    
+    .daily-rundown-content p,
+    .weekly-rundown-content p {
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+    
+    .daily-rundown-meta small,
+    .weekly-rundown-meta small {
         font-size: 0.55rem;
     }
     
+    .roster-header {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: flex-start;
+    }
+    
+    .roster-toggle-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .rundown-container {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    
+    .rundown-section h3 {
+        font-size: 0.75rem;
+        padding: 0.3rem;
+    }
+    
+    .daily-rundown-content,
     .weekly-rundown-content {
         padding: 0.3rem;
     }
     
+    .daily-rundown-content p,
     .weekly-rundown-content p {
         font-size: 0.65rem;
         line-height: 1.1;
     }
     
+    .daily-rundown-meta,
     .weekly-rundown-meta {
         margin-top: 0.3rem;
         padding-top: 0.2rem;
     }
     
+    .daily-rundown-meta small,
     .weekly-rundown-meta small {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
+    }
+    
+    .roster-header {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+    
+    .roster-toggle-btn {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.75rem;
     }
 }
 
