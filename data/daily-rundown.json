@@ -1,12 +1,12 @@
 {
-  "date": "2025-06-10",
-  "timestamp": "2025-06-10T18:59:10.849Z",
-  "rundown": "Braves W 7-1 @ Milwaukee Brewers. Braves earned the win. Matt Olson led with 1 hit, 2 RBI, and 1 run.",
+  "date": "2025-06-11",
+  "timestamp": "2025-06-11T09:18:53.242Z",
+  "rundown": "Braves L 1-4 @ Milwaukee Brewers. Milwaukee Brewers earned the win. Ronald Acuña Jr. led with 3 hits and 1 RBI.",
   "lastGame": {
-    "date": "2025-06-09T23:40:00Z",
+    "date": "2025-06-10T23:40:00Z",
     "opponent": "Milwaukee Brewers",
-    "result": "W",
-    "score": "7-1",
+    "result": "L",
+    "score": "1-4",
     "homeAway": "@",
     "pitching": {
       "winner": null,
@@ -14,13 +14,13 @@
       "save": null
     },
     "hitting": {
-      "bravesHits": 11,
-      "bravesRuns": 7,
+      "bravesHits": 8,
+      "bravesRuns": 1,
       "topHitter": {
-        "name": "Matt Olson",
-        "hits": 1,
-        "rbi": 2,
-        "runs": 1
+        "name": "Ronald Acuña Jr.",
+        "hits": 3,
+        "rbi": 1,
+        "runs": 0
       }
     }
   }
