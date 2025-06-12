@@ -1,0 +1,129 @@
+name: Braves History
+
+on:
+  schedule:
+    # Runs at 3:30 AM EST (8:30 AM UTC) - slightly before daily rundown
+    - cron: '30 8 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  generate-braves-history:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: npm install axios
+    
+    - name: Generate Braves History
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node << 'EOF'
+        const axios = require('axios');
+        const fs = require('fs');
+        
+        async function generateBravesHistory() {
+          try {
+            const today = new Date();
+            const month = today.toLocaleString('default', { month: 'long' });
+            const day = today.getDate();
+            
+            console.log(`Generating Braves history for ${month} ${day}...`);
+            
+            // Call OpenAI API to generate historical content
+            const openaiResponse = await axios.post(
+              'https://api.openai.com/v1/chat/completions',
+              {
+                model: 'gpt-4o-mini',
+                messages: [
+                  {
+                    role: 'system',
+                    content: 'You are a knowledgeable baseball historian specializing in Atlanta Braves history. Write engaging, factual content about memorable moments that happened on this specific date in Braves history (including when they were the Boston Braves and Milwaukee Braves). Focus on significant games, player achievements, trades, debuts, records, or franchise milestones. Keep responses to 3-4 sentences maximum. Use specific years and player names when possible. If no major events occurred on this exact date, mention a notable event from around this time of year in Braves history.'
+                  },
+                  {
+                    role: 'user',
+                    content: `Write about a memorable moment that happened on ${month} ${day} in Atlanta Braves franchise history. Include the year and be specific about what happened.`
+                  }
+                ],
+                max_tokens: 150,
+                temperature: 0.7
+              },
+              {
+                headers: {
+                  'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                  'Content-Type': 'application/json'
+                },
+                timeout: 30000
+              }
+            );
+            
+            const historyContent = openaiResponse.data.choices[0].message.content.trim();
+            
+            // Create data directory if it doesn't exist
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            // Save the history content
+            const historyData = {
+              date: today.toISOString().split('T')[0],
+              month: month,
+              day: day,
+              timestamp: today.toISOString(),
+              content: historyContent
+            };
+            
+            fs.writeFileSync('data/braves-history.json', JSON.stringify(historyData, null, 2));
+            
+            console.log('Braves history generated successfully');
+            console.log('Content:', historyContent);
+            
+          } catch (error) {
+            console.error('Error generating Braves history:', error.message);
+            
+            // Create fallback content
+            const today = new Date();
+            const fallbackData = {
+              date: today.toISOString().split('T')[0],
+              month: today.toLocaleString('default', { month: 'long' }),
+              day: today.getDate(),
+              timestamp: today.toISOString(),
+              content: "The Atlanta Braves franchise has a rich history spanning over 150 years. From their days as the Boston Red Stockings in 1871 to their current home in Atlanta, the Braves have created countless memorable moments that continue to inspire fans today.",
+              error: true
+            };
+            
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            fs.writeFileSync('data/braves-history.json', JSON.stringify(fallbackData, null, 2));
+            
+            // Don't fail the workflow, just log the error
+            console.log('Fallback content created');
+          }
+        }
+        
+        generateBravesHistory();
+        EOF
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/braves-history.json
+        git diff --staged --quiet || git commit -m "Update Braves history - $(date '+%Y-%m-%d')"
+        git pull --rebase origin main || true
+        git push 

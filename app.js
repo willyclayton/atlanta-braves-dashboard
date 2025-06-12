@@ -1781,6 +1781,42 @@ async function updateWeeklyRundown() {
     }
 }
 
+// Function to load and display Braves history
+async function updateBravesHistory() {
+    try {
+        console.log('Loading Braves history...');
+        // Add cache-busting parameter
+        const response = await fetch('./data/braves-history.json?t=' + new Date().getTime());
+        
+        if (!response.ok) {
+            throw new Error(`Failed to fetch Braves history: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        const historyElement = document.querySelector('#history-content p');
+        
+        if (historyElement && data.content) {
+            historyElement.innerHTML = data.content;
+            historyElement.style.fontStyle = 'normal';
+            
+            console.log('Braves history updated successfully');
+        }
+    } catch (error) {
+        console.error('Error loading Braves history:', error);
+        
+        // Fallback to placeholder text with helpful message for local development
+        const historyElement = document.querySelector('#history-content p');
+        if (historyElement) {
+            if (window.location.protocol === 'file:') {
+                historyElement.innerHTML = 'Running locally? Try: python3 -m http.server 8000 then visit http://localhost:8000 to see the Braves history feature.';
+            } else {
+                historyElement.innerHTML = 'Braves history temporarily unavailable. Check back soon for today\'s historical moment!';
+            }
+            historyElement.style.fontStyle = 'italic';
+        }
+    }
+}
+
 // Initialize the dashboard
 document.addEventListener('DOMContentLoaded', () => {
     // Load initial data
@@ -1789,6 +1825,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateSchedule();
     updateDailyRundown();
     updateWeeklyRundown();
+    updateBravesHistory();
 
     // Refresh data periodically (every 5 minutes)
     setInterval(() => {

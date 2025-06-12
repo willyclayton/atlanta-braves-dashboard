@@ -160,7 +160,7 @@ h2 {
     font-size: 0.75rem;
     margin: 0;
     text-align: left;
-    line-height: 1.4;
+    line-height: 1.5;
 }
 
 .daily-rundown-meta,
@@ -174,6 +174,23 @@ h2 {
 .daily-rundown-meta small,
 .weekly-rundown-meta small {
     font-size: 0.6rem;
+}
+
+/* Braves History Section Styles */
+.history-content {
+    background: var(--background-light);
+    border-radius: 4px;
+    border: 1px solid #eee;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.history-content p {
+    color: var(--text-dark);
+    font-size: 0.85rem;
+    margin: 0;
+    text-align: left;
+    line-height: 1.5;
 }
 
 /* Roster Tables Styles */
@@ -216,10 +233,10 @@ h2 {
 }
 
 .roster-table th {
-    padding: 12px 8px;
+    padding: 10px 6px;
     text-align: left;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -259,8 +276,8 @@ h2 {
 }
 
 .roster-table td {
-    padding: 10px 8px;
-    font-size: 0.85rem;
+    padding: 8px 6px;
+    font-size: 0.8rem;
     border-bottom: 1px solid #e5e7eb;
 }
 
@@ -449,12 +466,12 @@ h2 {
     }
     
     .roster-table th {
-        padding: 8px 4px;
-        font-size: 0.8rem;
+        padding: 7px 4px;
+        font-size: 0.75rem;
     }
     
     .roster-table td {
-        padding: 8px 4px;
+        padding: 6px 4px;
         font-size: 0.75rem;
     }
     
@@ -478,13 +495,13 @@ h2 {
     }
     
     .roster-table th {
-        padding: 6px 3px;
+        padding: 5px 3px;
         font-size: 0.7rem;
     }
     
     .roster-table td {
-        padding: 6px 3px;
-        font-size: 0.65rem;
+        padding: 5px 3px;
+        font-size: 0.7rem;
     }
     
     .player-name {
@@ -540,11 +557,19 @@ h2 {
         line-height: 1.2;
     }
     
-    .daily-rundown-meta small,
+        .daily-rundown-meta small,
     .weekly-rundown-meta small {
         font-size: 0.55rem;
     }
-    
+
+    .history-content {
+        padding: 0.75rem;
+    }
+
+    .history-content p {
+        font-size: 0.8rem;
+    }
+
     .roster-header {
         flex-direction: column;
         gap: 0.8rem;
@@ -628,17 +653,25 @@ h2 {
         right: 0.3rem;
     }
     
-    .daily-rundown-content p,
+        .daily-rundown-content p,
     .weekly-rundown-content p {
         line-height: 1.1;
     }
-    
+
+    .history-content {
+        padding: 0.5rem;
+    }
+
+    .history-content p {
+        font-size: 0.75rem;
+    }
+
     .daily-rundown-meta,
     .weekly-rundown-meta {
         margin-top: 0.3rem;
         padding-top: 0.2rem;
     }
-    
+
     .daily-rundown-meta small,
     .weekly-rundown-meta small {
         font-size: 0.5rem;
@@ -785,7 +818,7 @@ h2 {
 }
 
 .game-result.win {
-    background-color: var(--braves-navy);
+    background-color: #1b5e20;
     color: white;
 }
 
@@ -2494,12 +2527,12 @@ footer {
 .game-history-header {
     display: grid;
     grid-template-columns: 80px 1fr 100px 80px 70px;
-    gap: 1rem;
-    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
     background: var(--braves-navy);
     color: white;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -2528,10 +2561,10 @@ footer {
 .game-history-item {
     display: grid;
     grid-template-columns: 80px 1fr 100px 80px 70px;
-    gap: 1rem;
-    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+    padding: 0.35rem 0.75rem;
     border-bottom: 1px solid rgba(19, 39, 79, 0.1);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     align-items: center;
     transition: background-color 0.2s ease;
 }
@@ -2570,7 +2603,7 @@ footer {
 }
 
 .game-history-item.w .game-result {
-    color: var(--braves-navy);
+    color: #1b5e20;
 }
 
 .game-history-item.l .game-result {
@@ -2609,12 +2642,12 @@ footer {
     .game-history-item {
         grid-template-columns: 70px 1fr 90px 70px 60px;
         gap: 0.5rem;
-        padding: 0.5rem 0.75rem;
-        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
+        font-size: 0.75rem;
     }
 
     .season-history-container.expanded {
-        max-height: 350px;
+        max-height: 400px;
     }
 }
 
@@ -2623,12 +2656,12 @@ footer {
     .game-history-item {
         grid-template-columns: 60px 1fr 85px 60px 50px;
         gap: 0.25rem;
-        padding: 0.5rem;
-        font-size: 0.8rem;
+        padding: 0.25rem 0.4rem;
+        font-size: 0.7rem;
     }
 
     .season-history-container.expanded {
-        max-height: 300px;
+        max-height: 350px;
     }
 }
 
@@ -2782,12 +2815,13 @@ footer {
 .standings-row {
     display: grid;
     grid-template-columns: 40px 2fr 1fr 1fr 1fr 1fr;
-    gap: 1rem;
-    padding: 0.75rem 0.5rem;
+    gap: 0.75rem;
+    padding: 0.5rem 0.4rem;
     align-items: center;
     border-bottom: 1px solid #eee;
     transition: background-color 0.2s ease;
     text-align: center;
+    font-size: 0.8rem;
 }
 
 .standings-row:last-child {
@@ -2836,15 +2870,15 @@ footer {
 
 .team-record, .games-back, .win-pct {
     font-family: monospace;
-    font-size: 0.9375rem;
+    font-size: 0.8rem;
 }
 
 .team-streak {
     font-weight: 500;
-    padding: 0.25rem 0.5rem;
+    padding: 0.2rem 0.4rem;
     border-radius: 4px;
     text-align: center;
-    font-size: 0.875rem;
+    font-size: 0.8rem;
 }
 
 .team-streak.winning {
@@ -2860,12 +2894,12 @@ footer {
 @media (max-width: 768px) {
     .standings-header, .standings-row {
         grid-template-columns: 32px 2fr 1fr 1fr 1fr 1fr;
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
         gap: 0.5rem;
     }
     .standings-header .stat-header,
     .standings-row .team-stat {
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
         min-width: 28px;
         padding: 0 0.1rem;
     }
@@ -3391,11 +3425,11 @@ footer {
 }
 
 .performers-table thead th {
-    padding: 6px 4px;
+    padding: 5px 4px;
     text-align: left;
     font-weight: 600;
     border-bottom: 1px solid #e5e7eb;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
 }
 
 .performers-table tbody tr {
@@ -3417,7 +3451,7 @@ footer {
 .performers-table td {
     padding: 4px;
     border-bottom: 1px solid #e5e7eb;
-    font-size: 0.65rem;
+    font-size: 0.8rem;
 }
 
 .rank-cell {
@@ -3527,17 +3561,17 @@ footer {
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .performers-table {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
     }
     
     .performers-table thead th {
         padding: 4px 3px;
-        font-size: 0.55rem;
+        font-size: 0.75rem;
     }
     
     .performers-table td {
         padding: 3px;
-        font-size: 0.55rem;
+        font-size: 0.75rem;
     }
     
     .section-title {
@@ -3576,17 +3610,17 @@ footer {
     }
     
     .performers-table {
-        font-size: 0.55rem;
+        font-size: 0.7rem;
     }
     
     .performers-table thead th {
         padding: 3px 2px;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
     
     .performers-table td {
         padding: 2px;
-        font-size: 0.5rem;
+        font-size: 0.7rem;
     }
     
     .section-title {
