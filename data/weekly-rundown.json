@@ -1,20 +1,20 @@
 {
-  "date": "2025-06-12",
-  "timestamp": "2025-06-12T09:15:53.523Z",
-  "rundown": "<b>Record:</b> 2-7 (0.222)  \n<b>Series:</b> Lost series to Arizona Diamondbacks (0-3), Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1)  \n<b>Highlights:</b> Ronald Acuña Jr. shined with 13 hits and 3 home runs over the week, while Chris Sale showcased a stellar performance with 21 strikeouts and a 1.38 ERA. The team had a thrilling 11-10 loss against the Diamondbacks, showcasing their offensive potential.  \n<b>Trend:</b> Despite a rough start to the week, the team is building momentum with recent solid play, highlighted by a series",
+  "date": "2025-06-13",
+  "timestamp": "2025-06-13T09:15:58.036Z",
+  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1)  \n<b>Highlights:</b> Close losses to the Giants in three nail-biters, but the team bounced back with a dominant 7-1 win over the Brewers and a solid 6-2 victory in the series finale. Bryce Elder shined with a 1.13 ERA and 12 strikeouts, while Chris Sale also impressed with a 1.29 ERA and 11 strikeouts.  \n<b>Trend:</b> Building momentum with recent solid play despite a rough start to the week.",
   "weeklyStats": {
-    "dateRange": "2025-06-03 to 2025-06-11",
-    "record": "2-7",
+    "dateRange": "2025-06-07 to 2025-06-11",
+    "record": "2-4",
     "wins": 2,
-    "losses": 7,
-    "winPct": "0.222",
-    "totalGames": 9,
+    "losses": 4,
+    "winPct": "0.333",
+    "totalGames": 6,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 9,
-        "inningsPitched": 3.3,
+        "appearances": 6,
+        "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 4,
         "hits": 0,
@@ -24,94 +24,73 @@
         "era": "0.00"
       },
       {
-        "name": "Enyel De Los Santos",
-        "appearances": 9,
-        "inningsPitched": 3.2,
-        "earnedRuns": 0,
-        "strikeouts": 2,
-        "hits": 1,
+        "name": "Bryce Elder",
+        "appearances": 6,
+        "inningsPitched": 8,
+        "earnedRuns": 1,
+        "strikeouts": 12,
+        "hits": 3,
         "wins": 0,
         "losses": 0,
         "saves": 0,
-        "era": "0.00"
+        "era": "1.13"
       },
       {
         "name": "Chris Sale",
-        "appearances": 9,
-        "inningsPitched": 13,
-        "earnedRuns": 2,
-        "strikeouts": 21,
-        "hits": 8,
+        "appearances": 6,
+        "inningsPitched": 7,
+        "earnedRuns": 1,
+        "strikeouts": 11,
+        "hits": 5,
         "wins": 1,
-        "losses": 1,
+        "losses": 0,
         "saves": 0,
-        "era": "1.38"
+        "era": "1.29"
       }
     ],
     "topBatters": [
       {
         "name": "Ronald Acuña Jr.",
-        "games": 9,
-        "hits": 13,
-        "homeRuns": 3,
-        "rbi": 5,
-        "runs": 7,
-        "atBats": 34,
-        "avg": "0.382"
+        "games": 6,
+        "hits": 9,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 5,
+        "atBats": 23,
+        "avg": "0.391"
       },
       {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 7,
+        "games": 6,
+        "hits": 5,
         "homeRuns": 2,
-        "rbi": 8,
-        "runs": 6,
-        "atBats": 30,
-        "avg": "0.233"
+        "rbi": 7,
+        "runs": 3,
+        "atBats": 20,
+        "avg": "0.250"
       },
       {
         "name": "Michael Harris II",
-        "games": 9,
-        "hits": 8,
+        "games": 6,
+        "hits": 6,
         "homeRuns": 2,
-        "rbi": 5,
+        "rbi": 4,
         "runs": 2,
-        "atBats": 35,
-        "avg": "0.229"
+        "atBats": 24,
+        "avg": "0.250"
       },
       {
         "name": "Austin Riley",
-        "games": 9,
-        "hits": 12,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 7,
-        "atBats": 39,
-        "avg": "0.308"
+        "games": 6,
+        "hits": 9,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 5,
+        "atBats": 26,
+        "avg": "0.346"
       }
     ],
     "gameResults": [
-      {
-        "date": "6/3/2025",
-        "result": "L",
-        "score": "3-8",
-        "opponent": "Arizona Diamondbacks",
-        "homeAway": "vs"
-      },
-      {
-        "date": "6/4/2025",
-        "result": "L",
-        "score": "1-2",
-        "opponent": "Arizona Diamondbacks",
-        "homeAway": "vs"
-      },
-      {
-        "date": "6/5/2025",
-        "result": "L",
-        "score": "10-11",
-        "opponent": "Arizona Diamondbacks",
-        "homeAway": "vs"
-      },
       {
         "date": "6/7/2025",
         "result": "L",
@@ -156,29 +135,6 @@
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Arizona Diamondbacks",
-        "homeAway": "vs",
-        "record": "0-3",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "6/3/2025",
-            "result": "L",
-            "score": "3-8"
-          },
-          {
-            "date": "6/4/2025",
-            "result": "L",
-            "score": "1-2"
-          },
-          {
-            "date": "6/5/2025",
-            "result": "L",
-            "score": "10-11"
-          }
-        ]
-      },
       {
         "opponent": "San Francisco Giants",
         "homeAway": "@",
@@ -227,12 +183,11 @@
       }
     ],
     "highlights": [
-      "High-scoring L 3-8 vs Arizona Diamondbacks",
-      "High-scoring L 10-11 vs Arizona Diamondbacks",
-      "Close L 1-2 vs Arizona Diamondbacks",
-      "Close L 10-11 vs Arizona Diamondbacks",
       "Close L 4-5 @ San Francisco Giants",
-      "Close L 2-3 @ San Francisco Giants"
+      "Close L 2-3 @ San Francisco Giants",
+      "Close L 3-4 @ San Francisco Giants",
+      "Bryce Elder: 1.13 ERA, 12 strikeouts",
+      "Chris Sale: 1.29 ERA, 11 strikeouts"
     ]
   }
 }
