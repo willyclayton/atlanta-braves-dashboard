@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braves Game Countdown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #13274F, #CE1141);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .countdown-container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-info {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.4;
+        }
+
+        .countdown-display {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .time-unit {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem 1rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .time-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .time-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .error-message {
+            color: #ffcccc;
+            font-size: 1.1rem;
+            padding: 1rem;
+            background: rgba(255, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .loading {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.8rem;
+            }
+            
+            .time-unit {
+                padding: 1rem 0.5rem;
+            }
+            
+            .time-number {
+                font-size: 2rem;
+            }
+            
+            .game-info {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .countdown-display {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .time-unit {
+                padding: 0.8rem 0.3rem;
+            }
+            
+            .time-number {
+                font-size: 1.5rem;
+            }
+            
+            .time-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown-container">
+        <div class="logo">⚾ Atlanta Braves</div>
+        <div id="game-info" class="game-info">Loading next game...</div>
+        
+        <div id="countdown-display" class="countdown-display">
+            <div class="time-unit">
+                <span id="days" class="time-number">--</span>
+                <span class="time-label">Days</span>
+            </div>
+            <div class="time-unit">
+                <span id="hours" class="time-number">--</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <div class="time-unit">
+                <span id="minutes" class="time-number">--</span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <div class="time-unit">
+                <span id="seconds" class="time-number">--</span>
+                <span class="time-label">Seconds</span>
+            </div>
+        </div>
+        
+        <div id="error-message" class="error-message" style="display: none;"></div>
+    </div>
+
+    <script>
+        const BRAVES_ID = 144;
+        const CURRENT_SEASON = new Date().getFullYear();
+        let countdownInterval = null;
+        let nextGameDate = null;
+
+        // Function to fetch data from MLB API
+        async function fetchMLBData(endpoint) {
+            try {
+                const proxyUrl = 'https://corsproxy.io/?';
+                const targetUrl = `https://statsapi.mlb.com/api/v1/${endpoint}`;
+                const url = proxyUrl + encodeURIComponent(targetUrl);
+                
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('Error fetching MLB data:', error);
+                throw error;
+            }
+        }
+
+        // Function to find next game
+        async function findNextGame() {
+            try {
+                const today = new Date().toISOString().split('T')[0];
+                const endDate = new Date();
+                endDate.setDate(endDate.getDate() + 30); // Look 30 days ahead
+                const endDateStr = endDate.toISOString().split('T')[0];
+                
+                const data = await fetchMLBData(`schedule?teamId=${BRAVES_ID}&startDate=${today}&endDate=${endDateStr}&sportId=1`);
+                
+                if (!data || !data.dates) {
+                    throw new Error('No schedule data available');
+                }
+
+                const now = new Date();
+                let nextGame = null;
+
+                // Look through all dates and games to find the next game
+                for (const date of data.dates) {
+                    for (const game of date.games) {
+                        const gameDate = new Date(game.gameDate);
+                        if (gameDate > now) {
+                            nextGame = {
+                                ...game,
+                                gameDate: gameDate
+                            };
+                            break;
+                        }
+                    }
+                    if (nextGame) break;
+                }
+
+                return nextGame;
+            } catch (error) {
+                console.error('Error finding next game:', error);
+                throw error;
+            }
+        }
+
+        // Function to update countdown display
+        function updateCountdown() {
+            if (!nextGameDate) return;
+
+            const now = new Date();
+            const diff = nextGameDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                document.getElementById('game-info').textContent = 'Game Time! ⚾';
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                }
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Function to initialize countdown
+        async function initializeCountdown() {
+            try {
+                document.getElementById('game-info').textContent = 'Loading next game...';
+                
+                const nextGame = await findNextGame();
+                
+                if (!nextGame) {
+                    throw new Error('No upcoming games found');
+                }
+
+                nextGameDate = nextGame.gameDate;
+
+                // Format game info
+                const gameTime = nextGameDate.toLocaleTimeString('en-US', {
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true,
+                    timeZone: 'America/New_York'
+                });
+
+                const gameDate = nextGameDate.toLocaleDateString('en-US', {
+                    weekday: 'long',
+                    month: 'long',
+                    day: 'numeric',
+                    timeZone: 'America/New_York'
+                });
+
+                const isHome = nextGame.teams.home.team.id === BRAVES_ID;
+                const opponent = isHome ? nextGame.teams.away.team : nextGame.teams.home.team;
+                const opponentName = opponent.teamName || opponent.name;
+
+                document.getElementById('game-info').innerHTML = 
+                    `Next Game: ${isHome ? 'vs.' : '@'} ${opponentName}<br>${gameDate} at ${gameTime} ET`;
+
+                // Hide error message if visible
+                document.getElementById('error-message').style.display = 'none';
+
+                // Start countdown
+                updateCountdown();
+                if (countdownInterval) {
+                    clearInterval(countdownInterval);
+                }
+                countdownInterval = setInterval(updateCountdown, 1000);
+
+            } catch (error) {
+                console.error('Error initializing countdown:', error);
+                document.getElementById('game-info').textContent = 'Error loading game information';
+                document.getElementById('error-message').textContent = 'Unable to load next game. Please try refreshing the page.';
+                document.getElementById('error-message').style.display = 'block';
+                
+                // Reset countdown display
+                ['days', 'hours', 'minutes', 'seconds'].forEach(id => {
+                    document.getElementById(id).textContent = '--';
+                });
+            }
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeCountdown);
+
+        // Refresh data every 5 minutes
+        setInterval(initializeCountdown, 5 * 60 * 1000);
+    </script>
+</body>
+</html> 

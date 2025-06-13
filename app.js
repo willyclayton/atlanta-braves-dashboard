@@ -1818,38 +1818,22 @@ async function updateBravesHistory() {
 }
 
 // Initialize the dashboard
-document.addEventListener('DOMContentLoaded', () => {
-    // Load initial data
-    updateTeamStats(CURRENT_SEASON);
-    updateRoster();
-    updateSchedule();
-    updateDailyRundown();
-    updateWeeklyRundown();
-    updateBravesHistory();
-
-    // Refresh data periodically (every 5 minutes)
-    setInterval(() => {
-        updateTeamStats(CURRENT_SEASON);
-        updateRoster();
-        updateSchedule();
-    }, 300000);
-
-    // Add smooth scrolling for touch devices
-    if ('ontouchstart' in window) {
-        document.querySelectorAll('.player-list, .detailed-stats').forEach(element => {
-            element.style.WebkitOverflowScrolling = 'touch';
-        });
+document.addEventListener('DOMContentLoaded', async () => {
+    try {
+        // Initialize the games slider
+        initializeGamesSlider();
+        
+        // Load main dashboard data
+        await updateTeamStats();
+        await updateSchedule();
+        await updateRoster();
+        await updateDailyRundown();
+        await updateWeeklyRundown();
+        
+        console.log('Dashboard initialized successfully');
+    } catch (error) {
+        console.error('Error initializing dashboard:', error);
     }
-
-    // Handle orientation changes
-    const handleOrientationChange = debounce(() => {
-        document.querySelectorAll('.player-details.expanded').forEach(details => {
-            details.style.maxHeight = `${details.scrollHeight}px`;
-        });
-    }, 250);
-
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleOrientationChange);
 });
 
 // Update getTeamRankings function to include all teams
@@ -2894,6 +2878,99 @@ function collapseWhosHot() {
     }
 }
 
+// Global variable for countdown interval
+let countdownInterval = null;
+
+// Function to update next game countdown
+async function updateNextGameCountdown() {
+    try {
+        const today = new Date().toISOString().split('T')[0];
+        const endDate = new Date();
+        endDate.setDate(endDate.getDate() + 30); // Look 30 days ahead
+        const endDateStr = endDate.toISOString().split('T')[0];
+        
+        const data = await fetchMLBData(`schedule?teamId=${BRAVES_ID}&startDate=${today}&endDate=${endDateStr}&sportId=1`);
+        
+        if (!data || !data.dates) {
+            throw new Error('No schedule data available');
+        }
+
+        // Find the next game
+        const now = new Date();
+        let nextGame = null;
+        let nextGameDate = null;
+
+        // Look through all dates and games to find the next game
+        for (const date of data.dates) {
+            for (const game of date.games) {
+                const gameDate = new Date(game.gameDate);
+                if (gameDate > now) {
+                    nextGame = game;
+                    nextGameDate = gameDate;
+                    break;
+                }
+            }
+            if (nextGame) break;
+        }
+
+        if (!nextGame) {
+            document.getElementById('countdown-title').textContent = 'No upcoming games scheduled';
+            document.getElementById('countdown-time').textContent = '';
+            return;
+        }
+
+        // Format the game time
+        const gameTime = nextGameDate.toLocaleTimeString('en-US', {
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true,
+            timeZone: 'America/New_York'
+        });
+
+        // Get opponent info
+        const isHome = nextGame.teams.home.team.id === BRAVES_ID;
+        const opponent = isHome ? nextGame.teams.away.team : nextGame.teams.home.team;
+        const opponentName = opponent.teamName || opponent.name;
+
+        // Update countdown title
+        document.getElementById('countdown-title').textContent = 
+            `Next pitch ${isHome ? 'vs.' : '@'} ${opponentName} at ${gameTime} ET`;
+
+        // Update countdown timer
+        function updateTimer() {
+            const now = new Date();
+            const diff = nextGameDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown-time').textContent = 'Game Time!';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Format as DD:HH:MM:SS
+            document.getElementById('countdown-time').textContent = 
+                `${days.toString().padStart(2, '0')}:${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }
+
+        // Update immediately and then every second
+        updateTimer();
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+        countdownInterval = setInterval(updateTimer, 1000);
+
+    } catch (error) {
+        console.error('Error updating countdown:', error);
+        document.getElementById('countdown-title').textContent = 'Error loading next game';
+        document.getElementById('countdown-time').textContent = '';
+    }
+}
+
 // Initialize the application
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -2911,4 +2988,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error('Error initializing dashboard:', error);
     }
+});
+
+// Also add countdown to the initialization
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(updateNextGameCountdown, 1000); // Wait 1 second after page load
 }); 

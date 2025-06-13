@@ -6,6 +6,81 @@
     --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Countdown Banner Styles */
+.countdown-banner {
+    background: linear-gradient(90deg, var(--braves-navy), var(--braves-red));
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+#countdown-title {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.95;
+    flex: 1;
+    text-align: left;
+}
+
+#countdown-time {
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Roboto Mono', monospace;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .countdown-banner {
+        padding: 0.6rem 1rem;
+    }
+    
+    .countdown-content {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    #countdown-title {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    #countdown-time {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-banner {
+        padding: 0.5rem 0.8rem;
+    }
+
+    #countdown-title {
+        font-size: 0.85rem;
+    }
+
+    #countdown-time {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
