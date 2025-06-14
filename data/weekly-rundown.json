@@ -1,43 +1,43 @@
 {
-  "date": "2025-06-13",
-  "timestamp": "2025-06-13T09:15:58.036Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1)  \n<b>Highlights:</b> Close losses to the Giants in three nail-biters, but the team bounced back with a dominant 7-1 win over the Brewers and a solid 6-2 victory in the series finale. Bryce Elder shined with a 1.13 ERA and 12 strikeouts, while Chris Sale also impressed with a 1.29 ERA and 11 strikeouts.  \n<b>Trend:</b> Building momentum with recent solid play despite a rough start to the week.",
+  "date": "2025-06-14",
+  "timestamp": "2025-06-14T09:14:54.761Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1), Won game against Colorado Rockies (1-0)  \n<b>Highlights:</b> High-scoring win 12-4 against the Colorado Rockies, Michael Harris II hit 3 home runs this week, and Ronald Acuña Jr. boasted a stellar .444 batting average with 12 hits.  \n<b>Trend:</b> Building momentum with recent solid play despite a rough start to the week.",
   "weeklyStats": {
-    "dateRange": "2025-06-07 to 2025-06-11",
-    "record": "2-4",
-    "wins": 2,
+    "dateRange": "2025-06-07 to 2025-06-13",
+    "record": "3-4",
+    "wins": 3,
     "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
+    "winPct": "0.429",
+    "totalGames": 7,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 6,
-        "inningsPitched": 2.2,
+        "appearances": 7,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 0,
+        "strikeouts": 5,
+        "hits": 1,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Bryce Elder",
-        "appearances": 6,
-        "inningsPitched": 8,
-        "earnedRuns": 1,
-        "strikeouts": 12,
-        "hits": 3,
+        "name": "Raisel Iglesias",
+        "appearances": 7,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 3,
+        "hits": 1,
         "wins": 0,
         "losses": 0,
         "saves": 0,
-        "era": "1.13"
+        "era": "0.00"
       },
       {
         "name": "Chris Sale",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 7,
         "earnedRuns": 1,
         "strikeouts": 11,
@@ -50,44 +50,44 @@
     ],
     "topBatters": [
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 6,
-        "hits": 9,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 23,
-        "avg": "0.391"
-      },
-      {
         "name": "Matt Olson",
-        "games": 6,
-        "hits": 5,
+        "games": 7,
+        "hits": 8,
         "homeRuns": 2,
-        "rbi": 7,
-        "runs": 3,
-        "atBats": 20,
-        "avg": "0.250"
+        "rbi": 10,
+        "runs": 6,
+        "atBats": 24,
+        "avg": "0.333"
       },
       {
         "name": "Michael Harris II",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 24,
-        "avg": "0.250"
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 3,
+        "rbi": 7,
+        "runs": 4,
+        "atBats": 28,
+        "avg": "0.286"
       },
       {
-        "name": "Austin Riley",
-        "games": 6,
-        "hits": 9,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 5,
-        "atBats": 26,
-        "avg": "0.346"
+        "name": "Ronald Acuña Jr.",
+        "games": 7,
+        "hits": 12,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 7,
+        "atBats": 27,
+        "avg": "0.444"
+      },
+      {
+        "name": "Marcell Ozuna",
+        "games": 7,
+        "hits": 4,
+        "homeRuns": 1,
+        "rbi": 7,
+        "runs": 3,
+        "atBats": 28,
+        "avg": "0.143"
       }
     ],
     "gameResults": [
@@ -132,6 +132,13 @@
         "score": "6-2",
         "opponent": "Milwaukee Brewers",
         "homeAway": "@"
+      },
+      {
+        "date": "6/13/2025",
+        "result": "W",
+        "score": "12-4",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
@@ -180,14 +187,28 @@
             "score": "6-2"
           }
         ]
+      },
+      {
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "6/13/2025",
+            "result": "W",
+            "score": "12-4"
+          }
+        ]
       }
     ],
     "highlights": [
+      "High-scoring W 12-4 vs Colorado Rockies",
       "Close L 4-5 @ San Francisco Giants",
       "Close L 2-3 @ San Francisco Giants",
       "Close L 3-4 @ San Francisco Giants",
-      "Bryce Elder: 1.13 ERA, 12 strikeouts",
-      "Chris Sale: 1.29 ERA, 11 strikeouts"
+      "Michael Harris II: 3 HRs in the week",
+      "Ronald Acuña Jr.: 0.444 avg, 12 hits"
     ]
   }
 }
