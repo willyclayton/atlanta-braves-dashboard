@@ -1,70 +1,49 @@
 {
-  "date": "2025-06-14",
-  "timestamp": "2025-06-14T09:17:46.466Z",
-  "rundown": "<b>12-4</b> W vs Colorado Rockies  \n<b>Bryce Elder:</b> 3.1 innings, 4 earned runs, 7 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b> Marcell Ozuna (1 hits, 1 HR, 4 RBI), Michael Harris II (2 hits, 1 HR, 3 RBI), Matt Olson (3 hits, 0 HR, 3 RBI)  \nThe Braves secured a convincing victory over the Rockies, scoring 12 runs and showcasing a strong offensive performance led by",
+  "date": "2025-06-15",
+  "timestamp": "2025-06-15T09:17:05.071Z",
+  "rundown": "<b>4-1</b> W vs Colorado Rockies  \n<b>Spencer Strider:</b> 6.0 innings, 0 earned runs, 3 hits, 0 HR, 13 strikeouts  \n<b>Batters:</b> Ronald Acuña Jr. (2 hits, 1 HR, 2 RBI), Austin Riley (2 hits, 0 HR, 1 RBI), Matt Olson (1 hit, 0 HR, 1 RBI)  \nThe Braves secured a solid victory against the Rockies, highlighted by a dominant performance from Spencer Strider on the",
   "lastGame": {
-    "date": "2025-06-13T23:15:00Z",
+    "date": "2025-06-14T20:10:00Z",
     "opponent": "Colorado Rockies",
     "result": "W",
-    "score": "12-4",
+    "score": "4-1",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "3.1",
-      "earnedRuns": 4,
-      "hits": 7,
-      "homeRuns": 1,
-      "strikeOuts": 2
+      "name": "Spencer Strider",
+      "inningsPitched": "6.0",
+      "earnedRuns": 0,
+      "hits": 3,
+      "homeRuns": 0,
+      "strikeOuts": 13
     },
     "significantHitters": [
       {
-        "name": "Marcell Ozuna",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1
-      },
-      {
-        "name": "Michael Harris II",
+        "name": "Ronald Acuña Jr.",
         "hits": 2,
         "homeRuns": 1,
-        "rbi": 3,
-        "runs": 2
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 3,
+        "rbi": 2,
         "runs": 3
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 2
-      },
-      {
-        "name": "Alex Verdugo",
+        "name": "Austin Riley",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
+        "rbi": 1,
+        "runs": 0
       },
       {
-        "name": "Sean Murphy",
-        "hits": 2,
+        "name": "Matt Olson",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 12,
-      "bravesHits": 15,
-      "opponentRuns": 4,
-      "opponentHits": 14
+      "bravesRuns": 4,
+      "bravesHits": 7,
+      "opponentRuns": 1,
+      "opponentHits": 4
     }
   }
 }
