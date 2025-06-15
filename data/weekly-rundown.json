@@ -1,23 +1,35 @@
 {
-  "date": "2025-06-14",
-  "timestamp": "2025-06-14T09:14:54.761Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1), Won game against Colorado Rockies (1-0)  \n<b>Highlights:</b> High-scoring win 12-4 against the Colorado Rockies, Michael Harris II hit 3 home runs this week, and Ronald Acuña Jr. boasted a stellar .444 batting average with 12 hits.  \n<b>Trend:</b> Building momentum with recent solid play despite a rough start to the week.",
+  "date": "2025-06-15",
+  "timestamp": "2025-06-15T09:14:34.580Z",
+  "rundown": "<b>Record:</b> 4-4 (0.500)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1), Won series against Colorado Rockies (2-0)  \n<b>Highlights:</b> High-scoring win 12-4 against the Colorado Rockies, Ronald Acuña Jr. shined with 3 home runs and a .467 batting average, and a close loss 4-5 against the San Francisco Giants.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, showcasing strong offensive performances and solid pitching.",
   "weeklyStats": {
-    "dateRange": "2025-06-07 to 2025-06-13",
-    "record": "3-4",
-    "wins": 3,
+    "dateRange": "2025-06-07 to 2025-06-14",
+    "record": "4-4",
+    "wins": 4,
     "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
-    "momentum": "building momentum with recent solid play",
+    "winPct": "0.500",
+    "totalGames": 8,
+    "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 7,
-        "inningsPitched": 3.2,
+        "appearances": 8,
+        "inningsPitched": 4.2,
+        "earnedRuns": 0,
+        "strikeouts": 7,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Rafael Montero",
+        "appearances": 8,
+        "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 5,
-        "hits": 1,
+        "hits": 0,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -25,7 +37,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -34,60 +46,48 @@
         "losses": 0,
         "saves": 0,
         "era": "0.00"
-      },
-      {
-        "name": "Chris Sale",
-        "appearances": 7,
-        "inningsPitched": 7,
-        "earnedRuns": 1,
-        "strikeouts": 11,
-        "hits": 5,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "1.29"
       }
     ],
     "topBatters": [
       {
+        "name": "Ronald Acuña Jr.",
+        "games": 8,
+        "hits": 14,
+        "homeRuns": 3,
+        "rbi": 6,
+        "runs": 10,
+        "atBats": 30,
+        "avg": "0.467"
+      },
+      {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 8,
+        "games": 8,
+        "hits": 9,
         "homeRuns": 2,
-        "rbi": 10,
+        "rbi": 11,
         "runs": 6,
-        "atBats": 24,
+        "atBats": 27,
         "avg": "0.333"
       },
       {
         "name": "Michael Harris II",
-        "games": 7,
+        "games": 8,
         "hits": 8,
         "homeRuns": 3,
         "rbi": 7,
         "runs": 4,
-        "atBats": 28,
-        "avg": "0.286"
+        "atBats": 31,
+        "avg": "0.258"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 7,
+        "name": "Austin Riley",
+        "games": 8,
         "hits": 12,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 7,
-        "atBats": 27,
-        "avg": "0.444"
-      },
-      {
-        "name": "Marcell Ozuna",
-        "games": 7,
-        "hits": 4,
-        "homeRuns": 1,
-        "rbi": 7,
-        "runs": 3,
-        "atBats": 28,
-        "avg": "0.143"
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 6,
+        "atBats": 35,
+        "avg": "0.343"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "6/13/2025",
         "result": "W",
         "score": "12-4",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/14/2025",
+        "result": "W",
+        "score": "4-1",
         "opponent": "Colorado Rockies",
         "homeAway": "vs"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Colorado Rockies",
         "homeAway": "vs",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "2-0",
+        "outcome": "winning series",
         "games": [
           {
             "date": "6/13/2025",
             "result": "W",
             "score": "12-4"
+          },
+          {
+            "date": "6/14/2025",
+            "result": "W",
+            "score": "4-1"
           }
         ]
       }
@@ -207,8 +219,8 @@
       "Close L 4-5 @ San Francisco Giants",
       "Close L 2-3 @ San Francisco Giants",
       "Close L 3-4 @ San Francisco Giants",
-      "Michael Harris II: 3 HRs in the week",
-      "Ronald Acuña Jr.: 0.444 avg, 12 hits"
+      "Ronald Acuña Jr.: 3 HRs in the week",
+      "Ronald Acuña Jr.: 0.467 avg, 14 hits"
     ]
   }
 }
