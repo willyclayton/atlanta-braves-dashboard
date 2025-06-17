@@ -2990,7 +2990,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Also add countdown to the initialization
+// Also add countdown and history to the initialization
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(updateNextGameCountdown, 1000); // Wait 1 second after page load
+    setTimeout(updateBravesHistory, 500); // Load Braves history
 }); 
