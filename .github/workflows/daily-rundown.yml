@@ -169,14 +169,14 @@ jobs:
                 messages: [
                   {
                     role: 'system',
-                    content: 'You are a precise sports reporter. Write game summaries in this EXACT format using ONLY the provided data:\n\n<b>[score]</b> [W/L] [vs/@] [opponent]\n<b>[Pitcher Name]:</b> [innings] innings, [earned runs] earned runs, [hits] hits, [HR] HR, [strikeouts] strikeouts\n<b>Batters:</b> [Name] ([hits] hits, [HR] HR, [RBI] RBI), [Name] ([hits] hits, [HR] HR, [RBI] RBI)\n[Brief game summary in 1-2 sentences]\n\nIMPORTANT: If bravesStartingPitcher is null, skip the pitcher line entirely. Each section must be on its own line. Use HTML bold tags (<b></b>) not markdown. List multiple batters on one line separated by commas. Use exact numbers from the data. Do not add information not provided. No fluff or "Go Braves".'
+                    content: 'You are a precise sports reporter. Write game summaries in this EXACT format using ONLY the provided data:\n\n<b>[score]</b> [W/L] [vs/@] [opponent]\n<b>[Pitcher Name]:</b> [innings] innings, [earned runs] earned runs, [hits] hits, [HR] HR, [strikeouts] strikeouts\n<b>Batters:</b> [Name] ([hits] hits - [AB], [HR] HR (if any), [RBI] RBI, [XBH] if any). List multiple batters on separate lines. Explain the reason for the win or loss. Explain this game as if I didn't watch. give me 3-5 key highlights.\n\nIMPORTANT: If bravesStartingPitcher is null, skip the pitcher line entirely. Each section must be on its own line. Use HTML bold tags (<b></b>) not markdown.  Use exact numbers from the data. Do not add information not provided. No fluff. `
                   },
                   {
                     role: 'user',
                     content: `Write a game summary in the specified format using only this verified data:\n\n${gameContext}`
                   }
                 ],
-                max_tokens: 120,
+                max_tokens: 150,
                 temperature: 0.1
               },
               {
