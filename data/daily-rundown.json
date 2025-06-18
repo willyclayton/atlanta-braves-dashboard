@@ -1,38 +1,31 @@
 {
-  "date": "2025-06-13",
-  "timestamp": "2025-06-13T09:18:40.363Z",
-  "rundown": "<b>6-2</b> W @ Milwaukee Brewers  \n<b>Batters:</b> Ronald Acuña Jr. (3 hits, 1 HR, 2 RBI), Michael Harris II (1 hit, 1 HR, 2 RBI), Drake Baldwin (1 hit, 0 HR, 1 RBI)  \nThe Braves secured a solid victory against the Brewers, showcasing a strong offensive performance with 10 hits and 6 runs. Acuña Jr. led the charge with a standout game, contributing both hits and runs.",
+  "date": "2025-06-18",
+  "timestamp": "2025-06-18T21:54:10.885Z",
+  "rundown": "<b>5-4</b> W vs New York Mets  \n<b>Spencer Schwellenbach:</b> 7.0 innings, 4 earned runs, 6 hits, 2 HR, 8 strikeouts  \n<b>Batters:</b> Marcell Ozuna (2 hits, 0 HR, 3 RBI), Matt Olson (1 hit, 0 HR, 1 RBI)  \nThe Braves secured a close victory against the Mets, with Marcell Ozuna leading the offense with three RBIs. Spencer Schwellenbach delivered a strong performance on the mound",
   "lastGame": {
-    "date": "2025-06-11T18:10:00Z",
-    "opponent": "Milwaukee Brewers",
+    "date": "2025-06-17T23:15:00Z",
+    "opponent": "New York Mets",
     "result": "W",
-    "score": "6-2",
-    "homeAway": "@",
-    "startingPitcher": null,
+    "score": "5-4",
+    "homeAway": "vs",
+    "startingPitcher": {
+      "name": "Spencer Schwellenbach",
+      "inningsPitched": "7.0",
+      "earnedRuns": 4,
+      "hits": 6,
+      "homeRuns": 2,
+      "strikeOuts": 8
+    },
     "significantHitters": [
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 3,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
+        "name": "Marcell Ozuna",
+        "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 3,
         "runs": 0
       },
       {
-        "name": "Ozzie Albies",
+        "name": "Matt Olson",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
@@ -40,10 +33,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 6,
-      "bravesHits": 10,
-      "opponentRuns": 2,
-      "opponentHits": 5
+      "bravesRuns": 5,
+      "bravesHits": 7,
+      "opponentRuns": 4,
+      "opponentHits": 7
     }
   }
 }
