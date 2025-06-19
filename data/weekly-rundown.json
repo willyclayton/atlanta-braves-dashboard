@@ -1,193 +1,182 @@
 {
-  "date": "2025-06-13",
-  "timestamp": "2025-06-13T09:15:58.036Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to San Francisco Giants (0-3), Won series against Milwaukee Brewers (2-1)  \n<b>Highlights:</b> Close losses to the Giants in three nail-biters, but the team bounced back with a dominant 7-1 win over the Brewers and a solid 6-2 victory in the series finale. Bryce Elder shined with a 1.13 ERA and 12 strikeouts, while Chris Sale also impressed with a 1.29 ERA and 11 strikeouts.  \n<b>Trend:</b> Building momentum with recent solid play despite a rough start to the week.",
+  "date": "2025-06-19",
+  "timestamp": "2025-06-19T09:16:06.638Z",
+  "rundown": "<b>Record:</b> 4-1 (0.800)  \n<b>Series:</b> Braves won the series against the Colorado Rockies 2-1 and won the series against the New York Mets 2-0.  \n<b>Highlights:</b> High-scoring win 12-4 against the Rockies, a shutout victory 5-0 against the Mets, and standout performances from Matt Olson with a .421 average and Ronald Acuña Jr. hitting .571.  \n<b>Trend:</b> Building momentum with recent solid play.",
   "weeklyStats": {
-    "dateRange": "2025-06-07 to 2025-06-11",
-    "record": "2-4",
-    "wins": 2,
-    "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
+    "dateRange": "2025-06-13 to 2025-06-18",
+    "record": "4-1",
+    "wins": 4,
+    "losses": 1,
+    "winPct": "0.800",
+    "totalGames": 5,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
-        "name": "Dylan Lee",
-        "appearances": 6,
-        "inningsPitched": 2.2,
+        "name": "Spencer Strider",
+        "appearances": 5,
+        "inningsPitched": 6,
         "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 0,
-        "wins": 0,
+        "strikeouts": 13,
+        "hits": 3,
+        "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Bryce Elder",
-        "appearances": 6,
-        "inningsPitched": 8,
-        "earnedRuns": 1,
-        "strikeouts": 12,
-        "hits": 3,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "1.13"
-      },
-      {
         "name": "Chris Sale",
-        "appearances": 6,
-        "inningsPitched": 7,
-        "earnedRuns": 1,
-        "strikeouts": 11,
+        "appearances": 5,
+        "inningsPitched": 8.2,
+        "earnedRuns": 0,
+        "strikeouts": 7,
         "hits": 5,
         "wins": 1,
         "losses": 0,
         "saves": 0,
-        "era": "1.29"
+        "era": "0.00"
+      },
+      {
+        "name": "Dylan Lee",
+        "appearances": 5,
+        "inningsPitched": 3,
+        "earnedRuns": 0,
+        "strikeouts": 4,
+        "hits": 3,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
       }
     ],
     "topBatters": [
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 6,
-        "hits": 9,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 23,
-        "avg": "0.391"
+        "name": "Matt Olson",
+        "games": 5,
+        "hits": 8,
+        "homeRuns": 1,
+        "rbi": 6,
+        "runs": 4,
+        "atBats": 19,
+        "avg": "0.421"
       },
       {
-        "name": "Matt Olson",
-        "games": 6,
-        "hits": 5,
+        "name": "Ronald Acuña Jr.",
+        "games": 5,
+        "hits": 8,
         "homeRuns": 2,
-        "rbi": 7,
-        "runs": 3,
-        "atBats": 20,
-        "avg": "0.250"
+        "rbi": 3,
+        "runs": 8,
+        "atBats": 14,
+        "avg": "0.571"
+      },
+      {
+        "name": "Marcell Ozuna",
+        "games": 5,
+        "hits": 4,
+        "homeRuns": 1,
+        "rbi": 9,
+        "runs": 1,
+        "atBats": 18,
+        "avg": "0.222"
       },
       {
         "name": "Michael Harris II",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 2,
-        "rbi": 4,
+        "games": 5,
+        "hits": 3,
+        "homeRuns": 1,
+        "rbi": 3,
         "runs": 2,
-        "atBats": 24,
-        "avg": "0.250"
-      },
-      {
-        "name": "Austin Riley",
-        "games": 6,
-        "hits": 9,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 5,
-        "atBats": 26,
-        "avg": "0.346"
+        "atBats": 18,
+        "avg": "0.167"
       }
     ],
     "gameResults": [
       {
-        "date": "6/7/2025",
-        "result": "L",
-        "score": "4-5",
-        "opponent": "San Francisco Giants",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/7/2025",
-        "result": "L",
-        "score": "2-3",
-        "opponent": "San Francisco Giants",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/8/2025",
-        "result": "L",
-        "score": "3-4",
-        "opponent": "San Francisco Giants",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/9/2025",
+        "date": "6/13/2025",
         "result": "W",
-        "score": "7-1",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "@"
+        "score": "12-4",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs"
       },
       {
-        "date": "6/10/2025",
-        "result": "L",
-        "score": "1-4",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/11/2025",
+        "date": "6/14/2025",
         "result": "W",
-        "score": "6-2",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "@"
+        "score": "4-1",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/15/2025",
+        "result": "L",
+        "score": "1-10",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/17/2025",
+        "result": "W",
+        "score": "5-4",
+        "opponent": "New York Mets",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/18/2025",
+        "result": "W",
+        "score": "5-0",
+        "opponent": "New York Mets",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
       {
-        "opponent": "San Francisco Giants",
-        "homeAway": "@",
-        "record": "0-3",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "6/7/2025",
-            "result": "L",
-            "score": "4-5"
-          },
-          {
-            "date": "6/7/2025",
-            "result": "L",
-            "score": "2-3"
-          },
-          {
-            "date": "6/8/2025",
-            "result": "L",
-            "score": "3-4"
-          }
-        ]
-      },
-      {
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "@",
+        "opponent": "Colorado Rockies",
+        "homeAway": "vs",
         "record": "2-1",
         "outcome": "won series",
         "games": [
           {
-            "date": "6/9/2025",
+            "date": "6/13/2025",
             "result": "W",
-            "score": "7-1"
+            "score": "12-4"
           },
           {
-            "date": "6/10/2025",
+            "date": "6/14/2025",
+            "result": "W",
+            "score": "4-1"
+          },
+          {
+            "date": "6/15/2025",
             "result": "L",
-            "score": "1-4"
+            "score": "1-10"
+          }
+        ]
+      },
+      {
+        "opponent": "New York Mets",
+        "homeAway": "vs",
+        "record": "2-0",
+        "outcome": "winning series",
+        "games": [
+          {
+            "date": "6/17/2025",
+            "result": "W",
+            "score": "5-4"
           },
           {
-            "date": "6/11/2025",
+            "date": "6/18/2025",
             "result": "W",
-            "score": "6-2"
+            "score": "5-0"
           }
         ]
       }
     ],
     "highlights": [
-      "Close L 4-5 @ San Francisco Giants",
-      "Close L 2-3 @ San Francisco Giants",
-      "Close L 3-4 @ San Francisco Giants",
-      "Bryce Elder: 1.13 ERA, 12 strikeouts",
-      "Chris Sale: 1.29 ERA, 11 strikeouts"
+      "High-scoring W 12-4 vs Colorado Rockies",
+      "High-scoring L 1-10 vs Colorado Rockies",
+      "Shutout victory 5-0 vs New York Mets",
+      "Close W 5-4 vs New York Mets",
+      "Matt Olson: 0.421 avg, 8 hits",
+      "Ronald Acuña Jr.: 0.571 avg, 8 hits"
     ]
   }
 }
