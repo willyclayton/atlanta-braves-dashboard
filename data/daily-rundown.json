@@ -1,42 +1,49 @@
 {
-  "date": "2025-06-18",
-  "timestamp": "2025-06-18T21:54:10.885Z",
-  "rundown": "<b>5-4</b> W vs New York Mets  \n<b>Spencer Schwellenbach:</b> 7.0 innings, 4 earned runs, 6 hits, 2 HR, 8 strikeouts  \n<b>Batters:</b> Marcell Ozuna (2 hits, 0 HR, 3 RBI), Matt Olson (1 hit, 0 HR, 1 RBI)  \nThe Braves secured a close victory against the Mets, with Marcell Ozuna leading the offense with three RBIs. Spencer Schwellenbach delivered a strong performance on the mound",
+  "date": "2025-06-19",
+  "timestamp": "2025-06-19T09:18:44.987Z",
+  "rundown": "<b>5-0</b> W vs New York Mets  \n<b>Chris Sale:</b> 8.2 innings, 0 earned runs, 5 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b> Matt Olson (2 hits, 1 HR, 1 RBI), Ronald Acuña Jr. (1 hit, 1 HR, 1 RBI), Ozzie Albies (2 hits, 0 HR, 0 RBI)  \nThe Braves secured a dominant victory over the New York Mets, with Chris Sale delivering an impressive performance",
   "lastGame": {
-    "date": "2025-06-17T23:15:00Z",
+    "date": "2025-06-18T23:15:00Z",
     "opponent": "New York Mets",
     "result": "W",
-    "score": "5-4",
+    "score": "5-0",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Schwellenbach",
-      "inningsPitched": "7.0",
-      "earnedRuns": 4,
-      "hits": 6,
-      "homeRuns": 2,
-      "strikeOuts": 8
+      "name": "Chris Sale",
+      "inningsPitched": "8.2",
+      "earnedRuns": 0,
+      "hits": 5,
+      "homeRuns": 0,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Marcell Ozuna",
+        "name": "Matt Olson",
         "hits": 2,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 0
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
       },
       {
-        "name": "Matt Olson",
+        "name": "Ronald Acuña Jr.",
         "hits": 1,
-        "homeRuns": 0,
+        "homeRuns": 1,
         "rbi": 1,
-        "runs": 0
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
       "bravesRuns": 5,
       "bravesHits": 7,
-      "opponentRuns": 4,
-      "opponentHits": 7
+      "opponentRuns": 0,
+      "opponentHits": 5
     }
   }
 }
