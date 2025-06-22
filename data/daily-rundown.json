@@ -1,49 +1,63 @@
 {
-  "date": "2025-06-21",
-  "timestamp": "2025-06-21T09:16:30.007Z",
-  "rundown": "<b>2-6</b> L @ Miami Marlins  \n<b>Didier Fuentes:</b> 5.0 innings, 4 earned runs, 6 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b> Austin Riley (1 hits, 1 HR, 1 RBI), Matt Olson (1 hits, 0 HR, 1 RBI), Ronald Acuña Jr. (2 hits, 0 HR, 0 RBI)  \nThe Braves fell to the Miami Marlins with a final score of 2-6, despite a",
+  "date": "2025-06-22",
+  "timestamp": "2025-06-22T09:16:59.527Z",
+  "rundown": "<b>7-0</b> W @ Miami Marlins  \n<b>Grant Holmes:</b> 5.2 innings, 0 earned runs, 5 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b> Drake Baldwin (2 hits, 1 HR, 3 RBI), Ronald Acuña Jr. (2 hits, 0 HR, 1 RBI), Marcell Ozuna (2 hits, 0 HR, 1 RBI)  \nThe Braves dominated the Marlins with a strong pitching performance and a balanced offensive attack, securing a",
   "lastGame": {
-    "date": "2025-06-20T23:10:00Z",
+    "date": "2025-06-21T20:10:00Z",
     "opponent": "Miami Marlins",
-    "result": "L",
-    "score": "2-6",
+    "result": "W",
+    "score": "7-0",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Didier Fuentes",
-      "inningsPitched": "5.0",
-      "earnedRuns": 4,
-      "hits": 6,
-      "homeRuns": 1,
-      "strikeOuts": 3
+      "name": "Grant Holmes",
+      "inningsPitched": "5.2",
+      "earnedRuns": 0,
+      "hits": 5,
+      "homeRuns": 0,
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Austin Riley",
-        "hits": 1,
+        "name": "Drake Baldwin",
+        "hits": 2,
         "homeRuns": 1,
+        "rbi": 3,
+        "runs": 2
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 3
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 2,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Matt Olson",
+        "name": "Michael Harris II",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
+        "name": "Austin Riley",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 8,
-      "opponentRuns": 6,
-      "opponentHits": 9
+      "bravesRuns": 7,
+      "bravesHits": 10,
+      "opponentRuns": 0,
+      "opponentHits": 5
     }
   }
 }
