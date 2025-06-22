@@ -1,16 +1,28 @@
 {
-  "date": "2025-06-21",
-  "timestamp": "2025-06-21T09:13:45.827Z",
-  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the Colorado Rockies (2-1) and the New York Mets (3-0), but lost to the Miami Marlins (0-1).  \n<b>Highlights:</b> The Braves had a high-scoring win of 12-4 against the Rockies, a shutout victory of 5-0 against the Mets, and standout performances from Matt Olson with a .423 average and 11 hits, and Ronald Acuña Jr. hitting .476 with 10 hits.  \n<b>Trend:</b> The team is building momentum with recent solid play, showcasing both offensive firepower and strong pitching.",
+  "date": "2025-06-22",
+  "timestamp": "2025-06-22T09:14:23.343Z",
+  "rundown": "<b>Record:</b> 6-2 (0.750)  \n<b>Series:</b> Braves won the series against the Colorado Rockies (2-1) and the New York Mets (3-0), split the series with the Miami Marlins (1-1).  \n<b>Highlights:</b> High-scoring win 12-4 against the Rockies, a shutout victory 5-0 against the Mets, and Ronald Acuña Jr. had an impressive week with a .500 batting average and 12 hits.  \n<b>Trend:</b> Building momentum with recent solid play, highlighted by strong pitching performances and offensive contributions from key players.",
   "weeklyStats": {
-    "dateRange": "2025-06-13 to 2025-06-20",
-    "record": "5-2",
-    "wins": 5,
+    "dateRange": "2025-06-13 to 2025-06-21",
+    "record": "6-2",
+    "wins": 6,
     "losses": 2,
-    "winPct": "0.714",
-    "totalGames": 7,
+    "winPct": "0.750",
+    "totalGames": 8,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
+      {
+        "name": "Rafael Montero",
+        "appearances": 8,
+        "inningsPitched": 4,
+        "earnedRuns": 0,
+        "strikeouts": 7,
+        "hits": 1,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
       {
         "name": "Chris Sale",
         "appearances": 7,
@@ -24,23 +36,11 @@
         "era": "0.00"
       },
       {
-        "name": "Rafael Montero",
-        "appearances": 7,
-        "inningsPitched": 3,
+        "name": "Dylan Lee",
+        "appearances": 8,
+        "inningsPitched": 5.1,
         "earnedRuns": 0,
         "strikeouts": 6,
-        "hits": 1,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
-        "name": "Dylan Lee",
-        "appearances": 7,
-        "inningsPitched": 4,
-        "earnedRuns": 0,
-        "strikeouts": 5,
         "hits": 3,
         "wins": 0,
         "losses": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 7,
+        "games": 8,
         "hits": 11,
         "homeRuns": 1,
         "rbi": 10,
         "runs": 6,
-        "atBats": 26,
-        "avg": "0.423"
+        "atBats": 30,
+        "avg": "0.367"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 7,
-        "hits": 10,
+        "games": 8,
+        "hits": 12,
         "homeRuns": 2,
-        "rbi": 3,
-        "runs": 11,
-        "atBats": 21,
-        "avg": "0.476"
+        "rbi": 4,
+        "runs": 14,
+        "atBats": 24,
+        "avg": "0.500"
       },
       {
         "name": "Marcell Ozuna",
-        "games": 7,
-        "hits": 6,
+        "games": 8,
+        "hits": 8,
         "homeRuns": 1,
-        "rbi": 9,
-        "runs": 1,
-        "atBats": 27,
-        "avg": "0.222"
+        "rbi": 10,
+        "runs": 2,
+        "atBats": 31,
+        "avg": "0.258"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
-        "hits": 6,
+        "games": 8,
+        "hits": 7,
         "homeRuns": 1,
-        "rbi": 3,
+        "rbi": 4,
         "runs": 6,
-        "atBats": 28,
-        "avg": "0.214"
+        "atBats": 33,
+        "avg": "0.212"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "6/20/2025",
         "result": "L",
         "score": "2-6",
+        "opponent": "Miami Marlins",
+        "homeAway": "@"
+      },
+      {
+        "date": "6/21/2025",
+        "result": "W",
+        "score": "7-0",
         "opponent": "Miami Marlins",
         "homeAway": "@"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Miami Marlins",
         "homeAway": "@",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "6/20/2025",
             "result": "L",
             "score": "2-6"
+          },
+          {
+            "date": "6/21/2025",
+            "result": "W",
+            "score": "7-0"
           }
         ]
       }
@@ -206,9 +218,9 @@
       "High-scoring W 12-4 vs Colorado Rockies",
       "High-scoring L 1-10 vs Colorado Rockies",
       "Shutout victory 5-0 vs New York Mets",
+      "Shutout victory 7-0 @ Miami Marlins",
       "Close W 5-4 vs New York Mets",
-      "Matt Olson: 0.423 avg, 11 hits",
-      "Ronald Acuña Jr.: 0.476 avg, 10 hits"
+      "Ronald Acuña Jr.: 0.500 avg, 12 hits"
     ]
   }
 }
