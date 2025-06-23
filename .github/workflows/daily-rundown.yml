@@ -176,7 +176,7 @@ jobs:
                     content: `Write a game summary in the specified format using only this verified data:\n\n${gameContext}`
                   }
                 ],
-                max_tokens: 150,
+                max_tokens: 400,
                 temperature: 0.1
               },
               {

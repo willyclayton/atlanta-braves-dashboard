@@ -399,7 +399,7 @@ jobs:
                     content: `Write a weekly catch-up summary as if I missed all the games this week. Use only this verified data:\n\n${weeklyContext}`
                   }
                 ],
-                max_tokens: 150,
+                max_tokens: 400,
                 temperature: 0.1
               },
               {
