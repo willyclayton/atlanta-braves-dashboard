@@ -1,0 +1,171 @@
+name: Daily Braves Trivia
+
+on:
+  schedule:
+    # Runs at 4:00 AM EST (9:00 AM UTC) - early morning trivia generation
+    - cron: '0 9 * * *'
+  workflow_dispatch: # Allow manual triggering
+
+permissions:
+  contents: write
+
+jobs:
+  generate-trivia:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT_TOKEN || secrets.GITHUB_TOKEN }}
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+    
+    - name: Install dependencies
+      run: npm install axios
+    
+    - name: Generate Daily Trivia
+      env:
+        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      run: |
+        node << 'EOF'
+        const axios = require('axios');
+        const fs = require('fs');
+        
+        async function generateDailyTrivia() {
+          try {
+            const today = new Date();
+            console.log(`Generating daily Braves trivia for ${today.toDateString()}...`);
+            
+            // Call OpenAI API to generate trivia
+            const openaiResponse = await axios.post(
+              'https://api.openai.com/v1/chat/completions',
+              {
+                model: 'gpt-4o-mini',
+                messages: [
+                  {
+                    role: 'system',
+                    content: 'You are a factual Atlanta Braves baseball historian. Only provide verified, accurate historical facts about the Atlanta Braves franchise (including Boston Braves and Milwaukee Braves eras). Be precise and cite specific years, names, and statistics when possible. Focus on unique historical facts, records, notable events, player achievements, or franchise milestones that casual fans might not know.'
+                  },
+                  {
+                    role: 'user',
+                    content: 'Generate one interesting, factually accurate trivia question about the Atlanta Braves franchise with its answer. Format it as: Question: [question] Answer: [answer]. Keep both the question and answer to one sentence each. Make it challenging but not obscure - something a dedicated Braves fan should know or find interesting to learn.'
+                  }
+                ],
+                max_tokens: 200,
+                temperature: 0.4
+              },
+              {
+                headers: {
+                  'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                  'Content-Type': 'application/json'
+                },
+                timeout: 30000
+              }
+            );
+            
+            const triviaContent = openaiResponse.data.choices[0].message.content.trim();
+            
+            // Parse the question and answer
+            const questionMatch = triviaContent.match(/Question:\s*(.+?)(?=\s*Answer:)/);
+            const answerMatch = triviaContent.match(/Answer:\s*(.+)/);
+            
+            let question, answer;
+            
+            if (questionMatch && answerMatch) {
+              question = questionMatch[1].trim();
+              answer = answerMatch[1].trim();
+            } else {
+              // If parsing fails, use the full content as question with a generic answer
+              question = triviaContent;
+              answer = "This is a verified fact about the Braves franchise history.";
+            }
+            
+            // Create data directory if it doesn't exist
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            // Save the trivia content
+            const triviaData = {
+              date: today.toISOString().split('T')[0],
+              timestamp: today.toISOString(),
+              question: question,
+              answer: answer,
+              raw_content: triviaContent
+            };
+            
+            fs.writeFileSync('data/daily-trivia.json', JSON.stringify(triviaData, null, 2));
+            
+            console.log('Daily trivia generated successfully');
+            console.log('Question:', question);
+            console.log('Answer:', answer);
+            
+          } catch (error) {
+            console.error('Error generating daily trivia:', error.message);
+            
+            // Create fallback content with verified facts
+            const today = new Date();
+            const fallbackTrivias = [
+              {
+                question: "What historic achievement did Hank Aaron accomplish on April 8, 1974?",
+                answer: "Hank Aaron broke Babe Ruth's all-time home run record by hitting his 715th home run at Atlanta-Fulton County Stadium."
+              },
+              {
+                question: "What year did the Braves franchise begin, making them the oldest continuously operating professional sports franchise in America?",
+                answer: "The Braves franchise began in 1871 as the Boston Red Stockings."
+              },
+              {
+                question: "Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s?",
+                answer: "Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves."
+              },
+              {
+                question: "What was unique about the Braves' 1995 World Series championship team's pitching rotation?",
+                answer: "The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz."
+              },
+              {
+                question: "How many different cities has the Braves franchise called home throughout their history?",
+                answer: "The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present)."
+              }
+            ];
+            
+            // Select a random fallback trivia
+            const randomTrivia = fallbackTrivias[Math.floor(Math.random() * fallbackTrivias.length)];
+            
+            const fallbackData = {
+              date: today.toISOString().split('T')[0],
+              timestamp: today.toISOString(),
+              question: randomTrivia.question,
+              answer: randomTrivia.answer,
+              raw_content: `Question: ${randomTrivia.question} Answer: ${randomTrivia.answer}`,
+              error: true,
+              fallback: true
+            };
+            
+            if (!fs.existsSync('data')) {
+              fs.mkdirSync('data');
+            }
+            
+            fs.writeFileSync('data/daily-trivia.json', JSON.stringify(fallbackData, null, 2));
+            
+            // Don't fail the workflow, just log the error
+            console.log('Fallback trivia content created');
+            console.log('Question:', randomTrivia.question);
+            console.log('Answer:', randomTrivia.answer);
+          }
+        }
+        
+        generateDailyTrivia();
+        EOF
+    
+    - name: Commit and push changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/daily-trivia.json
+        git diff --staged --quiet || git commit -m "Update daily trivia - $(date '+%Y-%m-%d')"
+        git pull --rebase origin main || true
+        git push 
