@@ -1,52 +1,45 @@
 {
-  "date": "2025-06-23",
-  "timestamp": "2025-06-23T16:29:41.228Z",
-  "rundown": "<b>3-5</b> L @ Miami Marlins  \n<b>Bryce Elder:</b> 5.1 innings, 5 earned runs, 10 hits, 1 HR, 4 strikeouts  \n<b>Batters:</b>  \nAlex Verdugo (1 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 1 RBI)  \nAustin Riley (1 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Miami Marlins with a final score of 3-5. The loss was primarily due to a rough outing from starting pitcher Bryce Elder, who allowed 5 earned runs over 5.1 innings. Despite a solid offensive effort, the Braves could not overcome the Marlins' early lead.\n\nKey highlights from the game include:\n1. Bryce Elder struggled, giving up 10 hits and 5 runs, including a home run.\n2. The Braves managed to score 3 runs, with contributions from Alex Verdugo, Drake Baldwin, and Austin Riley, each driving in a run.\n3. The Marlins out-hit the Braves 12 to 7, showcasing their offensive strength throughout the game.",
+  "date": "2025-06-24",
+  "timestamp": "2025-06-24T09:19:54.349Z",
+  "rundown": "<b>3-2</b> W @ New York Mets  \n<b>Spencer Schwellenbach:</b> 7.0 innings, 2 earned runs, 4 hits, 1 HR, 4 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \nSean Murphy (1 hit - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a narrow victory against the Mets, showcasing strong pitching and timely hitting. Schwellenbach delivered a solid performance on the mound, allowing only two runs while striking out four batters. \n\nKey highlights include:\n1. Ronald Acuña Jr. hit a crucial home run, contributing significantly to the Braves' offense.\n2. Sean Murphy drove in a run, adding to the team's scoring efforts.\n3. Matt Olson's two hits helped maintain pressure on the Mets' pitching staff.",
   "lastGame": {
-    "date": "2025-06-22T17:40:00Z",
-    "opponent": "Miami Marlins",
-    "result": "L",
-    "score": "3-5",
+    "date": "2025-06-23T23:10:00Z",
+    "opponent": "New York Mets",
+    "result": "W",
+    "score": "3-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "5.1",
-      "earnedRuns": 5,
-      "hits": 10,
+      "name": "Spencer Schwellenbach",
+      "inningsPitched": "7.0",
+      "earnedRuns": 2,
+      "hits": 4,
       "homeRuns": 1,
       "strikeOuts": 4
     },
     "significantHitters": [
       {
-        "name": "Alex Verdugo",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 1,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Austin Riley",
+        "name": "Sean Murphy",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Ronald Acuña Jr.",
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 2
+        "runs": 1
       },
       {
-        "name": "Ozzie Albies",
+        "name": "Austin Riley",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -55,9 +48,9 @@
     ],
     "teamStats": {
       "bravesRuns": 3,
-      "bravesHits": 7,
-      "opponentRuns": 5,
-      "opponentHits": 12
+      "bravesHits": 9,
+      "opponentRuns": 2,
+      "opponentHits": 6
     }
   }
 }
