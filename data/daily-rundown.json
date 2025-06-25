@@ -1,56 +1,56 @@
 {
-  "date": "2025-06-24",
-  "timestamp": "2025-06-24T09:19:54.349Z",
-  "rundown": "<b>3-2</b> W @ New York Mets  \n<b>Spencer Schwellenbach:</b> 7.0 innings, 2 earned runs, 4 hits, 1 HR, 4 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \nSean Murphy (1 hit - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a narrow victory against the Mets, showcasing strong pitching and timely hitting. Schwellenbach delivered a solid performance on the mound, allowing only two runs while striking out four batters. \n\nKey highlights include:\n1. Ronald Acuña Jr. hit a crucial home run, contributing significantly to the Braves' offense.\n2. Sean Murphy drove in a run, adding to the team's scoring efforts.\n3. Matt Olson's two hits helped maintain pressure on the Mets' pitching staff.",
+  "date": "2025-06-25",
+  "timestamp": "2025-06-25T09:20:24.350Z",
+  "rundown": "<b>7-4</b> W @ New York Mets  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 2 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 0 HR, 3 RBI)  \nNick Allen (3 hits - 4 AB, 0 HR, 1 RBI)  \nEli White (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the New York Mets with a strong offensive performance, scoring 7 runs on 8 hits. Spencer Strider contributed significantly on the mound, striking out 8 batters despite allowing 3 earned runs. \n\nKey highlights include:\n1. Matt Olson's impactful performance with 2 hits and 3 RBIs, driving in key runs.\n2. Nick Allen's standout game with 3 hits, providing consistent offense.\n3. Eli White contributing with a hit and an RBI, helping to extend the lead.",
   "lastGame": {
-    "date": "2025-06-23T23:10:00Z",
+    "date": "2025-06-24T23:10:00Z",
     "opponent": "New York Mets",
     "result": "W",
-    "score": "3-2",
+    "score": "7-4",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Schwellenbach",
-      "inningsPitched": "7.0",
-      "earnedRuns": 2,
-      "hits": 4,
-      "homeRuns": 1,
-      "strikeOuts": 4
+      "name": "Spencer Strider",
+      "inningsPitched": "5.0",
+      "earnedRuns": 3,
+      "hits": 2,
+      "homeRuns": 0,
+      "strikeOuts": 8
     },
     "significantHitters": [
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Sean Murphy",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
       {
         "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Nick Allen",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Eli White",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
         "runs": 1
       },
       {
         "name": "Austin Riley",
-        "hits": 2,
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
+        "rbi": 1,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 3,
-      "bravesHits": 9,
-      "opponentRuns": 2,
-      "opponentHits": 6
+      "bravesRuns": 7,
+      "bravesHits": 8,
+      "opponentRuns": 4,
+      "opponentHits": 5
     }
   }
 }
