@@ -1,19 +1,19 @@
 {
-  "date": "2025-06-24",
-  "timestamp": "2025-06-24T09:17:00.146Z",
-  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the New York Mets (3-0) and lost the series against the Miami Marlins (1-2).  \n<b>Highlights:</b> The Braves showcased an impressive shutout victory of 5-0 against the Mets and another dominant 7-0 shutout against the Marlins. Ronald Acuña Jr. had a stellar week, hitting .417 with 10 hits and 2 home runs.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong pitching performances, including Chris Sale's remarkable 0.00 ERA over 8.2 innings.",
+  "date": "2025-06-25",
+  "timestamp": "2025-06-25T09:17:29.622Z",
+  "rundown": "<b>Record:</b> 6-2 (0.750)  \n<b>Series:</b> Braves won the series against the New York Mets 3-0 and lost the series to the Miami Marlins 1-2, but bounced back to win the series against the Mets 2-0.  \n<b>Highlights:</b> Chris Sale showcased a pitching clinic with a 0.00 ERA and 7 strikeouts over 8.2 innings. The Braves had a shutout victory of 5-0 against the Mets and another impressive shutout of 7-0 against the Marlins.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by a strong offensive performance and dominant pitching.",
   "weeklyStats": {
-    "dateRange": "2025-06-17 to 2025-06-23",
-    "record": "5-2",
-    "wins": 5,
+    "dateRange": "2025-06-17 to 2025-06-24",
+    "record": "6-2",
+    "wins": 6,
     "losses": 2,
-    "winPct": "0.714",
-    "totalGames": 7,
+    "winPct": "0.750",
+    "totalGames": 8,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Chris Sale",
-        "appearances": 4,
+        "appearances": 3,
         "inningsPitched": 8.2,
         "earnedRuns": 0,
         "strikeouts": 7,
@@ -24,8 +24,20 @@
         "era": "0.00"
       },
       {
+        "name": "Pierce Johnson",
+        "appearances": 8,
+        "inningsPitched": 2.2,
+        "earnedRuns": 0,
+        "strikeouts": 6,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "Dylan Lee",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 4.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -34,60 +46,48 @@
         "losses": 0,
         "saves": 1,
         "era": "0.00"
-      },
-      {
-        "name": "Grant Holmes",
-        "appearances": 7,
-        "inningsPitched": 5.2,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 5,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
       }
     ],
     "topBatters": [
       {
+        "name": "Matt Olson",
+        "games": 8,
+        "hits": 10,
+        "homeRuns": 1,
+        "rbi": 9,
+        "runs": 5,
+        "atBats": 30,
+        "avg": "0.333"
+      },
+      {
         "name": "Ronald Acuña Jr.",
-        "games": 7,
+        "games": 8,
         "hits": 10,
         "homeRuns": 2,
         "rbi": 3,
-        "runs": 12,
-        "atBats": 24,
-        "avg": "0.417"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 7,
-        "hits": 8,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 4,
-        "atBats": 26,
-        "avg": "0.308"
-      },
-      {
-        "name": "Drake Baldwin",
-        "games": 5,
-        "hits": 5,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 3,
-        "atBats": 14,
-        "avg": "0.357"
+        "runs": 13,
+        "atBats": 27,
+        "avg": "0.370"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
-        "hits": 6,
+        "games": 8,
+        "hits": 7,
         "homeRuns": 1,
-        "rbi": 4,
+        "rbi": 5,
+        "runs": 5,
+        "atBats": 32,
+        "avg": "0.219"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 6,
+        "hits": 5,
+        "homeRuns": 1,
+        "rbi": 6,
         "runs": 4,
-        "atBats": 28,
-        "avg": "0.214"
+        "atBats": 17,
+        "avg": "0.294"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "6/23/2025",
         "result": "W",
         "score": "3-2",
+        "opponent": "New York Mets",
+        "homeAway": "@"
+      },
+      {
+        "date": "6/24/2025",
+        "result": "W",
+        "score": "7-4",
         "opponent": "New York Mets",
         "homeAway": "@"
       }
@@ -191,23 +198,28 @@
       {
         "opponent": "New York Mets",
         "homeAway": "@",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "2-0",
+        "outcome": "winning series",
         "games": [
           {
             "date": "6/23/2025",
             "result": "W",
             "score": "3-2"
+          },
+          {
+            "date": "6/24/2025",
+            "result": "W",
+            "score": "7-4"
           }
         ]
       }
     ],
     "highlights": [
+      "High-scoring W 7-4 @ New York Mets",
       "Shutout victory 5-0 vs New York Mets",
       "Shutout victory 7-0 @ Miami Marlins",
       "Close W 5-4 vs New York Mets",
       "Close W 3-2 @ New York Mets",
-      "Ronald Acuña Jr.: 0.417 avg, 10 hits",
       "Chris Sale: 0.00 ERA, 7 strikeouts"
     ]
   }
