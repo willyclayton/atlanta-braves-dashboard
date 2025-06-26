@@ -1,14 +1,14 @@
 {
-  "date": "2025-06-25",
-  "timestamp": "2025-06-25T09:17:29.622Z",
-  "rundown": "<b>Record:</b> 6-2 (0.750)  \n<b>Series:</b> Braves won the series against the New York Mets 3-0 and lost the series to the Miami Marlins 1-2, but bounced back to win the series against the Mets 2-0.  \n<b>Highlights:</b> Chris Sale showcased a pitching clinic with a 0.00 ERA and 7 strikeouts over 8.2 innings. The Braves had a shutout victory of 5-0 against the Mets and another impressive shutout of 7-0 against the Marlins.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by a strong offensive performance and dominant pitching.",
+  "date": "2025-06-26",
+  "timestamp": "2025-06-26T09:16:34.472Z",
+  "rundown": "<b>Record:</b> 6-3 (0.667)  \n<b>Series:</b> Braves won the series against the New York Mets (3-0) and lost the series against the Miami Marlins (1-2).  \n<b>Highlights:</b> The Braves showcased an impressive shutout victory of 5-0 against the Mets and followed it up with another dominant 7-0 win against the Marlins. They also had a thrilling close win of 5-4 against the Mets.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong pitching performances and key offensive contributions.",
   "weeklyStats": {
-    "dateRange": "2025-06-17 to 2025-06-24",
-    "record": "6-2",
+    "dateRange": "2025-06-17 to 2025-06-25",
+    "record": "6-3",
     "wins": 6,
-    "losses": 2,
-    "winPct": "0.750",
-    "totalGames": 8,
+    "losses": 3,
+    "winPct": "0.667",
+    "totalGames": 9,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
@@ -25,7 +25,7 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 6,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Dylan Lee",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 4.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 8,
-        "hits": 10,
+        "games": 9,
+        "hits": 11,
         "homeRuns": 1,
         "rbi": 9,
         "runs": 5,
-        "atBats": 30,
+        "atBats": 33,
         "avg": "0.333"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 8,
-        "hits": 10,
+        "games": 9,
+        "hits": 11,
         "homeRuns": 2,
-        "rbi": 3,
+        "rbi": 5,
         "runs": 13,
-        "atBats": 27,
-        "avg": "0.370"
+        "atBats": 30,
+        "avg": "0.367"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 7,
+        "hits": 6,
+        "homeRuns": 2,
+        "rbi": 7,
+        "runs": 5,
+        "atBats": 20,
+        "avg": "0.300"
       },
       {
         "name": "Austin Riley",
-        "games": 8,
+        "games": 9,
         "hits": 7,
         "homeRuns": 1,
         "rbi": 5,
         "runs": 5,
-        "atBats": 32,
-        "avg": "0.219"
-      },
-      {
-        "name": "Drake Baldwin",
-        "games": 6,
-        "hits": 5,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 4,
-        "atBats": 17,
-        "avg": "0.294"
+        "atBats": 36,
+        "avg": "0.194"
       }
     ],
     "gameResults": [
@@ -146,6 +146,13 @@
         "score": "7-4",
         "opponent": "New York Mets",
         "homeAway": "@"
+      },
+      {
+        "date": "6/25/2025",
+        "result": "L",
+        "score": "3-7",
+        "opponent": "New York Mets",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
@@ -198,8 +205,8 @@
       {
         "opponent": "New York Mets",
         "homeAway": "@",
-        "record": "2-0",
-        "outcome": "winning series",
+        "record": "2-1",
+        "outcome": "won series",
         "games": [
           {
             "date": "6/23/2025",
@@ -210,17 +217,22 @@
             "date": "6/24/2025",
             "result": "W",
             "score": "7-4"
+          },
+          {
+            "date": "6/25/2025",
+            "result": "L",
+            "score": "3-7"
           }
         ]
       }
     ],
     "highlights": [
       "High-scoring W 7-4 @ New York Mets",
+      "High-scoring L 3-7 @ New York Mets",
       "Shutout victory 5-0 vs New York Mets",
       "Shutout victory 7-0 @ Miami Marlins",
       "Close W 5-4 vs New York Mets",
-      "Close W 3-2 @ New York Mets",
-      "Chris Sale: 0.00 ERA, 7 strikeouts"
+      "Close W 3-2 @ New York Mets"
     ]
   }
 }
