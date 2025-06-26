@@ -1,56 +1,42 @@
 {
-  "date": "2025-06-25",
-  "timestamp": "2025-06-25T09:20:24.350Z",
-  "rundown": "<b>7-4</b> W @ New York Mets  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 2 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 0 HR, 3 RBI)  \nNick Allen (3 hits - 4 AB, 0 HR, 1 RBI)  \nEli White (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the New York Mets with a strong offensive performance, scoring 7 runs on 8 hits. Spencer Strider contributed significantly on the mound, striking out 8 batters despite allowing 3 earned runs. \n\nKey highlights include:\n1. Matt Olson's impactful performance with 2 hits and 3 RBIs, driving in key runs.\n2. Nick Allen's standout game with 3 hits, providing consistent offense.\n3. Eli White contributing with a hit and an RBI, helping to extend the lead.",
+  "date": "2025-06-26",
+  "timestamp": "2025-06-26T09:19:06.788Z",
+  "rundown": "<b>3-7</b> L @ New York Mets  \n<b>Didier Fuentes:</b> 3.1 innings, 6 earned runs, 8 hits, 2 HR, 1 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 1 RBI)  \nRonald Acuña Jr. (1 hits - 4 AB, 0 HR, 2 RBI)  \n\nThe Braves fell to the New York Mets with a final score of 3-7. The loss was largely due to a rough outing from starting pitcher Didier Fuentes, who allowed 6 earned runs in just over 3 innings. \n\nKey highlights from the game include:  \n1. Drake Baldwin hit a home run, contributing to the Braves' scoring efforts.  \n2. Ronald Acuña Jr. drove in 2 runs, showcasing his ability to produce in clutch situations.  \n3. The Mets' offense was potent, racking up 13 hits and capitalizing on the Braves' pitching struggles.",
   "lastGame": {
-    "date": "2025-06-24T23:10:00Z",
+    "date": "2025-06-25T23:10:00Z",
     "opponent": "New York Mets",
-    "result": "W",
-    "score": "7-4",
+    "result": "L",
+    "score": "3-7",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "5.0",
-      "earnedRuns": 3,
-      "hits": 2,
-      "homeRuns": 0,
-      "strikeOuts": 8
+      "name": "Didier Fuentes",
+      "inningsPitched": "3.1",
+      "earnedRuns": 6,
+      "hits": 8,
+      "homeRuns": 2,
+      "strikeOuts": 1
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 3,
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Nick Allen",
-        "hits": 3,
+        "name": "Ronald Acuña Jr.",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 2,
         "runs": 0
-      },
-      {
-        "name": "Eli White",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Austin Riley",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 7,
-      "bravesHits": 8,
-      "opponentRuns": 4,
-      "opponentHits": 5
+      "bravesRuns": 3,
+      "bravesHits": 6,
+      "opponentRuns": 7,
+      "opponentHits": 13
     }
   }
 }
