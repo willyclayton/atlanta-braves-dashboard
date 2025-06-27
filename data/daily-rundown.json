@@ -1,42 +1,27 @@
 {
-  "date": "2025-06-26",
-  "timestamp": "2025-06-26T09:19:06.788Z",
-  "rundown": "<b>3-7</b> L @ New York Mets  \n<b>Didier Fuentes:</b> 3.1 innings, 6 earned runs, 8 hits, 2 HR, 1 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 1 RBI)  \nRonald Acuña Jr. (1 hits - 4 AB, 0 HR, 2 RBI)  \n\nThe Braves fell to the New York Mets with a final score of 3-7. The loss was largely due to a rough outing from starting pitcher Didier Fuentes, who allowed 6 earned runs in just over 3 innings. \n\nKey highlights from the game include:  \n1. Drake Baldwin hit a home run, contributing to the Braves' scoring efforts.  \n2. Ronald Acuña Jr. drove in 2 runs, showcasing his ability to produce in clutch situations.  \n3. The Mets' offense was potent, racking up 13 hits and capitalizing on the Braves' pitching struggles.",
+  "date": "2025-06-27",
+  "timestamp": "2025-06-27T09:18:34.008Z",
+  "rundown": "<b>0-4</b> L @ New York Mets  \n<b>Grant Holmes:</b> 5.0 innings, 2 earned runs, 6 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \n\nThe Braves struggled offensively, managing only 3 hits throughout the game, which contributed to their loss against the Mets. The pitching from Grant Holmes was solid, but the lack of run support ultimately sealed their fate.\n\nKey highlights:\n1. Grant Holmes recorded 6 strikeouts, showcasing his ability to get batters out.\n2. The Braves were unable to capitalize on scoring opportunities, resulting in a shutout.\n3. The Mets' offense was effective, accumulating 9 hits and scoring 4 runs.",
   "lastGame": {
-    "date": "2025-06-25T23:10:00Z",
+    "date": "2025-06-26T23:10:00Z",
     "opponent": "New York Mets",
     "result": "L",
-    "score": "3-7",
+    "score": "0-4",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Didier Fuentes",
-      "inningsPitched": "3.1",
-      "earnedRuns": 6,
-      "hits": 8,
-      "homeRuns": 2,
-      "strikeOuts": 1
+      "name": "Grant Holmes",
+      "inningsPitched": "5.0",
+      "earnedRuns": 2,
+      "hits": 6,
+      "homeRuns": 0,
+      "strikeOuts": 6
     },
-    "significantHitters": [
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 0
-      }
-    ],
+    "significantHitters": [],
     "teamStats": {
-      "bravesRuns": 3,
-      "bravesHits": 6,
-      "opponentRuns": 7,
-      "opponentHits": 13
+      "bravesRuns": 0,
+      "bravesHits": 3,
+      "opponentRuns": 4,
+      "opponentHits": 9
     }
   }
 }
