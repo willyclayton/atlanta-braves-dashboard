@@ -1,19 +1,31 @@
 {
-  "date": "2025-06-27",
-  "timestamp": "2025-06-27T09:15:59.907Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to Miami Marlins (1-2), split series with New York Mets (2-2)  \n<b>Highlights:</b> Shutout victory 7-0 against the Miami Marlins, high-scoring win 7-4 against the New York Mets, and a close 3-2 victory over the Mets.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency despite some standout performances.",
+  "date": "2025-06-28",
+  "timestamp": "2025-06-28T09:14:50.605Z",
+  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Braves lost the series to the Miami Marlins (1-2) and split the series with the New York Mets (2-2). They also lost to the Philadelphia Phillies in a single game.  \n<b>Highlights:</b> The Braves had a dominant shutout victory over the Miami Marlins, winning 7-0, and a thrilling close win against the New York Mets, 3-2. However, they struggled towards the end of the week, suffering a heavy 0-13 loss to the Phillies.  \n<b>Trend:</b> The team is struggling with 3 straight losses, indicating a rough patch as they look to regain their momentum.",
   "weeklyStats": {
-    "dateRange": "2025-06-20 to 2025-06-26",
-    "record": "3-4",
+    "dateRange": "2025-06-20 to 2025-06-27",
+    "record": "3-5",
     "wins": 3,
-    "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
-    "momentum": "challenging week overall",
+    "losses": 5,
+    "winPct": "0.375",
+    "totalGames": 8,
+    "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
+        "name": "Dylan Lee",
+        "appearances": 8,
+        "inningsPitched": 3.2,
+        "earnedRuns": 0,
+        "strikeouts": 5,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 1,
+        "era": "0.00"
+      },
+      {
         "name": "Pierce Johnson",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -24,23 +36,11 @@
         "era": "0.00"
       },
       {
-        "name": "Dylan Lee",
-        "appearances": 7,
-        "inningsPitched": 2.2,
+        "name": "Rafael Montero",
+        "appearances": 8,
+        "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 1,
-        "era": "0.00"
-      },
-      {
-        "name": "Rafael Montero",
-        "appearances": 7,
-        "inningsPitched": 2,
-        "earnedRuns": 0,
-        "strikeouts": 2,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Ronald Acuña Jr.",
-        "games": 7,
+        "games": 8,
         "hits": 9,
         "homeRuns": 1,
         "rbi": 4,
         "runs": 8,
-        "atBats": 26,
-        "avg": "0.346"
+        "atBats": 27,
+        "avg": "0.333"
       },
       {
         "name": "Drake Baldwin",
-        "games": 5,
+        "games": 6,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 5,
         "runs": 5,
-        "atBats": 14,
-        "avg": "0.286"
+        "atBats": 17,
+        "avg": "0.235"
+      },
+      {
+        "name": "Matt Olson",
+        "games": 8,
+        "hits": 8,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 2,
+        "atBats": 31,
+        "avg": "0.258"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
+        "games": 8,
         "hits": 6,
         "homeRuns": 1,
         "rbi": 4,
         "runs": 2,
-        "atBats": 28,
-        "avg": "0.214"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 7,
-        "hits": 7,
-        "homeRuns": 0,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 26,
-        "avg": "0.269"
+        "atBats": 31,
+        "avg": "0.194"
       }
     ],
     "gameResults": [
@@ -139,6 +139,13 @@
         "score": "0-4",
         "opponent": "New York Mets",
         "homeAway": "@"
+      },
+      {
+        "date": "6/27/2025",
+        "result": "L",
+        "score": "0-13",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
@@ -192,11 +199,25 @@
             "score": "0-4"
           }
         ]
+      },
+      {
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "6/27/2025",
+            "result": "L",
+            "score": "0-13"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring W 7-4 @ New York Mets",
       "High-scoring L 3-7 @ New York Mets",
+      "High-scoring L 0-13 vs Philadelphia Phillies",
       "Shutout victory 7-0 @ Miami Marlins",
       "Close W 3-2 @ New York Mets"
     ]
