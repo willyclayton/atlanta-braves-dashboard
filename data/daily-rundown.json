@@ -1,27 +1,42 @@
 {
-  "date": "2025-06-27",
-  "timestamp": "2025-06-27T09:18:34.008Z",
-  "rundown": "<b>0-4</b> L @ New York Mets  \n<b>Grant Holmes:</b> 5.0 innings, 2 earned runs, 6 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \n\nThe Braves struggled offensively, managing only 3 hits throughout the game, which contributed to their loss against the Mets. The pitching from Grant Holmes was solid, but the lack of run support ultimately sealed their fate.\n\nKey highlights:\n1. Grant Holmes recorded 6 strikeouts, showcasing his ability to get batters out.\n2. The Braves were unable to capitalize on scoring opportunities, resulting in a shutout.\n3. The Mets' offense was effective, accumulating 9 hits and scoring 4 runs.",
+  "date": "2025-06-28",
+  "timestamp": "2025-06-28T09:17:39.895Z",
+  "rundown": "<b>0-13</b> L vs Philadelphia Phillies  \n<b>Michael Petersen:</b> 2.2 innings, 1 earned run, 4 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \nStuart Fairchild (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a heavy defeat against the Philadelphia Phillies, unable to score any runs while allowing 13. The loss was marked by a lack of offensive production and struggles on the mound. \n\nKey highlights include:\n1. Michael Petersen pitched 2.2 innings, giving up 1 earned run but struggled with 4 hits and a home run.\n2. Nick Allen and Stuart Fairchild each contributed 2 hits, but the team could not capitalize on their efforts.\n3. The Braves managed 9 hits overall but failed to convert any into runs, highlighting their offensive struggles.",
   "lastGame": {
-    "date": "2025-06-26T23:10:00Z",
-    "opponent": "New York Mets",
+    "date": "2025-06-27T23:15:00Z",
+    "opponent": "Philadelphia Phillies",
     "result": "L",
-    "score": "0-4",
-    "homeAway": "@",
+    "score": "0-13",
+    "homeAway": "vs",
     "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "5.0",
-      "earnedRuns": 2,
-      "hits": 6,
-      "homeRuns": 0,
-      "strikeOuts": 6
+      "name": "Michael Petersen",
+      "inningsPitched": "2.2",
+      "earnedRuns": 1,
+      "hits": 4,
+      "homeRuns": 1,
+      "strikeOuts": 2
     },
-    "significantHitters": [],
+    "significantHitters": [
+      {
+        "name": "Nick Allen",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      },
+      {
+        "name": "Stuart Fairchild",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      }
+    ],
     "teamStats": {
       "bravesRuns": 0,
-      "bravesHits": 3,
-      "opponentRuns": 4,
-      "opponentHits": 9
+      "bravesHits": 9,
+      "opponentRuns": 13,
+      "opponentHits": 17
     }
   }
 }
