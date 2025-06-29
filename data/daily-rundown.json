@@ -1,42 +1,63 @@
 {
-  "date": "2025-06-28",
-  "timestamp": "2025-06-28T09:17:39.895Z",
-  "rundown": "<b>0-13</b> L vs Philadelphia Phillies  \n<b>Michael Petersen:</b> 2.2 innings, 1 earned run, 4 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \nStuart Fairchild (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a heavy defeat against the Philadelphia Phillies, unable to score any runs while allowing 13. The loss was marked by a lack of offensive production and struggles on the mound. \n\nKey highlights include:\n1. Michael Petersen pitched 2.2 innings, giving up 1 earned run but struggled with 4 hits and a home run.\n2. Nick Allen and Stuart Fairchild each contributed 2 hits, but the team could not capitalize on their efforts.\n3. The Braves managed 9 hits overall but failed to convert any into runs, highlighting their offensive struggles.",
+  "date": "2025-06-29",
+  "timestamp": "2025-06-29T09:17:01.972Z",
+  "rundown": "<b>6-1</b> W vs Philadelphia Phillies  \n<b>Spencer Schwellenbach:</b> 7.0 innings, 1 earned run, 3 hits, 0 HR, 12 strikeouts  \n<b>Batters:</b>  \nSean Murphy (2 hits - 4 AB, 1 HR, 4 RBI)  \nNick Allen (2 hits - 4 AB, 0 HR, 1 RBI)  \nAustin Riley (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Philadelphia Phillies, showcasing a dominant performance both on the mound and at the plate. Spencer Schwellenbach led the charge with an impressive 12 strikeouts, allowing only 3 hits and 1 earned run over 7 innings. \n\nKey highlights include:\n1. Sean Murphy's standout game, hitting a home run and driving in 4 runs.\n2. The Braves' offense was relentless, accumulating a total of 13 hits.\n3. Schwellenbach's strikeout prowess kept the Phillies' batters off balance throughout the game.",
   "lastGame": {
-    "date": "2025-06-27T23:15:00Z",
+    "date": "2025-06-28T23:15:00Z",
     "opponent": "Philadelphia Phillies",
-    "result": "L",
-    "score": "0-13",
+    "result": "W",
+    "score": "6-1",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Michael Petersen",
-      "inningsPitched": "2.2",
+      "name": "Spencer Schwellenbach",
+      "inningsPitched": "7.0",
       "earnedRuns": 1,
-      "hits": 4,
-      "homeRuns": 1,
-      "strikeOuts": 2
+      "hits": 3,
+      "homeRuns": 0,
+      "strikeOuts": 12
     },
     "significantHitters": [
       {
+        "name": "Sean Murphy",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 1
+      },
+      {
         "name": "Nick Allen",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Austin Riley",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
         "runs": 0
       },
       {
-        "name": "Stuart Fairchild",
+        "name": "Marcell Ozuna",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 0,
-      "bravesHits": 9,
-      "opponentRuns": 13,
-      "opponentHits": 17
+      "bravesRuns": 6,
+      "bravesHits": 13,
+      "opponentRuns": 1,
+      "opponentHits": 4
     }
   }
 }
