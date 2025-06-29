@@ -1,19 +1,19 @@
 {
-  "date": "2025-06-28",
-  "timestamp": "2025-06-28T09:14:50.605Z",
-  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Braves lost the series to the Miami Marlins (1-2) and split the series with the New York Mets (2-2). They also lost to the Philadelphia Phillies in a single game.  \n<b>Highlights:</b> The Braves had a dominant shutout victory over the Miami Marlins, winning 7-0, and a thrilling close win against the New York Mets, 3-2. However, they struggled towards the end of the week, suffering a heavy 0-13 loss to the Phillies.  \n<b>Trend:</b> The team is struggling with 3 straight losses, indicating a rough patch as they look to regain their momentum.",
+  "date": "2025-06-29",
+  "timestamp": "2025-06-29T09:14:17.199Z",
+  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Braves lost the series to the Miami Marlins (1-2), split the series with the New York Mets (2-2), and split the series with the Philadelphia Phillies (1-1).  \n<b>Highlights:</b> The Braves had a standout shutout victory against the Miami Marlins, winning 7-0, and a thrilling close win against the New York Mets, finishing 3-2. However, they also faced a tough loss, getting blown out 0-13 by the Philadelphia Phillies.  \n<b>Trend:</b> It was a challenging week overall for the Braves, struggling to find consistent momentum despite some bright spots in their performances.",
   "weeklyStats": {
-    "dateRange": "2025-06-20 to 2025-06-27",
-    "record": "3-5",
-    "wins": 3,
+    "dateRange": "2025-06-20 to 2025-06-28",
+    "record": "4-5",
+    "wins": 4,
     "losses": 5,
-    "winPct": "0.375",
-    "totalGames": 8,
-    "momentum": "struggling with 3 straight losses",
+    "winPct": "0.444",
+    "totalGames": 9,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -37,8 +37,8 @@
       },
       {
         "name": "Rafael Montero",
-        "appearances": 8,
-        "inningsPitched": 3,
+        "appearances": 9,
+        "inningsPitched": 4,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 0,
@@ -51,13 +51,33 @@
     "topBatters": [
       {
         "name": "Ronald Acuña Jr.",
-        "games": 8,
-        "hits": 9,
+        "games": 9,
+        "hits": 10,
         "homeRuns": 1,
         "rbi": 4,
-        "runs": 8,
-        "atBats": 27,
+        "runs": 9,
+        "atBats": 30,
         "avg": "0.333"
+      },
+      {
+        "name": "Austin Riley",
+        "games": 9,
+        "hits": 8,
+        "homeRuns": 1,
+        "rbi": 5,
+        "runs": 3,
+        "atBats": 35,
+        "avg": "0.229"
+      },
+      {
+        "name": "Matt Olson",
+        "games": 9,
+        "hits": 10,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 2,
+        "atBats": 36,
+        "avg": "0.278"
       },
       {
         "name": "Drake Baldwin",
@@ -68,26 +88,6 @@
         "runs": 5,
         "atBats": 17,
         "avg": "0.235"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 8,
-        "hits": 8,
-        "homeRuns": 0,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 31,
-        "avg": "0.258"
-      },
-      {
-        "name": "Austin Riley",
-        "games": 8,
-        "hits": 6,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 31,
-        "avg": "0.194"
       }
     ],
     "gameResults": [
@@ -144,6 +144,13 @@
         "date": "6/27/2025",
         "result": "L",
         "score": "0-13",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "6/28/2025",
+        "result": "W",
+        "score": "6-1",
         "opponent": "Philadelphia Phillies",
         "homeAway": "vs"
       }
@@ -203,13 +210,18 @@
       {
         "opponent": "Philadelphia Phillies",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "6/27/2025",
             "result": "L",
             "score": "0-13"
+          },
+          {
+            "date": "6/28/2025",
+            "result": "W",
+            "score": "6-1"
           }
         ]
       }
