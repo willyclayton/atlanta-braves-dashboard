@@ -1,23 +1,35 @@
 {
-  "date": "2025-06-29",
-  "timestamp": "2025-06-29T09:14:17.199Z",
-  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Braves lost the series to the Miami Marlins (1-2), split the series with the New York Mets (2-2), and split the series with the Philadelphia Phillies (1-1).  \n<b>Highlights:</b> The Braves had a standout shutout victory against the Miami Marlins, winning 7-0, and a thrilling close win against the New York Mets, finishing 3-2. However, they also faced a tough loss, getting blown out 0-13 by the Philadelphia Phillies.  \n<b>Trend:</b> It was a challenging week overall for the Braves, struggling to find consistent momentum despite some bright spots in their performances.",
+  "date": "2025-06-30",
+  "timestamp": "2025-06-30T09:18:03.043Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Split series with the New York Mets (2-2) and lost series to the Philadelphia Phillies (1-2)  \n<b>Highlights:</b> The team had a thrilling 7-4 victory against the Mets, showcasing their offensive power. Nick Allen shined with a remarkable .409 batting average, collecting 9 hits throughout the week. Unfortunately, they also faced a tough 0-13 loss against the Phillies, marking a challenging moment in the series.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Phillies.",
   "weeklyStats": {
-    "dateRange": "2025-06-20 to 2025-06-28",
-    "record": "4-5",
-    "wins": 4,
-    "losses": 5,
-    "winPct": "0.444",
-    "totalGames": 9,
+    "dateRange": "2025-06-23 to 2025-06-29",
+    "record": "3-4",
+    "wins": 3,
+    "losses": 4,
+    "winPct": "0.429",
+    "totalGames": 7,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 9,
-        "inningsPitched": 3.2,
+        "appearances": 7,
+        "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 5,
-        "hits": 0,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 1,
+        "era": "0.00"
+      },
+      {
+        "name": "Raisel Iglesias",
+        "appearances": 7,
+        "inningsPitched": 2.4,
+        "earnedRuns": 0,
+        "strikeouts": 4,
+        "hits": 4,
         "wins": 0,
         "losses": 0,
         "saves": 1,
@@ -25,20 +37,8 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 9,
-        "inningsPitched": 2.2,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 2,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
-        "name": "Rafael Montero",
-        "appearances": 9,
-        "inningsPitched": 4,
+        "appearances": 7,
+        "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 0,
@@ -50,68 +50,47 @@
     ],
     "topBatters": [
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 9,
-        "hits": 10,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 9,
-        "atBats": 30,
-        "avg": "0.333"
-      },
-      {
-        "name": "Austin Riley",
-        "games": 9,
-        "hits": 8,
-        "homeRuns": 1,
-        "rbi": 5,
-        "runs": 3,
-        "atBats": 35,
-        "avg": "0.229"
-      },
-      {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 10,
+        "games": 7,
+        "hits": 11,
         "homeRuns": 0,
-        "rbi": 4,
+        "rbi": 3,
         "runs": 2,
-        "atBats": 36,
-        "avg": "0.278"
+        "atBats": 30,
+        "avg": "0.367"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 6,
+        "name": "Sean Murphy",
+        "games": 4,
         "hits": 4,
         "homeRuns": 2,
-        "rbi": 5,
-        "runs": 5,
-        "atBats": 17,
-        "avg": "0.235"
+        "rbi": 6,
+        "runs": 2,
+        "atBats": 13,
+        "avg": "0.308"
+      },
+      {
+        "name": "Nick Allen",
+        "games": 7,
+        "hits": 9,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 0,
+        "atBats": 22,
+        "avg": "0.409"
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "games": 7,
+        "hits": 5,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 3,
+        "atBats": 23,
+        "avg": "0.217"
       }
     ],
     "gameResults": [
-      {
-        "date": "6/20/2025",
-        "result": "L",
-        "score": "2-6",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/21/2025",
-        "result": "W",
-        "score": "7-0",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/22/2025",
-        "result": "L",
-        "score": "3-5",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
       {
         "date": "6/23/2025",
         "result": "W",
@@ -153,32 +132,16 @@
         "score": "6-1",
         "opponent": "Philadelphia Phillies",
         "homeAway": "vs"
+      },
+      {
+        "date": "6/29/2025",
+        "result": "L",
+        "score": "1-2",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Miami Marlins",
-        "homeAway": "@",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "6/20/2025",
-            "result": "L",
-            "score": "2-6"
-          },
-          {
-            "date": "6/21/2025",
-            "result": "W",
-            "score": "7-0"
-          },
-          {
-            "date": "6/22/2025",
-            "result": "L",
-            "score": "3-5"
-          }
-        ]
-      },
       {
         "opponent": "New York Mets",
         "homeAway": "@",
@@ -210,8 +173,8 @@
       {
         "opponent": "Philadelphia Phillies",
         "homeAway": "vs",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "6/27/2025",
@@ -222,6 +185,11 @@
             "date": "6/28/2025",
             "result": "W",
             "score": "6-1"
+          },
+          {
+            "date": "6/29/2025",
+            "result": "L",
+            "score": "1-2"
           }
         ]
       }
@@ -230,8 +198,9 @@
       "High-scoring W 7-4 @ New York Mets",
       "High-scoring L 3-7 @ New York Mets",
       "High-scoring L 0-13 vs Philadelphia Phillies",
-      "Shutout victory 7-0 @ Miami Marlins",
-      "Close W 3-2 @ New York Mets"
+      "Close W 3-2 @ New York Mets",
+      "Close L 1-2 vs Philadelphia Phillies",
+      "Nick Allen: 0.409 avg, 9 hits"
     ]
   }
 }
