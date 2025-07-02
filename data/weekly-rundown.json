@@ -1,31 +1,19 @@
 {
-  "date": "2025-07-01",
-  "timestamp": "2025-07-01T09:17:51.328Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Split series against the New York Mets (2-2) and lost series to the Philadelphia Phillies (1-2)  \n<b>Highlights:</b> The Braves had a high-scoring win of 7-4 against the Mets, while Nick Allen shined with a .409 batting average and 9 hits over the week. They also suffered a tough 0-13 loss to the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Phillies.",
+  "date": "2025-07-02",
+  "timestamp": "2025-07-02T09:17:31.985Z",
+  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Split series against the New York Mets (2-2) and lost series to the Philadelphia Phillies (1-2), also lost to the Los Angeles Angels (0-1).  \n<b>Highlights:</b> The Braves had a thrilling 7-4 victory over the Mets, showcasing their offensive power. Nick Allen shined with a .400 batting average and 10 hits throughout the week. However, they faced a tough loss against the Phillies, suffering a 0-13 defeat.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, particularly in their pitching and defense.",
   "weeklyStats": {
-    "dateRange": "2025-06-23 to 2025-06-29",
-    "record": "3-4",
+    "dateRange": "2025-06-23 to 2025-07-01",
+    "record": "3-5",
     "wins": 3,
-    "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
+    "losses": 5,
+    "winPct": "0.375",
+    "totalGames": 8,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Dylan Lee",
-        "appearances": 7,
-        "inningsPitched": 3.1,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 2,
-        "wins": 0,
-        "losses": 0,
-        "saves": 1,
-        "era": "0.00"
-      },
-      {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 2.4,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -37,10 +25,22 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 7,
-        "inningsPitched": 2,
+        "appearances": 8,
+        "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Rafael Montero",
+        "appearances": 8,
+        "inningsPitched": 3,
+        "earnedRuns": 0,
+        "strikeouts": 2,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 11,
+        "games": 8,
+        "hits": 12,
         "homeRuns": 0,
         "rbi": 3,
         "runs": 2,
-        "atBats": 30,
-        "avg": "0.367"
+        "atBats": 33,
+        "avg": "0.364"
       },
       {
         "name": "Sean Murphy",
-        "games": 4,
+        "games": 5,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 2,
-        "atBats": 13,
-        "avg": "0.308"
+        "atBats": 14,
+        "avg": "0.286"
       },
       {
         "name": "Nick Allen",
-        "games": 7,
-        "hits": 9,
+        "games": 8,
+        "hits": 10,
         "homeRuns": 0,
         "rbi": 2,
         "runs": 0,
-        "atBats": 22,
-        "avg": "0.409"
+        "atBats": 25,
+        "avg": "0.400"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 7,
-        "hits": 5,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 3,
-        "atBats": 23,
-        "avg": "0.217"
+        "name": "Austin Riley",
+        "games": 8,
+        "hits": 9,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 2,
+        "atBats": 30,
+        "avg": "0.300"
       }
     ],
     "gameResults": [
@@ -138,6 +138,13 @@
         "result": "L",
         "score": "1-2",
         "opponent": "Philadelphia Phillies",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/1/2025",
+        "result": "L",
+        "score": "0-4",
+        "opponent": "Los Angeles Angels",
         "homeAway": "vs"
       }
     ],
@@ -192,6 +199,19 @@
             "score": "1-2"
           }
         ]
+      },
+      {
+        "opponent": "Los Angeles Angels",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "7/1/2025",
+            "result": "L",
+            "score": "0-4"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -200,7 +220,7 @@
       "High-scoring L 0-13 vs Philadelphia Phillies",
       "Close W 3-2 @ New York Mets",
       "Close L 1-2 vs Philadelphia Phillies",
-      "Nick Allen: 0.409 avg, 9 hits"
+      "Nick Allen: 0.400 avg, 10 hits"
     ]
   }
 }
