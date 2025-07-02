@@ -1,42 +1,35 @@
 {
-  "date": "2025-07-01",
-  "timestamp": "2025-07-01T09:20:28.848Z",
-  "rundown": "<b>1-2</b> L vs Philadelphia Phillies  \n<b>Spencer Strider:</b> 7.0 innings, 2 earned runs, 5 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nSean Murphy (1 hits - 3 AB, 1 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB)  \n\nThe Braves fell short against the Philadelphia Phillies, managing only one run despite a solid performance from Spencer Strider on the mound. The loss was attributed to a lack of offensive production, as the team could not capitalize on their opportunities. \n\nKey highlights from the game include:  \n1. Spencer Strider pitched a strong 7 innings, allowing only 2 earned runs.  \n2. Sean Murphy hit a home run, providing the Braves' only run of the game.  \n3. Matt Olson contributed with 2 hits, but the team struggled to bring runners home.  \n4. The Braves were out-hit by the Phillies, who recorded 7 hits compared to Atlanta's 6.  \n5. The game was tightly contested, but the Braves could not overcome the deficit.",
+  "date": "2025-07-02",
+  "timestamp": "2025-07-02T09:20:22.951Z",
+  "rundown": "<b>0-4</b> L vs Los Angeles Angels  \n<b>Grant Holmes:</b> 6.0 innings, 0 earned runs, 3 hits, 0 HR, 10 strikeouts  \n<b>Batters:</b>  \nAustin Riley (3 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Los Angeles Angels with a score of 0-4, unable to capitalize on their opportunities at the plate despite a solid performance from their starting pitcher. \n\nKey highlights from the game include:  \n1. Grant Holmes delivered an impressive outing, striking out 10 batters and allowing no earned runs over 6 innings.  \n2. Austin Riley stood out offensively, collecting 3 hits, but the team could not convert those into runs.  \n3. The Braves managed a total of 7 hits but were unable to score, highlighting a lack of timely hitting.  \n4. The Angels capitalized on their chances, scoring 4 runs on 8 hits, sealing the victory.",
   "lastGame": {
-    "date": "2025-06-29T17:35:00Z",
-    "opponent": "Philadelphia Phillies",
+    "date": "2025-07-01T23:15:00Z",
+    "opponent": "Los Angeles Angels",
     "result": "L",
-    "score": "1-2",
+    "score": "0-4",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "7.0",
-      "earnedRuns": 2,
-      "hits": 5,
+      "name": "Grant Holmes",
+      "inningsPitched": "6.0",
+      "earnedRuns": 0,
+      "hits": 3,
       "homeRuns": 0,
-      "strikeOuts": 4
+      "strikeOuts": 10
     },
     "significantHitters": [
       {
-        "name": "Sean Murphy",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 2,
+        "name": "Austin Riley",
+        "hits": 3,
         "homeRuns": 0,
         "rbi": 0,
         "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 6,
-      "opponentRuns": 2,
-      "opponentHits": 7
+      "bravesRuns": 0,
+      "bravesHits": 7,
+      "opponentRuns": 4,
+      "opponentHits": 8
     }
   }
 }
