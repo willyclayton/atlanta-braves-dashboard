@@ -1,35 +1,63 @@
 {
-  "date": "2025-07-02",
-  "timestamp": "2025-07-02T09:20:22.951Z",
-  "rundown": "<b>0-4</b> L vs Los Angeles Angels  \n<b>Grant Holmes:</b> 6.0 innings, 0 earned runs, 3 hits, 0 HR, 10 strikeouts  \n<b>Batters:</b>  \nAustin Riley (3 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Los Angeles Angels with a score of 0-4, unable to capitalize on their opportunities at the plate despite a solid performance from their starting pitcher. \n\nKey highlights from the game include:  \n1. Grant Holmes delivered an impressive outing, striking out 10 batters and allowing no earned runs over 6 innings.  \n2. Austin Riley stood out offensively, collecting 3 hits, but the team could not convert those into runs.  \n3. The Braves managed a total of 7 hits but were unable to score, highlighting a lack of timely hitting.  \n4. The Angels capitalized on their chances, scoring 4 runs on 8 hits, sealing the victory.",
+  "date": "2025-07-03",
+  "timestamp": "2025-07-03T09:19:24.118Z",
+  "rundown": "<b>8-3</b> W vs Los Angeles Angels  \n<b>Didier Fuentes:</b> 3.2 innings, 2 earned runs, 4 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (3 hits - 4 AB, 1 HR, 4 RBI)  \nSean Murphy (1 hit - 3 AB, 1 HR, 3 RBI)  \nJurickson Profar (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Los Angeles Angels, showcasing a powerful offensive performance. Key highlights include Matt Olson's standout game with three hits, including a home run and four RBIs, which significantly contributed to the team's run total. Sean Murphy and Jurickson Profar also added to the offensive surge with their own home runs. The Braves' pitching, led by Didier Fuentes, managed to limit the Angels to three runs, solidifying the win. Overall, the combination of strong hitting and effective pitching led to the Braves' success in this matchup.",
   "lastGame": {
-    "date": "2025-07-01T23:15:00Z",
+    "date": "2025-07-02T23:15:00Z",
     "opponent": "Los Angeles Angels",
-    "result": "L",
-    "score": "0-4",
+    "result": "W",
+    "score": "8-3",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "6.0",
-      "earnedRuns": 0,
-      "hits": 3,
+      "name": "Didier Fuentes",
+      "inningsPitched": "3.2",
+      "earnedRuns": 2,
+      "hits": 4,
       "homeRuns": 0,
-      "strikeOuts": 10
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Austin Riley",
+        "name": "Matt Olson",
         "hits": 3,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 1
+      },
+      {
+        "name": "Sean Murphy",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 2
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 0,
-      "bravesHits": 7,
-      "opponentRuns": 4,
-      "opponentHits": 8
+      "bravesRuns": 8,
+      "bravesHits": 12,
+      "opponentRuns": 3,
+      "opponentHits": 7
     }
   }
 }
