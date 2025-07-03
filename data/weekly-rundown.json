@@ -1,19 +1,31 @@
 {
-  "date": "2025-07-02",
-  "timestamp": "2025-07-02T09:17:31.985Z",
-  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Split series against the New York Mets (2-2) and lost series to the Philadelphia Phillies (1-2), also lost to the Los Angeles Angels (0-1).  \n<b>Highlights:</b> The Braves had a thrilling 7-4 victory over the Mets, showcasing their offensive power. Nick Allen shined with a .400 batting average and 10 hits throughout the week. However, they faced a tough loss against the Phillies, suffering a 0-13 defeat.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, particularly in their pitching and defense.",
+  "date": "2025-07-03",
+  "timestamp": "2025-07-03T09:16:43.727Z",
+  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Split series with the New York Mets (2-2), lost series to the Philadelphia Phillies (1-2), split series with the Los Angeles Angels (1-1)  \n<b>Highlights:</b> The team had a thrilling 7-4 victory against the Mets, showcasing their offensive power. Matt Olson shined with 15 hits over the week, while Aaron Bummer and Raisel Iglesias both posted perfect ERAs, contributing significantly to the pitching staff.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Phillies, but they managed to end on a high note with a solid win against the Angels.",
   "weeklyStats": {
-    "dateRange": "2025-06-23 to 2025-07-01",
-    "record": "3-5",
-    "wins": 3,
+    "dateRange": "2025-06-23 to 2025-07-02",
+    "record": "4-5",
+    "wins": 4,
     "losses": 5,
-    "winPct": "0.375",
-    "totalGames": 8,
+    "winPct": "0.444",
+    "totalGames": 9,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
+        "name": "Aaron Bummer",
+        "appearances": 9,
+        "inningsPitched": 4.300000000000001,
+        "earnedRuns": 0,
+        "strikeouts": 5,
+        "hits": 3,
+        "wins": 1,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "Raisel Iglesias",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 2.4,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -25,22 +37,10 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
-        "name": "Rafael Montero",
-        "appearances": 8,
-        "inningsPitched": 3,
-        "earnedRuns": 0,
-        "strikeouts": 2,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 8,
-        "hits": 12,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 2,
-        "atBats": 33,
-        "avg": "0.364"
+        "games": 9,
+        "hits": 15,
+        "homeRuns": 1,
+        "rbi": 7,
+        "runs": 3,
+        "atBats": 38,
+        "avg": "0.395"
       },
       {
         "name": "Sean Murphy",
-        "games": 5,
-        "hits": 4,
-        "homeRuns": 2,
-        "rbi": 6,
-        "runs": 2,
-        "atBats": 14,
-        "avg": "0.286"
+        "games": 6,
+        "hits": 5,
+        "homeRuns": 3,
+        "rbi": 9,
+        "runs": 3,
+        "atBats": 18,
+        "avg": "0.278"
       },
       {
         "name": "Nick Allen",
-        "games": 8,
+        "games": 9,
         "hits": 10,
         "homeRuns": 0,
         "rbi": 2,
-        "runs": 0,
-        "atBats": 25,
-        "avg": "0.400"
+        "runs": 1,
+        "atBats": 28,
+        "avg": "0.357"
       },
       {
         "name": "Austin Riley",
-        "games": 8,
-        "hits": 9,
+        "games": 9,
+        "hits": 10,
         "homeRuns": 0,
         "rbi": 2,
         "runs": 2,
-        "atBats": 30,
-        "avg": "0.300"
+        "atBats": 35,
+        "avg": "0.286"
       }
     ],
     "gameResults": [
@@ -144,6 +144,13 @@
         "date": "7/1/2025",
         "result": "L",
         "score": "0-4",
+        "opponent": "Los Angeles Angels",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/2/2025",
+        "result": "W",
+        "score": "8-3",
         "opponent": "Los Angeles Angels",
         "homeAway": "vs"
       }
@@ -203,13 +210,18 @@
       {
         "opponent": "Los Angeles Angels",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/1/2025",
             "result": "L",
             "score": "0-4"
+          },
+          {
+            "date": "7/2/2025",
+            "result": "W",
+            "score": "8-3"
           }
         ]
       }
@@ -218,9 +230,9 @@
       "High-scoring W 7-4 @ New York Mets",
       "High-scoring L 3-7 @ New York Mets",
       "High-scoring L 0-13 vs Philadelphia Phillies",
+      "High-scoring W 8-3 vs Los Angeles Angels",
       "Close W 3-2 @ New York Mets",
-      "Close L 1-2 vs Philadelphia Phillies",
-      "Nick Allen: 0.400 avg, 10 hits"
+      "Close L 1-2 vs Philadelphia Phillies"
     ]
   }
 }
