@@ -1,48 +1,48 @@
 {
-  "date": "2025-07-03",
-  "timestamp": "2025-07-03T09:16:43.727Z",
-  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Split series with the New York Mets (2-2), lost series to the Philadelphia Phillies (1-2), split series with the Los Angeles Angels (1-1)  \n<b>Highlights:</b> The team had a thrilling 7-4 victory against the Mets, showcasing their offensive power. Matt Olson shined with 15 hits over the week, while Aaron Bummer and Raisel Iglesias both posted perfect ERAs, contributing significantly to the pitching staff.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Phillies, but they managed to end on a high note with a solid win against the Angels.",
+  "date": "2025-07-04",
+  "timestamp": "2025-07-04T09:16:01.462Z",
+  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2)  \n<b>Highlights:</b> Sean Murphy had a standout week with 3 home runs and 8 RBIs, while Grant Holmes showcased his skills with a perfect 0.00 ERA and 10 strikeouts over 6 innings. The team had a notable offensive explosion in their 8-3 victory against the Angels.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping both series.",
   "weeklyStats": {
-    "dateRange": "2025-06-23 to 2025-07-02",
-    "record": "4-5",
-    "wins": 4,
-    "losses": 5,
-    "winPct": "0.444",
-    "totalGames": 9,
+    "dateRange": "2025-06-27 to 2025-07-03",
+    "record": "2-4",
+    "wins": 2,
+    "losses": 4,
+    "winPct": "0.333",
+    "totalGames": 6,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Aaron Bummer",
-        "appearances": 9,
-        "inningsPitched": 4.300000000000001,
+        "name": "Grant Holmes",
+        "appearances": 6,
+        "inningsPitched": 6,
         "earnedRuns": 0,
-        "strikeouts": 5,
+        "strikeouts": 10,
         "hits": 3,
-        "wins": 1,
+        "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 2.4,
+        "appearances": 6,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 4,
+        "strikeouts": 6,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
-        "saves": 1,
+        "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Pierce Johnson",
-        "appearances": 9,
-        "inningsPitched": 3,
+        "name": "Aaron Bummer",
+        "appearances": 6,
+        "inningsPitched": 2.1,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 0,
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
@@ -50,75 +50,47 @@
     ],
     "topBatters": [
       {
-        "name": "Matt Olson",
-        "games": 9,
-        "hits": 15,
-        "homeRuns": 1,
-        "rbi": 7,
-        "runs": 3,
-        "atBats": 38,
-        "avg": "0.395"
-      },
-      {
         "name": "Sean Murphy",
-        "games": 6,
+        "games": 5,
         "hits": 5,
         "homeRuns": 3,
-        "rbi": 9,
+        "rbi": 8,
         "runs": 3,
-        "atBats": 18,
-        "avg": "0.278"
+        "atBats": 17,
+        "avg": "0.294"
       },
       {
-        "name": "Nick Allen",
-        "games": 9,
+        "name": "Matt Olson",
+        "games": 6,
         "hits": 10,
-        "homeRuns": 0,
-        "rbi": 2,
+        "homeRuns": 1,
+        "rbi": 4,
         "runs": 1,
-        "atBats": 28,
-        "avg": "0.357"
+        "atBats": 26,
+        "avg": "0.385"
+      },
+      {
+        "name": "Jurickson Profar",
+        "games": 2,
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 2,
+        "runs": 3,
+        "atBats": 8,
+        "avg": "0.375"
       },
       {
         "name": "Austin Riley",
-        "games": 9,
-        "hits": 10,
+        "games": 6,
+        "hits": 7,
         "homeRuns": 0,
-        "rbi": 2,
-        "runs": 2,
-        "atBats": 35,
-        "avg": "0.286"
+        "rbi": 1,
+        "runs": 1,
+        "atBats": 24,
+        "avg": "0.292"
       }
     ],
     "gameResults": [
-      {
-        "date": "6/23/2025",
-        "result": "W",
-        "score": "3-2",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/24/2025",
-        "result": "W",
-        "score": "7-4",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/25/2025",
-        "result": "L",
-        "score": "3-7",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
-      {
-        "date": "6/26/2025",
-        "result": "L",
-        "score": "0-4",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
       {
         "date": "6/27/2025",
         "result": "L",
@@ -153,37 +125,16 @@
         "score": "8-3",
         "opponent": "Los Angeles Angels",
         "homeAway": "vs"
+      },
+      {
+        "date": "7/3/2025",
+        "result": "L",
+        "score": "1-5",
+        "opponent": "Los Angeles Angels",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "New York Mets",
-        "homeAway": "@",
-        "record": "2-2",
-        "outcome": "split series",
-        "games": [
-          {
-            "date": "6/23/2025",
-            "result": "W",
-            "score": "3-2"
-          },
-          {
-            "date": "6/24/2025",
-            "result": "W",
-            "score": "7-4"
-          },
-          {
-            "date": "6/25/2025",
-            "result": "L",
-            "score": "3-7"
-          },
-          {
-            "date": "6/26/2025",
-            "result": "L",
-            "score": "0-4"
-          }
-        ]
-      },
       {
         "opponent": "Philadelphia Phillies",
         "homeAway": "vs",
@@ -210,8 +161,8 @@
       {
         "opponent": "Los Angeles Angels",
         "homeAway": "vs",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "7/1/2025",
@@ -222,17 +173,21 @@
             "date": "7/2/2025",
             "result": "W",
             "score": "8-3"
+          },
+          {
+            "date": "7/3/2025",
+            "result": "L",
+            "score": "1-5"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 7-4 @ New York Mets",
-      "High-scoring L 3-7 @ New York Mets",
       "High-scoring L 0-13 vs Philadelphia Phillies",
       "High-scoring W 8-3 vs Los Angeles Angels",
-      "Close W 3-2 @ New York Mets",
-      "Close L 1-2 vs Philadelphia Phillies"
+      "Close L 1-2 vs Philadelphia Phillies",
+      "Sean Murphy: 3 HRs in the week",
+      "Grant Holmes: 0.00 ERA, 10 strikeouts"
     ]
   }
 }
