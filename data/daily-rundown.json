@@ -1,63 +1,35 @@
 {
-  "date": "2025-07-03",
-  "timestamp": "2025-07-03T09:19:24.118Z",
-  "rundown": "<b>8-3</b> W vs Los Angeles Angels  \n<b>Didier Fuentes:</b> 3.2 innings, 2 earned runs, 4 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (3 hits - 4 AB, 1 HR, 4 RBI)  \nSean Murphy (1 hit - 3 AB, 1 HR, 3 RBI)  \nJurickson Profar (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Los Angeles Angels, showcasing a powerful offensive performance. Key highlights include Matt Olson's standout game with three hits, including a home run and four RBIs, which significantly contributed to the team's run total. Sean Murphy and Jurickson Profar also added to the offensive surge with their own home runs. The Braves' pitching, led by Didier Fuentes, managed to limit the Angels to three runs, solidifying the win. Overall, the combination of strong hitting and effective pitching led to the Braves' success in this matchup.",
+  "date": "2025-07-04",
+  "timestamp": "2025-07-04T09:19:03.390Z",
+  "rundown": "<b>1-5</b> L vs Los Angeles Angels  \n<b>Bryce Elder:</b> 5.0 innings, 4 earned runs, 8 hits, 2 HR, 5 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Los Angeles Angels with a final score of 1-5. The loss was primarily due to a rough outing from starting pitcher Bryce Elder, who allowed 4 earned runs over 5 innings. The Braves struggled to capitalize on their opportunities, managing only 1 run despite 5 hits.\n\nKey highlights from the game include:\n1. Jurickson Profar hit a solo home run, providing the Braves' only run of the game.\n2. The Angels' offense was strong, racking up 11 hits and scoring 5 runs.\n3. Bryce Elder struck out 5 batters but was hurt by giving up 2 home runs.",
   "lastGame": {
-    "date": "2025-07-02T23:15:00Z",
+    "date": "2025-07-03T23:15:00Z",
     "opponent": "Los Angeles Angels",
-    "result": "W",
-    "score": "8-3",
+    "result": "L",
+    "score": "1-5",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Didier Fuentes",
-      "inningsPitched": "3.2",
-      "earnedRuns": 2,
-      "hits": 4,
-      "homeRuns": 0,
-      "strikeOuts": 6
+      "name": "Bryce Elder",
+      "inningsPitched": "5.0",
+      "earnedRuns": 4,
+      "hits": 8,
+      "homeRuns": 2,
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 3,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1
-      },
-      {
-        "name": "Sean Murphy",
+        "name": "Jurickson Profar",
         "hits": 1,
         "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 1,
         "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 8,
-      "bravesHits": 12,
-      "opponentRuns": 3,
-      "opponentHits": 7
+      "bravesRuns": 1,
+      "bravesHits": 5,
+      "opponentRuns": 5,
+      "opponentHits": 11
     }
   }
 }
