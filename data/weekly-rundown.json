@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-04",
-  "timestamp": "2025-07-04T09:16:01.462Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2)  \n<b>Highlights:</b> Sean Murphy had a standout week with 3 home runs and 8 RBIs, while Grant Holmes showcased his skills with a perfect 0.00 ERA and 10 strikeouts over 6 innings. The team had a notable offensive explosion in their 8-3 victory against the Angels.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping both series.",
+  "date": "2025-07-05",
+  "timestamp": "2025-07-05T09:14:16.572Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2), Lost game to Baltimore Orioles (0-1)  \n<b>Highlights:</b> Sean Murphy had an impressive week with 3 home runs and 8 RBIs, while Grant Holmes showcased a pitching clinic with a 0.00 ERA and 10 strikeouts over 6 innings. The team also had a notable offensive explosion in their 8-3 victory against the Angels.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping multiple close games.",
   "weeklyStats": {
-    "dateRange": "2025-06-27 to 2025-07-03",
-    "record": "2-4",
+    "dateRange": "2025-06-27 to 2025-07-04",
+    "record": "2-5",
     "wins": 2,
-    "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
+    "losses": 5,
+    "winPct": "0.286",
+    "totalGames": 7,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Grant Holmes",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 10,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 6,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Aaron Bummer",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 2.1,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -61,33 +61,33 @@
       },
       {
         "name": "Matt Olson",
-        "games": 6,
+        "games": 7,
         "hits": 10,
         "homeRuns": 1,
         "rbi": 4,
         "runs": 1,
-        "atBats": 26,
-        "avg": "0.385"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 2,
-        "hits": 3,
-        "homeRuns": 2,
-        "rbi": 2,
-        "runs": 3,
-        "atBats": 8,
-        "avg": "0.375"
+        "atBats": 30,
+        "avg": "0.333"
       },
       {
         "name": "Austin Riley",
-        "games": 6,
-        "hits": 7,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1,
-        "atBats": 24,
-        "avg": "0.292"
+        "atBats": 28,
+        "avg": "0.321"
+      },
+      {
+        "name": "Jurickson Profar",
+        "games": 3,
+        "hits": 4,
+        "homeRuns": 2,
+        "rbi": 2,
+        "runs": 4,
+        "atBats": 12,
+        "avg": "0.333"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "1-5",
         "opponent": "Los Angeles Angels",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/4/2025",
+        "result": "L",
+        "score": "2-3",
+        "opponent": "Baltimore Orioles",
         "homeAway": "vs"
       }
     ],
@@ -180,12 +187,26 @@
             "score": "1-5"
           }
         ]
+      },
+      {
+        "opponent": "Baltimore Orioles",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "7/4/2025",
+            "result": "L",
+            "score": "2-3"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring L 0-13 vs Philadelphia Phillies",
       "High-scoring W 8-3 vs Los Angeles Angels",
       "Close L 1-2 vs Philadelphia Phillies",
+      "Close L 2-3 vs Baltimore Orioles",
       "Sean Murphy: 3 HRs in the week",
       "Grant Holmes: 0.00 ERA, 10 strikeouts"
     ]
