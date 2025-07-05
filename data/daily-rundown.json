@@ -1,35 +1,42 @@
 {
-  "date": "2025-07-04",
-  "timestamp": "2025-07-04T09:19:03.390Z",
-  "rundown": "<b>1-5</b> L vs Los Angeles Angels  \n<b>Bryce Elder:</b> 5.0 innings, 4 earned runs, 8 hits, 2 HR, 5 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Los Angeles Angels with a final score of 1-5. The loss was primarily due to a rough outing from starting pitcher Bryce Elder, who allowed 4 earned runs over 5 innings. The Braves struggled to capitalize on their opportunities, managing only 1 run despite 5 hits.\n\nKey highlights from the game include:\n1. Jurickson Profar hit a solo home run, providing the Braves' only run of the game.\n2. The Angels' offense was strong, racking up 11 hits and scoring 5 runs.\n3. Bryce Elder struck out 5 batters but was hurt by giving up 2 home runs.",
+  "date": "2025-07-05",
+  "timestamp": "2025-07-05T09:16:41.208Z",
+  "rundown": "<b>2-3</b> L vs Baltimore Orioles  \n<b>Spencer Strider:</b> 6.0 innings, 3 earned runs, 7 hits, 2 HR, 6 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 4 AB, 1 HR, 2 RBI)  \nAustin Riley (2 hits - 3 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the Baltimore Orioles, losing 2-3. Despite a strong performance from Spencer Strider on the mound, who struck out 6 batters, the team could not overcome the early deficit. \n\nKey highlights include:\n1. Drake Baldwin hit a home run and drove in 2 runs, contributing significantly to the Braves' offense.\n2. Austin Riley had a solid game with 2 hits, but it wasn't enough to secure a win.\n3. The Braves managed only 6 hits compared to the Orioles' 7, highlighting a struggle to capitalize on scoring opportunities.",
   "lastGame": {
-    "date": "2025-07-03T23:15:00Z",
-    "opponent": "Los Angeles Angels",
+    "date": "2025-07-04T23:15:00Z",
+    "opponent": "Baltimore Orioles",
     "result": "L",
-    "score": "1-5",
+    "score": "2-3",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "5.0",
-      "earnedRuns": 4,
-      "hits": 8,
+      "name": "Spencer Strider",
+      "inningsPitched": "6.0",
+      "earnedRuns": 3,
+      "hits": 7,
       "homeRuns": 2,
-      "strikeOuts": 5
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
+        "name": "Drake Baldwin",
         "hits": 1,
         "homeRuns": 1,
-        "rbi": 1,
+        "rbi": 2,
         "runs": 1
+      },
+      {
+        "name": "Austin Riley",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 5,
-      "opponentRuns": 5,
-      "opponentHits": 11
+      "bravesRuns": 2,
+      "bravesHits": 6,
+      "opponentRuns": 3,
+      "opponentHits": 7
     }
   }
 }
