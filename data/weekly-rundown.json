@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-05",
-  "timestamp": "2025-07-05T09:14:16.572Z",
-  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2), Lost game to Baltimore Orioles (0-1)  \n<b>Highlights:</b> Sean Murphy had an impressive week with 3 home runs and 8 RBIs, while Grant Holmes showcased a pitching clinic with a 0.00 ERA and 10 strikeouts over 6 innings. The team also had a notable offensive explosion in their 8-3 victory against the Angels.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping multiple close games.",
+  "date": "2025-07-06",
+  "timestamp": "2025-07-06T09:13:53.030Z",
+  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2), Lost series to Baltimore Orioles (0-2)  \n<b>Highlights:</b> Sean Murphy had a standout week with 3 home runs, including a key performance in the 8-3 victory over the Angels. Grant Holmes and Raisel Iglesias both showcased impressive pitching with 0.00 ERAs over their appearances.  \n<b>Trend:</b> The team is struggling with 3 straight losses, unable to find consistent momentum despite some individual brilliance.",
   "weeklyStats": {
-    "dateRange": "2025-06-27 to 2025-07-04",
-    "record": "2-5",
+    "dateRange": "2025-06-27 to 2025-07-05",
+    "record": "2-6",
     "wins": 2,
-    "losses": 5,
-    "winPct": "0.286",
-    "totalGames": 7,
-    "momentum": "challenging week overall",
+    "losses": 6,
+    "winPct": "0.250",
+    "totalGames": 8,
+    "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
         "name": "Grant Holmes",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 10,
@@ -25,10 +25,10 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
-        "inningsPitched": 3,
+        "appearances": 8,
+        "inningsPitched": 4,
         "earnedRuns": 0,
-        "strikeouts": 6,
+        "strikeouts": 7,
         "hits": 2,
         "wins": 0,
         "losses": 0,
@@ -36,13 +36,13 @@
         "era": "0.00"
       },
       {
-        "name": "Aaron Bummer",
-        "appearances": 7,
-        "inningsPitched": 2.1,
+        "name": "Daysbel Hernández",
+        "appearances": 4,
+        "inningsPitched": 2.2,
         "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 0,
-        "wins": 1,
+        "strikeouts": 5,
+        "hits": 1,
+        "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
@@ -50,44 +50,44 @@
     ],
     "topBatters": [
       {
+        "name": "Matt Olson",
+        "games": 8,
+        "hits": 13,
+        "homeRuns": 2,
+        "rbi": 6,
+        "runs": 3,
+        "atBats": 33,
+        "avg": "0.394"
+      },
+      {
         "name": "Sean Murphy",
-        "games": 5,
+        "games": 6,
         "hits": 5,
         "homeRuns": 3,
         "rbi": 8,
         "runs": 3,
-        "atBats": 17,
-        "avg": "0.294"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 7,
-        "hits": 10,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1,
-        "atBats": 30,
-        "avg": "0.333"
+        "atBats": 18,
+        "avg": "0.278"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
-        "hits": 9,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1,
-        "atBats": 28,
-        "avg": "0.321"
+        "games": 8,
+        "hits": 11,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 2,
+        "atBats": 33,
+        "avg": "0.333"
       },
       {
         "name": "Jurickson Profar",
-        "games": 3,
+        "games": 4,
         "hits": 4,
         "homeRuns": 2,
-        "rbi": 2,
+        "rbi": 3,
         "runs": 4,
-        "atBats": 12,
-        "avg": "0.333"
+        "atBats": 17,
+        "avg": "0.235"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "7/4/2025",
         "result": "L",
         "score": "2-3",
+        "opponent": "Baltimore Orioles",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/5/2025",
+        "result": "L",
+        "score": "6-9",
         "opponent": "Baltimore Orioles",
         "homeAway": "vs"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Baltimore Orioles",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "0-2",
+        "outcome": "losing series",
         "games": [
           {
             "date": "7/4/2025",
             "result": "L",
             "score": "2-3"
+          },
+          {
+            "date": "7/5/2025",
+            "result": "L",
+            "score": "6-9"
           }
         ]
       }
@@ -205,10 +217,10 @@
     "highlights": [
       "High-scoring L 0-13 vs Philadelphia Phillies",
       "High-scoring W 8-3 vs Los Angeles Angels",
+      "High-scoring L 6-9 vs Baltimore Orioles",
       "Close L 1-2 vs Philadelphia Phillies",
       "Close L 2-3 vs Baltimore Orioles",
-      "Sean Murphy: 3 HRs in the week",
-      "Grant Holmes: 0.00 ERA, 10 strikeouts"
+      "Sean Murphy: 3 HRs in the week"
     ]
   }
 }
