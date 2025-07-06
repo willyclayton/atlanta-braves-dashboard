@@ -1,31 +1,45 @@
 {
-  "date": "2025-07-05",
-  "timestamp": "2025-07-05T09:16:41.208Z",
-  "rundown": "<b>2-3</b> L vs Baltimore Orioles  \n<b>Spencer Strider:</b> 6.0 innings, 3 earned runs, 7 hits, 2 HR, 6 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 4 AB, 1 HR, 2 RBI)  \nAustin Riley (2 hits - 3 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the Baltimore Orioles, losing 2-3. Despite a strong performance from Spencer Strider on the mound, who struck out 6 batters, the team could not overcome the early deficit. \n\nKey highlights include:\n1. Drake Baldwin hit a home run and drove in 2 runs, contributing significantly to the Braves' offense.\n2. Austin Riley had a solid game with 2 hits, but it wasn't enough to secure a win.\n3. The Braves managed only 6 hits compared to the Orioles' 7, highlighting a struggle to capitalize on scoring opportunities.",
+  "date": "2025-07-06",
+  "timestamp": "2025-07-06T09:16:39.293Z",
+  "rundown": "<b>6-9</b> L vs Baltimore Orioles  \n<b>Dylan Dodd:</b> 2.2 innings, 2 earned runs, 2 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nAustin Riley (2 hits - 4 AB, 1 HR, 3 RBI)  \nMatt Olson (3 hits - 5 AB, 1 HR, 2 RBI)  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Baltimore Orioles in a high-scoring affair, unable to overcome a late-game surge from their opponents. Despite out-hitting the Orioles, the Braves' pitching struggled to contain the offense. \n\nKey highlights include:\n1. Austin Riley and Matt Olson both contributed significantly with home runs and multiple RBIs.\n2. The Braves managed 10 hits but could not capitalize on their scoring opportunities.\n3. Dylan Dodd's early exit after 2.2 innings put pressure on the bullpen, which ultimately could not hold the lead.",
   "lastGame": {
-    "date": "2025-07-04T23:15:00Z",
+    "date": "2025-07-05T20:10:00Z",
     "opponent": "Baltimore Orioles",
     "result": "L",
-    "score": "2-3",
+    "score": "6-9",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "6.0",
-      "earnedRuns": 3,
-      "hits": 7,
-      "homeRuns": 2,
-      "strikeOuts": 6
+      "name": "Dylan Dodd",
+      "inningsPitched": "2.2",
+      "earnedRuns": 2,
+      "hits": 2,
+      "homeRuns": 1,
+      "strikeOuts": 1
     },
     "significantHitters": [
       {
-        "name": "Drake Baldwin",
-        "hits": 1,
+        "name": "Austin Riley",
+        "hits": 2,
         "homeRuns": 1,
-        "rbi": 2,
+        "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Austin Riley",
+        "name": "Matt Olson",
+        "hits": 3,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Nick Allen",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 2
+      },
+      {
+        "name": "Drake Baldwin",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -33,10 +47,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 6,
-      "opponentRuns": 3,
-      "opponentHits": 7
+      "bravesRuns": 6,
+      "bravesHits": 10,
+      "opponentRuns": 9,
+      "opponentHits": 8
     }
   }
 }
