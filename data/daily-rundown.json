@@ -1,45 +1,38 @@
 {
-  "date": "2025-07-06",
-  "timestamp": "2025-07-06T09:16:39.293Z",
-  "rundown": "<b>6-9</b> L vs Baltimore Orioles  \n<b>Dylan Dodd:</b> 2.2 innings, 2 earned runs, 2 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nAustin Riley (2 hits - 4 AB, 1 HR, 3 RBI)  \nMatt Olson (3 hits - 5 AB, 1 HR, 2 RBI)  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Baltimore Orioles in a high-scoring affair, unable to overcome a late-game surge from their opponents. Despite out-hitting the Orioles, the Braves' pitching struggled to contain the offense. \n\nKey highlights include:\n1. Austin Riley and Matt Olson both contributed significantly with home runs and multiple RBIs.\n2. The Braves managed 10 hits but could not capitalize on their scoring opportunities.\n3. Dylan Dodd's early exit after 2.2 innings put pressure on the bullpen, which ultimately could not hold the lead.",
+  "date": "2025-07-07",
+  "timestamp": "2025-07-07T09:20:59.406Z",
+  "rundown": "<b>1-2</b> L vs Baltimore Orioles  \n<b>Grant Holmes:</b> 6.0 innings, 2 earned runs, 4 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nSean Murphy (2 hits - 4 AB, 1 HR, 1 RBI)  \nJurickson Profar (2 hits - 4 AB)  \nStuart Fairchild (2 hits - 3 AB)  \n\nThe Braves fell short against the Baltimore Orioles, managing only one run despite a solid offensive effort. Key highlights include Sean Murphy's home run, which accounted for the Braves' only run, and a strong performance from Grant Holmes on the mound, who struck out five batters. The Braves out-hit the Orioles 7 to 6 but could not capitalize on their opportunities, leading to the narrow defeat.",
   "lastGame": {
-    "date": "2025-07-05T20:10:00Z",
+    "date": "2025-07-06T15:35:00Z",
     "opponent": "Baltimore Orioles",
     "result": "L",
-    "score": "6-9",
+    "score": "1-2",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Dylan Dodd",
-      "inningsPitched": "2.2",
+      "name": "Grant Holmes",
+      "inningsPitched": "6.0",
       "earnedRuns": 2,
-      "hits": 2,
+      "hits": 4,
       "homeRuns": 1,
-      "strikeOuts": 1
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Austin Riley",
+        "name": "Sean Murphy",
         "hits": 2,
         "homeRuns": 1,
-        "rbi": 3,
+        "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Matt Olson",
-        "hits": 3,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Nick Allen",
+        "name": "Jurickson Profar",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 2
+        "runs": 0
       },
       {
-        "name": "Drake Baldwin",
+        "name": "Stuart Fairchild",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -47,10 +40,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 6,
-      "bravesHits": 10,
-      "opponentRuns": 9,
-      "opponentHits": 8
+      "bravesRuns": 1,
+      "bravesHits": 7,
+      "opponentRuns": 2,
+      "opponentHits": 6
     }
   }
 }
