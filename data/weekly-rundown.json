@@ -1,35 +1,23 @@
 {
-  "date": "2025-07-06",
-  "timestamp": "2025-07-06T09:13:53.030Z",
-  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-2), Lost series to Los Angeles Angels (1-2), Lost series to Baltimore Orioles (0-2)  \n<b>Highlights:</b> Sean Murphy had a standout week with 3 home runs, including a key performance in the 8-3 victory over the Angels. Grant Holmes and Raisel Iglesias both showcased impressive pitching with 0.00 ERAs over their appearances.  \n<b>Trend:</b> The team is struggling with 3 straight losses, unable to find consistent momentum despite some individual brilliance.",
+  "date": "2025-07-07",
+  "timestamp": "2025-07-07T09:18:19.273Z",
+  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to Los Angeles Angels (1-2), lost series to Baltimore Orioles (0-3)  \n<b>Highlights:</b> High-scoring win 8-3 against the Angels, Matt Olson's standout performance with 2 home runs and 6 RBIs, and a nail-biting 2-3 loss to the Orioles.  \n<b>Trend:</b> Struggling with 3 straight losses, the team is looking to regain momentum after a tough week.",
   "weeklyStats": {
-    "dateRange": "2025-06-27 to 2025-07-05",
-    "record": "2-6",
-    "wins": 2,
-    "losses": 6,
-    "winPct": "0.250",
-    "totalGames": 8,
+    "dateRange": "2025-07-01 to 2025-07-06",
+    "record": "1-5",
+    "wins": 1,
+    "losses": 5,
+    "winPct": "0.167",
+    "totalGames": 6,
     "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
-        "name": "Grant Holmes",
-        "appearances": 8,
-        "inningsPitched": 6,
-        "earnedRuns": 0,
-        "strikeouts": 10,
-        "hits": 3,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Raisel Iglesias",
-        "appearances": 8,
-        "inningsPitched": 4,
+        "appearances": 6,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 7,
-        "hits": 2,
+        "strikeouts": 6,
+        "hits": 1,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -37,11 +25,23 @@
       },
       {
         "name": "Daysbel Hernández",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 5,
         "hits": 1,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Pierce Johnson",
+        "appearances": 6,
+        "inningsPitched": 3.1,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -51,67 +51,46 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 8,
-        "hits": 13,
+        "games": 6,
+        "hits": 8,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 3,
-        "atBats": 33,
-        "avg": "0.394"
-      },
-      {
-        "name": "Sean Murphy",
-        "games": 6,
-        "hits": 5,
-        "homeRuns": 3,
-        "rbi": 8,
-        "runs": 3,
-        "atBats": 18,
-        "avg": "0.278"
+        "atBats": 23,
+        "avg": "0.348"
       },
       {
         "name": "Austin Riley",
-        "games": 8,
-        "hits": 11,
+        "games": 6,
+        "hits": 8,
         "homeRuns": 1,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 33,
-        "avg": "0.333"
+        "rbi": 3,
+        "runs": 1,
+        "atBats": 25,
+        "avg": "0.320"
       },
       {
         "name": "Jurickson Profar",
-        "games": 4,
-        "hits": 4,
+        "games": 5,
+        "hits": 6,
         "homeRuns": 2,
         "rbi": 3,
         "runs": 4,
-        "atBats": 17,
-        "avg": "0.235"
+        "atBats": 21,
+        "avg": "0.286"
+      },
+      {
+        "name": "Sean Murphy",
+        "games": 5,
+        "hits": 4,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 2,
+        "atBats": 14,
+        "avg": "0.286"
       }
     ],
     "gameResults": [
-      {
-        "date": "6/27/2025",
-        "result": "L",
-        "score": "0-13",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "vs"
-      },
-      {
-        "date": "6/28/2025",
-        "result": "W",
-        "score": "6-1",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "vs"
-      },
-      {
-        "date": "6/29/2025",
-        "result": "L",
-        "score": "1-2",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "vs"
-      },
       {
         "date": "7/1/2025",
         "result": "L",
@@ -146,32 +125,16 @@
         "score": "6-9",
         "opponent": "Baltimore Orioles",
         "homeAway": "vs"
+      },
+      {
+        "date": "7/6/2025",
+        "result": "L",
+        "score": "1-2",
+        "opponent": "Baltimore Orioles",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "vs",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "6/27/2025",
-            "result": "L",
-            "score": "0-13"
-          },
-          {
-            "date": "6/28/2025",
-            "result": "W",
-            "score": "6-1"
-          },
-          {
-            "date": "6/29/2025",
-            "result": "L",
-            "score": "1-2"
-          }
-        ]
-      },
       {
         "opponent": "Los Angeles Angels",
         "homeAway": "vs",
@@ -198,8 +161,8 @@
       {
         "opponent": "Baltimore Orioles",
         "homeAway": "vs",
-        "record": "0-2",
-        "outcome": "losing series",
+        "record": "0-3",
+        "outcome": "lost series",
         "games": [
           {
             "date": "7/4/2025",
@@ -210,17 +173,20 @@
             "date": "7/5/2025",
             "result": "L",
             "score": "6-9"
+          },
+          {
+            "date": "7/6/2025",
+            "result": "L",
+            "score": "1-2"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring L 0-13 vs Philadelphia Phillies",
       "High-scoring W 8-3 vs Los Angeles Angels",
       "High-scoring L 6-9 vs Baltimore Orioles",
-      "Close L 1-2 vs Philadelphia Phillies",
       "Close L 2-3 vs Baltimore Orioles",
-      "Sean Murphy: 3 HRs in the week"
+      "Close L 1-2 vs Baltimore Orioles"
     ]
   }
 }
