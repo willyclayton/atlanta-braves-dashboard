@@ -1,49 +1,35 @@
 {
-  "date": "2025-07-08",
-  "timestamp": "2025-07-08T09:20:07.212Z",
-  "rundown": "<b>1-2</b> L vs Baltimore Orioles  \n<b>Grant Holmes:</b> 6.0 innings, 2 earned runs, 4 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nSean Murphy (2 hits - 4 AB, 1 HR, 1 RBI)  \nJurickson Profar (2 hits - 4 AB)  \nStuart Fairchild (2 hits - 3 AB)  \n\nThe Braves fell short against the Baltimore Orioles, managing only one run despite a solid performance from their starting pitcher. Key highlights include Sean Murphy's home run, which accounted for the Braves' only run, and a strong showing at the plate from Jurickson Profar and Stuart Fairchild, each contributing two hits. The Braves' inability to capitalize on their seven hits ultimately led to their defeat.",
+  "date": "2025-07-09",
+  "timestamp": "2025-07-09T09:20:29.593Z",
+  "rundown": "<b>1-10</b> L @ Athletics  \n<b>Jesse Chavez:</b> 3.0 innings, 2 earned runs, 4 hits, 2 HR, 4 strikeouts  \n<b>Batters:</b>  \nEli White (1 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves suffered a tough loss against the Athletics, managing only one run while allowing ten. The game was marked by a lack of offensive production and struggles on the mound. \n\nKey highlights include:\n1. Jesse Chavez gave up two home runs in his three innings of work, contributing to the team's struggles.\n2. Eli White provided the lone bright spot for the Braves with a home run and an RBI.\n3. The Braves were out-hit 10 to 6, indicating a significant gap in offensive performance.",
   "lastGame": {
-    "date": "2025-07-06T15:35:00Z",
-    "opponent": "Baltimore Orioles",
+    "date": "2025-07-09T02:05:00Z",
+    "opponent": "Athletics",
     "result": "L",
-    "score": "1-2",
-    "homeAway": "vs",
+    "score": "1-10",
+    "homeAway": "@",
     "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "6.0",
+      "name": "Jesse Chavez",
+      "inningsPitched": "3.0",
       "earnedRuns": 2,
       "hits": 4,
-      "homeRuns": 1,
-      "strikeOuts": 5
+      "homeRuns": 2,
+      "strikeOuts": 4
     },
     "significantHitters": [
       {
-        "name": "Sean Murphy",
-        "hits": 2,
+        "name": "Eli White",
+        "hits": 1,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 1
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
-      },
-      {
-        "name": "Stuart Fairchild",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
       }
     ],
     "teamStats": {
       "bravesRuns": 1,
-      "bravesHits": 7,
-      "opponentRuns": 2,
-      "opponentHits": 6
+      "bravesHits": 6,
+      "opponentRuns": 10,
+      "opponentHits": 10
     }
   }
 }
