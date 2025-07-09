@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-08",
-  "timestamp": "2025-07-08T09:17:16.747Z",
-  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to Los Angeles Angels (1-2) and lost series to Baltimore Orioles (0-3)  \n<b>Highlights:</b> The Braves had a high-scoring win against the Angels, taking the game 8-3. Matt Olson shined with 2 home runs and 6 RBIs over the week. Despite the struggles, they kept it close in several games against the Orioles, including a nail-biting 2-3 loss.  \n<b>Trend:</b> The team is struggling with 3 straight losses, looking to regain momentum after a tough week.",
+  "date": "2025-07-09",
+  "timestamp": "2025-07-09T09:17:34.055Z",
+  "rundown": "<b>Record:</b> 1-6 (0.143)  \n<b>Series:</b> Lost series to Los Angeles Angels (1-2), lost series to Baltimore Orioles (0-3), lost game to Athletics (0-1)  \n<b>Highlights:</b> The Braves had a high-scoring win against the Los Angeles Angels, taking the game 8-3. Matt Olson shined with 9 hits and 2 home runs throughout the week. Despite the struggles, they kept it close in several games, including a narrow 2-3 loss to the Orioles.  \n<b>Trend:</b> The team is struggling with 3 straight losses, unable to find consistent momentum as they faced tough competition.",
   "weeklyStats": {
-    "dateRange": "2025-07-01 to 2025-07-06",
-    "record": "1-5",
+    "dateRange": "2025-07-01 to 2025-07-09",
+    "record": "1-6",
     "wins": 1,
-    "losses": 5,
-    "winPct": "0.167",
-    "totalGames": 6,
+    "losses": 6,
+    "winPct": "0.143",
+    "totalGames": 7,
     "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 6,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Daysbel Hernández",
-        "appearances": 5,
+        "appearances": 6,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 6,
-        "hits": 8,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 3,
-        "atBats": 23,
-        "avg": "0.348"
+        "atBats": 27,
+        "avg": "0.333"
       },
       {
         "name": "Austin Riley",
-        "games": 6,
-        "hits": 8,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 1,
         "rbi": 3,
         "runs": 1,
-        "atBats": 25,
-        "avg": "0.320"
+        "atBats": 29,
+        "avg": "0.310"
       },
       {
         "name": "Jurickson Profar",
-        "games": 5,
+        "games": 6,
         "hits": 6,
         "homeRuns": 2,
         "rbi": 3,
         "runs": 4,
-        "atBats": 21,
-        "avg": "0.286"
+        "atBats": 25,
+        "avg": "0.240"
       },
       {
         "name": "Sean Murphy",
-        "games": 5,
+        "games": 6,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 4,
         "runs": 2,
-        "atBats": 14,
-        "avg": "0.286"
+        "atBats": 18,
+        "avg": "0.222"
       }
     ],
     "gameResults": [
@@ -132,6 +132,13 @@
         "score": "1-2",
         "opponent": "Baltimore Orioles",
         "homeAway": "vs"
+      },
+      {
+        "date": "7/9/2025",
+        "result": "L",
+        "score": "1-10",
+        "opponent": "Athletics",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
@@ -180,11 +187,25 @@
             "score": "1-2"
           }
         ]
+      },
+      {
+        "opponent": "Athletics",
+        "homeAway": "@",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "7/9/2025",
+            "result": "L",
+            "score": "1-10"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring W 8-3 vs Los Angeles Angels",
       "High-scoring L 6-9 vs Baltimore Orioles",
+      "High-scoring L 1-10 @ Athletics",
       "Close L 2-3 vs Baltimore Orioles",
       "Close L 1-2 vs Baltimore Orioles"
     ]
