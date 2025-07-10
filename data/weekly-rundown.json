@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-09",
-  "timestamp": "2025-07-09T09:17:34.055Z",
-  "rundown": "<b>Record:</b> 1-6 (0.143)  \n<b>Series:</b> Lost series to Los Angeles Angels (1-2), lost series to Baltimore Orioles (0-3), lost game to Athletics (0-1)  \n<b>Highlights:</b> The Braves had a high-scoring win against the Los Angeles Angels, taking the game 8-3. Matt Olson shined with 9 hits and 2 home runs throughout the week. Despite the struggles, they kept it close in several games, including a narrow 2-3 loss to the Orioles.  \n<b>Trend:</b> The team is struggling with 3 straight losses, unable to find consistent momentum as they faced tough competition.",
+  "date": "2025-07-10",
+  "timestamp": "2025-07-10T09:17:59.527Z",
+  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Los Angeles Angels (1-2), Lost series to Baltimore Orioles (0-3), Split series with Athletics (1-1)  \n<b>Highlights:</b> The team had a high-scoring win against the Los Angeles Angels, taking the game 8-3. They also bounced back with a solid 9-2 victory against the Athletics after a tough loss the previous day. Matt Olson and Austin Riley both shined at the plate, each hitting 2 home runs this week.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, but they showed some resilience with their late win against the Athletics.",
   "weeklyStats": {
-    "dateRange": "2025-07-01 to 2025-07-09",
-    "record": "1-6",
-    "wins": 1,
+    "dateRange": "2025-07-01 to 2025-07-10",
+    "record": "2-6",
+    "wins": 2,
     "losses": 6,
-    "winPct": "0.143",
-    "totalGames": 7,
-    "momentum": "struggling with 3 straight losses",
+    "winPct": "0.250",
+    "totalGames": 8,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 6,
@@ -25,10 +25,10 @@
       },
       {
         "name": "Daysbel Hernández",
-        "appearances": 6,
-        "inningsPitched": 2.2,
+        "appearances": 7,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 5,
+        "strikeouts": 6,
         "hits": 1,
         "wins": 0,
         "losses": 0,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 9,
+        "games": 8,
+        "hits": 11,
         "homeRuns": 2,
         "rbi": 6,
-        "runs": 3,
-        "atBats": 27,
-        "avg": "0.333"
+        "runs": 6,
+        "atBats": 31,
+        "avg": "0.355"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
-        "hits": 9,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1,
-        "atBats": 29,
-        "avg": "0.310"
+        "games": 8,
+        "hits": 11,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 3,
+        "atBats": 34,
+        "avg": "0.324"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 2,
-        "rbi": 3,
-        "runs": 4,
-        "atBats": 25,
-        "avg": "0.240"
-      },
-      {
-        "name": "Sean Murphy",
-        "games": 6,
-        "hits": 4,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 2,
         "rbi": 4,
+        "runs": 4,
+        "atBats": 30,
+        "avg": "0.233"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 5,
+        "hits": 5,
+        "homeRuns": 2,
+        "rbi": 5,
         "runs": 2,
-        "atBats": 18,
-        "avg": "0.222"
+        "atBats": 19,
+        "avg": "0.263"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "7/9/2025",
         "result": "L",
         "score": "1-10",
+        "opponent": "Athletics",
+        "homeAway": "@"
+      },
+      {
+        "date": "7/10/2025",
+        "result": "W",
+        "score": "9-2",
         "opponent": "Athletics",
         "homeAway": "@"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Athletics",
         "homeAway": "@",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/9/2025",
             "result": "L",
             "score": "1-10"
+          },
+          {
+            "date": "7/10/2025",
+            "result": "W",
+            "score": "9-2"
           }
         ]
       }
@@ -206,6 +218,7 @@
       "High-scoring W 8-3 vs Los Angeles Angels",
       "High-scoring L 6-9 vs Baltimore Orioles",
       "High-scoring L 1-10 @ Athletics",
+      "High-scoring W 9-2 @ Athletics",
       "Close L 2-3 vs Baltimore Orioles",
       "Close L 1-2 vs Baltimore Orioles"
     ]
