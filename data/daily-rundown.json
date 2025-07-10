@@ -1,35 +1,70 @@
 {
-  "date": "2025-07-09",
-  "timestamp": "2025-07-09T09:20:29.593Z",
-  "rundown": "<b>1-10</b> L @ Athletics  \n<b>Jesse Chavez:</b> 3.0 innings, 2 earned runs, 4 hits, 2 HR, 4 strikeouts  \n<b>Batters:</b>  \nEli White (1 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves suffered a tough loss against the Athletics, managing only one run while allowing ten. The game was marked by a lack of offensive production and struggles on the mound. \n\nKey highlights include:\n1. Jesse Chavez gave up two home runs in his three innings of work, contributing to the team's struggles.\n2. Eli White provided the lone bright spot for the Braves with a home run and an RBI.\n3. The Braves were out-hit 10 to 6, indicating a significant gap in offensive performance.",
+  "date": "2025-07-10",
+  "timestamp": "2025-07-10T09:20:37.571Z",
+  "rundown": "<b>9-2</b> W @ Athletics  \n<b>Bryce Elder:</b> 6.2 innings, 2 earned runs, 8 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (2 hits - 4 AB, 2 HR, 2 RBI)  \nDrake Baldwin (2 hits - 4 AB, 1 HR, 3 RBI)  \nAustin Riley (2 hits - 4 AB, 1 HR, 2 RBI)  \n\nThe Braves secured a convincing victory against the Athletics, showcasing a powerful offensive performance. Key highlights include Ronald Acuña Jr. hitting two home runs, contributing significantly to the score. Drake Baldwin and Austin Riley also made their mark with home runs and multiple RBIs. Bryce Elder delivered a solid pitching performance, striking out seven batters and limiting the Athletics to just two runs. The Braves' offense was relentless, accumulating 11 hits and scoring in multiple innings to dominate the game.",
   "lastGame": {
-    "date": "2025-07-09T02:05:00Z",
+    "date": "2025-07-10T02:05:00Z",
     "opponent": "Athletics",
-    "result": "L",
-    "score": "1-10",
+    "result": "W",
+    "score": "9-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Jesse Chavez",
-      "inningsPitched": "3.0",
+      "name": "Bryce Elder",
+      "inningsPitched": "6.2",
       "earnedRuns": 2,
-      "hits": 4,
-      "homeRuns": 2,
-      "strikeOuts": 4
+      "hits": 8,
+      "homeRuns": 0,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Eli White",
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 2,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Austin Riley",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Marcell Ozuna",
         "hits": 1,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 1
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 3
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 6,
-      "opponentRuns": 10,
-      "opponentHits": 10
+      "bravesRuns": 9,
+      "bravesHits": 11,
+      "opponentRuns": 2,
+      "opponentHits": 9
     }
   }
 }
