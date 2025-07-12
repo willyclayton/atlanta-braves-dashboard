@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-11",
-  "timestamp": "2025-07-11T09:16:56.482Z",
-  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to Baltimore Orioles (0-3), Lost series to Athletics (1-2)  \n<b>Highlights:</b> Austin Riley shined with 8 hits and 2 home runs, while Daysbel Hernández and Raisel Iglesias both showcased stellar pitching with 0.00 ERAs over their appearances. The Braves had a notable offensive explosion in their 9-2 victory against the Athletics.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, but they managed to secure one win amidst the tough series.",
+  "date": "2025-07-12",
+  "timestamp": "2025-07-12T09:14:29.752Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Baltimore Orioles (0-3), Lost series to Athletics (1-2), Won game against St. Louis Cardinals (1-0)  \n<b>Highlights:</b> Austin Riley had a standout week with 9 hits, including 2 home runs and 6 RBIs. Daysbel Hernández and Raisel Iglesias both showcased their dominance on the mound, combining for 0 earned runs in 11.2 innings pitched. The team bounced back with a solid 9-2 victory against the Athletics after a tough start to the week.  \n<b>Trend:</b> Despite the overall losing record, the team is building momentum with recent solid play, highlighted by their offensive explosion against the Athletics and a thrilling win over the Cardinals.",
   "weeklyStats": {
-    "dateRange": "2025-07-04 to 2025-07-11",
-    "record": "1-5",
-    "wins": 1,
+    "dateRange": "2025-07-04 to 2025-07-12",
+    "record": "2-5",
+    "wins": 2,
     "losses": 5,
-    "winPct": "0.167",
-    "totalGames": 6,
-    "momentum": "challenging week overall",
+    "winPct": "0.286",
+    "totalGames": 7,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Daysbel Hernández",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 6,
@@ -25,20 +25,20 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
-        "inningsPitched": 3,
+        "appearances": 7,
+        "inningsPitched": 4,
         "earnedRuns": 0,
-        "strikeouts": 4,
+        "strikeouts": 5,
         "hits": 0,
         "wins": 0,
         "losses": 0,
-        "saves": 0,
+        "saves": 1,
         "era": "0.00"
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 6,
-        "inningsPitched": 3.1,
+        "appearances": 7,
+        "inningsPitched": 4.1,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 2,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Austin Riley",
-        "games": 6,
-        "hits": 8,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 2,
-        "rbi": 5,
-        "runs": 4,
-        "atBats": 26,
-        "avg": "0.308"
+        "rbi": 6,
+        "runs": 5,
+        "atBats": 28,
+        "avg": "0.321"
       },
       {
         "name": "Drake Baldwin",
-        "games": 5,
-        "hits": 5,
+        "games": 6,
+        "hits": 7,
         "homeRuns": 2,
-        "rbi": 5,
+        "rbi": 6,
         "runs": 2,
-        "atBats": 16,
-        "avg": "0.313"
+        "atBats": 20,
+        "avg": "0.350"
+      },
+      {
+        "name": "Sean Murphy",
+        "games": 5,
+        "hits": 6,
+        "homeRuns": 3,
+        "rbi": 5,
+        "runs": 4,
+        "atBats": 18,
+        "avg": "0.333"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 5,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 1,
         "rbi": 4,
-        "runs": 2,
-        "atBats": 26,
-        "avg": "0.192"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 5,
-        "atBats": 23,
-        "avg": "0.261"
+        "runs": 3,
+        "atBats": 30,
+        "avg": "0.233"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "4-5",
         "opponent": "Athletics",
+        "homeAway": "@"
+      },
+      {
+        "date": "7/12/2025",
+        "result": "W",
+        "score": "6-5",
+        "opponent": "St. Louis Cardinals",
         "homeAway": "@"
       }
     ],
@@ -180,15 +187,28 @@
             "score": "4-5"
           }
         ]
+      },
+      {
+        "opponent": "St. Louis Cardinals",
+        "homeAway": "@",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "7/12/2025",
+            "result": "W",
+            "score": "6-5"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring L 6-9 vs Baltimore Orioles",
       "High-scoring L 1-10 @ Athletics",
       "High-scoring W 9-2 @ Athletics",
+      "High-scoring W 6-5 @ St. Louis Cardinals",
       "Close L 2-3 vs Baltimore Orioles",
-      "Close L 1-2 vs Baltimore Orioles",
-      "Close L 4-5 @ Athletics"
+      "Close L 1-2 vs Baltimore Orioles"
     ]
   }
 }
