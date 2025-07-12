@@ -1,49 +1,63 @@
 {
-  "date": "2025-07-11",
-  "timestamp": "2025-07-11T09:19:33.753Z",
-  "rundown": "<b>4-5</b> L @ Athletics  \n<b>Spencer Strider:</b> 6.2 innings, 3 earned runs, 5 hits, 1 HR, 11 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 4 AB, 1 HR, 2 RBI)  \nOzzie Albies (1 hits - 4 AB, 1 HR, 1 RBI)  \nSean Murphy (1 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell short in a close game against the Athletics, losing by a single run. Despite a strong performance from Spencer Strider on the mound, who struck out 11 batters, the team could not secure the win. \n\nKey highlights include:\n1. Jurickson Profar and Ozzie Albies both hit home runs, contributing to the Braves' offensive efforts.\n2. Strider's impressive strikeout total showcased his dominance, but he allowed 3 earned runs.\n3. The Braves managed only 5 hits, which limited their scoring opportunities against the Athletics.",
+  "date": "2025-07-12",
+  "timestamp": "2025-07-12T09:17:18.766Z",
+  "rundown": "<b>6-5</b> W @ St. Louis Cardinals  \n<b>Grant Holmes:</b> 3.0 innings, 5 earned runs, 9 hits, 0 HR, 1 strikeouts  \n<b>Batters:</b>  \nSean Murphy (3 hits - 4 AB, 2 HR, 3 RBI)  \nRonald Acuña Jr. (3 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (2 hits - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Cardinals, showcasing a strong offensive performance that ultimately outpaced their pitching struggles. Key highlights include Sean Murphy's standout game with two home runs and three RBIs, contributing significantly to the team's run total. Ronald Acuña Jr. also had a solid outing with three hits, adding to the offensive pressure. Despite Grant Holmes allowing five earned runs, the Braves' bats were able to rally and secure the win.",
   "lastGame": {
-    "date": "2025-07-11T01:05:00Z",
-    "opponent": "Athletics",
-    "result": "L",
-    "score": "4-5",
+    "date": "2025-07-12T00:15:00Z",
+    "opponent": "St. Louis Cardinals",
+    "result": "W",
+    "score": "6-5",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "6.2",
-      "earnedRuns": 3,
-      "hits": 5,
-      "homeRuns": 1,
-      "strikeOuts": 11
+      "name": "Grant Holmes",
+      "inningsPitched": "3.0",
+      "earnedRuns": 5,
+      "hits": 9,
+      "homeRuns": 0,
+      "strikeOuts": 1
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
+        "name": "Sean Murphy",
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 3,
+        "runs": 2
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 1,
-        "homeRuns": 1,
+        "name": "Ronald Acuña Jr.",
+        "hits": 3,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Sean Murphy",
+        "name": "Drake Baldwin",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Austin Riley",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 5,
+      "bravesRuns": 6,
+      "bravesHits": 12,
       "opponentRuns": 5,
-      "opponentHits": 8
+      "opponentHits": 10
     }
   }
 }
