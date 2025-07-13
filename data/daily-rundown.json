@@ -1,52 +1,59 @@
 {
-  "date": "2025-07-12",
-  "timestamp": "2025-07-12T09:17:18.766Z",
-  "rundown": "<b>6-5</b> W @ St. Louis Cardinals  \n<b>Grant Holmes:</b> 3.0 innings, 5 earned runs, 9 hits, 0 HR, 1 strikeouts  \n<b>Batters:</b>  \nSean Murphy (3 hits - 4 AB, 2 HR, 3 RBI)  \nRonald Acuña Jr. (3 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (2 hits - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Cardinals, showcasing a strong offensive performance that ultimately outpaced their pitching struggles. Key highlights include Sean Murphy's standout game with two home runs and three RBIs, contributing significantly to the team's run total. Ronald Acuña Jr. also had a solid outing with three hits, adding to the offensive pressure. Despite Grant Holmes allowing five earned runs, the Braves' bats were able to rally and secure the win.",
+  "date": "2025-07-13",
+  "timestamp": "2025-07-13T09:18:34.654Z",
+  "rundown": "<b>7-6</b> W @ St. Louis Cardinals  \n<b>Joey Wentz:</b> 3.0 innings, 0 earned runs, 0 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nSean Murphy (1 hits - 4 AB, 1 HR, 3 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 1 RBI)  \nRonald Acuña Jr. (1 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Cardinals, showcasing a strong offensive performance. Key highlights include Sean Murphy's impactful home run that drove in three runs, Marcell Ozuna's two-hit game including a home run, and Ronald Acuña Jr.'s contribution with a home run and two runs scored. Joey Wentz set the tone early with an impressive strikeout performance, allowing no hits in his three innings pitched.",
   "lastGame": {
-    "date": "2025-07-12T00:15:00Z",
+    "date": "2025-07-12T18:15:00Z",
     "opponent": "St. Louis Cardinals",
     "result": "W",
-    "score": "6-5",
+    "score": "7-6",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Grant Holmes",
+      "name": "Joey Wentz",
       "inningsPitched": "3.0",
-      "earnedRuns": 5,
-      "hits": 9,
+      "earnedRuns": 0,
+      "hits": 0,
       "homeRuns": 0,
-      "strikeOuts": 1
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
         "name": "Sean Murphy",
-        "hits": 3,
-        "homeRuns": 2,
+        "hits": 1,
+        "homeRuns": 1,
         "rbi": 3,
-        "runs": 2
+        "runs": 1
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 3,
-        "homeRuns": 0,
+        "name": "Marcell Ozuna",
+        "hits": 2,
+        "homeRuns": 1,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Drake Baldwin",
-        "hits": 2,
+        "name": "Ronald Acuña Jr.",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 2
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Austin Riley",
+        "name": "Jurickson Profar",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Jurickson Profar",
+        "name": "Nacho Alvarez Jr.",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -54,10 +61,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 6,
-      "bravesHits": 12,
-      "opponentRuns": 5,
-      "opponentHits": 10
+      "bravesRuns": 7,
+      "bravesHits": 10,
+      "opponentRuns": 6,
+      "opponentHits": 7
     }
   }
 }
