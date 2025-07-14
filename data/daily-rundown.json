@@ -1,70 +1,49 @@
 {
-  "date": "2025-07-13",
-  "timestamp": "2025-07-13T09:18:34.654Z",
-  "rundown": "<b>7-6</b> W @ St. Louis Cardinals  \n<b>Joey Wentz:</b> 3.0 innings, 0 earned runs, 0 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nSean Murphy (1 hits - 4 AB, 1 HR, 3 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 1 RBI)  \nRonald Acuña Jr. (1 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Cardinals, showcasing a strong offensive performance. Key highlights include Sean Murphy's impactful home run that drove in three runs, Marcell Ozuna's two-hit game including a home run, and Ronald Acuña Jr.'s contribution with a home run and two runs scored. Joey Wentz set the tone early with an impressive strikeout performance, allowing no hits in his three innings pitched.",
+  "date": "2025-07-14",
+  "timestamp": "2025-07-14T09:25:16.822Z",
+  "rundown": "<b>4-5</b> L @ St. Louis Cardinals  \n<b>Davis Daniel:</b> 4.0 innings, 1 earned run, 2 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 0 HR, 3 RBI)  \nJurickson Profar (3 hits - 4 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the St. Louis Cardinals, losing by a single run. Despite a strong offensive performance, the Braves could not secure the win. \n\nKey highlights include:  \n1. Matt Olson drove in 3 runs, showcasing his ability to deliver in crucial moments.  \n2. Jurickson Profar had a standout game with 3 hits, contributing significantly to the team's total.  \n3. Michael Harris II scored 2 runs, adding to the Braves' offensive efforts.  \n4. Davis Daniel pitched effectively, allowing only 1 earned run in 4 innings, but the bullpen could not hold the lead.  \n5. The Braves managed 9 hits but fell just short in the run department, highlighting missed opportunities.",
   "lastGame": {
-    "date": "2025-07-12T18:15:00Z",
+    "date": "2025-07-13T18:15:00Z",
     "opponent": "St. Louis Cardinals",
-    "result": "W",
-    "score": "7-6",
+    "result": "L",
+    "score": "4-5",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "3.0",
-      "earnedRuns": 0,
-      "hits": 0,
+      "name": "Davis Daniel",
+      "inningsPitched": "4.0",
+      "earnedRuns": 1,
+      "hits": 2,
       "homeRuns": 0,
-      "strikeOuts": 6
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Sean Murphy",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Marcell Ozuna",
+        "name": "Matt Olson",
         "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 1,
         "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 3,
         "runs": 0
       },
       {
         "name": "Jurickson Profar",
-        "hits": 1,
+        "hits": 3,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Nacho Alvarez Jr.",
+        "name": "Michael Harris II",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 1
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 7,
-      "bravesHits": 10,
-      "opponentRuns": 6,
-      "opponentHits": 7
+      "bravesRuns": 4,
+      "bravesHits": 9,
+      "opponentRuns": 5,
+      "opponentHits": 8
     }
   }
 }
