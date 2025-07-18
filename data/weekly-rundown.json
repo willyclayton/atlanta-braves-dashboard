@@ -1,14 +1,14 @@
 {
-  "date": "2025-07-17",
-  "timestamp": "2025-07-17T09:19:11.636Z",
-  "rundown": "<b>Record:</b> 3-3 (0.500)  \n<b>Series:</b> Lost series to Athletics (1-2), Won series against St. Louis Cardinals (2-1)  \n<b>Highlights:</b> Sean Murphy and Ronald Acuña Jr. both hit 3 home runs this week, while Joey Wentz and Raisel Iglesias showcased a stellar pitching performance with a combined 0.00 ERA.  \n<b>Trend:</b> Building momentum with recent solid play despite a mixed week of results.",
+  "date": "2025-07-18",
+  "timestamp": "2025-07-18T09:19:21.329Z",
+  "rundown": "<b>Record:</b> 2-1 (0.667)  \n<b>Series:</b> Braves won the series against the St. Louis Cardinals, taking 2 out of 3 games.  \n<b>Highlights:</b> Sean Murphy had an offensive explosion with 3 home runs this week, including a thrilling 6-5 win and a nail-biting 7-6 victory over the Cardinals. The pitching staff, led by Joey Wentz and Wander Suero, combined for impressive outings, not allowing any earned runs.  \n<b>Trend:</b> The team is building momentum with recent solid play, showcasing both strong hitting and dominant pitching performances.",
   "weeklyStats": {
-    "dateRange": "2025-07-09 to 2025-07-13",
-    "record": "3-3",
-    "wins": 3,
-    "losses": 3,
-    "winPct": "0.500",
-    "totalGames": 6,
+    "dateRange": "2025-07-12 to 2025-07-13",
+    "record": "2-1",
+    "wins": 2,
+    "losses": 1,
+    "winPct": "0.667",
+    "totalGames": 3,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
@@ -24,18 +24,6 @@
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
-        "appearances": 6,
-        "inningsPitched": 3,
-        "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 2,
-        "era": "0.00"
-      },
-      {
         "name": "Wander Suero",
         "appearances": 1,
         "inningsPitched": 2,
@@ -46,72 +34,63 @@
         "losses": 0,
         "saves": 0,
         "era": "0.00"
+      },
+      {
+        "name": "Raisel Iglesias",
+        "appearances": 3,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 2,
+        "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Sean Murphy",
-        "games": 5,
-        "hits": 5,
+        "games": 3,
+        "hits": 4,
         "homeRuns": 3,
-        "rbi": 7,
-        "runs": 4,
-        "atBats": 21,
-        "avg": "0.238"
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "games": 5,
-        "hits": 6,
-        "homeRuns": 3,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 22,
-        "avg": "0.273"
+        "rbi": 6,
+        "runs": 3,
+        "atBats": 13,
+        "avg": "0.308"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 8,
-        "homeRuns": 1,
-        "rbi": 5,
-        "runs": 4,
-        "atBats": 27,
-        "avg": "0.296"
+        "games": 3,
+        "hits": 6,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 3,
+        "atBats": 14,
+        "avg": "0.429"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 5,
-        "hits": 5,
+        "name": "Ronald Acuña Jr.",
+        "games": 3,
+        "hits": 4,
         "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1,
-        "atBats": 15,
-        "avg": "0.333"
+        "rbi": 2,
+        "runs": 3,
+        "atBats": 13,
+        "avg": "0.308"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 3,
+        "hits": 4,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 3,
+        "atBats": 11,
+        "avg": "0.364"
       }
     ],
     "gameResults": [
-      {
-        "date": "7/9/2025",
-        "result": "L",
-        "score": "1-10",
-        "opponent": "Athletics",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/10/2025",
-        "result": "W",
-        "score": "9-2",
-        "opponent": "Athletics",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/11/2025",
-        "result": "L",
-        "score": "4-5",
-        "opponent": "Athletics",
-        "homeAway": "@"
-      },
       {
         "date": "7/12/2025",
         "result": "W",
@@ -135,29 +114,6 @@
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Athletics",
-        "homeAway": "@",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "7/9/2025",
-            "result": "L",
-            "score": "1-10"
-          },
-          {
-            "date": "7/10/2025",
-            "result": "W",
-            "score": "9-2"
-          },
-          {
-            "date": "7/11/2025",
-            "result": "L",
-            "score": "4-5"
-          }
-        ]
-      },
       {
         "opponent": "St. Louis Cardinals",
         "homeAway": "@",
@@ -183,12 +139,12 @@
       }
     ],
     "highlights": [
-      "High-scoring L 1-10 @ Athletics",
-      "High-scoring W 9-2 @ Athletics",
       "High-scoring W 6-5 @ St. Louis Cardinals",
       "High-scoring W 7-6 @ St. Louis Cardinals",
-      "Close L 4-5 @ Athletics",
-      "Close W 6-5 @ St. Louis Cardinals"
+      "Close W 6-5 @ St. Louis Cardinals",
+      "Close W 7-6 @ St. Louis Cardinals",
+      "Close L 4-5 @ St. Louis Cardinals",
+      "Sean Murphy: 3 HRs in the week"
     ]
   }
 }
