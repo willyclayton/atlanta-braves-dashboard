@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-19",
-  "timestamp": "2025-07-19T09:14:29.737Z",
-  "rundown": "<b>Record:</b> 3-1 (0.750)  \n<b>Series:</b> Braves won the series against the St. Louis Cardinals 2-1 and won their game against the New York Yankees.  \n<b>Highlights:</b> The Braves had a thrilling week with back-to-back high-scoring wins over the Cardinals, winning 6-5 and 7-6, followed by a solid 7-3 victory against the Yankees. Sean Murphy shined with 3 home runs and 6 RBIs over the week.  \n<b>Trend:</b> The team is building momentum with recent solid play, showcasing both offensive firepower and strong pitching performances.",
+  "date": "2025-07-20",
+  "timestamp": "2025-07-20T09:14:41.219Z",
+  "rundown": "<b>Record:</b> 3-2 (0.600)  \n<b>Series:</b> Braves won the series against the St. Louis Cardinals 2-1 and split the series with the New York Yankees 1-1.  \n<b>Highlights:</b> The Braves had a thrilling week with two close wins against the Cardinals, winning 6-5 and 7-6. They also showcased their power with a solid 7-3 victory over the Yankees. Sean Murphy was a standout, hitting 3 home runs and driving in 6 runs over the week.  \n<b>Trend:</b> Overall, it was a positive week for the Braves, showing strong offensive performances and solid pitching, particularly from Spencer Strider and Joey Wentz, who both posted impressive scoreless outings.",
   "weeklyStats": {
-    "dateRange": "2025-07-12 to 2025-07-18",
-    "record": "3-1",
+    "dateRange": "2025-07-12 to 2025-07-19",
+    "record": "3-2",
     "wins": 3,
-    "losses": 1,
-    "winPct": "0.750",
-    "totalGames": 4,
-    "momentum": "building momentum with recent solid play",
+    "losses": 2,
+    "winPct": "0.600",
+    "totalGames": 5,
+    "momentum": "positive overall week",
     "topPitchers": [
       {
         "name": "Spencer Strider",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 8,
@@ -25,69 +25,69 @@
       },
       {
         "name": "Joey Wentz",
-        "appearances": 3,
-        "inningsPitched": 3,
+        "appearances": 4,
+        "inningsPitched": 7,
         "earnedRuns": 0,
-        "strikeouts": 6,
-        "hits": 0,
+        "strikeouts": 8,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
-        "appearances": 4,
-        "inningsPitched": 3,
-        "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 0,
+        "name": "Davis Daniel",
+        "appearances": 3,
+        "inningsPitched": 4,
+        "earnedRuns": 1,
+        "strikeouts": 5,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
-        "saves": 2,
-        "era": "0.00"
+        "saves": 0,
+        "era": "2.25"
       }
     ],
     "topBatters": [
       {
         "name": "Sean Murphy",
-        "games": 4,
-        "hits": 5,
+        "games": 5,
+        "hits": 7,
         "homeRuns": 3,
         "rbi": 6,
-        "runs": 4,
-        "atBats": 16,
-        "avg": "0.313"
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "games": 4,
-        "hits": 6,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 5,
-        "atBats": 16,
-        "avg": "0.375"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 4,
-        "hits": 7,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 4,
-        "atBats": 18,
-        "avg": "0.389"
+        "runs": 7,
+        "atBats": 19,
+        "avg": "0.368"
       },
       {
         "name": "Ozzie Albies",
-        "games": 4,
-        "hits": 3,
+        "games": 5,
+        "hits": 5,
+        "homeRuns": 2,
+        "rbi": 9,
+        "runs": 3,
+        "atBats": 18,
+        "avg": "0.278"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 5,
+        "hits": 6,
         "homeRuns": 1,
-        "rbi": 4,
-        "runs": 2,
-        "atBats": 14,
-        "avg": "0.214"
+        "rbi": 3,
+        "runs": 4,
+        "atBats": 19,
+        "avg": "0.316"
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "games": 5,
+        "hits": 6,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 6,
+        "atBats": 20,
+        "avg": "0.300"
       }
     ],
     "gameResults": [
@@ -116,6 +116,13 @@
         "date": "7/18/2025",
         "result": "W",
         "score": "7-3",
+        "opponent": "New York Yankees",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/19/2025",
+        "result": "L",
+        "score": "9-12",
         "opponent": "New York Yankees",
         "homeAway": "vs"
       }
@@ -147,13 +154,18 @@
       {
         "opponent": "New York Yankees",
         "homeAway": "vs",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/18/2025",
             "result": "W",
             "score": "7-3"
+          },
+          {
+            "date": "7/19/2025",
+            "result": "L",
+            "score": "9-12"
           }
         ]
       }
@@ -162,9 +174,9 @@
       "High-scoring W 6-5 @ St. Louis Cardinals",
       "High-scoring W 7-6 @ St. Louis Cardinals",
       "High-scoring W 7-3 vs New York Yankees",
+      "High-scoring L 9-12 vs New York Yankees",
       "Close W 6-5 @ St. Louis Cardinals",
-      "Close W 7-6 @ St. Louis Cardinals",
-      "Close L 4-5 @ St. Louis Cardinals"
+      "Close W 7-6 @ St. Louis Cardinals"
     ]
   }
 }
