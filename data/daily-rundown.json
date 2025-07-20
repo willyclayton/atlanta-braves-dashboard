@@ -1,56 +1,70 @@
 {
-  "date": "2025-07-19",
-  "timestamp": "2025-07-19T09:17:21.158Z",
-  "rundown": "<b>7-3</b> W vs New York Yankees  \n<b>Spencer Strider:</b> 6.0 innings, 0 earned runs, 3 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (1 hits - 4 AB, 1 HR, 4 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 1 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the New York Yankees, showcasing a strong performance both on the mound and at the plate. Spencer Strider delivered a stellar outing, shutting out the Yankees for six innings while striking out eight batters. \n\nKey highlights include:\n1. Ozzie Albies' impactful home run, driving in four runs to lead the offense.\n2. Drake Baldwin and Ronald Acuña Jr. contributing with multiple hits and key RBIs.\n3. The Braves' solid defense and pitching limited the Yankees to just three runs, ensuring a comfortable win.",
+  "date": "2025-07-20",
+  "timestamp": "2025-07-20T09:17:29.233Z",
+  "rundown": "<b>9-12</b> L vs New York Yankees  \n<b>Joey Wentz:</b> 4.0 innings, 0 earned runs, 2 hits, 0 HR, 2 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (2 hits - 4 AB, 1 HR, 5 RBI)  \nMichael Harris II (1 hit - 4 AB, 1 HR, 2 RBI)  \nNick Allen (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the New York Yankees in a high-scoring affair, unable to hold off a late surge from their opponents. Despite a strong start from Joey Wentz, who pitched 4 scoreless innings, the bullpen struggled to maintain the lead. \n\nKey highlights include:\n1. Ozzie Albies had a standout performance, hitting a home run and driving in five runs.\n2. Michael Harris II also contributed with a home run and two RBIs.\n3. The Braves managed to score nine runs but could not outpace the Yankees' twelve runs, highlighting a lack of pitching depth in the later innings.",
   "lastGame": {
-    "date": "2025-07-18T23:15:00Z",
+    "date": "2025-07-19T23:15:00Z",
     "opponent": "New York Yankees",
-    "result": "W",
-    "score": "7-3",
+    "result": "L",
+    "score": "9-12",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "6.0",
+      "name": "Joey Wentz",
+      "inningsPitched": "4.0",
       "earnedRuns": 0,
-      "hits": 3,
+      "hits": 2,
       "homeRuns": 0,
-      "strikeOuts": 8
+      "strikeOuts": 2
     },
     "significantHitters": [
       {
         "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 5,
+        "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
         "hits": 1,
         "homeRuns": 1,
-        "rbi": 4,
+        "rbi": 2,
         "runs": 1
       },
       {
-        "name": "Drake Baldwin",
-        "hits": 2,
+        "name": "Nick Allen",
+        "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
+        "runs": 0
       },
       {
         "name": "Matt Olson",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Sean Murphy",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 3
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 7,
-      "bravesHits": 9,
-      "opponentRuns": 3,
-      "opponentHits": 8
+      "bravesRuns": 9,
+      "bravesHits": 10,
+      "opponentRuns": 12,
+      "opponentHits": 11
     }
   }
 }
