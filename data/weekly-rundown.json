@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-20",
-  "timestamp": "2025-07-20T09:14:41.219Z",
-  "rundown": "<b>Record:</b> 3-2 (0.600)  \n<b>Series:</b> Braves won the series against the St. Louis Cardinals 2-1 and split the series with the New York Yankees 1-1.  \n<b>Highlights:</b> The Braves had a thrilling week with two close wins against the Cardinals, winning 6-5 and 7-6. They also showcased their power with a solid 7-3 victory over the Yankees. Sean Murphy was a standout, hitting 3 home runs and driving in 6 runs over the week.  \n<b>Trend:</b> Overall, it was a positive week for the Braves, showing strong offensive performances and solid pitching, particularly from Spencer Strider and Joey Wentz, who both posted impressive scoreless outings.",
+  "date": "2025-07-21",
+  "timestamp": "2025-07-21T09:23:51.283Z",
+  "rundown": "<b>Record:</b> 1-2 (0.333)  \n<b>Series:</b> Braves lost the series against the New York Yankees, winning 1 game and losing 2.  \n<b>Highlights:</b> The week featured a high-scoring win of 7-3 against the Yankees, a thrilling 12-9 loss in another high-scoring affair, and Spencer Strider's impressive performance with a 0.00 ERA and 8 strikeouts.  \n<b>Trend:</b> It was a challenging week overall for the Braves, struggling to maintain momentum after a strong start.",
   "weeklyStats": {
-    "dateRange": "2025-07-12 to 2025-07-19",
-    "record": "3-2",
-    "wins": 3,
+    "dateRange": "2025-07-18 to 2025-07-20",
+    "record": "1-2",
+    "wins": 1,
     "losses": 2,
-    "winPct": "0.600",
-    "totalGames": 5,
-    "momentum": "positive overall week",
+    "winPct": "0.333",
+    "totalGames": 3,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Spencer Strider",
-        "appearances": 5,
+        "appearances": 3,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 8,
@@ -25,10 +25,10 @@
       },
       {
         "name": "Joey Wentz",
-        "appearances": 4,
-        "inningsPitched": 7,
+        "appearances": 3,
+        "inningsPitched": 4,
         "earnedRuns": 0,
-        "strikeouts": 8,
+        "strikeouts": 2,
         "hits": 2,
         "wins": 0,
         "losses": 0,
@@ -36,82 +36,61 @@
         "era": "0.00"
       },
       {
-        "name": "Davis Daniel",
+        "name": "Dane Dunning",
         "appearances": 3,
-        "inningsPitched": 4,
+        "inningsPitched": 3,
         "earnedRuns": 1,
-        "strikeouts": 5,
+        "strikeouts": 2,
         "hits": 2,
         "wins": 0,
         "losses": 0,
         "saves": 0,
-        "era": "2.25"
+        "era": "3.00"
       }
     ],
     "topBatters": [
       {
-        "name": "Sean Murphy",
-        "games": 5,
-        "hits": 7,
-        "homeRuns": 3,
-        "rbi": 6,
-        "runs": 7,
-        "atBats": 19,
-        "avg": "0.368"
-      },
-      {
         "name": "Ozzie Albies",
-        "games": 5,
-        "hits": 5,
+        "games": 3,
+        "hits": 3,
         "homeRuns": 2,
         "rbi": 9,
-        "runs": 3,
-        "atBats": 18,
-        "avg": "0.278"
+        "runs": 2,
+        "atBats": 11,
+        "avg": "0.273"
       },
       {
-        "name": "Michael Harris II",
-        "games": 5,
-        "hits": 6,
+        "name": "Matt Olson",
+        "games": 3,
+        "hits": 3,
         "homeRuns": 1,
         "rbi": 3,
-        "runs": 4,
-        "atBats": 19,
-        "avg": "0.316"
+        "runs": 2,
+        "atBats": 11,
+        "avg": "0.273"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 5,
-        "hits": 6,
+        "games": 3,
+        "hits": 4,
         "homeRuns": 1,
-        "rbi": 3,
-        "runs": 6,
-        "atBats": 20,
-        "avg": "0.300"
+        "rbi": 2,
+        "runs": 4,
+        "atBats": 11,
+        "avg": "0.364"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 3,
+        "hits": 3,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1,
+        "atBats": 11,
+        "avg": "0.273"
       }
     ],
     "gameResults": [
-      {
-        "date": "7/12/2025",
-        "result": "W",
-        "score": "6-5",
-        "opponent": "St. Louis Cardinals",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/12/2025",
-        "result": "W",
-        "score": "7-6",
-        "opponent": "St. Louis Cardinals",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/13/2025",
-        "result": "L",
-        "score": "4-5",
-        "opponent": "St. Louis Cardinals",
-        "homeAway": "@"
-      },
       {
         "date": "7/18/2025",
         "result": "W",
@@ -125,37 +104,21 @@
         "score": "9-12",
         "opponent": "New York Yankees",
         "homeAway": "vs"
+      },
+      {
+        "date": "7/20/2025",
+        "result": "L",
+        "score": "2-4",
+        "opponent": "New York Yankees",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
       {
-        "opponent": "St. Louis Cardinals",
-        "homeAway": "@",
-        "record": "2-1",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "7/12/2025",
-            "result": "W",
-            "score": "6-5"
-          },
-          {
-            "date": "7/12/2025",
-            "result": "W",
-            "score": "7-6"
-          },
-          {
-            "date": "7/13/2025",
-            "result": "L",
-            "score": "4-5"
-          }
-        ]
-      },
-      {
         "opponent": "New York Yankees",
         "homeAway": "vs",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "7/18/2025",
@@ -166,17 +129,19 @@
             "date": "7/19/2025",
             "result": "L",
             "score": "9-12"
+          },
+          {
+            "date": "7/20/2025",
+            "result": "L",
+            "score": "2-4"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 6-5 @ St. Louis Cardinals",
-      "High-scoring W 7-6 @ St. Louis Cardinals",
       "High-scoring W 7-3 vs New York Yankees",
       "High-scoring L 9-12 vs New York Yankees",
-      "Close W 6-5 @ St. Louis Cardinals",
-      "Close W 7-6 @ St. Louis Cardinals"
+      "Spencer Strider: 0.00 ERA, 8 strikeouts"
     ]
   }
 }
