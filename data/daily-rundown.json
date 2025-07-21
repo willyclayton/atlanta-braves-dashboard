@@ -1,70 +1,42 @@
 {
-  "date": "2025-07-20",
-  "timestamp": "2025-07-20T09:17:29.233Z",
-  "rundown": "<b>9-12</b> L vs New York Yankees  \n<b>Joey Wentz:</b> 4.0 innings, 0 earned runs, 2 hits, 0 HR, 2 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (2 hits - 4 AB, 1 HR, 5 RBI)  \nMichael Harris II (1 hit - 4 AB, 1 HR, 2 RBI)  \nNick Allen (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the New York Yankees in a high-scoring affair, unable to hold off a late surge from their opponents. Despite a strong start from Joey Wentz, who pitched 4 scoreless innings, the bullpen struggled to maintain the lead. \n\nKey highlights include:\n1. Ozzie Albies had a standout performance, hitting a home run and driving in five runs.\n2. Michael Harris II also contributed with a home run and two RBIs.\n3. The Braves managed to score nine runs but could not outpace the Yankees' twelve runs, highlighting a lack of pitching depth in the later innings.",
+  "date": "2025-07-21",
+  "timestamp": "2025-07-21T09:26:34.121Z",
+  "rundown": "<b>2-4</b> L vs New York Yankees  \n<b>Grant Holmes:</b> 6.0 innings, 3 earned runs, 7 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (1 hit - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the New York Yankees with a final score of 2-4. Despite a strong performance from Grant Holmes on the mound, who pitched 6 innings, the Braves couldn't overcome the Yankees' offense. \n\nKey highlights include:\n1. Ronald Acuña Jr. hit a home run and contributed 2 hits, showcasing his power and speed.\n2. Matt Olson also added a home run, but the Braves' offense struggled to capitalize on their opportunities.\n3. The Yankees managed to score 4 runs on 9 hits, outpacing the Braves' 2 runs on 7 hits.",
   "lastGame": {
-    "date": "2025-07-19T23:15:00Z",
+    "date": "2025-07-20T17:35:00Z",
     "opponent": "New York Yankees",
     "result": "L",
-    "score": "9-12",
+    "score": "2-4",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "4.0",
-      "earnedRuns": 0,
-      "hits": 2,
-      "homeRuns": 0,
+      "name": "Grant Holmes",
+      "inningsPitched": "6.0",
+      "earnedRuns": 3,
+      "hits": 7,
+      "homeRuns": 1,
       "strikeOuts": 2
     },
     "significantHitters": [
       {
-        "name": "Ozzie Albies",
+        "name": "Ronald Acuña Jr.",
         "hits": 2,
         "homeRuns": 1,
-        "rbi": 5,
-        "runs": 1
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Nick Allen",
-        "hits": 1,
-        "homeRuns": 0,
         "rbi": 1,
-        "runs": 0
+        "runs": 1
       },
       {
         "name": "Matt Olson",
         "hits": 1,
-        "homeRuns": 0,
+        "homeRuns": 1,
         "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Sean Murphy",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 3
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 9,
-      "bravesHits": 10,
-      "opponentRuns": 12,
-      "opponentHits": 11
+      "bravesRuns": 2,
+      "bravesHits": 7,
+      "opponentRuns": 4,
+      "opponentHits": 9
     }
   }
 }
