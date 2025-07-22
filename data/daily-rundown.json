@@ -1,42 +1,49 @@
 {
-  "date": "2025-07-21",
-  "timestamp": "2025-07-21T09:26:34.121Z",
-  "rundown": "<b>2-4</b> L vs New York Yankees  \n<b>Grant Holmes:</b> 6.0 innings, 3 earned runs, 7 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (1 hit - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the New York Yankees with a final score of 2-4. Despite a strong performance from Grant Holmes on the mound, who pitched 6 innings, the Braves couldn't overcome the Yankees' offense. \n\nKey highlights include:\n1. Ronald Acuña Jr. hit a home run and contributed 2 hits, showcasing his power and speed.\n2. Matt Olson also added a home run, but the Braves' offense struggled to capitalize on their opportunities.\n3. The Yankees managed to score 4 runs on 9 hits, outpacing the Braves' 2 runs on 7 hits.",
+  "date": "2025-07-22",
+  "timestamp": "2025-07-22T09:23:25.889Z",
+  "rundown": "<b>9-5</b> W vs San Francisco Giants  \n<b>Bryce Elder:</b> 5.0 innings, 3 earned runs, 8 hits, 0 HR, 1 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (3 hits - 4 AB, 0 HR, 6 RBI)  \nNick Allen (1 hits - 3 AB, 0 HR, 2 RBI)  \nOzzie Albies (1 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the San Francisco Giants with a strong offensive performance, scoring 9 runs despite allowing 5 runs. Drake Baldwin was the standout player, driving in 6 runs and contributing significantly to the team's success. \n\nKey highlights include:\n1. Drake Baldwin's impressive 3-hit game, including 6 RBIs, which was crucial for the Braves' scoring.\n2. The Braves managed to capitalize on their scoring opportunities, leading to a total of 9 runs.\n3. Bryce Elder pitched 5 innings, allowing 3 earned runs, which helped maintain the lead throughout the game.",
   "lastGame": {
-    "date": "2025-07-20T17:35:00Z",
-    "opponent": "New York Yankees",
-    "result": "L",
-    "score": "2-4",
+    "date": "2025-07-21T23:15:00Z",
+    "opponent": "San Francisco Giants",
+    "result": "W",
+    "score": "9-5",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "6.0",
+      "name": "Bryce Elder",
+      "inningsPitched": "5.0",
       "earnedRuns": 3,
-      "hits": 7,
-      "homeRuns": 1,
-      "strikeOuts": 2
+      "hits": 8,
+      "homeRuns": 0,
+      "strikeOuts": 1
     },
     "significantHitters": [
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
+        "name": "Drake Baldwin",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 6,
+        "runs": 2
       },
       {
-        "name": "Matt Olson",
+        "name": "Nick Allen",
         "hits": 1,
-        "homeRuns": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 0
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 1,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 7,
-      "opponentRuns": 4,
-      "opponentHits": 9
+      "bravesRuns": 9,
+      "bravesHits": 8,
+      "opponentRuns": 5,
+      "opponentHits": 12
     }
   }
 }
