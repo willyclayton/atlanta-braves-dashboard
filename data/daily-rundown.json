@@ -1,49 +1,42 @@
 {
-  "date": "2025-07-22",
-  "timestamp": "2025-07-22T09:23:25.889Z",
-  "rundown": "<b>9-5</b> W vs San Francisco Giants  \n<b>Bryce Elder:</b> 5.0 innings, 3 earned runs, 8 hits, 0 HR, 1 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (3 hits - 4 AB, 0 HR, 6 RBI)  \nNick Allen (1 hits - 3 AB, 0 HR, 2 RBI)  \nOzzie Albies (1 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the San Francisco Giants with a strong offensive performance, scoring 9 runs despite allowing 5 runs. Drake Baldwin was the standout player, driving in 6 runs and contributing significantly to the team's success. \n\nKey highlights include:\n1. Drake Baldwin's impressive 3-hit game, including 6 RBIs, which was crucial for the Braves' scoring.\n2. The Braves managed to capitalize on their scoring opportunities, leading to a total of 9 runs.\n3. Bryce Elder pitched 5 innings, allowing 3 earned runs, which helped maintain the lead throughout the game.",
+  "date": "2025-07-23",
+  "timestamp": "2025-07-23T09:25:01.575Z",
+  "rundown": "<b>0-9</b> L vs San Francisco Giants  \n<b>Davis Daniel:</b> 5.0 innings, 5 earned runs, 7 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMatt Olson (3 hits - 4 AB, 0 HR, 0 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a tough loss against the San Francisco Giants, unable to score any runs while allowing 9. The pitching struggled early, and the offense could not capitalize on opportunities. \n\nKey highlights include:\n1. Davis Daniel allowed 5 earned runs in 5 innings, contributing to the team's struggles.\n2. Matt Olson had a standout performance with 3 hits, but it wasn't enough to drive in any runs.\n3. The Braves managed 8 hits but failed to convert them into runs, highlighting a lack of offensive production.",
   "lastGame": {
-    "date": "2025-07-21T23:15:00Z",
+    "date": "2025-07-22T23:15:00Z",
     "opponent": "San Francisco Giants",
-    "result": "W",
-    "score": "9-5",
+    "result": "L",
+    "score": "0-9",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
+      "name": "Davis Daniel",
       "inningsPitched": "5.0",
-      "earnedRuns": 3,
-      "hits": 8,
-      "homeRuns": 0,
-      "strikeOuts": 1
+      "earnedRuns": 5,
+      "hits": 7,
+      "homeRuns": 1,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Drake Baldwin",
+        "name": "Matt Olson",
         "hits": 3,
         "homeRuns": 0,
-        "rbi": 6,
-        "runs": 2
-      },
-      {
-        "name": "Nick Allen",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
+        "rbi": 0,
         "runs": 0
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 1,
+        "name": "Michael Harris II",
+        "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 9,
+      "bravesRuns": 0,
       "bravesHits": 8,
-      "opponentRuns": 5,
-      "opponentHits": 12
+      "opponentRuns": 9,
+      "opponentHits": 10
     }
   }
 }
