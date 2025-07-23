@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-22",
-  "timestamp": "2025-07-22T09:20:19.829Z",
-  "rundown": "<b>Record:</b> 2-2 (0.500)  \n<b>Series:</b> Lost series to New York Yankees (1-2), won game against San Francisco Giants (1-0)  \n<b>Highlights:</b> High-scoring win 7-3 against the Yankees, Drake Baldwin's impressive .412 batting average with 7 hits, and Spencer Strider's stellar performance with a 0.00 ERA and 8 strikeouts.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency despite some standout individual performances.",
+  "date": "2025-07-23",
+  "timestamp": "2025-07-23T09:21:07.253Z",
+  "rundown": "<b>Record:</b> 2-3 (0.400)  \n<b>Series:</b> Lost series to New York Yankees (1-2), split series with San Francisco Giants (1-1)  \n<b>Highlights:</b> High-scoring win 7-3 against the New York Yankees, Spencer Strider showcased a pitching clinic with 0.00 ERA and 8 strikeouts, and a thrilling 9-5 victory over the San Francisco Giants.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency despite some standout performances.",
   "weeklyStats": {
-    "dateRange": "2025-07-18 to 2025-07-21",
-    "record": "2-2",
+    "dateRange": "2025-07-18 to 2025-07-22",
+    "record": "2-3",
     "wins": 2,
-    "losses": 2,
-    "winPct": "0.500",
-    "totalGames": 4,
+    "losses": 3,
+    "winPct": "0.400",
+    "totalGames": 5,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Spencer Strider",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 8,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Joey Wentz",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 4,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -36,11 +36,11 @@
         "era": "0.00"
       },
       {
-        "name": "Dane Dunning",
-        "appearances": 4,
+        "name": "Pierce Johnson",
+        "appearances": 5,
         "inningsPitched": 3,
         "earnedRuns": 1,
-        "strikeouts": 2,
+        "strikeouts": 3,
         "hits": 2,
         "wins": 0,
         "losses": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 4,
-        "hits": 4,
+        "games": 5,
+        "hits": 5,
         "homeRuns": 2,
         "rbi": 10,
         "runs": 3,
-        "atBats": 13,
-        "avg": "0.308"
+        "atBats": 17,
+        "avg": "0.294"
       },
       {
         "name": "Drake Baldwin",
-        "games": 4,
+        "games": 5,
         "hits": 7,
         "homeRuns": 0,
         "rbi": 7,
         "runs": 4,
-        "atBats": 17,
-        "avg": "0.412"
+        "atBats": 20,
+        "avg": "0.350"
       },
       {
         "name": "Matt Olson",
-        "games": 4,
-        "hits": 4,
+        "games": 5,
+        "hits": 7,
         "homeRuns": 1,
         "rbi": 3,
         "runs": 4,
-        "atBats": 15,
-        "avg": "0.267"
+        "atBats": 20,
+        "avg": "0.350"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 4,
+        "name": "Michael Harris II",
+        "games": 5,
         "hits": 5,
         "homeRuns": 1,
         "rbi": 2,
-        "runs": 7,
-        "atBats": 13,
-        "avg": "0.385"
+        "runs": 1,
+        "atBats": 19,
+        "avg": "0.263"
       }
     ],
     "gameResults": [
@@ -116,6 +116,13 @@
         "date": "7/21/2025",
         "result": "W",
         "score": "9-5",
+        "opponent": "San Francisco Giants",
+        "homeAway": "vs"
+      },
+      {
+        "date": "7/22/2025",
+        "result": "L",
+        "score": "0-9",
         "opponent": "San Francisco Giants",
         "homeAway": "vs"
       }
@@ -147,13 +154,18 @@
       {
         "opponent": "San Francisco Giants",
         "homeAway": "vs",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/21/2025",
             "result": "W",
             "score": "9-5"
+          },
+          {
+            "date": "7/22/2025",
+            "result": "L",
+            "score": "0-9"
           }
         ]
       }
@@ -162,7 +174,6 @@
       "High-scoring W 7-3 vs New York Yankees",
       "High-scoring L 9-12 vs New York Yankees",
       "High-scoring W 9-5 vs San Francisco Giants",
-      "Drake Baldwin: 0.412 avg, 7 hits",
       "Spencer Strider: 0.00 ERA, 8 strikeouts"
     ]
   }
