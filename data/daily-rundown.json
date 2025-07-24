@@ -1,40 +1,47 @@
 {
-  "date": "2025-07-23",
-  "timestamp": "2025-07-23T09:25:01.575Z",
-  "rundown": "<b>0-9</b> L vs San Francisco Giants  \n<b>Davis Daniel:</b> 5.0 innings, 5 earned runs, 7 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMatt Olson (3 hits - 4 AB, 0 HR, 0 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a tough loss against the San Francisco Giants, unable to score any runs while allowing 9. The pitching struggled early, and the offense could not capitalize on opportunities. \n\nKey highlights include:\n1. Davis Daniel allowed 5 earned runs in 5 innings, contributing to the team's struggles.\n2. Matt Olson had a standout performance with 3 hits, but it wasn't enough to drive in any runs.\n3. The Braves managed 8 hits but failed to convert them into runs, highlighting a lack of offensive production.",
+  "date": "2025-07-24",
+  "timestamp": "2025-07-24T09:22:53.318Z",
+  "rundown": "<b>3-9</b> L vs San Francisco Giants  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 5 hits, 2 HR, 7 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 4 AB, 0 HR, 2 RBI)  \nJurickson Profar (2 hits - 4 AB, 0 HR, 0 RBI)  \nEli White (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the San Francisco Giants with a final score of 3-9. The team struggled to keep up with the Giants' offense, allowing 9 runs on 10 hits. \n\nKey highlights include:\n1. Spencer Strider recorded 7 strikeouts but gave up 3 earned runs and 2 home runs in 5 innings.\n2. Drake Baldwin contributed significantly with 2 RBIs despite the loss.\n3. Jurickson Profar and Eli White each had 2 hits, but the Braves could not capitalize on their opportunities.",
   "lastGame": {
-    "date": "2025-07-22T23:15:00Z",
+    "date": "2025-07-23T16:15:00Z",
     "opponent": "San Francisco Giants",
     "result": "L",
-    "score": "0-9",
+    "score": "3-9",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Davis Daniel",
+      "name": "Spencer Strider",
       "inningsPitched": "5.0",
-      "earnedRuns": 5,
-      "hits": 7,
-      "homeRuns": 1,
-      "strikeOuts": 3
+      "earnedRuns": 3,
+      "hits": 5,
+      "homeRuns": 2,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 3,
+        "name": "Drake Baldwin",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 2,
         "runs": 0
       },
       {
-        "name": "Michael Harris II",
+        "name": "Jurickson Profar",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 1
+      },
+      {
+        "name": "Eli White",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 0,
-      "bravesHits": 8,
+      "bravesRuns": 3,
+      "bravesHits": 7,
       "opponentRuns": 9,
       "opponentHits": 10
     }
