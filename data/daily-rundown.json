@@ -1,49 +1,42 @@
 {
-  "date": "2025-07-25",
-  "timestamp": "2025-07-25T09:21:58.975Z",
-  "rundown": "<b>3-9</b> L vs San Francisco Giants  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 5 hits, 2 HR, 7 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 2 RBI)  \nJurickson Profar (2 hits - 4 AB, 0 HR, 0 RBI)  \nEli White (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the San Francisco Giants with a score of 3-9. The loss was attributed to a combination of missed opportunities and a strong offensive performance from the Giants. \n\nKey highlights from the game include:  \n1. Spencer Strider recorded 7 strikeouts but allowed 3 earned runs over 5 innings.  \n2. Drake Baldwin contributed significantly with 2 RBIs despite only having 1 hit.  \n3. Jurickson Profar and Eli White each had 2 hits, helping to keep the Braves competitive.  \n4. The Giants capitalized on their chances, hitting 2 home runs and scoring 9 runs overall.  \n5. The Braves managed 7 hits but struggled to convert them into runs.",
+  "date": "2025-07-26",
+  "timestamp": "2025-07-26T09:17:40.497Z",
+  "rundown": "<b>3-8</b> L @ Texas Rangers  \n<b>Joey Wentz:</b> 4.1 innings, 3 earned runs, 4 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 1 HR, 1 RBI)  \nJurickson Profar (1 hit - 3 AB, 1 RBI)  \n\nThe Braves fell to the Texas Rangers with a final score of 3-8. The team struggled to keep up with the Rangers' offense, allowing 8 runs while only managing 3 of their own. \n\nKey highlights from the game include:\n1. Michael Harris II had a standout performance, hitting a home run and scoring twice.\n2. Joey Wentz pitched 4.1 innings but allowed 3 earned runs, contributing to the team's loss.\n3. The Braves managed only 6 hits compared to the Rangers' 8, indicating a lack of offensive production.",
   "lastGame": {
-    "date": "2025-07-23T16:15:00Z",
-    "opponent": "San Francisco Giants",
+    "date": "2025-07-26T00:05:00Z",
+    "opponent": "Texas Rangers",
     "result": "L",
-    "score": "3-9",
-    "homeAway": "vs",
+    "score": "3-8",
+    "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "5.0",
+      "name": "Joey Wentz",
+      "inningsPitched": "4.1",
       "earnedRuns": 3,
-      "hits": 5,
-      "homeRuns": 2,
-      "strikeOuts": 7
+      "hits": 4,
+      "homeRuns": 1,
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 0
+        "name": "Michael Harris II",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 2
       },
       {
         "name": "Jurickson Profar",
-        "hits": 2,
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
-      },
-      {
-        "name": "Eli White",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
       "bravesRuns": 3,
-      "bravesHits": 7,
-      "opponentRuns": 9,
-      "opponentHits": 10
+      "bravesHits": 6,
+      "opponentRuns": 8,
+      "opponentHits": 8
     }
   }
 }
