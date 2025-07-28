@@ -1,49 +1,42 @@
 {
-  "date": "2025-07-27",
-  "timestamp": "2025-07-27T09:18:06.466Z",
-  "rundown": "<b>5-6</b> L @ Texas Rangers  \n<b>Grant Holmes:</b> 4.0 innings, 4 earned runs, 6 hits, 0 HR, 2 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (4 hits - 5 AB, 1 HR, 2 RBI)  \nJurickson Profar (1 hit - 4 AB, 1 RBI)  \nOzzie Albies (1 hit - 4 AB, 1 RBI)  \n\nThe Braves fell short in a close game against the Texas Rangers, losing by a single run. Despite a strong performance from Michael Harris II, who contributed significantly with 4 hits including a home run, the Braves could not secure the win. \n\nKey highlights include:\n1. Michael Harris II's standout performance with 4 hits and 3 runs scored.\n2. Grant Holmes struggled on the mound, allowing 4 earned runs in just 4 innings.\n3. The Braves managed to match the Rangers in hits (8 each), but could not capitalize on scoring opportunities.",
+  "date": "2025-07-28",
+  "timestamp": "2025-07-28T09:26:05.919Z",
+  "rundown": "<b>1-8</b> L @ Texas Rangers  \n<b>Dylan Dodd:</b> 3.0 innings, 0 earned runs, 2 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nSean Murphy (1 hits - 3 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a tough loss against the Texas Rangers, managing only one run while allowing eight. Despite a solid performance from Dylan Dodd, who pitched three scoreless innings, the bullpen struggled to contain the Rangers' offense. \n\nKey highlights include:\n1. Dylan Dodd's impressive strikeout total of four in just three innings.\n2. Michael Harris II's two hits, showcasing his ability to get on base.\n3. Sean Murphy driving in the only run for the Braves, but the team's overall offensive output was lacking.",
   "lastGame": {
-    "date": "2025-07-26T23:05:00Z",
+    "date": "2025-07-27T18:35:00Z",
     "opponent": "Texas Rangers",
     "result": "L",
-    "score": "5-6",
+    "score": "1-8",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Grant Holmes",
-      "inningsPitched": "4.0",
-      "earnedRuns": 4,
-      "hits": 6,
+      "name": "Dylan Dodd",
+      "inningsPitched": "3.0",
+      "earnedRuns": 0,
+      "hits": 2,
       "homeRuns": 0,
-      "strikeOuts": 2
+      "strikeOuts": 4
     },
     "significantHitters": [
       {
+        "name": "Sean Murphy",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
         "name": "Michael Harris II",
-        "hits": 4,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 3
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 1,
+        "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 5,
-      "bravesHits": 8,
-      "opponentRuns": 6,
-      "opponentHits": 8
+      "bravesRuns": 1,
+      "bravesHits": 4,
+      "opponentRuns": 8,
+      "opponentHits": 10
     }
   }
 }
