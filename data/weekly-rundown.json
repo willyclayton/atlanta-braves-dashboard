@@ -1,34 +1,22 @@
 {
-  "date": "2025-07-28",
-  "timestamp": "2025-07-28T09:23:22.424Z",
-  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to San Francisco Giants (1-2), Lost series to Texas Rangers (0-3)  \n<b>Highlights:</b> High-scoring win 9-5 against the Giants, Michael Harris II shined with a .478 batting average and 11 hits, and a close 5-6 loss to the Rangers showcased competitive spirit.  \n<b>Trend:</b> Struggling with 3 straight losses, the team is looking to regain momentum after a tough week.",
+  "date": "2025-07-29",
+  "timestamp": "2025-07-29T09:21:05.570Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to San Francisco Giants (1-2), Lost series to Texas Rangers (0-3), Won game against Kansas City Royals (1-0)  \n<b>Highlights:</b> The week kicked off with a thrilling 9-5 victory over the San Francisco Giants, showcasing a strong offensive performance. Michael Harris II continued to shine, hitting .407 with 11 hits, including 2 home runs. The week ended on a high note with a 10-7 win against the Kansas City Royals, providing a much-needed boost.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, particularly in the series against the Giants and Rangers.",
   "weeklyStats": {
-    "dateRange": "2025-07-21 to 2025-07-27",
-    "record": "1-5",
-    "wins": 1,
+    "dateRange": "2025-07-21 to 2025-07-28",
+    "record": "2-5",
+    "wins": 2,
     "losses": 5,
-    "winPct": "0.167",
-    "totalGames": 6,
-    "momentum": "struggling with 3 straight losses",
+    "winPct": "0.286",
+    "totalGames": 7,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Dylan Lee",
-        "appearances": 6,
-        "inningsPitched": 2,
-        "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Pierce Johnson",
-        "appearances": 6,
-        "inningsPitched": 2,
+        "appearances": 7,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 2,
+        "strikeouts": 3,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -46,18 +34,30 @@
         "losses": 0,
         "saves": 0,
         "era": "0.00"
+      },
+      {
+        "name": "Dylan Lee",
+        "appearances": 7,
+        "inningsPitched": 3,
+        "earnedRuns": 1,
+        "strikeouts": 5,
+        "hits": 1,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "3.00"
       }
     ],
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 6,
+        "games": 7,
         "hits": 11,
         "homeRuns": 2,
         "rbi": 3,
         "runs": 5,
-        "atBats": 23,
-        "avg": "0.478"
+        "atBats": 27,
+        "avg": "0.407"
       },
       {
         "name": "Drake Baldwin",
@@ -71,23 +71,23 @@
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 5,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 0,
-        "rbi": 2,
-        "runs": 3,
-        "atBats": 22,
-        "avg": "0.227"
+        "rbi": 3,
+        "runs": 4,
+        "atBats": 27,
+        "avg": "0.259"
       },
       {
         "name": "Matt Olson",
-        "games": 6,
-        "hits": 6,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 0,
-        "rbi": 1,
-        "runs": 3,
-        "atBats": 22,
-        "avg": "0.273"
+        "rbi": 2,
+        "runs": 5,
+        "atBats": 27,
+        "avg": "0.259"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "1-8",
         "opponent": "Texas Rangers",
+        "homeAway": "@"
+      },
+      {
+        "date": "7/28/2025",
+        "result": "W",
+        "score": "10-7",
+        "opponent": "Kansas City Royals",
         "homeAway": "@"
       }
     ],
@@ -180,6 +187,19 @@
             "score": "1-8"
           }
         ]
+      },
+      {
+        "opponent": "Kansas City Royals",
+        "homeAway": "@",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "7/28/2025",
+            "result": "W",
+            "score": "10-7"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -187,8 +207,8 @@
       "High-scoring L 3-9 vs San Francisco Giants",
       "High-scoring L 3-8 @ Texas Rangers",
       "High-scoring L 5-6 @ Texas Rangers",
-      "Close L 5-6 @ Texas Rangers",
-      "Michael Harris II: 0.478 avg, 11 hits"
+      "High-scoring W 10-7 @ Kansas City Royals",
+      "Close L 5-6 @ Texas Rangers"
     ]
   }
 }
