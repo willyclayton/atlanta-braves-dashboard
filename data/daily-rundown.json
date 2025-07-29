@@ -1,42 +1,63 @@
 {
-  "date": "2025-07-28",
-  "timestamp": "2025-07-28T09:26:05.919Z",
-  "rundown": "<b>1-8</b> L @ Texas Rangers  \n<b>Dylan Dodd:</b> 3.0 innings, 0 earned runs, 2 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nSean Murphy (1 hits - 3 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a tough loss against the Texas Rangers, managing only one run while allowing eight. Despite a solid performance from Dylan Dodd, who pitched three scoreless innings, the bullpen struggled to contain the Rangers' offense. \n\nKey highlights include:\n1. Dylan Dodd's impressive strikeout total of four in just three innings.\n2. Michael Harris II's two hits, showcasing his ability to get on base.\n3. Sean Murphy driving in the only run for the Braves, but the team's overall offensive output was lacking.",
+  "date": "2025-07-29",
+  "timestamp": "2025-07-29T09:24:13.130Z",
+  "rundown": "<b>10-7</b> W @ Kansas City Royals  \n<b>Spencer Strider:</b> 5.0 innings, 2 earned runs, 7 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nAustin Riley (2 hits - 4 AB, 1 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 2 RBI)  \nMarcell Ozuna (1 hit - 3 AB, 1 HR, 2 RBI)  \n\nThe Braves secured a victory against the Kansas City Royals with a strong offensive performance, scoring 10 runs despite allowing 7 runs. Key highlights include Austin Riley's standout game with 4 RBIs, Ronald Acuña Jr. contributing with both a home run and 2 RBIs, and Marcell Ozuna adding to the scoring with another home run. The Braves' ability to capitalize on scoring opportunities was crucial in this high-scoring affair.",
   "lastGame": {
-    "date": "2025-07-27T18:35:00Z",
-    "opponent": "Texas Rangers",
-    "result": "L",
-    "score": "1-8",
+    "date": "2025-07-28T23:40:00Z",
+    "opponent": "Kansas City Royals",
+    "result": "W",
+    "score": "10-7",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Dylan Dodd",
-      "inningsPitched": "3.0",
-      "earnedRuns": 0,
-      "hits": 2,
+      "name": "Spencer Strider",
+      "inningsPitched": "5.0",
+      "earnedRuns": 2,
+      "hits": 7,
       "homeRuns": 0,
-      "strikeOuts": 4
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Sean Murphy",
+        "name": "Austin Riley",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 1
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 4,
-      "opponentRuns": 8,
-      "opponentHits": 10
+      "bravesRuns": 10,
+      "bravesHits": 9,
+      "opponentRuns": 7,
+      "opponentHits": 12
     }
   }
 }
