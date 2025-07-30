@@ -1,62 +1,69 @@
 {
-  "date": "2025-07-29",
-  "timestamp": "2025-07-29T09:24:13.130Z",
-  "rundown": "<b>10-7</b> W @ Kansas City Royals  \n<b>Spencer Strider:</b> 5.0 innings, 2 earned runs, 7 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nAustin Riley (2 hits - 4 AB, 1 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 2 RBI)  \nMarcell Ozuna (1 hit - 3 AB, 1 HR, 2 RBI)  \n\nThe Braves secured a victory against the Kansas City Royals with a strong offensive performance, scoring 10 runs despite allowing 7 runs. Key highlights include Austin Riley's standout game with 4 RBIs, Ronald Acuña Jr. contributing with both a home run and 2 RBIs, and Marcell Ozuna adding to the scoring with another home run. The Braves' ability to capitalize on scoring opportunities was crucial in this high-scoring affair.",
+  "date": "2025-07-30",
+  "timestamp": "2025-07-30T09:25:49.219Z",
+  "rundown": "<b>6-9</b> L @ Kansas City Royals  \n<b>Erick Fedde:</b> 4.2 innings, 4 earned runs, 5 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 3 RBI)  \nAustin Riley (1 hit - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Kansas City Royals in a high-scoring affair, unable to overcome a late-game surge from their opponents. Despite a strong offensive showing with 14 hits, the Braves' pitching could not contain the Royals' lineup.\n\nKey highlights include:\n1. Marcell Ozuna's standout performance with 2 hits, including a home run and 3 RBIs.\n2. Austin Riley also contributed with a home run, adding to the Braves' offensive efforts.\n3. The Royals capitalized on the Braves' pitching struggles, scoring 9 runs on 12 hits.",
   "lastGame": {
-    "date": "2025-07-28T23:40:00Z",
+    "date": "2025-07-29T23:40:00Z",
     "opponent": "Kansas City Royals",
-    "result": "W",
-    "score": "10-7",
+    "result": "L",
+    "score": "6-9",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "5.0",
-      "earnedRuns": 2,
-      "hits": 7,
-      "homeRuns": 0,
+      "name": "Erick Fedde",
+      "inningsPitched": "4.2",
+      "earnedRuns": 4,
+      "hits": 5,
+      "homeRuns": 1,
       "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Austin Riley",
+        "name": "Marcell Ozuna",
         "hits": 2,
         "homeRuns": 1,
-        "rbi": 4,
+        "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Marcell Ozuna",
+        "name": "Austin Riley",
         "hits": 1,
         "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       },
       {
         "name": "Matt Olson",
-        "hits": 1,
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 2
+        "runs": 0
+      },
+      {
+        "name": "Eli White",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 10,
-      "bravesHits": 9,
-      "opponentRuns": 7,
+      "bravesRuns": 6,
+      "bravesHits": 14,
+      "opponentRuns": 9,
       "opponentHits": 12
     }
   }
