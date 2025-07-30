@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-29",
-  "timestamp": "2025-07-29T09:21:05.570Z",
-  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to San Francisco Giants (1-2), Lost series to Texas Rangers (0-3), Won game against Kansas City Royals (1-0)  \n<b>Highlights:</b> The week kicked off with a thrilling 9-5 victory over the San Francisco Giants, showcasing a strong offensive performance. Michael Harris II continued to shine, hitting .407 with 11 hits, including 2 home runs. The week ended on a high note with a 10-7 win against the Kansas City Royals, providing a much-needed boost.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, particularly in the series against the Giants and Rangers.",
+  "date": "2025-07-30",
+  "timestamp": "2025-07-30T09:22:39.348Z",
+  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to San Francisco Giants (1-2), Lost series to Texas Rangers (0-3), Split series with Kansas City Royals (1-1)  \n<b>Highlights:</b> The week kicked off with a thrilling 9-5 victory over the San Francisco Giants, showcasing an offensive explosion. Michael Harris II continued to shine, hitting .438 with 14 hits and 2 home runs over the week. The Braves managed to bounce back with a 10-7 win against the Kansas City Royals, but struggled in the series overall.  \n<b>Trend:</b> It was a challenging week overall, with the team facing tough competition and struggling to find consistency on both offense and defense.",
   "weeklyStats": {
-    "dateRange": "2025-07-21 to 2025-07-28",
-    "record": "2-5",
+    "dateRange": "2025-07-21 to 2025-07-29",
+    "record": "2-6",
     "wins": 2,
-    "losses": 5,
-    "winPct": "0.286",
-    "totalGames": 7,
+    "losses": 6,
+    "winPct": "0.250",
+    "totalGames": 8,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Pierce Johnson",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Dylan Lee",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 1,
         "strikeouts": 5,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 7,
-        "hits": 11,
+        "games": 8,
+        "hits": 14,
         "homeRuns": 2,
         "rbi": 3,
-        "runs": 5,
-        "atBats": 27,
-        "avg": "0.407"
+        "runs": 6,
+        "atBats": 32,
+        "avg": "0.438"
       },
       {
         "name": "Drake Baldwin",
-        "games": 6,
-        "hits": 6,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 0,
         "rbi": 8,
         "runs": 3,
-        "atBats": 24,
-        "avg": "0.250"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 7,
-        "hits": 7,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 4,
-        "atBats": 27,
-        "avg": "0.259"
+        "atBats": 29,
+        "avg": "0.241"
       },
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 7,
+        "games": 8,
+        "hits": 9,
         "homeRuns": 0,
-        "rbi": 2,
+        "rbi": 3,
         "runs": 5,
-        "atBats": 27,
-        "avg": "0.259"
+        "atBats": 32,
+        "avg": "0.281"
+      },
+      {
+        "name": "Marcell Ozuna",
+        "games": 4,
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 2,
+        "atBats": 12,
+        "avg": "0.250"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "7/28/2025",
         "result": "W",
         "score": "10-7",
+        "opponent": "Kansas City Royals",
+        "homeAway": "@"
+      },
+      {
+        "date": "7/29/2025",
+        "result": "L",
+        "score": "6-9",
         "opponent": "Kansas City Royals",
         "homeAway": "@"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Kansas City Royals",
         "homeAway": "@",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/28/2025",
             "result": "W",
             "score": "10-7"
+          },
+          {
+            "date": "7/29/2025",
+            "result": "L",
+            "score": "6-9"
           }
         ]
       }
@@ -208,7 +220,7 @@
       "High-scoring L 3-8 @ Texas Rangers",
       "High-scoring L 5-6 @ Texas Rangers",
       "High-scoring W 10-7 @ Kansas City Royals",
-      "Close L 5-6 @ Texas Rangers"
+      "High-scoring L 6-9 @ Kansas City Royals"
     ]
   }
 }
