@@ -1,22 +1,34 @@
 {
-  "date": "2025-07-30",
-  "timestamp": "2025-07-30T09:22:39.348Z",
-  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to San Francisco Giants (1-2), Lost series to Texas Rangers (0-3), Split series with Kansas City Royals (1-1)  \n<b>Highlights:</b> The week kicked off with a thrilling 9-5 victory over the San Francisco Giants, showcasing an offensive explosion. Michael Harris II continued to shine, hitting .438 with 14 hits and 2 home runs over the week. The Braves managed to bounce back with a 10-7 win against the Kansas City Royals, but struggled in the series overall.  \n<b>Trend:</b> It was a challenging week overall, with the team facing tough competition and struggling to find consistency on both offense and defense.",
+  "date": "2025-07-31",
+  "timestamp": "2025-07-31T09:21:24.848Z",
+  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2)  \n<b>Highlights:</b> Michael Harris II had a standout week with 12 hits and 2 home runs, while the team celebrated a high-scoring win against the Royals, 10-7. Dylan Dodd, Dane Dunning, and Pierce Johnson all showcased impressive pitching performances, each maintaining a 0.00 ERA.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, especially in the series against the Rangers.",
   "weeklyStats": {
-    "dateRange": "2025-07-21 to 2025-07-29",
-    "record": "2-6",
-    "wins": 2,
-    "losses": 6,
-    "winPct": "0.250",
-    "totalGames": 8,
+    "dateRange": "2025-07-26 to 2025-07-30",
+    "record": "1-5",
+    "wins": 1,
+    "losses": 5,
+    "winPct": "0.167",
+    "totalGames": 6,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Pierce Johnson",
-        "appearances": 8,
+        "name": "Dylan Dodd",
+        "appearances": 6,
         "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 3,
+        "strikeouts": 4,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Dane Dunning",
+        "appearances": 6,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 4,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -24,60 +36,38 @@
         "era": "0.00"
       },
       {
-        "name": "Hunter Stratton",
-        "appearances": 4,
-        "inningsPitched": 2.3000000000000003,
+        "name": "Pierce Johnson",
+        "appearances": 6,
+        "inningsPitched": 2.1,
         "earnedRuns": 0,
-        "strikeouts": 2,
-        "hits": 3,
+        "strikeouts": 3,
+        "hits": 0,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
-      },
-      {
-        "name": "Dylan Lee",
-        "appearances": 8,
-        "inningsPitched": 3,
-        "earnedRuns": 1,
-        "strikeouts": 5,
-        "hits": 1,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "3.00"
       }
     ],
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 8,
-        "hits": 14,
+        "games": 6,
+        "hits": 12,
         "homeRuns": 2,
         "rbi": 3,
         "runs": 6,
-        "atBats": 32,
-        "avg": "0.438"
+        "atBats": 24,
+        "avg": "0.500"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 7,
-        "hits": 7,
-        "homeRuns": 0,
-        "rbi": 8,
-        "runs": 3,
-        "atBats": 29,
-        "avg": "0.241"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 8,
-        "hits": 9,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 5,
-        "atBats": 32,
-        "avg": "0.281"
+        "name": "Austin Riley",
+        "games": 6,
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 2,
+        "atBats": 26,
+        "avg": "0.115"
       },
       {
         "name": "Marcell Ozuna",
@@ -86,32 +76,21 @@
         "homeRuns": 2,
         "rbi": 5,
         "runs": 2,
-        "atBats": 12,
+        "atBats": 15,
+        "avg": "0.200"
+      },
+      {
+        "name": "Jurickson Profar",
+        "games": 6,
+        "hits": 6,
+        "homeRuns": 0,
+        "rbi": 3,
+        "runs": 3,
+        "atBats": 24,
         "avg": "0.250"
       }
     ],
     "gameResults": [
-      {
-        "date": "7/21/2025",
-        "result": "W",
-        "score": "9-5",
-        "opponent": "San Francisco Giants",
-        "homeAway": "vs"
-      },
-      {
-        "date": "7/22/2025",
-        "result": "L",
-        "score": "0-9",
-        "opponent": "San Francisco Giants",
-        "homeAway": "vs"
-      },
-      {
-        "date": "7/23/2025",
-        "result": "L",
-        "score": "3-9",
-        "opponent": "San Francisco Giants",
-        "homeAway": "vs"
-      },
       {
         "date": "7/26/2025",
         "result": "L",
@@ -146,32 +125,16 @@
         "score": "6-9",
         "opponent": "Kansas City Royals",
         "homeAway": "@"
+      },
+      {
+        "date": "7/30/2025",
+        "result": "L",
+        "score": "0-1",
+        "opponent": "Kansas City Royals",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "San Francisco Giants",
-        "homeAway": "vs",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "7/21/2025",
-            "result": "W",
-            "score": "9-5"
-          },
-          {
-            "date": "7/22/2025",
-            "result": "L",
-            "score": "0-9"
-          },
-          {
-            "date": "7/23/2025",
-            "result": "L",
-            "score": "3-9"
-          }
-        ]
-      },
       {
         "opponent": "Texas Rangers",
         "homeAway": "@",
@@ -198,8 +161,8 @@
       {
         "opponent": "Kansas City Royals",
         "homeAway": "@",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "7/28/2025",
@@ -210,17 +173,22 @@
             "date": "7/29/2025",
             "result": "L",
             "score": "6-9"
+          },
+          {
+            "date": "7/30/2025",
+            "result": "L",
+            "score": "0-1"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 9-5 vs San Francisco Giants",
-      "High-scoring L 3-9 vs San Francisco Giants",
       "High-scoring L 3-8 @ Texas Rangers",
       "High-scoring L 5-6 @ Texas Rangers",
       "High-scoring W 10-7 @ Kansas City Royals",
-      "High-scoring L 6-9 @ Kansas City Royals"
+      "High-scoring L 6-9 @ Kansas City Royals",
+      "Close L 5-6 @ Texas Rangers",
+      "Close L 0-1 @ Kansas City Royals"
     ]
   }
 }
