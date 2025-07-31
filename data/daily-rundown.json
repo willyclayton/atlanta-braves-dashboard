@@ -1,70 +1,27 @@
 {
-  "date": "2025-07-30",
-  "timestamp": "2025-07-30T09:25:49.219Z",
-  "rundown": "<b>6-9</b> L @ Kansas City Royals  \n<b>Erick Fedde:</b> 4.2 innings, 4 earned runs, 5 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 3 RBI)  \nAustin Riley (1 hit - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Kansas City Royals in a high-scoring affair, unable to overcome a late-game surge from their opponents. Despite a strong offensive showing with 14 hits, the Braves' pitching could not contain the Royals' lineup.\n\nKey highlights include:\n1. Marcell Ozuna's standout performance with 2 hits, including a home run and 3 RBIs.\n2. Austin Riley also contributed with a home run, adding to the Braves' offensive efforts.\n3. The Royals capitalized on the Braves' pitching struggles, scoring 9 runs on 12 hits.",
+  "date": "2025-07-31",
+  "timestamp": "2025-07-31T09:24:36.742Z",
+  "rundown": "<b>0-1</b> L @ Kansas City Royals  \n<b>Joey Wentz:</b> 6.2 innings, 0 earned runs, 1 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNo significant hitters recorded.  \n\nThe Braves fell to the Kansas City Royals in a tightly contested game, managing to score no runs despite a solid pitching performance. The loss was primarily due to a lack of offensive production, as the team only managed 5 hits throughout the game.\n\nKey highlights:  \n1. Joey Wentz delivered an impressive outing, allowing only 1 hit and striking out 7 batters.  \n2. The Braves' defense held the Royals to just 1 run, showcasing strong pitching.  \n3. Despite the strong pitching, the Braves were unable to capitalize on their opportunities at the plate.",
   "lastGame": {
-    "date": "2025-07-29T23:40:00Z",
+    "date": "2025-07-30T18:10:00Z",
     "opponent": "Kansas City Royals",
     "result": "L",
-    "score": "6-9",
+    "score": "0-1",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Erick Fedde",
-      "inningsPitched": "4.2",
-      "earnedRuns": 4,
-      "hits": 5,
-      "homeRuns": 1,
-      "strikeOuts": 3
+      "name": "Joey Wentz",
+      "inningsPitched": "6.2",
+      "earnedRuns": 0,
+      "hits": 1,
+      "homeRuns": 0,
+      "strikeOuts": 7
     },
-    "significantHitters": [
-      {
-        "name": "Marcell Ozuna",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Austin Riley",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Eli White",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Michael Harris II",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
-      }
-    ],
+    "significantHitters": [],
     "teamStats": {
-      "bravesRuns": 6,
-      "bravesHits": 14,
-      "opponentRuns": 9,
-      "opponentHits": 12
+      "bravesRuns": 0,
+      "bravesHits": 5,
+      "opponentRuns": 1,
+      "opponentHits": 3
     }
   }
 }
