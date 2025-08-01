@@ -1,27 +1,84 @@
 {
-  "date": "2025-07-31",
-  "timestamp": "2025-07-31T09:24:36.742Z",
-  "rundown": "<b>0-1</b> L @ Kansas City Royals  \n<b>Joey Wentz:</b> 6.2 innings, 0 earned runs, 1 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNo significant hitters recorded.  \n\nThe Braves fell to the Kansas City Royals in a tightly contested game, managing to score no runs despite a solid pitching performance. The loss was primarily due to a lack of offensive production, as the team only managed 5 hits throughout the game.\n\nKey highlights:  \n1. Joey Wentz delivered an impressive outing, allowing only 1 hit and striking out 7 batters.  \n2. The Braves' defense held the Royals to just 1 run, showcasing strong pitching.  \n3. Despite the strong pitching, the Braves were unable to capitalize on their opportunities at the plate.",
+  "date": "2025-08-01",
+  "timestamp": "2025-08-01T09:23:56.583Z",
+  "rundown": "<b>12-11</b> W @ Cincinnati Reds  \n<b>Carlos Carrasco:</b> 6.0 innings, 3 earned runs, 7 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (4 hits - 5 AB, 0 HR, 2 RBI)  \nLuke Williams (1 hits - 3 AB, 0 HR, 2 RBI)  \nEli White (1 hits - 3 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a thrilling victory against the Cincinnati Reds, edging them out in a high-scoring affair. The game was marked by a strong offensive performance from the Braves, who managed to outlast the Reds despite allowing 11 runs.\n\nKey highlights include:\n1. Ozzie Albies led the charge with a standout performance, collecting 4 hits and driving in 2 runs.\n2. The Braves' offense was relentless, scoring a total of 12 runs on 13 hits.\n3. The game featured a back-and-forth battle, with both teams trading leads, but the Braves ultimately held on for the win.",
   "lastGame": {
-    "date": "2025-07-30T18:10:00Z",
-    "opponent": "Kansas City Royals",
-    "result": "L",
-    "score": "0-1",
+    "date": "2025-07-31T23:10:00Z",
+    "opponent": "Cincinnati Reds",
+    "result": "W",
+    "score": "12-11",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "6.2",
-      "earnedRuns": 0,
-      "hits": 1,
-      "homeRuns": 0,
-      "strikeOuts": 7
+      "name": "Carlos Carrasco",
+      "inningsPitched": "6.0",
+      "earnedRuns": 3,
+      "hits": 7,
+      "homeRuns": 1,
+      "strikeOuts": 5
     },
-    "significantHitters": [],
+    "significantHitters": [
+      {
+        "name": "Ozzie Albies",
+        "hits": 4,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Luke Williams",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Eli White",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Sean Murphy",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 2
+      },
+      {
+        "name": "Austin Riley",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 3
+      }
+    ],
     "teamStats": {
-      "bravesRuns": 0,
-      "bravesHits": 5,
-      "opponentRuns": 1,
-      "opponentHits": 3
+      "bravesRuns": 12,
+      "bravesHits": 13,
+      "opponentRuns": 11,
+      "opponentHits": 17
     }
   }
 }
