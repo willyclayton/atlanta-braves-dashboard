@@ -1,19 +1,19 @@
 {
-  "date": "2025-07-31",
-  "timestamp": "2025-07-31T09:21:24.848Z",
-  "rundown": "<b>Record:</b> 1-5 (0.167)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2)  \n<b>Highlights:</b> Michael Harris II had a standout week with 12 hits and 2 home runs, while the team celebrated a high-scoring win against the Royals, 10-7. Dylan Dodd, Dane Dunning, and Pierce Johnson all showcased impressive pitching performances, each maintaining a 0.00 ERA.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, especially in the series against the Rangers.",
+  "date": "2025-08-01",
+  "timestamp": "2025-08-01T09:20:50.845Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2), Won game against Cincinnati Reds (1-0)  \n<b>Highlights:</b> Michael Harris II had a standout week with 14 hits and 2 home runs, while the team showcased an offensive explosion in a thrilling 12-11 victory over the Cincinnati Reds. Dylan Dodd and Pierce Johnson both delivered impressive pitching performances, maintaining a 0.00 ERA.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, but they managed to end on a high note with a dramatic win against the Reds.",
   "weeklyStats": {
-    "dateRange": "2025-07-26 to 2025-07-30",
-    "record": "1-5",
-    "wins": 1,
+    "dateRange": "2025-07-26 to 2025-07-31",
+    "record": "2-5",
+    "wins": 2,
     "losses": 5,
-    "winPct": "0.167",
-    "totalGames": 6,
+    "winPct": "0.286",
+    "totalGames": 7,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Dylan Dodd",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -24,24 +24,24 @@
         "era": "0.00"
       },
       {
-        "name": "Dane Dunning",
-        "appearances": 6,
-        "inningsPitched": 2,
+        "name": "Pierce Johnson",
+        "appearances": 7,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 4,
         "hits": 0,
-        "wins": 0,
+        "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Pierce Johnson",
-        "appearances": 6,
-        "inningsPitched": 2.1,
+        "name": "Hunter Stratton",
+        "appearances": 3,
+        "inningsPitched": 2.3000000000000003,
         "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 0,
+        "strikeouts": 2,
+        "hits": 3,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 6,
-        "hits": 12,
+        "games": 7,
+        "hits": 14,
         "homeRuns": 2,
-        "rbi": 3,
-        "runs": 6,
-        "atBats": 24,
-        "avg": "0.500"
+        "rbi": 4,
+        "runs": 7,
+        "atBats": 29,
+        "avg": "0.483"
       },
       {
         "name": "Austin Riley",
-        "games": 6,
-        "hits": 3,
+        "games": 7,
+        "hits": 4,
         "homeRuns": 2,
-        "rbi": 5,
-        "runs": 2,
-        "atBats": 26,
-        "avg": "0.115"
+        "rbi": 6,
+        "runs": 3,
+        "atBats": 32,
+        "avg": "0.125"
       },
       {
         "name": "Marcell Ozuna",
-        "games": 4,
-        "hits": 3,
+        "games": 5,
+        "hits": 4,
         "homeRuns": 2,
-        "rbi": 5,
-        "runs": 2,
-        "atBats": 15,
-        "avg": "0.200"
+        "rbi": 6,
+        "runs": 5,
+        "atBats": 17,
+        "avg": "0.235"
       },
       {
-        "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 6,
+        "name": "Ozzie Albies",
+        "games": 7,
+        "hits": 8,
         "homeRuns": 0,
         "rbi": 3,
-        "runs": 3,
-        "atBats": 24,
-        "avg": "0.250"
+        "runs": 5,
+        "atBats": 25,
+        "avg": "0.320"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "0-1",
         "opponent": "Kansas City Royals",
+        "homeAway": "@"
+      },
+      {
+        "date": "7/31/2025",
+        "result": "W",
+        "score": "12-11",
+        "opponent": "Cincinnati Reds",
         "homeAway": "@"
       }
     ],
@@ -180,6 +187,19 @@
             "score": "0-1"
           }
         ]
+      },
+      {
+        "opponent": "Cincinnati Reds",
+        "homeAway": "@",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "7/31/2025",
+            "result": "W",
+            "score": "12-11"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -187,8 +207,8 @@
       "High-scoring L 5-6 @ Texas Rangers",
       "High-scoring W 10-7 @ Kansas City Royals",
       "High-scoring L 6-9 @ Kansas City Royals",
-      "Close L 5-6 @ Texas Rangers",
-      "Close L 0-1 @ Kansas City Royals"
+      "High-scoring W 12-11 @ Cincinnati Reds",
+      "Close L 5-6 @ Texas Rangers"
     ]
   }
 }
