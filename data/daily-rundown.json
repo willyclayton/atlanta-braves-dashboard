@@ -1,84 +1,49 @@
 {
-  "date": "2025-08-01",
-  "timestamp": "2025-08-01T09:23:56.583Z",
-  "rundown": "<b>12-11</b> W @ Cincinnati Reds  \n<b>Carlos Carrasco:</b> 6.0 innings, 3 earned runs, 7 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (4 hits - 5 AB, 0 HR, 2 RBI)  \nLuke Williams (1 hits - 3 AB, 0 HR, 2 RBI)  \nEli White (1 hits - 3 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a thrilling victory against the Cincinnati Reds, edging them out in a high-scoring affair. The game was marked by a strong offensive performance from the Braves, who managed to outlast the Reds despite allowing 11 runs.\n\nKey highlights include:\n1. Ozzie Albies led the charge with a standout performance, collecting 4 hits and driving in 2 runs.\n2. The Braves' offense was relentless, scoring a total of 12 runs on 13 hits.\n3. The game featured a back-and-forth battle, with both teams trading leads, but the Braves ultimately held on for the win.",
+  "date": "2025-08-02",
+  "timestamp": "2025-08-02T09:20:27.601Z",
+  "rundown": "<b>2-3</b> L @ Cincinnati Reds  \n<b>Bryce Elder:</b> 6.2 innings, 2 earned runs, 4 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (1 hits - 4 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the Cincinnati Reds, managing only 2 runs despite a solid performance from their starting pitcher. Key highlights include Michael Harris II's two hits, which contributed to the team's offensive efforts, and Ozzie Albies driving in a run. The Braves' inability to capitalize on scoring opportunities ultimately led to their defeat.",
   "lastGame": {
-    "date": "2025-07-31T23:10:00Z",
+    "date": "2025-08-01T16:40:00Z",
     "opponent": "Cincinnati Reds",
-    "result": "W",
-    "score": "12-11",
+    "result": "L",
+    "score": "2-3",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Carlos Carrasco",
-      "inningsPitched": "6.0",
-      "earnedRuns": 3,
-      "hits": 7,
-      "homeRuns": 1,
+      "name": "Bryce Elder",
+      "inningsPitched": "6.2",
+      "earnedRuns": 2,
+      "hits": 4,
+      "homeRuns": 0,
       "strikeOuts": 5
     },
     "significantHitters": [
       {
         "name": "Ozzie Albies",
-        "hits": 4,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Luke Williams",
         "hits": 1,
         "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Eli White",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
+        "rbi": 1,
+        "runs": 0
       },
       {
         "name": "Michael Harris II",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Sean Murphy",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 0,
         "runs": 1
       },
       {
         "name": "Matt Olson",
-        "hits": 1,
+        "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Austin Riley",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Marcell Ozuna",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 3
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 12,
-      "bravesHits": 13,
-      "opponentRuns": 11,
-      "opponentHits": 17
+      "bravesRuns": 2,
+      "bravesHits": 7,
+      "opponentRuns": 3,
+      "opponentHits": 5
     }
   }
 }
