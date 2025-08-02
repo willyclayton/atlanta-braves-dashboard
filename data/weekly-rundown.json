@@ -1,31 +1,19 @@
 {
-  "date": "2025-08-01",
-  "timestamp": "2025-08-01T09:20:50.845Z",
-  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2), Won game against Cincinnati Reds (1-0)  \n<b>Highlights:</b> Michael Harris II had a standout week with 14 hits and 2 home runs, while the team showcased an offensive explosion in a thrilling 12-11 victory over the Cincinnati Reds. Dylan Dodd and Pierce Johnson both delivered impressive pitching performances, maintaining a 0.00 ERA.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, but they managed to end on a high note with a dramatic win against the Reds.",
+  "date": "2025-08-02",
+  "timestamp": "2025-08-02T09:17:03.318Z",
+  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2), Split series with Cincinnati Reds (1-1)  \n<b>Highlights:</b> The Braves had a thrilling offensive explosion with a 10-7 win against the Kansas City Royals, and a nail-biting 12-11 victory over the Cincinnati Reds. However, they struggled against the Texas Rangers, suffering three consecutive losses.  \n<b>Trend:</b> It was a challenging week overall, with the team unable to find consistent momentum, highlighted by a tough series against the Rangers.",
   "weeklyStats": {
-    "dateRange": "2025-07-26 to 2025-07-31",
-    "record": "2-5",
+    "dateRange": "2025-07-26 to 2025-08-01",
+    "record": "2-6",
     "wins": 2,
-    "losses": 5,
-    "winPct": "0.286",
-    "totalGames": 7,
+    "losses": 6,
+    "winPct": "0.250",
+    "totalGames": 8,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Dylan Dodd",
-        "appearances": 7,
-        "inningsPitched": 3,
-        "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 2,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Pierce Johnson",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -46,48 +34,60 @@
         "losses": 0,
         "saves": 0,
         "era": "0.00"
+      },
+      {
+        "name": "Joey Wentz",
+        "appearances": 8,
+        "inningsPitched": 10.3,
+        "earnedRuns": 3,
+        "strikeouts": 13,
+        "hits": 5,
+        "wins": 0,
+        "losses": 1,
+        "saves": 0,
+        "era": "2.62"
       }
     ],
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 7,
-        "hits": 14,
+        "games": 8,
+        "hits": 16,
         "homeRuns": 2,
         "rbi": 4,
-        "runs": 7,
-        "atBats": 29,
-        "avg": "0.483"
+        "runs": 8,
+        "atBats": 33,
+        "avg": "0.485"
       },
       {
         "name": "Austin Riley",
-        "games": 7,
+        "games": 8,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 3,
-        "atBats": 32,
-        "avg": "0.125"
+        "atBats": 36,
+        "avg": "0.111"
       },
       {
         "name": "Marcell Ozuna",
-        "games": 5,
+        "games": 6,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 6,
-        "runs": 5,
-        "atBats": 17,
-        "avg": "0.235"
+        "runs": 6,
+        "atBats": 20,
+        "avg": "0.200"
       },
       {
         "name": "Ozzie Albies",
-        "games": 7,
-        "hits": 8,
+        "games": 8,
+        "hits": 9,
         "homeRuns": 0,
-        "rbi": 3,
+        "rbi": 4,
         "runs": 5,
-        "atBats": 25,
-        "avg": "0.320"
+        "atBats": 28,
+        "avg": "0.321"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "7/31/2025",
         "result": "W",
         "score": "12-11",
+        "opponent": "Cincinnati Reds",
+        "homeAway": "@"
+      },
+      {
+        "date": "8/1/2025",
+        "result": "L",
+        "score": "2-3",
         "opponent": "Cincinnati Reds",
         "homeAway": "@"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Cincinnati Reds",
         "homeAway": "@",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "7/31/2025",
             "result": "W",
             "score": "12-11"
+          },
+          {
+            "date": "8/1/2025",
+            "result": "L",
+            "score": "2-3"
           }
         ]
       }
