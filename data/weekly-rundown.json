@@ -1,117 +1,96 @@
 {
-  "date": "2025-08-03",
-  "timestamp": "2025-08-03T09:15:10.138Z",
-  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Texas Rangers (0-3), Lost series to Kansas City Royals (1-2), Split series with Cincinnati Reds (1-1)  \n<b>Highlights:</b> The Braves had a thrilling offensive explosion with a 10-7 win against the Kansas City Royals, and a nail-biter 12-11 victory over the Cincinnati Reds. Pierce Johnson showcased a stellar performance with 4 strikeouts and no earned runs over 3.2 innings pitched.  \n<b>Trend:</b> It was a challenging week overall, as the team struggled to find consistency, losing six out of eight games.",
+  "date": "2025-08-04",
+  "timestamp": "2025-08-04T09:26:49.888Z",
+  "rundown": "<b>Record:</b> 4-3 (0.571)  \n<b>Series:</b> Lost series to Kansas City Royals (1-2), Won series against Cincinnati Reds (3-1)  \n<b>Highlights:</b> Eli White had an offensive explosion with 4 home runs and 11 RBIs over the week, while Joey Wentz showcased a pitching clinic with a 0.00 ERA and 7 strikeouts in 6.2 innings. The Braves pulled off a thrilling 12-11 victory against the Reds.  \n<b>Trend:</b> Building momentum with recent solid play, especially after winning three out of their last four games.",
   "weeklyStats": {
-    "dateRange": "2025-07-26 to 2025-08-01",
-    "record": "2-6",
-    "wins": 2,
-    "losses": 6,
-    "winPct": "0.250",
-    "totalGames": 8,
-    "momentum": "challenging week overall",
+    "dateRange": "2025-07-28 to 2025-08-03",
+    "record": "4-3",
+    "wins": 4,
+    "losses": 3,
+    "winPct": "0.571",
+    "totalGames": 7,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
-        "name": "Pierce Johnson",
-        "appearances": 8,
-        "inningsPitched": 3.2,
+        "name": "Joey Wentz",
+        "appearances": 7,
+        "inningsPitched": 6.2,
+        "earnedRuns": 0,
+        "strikeouts": 7,
+        "hits": 1,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Raisel Iglesias",
+        "appearances": 7,
+        "inningsPitched": 5,
         "earnedRuns": 0,
         "strikeouts": 4,
-        "hits": 0,
+        "hits": 4,
+        "wins": 0,
+        "losses": 0,
+        "saves": 4,
+        "era": "0.00"
+      },
+      {
+        "name": "Pierce Johnson",
+        "appearances": 7,
+        "inningsPitched": 2.6000000000000005,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 2,
         "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
-      },
-      {
-        "name": "Hunter Stratton",
-        "appearances": 3,
-        "inningsPitched": 2.3000000000000003,
-        "earnedRuns": 0,
-        "strikeouts": 2,
-        "hits": 3,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
-        "name": "Joey Wentz",
-        "appearances": 8,
-        "inningsPitched": 10.3,
-        "earnedRuns": 3,
-        "strikeouts": 13,
-        "hits": 5,
-        "wins": 0,
-        "losses": 1,
-        "saves": 0,
-        "era": "2.62"
       }
     ],
     "topBatters": [
       {
-        "name": "Michael Harris II",
-        "games": 8,
-        "hits": 16,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 8,
-        "atBats": 33,
-        "avg": "0.485"
+        "name": "Eli White",
+        "games": 6,
+        "hits": 8,
+        "homeRuns": 4,
+        "rbi": 11,
+        "runs": 6,
+        "atBats": 23,
+        "avg": "0.348"
       },
       {
         "name": "Austin Riley",
-        "games": 8,
+        "games": 7,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 3,
-        "atBats": 36,
-        "avg": "0.111"
+        "atBats": 27,
+        "avg": "0.148"
       },
       {
         "name": "Marcell Ozuna",
-        "games": 6,
+        "games": 5,
         "hits": 4,
         "homeRuns": 2,
         "rbi": 6,
         "runs": 6,
-        "atBats": 20,
-        "avg": "0.200"
+        "atBats": 16,
+        "avg": "0.250"
       },
       {
-        "name": "Ozzie Albies",
-        "games": 8,
-        "hits": 9,
+        "name": "Michael Harris II",
+        "games": 7,
+        "hits": 12,
         "homeRuns": 0,
-        "rbi": 4,
+        "rbi": 1,
         "runs": 5,
-        "atBats": 28,
-        "avg": "0.321"
+        "atBats": 30,
+        "avg": "0.400"
       }
     ],
     "gameResults": [
-      {
-        "date": "7/26/2025",
-        "result": "L",
-        "score": "3-8",
-        "opponent": "Texas Rangers",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/26/2025",
-        "result": "L",
-        "score": "5-6",
-        "opponent": "Texas Rangers",
-        "homeAway": "@"
-      },
-      {
-        "date": "7/27/2025",
-        "result": "L",
-        "score": "1-8",
-        "opponent": "Texas Rangers",
-        "homeAway": "@"
-      },
       {
         "date": "7/28/2025",
         "result": "W",
@@ -146,32 +125,23 @@
         "score": "2-3",
         "opponent": "Cincinnati Reds",
         "homeAway": "@"
+      },
+      {
+        "date": "8/2/2025",
+        "result": "W",
+        "score": "4-2",
+        "opponent": "Cincinnati Reds",
+        "homeAway": "@"
+      },
+      {
+        "date": "8/3/2025",
+        "result": "W",
+        "score": "4-2",
+        "opponent": "Cincinnati Reds",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Texas Rangers",
-        "homeAway": "@",
-        "record": "0-3",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "7/26/2025",
-            "result": "L",
-            "score": "3-8"
-          },
-          {
-            "date": "7/26/2025",
-            "result": "L",
-            "score": "5-6"
-          },
-          {
-            "date": "7/27/2025",
-            "result": "L",
-            "score": "1-8"
-          }
-        ]
-      },
       {
         "opponent": "Kansas City Royals",
         "homeAway": "@",
@@ -198,8 +168,8 @@
       {
         "opponent": "Cincinnati Reds",
         "homeAway": "@",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "3-1",
+        "outcome": "won series",
         "games": [
           {
             "date": "7/31/2025",
@@ -210,17 +180,27 @@
             "date": "8/1/2025",
             "result": "L",
             "score": "2-3"
+          },
+          {
+            "date": "8/2/2025",
+            "result": "W",
+            "score": "4-2"
+          },
+          {
+            "date": "8/3/2025",
+            "result": "W",
+            "score": "4-2"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring L 3-8 @ Texas Rangers",
-      "High-scoring L 5-6 @ Texas Rangers",
       "High-scoring W 10-7 @ Kansas City Royals",
       "High-scoring L 6-9 @ Kansas City Royals",
       "High-scoring W 12-11 @ Cincinnati Reds",
-      "Close L 5-6 @ Texas Rangers"
+      "Close L 0-1 @ Kansas City Royals",
+      "Close W 12-11 @ Cincinnati Reds",
+      "Close L 2-3 @ Cincinnati Reds"
     ]
   }
 }
