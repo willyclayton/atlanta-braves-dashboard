@@ -1,28 +1,28 @@
 {
-  "date": "2025-08-03",
-  "timestamp": "2025-08-03T09:17:52.899Z",
-  "rundown": "<b>2-3</b> L @ Cincinnati Reds  \n<b>Bryce Elder:</b> 6.2 innings, 2 earned runs, 4 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (1 hits - 4 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the Cincinnati Reds, managing only two runs despite a solid performance from their starting pitcher. Key highlights include Michael Harris II's two hits, which contributed to the team's offensive efforts, and Ozzie Albies driving in a run. However, the Braves were unable to capitalize on their seven hits, leading to their defeat. The Reds' pitching and timely hitting ultimately secured their victory.",
+  "date": "2025-08-04",
+  "timestamp": "2025-08-04T09:29:21.708Z",
+  "rundown": "<b>4-2</b> W @ Cincinnati Reds  \n<b>Hurston Waldrep:</b> 5.2 innings, 1 earned run, 3 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nEli White (2 hits - 4 AB, 2 HR, 4 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \nJurickson Profar (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a victory against the Cincinnati Reds with a strong offensive performance, highlighted by Eli White's two home runs and four RBIs. Waldrep's solid pitching kept the Reds at bay, allowing only one earned run over 5.2 innings. \n\nKey highlights include:\n1. Eli White's standout performance with two home runs and four RBIs.\n2. Waldrep's effective pitching, striking out four batters and limiting hits.\n3. The Braves' balanced attack with ten hits, contributing to their four runs.",
   "lastGame": {
-    "date": "2025-08-01T16:40:00Z",
+    "date": "2025-08-03T17:05:00Z",
     "opponent": "Cincinnati Reds",
-    "result": "L",
-    "score": "2-3",
+    "result": "W",
+    "score": "4-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "6.2",
-      "earnedRuns": 2,
-      "hits": 4,
+      "name": "Hurston Waldrep",
+      "inningsPitched": "5.2",
+      "earnedRuns": 1,
+      "hits": 3,
       "homeRuns": 0,
-      "strikeOuts": 5
+      "strikeOuts": 4
     },
     "significantHitters": [
       {
-        "name": "Ozzie Albies",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
+        "name": "Eli White",
+        "hits": 2,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 2
       },
       {
         "name": "Michael Harris II",
@@ -32,7 +32,14 @@
         "runs": 1
       },
       {
-        "name": "Matt Olson",
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      },
+      {
+        "name": "Drake Baldwin",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -40,10 +47,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 7,
-      "opponentRuns": 3,
-      "opponentHits": 5
+      "bravesRuns": 4,
+      "bravesHits": 10,
+      "opponentRuns": 2,
+      "opponentHits": 10
     }
   }
 }
