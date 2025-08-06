@@ -1,31 +1,19 @@
 {
-  "date": "2025-08-05",
-  "timestamp": "2025-08-05T09:22:23.427Z",
-  "rundown": "<b>Record:</b> 4-4 (0.500)  \n<b>Series:</b> Lost series to Kansas City Royals (1-2), Won series against Cincinnati Reds (3-1), Lost game to Milwaukee Brewers (0-1)  \n<b>Highlights:</b> High-scoring win 10-7 against the Kansas City Royals, thrilling 12-11 victory over the Cincinnati Reds, and Eli White's impressive week with 4 home runs and 11 RBIs.  \n<b>Trend:</b> Building momentum with recent solid play, especially highlighted by the offensive explosion against the Reds.",
+  "date": "2025-08-06",
+  "timestamp": "2025-08-06T09:22:52.754Z",
+  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Lost series to Kansas City Royals (1-2), Won series against Cincinnati Reds (3-1), Lost series to Milwaukee Brewers (0-2)  \n<b>Highlights:</b> High-scoring win 10-7 against the Kansas City Royals, thrilling 12-11 victory over the Cincinnati Reds, and Eli White's impressive week with 5 home runs and 13 RBIs.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Brewers.",
   "weeklyStats": {
-    "dateRange": "2025-07-28 to 2025-08-04",
-    "record": "4-4",
+    "dateRange": "2025-07-28 to 2025-08-05",
+    "record": "4-5",
     "wins": 4,
-    "losses": 4,
-    "winPct": "0.500",
-    "totalGames": 8,
-    "momentum": "building momentum with recent solid play",
+    "losses": 5,
+    "winPct": "0.444",
+    "totalGames": 9,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Joey Wentz",
-        "appearances": 8,
-        "inningsPitched": 6.2,
-        "earnedRuns": 0,
-        "strikeouts": 7,
-        "hits": 1,
-        "wins": 0,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Raisel Iglesias",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 5,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -37,7 +25,7 @@
       },
       {
         "name": "Pierce Johnson",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 2.6000000000000005,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -46,18 +34,50 @@
         "losses": 0,
         "saves": 0,
         "era": "0.00"
+      },
+      {
+        "name": "Hurston Waldrep",
+        "appearances": 2,
+        "inningsPitched": 10.4,
+        "earnedRuns": 2,
+        "strikeouts": 8,
+        "hits": 6,
+        "wins": 2,
+        "losses": 0,
+        "saves": 0,
+        "era": "1.73"
       }
     ],
     "topBatters": [
       {
         "name": "Eli White",
-        "games": 7,
-        "hits": 8,
-        "homeRuns": 4,
-        "rbi": 11,
-        "runs": 6,
-        "atBats": 27,
-        "avg": "0.296"
+        "games": 8,
+        "hits": 10,
+        "homeRuns": 5,
+        "rbi": 13,
+        "runs": 7,
+        "atBats": 31,
+        "avg": "0.323"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 9,
+        "hits": 13,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 5,
+        "atBats": 39,
+        "avg": "0.333"
+      },
+      {
+        "name": "Jurickson Profar",
+        "games": 9,
+        "hits": 10,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 3,
+        "atBats": 39,
+        "avg": "0.256"
       },
       {
         "name": "Austin Riley",
@@ -68,26 +88,6 @@
         "runs": 3,
         "atBats": 27,
         "avg": "0.148"
-      },
-      {
-        "name": "Marcell Ozuna",
-        "games": 5,
-        "hits": 4,
-        "homeRuns": 2,
-        "rbi": 6,
-        "runs": 6,
-        "atBats": 16,
-        "avg": "0.250"
-      },
-      {
-        "name": "Michael Harris II",
-        "games": 8,
-        "hits": 12,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 5,
-        "atBats": 34,
-        "avg": "0.353"
       }
     ],
     "gameResults": [
@@ -144,6 +144,13 @@
         "date": "8/4/2025",
         "result": "L",
         "score": "1-3",
+        "opponent": "Milwaukee Brewers",
+        "homeAway": "vs"
+      },
+      {
+        "date": "8/5/2025",
+        "result": "L",
+        "score": "2-7",
         "opponent": "Milwaukee Brewers",
         "homeAway": "vs"
       }
@@ -203,13 +210,18 @@
       {
         "opponent": "Milwaukee Brewers",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "0-2",
+        "outcome": "losing series",
         "games": [
           {
             "date": "8/4/2025",
             "result": "L",
             "score": "1-3"
+          },
+          {
+            "date": "8/5/2025",
+            "result": "L",
+            "score": "2-7"
           }
         ]
       }
