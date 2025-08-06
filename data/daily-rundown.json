@@ -1,35 +1,42 @@
 {
-  "date": "2025-08-05",
-  "timestamp": "2025-08-05T09:25:26.831Z",
-  "rundown": "<b>1-3</b> L vs Milwaukee Brewers  \n<b>Erick Fedde:</b> 5.1 innings, 3 earned runs, 3 hits, 1 HR, 0 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Milwaukee Brewers, managing only one run despite a solid performance from their hitters. The loss was primarily due to the three earned runs given up by Erick Fedde, which proved too much for the Braves' offense to overcome. \n\nKey highlights from the game include:  \n1. Jurickson Profar hit a home run, providing the Braves' only run of the game.  \n2. Fedde struggled with strikeouts, finishing the game with none, which limited his effectiveness.  \n3. Both teams had the same number of hits (3), but the Brewers capitalized on their opportunities better.",
+  "date": "2025-08-06",
+  "timestamp": "2025-08-06T09:26:04.058Z",
+  "rundown": "<b>2-7</b> L vs Milwaukee Brewers  \n<b>Joey Wentz:</b> 5.1 innings, 5 earned runs, 7 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nEli White (2 hits - 4 AB, 1 HR, 2 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Milwaukee Brewers with a final score of 2-7. The loss was primarily due to a rough outing from starting pitcher Joey Wentz, who allowed 5 earned runs over 5.1 innings. Despite the Braves matching the Brewers in hits, they were unable to capitalize on scoring opportunities.\n\nKey highlights from the game include:\n1. Eli White's strong performance, hitting a home run and driving in 2 runs.\n2. Drake Baldwin contributing with 2 hits, helping to keep the offense alive.\n3. The Braves struggled to contain the Brewers' offense, leading to a significant gap in runs.",
   "lastGame": {
-    "date": "2025-08-04T23:15:00Z",
+    "date": "2025-08-05T23:15:00Z",
     "opponent": "Milwaukee Brewers",
     "result": "L",
-    "score": "1-3",
+    "score": "2-7",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Erick Fedde",
+      "name": "Joey Wentz",
       "inningsPitched": "5.1",
-      "earnedRuns": 3,
-      "hits": 3,
-      "homeRuns": 1,
-      "strikeOuts": 0
+      "earnedRuns": 5,
+      "hits": 7,
+      "homeRuns": 0,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
-        "hits": 1,
+        "name": "Eli White",
+        "hits": 2,
         "homeRuns": 1,
-        "rbi": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 3,
-      "opponentRuns": 3,
-      "opponentHits": 3
+      "bravesRuns": 2,
+      "bravesHits": 8,
+      "opponentRuns": 7,
+      "opponentHits": 8
     }
   }
 }
