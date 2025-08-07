@@ -1,42 +1,56 @@
 {
-  "date": "2025-08-06",
-  "timestamp": "2025-08-06T09:26:04.058Z",
-  "rundown": "<b>2-7</b> L vs Milwaukee Brewers  \n<b>Joey Wentz:</b> 5.1 innings, 5 earned runs, 7 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nEli White (2 hits - 4 AB, 1 HR, 2 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Milwaukee Brewers with a final score of 2-7. The loss was primarily due to a rough outing from starting pitcher Joey Wentz, who allowed 5 earned runs over 5.1 innings. Despite the Braves matching the Brewers in hits, they were unable to capitalize on scoring opportunities.\n\nKey highlights from the game include:\n1. Eli White's strong performance, hitting a home run and driving in 2 runs.\n2. Drake Baldwin contributing with 2 hits, helping to keep the offense alive.\n3. The Braves struggled to contain the Brewers' offense, leading to a significant gap in runs.",
+  "date": "2025-08-07",
+  "timestamp": "2025-08-07T09:24:37.362Z",
+  "rundown": "<b>4-5</b> L vs Milwaukee Brewers  \n<b>Spencer Strider:</b> 4.2 innings, 5 earned runs, 11 hits, 2 HR, 6 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (1 hits - 3 AB, 1 HR, 1 RBI)  \nJurickson Profar (1 hits - 3 AB, 1 HR, 1 RBI)  \nSean Murphy (1 hits - 4 AB, 1 RBI)  \n\nThe Braves fell short in a close game against the Milwaukee Brewers, losing by a single run. The team's pitching struggled early, allowing five runs, which proved too much to overcome despite a late rally. \n\nKey highlights include:\n1. Spencer Strider had a tough outing, giving up 11 hits and 5 earned runs in just under five innings.\n2. Michael Harris II and Jurickson Profar both hit home runs, contributing to the Braves' offensive efforts.\n3. The Braves managed to collect 8 hits but could not match the Brewers' 14 hits, leading to their defeat.",
   "lastGame": {
-    "date": "2025-08-05T23:15:00Z",
+    "date": "2025-08-06T23:15:00Z",
     "opponent": "Milwaukee Brewers",
     "result": "L",
-    "score": "2-7",
+    "score": "4-5",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "5.1",
+      "name": "Spencer Strider",
+      "inningsPitched": "4.2",
       "earnedRuns": 5,
-      "hits": 7,
-      "homeRuns": 0,
-      "strikeOuts": 3
+      "hits": 11,
+      "homeRuns": 2,
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Eli White",
-        "hits": 2,
+        "name": "Michael Harris II",
+        "hits": 1,
         "homeRuns": 1,
-        "rbi": 2,
+        "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Drake Baldwin",
+        "name": "Jurickson Profar",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Sean Murphy",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Nick Allen",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 1
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
+      "bravesRuns": 4,
       "bravesHits": 8,
-      "opponentRuns": 7,
-      "opponentHits": 8
+      "opponentRuns": 5,
+      "opponentHits": 14
     }
   }
 }
