@@ -1,56 +1,56 @@
 {
-  "date": "2025-08-07",
-  "timestamp": "2025-08-07T09:24:37.362Z",
-  "rundown": "<b>4-5</b> L vs Milwaukee Brewers  \n<b>Spencer Strider:</b> 4.2 innings, 5 earned runs, 11 hits, 2 HR, 6 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (1 hits - 3 AB, 1 HR, 1 RBI)  \nJurickson Profar (1 hits - 3 AB, 1 HR, 1 RBI)  \nSean Murphy (1 hits - 4 AB, 1 RBI)  \n\nThe Braves fell short in a close game against the Milwaukee Brewers, losing by a single run. The team's pitching struggled early, allowing five runs, which proved too much to overcome despite a late rally. \n\nKey highlights include:\n1. Spencer Strider had a tough outing, giving up 11 hits and 5 earned runs in just under five innings.\n2. Michael Harris II and Jurickson Profar both hit home runs, contributing to the Braves' offensive efforts.\n3. The Braves managed to collect 8 hits but could not match the Brewers' 14 hits, leading to their defeat.",
+  "date": "2025-08-08",
+  "timestamp": "2025-08-08T09:24:43.656Z",
+  "rundown": "<b>8-6</b> W vs Miami Marlins  \n<b>Carlos Carrasco:</b> 5.2 innings, 6 earned runs, 9 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (3 hits - 4 AB, 2 HR, 5 RBI)  \nMarcell Ozuna (3 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a victory against the Miami Marlins with a strong offensive performance, scoring 8 runs on 12 hits. Drake Baldwin was the standout player, hitting two home runs and driving in five runs. Marcell Ozuna also contributed significantly with three hits, including a home run. Despite Carlos Carrasco allowing six earned runs, the Braves' offense was able to outpace the Marlins. \n\nKey highlights include:\n1. Drake Baldwin's impressive performance with two home runs and five RBIs.\n2. Marcell Ozuna's contribution with a home run and three hits.\n3. The Braves' ability to capitalize on their scoring opportunities, leading to an 8-run game.",
   "lastGame": {
-    "date": "2025-08-06T23:15:00Z",
-    "opponent": "Milwaukee Brewers",
-    "result": "L",
-    "score": "4-5",
+    "date": "2025-08-07T23:15:00Z",
+    "opponent": "Miami Marlins",
+    "result": "W",
+    "score": "8-6",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "4.2",
-      "earnedRuns": 5,
-      "hits": 11,
-      "homeRuns": 2,
-      "strikeOuts": 6
+      "name": "Carlos Carrasco",
+      "inningsPitched": "5.2",
+      "earnedRuns": 6,
+      "hits": 9,
+      "homeRuns": 1,
+      "strikeOuts": 2
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 1,
+        "name": "Drake Baldwin",
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 2
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 3,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Jurickson Profar",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Sean Murphy",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Nick Allen",
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 1
+      },
+      {
+        "name": "Jonathan Ornelas",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 8,
-      "opponentRuns": 5,
-      "opponentHits": 14
+      "bravesRuns": 8,
+      "bravesHits": 12,
+      "opponentRuns": 6,
+      "opponentHits": 10
     }
   }
 }
