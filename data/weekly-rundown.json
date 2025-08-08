@@ -1,47 +1,47 @@
 {
-  "date": "2025-08-07",
-  "timestamp": "2025-08-07T09:21:28.610Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Braves won the series against the Cincinnati Reds 3-1 but lost the series to the Milwaukee Brewers 0-3.  \n<b>Highlights:</b> High-scoring win 12-11 against the Reds, Eli White had an impressive week with 5 home runs and 13 RBIs, and a nail-biting 4-5 loss to the Brewers.  \n<b>Trend:</b> The team is struggling with 3 straight losses after a strong series win, indicating a need to regain momentum.",
+  "date": "2025-08-08",
+  "timestamp": "2025-08-08T09:21:33.314Z",
+  "rundown": "<b>Record:</b> 4-4 (0.500)  \n<b>Series:</b> Braves won the series against the Cincinnati Reds (3-1) but lost the series to the Milwaukee Brewers (0-3). They also secured a win against the Miami Marlins (1-0).  \n<b>Highlights:</b> The week featured a thrilling 12-11 victory over the Cincinnati Reds, showcasing an offensive explosion. Eli White had a standout performance, hitting 5 home runs and driving in 13 runs throughout the week. The Braves also managed a close 8-6 win against the Miami Marlins.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling against the Brewers but showing resilience in their series against the Reds and a strong finish against the Marlins.",
   "weeklyStats": {
-    "dateRange": "2025-07-31 to 2025-08-06",
-    "record": "3-4",
-    "wins": 3,
+    "dateRange": "2025-07-31 to 2025-08-07",
+    "record": "4-4",
+    "wins": 4,
     "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
-    "momentum": "struggling with 3 straight losses",
+    "winPct": "0.500",
+    "totalGames": 8,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
-        "inningsPitched": 4,
+        "appearances": 8,
+        "inningsPitched": 5,
         "earnedRuns": 0,
-        "strikeouts": 4,
+        "strikeouts": 6,
         "hits": 5,
         "wins": 0,
         "losses": 0,
-        "saves": 3,
+        "saves": 4,
         "era": "0.00"
       },
       {
-        "name": "Aaron Bummer",
-        "appearances": 7,
-        "inningsPitched": 3.3,
+        "name": "Pierce Johnson",
+        "appearances": 8,
+        "inningsPitched": 2.5,
         "earnedRuns": 0,
         "strikeouts": 2,
-        "hits": 2,
-        "wins": 0,
+        "hits": 3,
+        "wins": 2,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Daysbel Hernández",
-        "appearances": 7,
-        "inningsPitched": 2,
+        "name": "Aaron Bummer",
+        "appearances": 8,
+        "inningsPitched": 3.3,
         "earnedRuns": 0,
-        "strikeouts": 1,
-        "hits": 0,
+        "strikeouts": 2,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Eli White",
-        "games": 7,
-        "hits": 8,
+        "games": 8,
+        "hits": 9,
         "homeRuns": 5,
         "rbi": 13,
         "runs": 6,
-        "atBats": 29,
-        "avg": "0.276"
+        "atBats": 33,
+        "avg": "0.273"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 8,
+        "hits": 10,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 3,
+        "atBats": 26,
+        "avg": "0.385"
       },
       {
         "name": "Michael Harris II",
-        "games": 7,
+        "games": 8,
         "hits": 10,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 5,
-        "atBats": 30,
-        "avg": "0.333"
+        "atBats": 34,
+        "avg": "0.294"
       },
       {
         "name": "Jurickson Profar",
-        "games": 7,
+        "games": 8,
         "hits": 7,
         "homeRuns": 2,
         "rbi": 2,
-        "runs": 2,
-        "atBats": 30,
-        "avg": "0.233"
-      },
-      {
-        "name": "Ozzie Albies",
-        "games": 7,
-        "hits": 8,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 5,
-        "atBats": 29,
-        "avg": "0.276"
+        "runs": 4,
+        "atBats": 33,
+        "avg": "0.212"
       }
     ],
     "gameResults": [
@@ -138,6 +138,13 @@
         "result": "L",
         "score": "4-5",
         "opponent": "Milwaukee Brewers",
+        "homeAway": "vs"
+      },
+      {
+        "date": "8/7/2025",
+        "result": "W",
+        "score": "8-6",
+        "opponent": "Miami Marlins",
         "homeAway": "vs"
       }
     ],
@@ -192,10 +199,24 @@
             "score": "4-5"
           }
         ]
+      },
+      {
+        "opponent": "Miami Marlins",
+        "homeAway": "vs",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "8/7/2025",
+            "result": "W",
+            "score": "8-6"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring W 12-11 @ Cincinnati Reds",
+      "High-scoring W 8-6 vs Miami Marlins",
       "Close W 12-11 @ Cincinnati Reds",
       "Close L 2-3 @ Cincinnati Reds",
       "Close L 4-5 vs Milwaukee Brewers",
