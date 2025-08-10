@@ -1,34 +1,55 @@
 {
-  "date": "2025-08-09",
-  "timestamp": "2025-08-09T09:17:26.929Z",
-  "rundown": "<b>1-5</b> L vs Miami Marlins  \n<b>Bryce Elder:</b> 6.0 innings, 5 earned runs, 7 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hit - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Miami Marlins with a final score of 1-5. The team's struggles at the plate were evident, managing only 2 hits throughout the game. \n\nKey highlights include:\n1. Bryce Elder pitched 6 innings but allowed 5 earned runs, contributing to the loss.\n2. Jurickson Profar provided the lone bright spot for the Braves with a home run and an RBI.\n3. The Marlins outperformed the Braves in both runs and hits, with 9 hits compared to Atlanta's 2.",
+  "date": "2025-08-10",
+  "timestamp": "2025-08-10T09:17:42.384Z",
+  "rundown": "<b>8-6</b> W vs Miami Marlins  \n<b>Erick Fedde:</b> 5.0 innings, 4 earned runs, 5 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (2 hits - 4 AB, 2 HR, 4 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 3 RBI)  \nMatt Olson (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the Miami Marlins with a strong offensive performance, scoring 8 runs on 11 hits. Marcell Ozuna was the standout player, hitting two home runs and driving in four runs. Drake Baldwin also contributed significantly with two hits and three RBIs. Despite giving up four earned runs, Erick Fedde managed to keep the Marlins at bay for five innings. \n\nKey highlights include:\n1. Marcell Ozuna's two home runs, which were crucial in building the Braves' lead.\n2. Drake Baldwin's consistent hitting, contributing three RBIs to the team's total.\n3. The Braves' ability to outscore the Marlins despite allowing six runs, showcasing their offensive depth.",
   "lastGame": {
-    "date": "2025-08-08T23:15:00Z",
+    "date": "2025-08-09T23:15:00Z",
     "opponent": "Miami Marlins",
-    "result": "L",
-    "score": "1-5",
+    "result": "W",
+    "score": "8-6",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "6.0",
-      "earnedRuns": 5,
-      "hits": 7,
-      "homeRuns": 1,
-      "strikeOuts": 3
+      "name": "Erick Fedde",
+      "inningsPitched": "5.0",
+      "earnedRuns": 4,
+      "hits": 5,
+      "homeRuns": 0,
+      "strikeOuts": 4
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
+        "name": "Marcell Ozuna",
+        "hits": 2,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 2
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
         "hits": 1,
-        "homeRuns": 1,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 2,
-      "opponentRuns": 5,
+      "bravesRuns": 8,
+      "bravesHits": 11,
+      "opponentRuns": 6,
       "opponentHits": 9
     }
   }
