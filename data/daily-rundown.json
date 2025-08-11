@@ -1,56 +1,56 @@
 {
-  "date": "2025-08-10",
-  "timestamp": "2025-08-10T09:17:42.384Z",
-  "rundown": "<b>8-6</b> W vs Miami Marlins  \n<b>Erick Fedde:</b> 5.0 innings, 4 earned runs, 5 hits, 0 HR, 4 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (2 hits - 4 AB, 2 HR, 4 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 3 RBI)  \nMatt Olson (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a victory against the Miami Marlins with a strong offensive performance, scoring 8 runs on 11 hits. Marcell Ozuna was the standout player, hitting two home runs and driving in four runs. Drake Baldwin also contributed significantly with two hits and three RBIs. Despite giving up four earned runs, Erick Fedde managed to keep the Marlins at bay for five innings. \n\nKey highlights include:\n1. Marcell Ozuna's two home runs, which were crucial in building the Braves' lead.\n2. Drake Baldwin's consistent hitting, contributing three RBIs to the team's total.\n3. The Braves' ability to outscore the Marlins despite allowing six runs, showcasing their offensive depth.",
+  "date": "2025-08-11",
+  "timestamp": "2025-08-11T09:24:12.319Z",
+  "rundown": "<b>7-1</b> W vs Miami Marlins  \n<b>Joey Wentz:</b> 5.1 innings, 1 earned run, 4 hits, 0 HR, 2 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (1 hits - 4 AB, 1 HR, 3 RBI)  \nMichael Harris II (2 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Miami Marlins, showcasing a strong offensive performance and solid pitching. Key highlights include Marcell Ozuna's impactful three-RBI game, Michael Harris II and Matt Olson both contributing with home runs, and Joey Wentz delivering a solid start on the mound. The Braves' ability to capitalize on scoring opportunities and limit the Marlins to just one run was crucial in this win.",
   "lastGame": {
-    "date": "2025-08-09T23:15:00Z",
+    "date": "2025-08-10T17:35:00Z",
     "opponent": "Miami Marlins",
     "result": "W",
-    "score": "8-6",
+    "score": "7-1",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Erick Fedde",
-      "inningsPitched": "5.0",
-      "earnedRuns": 4,
-      "hits": 5,
+      "name": "Joey Wentz",
+      "inningsPitched": "5.1",
+      "earnedRuns": 1,
+      "hits": 4,
       "homeRuns": 0,
-      "strikeOuts": 4
+      "strikeOuts": 2
     },
     "significantHitters": [
       {
         "name": "Marcell Ozuna",
-        "hits": 2,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
         "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
+        "homeRuns": 1,
+        "rbi": 3,
         "runs": 1
       },
       {
         "name": "Michael Harris II",
         "hits": 2,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 2
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
+        "rbi": 1,
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 8,
-      "bravesHits": 11,
-      "opponentRuns": 6,
-      "opponentHits": 9
+      "bravesRuns": 7,
+      "bravesHits": 9,
+      "opponentRuns": 1,
+      "opponentHits": 6
     }
   }
 }
