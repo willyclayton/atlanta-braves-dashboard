@@ -1,20 +1,32 @@
 {
-  "date": "2025-08-13",
-  "timestamp": "2025-08-13T09:17:35.255Z",
-  "rundown": "<b>Record:</b> 4-5 (0.444)  \n<b>Series:</b> Lost series to Milwaukee Brewers (0-3), Won series against Miami Marlins (4-1), Lost game to New York Mets (0-1)  \n<b>Highlights:</b> Marcell Ozuna had a standout week with 4 home runs, while the team celebrated a thrilling 8-6 victory over the Miami Marlins. Dylan Dodd and Raisel Iglesias both showcased their skills with perfect ERAs, contributing to the team's solid pitching efforts.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by their offensive explosion against the Marlins despite a tough loss to the Mets.",
+  "date": "2025-08-14",
+  "timestamp": "2025-08-14T09:18:05.965Z",
+  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the Miami Marlins 4-1 and split the series with the New York Mets 1-1.  \n<b>Highlights:</b> Marcell Ozuna had an offensive explosion with 5 home runs and 11 RBIs this week, while Michael Harris II added 3 home runs and 8 RBIs. The Braves also showcased their power in a thrilling 8-6 victory against the Marlins.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong performances from both the batters and pitchers.",
   "weeklyStats": {
-    "dateRange": "2025-08-04 to 2025-08-12",
-    "record": "4-5",
-    "wins": 4,
-    "losses": 5,
-    "winPct": "0.444",
-    "totalGames": 9,
+    "dateRange": "2025-08-07 to 2025-08-13",
+    "record": "5-2",
+    "wins": 5,
+    "losses": 2,
+    "winPct": "0.714",
+    "totalGames": 7,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
+        "name": "Dylan Lee",
+        "appearances": 7,
+        "inningsPitched": 4.2,
+        "earnedRuns": 0,
+        "strikeouts": 5,
+        "hits": 3,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "Dylan Dodd",
-        "appearances": 5,
-        "inningsPitched": 4.1,
+        "appearances": 2,
+        "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 4,
         "hits": 2,
@@ -24,24 +36,12 @@
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 3,
-        "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 1,
-        "wins": 0,
-        "losses": 0,
-        "saves": 2,
-        "era": "0.00"
-      },
-      {
-        "name": "Dylan Lee",
-        "appearances": 9,
-        "inningsPitched": 3,
+        "name": "Tyler Kinley",
+        "appearances": 7,
+        "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 3,
-        "hits": 1,
+        "hits": 2,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -50,68 +50,47 @@
     ],
     "topBatters": [
       {
-        "name": "Drake Baldwin",
-        "games": 8,
-        "hits": 9,
-        "homeRuns": 2,
-        "rbi": 11,
-        "runs": 5,
-        "atBats": 29,
-        "avg": "0.310"
-      },
-      {
         "name": "Marcell Ozuna",
         "games": 6,
-        "hits": 7,
-        "homeRuns": 4,
-        "rbi": 8,
-        "runs": 4,
+        "hits": 8,
+        "homeRuns": 5,
+        "rbi": 11,
+        "runs": 6,
         "atBats": 23,
-        "avg": "0.304"
+        "avg": "0.348"
       },
       {
         "name": "Michael Harris II",
-        "games": 9,
+        "games": 7,
         "hits": 11,
         "homeRuns": 3,
-        "rbi": 5,
-        "runs": 5,
-        "atBats": 36,
-        "avg": "0.306"
+        "rbi": 8,
+        "runs": 6,
+        "atBats": 28,
+        "avg": "0.393"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 5,
+        "hits": 7,
+        "homeRuns": 2,
+        "rbi": 11,
+        "runs": 4,
+        "atBats": 21,
+        "avg": "0.333"
       },
       {
         "name": "Jurickson Profar",
-        "games": 9,
+        "games": 7,
         "hits": 7,
-        "homeRuns": 3,
-        "rbi": 5,
-        "runs": 11,
-        "atBats": 29,
-        "avg": "0.241"
+        "homeRuns": 1,
+        "rbi": 6,
+        "runs": 10,
+        "atBats": 24,
+        "avg": "0.292"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/4/2025",
-        "result": "L",
-        "score": "1-3",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/5/2025",
-        "result": "L",
-        "score": "2-7",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/6/2025",
-        "result": "L",
-        "score": "4-5",
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "vs"
-      },
       {
         "date": "8/7/2025",
         "result": "W",
@@ -153,32 +132,16 @@
         "score": "5-13",
         "opponent": "New York Mets",
         "homeAway": "@"
+      },
+      {
+        "date": "8/13/2025",
+        "result": "W",
+        "score": "11-6",
+        "opponent": "New York Mets",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Milwaukee Brewers",
-        "homeAway": "vs",
-        "record": "0-3",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "8/4/2025",
-            "result": "L",
-            "score": "1-3"
-          },
-          {
-            "date": "8/5/2025",
-            "result": "L",
-            "score": "2-7"
-          },
-          {
-            "date": "8/6/2025",
-            "result": "L",
-            "score": "4-5"
-          }
-        ]
-      },
       {
         "opponent": "Miami Marlins",
         "homeAway": "vs",
@@ -215,13 +178,18 @@
       {
         "opponent": "New York Mets",
         "homeAway": "@",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "8/12/2025",
             "result": "L",
             "score": "5-13"
+          },
+          {
+            "date": "8/13/2025",
+            "result": "W",
+            "score": "11-6"
           }
         ]
       }
@@ -230,8 +198,8 @@
       "High-scoring W 8-6 vs Miami Marlins",
       "High-scoring W 8-6 vs Miami Marlins",
       "High-scoring L 5-13 @ New York Mets",
-      "Close L 4-5 vs Milwaukee Brewers",
-      "Marcell Ozuna: 4 HRs in the week",
+      "High-scoring W 11-6 @ New York Mets",
+      "Marcell Ozuna: 5 HRs in the week",
       "Michael Harris II: 3 HRs in the week"
     ]
   }
