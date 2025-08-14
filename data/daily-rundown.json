@@ -1,56 +1,56 @@
 {
-  "date": "2025-08-13",
-  "timestamp": "2025-08-13T09:20:29.629Z",
-  "rundown": "<b>5-13</b> L @ New York Mets  \n<b>Spencer Strider:</b> 4.0 innings, 8 earned runs, 8 hits, 3 HR, 2 strikeouts  \n<b>Batters:</b>  \nNacho Alvarez Jr. (2 hits - 4 AB, 0 HR, 2 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 1 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a tough loss against the New York Mets, allowing 13 runs while only managing to score 5. The game was marked by a rough outing from starting pitcher Spencer Strider, who gave up 8 earned runs in just 4 innings. \n\nKey highlights include:\n1. The Mets hit 3 home runs off Strider, contributing significantly to their scoring.\n2. Nacho Alvarez Jr. led the Braves with 2 hits and 2 RBIs, showing some offensive spark despite the loss.\n3. The Braves managed 8 hits overall, but it wasn't enough to keep pace with the Mets' 16 hits.",
+  "date": "2025-08-14",
+  "timestamp": "2025-08-14T09:20:53.621Z",
+  "rundown": "<b>11-6</b> W @ New York Mets  \n<b>Aaron Bummer:</b> 2.1 innings, 0 earned runs, 2 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 1 HR, 4 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 3 RBI)  \nJurickson Profar (3 hits - 4 AB, 0 HR, 3 RBI)  \n\nThe Braves secured a victory against the New York Mets with a strong offensive performance, scoring 11 runs. Key highlights include Michael Harris II and Marcell Ozuna each hitting home runs and driving in multiple runs, contributing significantly to the team's total. Jurickson Profar also had a standout game with three hits and three RBIs. The Braves' pitching held the Mets to six runs despite allowing 12 hits, showcasing their ability to limit damage in crucial moments.",
   "lastGame": {
-    "date": "2025-08-12T23:10:00Z",
+    "date": "2025-08-13T23:10:00Z",
     "opponent": "New York Mets",
-    "result": "L",
-    "score": "5-13",
+    "result": "W",
+    "score": "11-6",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "4.0",
-      "earnedRuns": 8,
-      "hits": 8,
-      "homeRuns": 3,
-      "strikeOuts": 2
+      "name": "Aaron Bummer",
+      "inningsPitched": "2.1",
+      "earnedRuns": 0,
+      "hits": 2,
+      "homeRuns": 0,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
         "name": "Michael Harris II",
         "hits": 2,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 2
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 2
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 3,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 2,
+        "name": "Nick Allen",
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 1,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 5,
+      "bravesRuns": 11,
       "bravesHits": 8,
-      "opponentRuns": 13,
-      "opponentHits": 16
+      "opponentRuns": 6,
+      "opponentHits": 12
     }
   }
 }
