@@ -1,56 +1,42 @@
 {
-  "date": "2025-08-14",
-  "timestamp": "2025-08-14T09:20:53.621Z",
-  "rundown": "<b>11-6</b> W @ New York Mets  \n<b>Aaron Bummer:</b> 2.1 innings, 0 earned runs, 2 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 1 HR, 4 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 1 HR, 3 RBI)  \nJurickson Profar (3 hits - 4 AB, 0 HR, 3 RBI)  \n\nThe Braves secured a victory against the New York Mets with a strong offensive performance, scoring 11 runs. Key highlights include Michael Harris II and Marcell Ozuna each hitting home runs and driving in multiple runs, contributing significantly to the team's total. Jurickson Profar also had a standout game with three hits and three RBIs. The Braves' pitching held the Mets to six runs despite allowing 12 hits, showcasing their ability to limit damage in crucial moments.",
+  "date": "2025-08-15",
+  "timestamp": "2025-08-15T09:19:11.593Z",
+  "rundown": "<b>4-3</b> W @ New York Mets  \n<b>Bryce Elder:</b> 7.0 innings, 2 earned runs, 5 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 4 AB, 1 HR, 3 RBI)  \nMichael Harris II (3 hits - 4 AB, 1 RBI)  \n\nThe Braves secured a narrow victory against the New York Mets, showcasing a strong offensive performance led by Ozzie Albies. Key highlights include Albies' standout game with three hits, including a home run and three RBIs, which were crucial in driving the team's runs. Bryce Elder delivered a solid pitching performance, allowing only two earned runs over seven innings. Michael Harris II also contributed significantly with three hits and an RBI, helping the Braves maintain their lead. The combination of effective pitching and timely hitting was the key to the Braves' success in this matchup.",
   "lastGame": {
-    "date": "2025-08-13T23:10:00Z",
+    "date": "2025-08-14T23:10:00Z",
     "opponent": "New York Mets",
     "result": "W",
-    "score": "11-6",
+    "score": "4-3",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Aaron Bummer",
-      "inningsPitched": "2.1",
-      "earnedRuns": 0,
-      "hits": 2,
-      "homeRuns": 0,
-      "strikeOuts": 3
+      "name": "Bryce Elder",
+      "inningsPitched": "7.0",
+      "earnedRuns": 2,
+      "hits": 5,
+      "homeRuns": 1,
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 2
-      },
-      {
-        "name": "Marcell Ozuna",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 2
-      },
-      {
-        "name": "Jurickson Profar",
+        "name": "Ozzie Albies",
         "hits": 3,
-        "homeRuns": 0,
+        "homeRuns": 1,
         "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Nick Allen",
-        "hits": 1,
+        "name": "Michael Harris II",
+        "hits": 3,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 11,
-      "bravesHits": 8,
-      "opponentRuns": 6,
-      "opponentHits": 12
+      "bravesRuns": 4,
+      "bravesHits": 9,
+      "opponentRuns": 3,
+      "opponentHits": 6
     }
   }
 }
