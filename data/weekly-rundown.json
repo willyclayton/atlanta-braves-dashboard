@@ -1,23 +1,23 @@
 {
-  "date": "2025-08-14",
-  "timestamp": "2025-08-14T09:18:05.965Z",
-  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the Miami Marlins 4-1 and split the series with the New York Mets 1-1.  \n<b>Highlights:</b> Marcell Ozuna had an offensive explosion with 5 home runs and 11 RBIs this week, while Michael Harris II added 3 home runs and 8 RBIs. The Braves also showcased their power in a thrilling 8-6 victory against the Marlins.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong performances from both the batters and pitchers.",
+  "date": "2025-08-15",
+  "timestamp": "2025-08-15T09:16:02.823Z",
+  "rundown": "<b>Record:</b> 6-2 (0.750)  \n<b>Series:</b> Braves won the series against the Miami Marlins (4-1) and the New York Mets (2-1).  \n<b>Highlights:</b> Michael Harris II had an impressive week with 3 home runs and 9 RBIs, while the team showcased an offensive explosion with multiple high-scoring games, including a thrilling 11-6 victory over the Mets. Dylan Lee and Dylan Dodd both pitched brilliantly, combining for 9.0 innings without allowing an earned run.  \n<b>Trend:</b> The Braves are building momentum with recent solid play, highlighted by their strong offensive performances and dominant pitching.",
   "weeklyStats": {
-    "dateRange": "2025-08-07 to 2025-08-13",
-    "record": "5-2",
-    "wins": 5,
+    "dateRange": "2025-08-07 to 2025-08-14",
+    "record": "6-2",
+    "wins": 6,
     "losses": 2,
-    "winPct": "0.714",
-    "totalGames": 7,
+    "winPct": "0.750",
+    "totalGames": 8,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Dylan Lee",
-        "appearances": 7,
-        "inningsPitched": 4.2,
+        "appearances": 8,
+        "inningsPitched": 5.2,
         "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 3,
+        "strikeouts": 6,
+        "hits": 4,
         "wins": 0,
         "losses": 0,
         "saves": 0,
@@ -36,58 +36,58 @@
         "era": "0.00"
       },
       {
-        "name": "Tyler Kinley",
-        "appearances": 7,
-        "inningsPitched": 2.2,
+        "name": "Raisel Iglesias",
+        "appearances": 8,
+        "inningsPitched": 4,
         "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 2,
+        "strikeouts": 4,
+        "hits": 1,
         "wins": 0,
         "losses": 0,
-        "saves": 0,
+        "saves": 3,
         "era": "0.00"
       }
     ],
     "topBatters": [
       {
+        "name": "Michael Harris II",
+        "games": 8,
+        "hits": 14,
+        "homeRuns": 3,
+        "rbi": 9,
+        "runs": 7,
+        "atBats": 32,
+        "avg": "0.438"
+      },
+      {
         "name": "Marcell Ozuna",
-        "games": 6,
+        "games": 7,
         "hits": 8,
         "homeRuns": 5,
         "rbi": 11,
         "runs": 6,
-        "atBats": 23,
-        "avg": "0.348"
-      },
-      {
-        "name": "Michael Harris II",
-        "games": 7,
-        "hits": 11,
-        "homeRuns": 3,
-        "rbi": 8,
-        "runs": 6,
-        "atBats": 28,
-        "avg": "0.393"
+        "atBats": 26,
+        "avg": "0.308"
       },
       {
         "name": "Drake Baldwin",
-        "games": 5,
-        "hits": 7,
+        "games": 6,
+        "hits": 8,
         "homeRuns": 2,
         "rbi": 11,
-        "runs": 4,
-        "atBats": 21,
-        "avg": "0.333"
+        "runs": 5,
+        "atBats": 25,
+        "avg": "0.320"
       },
       {
         "name": "Jurickson Profar",
-        "games": 7,
-        "hits": 7,
+        "games": 8,
+        "hits": 8,
         "homeRuns": 1,
         "rbi": 6,
         "runs": 10,
-        "atBats": 24,
-        "avg": "0.292"
+        "atBats": 29,
+        "avg": "0.276"
       }
     ],
     "gameResults": [
@@ -139,6 +139,13 @@
         "score": "11-6",
         "opponent": "New York Mets",
         "homeAway": "@"
+      },
+      {
+        "date": "8/14/2025",
+        "result": "W",
+        "score": "4-3",
+        "opponent": "New York Mets",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
@@ -178,8 +185,8 @@
       {
         "opponent": "New York Mets",
         "homeAway": "@",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "2-1",
+        "outcome": "won series",
         "games": [
           {
             "date": "8/12/2025",
@@ -190,6 +197,11 @@
             "date": "8/13/2025",
             "result": "W",
             "score": "11-6"
+          },
+          {
+            "date": "8/14/2025",
+            "result": "W",
+            "score": "4-3"
           }
         ]
       }
@@ -199,7 +211,7 @@
       "High-scoring W 8-6 vs Miami Marlins",
       "High-scoring L 5-13 @ New York Mets",
       "High-scoring W 11-6 @ New York Mets",
-      "Marcell Ozuna: 5 HRs in the week",
+      "Close W 4-3 @ New York Mets",
       "Michael Harris II: 3 HRs in the week"
     ]
   }
