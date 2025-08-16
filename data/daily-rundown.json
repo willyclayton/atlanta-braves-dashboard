@@ -1,42 +1,42 @@
 {
-  "date": "2025-08-15",
-  "timestamp": "2025-08-15T09:19:11.593Z",
-  "rundown": "<b>4-3</b> W @ New York Mets  \n<b>Bryce Elder:</b> 7.0 innings, 2 earned runs, 5 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 4 AB, 1 HR, 3 RBI)  \nMichael Harris II (3 hits - 4 AB, 1 RBI)  \n\nThe Braves secured a narrow victory against the New York Mets, showcasing a strong offensive performance led by Ozzie Albies. Key highlights include Albies' standout game with three hits, including a home run and three RBIs, which were crucial in driving the team's runs. Bryce Elder delivered a solid pitching performance, allowing only two earned runs over seven innings. Michael Harris II also contributed significantly with three hits and an RBI, helping the Braves maintain their lead. The combination of effective pitching and timely hitting was the key to the Braves' success in this matchup.",
+  "date": "2025-08-16",
+  "timestamp": "2025-08-16T09:17:10.733Z",
+  "rundown": "<b>2-0</b> W @ Cleveland Guardians  \n<b>Hurston Waldrep:</b> 6.0 innings, 0 earned runs, 2 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 0 HR, 1 RBI)  \nMatt Olson (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a solid victory against the Guardians, showcasing strong pitching and timely hitting. Hurston Waldrep delivered an impressive performance on the mound, not allowing any earned runs and striking out seven batters. \n\nKey highlights include:\n1. Waldrep's dominant six-inning outing, which kept the Guardians' offense at bay.\n2. Michael Harris II contributed significantly with two hits and an RBI.\n3. The Braves' offense was efficient, accumulating eight hits while limiting the Guardians to just two.",
   "lastGame": {
-    "date": "2025-08-14T23:10:00Z",
-    "opponent": "New York Mets",
+    "date": "2025-08-15T23:10:00Z",
+    "opponent": "Cleveland Guardians",
     "result": "W",
-    "score": "4-3",
+    "score": "2-0",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "7.0",
-      "earnedRuns": 2,
-      "hits": 5,
-      "homeRuns": 1,
-      "strikeOuts": 6
+      "name": "Hurston Waldrep",
+      "inningsPitched": "6.0",
+      "earnedRuns": 0,
+      "hits": 2,
+      "homeRuns": 0,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Ozzie Albies",
-        "hits": 3,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
         "name": "Michael Harris II",
-        "hits": 3,
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 1
+        "runs": 0
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 9,
-      "opponentRuns": 3,
-      "opponentHits": 6
+      "bravesRuns": 2,
+      "bravesHits": 8,
+      "opponentRuns": 0,
+      "opponentHits": 2
     }
   }
 }
