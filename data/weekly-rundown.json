@@ -1,48 +1,48 @@
 {
-  "date": "2025-08-17",
-  "timestamp": "2025-08-17T09:14:15.546Z",
-  "rundown": "<b>Record:</b> 8-2 (0.800)  \n<b>Series:</b> Braves won the series against the Miami Marlins (4-1), won the series against the New York Mets (2-1), and won the series against the Cleveland Guardians (2-0).  \n<b>Highlights:</b> High-scoring wins included an 8-6 thriller against the Marlins and an impressive 10-1 victory over the Guardians. Dylan Lee and Raisel Iglesias both showcased stellar pitching with zero earned runs across their appearances.  \n<b>Trend:</b> The Braves are on a hot streak with 3 straight wins, demonstrating strong offensive power and dominant pitching performances.",
+  "date": "2025-08-18",
+  "timestamp": "2025-08-18T09:20:10.939Z",
+  "rundown": "<b>Record:</b> 5-1 (0.833)  \n<b>Series:</b> Braves won the series against the New York Mets 2-1 and swept the Cleveland Guardians 3-0.  \n<b>Highlights:</b> Michael Harris II had a standout week with 12 hits, including 2 home runs and 9 RBIs. The pitching staff was phenomenal, highlighted by Hurston Waldrep's 6 innings of shutout ball with 7 strikeouts. The Braves also showcased an offensive explosion with a 10-1 victory over the Guardians.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, demonstrating both offensive firepower and dominant pitching.",
   "weeklyStats": {
-    "dateRange": "2025-08-07 to 2025-08-16",
-    "record": "8-2",
-    "wins": 8,
-    "losses": 2,
-    "winPct": "0.800",
-    "totalGames": 10,
+    "dateRange": "2025-08-12 to 2025-08-17",
+    "record": "5-1",
+    "wins": 5,
+    "losses": 1,
+    "winPct": "0.833",
+    "totalGames": 6,
     "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
-        "name": "Dylan Lee",
-        "appearances": 10,
-        "inningsPitched": 5.2,
+        "name": "Hurston Waldrep",
+        "appearances": 6,
+        "inningsPitched": 6,
         "earnedRuns": 0,
-        "strikeouts": 6,
-        "hits": 4,
+        "strikeouts": 7,
+        "hits": 2,
+        "wins": 1,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Dylan Lee",
+        "appearances": 6,
+        "inningsPitched": 3.2,
+        "earnedRuns": 0,
+        "strikeouts": 5,
+        "hits": 5,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
-        "appearances": 10,
-        "inningsPitched": 5,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 1,
-        "wins": 0,
-        "losses": 0,
-        "saves": 4,
-        "era": "0.00"
-      },
-      {
-        "name": "Dylan Dodd",
-        "appearances": 2,
-        "inningsPitched": 3.1,
+        "name": "Aaron Bummer",
+        "appearances": 6,
+        "inningsPitched": 4.1,
         "earnedRuns": 0,
         "strikeouts": 4,
-        "hits": 2,
-        "wins": 0,
+        "hits": 3,
+        "wins": 2,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
@@ -51,81 +51,46 @@
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 10,
-        "hits": 18,
-        "homeRuns": 4,
-        "rbi": 13,
-        "runs": 8,
-        "atBats": 41,
-        "avg": "0.439"
-      },
-      {
-        "name": "Marcell Ozuna",
-        "games": 9,
-        "hits": 10,
-        "homeRuns": 5,
-        "rbi": 12,
-        "runs": 8,
-        "atBats": 33,
-        "avg": "0.303"
-      },
-      {
-        "name": "Drake Baldwin",
-        "games": 7,
-        "hits": 9,
+        "games": 6,
+        "hits": 12,
         "homeRuns": 2,
-        "rbi": 12,
-        "runs": 7,
-        "atBats": 30,
-        "avg": "0.300"
+        "rbi": 9,
+        "runs": 6,
+        "atBats": 27,
+        "avg": "0.444"
       },
       {
-        "name": "Matt Olson",
-        "games": 10,
-        "hits": 13,
+        "name": "Jurickson Profar",
+        "games": 6,
+        "hits": 7,
+        "homeRuns": 1,
+        "rbi": 6,
+        "runs": 3,
+        "atBats": 24,
+        "avg": "0.292"
+      },
+      {
+        "name": "Ozzie Albies",
+        "games": 6,
+        "hits": 8,
         "homeRuns": 1,
         "rbi": 4,
-        "runs": 8,
-        "atBats": 37,
-        "avg": "0.351"
+        "runs": 3,
+        "atBats": 27,
+        "avg": "0.296"
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "games": 6,
+        "hits": 6,
+        "homeRuns": 0,
+        "rbi": 5,
+        "runs": 5,
+        "atBats": 21,
+        "avg": "0.286"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/7/2025",
-        "result": "W",
-        "score": "8-6",
-        "opponent": "Miami Marlins",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/8/2025",
-        "result": "L",
-        "score": "1-5",
-        "opponent": "Miami Marlins",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/9/2025",
-        "result": "W",
-        "score": "7-1",
-        "opponent": "Miami Marlins",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/9/2025",
-        "result": "W",
-        "score": "8-6",
-        "opponent": "Miami Marlins",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/10/2025",
-        "result": "W",
-        "score": "7-1",
-        "opponent": "Miami Marlins",
-        "homeAway": "vs"
-      },
       {
         "date": "8/12/2025",
         "result": "L",
@@ -160,42 +125,16 @@
         "score": "10-1",
         "opponent": "Cleveland Guardians",
         "homeAway": "@"
+      },
+      {
+        "date": "8/17/2025",
+        "result": "W",
+        "score": "5-4",
+        "opponent": "Cleveland Guardians",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Miami Marlins",
-        "homeAway": "vs",
-        "record": "4-1",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "8/7/2025",
-            "result": "W",
-            "score": "8-6"
-          },
-          {
-            "date": "8/8/2025",
-            "result": "L",
-            "score": "1-5"
-          },
-          {
-            "date": "8/9/2025",
-            "result": "W",
-            "score": "7-1"
-          },
-          {
-            "date": "8/9/2025",
-            "result": "W",
-            "score": "8-6"
-          },
-          {
-            "date": "8/10/2025",
-            "result": "W",
-            "score": "7-1"
-          }
-        ]
-      },
       {
         "opponent": "New York Mets",
         "homeAway": "@",
@@ -222,8 +161,8 @@
       {
         "opponent": "Cleveland Guardians",
         "homeAway": "@",
-        "record": "2-0",
-        "outcome": "winning series",
+        "record": "3-0",
+        "outcome": "won series",
         "games": [
           {
             "date": "8/15/2025",
@@ -234,17 +173,22 @@
             "date": "8/16/2025",
             "result": "W",
             "score": "10-1"
+          },
+          {
+            "date": "8/17/2025",
+            "result": "W",
+            "score": "5-4"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 8-6 vs Miami Marlins",
-      "High-scoring W 8-6 vs Miami Marlins",
       "High-scoring L 5-13 @ New York Mets",
       "High-scoring W 11-6 @ New York Mets",
       "High-scoring W 10-1 @ Cleveland Guardians",
-      "Shutout victory 2-0 @ Cleveland Guardians"
+      "Shutout victory 2-0 @ Cleveland Guardians",
+      "Close W 4-3 @ New York Mets",
+      "Close W 5-4 @ Cleveland Guardians"
     ]
   }
 }
