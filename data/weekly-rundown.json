@@ -1,19 +1,19 @@
 {
-  "date": "2025-08-18",
-  "timestamp": "2025-08-18T09:20:10.939Z",
-  "rundown": "<b>Record:</b> 5-1 (0.833)  \n<b>Series:</b> Braves won the series against the New York Mets 2-1 and swept the Cleveland Guardians 3-0.  \n<b>Highlights:</b> Michael Harris II had a standout week with 12 hits, including 2 home runs and 9 RBIs. The pitching staff was phenomenal, highlighted by Hurston Waldrep's 6 innings of shutout ball with 7 strikeouts. The Braves also showcased an offensive explosion with a 10-1 victory over the Guardians.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, demonstrating both offensive firepower and dominant pitching.",
+  "date": "2025-08-19",
+  "timestamp": "2025-08-19T09:15:16.892Z",
+  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the New York Mets (2-1) and swept the Cleveland Guardians (3-0), but lost to the Chicago White Sox (0-1).  \n<b>Highlights:</b> Michael Harris II had a phenomenal week, hitting .516 with 3 home runs and 11 RBIs. Hurston Waldrep showcased his skills with a stellar 0.00 ERA over 6 innings pitched. The Braves delivered a dominant 10-1 victory against the Guardians.  \n<b>Trend:</b> The team is building momentum with recent solid play, bouncing back strong after a tough start to the week.",
   "weeklyStats": {
-    "dateRange": "2025-08-12 to 2025-08-17",
-    "record": "5-1",
+    "dateRange": "2025-08-12 to 2025-08-18",
+    "record": "5-2",
     "wins": 5,
-    "losses": 1,
-    "winPct": "0.833",
-    "totalGames": 6,
-    "momentum": "hot streak with 3 straight wins",
+    "losses": 2,
+    "winPct": "0.714",
+    "totalGames": 7,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Hurston Waldrep",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 6,
         "earnedRuns": 0,
         "strikeouts": 7,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Dylan Lee",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 5,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Aaron Bummer",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 4.1,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 6,
-        "hits": 12,
-        "homeRuns": 2,
-        "rbi": 9,
-        "runs": 6,
-        "atBats": 27,
-        "avg": "0.444"
+        "games": 7,
+        "hits": 16,
+        "homeRuns": 3,
+        "rbi": 11,
+        "runs": 7,
+        "atBats": 31,
+        "avg": "0.516"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 7,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 3,
-        "atBats": 24,
-        "avg": "0.292"
+        "games": 7,
+        "hits": 10,
+        "homeRuns": 3,
+        "rbi": 11,
+        "runs": 6,
+        "atBats": 29,
+        "avg": "0.345"
       },
       {
         "name": "Ozzie Albies",
-        "games": 6,
-        "hits": 8,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 1,
         "rbi": 4,
-        "runs": 3,
-        "atBats": 27,
-        "avg": "0.296"
+        "runs": 4,
+        "atBats": 31,
+        "avg": "0.290"
       },
       {
-        "name": "Nacho Alvarez Jr.",
-        "games": 6,
-        "hits": 6,
+        "name": "Matt Olson",
+        "games": 7,
+        "hits": 10,
         "homeRuns": 0,
-        "rbi": 5,
-        "runs": 5,
-        "atBats": 21,
-        "avg": "0.286"
+        "rbi": 2,
+        "runs": 3,
+        "atBats": 29,
+        "avg": "0.345"
       }
     ],
     "gameResults": [
@@ -132,6 +132,13 @@
         "score": "5-4",
         "opponent": "Cleveland Guardians",
         "homeAway": "@"
+      },
+      {
+        "date": "8/18/2025",
+        "result": "L",
+        "score": "9-13",
+        "opponent": "Chicago White Sox",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
@@ -180,15 +187,28 @@
             "score": "5-4"
           }
         ]
+      },
+      {
+        "opponent": "Chicago White Sox",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "8/18/2025",
+            "result": "L",
+            "score": "9-13"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring L 5-13 @ New York Mets",
       "High-scoring W 11-6 @ New York Mets",
       "High-scoring W 10-1 @ Cleveland Guardians",
+      "High-scoring L 9-13 vs Chicago White Sox",
       "Shutout victory 2-0 @ Cleveland Guardians",
-      "Close W 4-3 @ New York Mets",
-      "Close W 5-4 @ Cleveland Guardians"
+      "Close W 4-3 @ New York Mets"
     ]
   }
 }
