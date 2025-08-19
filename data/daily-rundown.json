@@ -1,56 +1,63 @@
 {
-  "date": "2025-08-18",
-  "timestamp": "2025-08-18T09:23:23.174Z",
-  "rundown": "<b>5-4</b> W @ Cleveland Guardians  \n<b>Erick Fedde:</b> 4.0 innings, 4 earned runs, 6 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (2 hits - 4 AB, 1 HR, 2 RBI)  \nOzzie Albies (2 hits - 4 AB, 0 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Guardians, showcasing a strong offensive performance. Key highlights include Jurickson Profar's impactful home run and two RBIs, which helped propel the team to victory. Ozzie Albies also contributed significantly with two hits, while Nacho Alvarez Jr. added an important RBI. Despite a shaky outing from Erick Fedde, the Braves' offense was able to outpace the Guardians, leading to the win.",
+  "date": "2025-08-19",
+  "timestamp": "2025-08-19T09:18:11.001Z",
+  "rundown": "<b>9-13</b> L vs Chicago White Sox  \n<b>Spencer Strider:</b> 3.0 innings, 7 earned runs, 10 hits, 2 HR, 2 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (3 hits - 5 AB, 2 HR, 5 RBI)  \nMichael Harris II (4 hits - 5 AB, 1 HR, 2 RBI)  \nMatt Olson (3 hits - 5 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Chicago White Sox in a high-scoring affair, unable to overcome a rough outing from their starting pitcher. Spencer Strider struggled early, allowing 7 earned runs in just 3 innings, which set the tone for the game. Despite a strong offensive showing with 15 hits, the Braves could not keep pace with the White Sox's 19 hits.\n\nKey highlights include:\n1. Jurickson Profar's standout performance with 3 hits, including 2 home runs and 5 RBIs.\n2. Michael Harris II contributed significantly with 4 hits and a home run.\n3. The Braves' offense was active, but ultimately fell short in a game dominated by the opposing team's hitting.",
   "lastGame": {
-    "date": "2025-08-17T17:40:00Z",
-    "opponent": "Cleveland Guardians",
-    "result": "W",
-    "score": "5-4",
-    "homeAway": "@",
+    "date": "2025-08-18T23:15:00Z",
+    "opponent": "Chicago White Sox",
+    "result": "L",
+    "score": "9-13",
+    "homeAway": "vs",
     "startingPitcher": {
-      "name": "Erick Fedde",
-      "inningsPitched": "4.0",
-      "earnedRuns": 4,
-      "hits": 6,
-      "homeRuns": 0,
-      "strikeOuts": 5
+      "name": "Spencer Strider",
+      "inningsPitched": "3.0",
+      "earnedRuns": 7,
+      "hits": 10,
+      "homeRuns": 2,
+      "strikeOuts": 2
     },
     "significantHitters": [
       {
         "name": "Jurickson Profar",
-        "hits": 2,
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 3
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 4,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 1
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 2,
+        "name": "Matt Olson",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Nacho Alvarez Jr.",
+        "name": "Vidal Bruján",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
-      },
-      {
-        "name": "Nick Allen",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 5,
-      "bravesHits": 10,
-      "opponentRuns": 4,
-      "opponentHits": 10
+      "bravesRuns": 9,
+      "bravesHits": 15,
+      "opponentRuns": 13,
+      "opponentHits": 19
     }
   }
 }
