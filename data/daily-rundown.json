@@ -1,41 +1,62 @@
 {
-  "date": "2025-08-19",
-  "timestamp": "2025-08-19T09:18:11.001Z",
-  "rundown": "<b>9-13</b> L vs Chicago White Sox  \n<b>Spencer Strider:</b> 3.0 innings, 7 earned runs, 10 hits, 2 HR, 2 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (3 hits - 5 AB, 2 HR, 5 RBI)  \nMichael Harris II (4 hits - 5 AB, 1 HR, 2 RBI)  \nMatt Olson (3 hits - 5 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Chicago White Sox in a high-scoring affair, unable to overcome a rough outing from their starting pitcher. Spencer Strider struggled early, allowing 7 earned runs in just 3 innings, which set the tone for the game. Despite a strong offensive showing with 15 hits, the Braves could not keep pace with the White Sox's 19 hits.\n\nKey highlights include:\n1. Jurickson Profar's standout performance with 3 hits, including 2 home runs and 5 RBIs.\n2. Michael Harris II contributed significantly with 4 hits and a home run.\n3. The Braves' offense was active, but ultimately fell short in a game dominated by the opposing team's hitting.",
+  "date": "2025-08-20",
+  "timestamp": "2025-08-20T09:18:38.858Z",
+  "rundown": "<b>11-10</b> W vs Chicago White Sox  \n<b>Bryce Elder:</b> 4.2 innings, 8 earned runs, 9 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (1 hits - 4 AB, 1 HR, 2 RBI)  \nJurickson Profar (1 hits - 4 AB, 1 HR, 2 RBI)  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 3 RBI)  \n\nThe Braves secured a narrow victory against the Chicago White Sox, overcoming a shaky start from Bryce Elder. The offense was explosive, scoring 11 runs on 13 hits, which ultimately outpaced the White Sox's 10 runs. \n\nKey highlights include:\n1. Michael Harris II and Jurickson Profar both contributed significantly with home runs and multiple RBIs.\n2. Drake Baldwin had a standout performance with 3 RBIs, helping to drive in crucial runs.\n3. Despite giving up 8 earned runs, the Braves' offense was relentless, ensuring they maintained the lead throughout the game.",
   "lastGame": {
-    "date": "2025-08-18T23:15:00Z",
+    "date": "2025-08-19T23:15:00Z",
     "opponent": "Chicago White Sox",
-    "result": "L",
-    "score": "9-13",
+    "result": "W",
+    "score": "11-10",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "3.0",
-      "earnedRuns": 7,
-      "hits": 10,
-      "homeRuns": 2,
-      "strikeOuts": 2
+      "name": "Bryce Elder",
+      "inningsPitched": "4.2",
+      "earnedRuns": 8,
+      "hits": 9,
+      "homeRuns": 0,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
-        "hits": 3,
-        "homeRuns": 2,
-        "rbi": 5,
-        "runs": 3
-      },
-      {
         "name": "Michael Harris II",
-        "hits": 4,
+        "hits": 1,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 1
       },
       {
-        "name": "Matt Olson",
+        "name": "Jurickson Profar",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
         "hits": 3,
         "homeRuns": 0,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 4,
+        "homeRuns": 0,
         "rbi": 0,
+        "runs": 3
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
         "runs": 0
       },
       {
@@ -43,21 +64,14 @@
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Vidal Bruján",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 9,
-      "bravesHits": 15,
-      "opponentRuns": 13,
-      "opponentHits": 19
+      "bravesRuns": 11,
+      "bravesHits": 13,
+      "opponentRuns": 10,
+      "opponentHits": 11
     }
   }
 }
