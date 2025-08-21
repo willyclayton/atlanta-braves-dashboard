@@ -1,77 +1,35 @@
 {
-  "date": "2025-08-20",
-  "timestamp": "2025-08-20T09:18:38.858Z",
-  "rundown": "<b>11-10</b> W vs Chicago White Sox  \n<b>Bryce Elder:</b> 4.2 innings, 8 earned runs, 9 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (1 hits - 4 AB, 1 HR, 2 RBI)  \nJurickson Profar (1 hits - 4 AB, 1 HR, 2 RBI)  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 3 RBI)  \n\nThe Braves secured a narrow victory against the Chicago White Sox, overcoming a shaky start from Bryce Elder. The offense was explosive, scoring 11 runs on 13 hits, which ultimately outpaced the White Sox's 10 runs. \n\nKey highlights include:\n1. Michael Harris II and Jurickson Profar both contributed significantly with home runs and multiple RBIs.\n2. Drake Baldwin had a standout performance with 3 RBIs, helping to drive in crucial runs.\n3. Despite giving up 8 earned runs, the Braves' offense was relentless, ensuring they maintained the lead throughout the game.",
+  "date": "2025-08-21",
+  "timestamp": "2025-08-21T09:18:08.890Z",
+  "rundown": "<b>1-0</b> W vs Chicago White Sox  \n<b>Hurston Waldrep:</b> 7.0 innings, 0 earned runs, 4 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNacho Alvarez Jr. (2 hits - 3 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a narrow victory against the Chicago White Sox, showcasing a strong pitching performance and solid defense. \n\nKey highlights:  \n1. Hurston Waldrep delivered an impressive 7-inning shutout, allowing only 4 hits and striking out 7 batters.  \n2. The Braves managed to score the only run of the game, demonstrating effective offense despite limited hits.  \n3. Nacho Alvarez Jr. contributed significantly with 2 hits, helping to keep the offense alive.",
   "lastGame": {
-    "date": "2025-08-19T23:15:00Z",
+    "date": "2025-08-20T23:15:00Z",
     "opponent": "Chicago White Sox",
     "result": "W",
-    "score": "11-10",
+    "score": "1-0",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "4.2",
-      "earnedRuns": 8,
-      "hits": 9,
+      "name": "Hurston Waldrep",
+      "inningsPitched": "7.0",
+      "earnedRuns": 0,
+      "hits": 4,
       "homeRuns": 0,
-      "strikeOuts": 3
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 4,
+        "name": "Nacho Alvarez Jr.",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 3
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
         "runs": 0
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 11,
-      "bravesHits": 13,
-      "opponentRuns": 10,
-      "opponentHits": 11
+      "bravesRuns": 1,
+      "bravesHits": 4,
+      "opponentRuns": 0,
+      "opponentHits": 4
     }
   }
 }
