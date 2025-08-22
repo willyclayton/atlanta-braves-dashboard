@@ -1,19 +1,19 @@
 {
-  "date": "2025-08-21",
-  "timestamp": "2025-08-21T09:15:27.123Z",
-  "rundown": "<b>Record:</b> 7-2 (0.778)  \n<b>Series:</b> Braves won the series against the New York Mets (2-1), won the series against the Cleveland Guardians (3-0), and won the series against the Chicago White Sox (2-1).  \n<b>Highlights:</b> Michael Harris II had an impressive week with 17 hits, including 4 home runs and 13 RBIs. Hurston Waldrep showcased a pitching clinic with 13 innings pitched and 14 strikeouts, earning 2 wins with a perfect 0.00 ERA. The Braves also celebrated a shutout victory against the Guardians, winning 2-0.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by a strong offensive performance and dominant pitching.",
+  "date": "2025-08-22",
+  "timestamp": "2025-08-22T09:15:25.889Z",
+  "rundown": "<b>Record:</b> 5-1 (0.833)  \n<b>Series:</b> Braves won the series against the Cleveland Guardians 3-0 and won the series against the Chicago White Sox 2-1.  \n<b>Highlights:</b> The Braves showcased an offensive explosion with a 10-1 victory over the Guardians and secured a nail-biting 11-10 win against the White Sox. Hurston Waldrep continued to impress with a perfect 0.00 ERA over 13 innings pitched this week.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong pitching performances and clutch hitting.",
   "weeklyStats": {
-    "dateRange": "2025-08-12 to 2025-08-20",
-    "record": "7-2",
-    "wins": 7,
-    "losses": 2,
-    "winPct": "0.778",
-    "totalGames": 9,
+    "dateRange": "2025-08-15 to 2025-08-20",
+    "record": "5-1",
+    "wins": 5,
+    "losses": 1,
+    "winPct": "0.833",
+    "totalGames": 6,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Hurston Waldrep",
-        "appearances": 9,
+        "appearances": 6,
         "inningsPitched": 13,
         "earnedRuns": 0,
         "strikeouts": 14,
@@ -24,94 +24,73 @@
         "era": "0.00"
       },
       {
-        "name": "Dylan Lee",
-        "appearances": 9,
-        "inningsPitched": 4.2,
+        "name": "Raisel Iglesias",
+        "appearances": 6,
+        "inningsPitched": 4,
         "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 5,
-        "wins": 1,
+        "strikeouts": 4,
+        "hits": 1,
+        "wins": 0,
         "losses": 0,
-        "saves": 0,
+        "saves": 4,
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 6,
+        "name": "Hunter Stratton",
+        "appearances": 4,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 2,
+        "strikeouts": 3,
+        "hits": 3,
         "wins": 0,
         "losses": 0,
-        "saves": 5,
+        "saves": 1,
         "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Michael Harris II",
-        "games": 9,
-        "hits": 17,
-        "homeRuns": 4,
-        "rbi": 13,
-        "runs": 8,
-        "atBats": 39,
-        "avg": "0.436"
+        "games": 6,
+        "hits": 10,
+        "homeRuns": 3,
+        "rbi": 8,
+        "runs": 4,
+        "atBats": 26,
+        "avg": "0.385"
       },
       {
         "name": "Jurickson Profar",
-        "games": 9,
-        "hits": 11,
+        "games": 6,
+        "hits": 7,
         "homeRuns": 4,
-        "rbi": 13,
-        "runs": 8,
-        "atBats": 37,
-        "avg": "0.297"
-      },
-      {
-        "name": "Ozzie Albies",
-        "games": 9,
-        "hits": 12,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 5,
-        "atBats": 39,
-        "avg": "0.308"
+        "rbi": 9,
+        "runs": 6,
+        "atBats": 24,
+        "avg": "0.292"
       },
       {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 14,
+        "games": 6,
+        "hits": 11,
         "homeRuns": 0,
-        "rbi": 2,
-        "runs": 6,
-        "atBats": 38,
-        "avg": "0.368"
+        "rbi": 1,
+        "runs": 4,
+        "atBats": 26,
+        "avg": "0.423"
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "games": 6,
+        "hits": 8,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 4,
+        "atBats": 22,
+        "avg": "0.364"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/12/2025",
-        "result": "L",
-        "score": "5-13",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/13/2025",
-        "result": "W",
-        "score": "11-6",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/14/2025",
-        "result": "W",
-        "score": "4-3",
-        "opponent": "New York Mets",
-        "homeAway": "@"
-      },
       {
         "date": "8/15/2025",
         "result": "W",
@@ -156,29 +135,6 @@
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "New York Mets",
-        "homeAway": "@",
-        "record": "2-1",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "8/12/2025",
-            "result": "L",
-            "score": "5-13"
-          },
-          {
-            "date": "8/13/2025",
-            "result": "W",
-            "score": "11-6"
-          },
-          {
-            "date": "8/14/2025",
-            "result": "W",
-            "score": "4-3"
-          }
-        ]
-      },
       {
         "opponent": "Cleveland Guardians",
         "homeAway": "@",
@@ -227,12 +183,12 @@
       }
     ],
     "highlights": [
-      "High-scoring L 5-13 @ New York Mets",
-      "High-scoring W 11-6 @ New York Mets",
       "High-scoring W 10-1 @ Cleveland Guardians",
       "High-scoring L 9-13 vs Chicago White Sox",
       "High-scoring W 11-10 vs Chicago White Sox",
-      "Shutout victory 2-0 @ Cleveland Guardians"
+      "Shutout victory 2-0 @ Cleveland Guardians",
+      "Shutout victory 1-0 vs Chicago White Sox",
+      "Close W 5-4 @ Cleveland Guardians"
     ]
   }
 }
