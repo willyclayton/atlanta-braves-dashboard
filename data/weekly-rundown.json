@@ -1,19 +1,19 @@
 {
-  "date": "2025-08-22",
-  "timestamp": "2025-08-22T09:15:25.889Z",
-  "rundown": "<b>Record:</b> 5-1 (0.833)  \n<b>Series:</b> Braves won the series against the Cleveland Guardians 3-0 and won the series against the Chicago White Sox 2-1.  \n<b>Highlights:</b> The Braves showcased an offensive explosion with a 10-1 victory over the Guardians and secured a nail-biting 11-10 win against the White Sox. Hurston Waldrep continued to impress with a perfect 0.00 ERA over 13 innings pitched this week.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong pitching performances and clutch hitting.",
+  "date": "2025-08-23",
+  "timestamp": "2025-08-23T09:13:18.866Z",
+  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the Cleveland Guardians (3-0) and the Chicago White Sox (2-1), but lost to the New York Mets (0-1).  \n<b>Highlights:</b> The week featured a dominant 10-1 victory over the Guardians, a thrilling 11-10 win against the White Sox, and impressive shutout wins of 2-0 and 1-0.  \n<b>Trend:</b> The team is building momentum with recent solid play, showcasing both offensive firepower and strong pitching performances.",
   "weeklyStats": {
-    "dateRange": "2025-08-15 to 2025-08-20",
-    "record": "5-1",
+    "dateRange": "2025-08-15 to 2025-08-22",
+    "record": "5-2",
     "wins": 5,
-    "losses": 1,
-    "winPct": "0.833",
-    "totalGames": 6,
+    "losses": 2,
+    "winPct": "0.714",
+    "totalGames": 7,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Hurston Waldrep",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 13,
         "earnedRuns": 0,
         "strikeouts": 14,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 4,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -50,44 +50,44 @@
     ],
     "topBatters": [
       {
+        "name": "Jurickson Profar",
+        "games": 7,
+        "hits": 10,
+        "homeRuns": 4,
+        "rbi": 13,
+        "runs": 7,
+        "atBats": 28,
+        "avg": "0.357"
+      },
+      {
         "name": "Michael Harris II",
-        "games": 6,
+        "games": 7,
         "hits": 10,
         "homeRuns": 3,
         "rbi": 8,
         "runs": 4,
+        "atBats": 30,
+        "avg": "0.333"
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "games": 7,
+        "hits": 10,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 6,
         "atBats": 26,
         "avg": "0.385"
       },
       {
-        "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 7,
-        "homeRuns": 4,
-        "rbi": 9,
-        "runs": 6,
-        "atBats": 24,
-        "avg": "0.292"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 6,
-        "hits": 11,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 4,
-        "atBats": 26,
-        "avg": "0.423"
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "games": 6,
+        "name": "Ronald Acuña Jr.",
+        "games": 7,
         "hits": 8,
-        "homeRuns": 0,
+        "homeRuns": 1,
         "rbi": 4,
-        "runs": 4,
-        "atBats": 22,
-        "avg": "0.364"
+        "runs": 5,
+        "atBats": 27,
+        "avg": "0.296"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "W",
         "score": "1-0",
         "opponent": "Chicago White Sox",
+        "homeAway": "vs"
+      },
+      {
+        "date": "8/22/2025",
+        "result": "L",
+        "score": "7-12",
+        "opponent": "New York Mets",
         "homeAway": "vs"
       }
     ],
@@ -180,15 +187,28 @@
             "score": "1-0"
           }
         ]
+      },
+      {
+        "opponent": "New York Mets",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "8/22/2025",
+            "result": "L",
+            "score": "7-12"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring W 10-1 @ Cleveland Guardians",
       "High-scoring L 9-13 vs Chicago White Sox",
       "High-scoring W 11-10 vs Chicago White Sox",
+      "High-scoring L 7-12 vs New York Mets",
       "Shutout victory 2-0 @ Cleveland Guardians",
-      "Shutout victory 1-0 vs Chicago White Sox",
-      "Close W 5-4 @ Cleveland Guardians"
+      "Shutout victory 1-0 vs Chicago White Sox"
     ]
   }
 }
