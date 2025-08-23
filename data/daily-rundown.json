@@ -1,35 +1,56 @@
 {
-  "date": "2025-08-22",
-  "timestamp": "2025-08-22T09:18:03.862Z",
-  "rundown": "<b>1-0</b> W vs Chicago White Sox  \n<b>Hurston Waldrep:</b> 7.0 innings, 0 earned runs, 4 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNacho Alvarez Jr. (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a narrow victory against the Chicago White Sox, thanks to a stellar performance from pitcher Hurston Waldrep, who threw seven scoreless innings. The game was tightly contested, with both teams managing four hits, but the Braves capitalized on their opportunities to score the only run of the game.\n\nKey highlights include:\n1. Waldrep's dominant pitching, striking out seven batters and allowing no earned runs.\n2. Nacho Alvarez Jr. leading the offense with two hits.\n3. The Braves' defense holding the White Sox to zero runs, showcasing their strong pitching and fielding.",
+  "date": "2025-08-23",
+  "timestamp": "2025-08-23T09:15:54.240Z",
+  "rundown": "<b>7-12</b> L vs New York Mets  \n<b>Erick Fedde:</b> 4.1 innings, 6 earned runs, 11 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (3 hits - 4 AB, 0 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 2 RBI)  \nVidal Bruján (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the New York Mets in a high-scoring affair, unable to keep pace with their opponent's offensive onslaught. The Mets out-hit the Braves 21 to 10, which was a significant factor in the loss. \n\nKey highlights from the game include:\n1. Jurickson Profar's standout performance with 3 hits and 4 RBIs.\n2. Ronald Acuña Jr. contributed with a home run and 2 RBIs.\n3. Erick Fedde struggled on the mound, allowing 6 earned runs in just over 4 innings.",
   "lastGame": {
-    "date": "2025-08-20T23:15:00Z",
-    "opponent": "Chicago White Sox",
-    "result": "W",
-    "score": "1-0",
+    "date": "2025-08-22T23:15:00Z",
+    "opponent": "New York Mets",
+    "result": "L",
+    "score": "7-12",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "7.0",
-      "earnedRuns": 0,
-      "hits": 4,
-      "homeRuns": 0,
-      "strikeOuts": 7
+      "name": "Erick Fedde",
+      "inningsPitched": "4.1",
+      "earnedRuns": 6,
+      "hits": 11,
+      "homeRuns": 1,
+      "strikeOuts": 1
     },
     "significantHitters": [
+      {
+        "name": "Jurickson Profar",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 1
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Vidal Bruján",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
       {
         "name": "Nacho Alvarez Jr.",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 4,
-      "opponentRuns": 0,
-      "opponentHits": 4
+      "bravesRuns": 7,
+      "bravesHits": 10,
+      "opponentRuns": 12,
+      "opponentHits": 21
     }
   }
 }
