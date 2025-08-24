@@ -1,56 +1,35 @@
 {
-  "date": "2025-08-23",
-  "timestamp": "2025-08-23T09:15:54.240Z",
-  "rundown": "<b>7-12</b> L vs New York Mets  \n<b>Erick Fedde:</b> 4.1 innings, 6 earned runs, 11 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (3 hits - 4 AB, 0 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 2 RBI)  \nVidal Bruján (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the New York Mets in a high-scoring affair, unable to keep pace with their opponent's offensive onslaught. The Mets out-hit the Braves 21 to 10, which was a significant factor in the loss. \n\nKey highlights from the game include:\n1. Jurickson Profar's standout performance with 3 hits and 4 RBIs.\n2. Ronald Acuña Jr. contributed with a home run and 2 RBIs.\n3. Erick Fedde struggled on the mound, allowing 6 earned runs in just over 4 innings.",
+  "date": "2025-08-24",
+  "timestamp": "2025-08-24T09:15:54.566Z",
+  "rundown": "<b>2-9</b> L vs New York Mets  \n<b>Cal Quantrill:</b> 4.2 innings, 3 earned runs, 5 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves suffered a tough loss against the New York Mets, falling 2-9 at home. The Mets capitalized on the Braves' pitching struggles and offensive inefficiencies. \n\nKey highlights from the game include:\n1. Cal Quantrill struggled on the mound, allowing 3 earned runs before being pulled in the fifth inning.\n2. The Braves managed only 5 hits throughout the game, failing to capitalize on scoring opportunities.\n3. Drake Baldwin contributed with an RBI, but the team's overall performance was overshadowed by the Mets' offensive onslaught.",
   "lastGame": {
-    "date": "2025-08-22T23:15:00Z",
+    "date": "2025-08-23T23:15:00Z",
     "opponent": "New York Mets",
     "result": "L",
-    "score": "7-12",
+    "score": "2-9",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Erick Fedde",
-      "inningsPitched": "4.1",
-      "earnedRuns": 6,
-      "hits": 11,
+      "name": "Cal Quantrill",
+      "inningsPitched": "4.2",
+      "earnedRuns": 3,
+      "hits": 5,
       "homeRuns": 1,
-      "strikeOuts": 1
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 4,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Vidal Bruján",
+        "name": "Drake Baldwin",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 2
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 7,
-      "bravesHits": 10,
-      "opponentRuns": 12,
-      "opponentHits": 21
+      "bravesRuns": 2,
+      "bravesHits": 5,
+      "opponentRuns": 9,
+      "opponentHits": 11
     }
   }
 }
