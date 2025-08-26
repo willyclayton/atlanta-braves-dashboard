@@ -1,49 +1,35 @@
 {
-  "date": "2025-08-25",
-  "timestamp": "2025-08-25T09:19:23.507Z",
-  "rundown": "<b>4-3</b> W vs New York Mets  \n<b>Bryce Elder:</b> 6.0 innings, 2 earned runs, 3 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (2 hits - 4 AB, 0 HR, 2 RBI)  \nSean Murphy (2 hits - 4 AB, 0 HR, 2 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a narrow victory against the New York Mets, showcasing a strong offensive performance and solid pitching. Key highlights include Bryce Elder's effective outing, allowing only 3 hits and striking out 6 batters. Jurickson Profar and Sean Murphy each contributed significantly with 2 RBIs, helping to drive the team's scoring. The Braves managed to hold off the Mets despite a late-game push, ultimately sealing the win with a strong defensive effort.",
+  "date": "2025-08-26",
+  "timestamp": "2025-08-26T09:18:49.300Z",
+  "rundown": "<b>1-2</b> L @ Miami Marlins  \n<b>Spencer Strider:</b> 7.0 innings, 1 earned run, 3 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Miami Marlins in a close contest, managing only one run despite a strong performance from their starting pitcher. The loss was attributed to a lack of offensive support, as the Braves could only muster three hits throughout the game.\n\nKey highlights include:\n1. Spencer Strider delivered a solid outing, allowing just one earned run over seven innings.\n2. Drake Baldwin provided the lone run for the Braves with a home run.\n3. The Braves struggled to capitalize on their limited opportunities, leading to their defeat.",
   "lastGame": {
-    "date": "2025-08-24T17:35:00Z",
-    "opponent": "New York Mets",
-    "result": "W",
-    "score": "4-3",
-    "homeAway": "vs",
+    "date": "2025-08-25T22:40:00Z",
+    "opponent": "Miami Marlins",
+    "result": "L",
+    "score": "1-2",
+    "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "6.0",
-      "earnedRuns": 2,
+      "name": "Spencer Strider",
+      "inningsPitched": "7.0",
+      "earnedRuns": 1,
       "hits": 3,
-      "homeRuns": 1,
-      "strikeOuts": 6
+      "homeRuns": 0,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 0
-      },
-      {
-        "name": "Sean Murphy",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 2,
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
         "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 8,
-      "opponentRuns": 3,
-      "opponentHits": 6
+      "bravesRuns": 1,
+      "bravesHits": 3,
+      "opponentRuns": 2,
+      "opponentHits": 4
     }
   }
 }
