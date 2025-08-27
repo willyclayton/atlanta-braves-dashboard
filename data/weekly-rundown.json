@@ -1,43 +1,43 @@
 {
-  "date": "2025-08-26",
-  "timestamp": "2025-08-26T09:16:05.290Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Braves won the series against the Chicago White Sox (2-1) but lost the series to the New York Mets (1-2) and dropped a game to the Miami Marlins (0-1).  \n<b>Highlights:</b> Jurickson Profar had an impressive week, racking up 10 hits, including 3 home runs and 13 RBIs. Hurston Waldrep showcased his skills with a stellar 0.00 ERA over 7 innings pitched. The Braves also celebrated a thrilling 11-10 victory against the White Sox in a high-scoring affair.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain consistency, especially against the Mets, but they showed flashes of brilliance, particularly in their offensive performances.",
+  "date": "2025-08-27",
+  "timestamp": "2025-08-27T09:15:12.338Z",
+  "rundown": "<b>Record:</b> 4-4 (0.500)  \n<b>Series:</b> Braves won the series against the Chicago White Sox (2-1), lost the series to the New York Mets (1-2), and split the series with the Miami Marlins (1-1).  \n<b>Highlights:</b> Jurickson Profar had an impressive week, racking up 11 hits, including 3 home runs and 13 RBIs. Tyler Kinley showcased a stellar performance on the mound, pitching 4.1 innings without allowing an earned run. The Braves also celebrated a thrilling 11-10 victory against the White Sox in a high-scoring affair.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by strong individual performances and a mix of high-scoring games.",
   "weeklyStats": {
-    "dateRange": "2025-08-18 to 2025-08-25",
-    "record": "3-4",
-    "wins": 3,
+    "dateRange": "2025-08-18 to 2025-08-26",
+    "record": "4-4",
+    "wins": 4,
     "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
-    "momentum": "challenging week overall",
+    "winPct": "0.500",
+    "totalGames": 8,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
-        "name": "Hurston Waldrep",
-        "appearances": 7,
-        "inningsPitched": 7,
+        "name": "Tyler Kinley",
+        "appearances": 8,
+        "inningsPitched": 4.1,
         "earnedRuns": 0,
-        "strikeouts": 7,
-        "hits": 4,
-        "wins": 1,
+        "strikeouts": 3,
+        "hits": 2,
+        "wins": 2,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Tyler Kinley",
-        "appearances": 7,
-        "inningsPitched": 3.1,
-        "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 1,
+        "name": "Hurston Waldrep",
+        "appearances": 8,
+        "inningsPitched": 12.1,
+        "earnedRuns": 1,
+        "strikeouts": 7,
+        "hits": 12,
         "wins": 1,
         "losses": 0,
         "saves": 0,
-        "era": "0.00"
+        "era": "0.74"
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 1,
         "strikeouts": 1,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Jurickson Profar",
-        "games": 7,
-        "hits": 10,
+        "games": 8,
+        "hits": 11,
         "homeRuns": 3,
         "rbi": 13,
-        "runs": 6,
-        "atBats": 28,
-        "avg": "0.357"
+        "runs": 8,
+        "atBats": 32,
+        "avg": "0.344"
+      },
+      {
+        "name": "Ozzie Albies",
+        "games": 8,
+        "hits": 10,
+        "homeRuns": 2,
+        "rbi": 6,
+        "runs": 7,
+        "atBats": 33,
+        "avg": "0.303"
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "games": 8,
+        "hits": 9,
+        "homeRuns": 1,
+        "rbi": 5,
+        "runs": 5,
+        "atBats": 30,
+        "avg": "0.300"
       },
       {
         "name": "Michael Harris II",
-        "games": 7,
+        "games": 8,
         "hits": 6,
         "homeRuns": 2,
         "rbi": 4,
         "runs": 3,
-        "atBats": 27,
-        "avg": "0.222"
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "games": 7,
-        "hits": 7,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 4,
-        "atBats": 26,
-        "avg": "0.269"
-      },
-      {
-        "name": "Drake Baldwin",
-        "games": 5,
-        "hits": 4,
-        "homeRuns": 1,
-        "rbi": 5,
-        "runs": 2,
-        "atBats": 20,
-        "avg": "0.200"
+        "atBats": 31,
+        "avg": "0.194"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "8/25/2025",
         "result": "L",
         "score": "1-2",
+        "opponent": "Miami Marlins",
+        "homeAway": "@"
+      },
+      {
+        "date": "8/26/2025",
+        "result": "W",
+        "score": "11-2",
         "opponent": "Miami Marlins",
         "homeAway": "@"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Miami Marlins",
         "homeAway": "@",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "8/25/2025",
             "result": "L",
             "score": "1-2"
+          },
+          {
+            "date": "8/26/2025",
+            "result": "W",
+            "score": "11-2"
           }
         ]
       }
@@ -207,8 +219,8 @@
       "High-scoring W 11-10 vs Chicago White Sox",
       "High-scoring L 7-12 vs New York Mets",
       "High-scoring L 2-9 vs New York Mets",
-      "Shutout victory 1-0 vs Chicago White Sox",
-      "Close W 11-10 vs Chicago White Sox"
+      "High-scoring W 11-2 @ Miami Marlins",
+      "Shutout victory 1-0 vs Chicago White Sox"
     ]
   }
 }
