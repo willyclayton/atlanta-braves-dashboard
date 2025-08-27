@@ -1,35 +1,70 @@
 {
-  "date": "2025-08-26",
-  "timestamp": "2025-08-26T09:18:49.300Z",
-  "rundown": "<b>1-2</b> L @ Miami Marlins  \n<b>Spencer Strider:</b> 7.0 innings, 1 earned run, 3 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Miami Marlins in a close contest, managing only one run despite a strong performance from their starting pitcher. The loss was attributed to a lack of offensive support, as the Braves could only muster three hits throughout the game.\n\nKey highlights include:\n1. Spencer Strider delivered a solid outing, allowing just one earned run over seven innings.\n2. Drake Baldwin provided the lone run for the Braves with a home run.\n3. The Braves struggled to capitalize on their limited opportunities, leading to their defeat.",
+  "date": "2025-08-27",
+  "timestamp": "2025-08-27T09:17:49.718Z",
+  "rundown": "<b>11-2</b> W @ Miami Marlins  \n<b>Hurston Waldrep:</b> 5.1 innings, 1 earned run, 8 hits, 0 HR, 0 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 5 AB, 2 HR, 4 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 2 RBI)  \nEli White (1 hit - 3 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a decisive victory against the Miami Marlins, showcasing a powerful offensive performance. Key highlights include Ozzie Albies' standout game with two home runs and four RBIs, contributing significantly to the team's total of 11 runs. The Braves' pitching was effective, with Waldrep allowing only one earned run over 5.1 innings. The team capitalized on their scoring opportunities, with multiple players driving in runs. Overall, the Braves demonstrated strong hitting and solid pitching to dominate the game.",
   "lastGame": {
-    "date": "2025-08-25T22:40:00Z",
+    "date": "2025-08-26T22:40:00Z",
     "opponent": "Miami Marlins",
-    "result": "L",
-    "score": "1-2",
+    "result": "W",
+    "score": "11-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "7.0",
+      "name": "Hurston Waldrep",
+      "inningsPitched": "5.1",
       "earnedRuns": 1,
-      "hits": 3,
+      "hits": 8,
       "homeRuns": 0,
-      "strikeOuts": 3
+      "strikeOuts": 0
     },
     "significantHitters": [
       {
+        "name": "Ozzie Albies",
+        "hits": 3,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 2
+      },
+      {
         "name": "Drake Baldwin",
         "hits": 1,
-        "homeRuns": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Eli White",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 2
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
+      },
+      {
+        "name": "Vidal Bruján",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 3,
+      "bravesRuns": 11,
+      "bravesHits": 11,
       "opponentRuns": 2,
-      "opponentHits": 4
+      "opponentHits": 12
     }
   }
 }
