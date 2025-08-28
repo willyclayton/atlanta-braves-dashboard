@@ -1,70 +1,63 @@
 {
-  "date": "2025-08-27",
-  "timestamp": "2025-08-27T09:17:49.718Z",
-  "rundown": "<b>11-2</b> W @ Miami Marlins  \n<b>Hurston Waldrep:</b> 5.1 innings, 1 earned run, 8 hits, 0 HR, 0 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 5 AB, 2 HR, 4 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 2 RBI)  \nEli White (1 hit - 3 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a decisive victory against the Miami Marlins, showcasing a powerful offensive performance. Key highlights include Ozzie Albies' standout game with two home runs and four RBIs, contributing significantly to the team's total of 11 runs. The Braves' pitching was effective, with Waldrep allowing only one earned run over 5.1 innings. The team capitalized on their scoring opportunities, with multiple players driving in runs. Overall, the Braves demonstrated strong hitting and solid pitching to dominate the game.",
+  "date": "2025-08-28",
+  "timestamp": "2025-08-28T09:17:44.397Z",
+  "rundown": "<b>12-1</b> W @ Miami Marlins  \n<b>Joey Wentz:</b> 6.2 innings, 1 earned run, 4 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (2 hits - 4 AB, 1 HR, 5 RBI)  \nJurickson Profar (2 hits - 4 AB, 2 HR, 2 RBI)  \nMichael Harris II (2 hits - 4 AB, 1 HR, 3 RBI)  \n\nThe Braves secured a dominant victory over the Miami Marlins, showcasing their offensive power and solid pitching. Key highlights include Ozzie Albies driving in five runs with a home run, Jurickson Profar hitting two home runs and scoring four times, and Michael Harris II contributing significantly with a home run and three RBIs. Joey Wentz delivered an impressive performance on the mound, allowing only one earned run over 6.2 innings.",
   "lastGame": {
-    "date": "2025-08-26T22:40:00Z",
+    "date": "2025-08-27T17:10:00Z",
     "opponent": "Miami Marlins",
     "result": "W",
-    "score": "11-2",
+    "score": "12-1",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "5.1",
+      "name": "Joey Wentz",
+      "inningsPitched": "6.2",
       "earnedRuns": 1,
-      "hits": 8,
+      "hits": 4,
       "homeRuns": 0,
-      "strikeOuts": 0
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
         "name": "Ozzie Albies",
-        "hits": 3,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Eli White",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Ronald Acuña Jr.",
         "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
+        "homeRuns": 1,
+        "rbi": 5,
+        "runs": 2
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 2,
+        "rbi": 2,
+        "runs": 4
+      },
+      {
+        "name": "Michael Harris II",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Vidal Bruján",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
+        "name": "Matt Olson",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 2,
         "runs": 1
       },
       {
-        "name": "Marcell Ozuna",
-        "hits": 1,
+        "name": "Jake Fraley",
+        "hits": 3,
         "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 0,
         "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 11,
+      "bravesRuns": 12,
       "bravesHits": 11,
-      "opponentRuns": 2,
-      "opponentHits": 12
+      "opponentRuns": 1,
+      "opponentHits": 5
     }
   }
 }
