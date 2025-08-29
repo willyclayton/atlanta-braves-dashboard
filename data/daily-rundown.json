@@ -1,63 +1,42 @@
 {
-  "date": "2025-08-28",
-  "timestamp": "2025-08-28T09:17:44.397Z",
-  "rundown": "<b>12-1</b> W @ Miami Marlins  \n<b>Joey Wentz:</b> 6.2 innings, 1 earned run, 4 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (2 hits - 4 AB, 1 HR, 5 RBI)  \nJurickson Profar (2 hits - 4 AB, 2 HR, 2 RBI)  \nMichael Harris II (2 hits - 4 AB, 1 HR, 3 RBI)  \n\nThe Braves secured a dominant victory over the Miami Marlins, showcasing their offensive power and solid pitching. Key highlights include Ozzie Albies driving in five runs with a home run, Jurickson Profar hitting two home runs and scoring four times, and Michael Harris II contributing significantly with a home run and three RBIs. Joey Wentz delivered an impressive performance on the mound, allowing only one earned run over 6.2 innings.",
+  "date": "2025-08-29",
+  "timestamp": "2025-08-29T09:17:45.150Z",
+  "rundown": "<b>4-19</b> L @ Philadelphia Phillies  \n<b>Cal Quantrill:</b> 3.1 innings, 9 earned runs, 9 hits, 4 HR, 0 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 1 HR, 1 RBI)  \nMichael Harris II (1 hits - 4 AB, 2 RBI)  \n\nThe Braves suffered a heavy defeat against the Philadelphia Phillies, allowing 19 runs while only managing to score 4. The loss was largely attributed to Cal Quantrill's struggles on the mound, giving up 9 earned runs in just over 3 innings of work. \n\nKey highlights from the game include:\n1. Matt Olson hit a home run and contributed 1 RBI, but it wasn't enough to turn the tide.\n2. Michael Harris II drove in 2 runs, showcasing some offensive potential despite the overall team performance.\n3. The Braves' pitching staff struggled significantly, allowing 20 hits and 4 home runs to the Phillies.",
   "lastGame": {
-    "date": "2025-08-27T17:10:00Z",
-    "opponent": "Miami Marlins",
-    "result": "W",
-    "score": "12-1",
+    "date": "2025-08-28T22:45:00Z",
+    "opponent": "Philadelphia Phillies",
+    "result": "L",
+    "score": "4-19",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "6.2",
-      "earnedRuns": 1,
-      "hits": 4,
-      "homeRuns": 0,
-      "strikeOuts": 5
+      "name": "Cal Quantrill",
+      "inningsPitched": "3.1",
+      "earnedRuns": 9,
+      "hits": 9,
+      "homeRuns": 4,
+      "strikeOuts": 0
     },
     "significantHitters": [
       {
-        "name": "Ozzie Albies",
-        "hits": 2,
+        "name": "Matt Olson",
+        "hits": 1,
         "homeRuns": 1,
-        "rbi": 5,
+        "rbi": 1,
         "runs": 2
       },
       {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 2,
-        "rbi": 2,
-        "runs": 4
-      },
-      {
         "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Jake Fraley",
-        "hits": 3,
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 2,
         "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 12,
-      "bravesHits": 11,
-      "opponentRuns": 1,
-      "opponentHits": 5
+      "bravesRuns": 4,
+      "bravesHits": 6,
+      "opponentRuns": 19,
+      "opponentHits": 20
     }
   }
 }
