@@ -1,19 +1,19 @@
 {
-  "date": "2025-08-28",
-  "timestamp": "2025-08-28T09:14:58.596Z",
-  "rundown": "<b>Record:</b> 3-3 (0.500)  \n<b>Series:</b> Lost series to New York Mets (1-2), Won series against Miami Marlins (2-1)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 3 home runs and 9 RBIs, while the team showcased an offensive explosion with back-to-back wins of 11-2 and 12-1 against the Marlins. Tyler Kinley continued his dominance on the mound, pitching 3.1 innings without allowing a run.  \n<b>Trend:</b> Building momentum with recent solid play, especially after a rough start to the week.",
+  "date": "2025-08-29",
+  "timestamp": "2025-08-29T09:15:05.070Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to New York Mets (1-2), Won series against Miami Marlins (2-1), Lost game to Philadelphia Phillies (0-1)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 3 home runs and 10 RBIs, while the team showcased an offensive explosion with a 12-1 victory over the Miami Marlins. Tyler Kinley and Hunter Stratton both pitched brilliantly, combining for 5.2 innings without allowing an earned run.  \n<b>Trend:</b> Building momentum with recent solid play, especially after a strong series win against the Marlins despite a tough loss to the Phillies.",
   "weeklyStats": {
-    "dateRange": "2025-08-22 to 2025-08-27",
-    "record": "3-3",
+    "dateRange": "2025-08-22 to 2025-08-28",
+    "record": "3-4",
     "wins": 3,
-    "losses": 3,
-    "winPct": "0.500",
-    "totalGames": 6,
+    "losses": 4,
+    "winPct": "0.429",
+    "totalGames": 7,
     "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Tyler Kinley",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 1,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Hunter Stratton",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 2.1,
         "earnedRuns": 0,
         "strikeouts": 1,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Spencer Strider",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 7,
         "earnedRuns": 1,
         "strikeouts": 3,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 6,
+        "games": 7,
         "hits": 8,
         "homeRuns": 3,
-        "rbi": 9,
+        "rbi": 10,
         "runs": 7,
-        "atBats": 26,
-        "avg": "0.308"
+        "atBats": 29,
+        "avg": "0.276"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 9,
+        "games": 7,
+        "hits": 10,
         "homeRuns": 2,
         "rbi": 8,
-        "runs": 7,
-        "atBats": 22,
-        "avg": "0.409"
+        "runs": 8,
+        "atBats": 26,
+        "avg": "0.385"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 1,
+        "name": "Matt Olson",
+        "games": 7,
+        "hits": 5,
+        "homeRuns": 2,
         "rbi": 3,
         "runs": 5,
-        "atBats": 20,
-        "avg": "0.300"
+        "atBats": 27,
+        "avg": "0.185"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 5,
+        "name": "Michael Harris II",
+        "games": 7,
         "hits": 4,
         "homeRuns": 1,
-        "rbi": 4,
-        "runs": 4,
-        "atBats": 16,
-        "avg": "0.250"
+        "rbi": 5,
+        "runs": 2,
+        "atBats": 28,
+        "avg": "0.143"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "W",
         "score": "12-1",
         "opponent": "Miami Marlins",
+        "homeAway": "@"
+      },
+      {
+        "date": "8/28/2025",
+        "result": "L",
+        "score": "4-19",
+        "opponent": "Philadelphia Phillies",
         "homeAway": "@"
       }
     ],
@@ -180,6 +187,19 @@
             "score": "12-1"
           }
         ]
+      },
+      {
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "@",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "8/28/2025",
+            "result": "L",
+            "score": "4-19"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -187,8 +207,8 @@
       "High-scoring L 2-9 vs New York Mets",
       "High-scoring W 11-2 @ Miami Marlins",
       "High-scoring W 12-1 @ Miami Marlins",
-      "Close W 4-3 vs New York Mets",
-      "Close L 1-2 @ Miami Marlins"
+      "High-scoring L 4-19 @ Philadelphia Phillies",
+      "Close W 4-3 vs New York Mets"
     ]
   }
 }
