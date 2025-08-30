@@ -1,42 +1,56 @@
 {
-  "date": "2025-08-29",
-  "timestamp": "2025-08-29T09:17:45.150Z",
-  "rundown": "<b>4-19</b> L @ Philadelphia Phillies  \n<b>Cal Quantrill:</b> 3.1 innings, 9 earned runs, 9 hits, 4 HR, 0 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 1 HR, 1 RBI)  \nMichael Harris II (1 hits - 4 AB, 2 RBI)  \n\nThe Braves suffered a heavy defeat against the Philadelphia Phillies, allowing 19 runs while only managing to score 4. The loss was largely attributed to Cal Quantrill's struggles on the mound, giving up 9 earned runs in just over 3 innings of work. \n\nKey highlights from the game include:\n1. Matt Olson hit a home run and contributed 1 RBI, but it wasn't enough to turn the tide.\n2. Michael Harris II drove in 2 runs, showcasing some offensive potential despite the overall team performance.\n3. The Braves' pitching staff struggled significantly, allowing 20 hits and 4 home runs to the Phillies.",
+  "date": "2025-08-30",
+  "timestamp": "2025-08-30T09:15:16.904Z",
+  "rundown": "<b>1-2</b> L @ Philadelphia Phillies  \n<b>Bryce Elder:</b> 7.0 innings, 1 earned run, 3 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (3 hits - 4 AB, 0 HR, 0 RBI)  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Philadelphia Phillies in a close game, managing to score only one run despite a strong offensive showing with 12 hits. Bryce Elder delivered a solid performance on the mound, allowing just one earned run over seven innings. \n\nKey highlights include:\n1. Matt Olson led the offense with three hits, showcasing his ability to get on base.\n2. Jurickson Profar contributed with a crucial RBI, although it wasn't enough to secure a win.\n3. The Braves' pitching was effective, limiting the Phillies to only six hits, but they couldn't capitalize on their offensive opportunities.",
   "lastGame": {
-    "date": "2025-08-28T22:45:00Z",
+    "date": "2025-08-29T22:45:00Z",
     "opponent": "Philadelphia Phillies",
     "result": "L",
-    "score": "4-19",
+    "score": "1-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Cal Quantrill",
-      "inningsPitched": "3.1",
-      "earnedRuns": 9,
-      "hits": 9,
-      "homeRuns": 4,
-      "strikeOuts": 0
+      "name": "Bryce Elder",
+      "inningsPitched": "7.0",
+      "earnedRuns": 1,
+      "hits": 3,
+      "homeRuns": 0,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Michael Harris II",
+        "name": "Jurickson Profar",
         "hits": 1,
         "homeRuns": 0,
-        "rbi": 2,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      },
+      {
+        "name": "Nick Allen",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
         "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 6,
-      "opponentRuns": 19,
-      "opponentHits": 20
+      "bravesRuns": 1,
+      "bravesHits": 12,
+      "opponentRuns": 2,
+      "opponentHits": 6
     }
   }
 }
