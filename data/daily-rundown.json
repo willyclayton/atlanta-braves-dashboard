@@ -1,38 +1,45 @@
 {
-  "date": "2025-08-30",
-  "timestamp": "2025-08-30T09:15:16.904Z",
-  "rundown": "<b>1-2</b> L @ Philadelphia Phillies  \n<b>Bryce Elder:</b> 7.0 innings, 1 earned run, 3 hits, 0 HR, 3 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (3 hits - 4 AB, 0 HR, 0 RBI)  \nNick Allen (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Philadelphia Phillies in a close game, managing to score only one run despite a strong offensive showing with 12 hits. Bryce Elder delivered a solid performance on the mound, allowing just one earned run over seven innings. \n\nKey highlights include:\n1. Matt Olson led the offense with three hits, showcasing his ability to get on base.\n2. Jurickson Profar contributed with a crucial RBI, although it wasn't enough to secure a win.\n3. The Braves' pitching was effective, limiting the Phillies to only six hits, but they couldn't capitalize on their offensive opportunities.",
+  "date": "2025-08-31",
+  "timestamp": "2025-08-31T09:14:42.986Z",
+  "rundown": "<b>2-3</b> L @ Philadelphia Phillies  \n<b>Chris Sale:</b> 6.0 innings, 1 earned run, 3 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 0 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hit - 3 AB, 0 HR, 1 RBI)  \nJurickson Profar (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a tightly contested game against the Philadelphia Phillies, losing 2-3. Despite a strong performance from Chris Sale on the mound, who allowed only one earned run and struck out nine batters, the Braves could not capitalize on their offensive opportunities.\n\nKey highlights include:\n1. Chris Sale's impressive strikeout total of 9, showcasing his dominance on the mound.\n2. Matt Olson and Jurickson Profar each contributed with 2 hits, helping to keep the offense alive.\n3. The Braves managed 9 hits overall but struggled to convert them into runs, leaving them just short of victory.",
   "lastGame": {
-    "date": "2025-08-29T22:45:00Z",
+    "date": "2025-08-30T22:05:00Z",
     "opponent": "Philadelphia Phillies",
     "result": "L",
-    "score": "1-2",
+    "score": "2-3",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "7.0",
+      "name": "Chris Sale",
+      "inningsPitched": "6.0",
       "earnedRuns": 1,
       "hits": 3,
-      "homeRuns": 0,
-      "strikeOuts": 3
+      "homeRuns": 1,
+      "strikeOuts": 9
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
+        "name": "Matt Olson",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Matt Olson",
-        "hits": 3,
+        "name": "Jurickson Profar",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 0
+        "runs": 1
       },
       {
-        "name": "Nick Allen",
+        "name": "Drake Baldwin",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -47,9 +54,9 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 12,
-      "opponentRuns": 2,
+      "bravesRuns": 2,
+      "bravesHits": 9,
+      "opponentRuns": 3,
       "opponentHits": 6
     }
   }
