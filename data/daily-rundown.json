@@ -1,63 +1,49 @@
 {
-  "date": "2025-08-31",
-  "timestamp": "2025-08-31T09:14:42.986Z",
-  "rundown": "<b>2-3</b> L @ Philadelphia Phillies  \n<b>Chris Sale:</b> 6.0 innings, 1 earned run, 3 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 0 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hit - 3 AB, 0 HR, 1 RBI)  \nJurickson Profar (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a tightly contested game against the Philadelphia Phillies, losing 2-3. Despite a strong performance from Chris Sale on the mound, who allowed only one earned run and struck out nine batters, the Braves could not capitalize on their offensive opportunities.\n\nKey highlights include:\n1. Chris Sale's impressive strikeout total of 9, showcasing his dominance on the mound.\n2. Matt Olson and Jurickson Profar each contributed with 2 hits, helping to keep the offense alive.\n3. The Braves managed 9 hits overall but struggled to convert them into runs, leaving them just short of victory.",
+  "date": "2025-09-01",
+  "timestamp": "2025-09-01T09:20:05.954Z",
+  "rundown": "<b>3-1</b> W @ Philadelphia Phillies  \n<b>Hurston Waldrep:</b> 5.2 innings, 1 earned run, 4 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 2 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \nJake Fraley (2 hits - 3 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a victory against the Phillies with a strong performance from their starting pitcher and key contributions from their hitters. Waldrep's dominant outing, highlighted by 9 strikeouts, kept the Phillies' offense in check. Baldwin's home run and 2 RBIs were crucial in driving the Braves' scoring.\n\nKey highlights include:\n1. Hurston Waldrep's impressive 9 strikeouts over 5.2 innings.\n2. Drake Baldwin's impactful home run, contributing 2 RBIs.\n3. The Braves' solid defense limiting the Phillies to just 1 run.",
   "lastGame": {
-    "date": "2025-08-30T22:05:00Z",
+    "date": "2025-08-31T23:10:00Z",
     "opponent": "Philadelphia Phillies",
-    "result": "L",
-    "score": "2-3",
+    "result": "W",
+    "score": "3-1",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "6.0",
+      "name": "Hurston Waldrep",
+      "inningsPitched": "5.2",
       "earnedRuns": 1,
-      "hits": 3,
+      "hits": 4,
       "homeRuns": 1,
       "strikeOuts": 9
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
+      },
+      {
+        "name": "Michael Harris II",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 1,
+        "rbi": 0,
         "runs": 0
       },
       {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Jurickson Profar",
+        "name": "Jake Fraley",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
         "runs": 1
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 9,
-      "opponentRuns": 3,
-      "opponentHits": 6
+      "bravesRuns": 3,
+      "bravesHits": 6,
+      "opponentRuns": 1,
+      "opponentHits": 5
     }
   }
 }
