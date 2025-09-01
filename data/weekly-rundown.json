@@ -1,20 +1,20 @@
 {
-  "date": "2025-08-31",
-  "timestamp": "2025-08-31T09:12:39.108Z",
-  "rundown": "<b>Record:</b> 3-6 (0.333)  \n<b>Series:</b> Lost series to New York Mets (1-2), Won series against Miami Marlins (2-1), Lost series to Philadelphia Phillies (0-3)  \n<b>Highlights:</b> The week featured a thrilling close win against the Mets (4-3) and an offensive explosion with back-to-back victories over the Marlins, winning 11-2 and 12-1. However, the team struggled against the Phillies, suffering a heavy loss of 4-19.  \n<b>Trend:</b> The team is struggling with 3 straight losses, showing inconsistency after a brief surge against the Marlins.",
+  "date": "2025-09-01",
+  "timestamp": "2025-09-01T09:17:29.597Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Braves won the series against the Miami Marlins (2-1) but lost the series to the Philadelphia Phillies (1-3).  \n<b>Highlights:</b> Ozzie Albies had an offensive explosion with 3 home runs and 10 RBIs over the week, while the team showcased a dominant performance with a 12-1 victory against the Marlins. However, they struggled in a tough 4-19 loss to the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team showing flashes of brilliance but ultimately falling short in several close games.",
   "weeklyStats": {
-    "dateRange": "2025-08-22 to 2025-08-30",
-    "record": "3-6",
+    "dateRange": "2025-08-25 to 2025-08-31",
+    "record": "3-4",
     "wins": 3,
-    "losses": 6,
-    "winPct": "0.333",
-    "totalGames": 9,
-    "momentum": "struggling with 3 straight losses",
+    "losses": 4,
+    "winPct": "0.429",
+    "totalGames": 7,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Tyler Kinley",
-        "appearances": 9,
-        "inningsPitched": 4.1,
+        "appearances": 7,
+        "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 1,
@@ -24,94 +24,73 @@
         "era": "0.00"
       },
       {
-        "name": "Chris Sale",
-        "appearances": 1,
-        "inningsPitched": 6,
-        "earnedRuns": 1,
+        "name": "Raisel Iglesias",
+        "appearances": 7,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 3,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 1,
+        "era": "0.00"
+      },
+      {
+        "name": "Hurston Waldrep",
+        "appearances": 7,
+        "inningsPitched": 10.3,
+        "earnedRuns": 2,
         "strikeouts": 9,
-        "hits": 3,
+        "hits": 12,
         "wins": 0,
         "losses": 0,
         "saves": 0,
-        "era": "1.50"
-      },
-      {
-        "name": "Spencer Strider",
-        "appearances": 9,
-        "inningsPitched": 7,
-        "earnedRuns": 1,
-        "strikeouts": 3,
-        "hits": 3,
-        "wins": 0,
-        "losses": 1,
-        "saves": 0,
-        "era": "1.29"
+        "era": "1.75"
       }
     ],
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 9,
-        "hits": 12,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 3,
         "rbi": 10,
-        "runs": 7,
-        "atBats": 37,
-        "avg": "0.324"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 9,
-        "hits": 13,
-        "homeRuns": 2,
-        "rbi": 9,
-        "runs": 9,
-        "atBats": 36,
-        "avg": "0.361"
+        "runs": 4,
+        "atBats": 28,
+        "avg": "0.321"
       },
       {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 10,
+        "games": 7,
+        "hits": 9,
         "homeRuns": 2,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 36,
-        "avg": "0.278"
+        "rbi": 5,
+        "runs": 4,
+        "atBats": 27,
+        "avg": "0.333"
+      },
+      {
+        "name": "Jurickson Profar",
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 2,
+        "rbi": 3,
+        "runs": 8,
+        "atBats": 28,
+        "avg": "0.286"
       },
       {
         "name": "Drake Baldwin",
-        "games": 8,
-        "hits": 7,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 25,
-        "avg": "0.280"
+        "games": 7,
+        "hits": 6,
+        "homeRuns": 2,
+        "rbi": 5,
+        "runs": 6,
+        "atBats": 18,
+        "avg": "0.333"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/22/2025",
-        "result": "L",
-        "score": "7-12",
-        "opponent": "New York Mets",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/23/2025",
-        "result": "L",
-        "score": "2-9",
-        "opponent": "New York Mets",
-        "homeAway": "vs"
-      },
-      {
-        "date": "8/24/2025",
-        "result": "W",
-        "score": "4-3",
-        "opponent": "New York Mets",
-        "homeAway": "vs"
-      },
       {
         "date": "8/25/2025",
         "result": "L",
@@ -153,32 +132,16 @@
         "score": "2-3",
         "opponent": "Philadelphia Phillies",
         "homeAway": "@"
+      },
+      {
+        "date": "8/31/2025",
+        "result": "W",
+        "score": "3-1",
+        "opponent": "Philadelphia Phillies",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "New York Mets",
-        "homeAway": "vs",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "8/22/2025",
-            "result": "L",
-            "score": "7-12"
-          },
-          {
-            "date": "8/23/2025",
-            "result": "L",
-            "score": "2-9"
-          },
-          {
-            "date": "8/24/2025",
-            "result": "W",
-            "score": "4-3"
-          }
-        ]
-      },
       {
         "opponent": "Miami Marlins",
         "homeAway": "@",
@@ -205,7 +168,7 @@
       {
         "opponent": "Philadelphia Phillies",
         "homeAway": "@",
-        "record": "0-3",
+        "record": "1-3",
         "outcome": "lost series",
         "games": [
           {
@@ -222,17 +185,22 @@
             "date": "8/30/2025",
             "result": "L",
             "score": "2-3"
+          },
+          {
+            "date": "8/31/2025",
+            "result": "W",
+            "score": "3-1"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring L 7-12 vs New York Mets",
-      "High-scoring L 2-9 vs New York Mets",
       "High-scoring W 11-2 @ Miami Marlins",
       "High-scoring W 12-1 @ Miami Marlins",
       "High-scoring L 4-19 @ Philadelphia Phillies",
-      "Close W 4-3 vs New York Mets"
+      "Close L 1-2 @ Miami Marlins",
+      "Close L 1-2 @ Philadelphia Phillies",
+      "Close L 2-3 @ Philadelphia Phillies"
     ]
   }
 }
