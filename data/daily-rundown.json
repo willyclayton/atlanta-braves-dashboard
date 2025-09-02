@@ -1,49 +1,56 @@
 {
-  "date": "2025-09-01",
-  "timestamp": "2025-09-01T09:20:05.954Z",
-  "rundown": "<b>3-1</b> W @ Philadelphia Phillies  \n<b>Hurston Waldrep:</b> 5.2 innings, 1 earned run, 4 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 2 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 0 RBI)  \nJake Fraley (2 hits - 3 AB, 0 HR, 0 RBI)  \n\nThe Braves secured a victory against the Phillies with a strong performance from their starting pitcher and key contributions from their hitters. Waldrep's dominant outing, highlighted by 9 strikeouts, kept the Phillies' offense in check. Baldwin's home run and 2 RBIs were crucial in driving the Braves' scoring.\n\nKey highlights include:\n1. Hurston Waldrep's impressive 9 strikeouts over 5.2 innings.\n2. Drake Baldwin's impactful home run, contributing 2 RBIs.\n3. The Braves' solid defense limiting the Phillies to just 1 run.",
+  "date": "2025-09-02",
+  "timestamp": "2025-09-02T09:18:11.606Z",
+  "rundown": "<b>6-7</b> L @ Chicago Cubs  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 5 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 0 HR, 4 RBI)  \nNacho Alvarez Jr. (2 hits - 4 AB, 0 HR, 1 RBI)  \nOzzie Albies (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell short in a close game against the Chicago Cubs, losing by just one run. Despite a strong offensive showing with 10 hits and 6 runs, the Braves could not secure the win. \n\nKey highlights include:\n1. Michael Harris II had a standout performance with 4 RBIs, contributing significantly to the team's run total.\n2. The Braves managed to hit 10 times but were unable to capitalize on their opportunities, leaving runners stranded.\n3. Spencer Strider pitched 5 innings, allowing 3 earned runs, but the bullpen struggled to maintain the lead.",
   "lastGame": {
-    "date": "2025-08-31T23:10:00Z",
-    "opponent": "Philadelphia Phillies",
-    "result": "W",
-    "score": "3-1",
+    "date": "2025-09-01T20:05:00Z",
+    "opponent": "Chicago Cubs",
+    "result": "L",
+    "score": "6-7",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "5.2",
-      "earnedRuns": 1,
-      "hits": 4,
+      "name": "Spencer Strider",
+      "inningsPitched": "5.0",
+      "earnedRuns": 3,
+      "hits": 5,
       "homeRuns": 1,
-      "strikeOuts": 9
+      "strikeOuts": 1
     },
     "significantHitters": [
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
       {
         "name": "Michael Harris II",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 0,
+        "rbi": 4,
+        "runs": 1
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Jake Fraley",
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Drake Baldwin",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 1
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 3,
-      "bravesHits": 6,
-      "opponentRuns": 1,
-      "opponentHits": 5
+      "bravesRuns": 6,
+      "bravesHits": 10,
+      "opponentRuns": 7,
+      "opponentHits": 11
     }
   }
 }
