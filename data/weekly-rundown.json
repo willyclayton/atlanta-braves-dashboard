@@ -1,19 +1,19 @@
 {
-  "date": "2025-09-01",
-  "timestamp": "2025-09-01T09:17:29.597Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Braves won the series against the Miami Marlins (2-1) but lost the series to the Philadelphia Phillies (1-3).  \n<b>Highlights:</b> Ozzie Albies had an offensive explosion with 3 home runs and 10 RBIs over the week, while the team showcased a dominant performance with a 12-1 victory against the Marlins. However, they struggled in a tough 4-19 loss to the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team showing flashes of brilliance but ultimately falling short in several close games.",
+  "date": "2025-09-02",
+  "timestamp": "2025-09-02T09:15:55.144Z",
+  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Braves won the series against the Miami Marlins (2-1) but lost the series to the Philadelphia Phillies (1-3) and dropped a game to the Chicago Cubs (0-1).  \n<b>Highlights:</b> Ozzie Albies had a standout week with 11 hits, including 3 home runs and 11 RBIs. The Braves showcased offensive firepower with two high-scoring wins against the Marlins, winning 11-2 and 12-1. However, they struggled defensively, suffering a tough 19-4 loss to the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team showing flashes of brilliance but ultimately struggling to maintain consistency.",
   "weeklyStats": {
-    "dateRange": "2025-08-25 to 2025-08-31",
-    "record": "3-4",
+    "dateRange": "2025-08-25 to 2025-09-01",
+    "record": "3-5",
     "wins": 3,
-    "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
+    "losses": 5,
+    "winPct": "0.375",
+    "totalGames": 8,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Tyler Kinley",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -36,58 +36,58 @@
         "era": "0.00"
       },
       {
-        "name": "Hurston Waldrep",
-        "appearances": 7,
-        "inningsPitched": 10.3,
-        "earnedRuns": 2,
-        "strikeouts": 9,
-        "hits": 12,
+        "name": "John Brebbia",
+        "appearances": 4,
+        "inningsPitched": 2.2,
+        "earnedRuns": 0,
+        "strikeouts": 3,
+        "hits": 2,
         "wins": 0,
-        "losses": 0,
+        "losses": 1,
         "saves": 0,
-        "era": "1.75"
+        "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 7,
-        "hits": 9,
+        "games": 8,
+        "hits": 11,
         "homeRuns": 3,
-        "rbi": 10,
-        "runs": 4,
-        "atBats": 28,
-        "avg": "0.321"
+        "rbi": 11,
+        "runs": 5,
+        "atBats": 32,
+        "avg": "0.344"
+      },
+      {
+        "name": "Michael Harris II",
+        "games": 8,
+        "hits": 8,
+        "homeRuns": 1,
+        "rbi": 9,
+        "runs": 2,
+        "atBats": 33,
+        "avg": "0.242"
       },
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 9,
+        "games": 8,
+        "hits": 10,
         "homeRuns": 2,
         "rbi": 5,
-        "runs": 4,
-        "atBats": 27,
-        "avg": "0.333"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 7,
-        "hits": 8,
-        "homeRuns": 2,
-        "rbi": 3,
-        "runs": 8,
-        "atBats": 28,
-        "avg": "0.286"
+        "runs": 5,
+        "atBats": 31,
+        "avg": "0.323"
       },
       {
         "name": "Drake Baldwin",
-        "games": 7,
-        "hits": 6,
+        "games": 8,
+        "hits": 8,
         "homeRuns": 2,
         "rbi": 5,
-        "runs": 6,
-        "atBats": 18,
-        "avg": "0.333"
+        "runs": 8,
+        "atBats": 21,
+        "avg": "0.381"
       }
     ],
     "gameResults": [
@@ -138,6 +138,13 @@
         "result": "W",
         "score": "3-1",
         "opponent": "Philadelphia Phillies",
+        "homeAway": "@"
+      },
+      {
+        "date": "9/1/2025",
+        "result": "L",
+        "score": "6-7",
+        "opponent": "Chicago Cubs",
         "homeAway": "@"
       }
     ],
@@ -192,15 +199,28 @@
             "score": "3-1"
           }
         ]
+      },
+      {
+        "opponent": "Chicago Cubs",
+        "homeAway": "@",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "9/1/2025",
+            "result": "L",
+            "score": "6-7"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring W 11-2 @ Miami Marlins",
       "High-scoring W 12-1 @ Miami Marlins",
       "High-scoring L 4-19 @ Philadelphia Phillies",
+      "High-scoring L 6-7 @ Chicago Cubs",
       "Close L 1-2 @ Miami Marlins",
-      "Close L 1-2 @ Philadelphia Phillies",
-      "Close L 2-3 @ Philadelphia Phillies"
+      "Close L 1-2 @ Philadelphia Phillies"
     ]
   }
 }
