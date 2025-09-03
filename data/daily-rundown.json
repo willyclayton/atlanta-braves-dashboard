@@ -1,56 +1,56 @@
 {
-  "date": "2025-09-02",
-  "timestamp": "2025-09-02T09:18:11.606Z",
-  "rundown": "<b>6-7</b> L @ Chicago Cubs  \n<b>Spencer Strider:</b> 5.0 innings, 3 earned runs, 5 hits, 1 HR, 1 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 0 HR, 4 RBI)  \nNacho Alvarez Jr. (2 hits - 4 AB, 0 HR, 1 RBI)  \nOzzie Albies (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves fell short in a close game against the Chicago Cubs, losing by just one run. Despite a strong offensive showing with 10 hits and 6 runs, the Braves could not secure the win. \n\nKey highlights include:\n1. Michael Harris II had a standout performance with 4 RBIs, contributing significantly to the team's run total.\n2. The Braves managed to hit 10 times but were unable to capitalize on their opportunities, leaving runners stranded.\n3. Spencer Strider pitched 5 innings, allowing 3 earned runs, but the bullpen struggled to maintain the lead.",
+  "date": "2025-09-03",
+  "timestamp": "2025-09-03T09:17:21.205Z",
+  "rundown": "<b>3-4</b> L @ Chicago Cubs  \n<b>Joey Wentz:</b> 4.0 innings, 4 earned runs, 7 hits, 1 HR, 8 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (2 hits - 4 AB, 1 HR, 1 RBI)  \nEli White (1 hit - 3 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short in a close game against the Chicago Cubs, losing by a single run. Despite a strong performance from Joey Wentz on the mound, who struck out 8 batters, he allowed 4 earned runs which ultimately cost the team. \n\nKey highlights include:\n1. Ozzie Albies hit a home run and contributed 2 hits to the Braves' offense.\n2. Eli White also added a home run, showcasing the team's power despite the loss.\n3. Ha-Seong Kim had a solid game with 2 hits, helping to keep the offense alive.",
   "lastGame": {
-    "date": "2025-09-01T20:05:00Z",
+    "date": "2025-09-02T23:40:00Z",
     "opponent": "Chicago Cubs",
     "result": "L",
-    "score": "6-7",
+    "score": "3-4",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "5.0",
-      "earnedRuns": 3,
-      "hits": 5,
+      "name": "Joey Wentz",
+      "inningsPitched": "4.0",
+      "earnedRuns": 4,
+      "hits": 7,
       "homeRuns": 1,
-      "strikeOuts": 1
+      "strikeOuts": 8
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 4,
-        "runs": 1
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
         "name": "Ozzie Albies",
         "hits": 2,
-        "homeRuns": 0,
+        "homeRuns": 1,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Drake Baldwin",
+        "name": "Eli White",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Ha-Seong Kim",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 2
+        "runs": 0
+      },
+      {
+        "name": "Marcell Ozuna",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 6,
-      "bravesHits": 10,
-      "opponentRuns": 7,
-      "opponentHits": 11
+      "bravesRuns": 3,
+      "bravesHits": 8,
+      "opponentRuns": 4,
+      "opponentHits": 7
     }
   }
 }
