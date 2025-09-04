@@ -1,34 +1,34 @@
 {
-  "date": "2025-09-03",
-  "timestamp": "2025-09-03T09:15:03.963Z",
-  "rundown": "<b>Record:</b> 3-6 (0.333)  \n<b>Series:</b> Braves won the series against the Miami Marlins (2-1), lost the series to the Philadelphia Phillies (1-3), and lost the series to the Chicago Cubs (0-2).  \n<b>Highlights:</b> Ozzie Albies had an impressive week, hitting 4 home runs and driving in 12 runs. The Braves showcased offensive firepower with back-to-back high-scoring wins of 11-2 and 12-1 against the Marlins. However, they struggled defensively, suffering a tough 4-19 loss to the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team showing flashes of brilliance but ultimately struggling to maintain consistency, especially in the latter part of the week.",
+  "date": "2025-09-04",
+  "timestamp": "2025-09-04T09:25:47.640Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-3), Lost series to Chicago Cubs (1-2)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 10 hits and 2 home runs, while Tyler Kinley and Raisel Iglesias both showcased their dominance on the mound with perfect ERAs. The team faced a tough stretch, including a high-scoring loss of 4-19 against the Phillies.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping multiple close games.",
   "weeklyStats": {
-    "dateRange": "2025-08-25 to 2025-09-02",
-    "record": "3-6",
-    "wins": 3,
-    "losses": 6,
-    "winPct": "0.333",
-    "totalGames": 9,
+    "dateRange": "2025-08-28 to 2025-09-03",
+    "record": "2-5",
+    "wins": 2,
+    "losses": 5,
+    "winPct": "0.286",
+    "totalGames": 7,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Tyler Kinley",
-        "appearances": 9,
+        "appearances": 7,
         "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 3,
-        "hits": 1,
-        "wins": 2,
+        "strikeouts": 5,
+        "hits": 0,
+        "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 2,
+        "appearances": 7,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 3,
+        "strikeouts": 4,
         "hits": 0,
         "wins": 0,
         "losses": 0,
@@ -37,7 +37,7 @@
       },
       {
         "name": "John Brebbia",
-        "appearances": 5,
+        "appearances": 6,
         "inningsPitched": 2.2,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -51,67 +51,46 @@
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 9,
-        "hits": 13,
-        "homeRuns": 4,
-        "rbi": 12,
-        "runs": 6,
-        "atBats": 36,
-        "avg": "0.361"
+        "games": 7,
+        "hits": 10,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 4,
+        "atBats": 26,
+        "avg": "0.385"
       },
       {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 11,
-        "homeRuns": 2,
-        "rbi": 5,
-        "runs": 6,
-        "atBats": 34,
-        "avg": "0.324"
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 4,
+        "atBats": 25,
+        "avg": "0.320"
       },
       {
         "name": "Michael Harris II",
-        "games": 9,
-        "hits": 8,
-        "homeRuns": 1,
-        "rbi": 9,
+        "games": 7,
+        "hits": 6,
+        "homeRuns": 0,
+        "rbi": 6,
         "runs": 2,
-        "atBats": 37,
-        "avg": "0.216"
+        "atBats": 29,
+        "avg": "0.207"
       },
       {
         "name": "Drake Baldwin",
-        "games": 9,
-        "hits": 8,
-        "homeRuns": 2,
-        "rbi": 5,
-        "runs": 8,
-        "atBats": 22,
-        "avg": "0.364"
+        "games": 7,
+        "hits": 6,
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 4,
+        "atBats": 18,
+        "avg": "0.333"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/25/2025",
-        "result": "L",
-        "score": "1-2",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/26/2025",
-        "result": "W",
-        "score": "11-2",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/27/2025",
-        "result": "W",
-        "score": "12-1",
-        "opponent": "Miami Marlins",
-        "homeAway": "@"
-      },
       {
         "date": "8/28/2025",
         "result": "L",
@@ -153,32 +132,16 @@
         "score": "3-4",
         "opponent": "Chicago Cubs",
         "homeAway": "@"
+      },
+      {
+        "date": "9/3/2025",
+        "result": "W",
+        "score": "5-1",
+        "opponent": "Chicago Cubs",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Miami Marlins",
-        "homeAway": "@",
-        "record": "2-1",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "8/25/2025",
-            "result": "L",
-            "score": "1-2"
-          },
-          {
-            "date": "8/26/2025",
-            "result": "W",
-            "score": "11-2"
-          },
-          {
-            "date": "8/27/2025",
-            "result": "W",
-            "score": "12-1"
-          }
-        ]
-      },
       {
         "opponent": "Philadelphia Phillies",
         "homeAway": "@",
@@ -210,8 +173,8 @@
       {
         "opponent": "Chicago Cubs",
         "homeAway": "@",
-        "record": "0-2",
-        "outcome": "losing series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "9/1/2025",
@@ -222,17 +185,22 @@
             "date": "9/2/2025",
             "result": "L",
             "score": "3-4"
+          },
+          {
+            "date": "9/3/2025",
+            "result": "W",
+            "score": "5-1"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 11-2 @ Miami Marlins",
-      "High-scoring W 12-1 @ Miami Marlins",
       "High-scoring L 4-19 @ Philadelphia Phillies",
       "High-scoring L 6-7 @ Chicago Cubs",
-      "Close L 1-2 @ Miami Marlins",
-      "Close L 1-2 @ Philadelphia Phillies"
+      "Close L 1-2 @ Philadelphia Phillies",
+      "Close L 2-3 @ Philadelphia Phillies",
+      "Close L 6-7 @ Chicago Cubs",
+      "Close L 3-4 @ Chicago Cubs"
     ]
   }
 }
