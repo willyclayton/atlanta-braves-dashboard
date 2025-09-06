@@ -1,49 +1,63 @@
 {
-  "date": "2025-09-05",
-  "timestamp": "2025-09-05T09:17:20.928Z",
-  "rundown": "<b>5-1</b> W @ Chicago Cubs  \n<b>Bryce Elder:</b> 7.0 innings, 0 earned runs, 4 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nHa-Seong Kim (1 hits - 4 AB, 1 HR, 3 RBI)  \nOzzie Albies (2 hits - 4 AB, 1 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hits - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a convincing victory against the Chicago Cubs, showcasing strong pitching and timely hitting. Bryce Elder delivered a stellar performance on the mound, not allowing any earned runs and striking out six batters. \n\nKey highlights include:\n1. Ha-Seong Kim's impactful home run, driving in three runs.\n2. Ozzie Albies contributing with two hits, including a home run, and scoring twice.\n3. The Braves' defense limited the Cubs to just four hits, maintaining control throughout the game.",
+  "date": "2025-09-06",
+  "timestamp": "2025-09-06T09:14:38.949Z",
+  "rundown": "<b>4-1</b> W vs Seattle Mariners  \n<b>Chris Sale:</b> 6.2 innings, 1 earned run, 4 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a solid victory against the Seattle Mariners, showcasing strong pitching and effective hitting. Chris Sale delivered an impressive performance on the mound, allowing only one earned run while striking out nine batters. \n\nKey highlights include:\n1. Ozzie Albies led the offense with three hits, contributing significantly to the team's run production.\n2. The Braves' pitching staff limited the Mariners to just six hits, demonstrating strong defensive play.\n3. The team capitalized on their opportunities, scoring four runs on ten hits, ensuring a comfortable win.",
   "lastGame": {
-    "date": "2025-09-03T23:40:00Z",
-    "opponent": "Chicago Cubs",
+    "date": "2025-09-05T23:15:00Z",
+    "opponent": "Seattle Mariners",
     "result": "W",
-    "score": "5-1",
-    "homeAway": "@",
+    "score": "4-1",
+    "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "7.0",
-      "earnedRuns": 0,
+      "name": "Chris Sale",
+      "inningsPitched": "6.2",
+      "earnedRuns": 1,
       "hits": 4,
       "homeRuns": 0,
-      "strikeOuts": 6
+      "strikeOuts": 9
     },
     "significantHitters": [
       {
-        "name": "Ha-Seong Kim",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 3,
+        "name": "Ozzie Albies",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
+        "name": "Drake Baldwin",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 2
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 5,
-      "bravesHits": 6,
+      "bravesRuns": 4,
+      "bravesHits": 10,
       "opponentRuns": 1,
-      "opponentHits": 4
+      "opponentHits": 6
     }
   }
 }
