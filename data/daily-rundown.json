@@ -1,52 +1,31 @@
 {
-  "date": "2025-09-06",
-  "timestamp": "2025-09-06T09:14:38.949Z",
-  "rundown": "<b>4-1</b> W vs Seattle Mariners  \n<b>Chris Sale:</b> 6.2 innings, 1 earned run, 4 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nOzzie Albies (3 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \nMatt Olson (1 hit - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a solid victory against the Seattle Mariners, showcasing strong pitching and effective hitting. Chris Sale delivered an impressive performance on the mound, allowing only one earned run while striking out nine batters. \n\nKey highlights include:\n1. Ozzie Albies led the offense with three hits, contributing significantly to the team's run production.\n2. The Braves' pitching staff limited the Mariners to just six hits, demonstrating strong defensive play.\n3. The team capitalized on their opportunities, scoring four runs on ten hits, ensuring a comfortable win.",
+  "date": "2025-09-07",
+  "timestamp": "2025-09-07T09:14:47.185Z",
+  "rundown": "<b>2-10</b> L vs Seattle Mariners  \n<b>Hurston Waldrep:</b> 5.0 innings, 2 earned runs, 2 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a significant loss against the Seattle Mariners, with a final score of 2-10. The Mariners' offense was overpowering, scoring in multiple innings and capitalizing on the Braves' pitching. \n\nKey highlights include:\n1. Hurston Waldrep pitched 5 innings, allowing only 2 earned runs but struggled with a home run.\n2. Matt Olson contributed with a home run and 2 hits, providing the Braves with their only RBI.\n3. The Braves managed only 6 hits compared to the Mariners' 11, highlighting a lack of offensive production.",
   "lastGame": {
-    "date": "2025-09-05T23:15:00Z",
+    "date": "2025-09-06T23:15:00Z",
     "opponent": "Seattle Mariners",
-    "result": "W",
-    "score": "4-1",
+    "result": "L",
+    "score": "2-10",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "6.2",
-      "earnedRuns": 1,
-      "hits": 4,
-      "homeRuns": 0,
-      "strikeOuts": 9
+      "name": "Hurston Waldrep",
+      "inningsPitched": "5.0",
+      "earnedRuns": 2,
+      "hits": 2,
+      "homeRuns": 1,
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Ozzie Albies",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
         "name": "Matt Olson",
-        "hits": 1,
-        "homeRuns": 0,
+        "hits": 2,
+        "homeRuns": 1,
         "rbi": 1,
         "runs": 1
       },
       {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 2
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
+        "name": "Ha-Seong Kim",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
@@ -54,10 +33,10 @@
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 10,
-      "opponentRuns": 1,
-      "opponentHits": 6
+      "bravesRuns": 2,
+      "bravesHits": 6,
+      "opponentRuns": 10,
+      "opponentHits": 11
     }
   }
 }
