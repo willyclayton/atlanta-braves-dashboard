@@ -1,42 +1,35 @@
 {
-  "date": "2025-09-07",
-  "timestamp": "2025-09-07T09:14:47.185Z",
-  "rundown": "<b>2-10</b> L vs Seattle Mariners  \n<b>Hurston Waldrep:</b> 5.0 innings, 2 earned runs, 2 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves suffered a significant loss against the Seattle Mariners, with a final score of 2-10. The Mariners' offense was overpowering, scoring in multiple innings and capitalizing on the Braves' pitching. \n\nKey highlights include:\n1. Hurston Waldrep pitched 5 innings, allowing only 2 earned runs but struggled with a home run.\n2. Matt Olson contributed with a home run and 2 hits, providing the Braves with their only RBI.\n3. The Braves managed only 6 hits compared to the Mariners' 11, highlighting a lack of offensive production.",
+  "date": "2025-09-08",
+  "timestamp": "2025-09-08T09:19:36.265Z",
+  "rundown": "<b>2-18</b> L vs Seattle Mariners  \n<b>Dylan Dodd:</b> 3.1 innings, 3 earned runs, 5 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves suffered a heavy defeat against the Seattle Mariners, allowing 18 runs while only managing to score 2 themselves. The pitching struggled, and the offense was unable to keep pace with the Mariners' explosive performance. \n\nKey highlights from the game include:  \n1. Dylan Dodd pitched 3.1 innings, giving up 3 earned runs and 5 hits.  \n2. Jurickson Profar provided a bright spot for the Braves with 2 hits, including a home run.  \n3. The Mariners' offense was relentless, accumulating 20 hits and scoring in multiple innings.  \n4. The Braves' defense struggled to contain the Mariners, leading to a lopsided score.  \n5. Overall, the Braves were outmatched in both pitching and hitting throughout the game.",
   "lastGame": {
-    "date": "2025-09-06T23:15:00Z",
+    "date": "2025-09-07T16:05:00Z",
     "opponent": "Seattle Mariners",
     "result": "L",
-    "score": "2-10",
+    "score": "2-18",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "5.0",
-      "earnedRuns": 2,
-      "hits": 2,
+      "name": "Dylan Dodd",
+      "inningsPitched": "3.1",
+      "earnedRuns": 3,
+      "hits": 5,
       "homeRuns": 1,
-      "strikeOuts": 5
+      "strikeOuts": 2
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
+        "name": "Jurickson Profar",
         "hits": 2,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 1
-      },
-      {
-        "name": "Ha-Seong Kim",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
       }
     ],
     "teamStats": {
       "bravesRuns": 2,
       "bravesHits": 6,
-      "opponentRuns": 10,
-      "opponentHits": 11
+      "opponentRuns": 18,
+      "opponentHits": 20
     }
   }
 }
