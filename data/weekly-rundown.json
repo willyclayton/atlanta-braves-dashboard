@@ -1,124 +1,96 @@
 {
-  "date": "2025-09-07",
-  "timestamp": "2025-09-07T09:12:11.428Z",
-  "rundown": "<b>Record:</b> 3-6 (0.333)  \n<b>Series:</b> Lost series to Philadelphia Phillies (1-3), Lost series to Chicago Cubs (1-2), Split series with Seattle Mariners (1-1)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 13 hits and 2 home runs, while Tyler Kinley and Raisel Iglesias both showcased their dominance on the mound with perfect ERAs. The team managed a solid win against the Cubs, taking the game 5-1.  \n<b>Trend:</b> Building momentum with recent solid play despite a tough week overall, showing flashes of potential in key performances.",
+  "date": "2025-09-08",
+  "timestamp": "2025-09-08T09:17:15.511Z",
+  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Seattle Mariners (1-2)  \n<b>Highlights:</b> Ozzie Albies had a standout week with a .417 batting average and 10 hits, including 2 home runs. The team faced a tough stretch, highlighted by a close 6-7 loss to the Cubs and a rough finish against the Mariners, losing 2-10 and 2-18.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and facing tough losses in both series.",
   "weeklyStats": {
-    "dateRange": "2025-08-28 to 2025-09-06",
-    "record": "3-6",
-    "wins": 3,
-    "losses": 6,
+    "dateRange": "2025-09-01 to 2025-09-07",
+    "record": "2-4",
+    "wins": 2,
+    "losses": 4,
     "winPct": "0.333",
-    "totalGames": 9,
-    "momentum": "building momentum with recent solid play",
+    "totalGames": 6,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Tyler Kinley",
-        "appearances": 9,
-        "inningsPitched": 4,
+        "name": "Bryce Elder",
+        "appearances": 6,
+        "inningsPitched": 7,
         "earnedRuns": 0,
-        "strikeouts": 5,
+        "strikeouts": 6,
+        "hits": 4,
+        "wins": 1,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Tyler Kinley",
+        "appearances": 6,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 2,
         "hits": 0,
-        "wins": 2,
+        "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 4,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 2,
-        "era": "0.00"
-      },
-      {
-        "name": "Rolddy Muñoz",
-        "appearances": 5,
-        "inningsPitched": 2.1,
+        "appearances": 6,
+        "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 2,
         "hits": 0,
         "wins": 0,
         "losses": 0,
-        "saves": 0,
+        "saves": 1,
         "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 9,
-        "hits": 13,
+        "games": 6,
+        "hits": 10,
         "homeRuns": 2,
-        "rbi": 5,
-        "runs": 5,
-        "atBats": 34,
-        "avg": "0.382"
+        "rbi": 4,
+        "runs": 6,
+        "atBats": 24,
+        "avg": "0.417"
+      },
+      {
+        "name": "Ha-Seong Kim",
+        "games": 5,
+        "hits": 5,
+        "homeRuns": 1,
+        "rbi": 4,
+        "runs": 1,
+        "atBats": 17,
+        "avg": "0.294"
       },
       {
         "name": "Matt Olson",
-        "games": 9,
-        "hits": 11,
-        "homeRuns": 2,
-        "rbi": 5,
-        "runs": 6,
-        "atBats": 32,
-        "avg": "0.344"
-      },
-      {
-        "name": "Michael Harris II",
-        "games": 9,
+        "games": 6,
         "hits": 6,
-        "homeRuns": 0,
-        "rbi": 7,
-        "runs": 2,
-        "atBats": 36,
-        "avg": "0.167"
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 4,
+        "atBats": 20,
+        "avg": "0.300"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 9,
-        "hits": 8,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 5,
-        "atBats": 26,
-        "avg": "0.308"
+        "name": "Nacho Alvarez Jr.",
+        "games": 6,
+        "hits": 7,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 0,
+        "atBats": 16,
+        "avg": "0.438"
       }
     ],
     "gameResults": [
-      {
-        "date": "8/28/2025",
-        "result": "L",
-        "score": "4-19",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/29/2025",
-        "result": "L",
-        "score": "1-2",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/30/2025",
-        "result": "L",
-        "score": "2-3",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "@"
-      },
-      {
-        "date": "8/31/2025",
-        "result": "W",
-        "score": "3-1",
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "@"
-      },
       {
         "date": "9/1/2025",
         "result": "L",
@@ -153,37 +125,16 @@
         "score": "2-10",
         "opponent": "Seattle Mariners",
         "homeAway": "vs"
+      },
+      {
+        "date": "9/7/2025",
+        "result": "L",
+        "score": "2-18",
+        "opponent": "Seattle Mariners",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Philadelphia Phillies",
-        "homeAway": "@",
-        "record": "1-3",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "8/28/2025",
-            "result": "L",
-            "score": "4-19"
-          },
-          {
-            "date": "8/29/2025",
-            "result": "L",
-            "score": "1-2"
-          },
-          {
-            "date": "8/30/2025",
-            "result": "L",
-            "score": "2-3"
-          },
-          {
-            "date": "8/31/2025",
-            "result": "W",
-            "score": "3-1"
-          }
-        ]
-      },
       {
         "opponent": "Chicago Cubs",
         "homeAway": "@",
@@ -210,8 +161,8 @@
       {
         "opponent": "Seattle Mariners",
         "homeAway": "vs",
-        "record": "1-1",
-        "outcome": "split series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "9/5/2025",
@@ -222,17 +173,22 @@
             "date": "9/6/2025",
             "result": "L",
             "score": "2-10"
+          },
+          {
+            "date": "9/7/2025",
+            "result": "L",
+            "score": "2-18"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring L 4-19 @ Philadelphia Phillies",
       "High-scoring L 6-7 @ Chicago Cubs",
       "High-scoring L 2-10 vs Seattle Mariners",
-      "Close L 1-2 @ Philadelphia Phillies",
-      "Close L 2-3 @ Philadelphia Phillies",
-      "Close L 6-7 @ Chicago Cubs"
+      "High-scoring L 2-18 vs Seattle Mariners",
+      "Close L 6-7 @ Chicago Cubs",
+      "Close L 3-4 @ Chicago Cubs",
+      "Ozzie Albies: 0.417 avg, 10 hits"
     ]
   }
 }
