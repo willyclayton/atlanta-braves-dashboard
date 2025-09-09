@@ -1,35 +1,56 @@
 {
-  "date": "2025-09-08",
-  "timestamp": "2025-09-08T09:19:36.265Z",
-  "rundown": "<b>2-18</b> L vs Seattle Mariners  \n<b>Dylan Dodd:</b> 3.1 innings, 3 earned runs, 5 hits, 1 HR, 2 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves suffered a heavy defeat against the Seattle Mariners, allowing 18 runs while only managing to score 2 themselves. The pitching struggled, and the offense was unable to keep pace with the Mariners' explosive performance. \n\nKey highlights from the game include:  \n1. Dylan Dodd pitched 3.1 innings, giving up 3 earned runs and 5 hits.  \n2. Jurickson Profar provided a bright spot for the Braves with 2 hits, including a home run.  \n3. The Mariners' offense was relentless, accumulating 20 hits and scoring in multiple innings.  \n4. The Braves' defense struggled to contain the Mariners, leading to a lopsided score.  \n5. Overall, the Braves were outmatched in both pitching and hitting throughout the game.",
+  "date": "2025-09-09",
+  "timestamp": "2025-09-09T09:18:15.431Z",
+  "rundown": "<b>4-1</b> W vs Chicago Cubs  \n<b>Bryce Elder:</b> 6.1 innings, 1 earned run, 5 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nOzzie Albies (1 hit - 3 AB, 1 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a solid victory against the Chicago Cubs, showcasing strong pitching and timely hitting. Bryce Elder delivered an impressive performance on the mound, allowing only one earned run while striking out six batters. \n\nKey highlights include:\n1. Matt Olson and Ozzie Albies both contributed with home runs, providing crucial runs for the Braves.\n2. Drake Baldwin added to the scoring with an RBI, helping to extend the lead.\n3. The Braves' defense was effective, limiting the Cubs to just five hits throughout the game.",
   "lastGame": {
-    "date": "2025-09-07T16:05:00Z",
-    "opponent": "Seattle Mariners",
-    "result": "L",
-    "score": "2-18",
+    "date": "2025-09-08T23:15:00Z",
+    "opponent": "Chicago Cubs",
+    "result": "W",
+    "score": "4-1",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Dylan Dodd",
-      "inningsPitched": "3.1",
-      "earnedRuns": 3,
+      "name": "Bryce Elder",
+      "inningsPitched": "6.1",
+      "earnedRuns": 1,
       "hits": 5,
-      "homeRuns": 1,
-      "strikeOuts": 2
+      "homeRuns": 0,
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 6,
-      "opponentRuns": 18,
-      "opponentHits": 20
+      "bravesRuns": 4,
+      "bravesHits": 7,
+      "opponentRuns": 1,
+      "opponentHits": 5
     }
   }
 }
