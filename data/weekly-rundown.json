@@ -1,34 +1,22 @@
 {
-  "date": "2025-09-08",
-  "timestamp": "2025-09-08T09:17:15.511Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Seattle Mariners (1-2)  \n<b>Highlights:</b> Ozzie Albies had a standout week with a .417 batting average and 10 hits, including 2 home runs. The team faced a tough stretch, highlighted by a close 6-7 loss to the Cubs and a rough finish against the Mariners, losing 2-10 and 2-18.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and facing tough losses in both series.",
+  "date": "2025-09-09",
+  "timestamp": "2025-09-09T09:15:33.035Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Seattle Mariners (1-2), Won game against Chicago Cubs (1-0)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 3 home runs and 11 hits, Bryce Elder pitched brilliantly with a 0.69 ERA over 13.1 innings, and the team faced a tough stretch with multiple high-scoring losses.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, especially against the Mariners.",
   "weeklyStats": {
-    "dateRange": "2025-09-01 to 2025-09-07",
-    "record": "2-4",
-    "wins": 2,
+    "dateRange": "2025-09-01 to 2025-09-08",
+    "record": "3-4",
+    "wins": 3,
     "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
+    "winPct": "0.429",
+    "totalGames": 7,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
-        "name": "Bryce Elder",
-        "appearances": 6,
-        "inningsPitched": 7,
-        "earnedRuns": 0,
-        "strikeouts": 6,
-        "hits": 4,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Tyler Kinley",
-        "appearances": 6,
-        "inningsPitched": 2,
+        "appearances": 7,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 2,
+        "strikeouts": 3,
         "hits": 0,
         "wins": 1,
         "losses": 0,
@@ -37,57 +25,69 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
-        "inningsPitched": 2,
+        "appearances": 7,
+        "inningsPitched": 3,
         "earnedRuns": 0,
-        "strikeouts": 2,
+        "strikeouts": 3,
         "hits": 0,
         "wins": 0,
         "losses": 0,
-        "saves": 1,
+        "saves": 2,
         "era": "0.00"
+      },
+      {
+        "name": "Bryce Elder",
+        "appearances": 7,
+        "inningsPitched": 13.1,
+        "earnedRuns": 1,
+        "strikeouts": 12,
+        "hits": 9,
+        "wins": 2,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.69"
       }
     ],
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 6,
-        "hits": 10,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 6,
-        "atBats": 24,
-        "avg": "0.417"
-      },
-      {
-        "name": "Ha-Seong Kim",
-        "games": 5,
-        "hits": 5,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1,
-        "atBats": 17,
-        "avg": "0.294"
+        "games": 7,
+        "hits": 11,
+        "homeRuns": 3,
+        "rbi": 5,
+        "runs": 7,
+        "atBats": 28,
+        "avg": "0.393"
       },
       {
         "name": "Matt Olson",
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 2,
+        "rbi": 3,
+        "runs": 5,
+        "atBats": 24,
+        "avg": "0.333"
+      },
+      {
+        "name": "Ha-Seong Kim",
         "games": 6,
         "hits": 6,
         "homeRuns": 1,
-        "rbi": 2,
-        "runs": 4,
+        "rbi": 4,
+        "runs": 2,
         "atBats": 20,
         "avg": "0.300"
       },
       {
-        "name": "Nacho Alvarez Jr.",
-        "games": 6,
-        "hits": 7,
+        "name": "Michael Harris II",
+        "games": 7,
+        "hits": 3,
         "homeRuns": 0,
-        "rbi": 2,
-        "runs": 0,
-        "atBats": 16,
-        "avg": "0.438"
+        "rbi": 6,
+        "runs": 2,
+        "atBats": 26,
+        "avg": "0.115"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "2-18",
         "opponent": "Seattle Mariners",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/8/2025",
+        "result": "W",
+        "score": "4-1",
+        "opponent": "Chicago Cubs",
         "homeAway": "vs"
       }
     ],
@@ -180,6 +187,19 @@
             "score": "2-18"
           }
         ]
+      },
+      {
+        "opponent": "Chicago Cubs",
+        "homeAway": "vs",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "9/8/2025",
+            "result": "W",
+            "score": "4-1"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -188,7 +208,7 @@
       "High-scoring L 2-18 vs Seattle Mariners",
       "Close L 6-7 @ Chicago Cubs",
       "Close L 3-4 @ Chicago Cubs",
-      "Ozzie Albies: 0.417 avg, 10 hits"
+      "Ozzie Albies: 3 HRs in the week"
     ]
   }
 }
