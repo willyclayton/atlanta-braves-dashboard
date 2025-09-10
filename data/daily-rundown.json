@@ -1,56 +1,42 @@
 {
-  "date": "2025-09-09",
-  "timestamp": "2025-09-09T09:18:15.431Z",
-  "rundown": "<b>4-1</b> W vs Chicago Cubs  \n<b>Bryce Elder:</b> 6.1 innings, 1 earned run, 5 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nOzzie Albies (1 hit - 3 AB, 1 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a solid victory against the Chicago Cubs, showcasing strong pitching and timely hitting. Bryce Elder delivered an impressive performance on the mound, allowing only one earned run while striking out six batters. \n\nKey highlights include:\n1. Matt Olson and Ozzie Albies both contributed with home runs, providing crucial runs for the Braves.\n2. Drake Baldwin added to the scoring with an RBI, helping to extend the lead.\n3. The Braves' defense was effective, limiting the Cubs to just five hits throughout the game.",
+  "date": "2025-09-10",
+  "timestamp": "2025-09-10T09:17:26.682Z",
+  "rundown": "<b>1-6</b> L vs Chicago Cubs  \n<b>Spencer Strider:</b> 6.0 innings, 2 earned runs, 6 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 0 HR, 1 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Chicago Cubs with a final score of 1-6. Despite a solid performance from Spencer Strider on the mound, who struck out 8 batters, the Braves' offense struggled to capitalize on scoring opportunities. \n\nKey highlights include:\n1. Spencer Strider's strong outing with 8 strikeouts over 6 innings.\n2. Ronald Acuña Jr. led the team with 2 hits.\n3. Jurickson Profar contributed the only RBI for the Braves.",
   "lastGame": {
-    "date": "2025-09-08T23:15:00Z",
+    "date": "2025-09-09T23:15:00Z",
     "opponent": "Chicago Cubs",
-    "result": "W",
-    "score": "4-1",
+    "result": "L",
+    "score": "1-6",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "6.1",
-      "earnedRuns": 1,
-      "hits": 5,
+      "name": "Spencer Strider",
+      "inningsPitched": "6.0",
+      "earnedRuns": 2,
+      "hits": 6,
       "homeRuns": 0,
-      "strikeOuts": 6
+      "strikeOuts": 8
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
+        "name": "Jurickson Profar",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 7,
-      "opponentRuns": 1,
-      "opponentHits": 5
+      "bravesRuns": 1,
+      "bravesHits": 4,
+      "opponentRuns": 6,
+      "opponentHits": 7
     }
   }
 }
