@@ -1,19 +1,31 @@
 {
-  "date": "2025-09-09",
-  "timestamp": "2025-09-09T09:15:33.035Z",
-  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Seattle Mariners (1-2), Won game against Chicago Cubs (1-0)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 3 home runs and 11 hits, Bryce Elder pitched brilliantly with a 0.69 ERA over 13.1 innings, and the team faced a tough stretch with multiple high-scoring losses.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, especially against the Mariners.",
+  "date": "2025-09-10",
+  "timestamp": "2025-09-10T09:14:50.920Z",
+  "rundown": "<b>Record:</b> 3-5 (0.375)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Seattle Mariners (1-2), Split series with Chicago Cubs (1-1)  \n<b>Highlights:</b> Ozzie Albies had a standout week with 3 home runs, the team faced a tough stretch with high-scoring losses including a 2-18 defeat against the Mariners, and they managed a solid win against the Cubs with a score of 4-1.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and facing tough opponents.",
   "weeklyStats": {
-    "dateRange": "2025-09-01 to 2025-09-08",
-    "record": "3-4",
+    "dateRange": "2025-09-01 to 2025-09-09",
+    "record": "3-5",
     "wins": 3,
-    "losses": 4,
-    "winPct": "0.429",
-    "totalGames": 7,
+    "losses": 5,
+    "winPct": "0.375",
+    "totalGames": 8,
     "momentum": "challenging week overall",
     "topPitchers": [
       {
+        "name": "Dylan Lee",
+        "appearances": 8,
+        "inningsPitched": 2.1,
+        "earnedRuns": 0,
+        "strikeouts": 4,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "Tyler Kinley",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -25,7 +37,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -34,60 +46,48 @@
         "losses": 0,
         "saves": 2,
         "era": "0.00"
-      },
-      {
-        "name": "Bryce Elder",
-        "appearances": 7,
-        "inningsPitched": 13.1,
-        "earnedRuns": 1,
-        "strikeouts": 12,
-        "hits": 9,
-        "wins": 2,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.69"
       }
     ],
     "topBatters": [
       {
         "name": "Ozzie Albies",
-        "games": 7,
+        "games": 8,
         "hits": 11,
         "homeRuns": 3,
         "rbi": 5,
         "runs": 7,
-        "atBats": 28,
-        "avg": "0.393"
+        "atBats": 32,
+        "avg": "0.344"
       },
       {
         "name": "Matt Olson",
-        "games": 7,
+        "games": 8,
         "hits": 8,
         "homeRuns": 2,
         "rbi": 3,
         "runs": 5,
-        "atBats": 24,
-        "avg": "0.333"
+        "atBats": 28,
+        "avg": "0.286"
       },
       {
         "name": "Ha-Seong Kim",
-        "games": 6,
+        "games": 7,
         "hits": 6,
         "homeRuns": 1,
         "rbi": 4,
         "runs": 2,
-        "atBats": 20,
-        "avg": "0.300"
+        "atBats": 24,
+        "avg": "0.250"
       },
       {
         "name": "Michael Harris II",
-        "games": 7,
+        "games": 8,
         "hits": 3,
         "homeRuns": 0,
         "rbi": 6,
         "runs": 2,
-        "atBats": 26,
-        "avg": "0.115"
+        "atBats": 29,
+        "avg": "0.103"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "9/8/2025",
         "result": "W",
         "score": "4-1",
+        "opponent": "Chicago Cubs",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/9/2025",
+        "result": "L",
+        "score": "1-6",
         "opponent": "Chicago Cubs",
         "homeAway": "vs"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Chicago Cubs",
         "homeAway": "vs",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "1-1",
+        "outcome": "split series",
         "games": [
           {
             "date": "9/8/2025",
             "result": "W",
             "score": "4-1"
+          },
+          {
+            "date": "9/9/2025",
+            "result": "L",
+            "score": "1-6"
           }
         ]
       }
