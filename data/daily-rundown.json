@@ -1,42 +1,49 @@
 {
-  "date": "2025-09-10",
-  "timestamp": "2025-09-10T09:17:26.682Z",
-  "rundown": "<b>1-6</b> L vs Chicago Cubs  \n<b>Spencer Strider:</b> 6.0 innings, 2 earned runs, 6 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nJurickson Profar (1 hits - 3 AB, 0 HR, 1 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell to the Chicago Cubs with a final score of 1-6. Despite a solid performance from Spencer Strider on the mound, who struck out 8 batters, the Braves' offense struggled to capitalize on scoring opportunities. \n\nKey highlights include:\n1. Spencer Strider's strong outing with 8 strikeouts over 6 innings.\n2. Ronald Acuña Jr. led the team with 2 hits.\n3. Jurickson Profar contributed the only RBI for the Braves.",
+  "date": "2025-09-11",
+  "timestamp": "2025-09-11T09:16:57.462Z",
+  "rundown": "<b>2-3</b> L vs Chicago Cubs  \n<b>Chris Sale:</b> 5.0 innings, 3 earned runs, 7 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 0 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hits - 3 AB, 0 HR, 1 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short against the Chicago Cubs, losing by a single run. Despite a solid performance from Chris Sale, who struck out 9 batters, the team could not overcome the Cubs' offensive output. \n\nKey highlights include:\n1. Chris Sale's impressive strikeout total, showcasing his ability to dominate hitters.\n2. Marcell Ozuna's two hits, contributing significantly to the Braves' offensive efforts.\n3. The Braves managed to score 2 runs but could not capitalize on their 7 hits against the Cubs' 11.",
   "lastGame": {
-    "date": "2025-09-09T23:15:00Z",
+    "date": "2025-09-10T23:15:00Z",
     "opponent": "Chicago Cubs",
     "result": "L",
-    "score": "1-6",
+    "score": "2-3",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "6.0",
-      "earnedRuns": 2,
-      "hits": 6,
-      "homeRuns": 0,
-      "strikeOuts": 8
+      "name": "Chris Sale",
+      "inningsPitched": "5.0",
+      "earnedRuns": 3,
+      "hits": 7,
+      "homeRuns": 1,
+      "strikeOuts": 9
     },
     "significantHitters": [
       {
-        "name": "Jurickson Profar",
+        "name": "Matt Olson",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Ronald Acuña Jr.",
+        "name": "Nacho Alvarez Jr.",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Marcell Ozuna",
         "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
-        "runs": 1
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 4,
-      "opponentRuns": 6,
-      "opponentHits": 7
+      "bravesRuns": 2,
+      "bravesHits": 7,
+      "opponentRuns": 3,
+      "opponentHits": 11
     }
   }
 }
