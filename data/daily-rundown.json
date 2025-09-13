@@ -1,49 +1,42 @@
 {
-  "date": "2025-09-12",
-  "timestamp": "2025-09-12T09:16:44.451Z",
-  "rundown": "<b>2-3</b> L vs Chicago Cubs  \n<b>Chris Sale:</b> 5.0 innings, 3 earned runs, 7 hits, 1 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 0 HR, 1 RBI)  \nNacho Alvarez Jr. (1 hits - 3 AB, 0 HR, 1 RBI)  \nMarcell Ozuna (2 hits - 4 AB, 0 HR, 0 RBI)  \n\nThe Braves fell short against the Chicago Cubs, losing by a single run. Despite a solid performance from Chris Sale on the mound, who struck out 9 batters, the team could not overcome the Cubs' offensive output. \n\nKey highlights include:\n1. Chris Sale's impressive strikeout total, showcasing his ability to dominate hitters.\n2. Marcell Ozuna's two hits, contributing significantly to the Braves' offensive efforts.\n3. Both Matt Olson and Nacho Alvarez Jr. driving in runs, but it wasn't enough to secure a win.",
+  "date": "2025-09-13",
+  "timestamp": "2025-09-13T09:14:26.779Z",
+  "rundown": "<b>3-11</b> L vs Houston Astros  \n<b>Hurston Waldrep:</b> 4.2 innings, 8 earned runs, 8 hits, 1 HR, 4 strikeouts  \n<b>Batters:</b>  \nEli White (1 hits - 4 AB, 1 HR, 2 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Houston Astros in a tough matchup, allowing 11 runs while only managing to score 3. The loss was largely due to a rough outing from starting pitcher Hurston Waldrep, who gave up 8 earned runs in just 4.2 innings. \n\nKey highlights from the game include:\n1. Eli White hit a home run and drove in 2 runs, providing some offense for the Braves.\n2. Ronald Acuña Jr. contributed with 2 hits, including a home run, and added an RBI.\n3. The Astros' offense was relentless, out-hitting the Braves 13 to 5, which played a significant role in their victory.",
   "lastGame": {
-    "date": "2025-09-10T23:15:00Z",
-    "opponent": "Chicago Cubs",
+    "date": "2025-09-12T23:15:00Z",
+    "opponent": "Houston Astros",
     "result": "L",
-    "score": "2-3",
+    "score": "3-11",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "5.0",
-      "earnedRuns": 3,
-      "hits": 7,
+      "name": "Hurston Waldrep",
+      "inningsPitched": "4.2",
+      "earnedRuns": 8,
+      "hits": 8,
       "homeRuns": 1,
-      "strikeOuts": 9
+      "strikeOuts": 4
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
+        "name": "Eli White",
         "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
       },
       {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Marcell Ozuna",
+        "name": "Ronald Acuña Jr.",
         "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 2
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 7,
-      "opponentRuns": 3,
-      "opponentHits": 11
+      "bravesRuns": 3,
+      "bravesHits": 5,
+      "opponentRuns": 11,
+      "opponentHits": 13
     }
   }
 }
