@@ -1,19 +1,31 @@
 {
-  "date": "2025-09-12",
-  "timestamp": "2025-09-12T09:14:21.733Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Seattle Mariners (1-2), Lost series to Chicago Cubs (1-2)  \n<b>Highlights:</b> Matt Olson shined with 7 hits and 2 home runs, Bryce Elder showcased a pitching clinic with a 1.48 ERA and 6 strikeouts, and the team faced tough losses, including a high-scoring defeat of 2-18 against the Mariners.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency and dropping both series.",
+  "date": "2025-09-13",
+  "timestamp": "2025-09-13T09:12:16.073Z",
+  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Seattle Mariners (1-2), Lost series to Chicago Cubs (1-2), Lost game to Houston Astros (0-1)  \n<b>Highlights:</b> Matt Olson shined with 2 home runs and 4 RBIs over the week, while Connor Seabold and Tyler Kinley both showcased stellar pitching with 0.00 ERAs. However, the team struggled with three straight losses, including a tough 2-18 defeat against the Mariners.  \n<b>Trend:</b> The team is struggling with momentum, having lost three consecutive games and facing challenges on both offense and defense.",
   "weeklyStats": {
-    "dateRange": "2025-09-05 to 2025-09-10",
-    "record": "2-4",
+    "dateRange": "2025-09-05 to 2025-09-12",
+    "record": "2-5",
     "wins": 2,
-    "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
-    "momentum": "challenging week overall",
+    "losses": 5,
+    "winPct": "0.286",
+    "totalGames": 7,
+    "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
+        "name": "Connor Seabold",
+        "appearances": 4,
+        "inningsPitched": 2.1,
+        "earnedRuns": 0,
+        "strikeouts": 4,
+        "hits": 1,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "Tyler Kinley",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 3,
@@ -25,7 +37,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -34,60 +46,48 @@
         "losses": 0,
         "saves": 2,
         "era": "0.00"
-      },
-      {
-        "name": "Bryce Elder",
-        "appearances": 6,
-        "inningsPitched": 6.1,
-        "earnedRuns": 1,
-        "strikeouts": 6,
-        "hits": 5,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "1.48"
       }
     ],
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 6,
+        "games": 7,
         "hits": 7,
         "homeRuns": 2,
         "rbi": 4,
         "runs": 3,
-        "atBats": 19,
-        "avg": "0.368"
+        "atBats": 22,
+        "avg": "0.318"
       },
       {
         "name": "Jurickson Profar",
-        "games": 6,
-        "hits": 6,
+        "games": 7,
+        "hits": 7,
         "homeRuns": 1,
         "rbi": 2,
-        "runs": 3,
-        "atBats": 24,
+        "runs": 4,
+        "atBats": 28,
         "avg": "0.250"
       },
       {
         "name": "Ozzie Albies",
-        "games": 6,
+        "games": 7,
         "hits": 6,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 3,
-        "atBats": 24,
-        "avg": "0.250"
+        "atBats": 28,
+        "avg": "0.214"
       },
       {
-        "name": "Nacho Alvarez Jr.",
+        "name": "Ronald Acuña Jr.",
         "games": 6,
         "hits": 5,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0,
-        "atBats": 16,
-        "avg": "0.313"
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 2,
+        "atBats": 18,
+        "avg": "0.278"
       }
     ],
     "gameResults": [
@@ -131,6 +131,13 @@
         "result": "L",
         "score": "2-3",
         "opponent": "Chicago Cubs",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/12/2025",
+        "result": "L",
+        "score": "3-11",
+        "opponent": "Houston Astros",
         "homeAway": "vs"
       }
     ],
@@ -180,13 +187,26 @@
             "score": "2-3"
           }
         ]
+      },
+      {
+        "opponent": "Houston Astros",
+        "homeAway": "vs",
+        "record": "0-1",
+        "outcome": "lost game",
+        "games": [
+          {
+            "date": "9/12/2025",
+            "result": "L",
+            "score": "3-11"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring L 2-10 vs Seattle Mariners",
       "High-scoring L 2-18 vs Seattle Mariners",
-      "Close L 2-3 vs Chicago Cubs",
-      "Bryce Elder: 1.48 ERA, 6 strikeouts"
+      "High-scoring L 3-11 vs Houston Astros",
+      "Close L 2-3 vs Chicago Cubs"
     ]
   }
 }
