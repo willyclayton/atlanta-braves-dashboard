@@ -1,19 +1,19 @@
 {
-  "date": "2025-09-13",
-  "timestamp": "2025-09-13T09:12:16.073Z",
-  "rundown": "<b>Record:</b> 2-5 (0.286)  \n<b>Series:</b> Lost series to Seattle Mariners (1-2), Lost series to Chicago Cubs (1-2), Lost game to Houston Astros (0-1)  \n<b>Highlights:</b> Matt Olson shined with 2 home runs and 4 RBIs over the week, while Connor Seabold and Tyler Kinley both showcased stellar pitching with 0.00 ERAs. However, the team struggled with three straight losses, including a tough 2-18 defeat against the Mariners.  \n<b>Trend:</b> The team is struggling with momentum, having lost three consecutive games and facing challenges on both offense and defense.",
+  "date": "2025-09-14",
+  "timestamp": "2025-09-14T09:12:22.748Z",
+  "rundown": "<b>Record:</b> 2-6 (0.250)  \n<b>Series:</b> Lost series to Seattle Mariners (1-2), Lost series to Chicago Cubs (1-2), Lost series to Houston Astros (0-2)  \n<b>Highlights:</b> Matt Olson had a standout week with 3 home runs, including a solid performance in the 4-1 win against the Cubs. The team struggled defensively, suffering high-scoring losses of 2-10 and 2-18 against the Mariners.  \n<b>Trend:</b> The team is struggling with 3 straight losses, showing signs of fatigue and inconsistency on both offense and defense.",
   "weeklyStats": {
-    "dateRange": "2025-09-05 to 2025-09-12",
-    "record": "2-5",
+    "dateRange": "2025-09-05 to 2025-09-13",
+    "record": "2-6",
     "wins": 2,
-    "losses": 5,
-    "winPct": "0.286",
-    "totalGames": 7,
+    "losses": 6,
+    "winPct": "0.250",
+    "totalGames": 8,
     "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
         "name": "Connor Seabold",
-        "appearances": 4,
+        "appearances": 5,
         "inningsPitched": 2.1,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -25,8 +25,8 @@
       },
       {
         "name": "Tyler Kinley",
-        "appearances": 7,
-        "inningsPitched": 3.1,
+        "appearances": 8,
+        "inningsPitched": 4.1,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 0,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 7,
-        "homeRuns": 2,
-        "rbi": 4,
-        "runs": 3,
-        "atBats": 22,
-        "avg": "0.318"
+        "games": 8,
+        "hits": 9,
+        "homeRuns": 3,
+        "rbi": 5,
+        "runs": 5,
+        "atBats": 26,
+        "avg": "0.346"
       },
       {
         "name": "Jurickson Profar",
-        "games": 7,
-        "hits": 7,
+        "games": 8,
+        "hits": 9,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 4,
-        "atBats": 28,
-        "avg": "0.250"
+        "atBats": 32,
+        "avg": "0.281"
       },
       {
-        "name": "Ozzie Albies",
+        "name": "Ronald Acuña Jr.",
         "games": 7,
         "hits": 6,
         "homeRuns": 1,
         "rbi": 2,
-        "runs": 3,
-        "atBats": 28,
-        "avg": "0.214"
+        "runs": 2,
+        "atBats": 22,
+        "avg": "0.273"
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "games": 6,
-        "hits": 5,
+        "name": "Ozzie Albies",
+        "games": 8,
+        "hits": 6,
         "homeRuns": 1,
         "rbi": 2,
-        "runs": 2,
-        "atBats": 18,
-        "avg": "0.278"
+        "runs": 3,
+        "atBats": 31,
+        "avg": "0.194"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "9/12/2025",
         "result": "L",
         "score": "3-11",
+        "opponent": "Houston Astros",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/13/2025",
+        "result": "L",
+        "score": "2-6",
         "opponent": "Houston Astros",
         "homeAway": "vs"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Houston Astros",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "0-2",
+        "outcome": "losing series",
         "games": [
           {
             "date": "9/12/2025",
             "result": "L",
             "score": "3-11"
+          },
+          {
+            "date": "9/13/2025",
+            "result": "L",
+            "score": "2-6"
           }
         ]
       }
@@ -206,7 +218,8 @@
       "High-scoring L 2-10 vs Seattle Mariners",
       "High-scoring L 2-18 vs Seattle Mariners",
       "High-scoring L 3-11 vs Houston Astros",
-      "Close L 2-3 vs Chicago Cubs"
+      "Close L 2-3 vs Chicago Cubs",
+      "Matt Olson: 3 HRs in the week"
     ]
   }
 }
