@@ -1,42 +1,49 @@
 {
-  "date": "2025-09-13",
-  "timestamp": "2025-09-13T09:14:26.779Z",
-  "rundown": "<b>3-11</b> L vs Houston Astros  \n<b>Hurston Waldrep:</b> 4.2 innings, 8 earned runs, 8 hits, 1 HR, 4 strikeouts  \n<b>Batters:</b>  \nEli White (1 hits - 4 AB, 1 HR, 2 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves fell to the Houston Astros in a tough matchup, allowing 11 runs while only managing to score 3. The loss was largely due to a rough outing from starting pitcher Hurston Waldrep, who gave up 8 earned runs in just 4.2 innings. \n\nKey highlights from the game include:\n1. Eli White hit a home run and drove in 2 runs, providing some offense for the Braves.\n2. Ronald Acuña Jr. contributed with 2 hits, including a home run, and added an RBI.\n3. The Astros' offense was relentless, out-hitting the Braves 13 to 5, which played a significant role in their victory.",
+  "date": "2025-09-14",
+  "timestamp": "2025-09-14T09:14:36.226Z",
+  "rundown": "<b>2-6</b> L vs Houston Astros  \n<b>Bryce Elder:</b> 4.1 innings, 6 earned runs, 10 hits, 1 HR, 7 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (1 hit - 3 AB, 1 RBI)  \nJurickson Profar (2 hits - 4 AB)  \n\nThe Braves fell to the Houston Astros with a final score of 2-6. The loss was primarily due to a rough outing from starting pitcher Bryce Elder, who allowed 6 earned runs over 4.1 innings. Despite the defeat, the Braves managed to score 2 runs, but it wasn't enough to keep pace with the Astros' offense.\n\nKey highlights from the game include:\n1. Matt Olson hit a home run and contributed 2 hits, driving in 1 run.\n2. Bryce Elder struck out 7 batters, showcasing his ability to miss bats despite the runs allowed.\n3. Jurickson Profar and Ha-Seong Kim both had solid performances at the plate, combining for 3 hits.",
   "lastGame": {
-    "date": "2025-09-12T23:15:00Z",
+    "date": "2025-09-13T23:15:00Z",
     "opponent": "Houston Astros",
     "result": "L",
-    "score": "3-11",
+    "score": "2-6",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "4.2",
-      "earnedRuns": 8,
-      "hits": 8,
+      "name": "Bryce Elder",
+      "inningsPitched": "4.1",
+      "earnedRuns": 6,
+      "hits": 10,
       "homeRuns": 1,
-      "strikeOuts": 4
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Eli White",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 1,
         "rbi": 1,
-        "runs": 1
+        "runs": 2
+      },
+      {
+        "name": "Ha-Seong Kim",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Jurickson Profar",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 3,
-      "bravesHits": 5,
-      "opponentRuns": 11,
-      "opponentHits": 13
+      "bravesRuns": 2,
+      "bravesHits": 6,
+      "opponentRuns": 6,
+      "opponentHits": 10
     }
   }
 }
