@@ -1,22 +1,36 @@
 {
-  "date": "2025-09-14",
-  "timestamp": "2025-09-14T09:14:36.226Z",
-  "rundown": "<b>2-6</b> L vs Houston Astros  \n<b>Bryce Elder:</b> 4.1 innings, 6 earned runs, 10 hits, 1 HR, 7 strikeouts  \n<b>Batters:</b>  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (1 hit - 3 AB, 1 RBI)  \nJurickson Profar (2 hits - 4 AB)  \n\nThe Braves fell to the Houston Astros with a final score of 2-6. The loss was primarily due to a rough outing from starting pitcher Bryce Elder, who allowed 6 earned runs over 4.1 innings. Despite the defeat, the Braves managed to score 2 runs, but it wasn't enough to keep pace with the Astros' offense.\n\nKey highlights from the game include:\n1. Matt Olson hit a home run and contributed 2 hits, driving in 1 run.\n2. Bryce Elder struck out 7 batters, showcasing his ability to miss bats despite the runs allowed.\n3. Jurickson Profar and Ha-Seong Kim both had solid performances at the plate, combining for 3 hits.",
+  "date": "2025-09-15",
+  "timestamp": "2025-09-15T09:19:38.065Z",
+  "rundown": "<b>8-3</b> W vs Houston Astros  \n<b>Joey Wentz:</b> 4.0 innings, 2 earned runs, 6 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nSandy León (1 hits - 4 AB, 1 HR, 3 RBI)  \nOzzie Albies (2 hits - 4 AB, 3 RBI)  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Houston Astros, showcasing a strong offensive performance. Key highlights include Sandy León's impactful home run and three RBIs, Ozzie Albies contributing with two hits and three RBIs, and Matt Olson adding to the score with a home run and two runs. The Braves' ability to capitalize on scoring opportunities was crucial in their win.",
   "lastGame": {
-    "date": "2025-09-13T23:15:00Z",
+    "date": "2025-09-14T17:35:00Z",
     "opponent": "Houston Astros",
-    "result": "L",
-    "score": "2-6",
+    "result": "W",
+    "score": "8-3",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "4.1",
-      "earnedRuns": 6,
-      "hits": 10,
-      "homeRuns": 1,
-      "strikeOuts": 7
+      "name": "Joey Wentz",
+      "inningsPitched": "4.0",
+      "earnedRuns": 2,
+      "hits": 6,
+      "homeRuns": 0,
+      "strikeOuts": 5
     },
     "significantHitters": [
+      {
+        "name": "Sandy León",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 3,
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 3,
+        "runs": 0
+      },
       {
         "name": "Matt Olson",
         "hits": 2,
@@ -26,24 +40,17 @@
       },
       {
         "name": "Ha-Seong Kim",
-        "hits": 1,
+        "hits": 3,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 0,
-        "runs": 0
+        "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 2,
-      "bravesHits": 6,
-      "opponentRuns": 6,
-      "opponentHits": 10
+      "bravesRuns": 8,
+      "bravesHits": 11,
+      "opponentRuns": 3,
+      "opponentHits": 9
     }
   }
 }
