@@ -1,56 +1,56 @@
 {
-  "date": "2025-09-15",
-  "timestamp": "2025-09-15T09:19:38.065Z",
-  "rundown": "<b>8-3</b> W vs Houston Astros  \n<b>Joey Wentz:</b> 4.0 innings, 2 earned runs, 6 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nSandy León (1 hits - 4 AB, 1 HR, 3 RBI)  \nOzzie Albies (2 hits - 4 AB, 3 RBI)  \nMatt Olson (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a convincing victory over the Houston Astros, showcasing a strong offensive performance. Key highlights include Sandy León's impactful home run and three RBIs, Ozzie Albies contributing with two hits and three RBIs, and Matt Olson adding to the score with a home run and two runs. The Braves' ability to capitalize on scoring opportunities was crucial in their win.",
+  "date": "2025-09-16",
+  "timestamp": "2025-09-16T09:18:22.006Z",
+  "rundown": "<b>11-3</b> W @ Washington Nationals  \n<b>Spencer Strider:</b> 7.0 innings, 1 earned run, 4 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (4 hits - 5 AB, 1 HR, 4 RBI)  \nDrake Baldwin (3 hits - 4 AB, 1 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a decisive victory against the Washington Nationals, showcasing a powerful offensive performance and strong pitching. Key highlights include Matt Olson's standout game with 4 hits and 4 RBIs, Drake Baldwin contributing significantly with 3 hits and 4 RBIs, and Spencer Strider's dominant outing on the mound, allowing only 1 earned run over 7 innings. The Braves' offense was relentless, accumulating 16 hits and scoring in multiple innings to ensure a comfortable win.",
   "lastGame": {
-    "date": "2025-09-14T17:35:00Z",
-    "opponent": "Houston Astros",
+    "date": "2025-09-15T22:45:00Z",
+    "opponent": "Washington Nationals",
     "result": "W",
-    "score": "8-3",
-    "homeAway": "vs",
+    "score": "11-3",
+    "homeAway": "@",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "4.0",
-      "earnedRuns": 2,
-      "hits": 6,
-      "homeRuns": 0,
-      "strikeOuts": 5
+      "name": "Spencer Strider",
+      "inningsPitched": "7.0",
+      "earnedRuns": 1,
+      "hits": 4,
+      "homeRuns": 1,
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Sandy León",
-        "hits": 1,
+        "name": "Matt Olson",
+        "hits": 4,
         "homeRuns": 1,
-        "rbi": 3,
+        "rbi": 4,
+        "runs": 2
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 3,
+        "homeRuns": 1,
+        "rbi": 4,
         "runs": 1
       },
       {
-        "name": "Ozzie Albies",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 0
-      },
-      {
-        "name": "Matt Olson",
+        "name": "Ronald Acuña Jr.",
         "hits": 2,
         "homeRuns": 1,
         "rbi": 1,
         "runs": 2
       },
       {
-        "name": "Ha-Seong Kim",
-        "hits": 3,
+        "name": "Ozzie Albies",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 8,
-      "bravesHits": 11,
+      "bravesRuns": 11,
+      "bravesHits": 16,
       "opponentRuns": 3,
-      "opponentHits": 9
+      "opponentHits": 6
     }
   }
 }
