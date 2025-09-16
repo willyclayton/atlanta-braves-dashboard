@@ -1,19 +1,19 @@
 {
-  "date": "2025-09-15",
-  "timestamp": "2025-09-15T09:17:11.184Z",
-  "rundown": "<b>Record:</b> 2-4 (0.333)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Houston Astros (1-2)  \n<b>Highlights:</b> Matt Olson had a standout week with 3 home runs, including a strong performance in the 8-3 win against the Astros. The team also faced a tough 3-11 loss to Houston, showcasing both offensive struggles and defensive challenges.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to find consistency, but they managed to end on a high note with a solid victory against the Astros.",
+  "date": "2025-09-16",
+  "timestamp": "2025-09-16T09:15:33.107Z",
+  "rundown": "<b>Record:</b> 3-4 (0.429)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Houston Astros (1-2), Won game against Washington Nationals (1-0)  \n<b>Highlights:</b> Matt Olson had an impressive week with 4 home runs and a .440 batting average, while the team celebrated a strong offensive explosion with an 11-3 victory over the Nationals. Dylan Dodd, Dylan Lee, and Tyler Kinley all showcased stellar pitching with 0.00 ERAs.  \n<b>Trend:</b> The team is building momentum with recent solid play, highlighted by their offensive outburst and strong pitching performances.",
   "weeklyStats": {
-    "dateRange": "2025-09-08 to 2025-09-14",
-    "record": "2-4",
-    "wins": 2,
+    "dateRange": "2025-09-08 to 2025-09-15",
+    "record": "3-4",
+    "wins": 3,
     "losses": 4,
-    "winPct": "0.333",
-    "totalGames": 6,
-    "momentum": "challenging week overall",
+    "winPct": "0.429",
+    "totalGames": 7,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
         "name": "Dylan Dodd",
-        "appearances": 6,
+        "appearances": 7,
         "inningsPitched": 3.2,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -24,21 +24,21 @@
         "era": "0.00"
       },
       {
-        "name": "Connor Seabold",
-        "appearances": 6,
-        "inningsPitched": 2.1,
+        "name": "Dylan Lee",
+        "appearances": 7,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 1,
+        "strikeouts": 3,
+        "hits": 0,
         "wins": 0,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Dylan Lee",
-        "appearances": 6,
-        "inningsPitched": 2.2,
+        "name": "Tyler Kinley",
+        "appearances": 7,
+        "inningsPitched": 3.1,
         "earnedRuns": 0,
         "strikeouts": 3,
         "hits": 0,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 6,
-        "hits": 7,
-        "homeRuns": 3,
-        "rbi": 4,
-        "runs": 5,
-        "atBats": 20,
-        "avg": "0.350"
+        "games": 7,
+        "hits": 11,
+        "homeRuns": 4,
+        "rbi": 8,
+        "runs": 7,
+        "atBats": 25,
+        "avg": "0.440"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 3,
-        "atBats": 22,
-        "avg": "0.273"
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 2,
+        "rbi": 3,
+        "runs": 5,
+        "atBats": 26,
+        "avg": "0.308"
       },
       {
         "name": "Ozzie Albies",
+        "games": 7,
+        "hits": 6,
+        "homeRuns": 1,
+        "rbi": 5,
+        "runs": 2,
+        "atBats": 29,
+        "avg": "0.207"
+      },
+      {
+        "name": "Drake Baldwin",
         "games": 6,
         "hits": 4,
         "homeRuns": 1,
-        "rbi": 4,
-        "runs": 1,
-        "atBats": 24,
-        "avg": "0.167"
-      },
-      {
-        "name": "Ha-Seong Kim",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 0,
-        "rbi": 2,
+        "rbi": 5,
         "runs": 2,
-        "atBats": 21,
-        "avg": "0.286"
+        "atBats": 25,
+        "avg": "0.160"
       }
     ],
     "gameResults": [
@@ -132,6 +132,13 @@
         "score": "8-3",
         "opponent": "Houston Astros",
         "homeAway": "vs"
+      },
+      {
+        "date": "9/15/2025",
+        "result": "W",
+        "score": "11-3",
+        "opponent": "Washington Nationals",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
@@ -180,13 +187,28 @@
             "score": "8-3"
           }
         ]
+      },
+      {
+        "opponent": "Washington Nationals",
+        "homeAway": "@",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "9/15/2025",
+            "result": "W",
+            "score": "11-3"
+          }
+        ]
       }
     ],
     "highlights": [
       "High-scoring L 3-11 vs Houston Astros",
       "High-scoring W 8-3 vs Houston Astros",
+      "High-scoring W 11-3 @ Washington Nationals",
       "Close L 2-3 vs Chicago Cubs",
-      "Matt Olson: 3 HRs in the week"
+      "Matt Olson: 4 HRs in the week",
+      "Matt Olson: 0.440 avg, 11 hits"
     ]
   }
 }
