@@ -1,56 +1,42 @@
 {
-  "date": "2025-09-16",
-  "timestamp": "2025-09-16T09:18:22.006Z",
-  "rundown": "<b>11-3</b> W @ Washington Nationals  \n<b>Spencer Strider:</b> 7.0 innings, 1 earned run, 4 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nMatt Olson (4 hits - 5 AB, 1 HR, 4 RBI)  \nDrake Baldwin (3 hits - 4 AB, 1 HR, 4 RBI)  \nRonald Acuña Jr. (2 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a decisive victory against the Washington Nationals, showcasing a powerful offensive performance and strong pitching. Key highlights include Matt Olson's standout game with 4 hits and 4 RBIs, Drake Baldwin contributing significantly with 3 hits and 4 RBIs, and Spencer Strider's dominant outing on the mound, allowing only 1 earned run over 7 innings. The Braves' offense was relentless, accumulating 16 hits and scoring in multiple innings to ensure a comfortable win.",
+  "date": "2025-09-17",
+  "timestamp": "2025-09-17T09:18:01.142Z",
+  "rundown": "<b>5-0</b> W @ Washington Nationals  \n<b>Chris Sale:</b> 8.0 innings, 0 earned runs, 3 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 0 HR, 3 RBI)  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a dominant victory over the Washington Nationals, showcasing a strong performance both on the mound and at the plate. Chris Sale delivered an impressive outing, throwing 8 scoreless innings and striking out 9 batters, effectively shutting down the Nationals' offense. \n\nKey highlights include:\n1. Chris Sale's stellar pitching, allowing only 3 hits and no earned runs.\n2. Matt Olson's impactful performance with 3 RBIs, driving in key runs to support the team's offense.\n3. The Braves' defense held the Nationals to just 5 hits, maintaining a strong grip on the game throughout.",
   "lastGame": {
-    "date": "2025-09-15T22:45:00Z",
+    "date": "2025-09-16T22:45:00Z",
     "opponent": "Washington Nationals",
     "result": "W",
-    "score": "11-3",
+    "score": "5-0",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "7.0",
-      "earnedRuns": 1,
-      "hits": 4,
-      "homeRuns": 1,
-      "strikeOuts": 6
+      "name": "Chris Sale",
+      "inningsPitched": "8.0",
+      "earnedRuns": 0,
+      "hits": 3,
+      "homeRuns": 0,
+      "strikeOuts": 9
     },
     "significantHitters": [
       {
         "name": "Matt Olson",
-        "hits": 4,
-        "homeRuns": 1,
-        "rbi": 4,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 3,
-        "homeRuns": 1,
-        "rbi": 4,
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 3,
         "runs": 1
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Ozzie Albies",
-        "hits": 2,
+        "name": "Drake Baldwin",
+        "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 11,
-      "bravesHits": 16,
-      "opponentRuns": 3,
-      "opponentHits": 6
+      "bravesRuns": 5,
+      "bravesHits": 6,
+      "opponentRuns": 0,
+      "opponentHits": 5
     }
   }
 }
