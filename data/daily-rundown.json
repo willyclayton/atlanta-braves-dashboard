@@ -1,42 +1,70 @@
 {
-  "date": "2025-09-17",
-  "timestamp": "2025-09-17T09:18:01.142Z",
-  "rundown": "<b>5-0</b> W @ Washington Nationals  \n<b>Chris Sale:</b> 8.0 innings, 0 earned runs, 3 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nMatt Olson (1 hits - 4 AB, 0 HR, 3 RBI)  \nDrake Baldwin (1 hits - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a dominant victory over the Washington Nationals, showcasing a strong performance both on the mound and at the plate. Chris Sale delivered an impressive outing, throwing 8 scoreless innings and striking out 9 batters, effectively shutting down the Nationals' offense. \n\nKey highlights include:\n1. Chris Sale's stellar pitching, allowing only 3 hits and no earned runs.\n2. Matt Olson's impactful performance with 3 RBIs, driving in key runs to support the team's offense.\n3. The Braves' defense held the Nationals to just 5 hits, maintaining a strong grip on the game throughout.",
+  "date": "2025-09-18",
+  "timestamp": "2025-09-18T09:17:36.763Z",
+  "rundown": "<b>9-4</b> W @ Washington Nationals  \n<b>Hurston Waldrep:</b> 5.0 innings, 3 earned runs, 5 hits, 0 HR, 8 strikeouts  \n<b>Batters:</b>  \nMarcell Ozuna (3 hits - 5 AB, 0 HR, 3 RBI)  \nMatt Olson (3 hits - 4 AB, 1 HR, 1 RBI)  \nHa-Seong Kim (2 hits - 4 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a convincing victory against the Washington Nationals, showcasing a strong offensive performance. Key highlights include Marcell Ozuna's standout game with three hits and three RBIs, Matt Olson contributing with a home run and three hits, and Ha-Seong Kim adding two RBIs. The Braves' pitching was solid, with Hurston Waldrep striking out eight batters, helping to limit the Nationals to four runs. Overall, the combination of effective hitting and strong pitching led to the Braves' win.",
   "lastGame": {
-    "date": "2025-09-16T22:45:00Z",
+    "date": "2025-09-17T20:05:00Z",
     "opponent": "Washington Nationals",
     "result": "W",
-    "score": "5-0",
+    "score": "9-4",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "8.0",
-      "earnedRuns": 0,
-      "hits": 3,
+      "name": "Hurston Waldrep",
+      "inningsPitched": "5.0",
+      "earnedRuns": 3,
+      "hits": 5,
       "homeRuns": 0,
-      "strikeOuts": 9
+      "strikeOuts": 8
     },
     "significantHitters": [
       {
-        "name": "Matt Olson",
-        "hits": 1,
+        "name": "Marcell Ozuna",
+        "hits": 3,
         "homeRuns": 0,
         "rbi": 3,
-        "runs": 1
+        "runs": 0
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 3,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 2
+      },
+      {
+        "name": "Ha-Seong Kim",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 2,
+        "runs": 2
       },
       {
         "name": "Drake Baldwin",
-        "hits": 1,
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 1,
-        "runs": 1
+        "runs": 2
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 0
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 5,
-      "bravesHits": 6,
-      "opponentRuns": 0,
-      "opponentHits": 5
+      "bravesRuns": 9,
+      "bravesHits": 16,
+      "opponentRuns": 4,
+      "opponentHits": 10
     }
   }
 }
