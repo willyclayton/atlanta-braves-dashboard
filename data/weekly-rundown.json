@@ -1,117 +1,96 @@
 {
-  "date": "2025-09-17",
-  "timestamp": "2025-09-17T09:15:05.220Z",
-  "rundown": "<b>Record:</b> 5-4 (0.556)  \n<b>Series:</b> Lost series to Chicago Cubs (1-2), Lost series to Houston Astros (1-2), Won series against Washington Nationals (3-0)  \n<b>Highlights:</b> Matt Olson had an impressive week with 5 home runs and 12 RBIs, including a standout performance in the 11-3 victory over the Nationals. The team also showcased a pitching clinic with a shutout win (5-0) against the Nationals.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, bouncing back strong after a tough start to the week.",
+  "date": "2025-09-18",
+  "timestamp": "2025-09-18T09:14:56.454Z",
+  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Lost series to Houston Astros (1-2), Won series against Washington Nationals (4-0)  \n<b>Highlights:</b> Matt Olson had an incredible week with 5 home runs and 11 RBIs, including a standout performance in the 11-3 victory over the Nationals. The pitching staff shined, highlighted by a shutout from the bullpen in the 5-0 win against Washington.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, showcasing a powerful offense and dominant pitching.",
   "weeklyStats": {
-    "dateRange": "2025-09-08 to 2025-09-16",
-    "record": "5-4",
+    "dateRange": "2025-09-12 to 2025-09-17",
+    "record": "5-2",
     "wins": 5,
-    "losses": 4,
-    "winPct": "0.556",
-    "totalGames": 9,
+    "losses": 2,
+    "winPct": "0.714",
+    "totalGames": 7,
     "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
-        "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 4,
+        "name": "Chris Sale",
+        "appearances": 7,
+        "inningsPitched": 8,
         "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 2,
+        "strikeouts": 9,
+        "hits": 3,
         "wins": 0,
         "losses": 0,
-        "saves": 2,
+        "saves": 0,
         "era": "0.00"
       },
       {
         "name": "Dylan Dodd",
-        "appearances": 9,
-        "inningsPitched": 3.2,
+        "appearances": 7,
+        "inningsPitched": 3.3000000000000003,
+        "earnedRuns": 0,
+        "strikeouts": 4,
+        "hits": 2,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
+        "name": "Raisel Iglesias",
+        "appearances": 7,
+        "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 4,
         "hits": 0,
         "wins": 0,
         "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
-        "name": "Tyler Kinley",
-        "appearances": 9,
-        "inningsPitched": 5.1,
-        "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 2,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
+        "saves": 1,
         "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 9,
+        "games": 7,
         "hits": 14,
         "homeRuns": 5,
-        "rbi": 12,
-        "runs": 9,
-        "atBats": 35,
-        "avg": "0.400"
+        "rbi": 11,
+        "runs": 10,
+        "atBats": 31,
+        "avg": "0.452"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 9,
+        "games": 7,
         "hits": 11,
         "homeRuns": 2,
-        "rbi": 3,
-        "runs": 5,
-        "atBats": 32,
-        "avg": "0.344"
-      },
-      {
-        "name": "Jurickson Profar",
-        "games": 9,
-        "hits": 9,
-        "homeRuns": 1,
-        "rbi": 3,
+        "rbi": 2,
         "runs": 6,
-        "atBats": 34,
-        "avg": "0.265"
+        "atBats": 27,
+        "avg": "0.407"
       },
       {
-        "name": "Ozzie Albies",
-        "games": 9,
+        "name": "Drake Baldwin",
+        "games": 6,
         "hits": 6,
         "homeRuns": 1,
         "rbi": 6,
-        "runs": 2,
-        "atBats": 37,
-        "avg": "0.162"
+        "runs": 4,
+        "atBats": 24,
+        "avg": "0.250"
+      },
+      {
+        "name": "Ha-Seong Kim",
+        "games": 7,
+        "hits": 10,
+        "homeRuns": 0,
+        "rbi": 4,
+        "runs": 7,
+        "atBats": 24,
+        "avg": "0.417"
       }
     ],
     "gameResults": [
-      {
-        "date": "9/8/2025",
-        "result": "W",
-        "score": "4-1",
-        "opponent": "Chicago Cubs",
-        "homeAway": "vs"
-      },
-      {
-        "date": "9/9/2025",
-        "result": "L",
-        "score": "1-6",
-        "opponent": "Chicago Cubs",
-        "homeAway": "vs"
-      },
-      {
-        "date": "9/10/2025",
-        "result": "L",
-        "score": "2-3",
-        "opponent": "Chicago Cubs",
-        "homeAway": "vs"
-      },
       {
         "date": "9/12/2025",
         "result": "L",
@@ -153,32 +132,16 @@
         "score": "5-0",
         "opponent": "Washington Nationals",
         "homeAway": "@"
+      },
+      {
+        "date": "9/17/2025",
+        "result": "W",
+        "score": "9-4",
+        "opponent": "Washington Nationals",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Chicago Cubs",
-        "homeAway": "vs",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "9/8/2025",
-            "result": "W",
-            "score": "4-1"
-          },
-          {
-            "date": "9/9/2025",
-            "result": "L",
-            "score": "1-6"
-          },
-          {
-            "date": "9/10/2025",
-            "result": "L",
-            "score": "2-3"
-          }
-        ]
-      },
       {
         "opponent": "Houston Astros",
         "homeAway": "vs",
@@ -205,7 +168,7 @@
       {
         "opponent": "Washington Nationals",
         "homeAway": "@",
-        "record": "3-0",
+        "record": "4-0",
         "outcome": "won series",
         "games": [
           {
@@ -222,6 +185,11 @@
             "date": "9/16/2025",
             "result": "W",
             "score": "5-0"
+          },
+          {
+            "date": "9/17/2025",
+            "result": "W",
+            "score": "9-4"
           }
         ]
       }
@@ -230,8 +198,8 @@
       "High-scoring L 3-11 vs Houston Astros",
       "High-scoring W 8-3 vs Houston Astros",
       "High-scoring W 11-3 @ Washington Nationals",
+      "High-scoring W 9-4 @ Washington Nationals",
       "Shutout victory 5-0 @ Washington Nationals",
-      "Close L 2-3 vs Chicago Cubs",
       "Matt Olson: 5 HRs in the week"
     ]
   }
