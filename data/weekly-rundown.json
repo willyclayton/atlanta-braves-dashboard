@@ -1,19 +1,19 @@
 {
-  "date": "2025-09-19",
-  "timestamp": "2025-09-19T09:15:21.323Z",
-  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Lost series to Houston Astros (1-2), Won series against Washington Nationals (4-0)  \n<b>Highlights:</b> Matt Olson had an offensive explosion with 5 home runs and 11 RBIs this week. The team showcased a pitching clinic with Chris Sale and Dylan Dodd both posting 0.00 ERAs. They also achieved a shutout victory of 5-0 against the Nationals.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, gaining momentum after a rough start to the week.",
+  "date": "2025-09-20",
+  "timestamp": "2025-09-20T09:13:27.591Z",
+  "rundown": "<b>Record:</b> 6-2 (0.750)  \n<b>Series:</b> Lost series to Houston Astros (1-2), Won series against Washington Nationals (4-0), Won game against Detroit Tigers (1-0)  \n<b>Highlights:</b> Matt Olson had a phenomenal week, hitting 5 home runs and driving in 12 runs. The pitching staff was stellar, with Chris Sale and Dylan Dodd both posting 0.00 ERAs. The team capped off the week with a dominant 10-1 victory over the Detroit Tigers.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, showcasing a powerful offense and impressive pitching performances.",
   "weeklyStats": {
-    "dateRange": "2025-09-12 to 2025-09-17",
-    "record": "5-2",
-    "wins": 5,
+    "dateRange": "2025-09-12 to 2025-09-19",
+    "record": "6-2",
+    "wins": 6,
     "losses": 2,
-    "winPct": "0.714",
-    "totalGames": 7,
+    "winPct": "0.750",
+    "totalGames": 8,
     "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
         "name": "Chris Sale",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 8,
         "earnedRuns": 0,
         "strikeouts": 9,
@@ -25,7 +25,7 @@
       },
       {
         "name": "Dylan Dodd",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 3.3000000000000003,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Raisel Iglesias",
-        "appearances": 7,
+        "appearances": 8,
         "inningsPitched": 2,
         "earnedRuns": 0,
         "strikeouts": 4,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Matt Olson",
-        "games": 7,
-        "hits": 14,
+        "games": 8,
+        "hits": 15,
         "homeRuns": 5,
-        "rbi": 11,
-        "runs": 10,
-        "atBats": 31,
-        "avg": "0.452"
+        "rbi": 12,
+        "runs": 12,
+        "atBats": 35,
+        "avg": "0.429"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 7,
-        "hits": 11,
-        "homeRuns": 2,
-        "rbi": 2,
-        "runs": 6,
-        "atBats": 27,
-        "avg": "0.407"
+        "games": 8,
+        "hits": 12,
+        "homeRuns": 3,
+        "rbi": 4,
+        "runs": 8,
+        "atBats": 31,
+        "avg": "0.387"
       },
       {
         "name": "Drake Baldwin",
-        "games": 6,
-        "hits": 6,
-        "homeRuns": 1,
-        "rbi": 6,
-        "runs": 4,
-        "atBats": 24,
-        "avg": "0.250"
+        "games": 7,
+        "hits": 8,
+        "homeRuns": 2,
+        "rbi": 9,
+        "runs": 5,
+        "atBats": 28,
+        "avg": "0.286"
       },
       {
         "name": "Ha-Seong Kim",
-        "games": 7,
-        "hits": 10,
-        "homeRuns": 0,
-        "rbi": 4,
-        "runs": 7,
-        "atBats": 24,
-        "avg": "0.417"
+        "games": 8,
+        "hits": 11,
+        "homeRuns": 1,
+        "rbi": 6,
+        "runs": 8,
+        "atBats": 29,
+        "avg": "0.379"
       }
     ],
     "gameResults": [
@@ -138,6 +138,13 @@
         "result": "W",
         "score": "9-4",
         "opponent": "Washington Nationals",
+        "homeAway": "@"
+      },
+      {
+        "date": "9/19/2025",
+        "result": "W",
+        "score": "10-1",
+        "opponent": "Detroit Tigers",
         "homeAway": "@"
       }
     ],
@@ -192,6 +199,19 @@
             "score": "9-4"
           }
         ]
+      },
+      {
+        "opponent": "Detroit Tigers",
+        "homeAway": "@",
+        "record": "1-0",
+        "outcome": "won game",
+        "games": [
+          {
+            "date": "9/19/2025",
+            "result": "W",
+            "score": "10-1"
+          }
+        ]
       }
     ],
     "highlights": [
@@ -199,8 +219,8 @@
       "High-scoring W 8-3 vs Houston Astros",
       "High-scoring W 11-3 @ Washington Nationals",
       "High-scoring W 9-4 @ Washington Nationals",
-      "Shutout victory 5-0 @ Washington Nationals",
-      "Matt Olson: 5 HRs in the week"
+      "High-scoring W 10-1 @ Detroit Tigers",
+      "Shutout victory 5-0 @ Washington Nationals"
     ]
   }
 }
