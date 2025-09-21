@@ -1,70 +1,49 @@
 {
-  "date": "2025-09-20",
-  "timestamp": "2025-09-20T09:15:15.837Z",
-  "rundown": "<b>10-1</b> W @ Detroit Tigers  \n<b>Bryce Elder:</b> 7.0 innings, 1 earned run, 5 hits, 1 HR, 6 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (2 hits - 4 AB, 1 HR, 3 RBI)  \nRonald Acuña Jr. (1 hit - 4 AB, 1 HR, 2 RBI)  \nHa-Seong Kim (1 hit - 4 AB, 1 HR, 2 RBI)  \n\nThe Braves secured a dominant victory over the Detroit Tigers, showcasing their offensive power and solid pitching. Key highlights include Drake Baldwin's standout performance with 2 hits, including a home run and 3 RBIs, and strong contributions from Ronald Acuña Jr. and Ha-Seong Kim, both hitting home runs and driving in multiple runs. Bryce Elder delivered an impressive outing on the mound, allowing only 1 earned run while striking out 6 batters. The Braves' offense was relentless, accumulating 10 runs on 11 hits, while their defense limited the Tigers to just 1 run.",
+  "date": "2025-09-21",
+  "timestamp": "2025-09-21T09:14:16.771Z",
+  "rundown": "<b>6-5</b> W @ Detroit Tigers  \n<b>Joey Wentz:</b> 5.0 innings, 2 earned runs, 6 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNacho Alvarez Jr. (3 hits - 4 AB, 2 HR, 3 RBI)  \nDrake Baldwin (1 hit - 3 AB, 1 HR, 2 RBI)  \nJurickson Profar (1 hit - 4 AB, 1 RBI)  \n\nThe Braves secured a narrow victory against the Detroit Tigers, showcasing a strong offensive performance. Key highlights include Nacho Alvarez Jr.'s standout game with two home runs and three RBIs, contributing significantly to the team's run total. Drake Baldwin also made an impact with a home run and two RBIs. Despite allowing five runs, the Braves' pitching held strong enough to clinch the win. The game was tightly contested, with both teams trading blows, but the Braves managed to edge out the Tigers in the end.",
   "lastGame": {
-    "date": "2025-09-19T22:40:00Z",
+    "date": "2025-09-20T17:10:00Z",
     "opponent": "Detroit Tigers",
     "result": "W",
-    "score": "10-1",
+    "score": "6-5",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "7.0",
-      "earnedRuns": 1,
-      "hits": 5,
-      "homeRuns": 1,
-      "strikeOuts": 6
+      "name": "Joey Wentz",
+      "inningsPitched": "5.0",
+      "earnedRuns": 2,
+      "hits": 6,
+      "homeRuns": 0,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Drake Baldwin",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 3,
-        "runs": 1
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Ha-Seong Kim",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Ozzie Albies",
+        "name": "Nacho Alvarez Jr.",
         "hits": 3,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 1
+        "homeRuns": 2,
+        "rbi": 3,
+        "runs": 2
       },
       {
-        "name": "Matt Olson",
+        "name": "Drake Baldwin",
         "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
       },
       {
         "name": "Jurickson Profar",
-        "hits": 2,
+        "hits": 1,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 2
+        "rbi": 1,
+        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 10,
-      "bravesHits": 11,
-      "opponentRuns": 1,
-      "opponentHits": 5
+      "bravesRuns": 6,
+      "bravesHits": 7,
+      "opponentRuns": 5,
+      "opponentHits": 9
     }
   }
 }
