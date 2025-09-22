@@ -1,49 +1,70 @@
 {
-  "date": "2025-09-21",
-  "timestamp": "2025-09-21T09:14:16.771Z",
-  "rundown": "<b>6-5</b> W @ Detroit Tigers  \n<b>Joey Wentz:</b> 5.0 innings, 2 earned runs, 6 hits, 0 HR, 7 strikeouts  \n<b>Batters:</b>  \nNacho Alvarez Jr. (3 hits - 4 AB, 2 HR, 3 RBI)  \nDrake Baldwin (1 hit - 3 AB, 1 HR, 2 RBI)  \nJurickson Profar (1 hit - 4 AB, 1 RBI)  \n\nThe Braves secured a narrow victory against the Detroit Tigers, showcasing a strong offensive performance. Key highlights include Nacho Alvarez Jr.'s standout game with two home runs and three RBIs, contributing significantly to the team's run total. Drake Baldwin also made an impact with a home run and two RBIs. Despite allowing five runs, the Braves' pitching held strong enough to clinch the win. The game was tightly contested, with both teams trading blows, but the Braves managed to edge out the Tigers in the end.",
+  "date": "2025-09-22",
+  "timestamp": "2025-09-22T09:20:12.535Z",
+  "rundown": "<b>6-2</b> W @ Detroit Tigers  \n<b>Spencer Strider:</b> 5.0 innings, 0 earned runs, 6 hits, 0 HR, 6 strikeouts  \n<b>Batters:</b>  \nHa-Seong Kim (1 hits - 4 AB, 1 HR, 2 RBI)  \nMichael Harris II (2 hits - 4 AB, 0 HR, 1 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 1 RBI)  \n\nThe Braves secured a solid victory against the Detroit Tigers, showcasing a strong performance both on the mound and at the plate. Spencer Strider delivered an impressive outing, not allowing any earned runs and striking out six batters. The Braves' offense was highlighted by Ha-Seong Kim's home run and two RBIs, contributing significantly to the team's total of six runs.\n\nKey highlights from the game include:\n1. Spencer Strider's dominant pitching performance, keeping the Tigers scoreless through five innings.\n2. Ha-Seong Kim's impactful home run, which helped to extend the Braves' lead.\n3. Michael Harris II and Drake Baldwin each contributing two hits, supporting the offensive effort with key runs batted in.",
   "lastGame": {
-    "date": "2025-09-20T17:10:00Z",
+    "date": "2025-09-21T17:10:00Z",
     "opponent": "Detroit Tigers",
     "result": "W",
-    "score": "6-5",
+    "score": "6-2",
     "homeAway": "@",
     "startingPitcher": {
-      "name": "Joey Wentz",
+      "name": "Spencer Strider",
       "inningsPitched": "5.0",
-      "earnedRuns": 2,
+      "earnedRuns": 0,
       "hits": 6,
       "homeRuns": 0,
-      "strikeOuts": 7
+      "strikeOuts": 6
     },
     "significantHitters": [
       {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 3,
-        "homeRuns": 2,
-        "rbi": 3,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
+        "name": "Ha-Seong Kim",
         "hits": 1,
         "homeRuns": 1,
         "rbi": 2,
         "runs": 1
       },
       {
-        "name": "Jurickson Profar",
-        "hits": 1,
+        "name": "Michael Harris II",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
+      },
+      {
+        "name": "Drake Baldwin",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Ozzie Albies",
+        "hits": 1,
+        "homeRuns": 0,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Vidal Bruján",
+        "hits": 2,
+        "homeRuns": 0,
+        "rbi": 0,
+        "runs": 1
       }
     ],
     "teamStats": {
       "bravesRuns": 6,
-      "bravesHits": 7,
-      "opponentRuns": 5,
-      "opponentHits": 9
+      "bravesHits": 11,
+      "opponentRuns": 2,
+      "opponentHits": 11
     }
   }
 }
