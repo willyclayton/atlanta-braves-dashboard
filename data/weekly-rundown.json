@@ -1,19 +1,19 @@
 {
-  "date": "2025-09-21",
-  "timestamp": "2025-09-21T09:12:22.220Z",
-  "rundown": "<b>Record:</b> 7-2 (0.778)  \n<b>Series:</b> Lost series to Houston Astros (1-2), Won series against Washington Nationals (4-0), Winning series against Detroit Tigers (2-0)  \n<b>Highlights:</b> Matt Olson had a phenomenal week, hitting 5 home runs and driving in 12 runs. The pitching staff was stellar, with Chris Sale and Dylan Dodd both posting 0.00 ERAs. The team is on a hot streak with 3 straight wins!  \n<b>Trend:</b> The team is riding a hot streak, showcasing a powerful offense and dominant pitching, especially in the series against the Nationals and Tigers.",
+  "date": "2025-09-22",
+  "timestamp": "2025-09-22T09:17:25.055Z",
+  "rundown": "<b>Record:</b> 7-0 (1.000)  \n<b>Series:</b> Braves won both series against the Washington Nationals (4-0) and the Detroit Tigers (3-0)  \n<b>Highlights:</b> High-scoring wins included an 11-3 blowout against the Nationals and a dominant 10-1 victory over the Tigers. Chris Sale showcased his skills with a stellar 8-inning performance, allowing no earned runs.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, demonstrating both offensive firepower and pitching excellence.",
   "weeklyStats": {
-    "dateRange": "2025-09-12 to 2025-09-20",
-    "record": "7-2",
+    "dateRange": "2025-09-15 to 2025-09-21",
+    "record": "7-0",
     "wins": 7,
-    "losses": 2,
-    "winPct": "0.778",
-    "totalGames": 9,
+    "losses": 0,
+    "winPct": "1.000",
+    "totalGames": 7,
     "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
         "name": "Chris Sale",
-        "appearances": 9,
+        "appearances": 7,
         "inningsPitched": 8,
         "earnedRuns": 0,
         "strikeouts": 9,
@@ -24,94 +24,73 @@
         "era": "0.00"
       },
       {
-        "name": "Dylan Dodd",
-        "appearances": 9,
-        "inningsPitched": 4.300000000000001,
-        "earnedRuns": 0,
-        "strikeouts": 5,
-        "hits": 2,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "0.00"
-      },
-      {
         "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 3,
+        "appearances": 7,
+        "inningsPitched": 2.2,
         "earnedRuns": 0,
-        "strikeouts": 4,
+        "strikeouts": 3,
         "hits": 0,
         "wins": 0,
         "losses": 0,
         "saves": 2,
         "era": "0.00"
+      },
+      {
+        "name": "Tyler Kinley",
+        "appearances": 7,
+        "inningsPitched": 4,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 4,
+        "wins": 1,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
       }
     ],
     "topBatters": [
       {
-        "name": "Matt Olson",
-        "games": 9,
-        "hits": 15,
-        "homeRuns": 5,
+        "name": "Drake Baldwin",
+        "games": 7,
+        "hits": 11,
+        "homeRuns": 3,
         "rbi": 12,
-        "runs": 12,
-        "atBats": 38,
-        "avg": "0.395"
+        "runs": 7,
+        "atBats": 28,
+        "avg": "0.393"
       },
       {
-        "name": "Drake Baldwin",
-        "games": 8,
-        "hits": 9,
+        "name": "Matt Olson",
+        "games": 7,
+        "hits": 12,
         "homeRuns": 3,
-        "rbi": 11,
-        "runs": 6,
-        "atBats": 32,
-        "avg": "0.281"
+        "rbi": 10,
+        "runs": 9,
+        "atBats": 30,
+        "avg": "0.400"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 9,
-        "hits": 12,
-        "homeRuns": 3,
+        "games": 7,
+        "hits": 11,
+        "homeRuns": 2,
         "rbi": 4,
-        "runs": 9,
-        "atBats": 34,
-        "avg": "0.353"
+        "runs": 8,
+        "atBats": 26,
+        "avg": "0.423"
       },
       {
         "name": "Ha-Seong Kim",
-        "games": 9,
-        "hits": 12,
-        "homeRuns": 1,
+        "games": 7,
+        "hits": 9,
+        "homeRuns": 2,
         "rbi": 6,
         "runs": 9,
-        "atBats": 33,
-        "avg": "0.364"
+        "atBats": 26,
+        "avg": "0.346"
       }
     ],
     "gameResults": [
-      {
-        "date": "9/12/2025",
-        "result": "L",
-        "score": "3-11",
-        "opponent": "Houston Astros",
-        "homeAway": "vs"
-      },
-      {
-        "date": "9/13/2025",
-        "result": "L",
-        "score": "2-6",
-        "opponent": "Houston Astros",
-        "homeAway": "vs"
-      },
-      {
-        "date": "9/14/2025",
-        "result": "W",
-        "score": "8-3",
-        "opponent": "Houston Astros",
-        "homeAway": "vs"
-      },
       {
         "date": "9/15/2025",
         "result": "W",
@@ -153,32 +132,16 @@
         "score": "6-5",
         "opponent": "Detroit Tigers",
         "homeAway": "@"
+      },
+      {
+        "date": "9/21/2025",
+        "result": "W",
+        "score": "6-2",
+        "opponent": "Detroit Tigers",
+        "homeAway": "@"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Houston Astros",
-        "homeAway": "vs",
-        "record": "1-2",
-        "outcome": "lost series",
-        "games": [
-          {
-            "date": "9/12/2025",
-            "result": "L",
-            "score": "3-11"
-          },
-          {
-            "date": "9/13/2025",
-            "result": "L",
-            "score": "2-6"
-          },
-          {
-            "date": "9/14/2025",
-            "result": "W",
-            "score": "8-3"
-          }
-        ]
-      },
       {
         "opponent": "Washington Nationals",
         "homeAway": "@",
@@ -210,8 +173,8 @@
       {
         "opponent": "Detroit Tigers",
         "homeAway": "@",
-        "record": "2-0",
-        "outcome": "winning series",
+        "record": "3-0",
+        "outcome": "won series",
         "games": [
           {
             "date": "9/19/2025",
@@ -222,17 +185,22 @@
             "date": "9/20/2025",
             "result": "W",
             "score": "6-5"
+          },
+          {
+            "date": "9/21/2025",
+            "result": "W",
+            "score": "6-2"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring L 3-11 vs Houston Astros",
-      "High-scoring W 8-3 vs Houston Astros",
       "High-scoring W 11-3 @ Washington Nationals",
       "High-scoring W 9-4 @ Washington Nationals",
       "High-scoring W 10-1 @ Detroit Tigers",
-      "High-scoring W 6-5 @ Detroit Tigers"
+      "High-scoring W 6-5 @ Detroit Tigers",
+      "Shutout victory 5-0 @ Washington Nationals",
+      "Close W 6-5 @ Detroit Tigers"
     ]
   }
 }
