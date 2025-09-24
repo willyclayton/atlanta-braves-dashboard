@@ -1,31 +1,31 @@
 {
-  "date": "2025-09-23",
-  "timestamp": "2025-09-23T09:15:35.350Z",
-  "rundown": "<b>Record:</b> 8-0 (1.000)  \n<b>Series:</b> Braves won the series against the Washington Nationals 4-0 and the Detroit Tigers 3-0, plus a single win against the Nationals at home.  \n<b>Highlights:</b> The Braves showcased an offensive explosion with a high-scoring 11-3 victory over the Nationals and a dominant 10-1 win against the Tigers. Raisel Iglesias continued his pitching clinic with 2 saves and a perfect ERA of 0.00.  \n<b>Trend:</b> The team is on a hot streak with 3 straight wins, maintaining momentum as they dominate their opponents.",
+  "date": "2025-09-24",
+  "timestamp": "2025-09-24T09:15:03.950Z",
+  "rundown": "<b>Record:</b> 9-0 (1.000)  \n<b>Series:</b> Braves won the series against the Washington Nationals (4-0) and the Detroit Tigers (3-0), currently winning the series against the Nationals (2-0).  \n<b>Highlights:</b> The Braves showcased an offensive explosion with a high-scoring 11-3 victory over the Nationals and a dominant 10-1 win against the Tigers. Raisel Iglesias continued his pitching clinic with 3 saves and a perfect 0.00 ERA this week.  \n<b>Trend:</b> The team is on a hot streak, riding a 3-game winning streak and showing no signs of slowing down.",
   "weeklyStats": {
-    "dateRange": "2025-09-15 to 2025-09-22",
-    "record": "8-0",
-    "wins": 8,
+    "dateRange": "2025-09-15 to 2025-09-23",
+    "record": "9-0",
+    "wins": 9,
     "losses": 0,
     "winPct": "1.000",
-    "totalGames": 8,
+    "totalGames": 9,
     "momentum": "hot streak with 3 straight wins",
     "topPitchers": [
       {
         "name": "Raisel Iglesias",
-        "appearances": 8,
-        "inningsPitched": 2.2,
+        "appearances": 9,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 3,
+        "strikeouts": 4,
         "hits": 0,
         "wins": 0,
         "losses": 0,
-        "saves": 2,
+        "saves": 3,
         "era": "0.00"
       },
       {
         "name": "Tyler Kinley",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 4,
         "earnedRuns": 0,
         "strikeouts": 2,
@@ -37,7 +37,7 @@
       },
       {
         "name": "Spencer Strider",
-        "appearances": 8,
+        "appearances": 9,
         "inningsPitched": 12,
         "earnedRuns": 1,
         "strikeouts": 12,
@@ -51,43 +51,43 @@
     "topBatters": [
       {
         "name": "Drake Baldwin",
-        "games": 8,
-        "hits": 13,
+        "games": 9,
+        "hits": 14,
         "homeRuns": 3,
         "rbi": 14,
         "runs": 9,
-        "atBats": 32,
-        "avg": "0.406"
+        "atBats": 36,
+        "avg": "0.389"
       },
       {
         "name": "Matt Olson",
-        "games": 8,
+        "games": 9,
         "hits": 12,
         "homeRuns": 3,
         "rbi": 10,
         "runs": 9,
-        "atBats": 36,
-        "avg": "0.333"
+        "atBats": 40,
+        "avg": "0.300"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 8,
-        "hits": 12,
-        "homeRuns": 3,
-        "rbi": 6,
-        "runs": 10,
-        "atBats": 28,
-        "avg": "0.429"
+        "games": 9,
+        "hits": 13,
+        "homeRuns": 4,
+        "rbi": 7,
+        "runs": 11,
+        "atBats": 32,
+        "avg": "0.406"
       },
       {
-        "name": "Ha-Seong Kim",
-        "games": 8,
-        "hits": 10,
+        "name": "Michael Harris II",
+        "games": 9,
+        "hits": 13,
         "homeRuns": 2,
         "rbi": 6,
-        "runs": 11,
-        "atBats": 30,
-        "avg": "0.333"
+        "runs": 6,
+        "atBats": 36,
+        "avg": "0.361"
       }
     ],
     "gameResults": [
@@ -144,6 +144,13 @@
         "date": "9/22/2025",
         "result": "W",
         "score": "11-5",
+        "opponent": "Washington Nationals",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/23/2025",
+        "result": "W",
+        "score": "3-2",
         "opponent": "Washington Nationals",
         "homeAway": "vs"
       }
@@ -203,13 +210,18 @@
       {
         "opponent": "Washington Nationals",
         "homeAway": "vs",
-        "record": "1-0",
-        "outcome": "won game",
+        "record": "2-0",
+        "outcome": "winning series",
         "games": [
           {
             "date": "9/22/2025",
             "result": "W",
             "score": "11-5"
+          },
+          {
+            "date": "9/23/2025",
+            "result": "W",
+            "score": "3-2"
           }
         ]
       }
