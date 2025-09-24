@@ -1,77 +1,42 @@
 {
-  "date": "2025-09-23",
-  "timestamp": "2025-09-23T09:18:11.401Z",
-  "rundown": "<b>11-5</b> W vs Washington Nationals  \n<b>Chris Sale:</b> 5.0 innings, 5 earned runs, 3 hits, 2 HR, 6 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (3 hits - 5 AB, 0 HR, 3 RBI)  \nRonald Acuña Jr. (1 hit - 4 AB, 1 HR, 2 RBI)  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 2 RBI)  \n\nThe Braves secured a convincing victory over the Washington Nationals, scoring 11 runs while allowing 5. Chris Sale had a solid outing despite giving up 5 earned runs, striking out 6 batters. The offense was led by Michael Harris II, who contributed significantly with 3 hits and 3 RBIs. \n\nKey highlights include:\n1. Michael Harris II's standout performance with 3 hits and 3 RBIs.\n2. Ronald Acuña Jr. hitting a home run and driving in 2 runs.\n3. The Braves' offense collectively racking up 14 hits, showcasing their hitting depth.",
+  "date": "2025-09-24",
+  "timestamp": "2025-09-24T09:18:14.213Z",
+  "rundown": "<b>3-2</b> W vs Washington Nationals  \n<b>Hurston Waldrep:</b> 6.0 innings, 1 earned run, 5 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 2 HR, 2 RBI)  \nRonald Acuña Jr. (1 hit - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Washington Nationals, showcasing a strong offensive performance led by Michael Harris II and Ronald Acuña Jr. Harris II's two home runs were pivotal in driving in runs, while Waldrep's solid pitching kept the Nationals at bay. \n\nKey highlights include:\n1. Michael Harris II's standout performance with two home runs and two RBIs.\n2. Ronald Acuña Jr. contributing with a home run and an RBI.\n3. Hurston Waldrep's effective pitching, allowing only one earned run over six innings.",
   "lastGame": {
-    "date": "2025-09-22T23:15:00Z",
+    "date": "2025-09-23T23:15:00Z",
     "opponent": "Washington Nationals",
     "result": "W",
-    "score": "11-5",
+    "score": "3-2",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "5.0",
-      "earnedRuns": 5,
-      "hits": 3,
-      "homeRuns": 2,
-      "strikeOuts": 6
+      "name": "Hurston Waldrep",
+      "inningsPitched": "6.0",
+      "earnedRuns": 1,
+      "hits": 5,
+      "homeRuns": 0,
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
         "name": "Michael Harris II",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 3,
-        "runs": 1
+        "hits": 2,
+        "homeRuns": 2,
+        "rbi": 2,
+        "runs": 2
       },
       {
         "name": "Ronald Acuña Jr.",
         "hits": 1,
         "homeRuns": 1,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Drake Baldwin",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 2,
-        "runs": 2
-      },
-      {
-        "name": "Marcell Ozuna",
-        "hits": 3,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
-      },
-      {
-        "name": "Nick Allen",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
-      },
-      {
-        "name": "Jurickson Profar",
-        "hits": 1,
-        "homeRuns": 0,
         "rbi": 1,
         "runs": 1
-      },
-      {
-        "name": "Nacho Alvarez Jr.",
-        "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
       }
     ],
     "teamStats": {
-      "bravesRuns": 11,
-      "bravesHits": 14,
-      "opponentRuns": 5,
-      "opponentHits": 8
+      "bravesRuns": 3,
+      "bravesHits": 6,
+      "opponentRuns": 2,
+      "opponentHits": 6
     }
   }
 }
