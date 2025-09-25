@@ -1,124 +1,96 @@
 {
-  "date": "2025-09-24",
-  "timestamp": "2025-09-24T09:15:03.950Z",
-  "rundown": "<b>Record:</b> 9-0 (1.000)  \n<b>Series:</b> Braves won the series against the Washington Nationals (4-0) and the Detroit Tigers (3-0), currently winning the series against the Nationals (2-0).  \n<b>Highlights:</b> The Braves showcased an offensive explosion with a high-scoring 11-3 victory over the Nationals and a dominant 10-1 win against the Tigers. Raisel Iglesias continued his pitching clinic with 3 saves and a perfect 0.00 ERA this week.  \n<b>Trend:</b> The team is on a hot streak, riding a 3-game winning streak and showing no signs of slowing down.",
+  "date": "2025-09-25",
+  "timestamp": "2025-09-25T09:14:59.142Z",
+  "rundown": "<b>Record:</b> 5-1 (0.833)  \n<b>Series:</b> Braves won the series against the Detroit Tigers 3-0 and won the series against the Washington Nationals 2-1.  \n<b>Highlights:</b> The Braves had an offensive explosion with a 10-1 victory over the Tigers, and Drake Baldwin shined with 3 home runs and 9 RBIs over the week. Spencer Strider pitched a gem, going 5 innings with 0 earned runs and 6 strikeouts.  \n<b>Trend:</b> The team is building momentum with recent solid play, showcasing both strong hitting and dominant pitching.",
   "weeklyStats": {
-    "dateRange": "2025-09-15 to 2025-09-23",
-    "record": "9-0",
-    "wins": 9,
-    "losses": 0,
-    "winPct": "1.000",
-    "totalGames": 9,
-    "momentum": "hot streak with 3 straight wins",
+    "dateRange": "2025-09-19 to 2025-09-24",
+    "record": "5-1",
+    "wins": 5,
+    "losses": 1,
+    "winPct": "0.833",
+    "totalGames": 6,
+    "momentum": "building momentum with recent solid play",
     "topPitchers": [
       {
-        "name": "Raisel Iglesias",
-        "appearances": 9,
-        "inningsPitched": 3.2,
+        "name": "Spencer Strider",
+        "appearances": 6,
+        "inningsPitched": 5,
         "earnedRuns": 0,
-        "strikeouts": 4,
-        "hits": 0,
-        "wins": 0,
-        "losses": 0,
-        "saves": 3,
-        "era": "0.00"
-      },
-      {
-        "name": "Tyler Kinley",
-        "appearances": 9,
-        "inningsPitched": 4,
-        "earnedRuns": 0,
-        "strikeouts": 2,
-        "hits": 4,
+        "strikeouts": 6,
+        "hits": 6,
         "wins": 1,
         "losses": 0,
         "saves": 0,
         "era": "0.00"
       },
       {
-        "name": "Spencer Strider",
-        "appearances": 9,
-        "inningsPitched": 12,
-        "earnedRuns": 1,
-        "strikeouts": 12,
-        "hits": 10,
-        "wins": 2,
+        "name": "José Suarez",
+        "appearances": 6,
+        "inningsPitched": 4,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 5,
+        "wins": 0,
         "losses": 0,
-        "saves": 0,
-        "era": "0.75"
+        "saves": 1,
+        "era": "0.00"
+      },
+      {
+        "name": "Raisel Iglesias",
+        "appearances": 6,
+        "inningsPitched": 2.2,
+        "earnedRuns": 0,
+        "strikeouts": 2,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 2,
+        "era": "0.00"
       }
     ],
     "topBatters": [
       {
         "name": "Drake Baldwin",
-        "games": 9,
-        "hits": 14,
+        "games": 6,
+        "hits": 9,
         "homeRuns": 3,
-        "rbi": 14,
-        "runs": 9,
-        "atBats": 36,
-        "avg": "0.389"
-      },
-      {
-        "name": "Matt Olson",
-        "games": 9,
-        "hits": 12,
-        "homeRuns": 3,
-        "rbi": 10,
-        "runs": 9,
-        "atBats": 40,
-        "avg": "0.300"
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "games": 9,
-        "hits": 13,
-        "homeRuns": 4,
-        "rbi": 7,
-        "runs": 11,
-        "atBats": 32,
-        "avg": "0.406"
+        "rbi": 9,
+        "runs": 6,
+        "atBats": 25,
+        "avg": "0.360"
       },
       {
         "name": "Michael Harris II",
-        "games": 9,
-        "hits": 13,
+        "games": 6,
+        "hits": 8,
         "homeRuns": 2,
         "rbi": 6,
-        "runs": 6,
-        "atBats": 36,
-        "avg": "0.361"
+        "runs": 3,
+        "atBats": 23,
+        "avg": "0.348"
+      },
+      {
+        "name": "Ronald Acuña Jr.",
+        "games": 6,
+        "hits": 6,
+        "homeRuns": 3,
+        "rbi": 6,
+        "runs": 7,
+        "atBats": 21,
+        "avg": "0.286"
+      },
+      {
+        "name": "Nacho Alvarez Jr.",
+        "games": 5,
+        "hits": 5,
+        "homeRuns": 2,
+        "rbi": 4,
+        "runs": 3,
+        "atBats": 18,
+        "avg": "0.278"
       }
     ],
     "gameResults": [
-      {
-        "date": "9/15/2025",
-        "result": "W",
-        "score": "11-3",
-        "opponent": "Washington Nationals",
-        "homeAway": "@"
-      },
-      {
-        "date": "9/16/2025",
-        "result": "W",
-        "score": "6-3",
-        "opponent": "Washington Nationals",
-        "homeAway": "@"
-      },
-      {
-        "date": "9/16/2025",
-        "result": "W",
-        "score": "5-0",
-        "opponent": "Washington Nationals",
-        "homeAway": "@"
-      },
-      {
-        "date": "9/17/2025",
-        "result": "W",
-        "score": "9-4",
-        "opponent": "Washington Nationals",
-        "homeAway": "@"
-      },
       {
         "date": "9/19/2025",
         "result": "W",
@@ -153,37 +125,16 @@
         "score": "3-2",
         "opponent": "Washington Nationals",
         "homeAway": "vs"
+      },
+      {
+        "date": "9/24/2025",
+        "result": "L",
+        "score": "3-4",
+        "opponent": "Washington Nationals",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Washington Nationals",
-        "homeAway": "@",
-        "record": "4-0",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "9/15/2025",
-            "result": "W",
-            "score": "11-3"
-          },
-          {
-            "date": "9/16/2025",
-            "result": "W",
-            "score": "6-3"
-          },
-          {
-            "date": "9/16/2025",
-            "result": "W",
-            "score": "5-0"
-          },
-          {
-            "date": "9/17/2025",
-            "result": "W",
-            "score": "9-4"
-          }
-        ]
-      },
       {
         "opponent": "Detroit Tigers",
         "homeAway": "@",
@@ -210,8 +161,8 @@
       {
         "opponent": "Washington Nationals",
         "homeAway": "vs",
-        "record": "2-0",
-        "outcome": "winning series",
+        "record": "2-1",
+        "outcome": "won series",
         "games": [
           {
             "date": "9/22/2025",
@@ -222,17 +173,22 @@
             "date": "9/23/2025",
             "result": "W",
             "score": "3-2"
+          },
+          {
+            "date": "9/24/2025",
+            "result": "L",
+            "score": "3-4"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 11-3 @ Washington Nationals",
-      "High-scoring W 9-4 @ Washington Nationals",
       "High-scoring W 10-1 @ Detroit Tigers",
       "High-scoring W 6-5 @ Detroit Tigers",
       "High-scoring W 11-5 vs Washington Nationals",
-      "Shutout victory 5-0 @ Washington Nationals"
+      "Close W 6-5 @ Detroit Tigers",
+      "Close W 3-2 vs Washington Nationals",
+      "Close L 3-4 vs Washington Nationals"
     ]
   }
 }
