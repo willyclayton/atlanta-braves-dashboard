@@ -1,31 +1,38 @@
 {
-  "date": "2025-09-24",
-  "timestamp": "2025-09-24T09:18:14.213Z",
-  "rundown": "<b>3-2</b> W vs Washington Nationals  \n<b>Hurston Waldrep:</b> 6.0 innings, 1 earned run, 5 hits, 0 HR, 5 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 2 HR, 2 RBI)  \nRonald Acuña Jr. (1 hit - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves secured a narrow victory against the Washington Nationals, showcasing a strong offensive performance led by Michael Harris II and Ronald Acuña Jr. Harris II's two home runs were pivotal in driving in runs, while Waldrep's solid pitching kept the Nationals at bay. \n\nKey highlights include:\n1. Michael Harris II's standout performance with two home runs and two RBIs.\n2. Ronald Acuña Jr. contributing with a home run and an RBI.\n3. Hurston Waldrep's effective pitching, allowing only one earned run over six innings.",
+  "date": "2025-09-25",
+  "timestamp": "2025-09-25T09:17:49.762Z",
+  "rundown": "<b>3-4</b> L vs Washington Nationals  \n<b>Bryce Elder:</b> 7.0 innings, 3 earned runs, 6 hits, 2 HR, 7 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 4 AB, 1 HR, 1 RBI)  \nEli White (1 hits - 4 AB, 1 HR, 1 RBI)  \nMarcell Ozuna (1 hits - 4 AB, 1 HR, 1 RBI)  \n\nThe Braves fell short in a close game against the Washington Nationals, losing by a single run. Despite a solid performance from Bryce Elder on the mound, the team could not overcome the Nationals' offensive efforts. \n\nKey highlights include:  \n1. Bryce Elder struck out 7 batters, showcasing his ability to dominate at times.  \n2. The Braves hit three home runs, one each from Drake Baldwin, Eli White, and Marcell Ozuna, contributing to their scoring.  \n3. The Nationals managed to out-hit the Braves 9 to 6, which ultimately made the difference in the game.",
   "lastGame": {
-    "date": "2025-09-23T23:15:00Z",
+    "date": "2025-09-24T16:15:00Z",
     "opponent": "Washington Nationals",
-    "result": "W",
-    "score": "3-2",
+    "result": "L",
+    "score": "3-4",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Hurston Waldrep",
-      "inningsPitched": "6.0",
-      "earnedRuns": 1,
-      "hits": 5,
-      "homeRuns": 0,
-      "strikeOuts": 5
+      "name": "Bryce Elder",
+      "inningsPitched": "7.0",
+      "earnedRuns": 3,
+      "hits": 6,
+      "homeRuns": 2,
+      "strikeOuts": 7
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 2,
-        "rbi": 2,
-        "runs": 2
+        "name": "Drake Baldwin",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
       },
       {
-        "name": "Ronald Acuña Jr.",
+        "name": "Eli White",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Marcell Ozuna",
         "hits": 1,
         "homeRuns": 1,
         "rbi": 1,
@@ -35,8 +42,8 @@
     "teamStats": {
       "bravesRuns": 3,
       "bravesHits": 6,
-      "opponentRuns": 2,
-      "opponentHits": 6
+      "opponentRuns": 4,
+      "opponentHits": 9
     }
   }
 }
