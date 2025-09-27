@@ -1,49 +1,56 @@
 {
-  "date": "2025-09-26",
-  "timestamp": "2025-09-26T09:18:27.268Z",
-  "rundown": "<b>3-4</b> L vs Washington Nationals  \n<b>Bryce Elder:</b> 7.0 innings, 3 earned runs, 6 hits, 2 HR, 7 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (1 hits - 3 AB, 1 HR, 1 RBI)  \nEli White (1 hits - 3 AB, 1 HR, 1 RBI)  \nMarcell Ozuna (1 hits - 3 AB, 1 HR, 1 RBI)  \n\nThe Braves fell short in a close game against the Washington Nationals, losing by a single run. Despite a solid performance from Bryce Elder on the mound, the Braves' offense couldn't keep pace with the Nationals' scoring. \n\nKey highlights include:  \n1. Bryce Elder struck out 7 batters, showcasing his ability to dominate at times.  \n2. The Braves hit three home runs, one each from Drake Baldwin, Eli White, and Marcell Ozuna, but it wasn't enough to secure the win.  \n3. The Nationals capitalized on their opportunities, scoring 4 runs on 9 hits, ultimately outpacing the Braves' 3 runs on 6 hits.",
+  "date": "2025-09-27",
+  "timestamp": "2025-09-27T09:14:23.744Z",
+  "rundown": "<b>3-9</b> L vs Pittsburgh Pirates  \n<b>Joey Wentz:</b> 4.0 innings, 4 earned runs, 8 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (1 hit - 4 AB, 1 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Pittsburgh Pirates with a final score of 3-9. The loss was attributed to a rough outing from the starting pitcher, Joey Wentz, who allowed four earned runs in just four innings. Despite the offensive efforts from Harris II and Olson, the Braves could not keep pace with the Pirates' scoring.\n\nKey highlights from the game include:\n1. Michael Harris II hit a home run and contributed two hits, showcasing his power at the plate.\n2. Matt Olson also added a home run, but the Braves' offense struggled to generate consistent runs.\n3. The Pirates out-hit the Braves 14 to 8, which played a significant role in their victory.",
   "lastGame": {
-    "date": "2025-09-24T16:15:00Z",
-    "opponent": "Washington Nationals",
+    "date": "2025-09-26T23:15:00Z",
+    "opponent": "Pittsburgh Pirates",
     "result": "L",
-    "score": "3-4",
+    "score": "3-9",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Bryce Elder",
-      "inningsPitched": "7.0",
-      "earnedRuns": 3,
-      "hits": 6,
-      "homeRuns": 2,
-      "strikeOuts": 7
+      "name": "Joey Wentz",
+      "inningsPitched": "4.0",
+      "earnedRuns": 4,
+      "hits": 8,
+      "homeRuns": 1,
+      "strikeOuts": 3
     },
     "significantHitters": [
       {
+        "name": "Michael Harris II",
+        "hits": 2,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
+        "name": "Matt Olson",
+        "hits": 1,
+        "homeRuns": 1,
+        "rbi": 1,
+        "runs": 1
+      },
+      {
         "name": "Drake Baldwin",
         "hits": 1,
-        "homeRuns": 1,
+        "homeRuns": 0,
         "rbi": 1,
-        "runs": 1
+        "runs": 0
       },
       {
-        "name": "Eli White",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Marcell Ozuna",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
+        "name": "Ronald Acuña Jr.",
+        "hits": 3,
+        "homeRuns": 0,
+        "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
       "bravesRuns": 3,
-      "bravesHits": 6,
-      "opponentRuns": 4,
-      "opponentHits": 9
+      "bravesHits": 8,
+      "opponentRuns": 9,
+      "opponentHits": 14
     }
   }
 }
