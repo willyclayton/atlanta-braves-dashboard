@@ -1,56 +1,42 @@
 {
-  "date": "2025-09-27",
-  "timestamp": "2025-09-27T09:14:23.744Z",
-  "rundown": "<b>3-9</b> L vs Pittsburgh Pirates  \n<b>Joey Wentz:</b> 4.0 innings, 4 earned runs, 8 hits, 1 HR, 3 strikeouts  \n<b>Batters:</b>  \nMichael Harris II (2 hits - 4 AB, 1 HR, 1 RBI)  \nMatt Olson (1 hit - 4 AB, 1 HR, 1 RBI)  \nDrake Baldwin (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Pittsburgh Pirates with a final score of 3-9. The loss was attributed to a rough outing from the starting pitcher, Joey Wentz, who allowed four earned runs in just four innings. Despite the offensive efforts from Harris II and Olson, the Braves could not keep pace with the Pirates' scoring.\n\nKey highlights from the game include:\n1. Michael Harris II hit a home run and contributed two hits, showcasing his power at the plate.\n2. Matt Olson also added a home run, but the Braves' offense struggled to generate consistent runs.\n3. The Pirates out-hit the Braves 14 to 8, which played a significant role in their victory.",
+  "date": "2025-09-28",
+  "timestamp": "2025-09-28T09:14:41.793Z",
+  "rundown": "<b>1-3</b> L vs Pittsburgh Pirates  \n<b>Spencer Strider:</b> 6.0 innings, 3 earned runs, 8 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 0 RBI)  \nMarcell Ozuna (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Pittsburgh Pirates with a final score of 1-3. Despite a solid performance from Spencer Strider on the mound, the Braves were unable to capitalize on their opportunities at the plate. \n\nKey highlights from the game include:\n1. Spencer Strider pitched 6 innings, striking out 5 batters but allowed 3 earned runs.\n2. Drake Baldwin led the offense with 2 hits, providing a spark but no runs batted in.\n3. Marcell Ozuna contributed with an RBI, but the team managed only 5 hits overall.",
   "lastGame": {
-    "date": "2025-09-26T23:15:00Z",
+    "date": "2025-09-27T23:15:00Z",
     "opponent": "Pittsburgh Pirates",
     "result": "L",
-    "score": "3-9",
+    "score": "1-3",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Joey Wentz",
-      "inningsPitched": "4.0",
-      "earnedRuns": 4,
+      "name": "Spencer Strider",
+      "inningsPitched": "6.0",
+      "earnedRuns": 3,
       "hits": 8,
       "homeRuns": 1,
-      "strikeOuts": 3
+      "strikeOuts": 5
     },
     "significantHitters": [
       {
-        "name": "Michael Harris II",
-        "hits": 2,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 1,
-        "runs": 1
-      },
-      {
-        "name": "Drake Baldwin",
+        "name": "Marcell Ozuna",
         "hits": 1,
         "homeRuns": 0,
         "rbi": 1,
         "runs": 0
       },
       {
-        "name": "Ronald Acuña Jr.",
-        "hits": 3,
+        "name": "Drake Baldwin",
+        "hits": 2,
         "homeRuns": 0,
         "rbi": 0,
         "runs": 1
       }
     ],
     "teamStats": {
-      "bravesRuns": 3,
-      "bravesHits": 8,
-      "opponentRuns": 9,
-      "opponentHits": 14
+      "bravesRuns": 1,
+      "bravesHits": 5,
+      "opponentRuns": 3,
+      "opponentHits": 10
     }
   }
 }
