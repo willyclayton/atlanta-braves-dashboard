@@ -1,93 +1,93 @@
 {
-  "date": "2025-09-27",
-  "timestamp": "2025-09-27T09:12:12.801Z",
-  "rundown": "<b>Record:</b> 5-2 (0.714)  \n<b>Series:</b> Braves won the series against the Detroit Tigers (3-0) and the Washington Nationals (2-1), but lost to the Pittsburgh Pirates (0-1).  \n<b>Highlights:</b> The week featured a dominant 10-1 victory over the Tigers, a thrilling 6-5 win in another close game against the same team, and an impressive 11-5 offensive explosion against the Nationals.  \n<b>Trend:</b> It was a positive overall week, showcasing strong performances from both the pitching staff and the batters, despite a couple of late-week setbacks.",
+  "date": "2025-09-28",
+  "timestamp": "2025-09-28T09:12:15.191Z",
+  "rundown": "<b>Record:</b> 5-3 (0.625)  \n<b>Series:</b> Braves won the series against the Detroit Tigers (3-0) and the Washington Nationals (2-1), but lost the series to the Pittsburgh Pirates (0-2).  \n<b>Highlights:</b> The week featured a dominant 10-1 victory over the Detroit Tigers and a thrilling 6-5 win in another close game against the same team. Additionally, they showcased an offensive explosion with an 11-5 win against the Washington Nationals.  \n<b>Trend:</b> The Braves are currently struggling with 3 straight losses, which has dampened their earlier momentum from a strong start to the week.",
   "weeklyStats": {
-    "dateRange": "2025-09-19 to 2025-09-26",
-    "record": "5-2",
+    "dateRange": "2025-09-19 to 2025-09-27",
+    "record": "5-3",
     "wins": 5,
-    "losses": 2,
-    "winPct": "0.714",
-    "totalGames": 7,
-    "momentum": "positive overall week",
+    "losses": 3,
+    "winPct": "0.625",
+    "totalGames": 8,
+    "momentum": "struggling with 3 straight losses",
     "topPitchers": [
       {
-        "name": "Spencer Strider",
-        "appearances": 7,
-        "inningsPitched": 5,
+        "name": "Raisel Iglesias",
+        "appearances": 8,
+        "inningsPitched": 3.2,
         "earnedRuns": 0,
-        "strikeouts": 6,
-        "hits": 6,
-        "wins": 1,
+        "strikeouts": 4,
+        "hits": 1,
+        "wins": 0,
         "losses": 0,
-        "saves": 0,
+        "saves": 2,
         "era": "0.00"
       },
       {
         "name": "José Suarez",
-        "appearances": 7,
-        "inningsPitched": 4,
+        "appearances": 8,
+        "inningsPitched": 5,
         "earnedRuns": 0,
         "strikeouts": 2,
-        "hits": 5,
+        "hits": 6,
         "wins": 0,
         "losses": 0,
         "saves": 1,
         "era": "0.00"
       },
       {
-        "name": "Raisel Iglesias",
+        "name": "Hurston Waldrep",
         "appearances": 7,
-        "inningsPitched": 2.2,
-        "earnedRuns": 0,
-        "strikeouts": 2,
-        "hits": 0,
-        "wins": 0,
+        "inningsPitched": 6,
+        "earnedRuns": 1,
+        "strikeouts": 5,
+        "hits": 5,
+        "wins": 1,
         "losses": 0,
-        "saves": 2,
-        "era": "0.00"
+        "saves": 0,
+        "era": "1.50"
       }
     ],
     "topBatters": [
       {
         "name": "Drake Baldwin",
-        "games": 7,
-        "hits": 10,
+        "games": 8,
+        "hits": 12,
         "homeRuns": 3,
         "rbi": 10,
-        "runs": 6,
-        "atBats": 28,
-        "avg": "0.357"
+        "runs": 7,
+        "atBats": 32,
+        "avg": "0.375"
       },
       {
         "name": "Michael Harris II",
-        "games": 7,
-        "hits": 10,
+        "games": 8,
+        "hits": 11,
         "homeRuns": 3,
         "rbi": 7,
         "runs": 4,
-        "atBats": 27,
-        "avg": "0.370"
+        "atBats": 30,
+        "avg": "0.367"
       },
       {
         "name": "Ronald Acuña Jr.",
-        "games": 7,
-        "hits": 9,
+        "games": 8,
+        "hits": 10,
         "homeRuns": 3,
         "rbi": 6,
         "runs": 8,
-        "atBats": 25,
-        "avg": "0.360"
+        "atBats": 29,
+        "avg": "0.345"
       },
       {
         "name": "Nacho Alvarez Jr.",
-        "games": 6,
+        "games": 7,
         "hits": 5,
         "homeRuns": 2,
         "rbi": 4,
         "runs": 3,
-        "atBats": 22,
-        "avg": "0.227"
+        "atBats": 25,
+        "avg": "0.200"
       }
     ],
     "gameResults": [
@@ -137,6 +137,13 @@
         "date": "9/26/2025",
         "result": "L",
         "score": "3-9",
+        "opponent": "Pittsburgh Pirates",
+        "homeAway": "vs"
+      },
+      {
+        "date": "9/27/2025",
+        "result": "L",
+        "score": "1-3",
         "opponent": "Pittsburgh Pirates",
         "homeAway": "vs"
       }
@@ -191,13 +198,18 @@
       {
         "opponent": "Pittsburgh Pirates",
         "homeAway": "vs",
-        "record": "0-1",
-        "outcome": "lost game",
+        "record": "0-2",
+        "outcome": "losing series",
         "games": [
           {
             "date": "9/26/2025",
             "result": "L",
             "score": "3-9"
+          },
+          {
+            "date": "9/27/2025",
+            "result": "L",
+            "score": "1-3"
           }
         ]
       }
