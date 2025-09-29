@@ -1,42 +1,42 @@
 {
-  "date": "2025-09-28",
-  "timestamp": "2025-09-28T09:14:41.793Z",
-  "rundown": "<b>1-3</b> L vs Pittsburgh Pirates  \n<b>Spencer Strider:</b> 6.0 innings, 3 earned runs, 8 hits, 1 HR, 5 strikeouts  \n<b>Batters:</b>  \nDrake Baldwin (2 hits - 4 AB, 0 HR, 0 RBI)  \nMarcell Ozuna (1 hit - 3 AB, 0 HR, 1 RBI)  \n\nThe Braves fell to the Pittsburgh Pirates with a final score of 1-3. Despite a solid performance from Spencer Strider on the mound, the Braves were unable to capitalize on their opportunities at the plate. \n\nKey highlights from the game include:\n1. Spencer Strider pitched 6 innings, striking out 5 batters but allowed 3 earned runs.\n2. Drake Baldwin led the offense with 2 hits, providing a spark but no runs batted in.\n3. Marcell Ozuna contributed with an RBI, but the team managed only 5 hits overall.",
+  "date": "2025-09-29",
+  "timestamp": "2025-09-29T09:19:56.429Z",
+  "rundown": "<b>4-1</b> W vs Pittsburgh Pirates  \n<b>Chris Sale:</b> 5.2 innings, 1 earned run, 4 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (1 hits - 4 AB, 1 HR, 2 RBI)  \nMatt Olson (2 hits - 3 AB, 1 RBI)  \n\nThe Braves secured a solid victory against the Pittsburgh Pirates, showcasing strong pitching and timely hitting. Chris Sale delivered an impressive performance on the mound, striking out 9 batters and allowing only 1 earned run. \n\nKey highlights include:\n1. Ronald Acuña Jr. hit a crucial home run, contributing 2 RBIs to the team's total.\n2. Matt Olson had a productive day at the plate with 2 hits and 1 RBI.\n3. The Braves' defense held the Pirates to just 1 run, maintaining control throughout the game.",
   "lastGame": {
-    "date": "2025-09-27T23:15:00Z",
+    "date": "2025-09-28T19:15:00Z",
     "opponent": "Pittsburgh Pirates",
-    "result": "L",
-    "score": "1-3",
+    "result": "W",
+    "score": "4-1",
     "homeAway": "vs",
     "startingPitcher": {
-      "name": "Spencer Strider",
-      "inningsPitched": "6.0",
-      "earnedRuns": 3,
-      "hits": 8,
-      "homeRuns": 1,
-      "strikeOuts": 5
+      "name": "Chris Sale",
+      "inningsPitched": "5.2",
+      "earnedRuns": 1,
+      "hits": 4,
+      "homeRuns": 0,
+      "strikeOuts": 9
     },
     "significantHitters": [
       {
-        "name": "Marcell Ozuna",
+        "name": "Ronald Acuña Jr.",
         "hits": 1,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 0
+        "homeRuns": 1,
+        "rbi": 2,
+        "runs": 1
       },
       {
-        "name": "Drake Baldwin",
+        "name": "Matt Olson",
         "hits": 2,
         "homeRuns": 0,
-        "rbi": 0,
-        "runs": 1
+        "rbi": 1,
+        "runs": 2
       }
     ],
     "teamStats": {
-      "bravesRuns": 1,
-      "bravesHits": 5,
-      "opponentRuns": 3,
-      "opponentHits": 10
+      "bravesRuns": 4,
+      "bravesHits": 6,
+      "opponentRuns": 1,
+      "opponentHits": 6
     }
   }
 }
