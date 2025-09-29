@@ -1,20 +1,20 @@
 {
-  "date": "2025-09-28",
-  "timestamp": "2025-09-28T09:12:15.191Z",
-  "rundown": "<b>Record:</b> 5-3 (0.625)  \n<b>Series:</b> Braves won the series against the Detroit Tigers (3-0) and the Washington Nationals (2-1), but lost the series to the Pittsburgh Pirates (0-2).  \n<b>Highlights:</b> The week featured a dominant 10-1 victory over the Detroit Tigers and a thrilling 6-5 win in another close game against the same team. Additionally, they showcased an offensive explosion with an 11-5 win against the Washington Nationals.  \n<b>Trend:</b> The Braves are currently struggling with 3 straight losses, which has dampened their earlier momentum from a strong start to the week.",
+  "date": "2025-09-29",
+  "timestamp": "2025-09-29T09:16:42.462Z",
+  "rundown": "<b>Record:</b> 3-3 (0.500)  \n<b>Series:</b> Braves won the series against the Washington Nationals (2-1) but lost the series to the Pittsburgh Pirates (1-2).  \n<b>Highlights:</b> High-scoring win of 11-5 against the Nationals, Michael Harris II shined with 3 home runs and a .455 batting average, and a nail-biting 3-2 victory over the Nationals.  \n<b>Trend:</b> It was a challenging week overall, with the team struggling to maintain momentum after a strong start.",
   "weeklyStats": {
-    "dateRange": "2025-09-19 to 2025-09-27",
-    "record": "5-3",
-    "wins": 5,
+    "dateRange": "2025-09-22 to 2025-09-28",
+    "record": "3-3",
+    "wins": 3,
     "losses": 3,
-    "winPct": "0.625",
-    "totalGames": 8,
-    "momentum": "struggling with 3 straight losses",
+    "winPct": "0.500",
+    "totalGames": 6,
+    "momentum": "challenging week overall",
     "topPitchers": [
       {
         "name": "Raisel Iglesias",
-        "appearances": 8,
-        "inningsPitched": 3.2,
+        "appearances": 6,
+        "inningsPitched": 3,
         "earnedRuns": 0,
         "strikeouts": 4,
         "hits": 1,
@@ -24,9 +24,21 @@
         "era": "0.00"
       },
       {
+        "name": "Hunter Stratton",
+        "appearances": 6,
+        "inningsPitched": 2,
+        "earnedRuns": 0,
+        "strikeouts": 3,
+        "hits": 0,
+        "wins": 0,
+        "losses": 0,
+        "saves": 0,
+        "era": "0.00"
+      },
+      {
         "name": "José Suarez",
-        "appearances": 8,
-        "inningsPitched": 5,
+        "appearances": 6,
+        "inningsPitched": 4,
         "earnedRuns": 0,
         "strikeouts": 2,
         "hits": 6,
@@ -34,84 +46,51 @@
         "losses": 0,
         "saves": 1,
         "era": "0.00"
-      },
-      {
-        "name": "Hurston Waldrep",
-        "appearances": 7,
-        "inningsPitched": 6,
-        "earnedRuns": 1,
-        "strikeouts": 5,
-        "hits": 5,
-        "wins": 1,
-        "losses": 0,
-        "saves": 0,
-        "era": "1.50"
       }
     ],
     "topBatters": [
       {
-        "name": "Drake Baldwin",
-        "games": 8,
-        "hits": 12,
-        "homeRuns": 3,
-        "rbi": 10,
-        "runs": 7,
-        "atBats": 32,
-        "avg": "0.375"
-      },
-      {
         "name": "Michael Harris II",
-        "games": 8,
-        "hits": 11,
-        "homeRuns": 3,
-        "rbi": 7,
-        "runs": 4,
-        "atBats": 30,
-        "avg": "0.367"
-      },
-      {
-        "name": "Ronald Acuña Jr.",
-        "games": 8,
+        "games": 6,
         "hits": 10,
         "homeRuns": 3,
         "rbi": 6,
-        "runs": 8,
-        "atBats": 29,
-        "avg": "0.345"
+        "runs": 4,
+        "atBats": 22,
+        "avg": "0.455"
       },
       {
-        "name": "Nacho Alvarez Jr.",
-        "games": 7,
-        "hits": 5,
-        "homeRuns": 2,
+        "name": "Ronald Acuña Jr.",
+        "games": 6,
+        "hits": 8,
+        "homeRuns": 3,
+        "rbi": 5,
+        "runs": 5,
+        "atBats": 21,
+        "avg": "0.381"
+      },
+      {
+        "name": "Drake Baldwin",
+        "games": 6,
+        "hits": 7,
+        "homeRuns": 1,
         "rbi": 4,
+        "runs": 4,
+        "atBats": 24,
+        "avg": "0.292"
+      },
+      {
+        "name": "Marcell Ozuna",
+        "games": 6,
+        "hits": 6,
+        "homeRuns": 1,
+        "rbi": 3,
         "runs": 3,
-        "atBats": 25,
-        "avg": "0.200"
+        "atBats": 19,
+        "avg": "0.316"
       }
     ],
     "gameResults": [
-      {
-        "date": "9/19/2025",
-        "result": "W",
-        "score": "10-1",
-        "opponent": "Detroit Tigers",
-        "homeAway": "@"
-      },
-      {
-        "date": "9/20/2025",
-        "result": "W",
-        "score": "6-5",
-        "opponent": "Detroit Tigers",
-        "homeAway": "@"
-      },
-      {
-        "date": "9/21/2025",
-        "result": "W",
-        "score": "6-2",
-        "opponent": "Detroit Tigers",
-        "homeAway": "@"
-      },
       {
         "date": "9/22/2025",
         "result": "W",
@@ -146,32 +125,16 @@
         "score": "1-3",
         "opponent": "Pittsburgh Pirates",
         "homeAway": "vs"
+      },
+      {
+        "date": "9/28/2025",
+        "result": "W",
+        "score": "4-1",
+        "opponent": "Pittsburgh Pirates",
+        "homeAway": "vs"
       }
     ],
     "seriesResults": [
-      {
-        "opponent": "Detroit Tigers",
-        "homeAway": "@",
-        "record": "3-0",
-        "outcome": "won series",
-        "games": [
-          {
-            "date": "9/19/2025",
-            "result": "W",
-            "score": "10-1"
-          },
-          {
-            "date": "9/20/2025",
-            "result": "W",
-            "score": "6-5"
-          },
-          {
-            "date": "9/21/2025",
-            "result": "W",
-            "score": "6-2"
-          }
-        ]
-      },
       {
         "opponent": "Washington Nationals",
         "homeAway": "vs",
@@ -198,8 +161,8 @@
       {
         "opponent": "Pittsburgh Pirates",
         "homeAway": "vs",
-        "record": "0-2",
-        "outcome": "losing series",
+        "record": "1-2",
+        "outcome": "lost series",
         "games": [
           {
             "date": "9/26/2025",
@@ -210,17 +173,22 @@
             "date": "9/27/2025",
             "result": "L",
             "score": "1-3"
+          },
+          {
+            "date": "9/28/2025",
+            "result": "W",
+            "score": "4-1"
           }
         ]
       }
     ],
     "highlights": [
-      "High-scoring W 10-1 @ Detroit Tigers",
-      "High-scoring W 6-5 @ Detroit Tigers",
       "High-scoring W 11-5 vs Washington Nationals",
       "High-scoring L 3-9 vs Pittsburgh Pirates",
-      "Close W 6-5 @ Detroit Tigers",
-      "Close W 3-2 vs Washington Nationals"
+      "Close W 3-2 vs Washington Nationals",
+      "Close L 3-4 vs Washington Nationals",
+      "Michael Harris II: 3 HRs in the week",
+      "Michael Harris II: 0.455 avg, 10 hits"
     ]
   }
 }
