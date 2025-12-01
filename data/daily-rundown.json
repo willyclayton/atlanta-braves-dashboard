@@ -1,42 +1,7 @@
 {
-  "date": "2025-11-30",
-  "timestamp": "2025-11-30T09:16:30.784Z",
-  "rundown": "<b>4-1</b> W vs Pittsburgh Pirates  \n<b>Chris Sale:</b> 5.2 innings, 1 earned run, 4 hits, 0 HR, 9 strikeouts  \n<b>Batters:</b>  \nRonald Acuña Jr. (1 hits - 4 AB, 1 HR, 2 RBI)  \nMatt Olson (2 hits - 3 AB, 1 RBI)  \n\nThe Braves secured a victory against the Pittsburgh Pirates with a strong performance from Chris Sale on the mound and key contributions from their hitters. \n\nKey highlights include:\n1. Chris Sale dominated with 9 strikeouts over 5.2 innings, allowing only 1 earned run.\n2. Ronald Acuña Jr. hit a home run and drove in 2 runs, providing crucial support.\n3. Matt Olson contributed with 2 hits and scored 2 runs, helping to build the Braves' lead.",
-  "lastGame": {
-    "date": "2025-09-28T19:15:00Z",
-    "opponent": "Pittsburgh Pirates",
-    "result": "W",
-    "score": "4-1",
-    "homeAway": "vs",
-    "startingPitcher": {
-      "name": "Chris Sale",
-      "inningsPitched": "5.2",
-      "earnedRuns": 1,
-      "hits": 4,
-      "homeRuns": 0,
-      "strikeOuts": 9
-    },
-    "significantHitters": [
-      {
-        "name": "Ronald Acuña Jr.",
-        "hits": 1,
-        "homeRuns": 1,
-        "rbi": 2,
-        "runs": 1
-      },
-      {
-        "name": "Matt Olson",
-        "hits": 2,
-        "homeRuns": 0,
-        "rbi": 1,
-        "runs": 2
-      }
-    ],
-    "teamStats": {
-      "bravesRuns": 4,
-      "bravesHits": 6,
-      "opponentRuns": 1,
-      "opponentHits": 6
-    }
-  }
+  "date": "2025-12-01",
+  "timestamp": "2025-12-01T09:25:43.315Z",
+  "rundown": "Stay tuned for the latest Atlanta Braves updates! Check back soon for today's game analysis and team news.",
+  "lastGame": null,
+  "error": true
 }
