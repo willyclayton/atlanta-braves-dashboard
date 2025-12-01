@@ -1,7 +1,9 @@
 {
-  "date": "2025-11-30",
-  "timestamp": "2025-11-30T09:13:36.697Z",
-  "question": "Which Atlanta Braves pitcher won the Cy Young Award in both the 1991 and 1998 seasons, becoming one of the few players to achieve this feat multiple times?",
-  "answer": "Greg Maddux.",
-  "raw_content": "Question: Which Atlanta Braves pitcher won the Cy Young Award in both the 1991 and 1998 seasons, becoming one of the few players to achieve this feat multiple times?  \nAnswer: Greg Maddux."
+  "date": "2025-12-01",
+  "timestamp": "2025-12-01T09:21:59.558Z",
+  "question": "How many different cities has the Braves franchise called home throughout their history?",
+  "answer": "The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
+  "raw_content": "Question: How many different cities has the Braves franchise called home throughout their history? Answer: The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
+  "error": true,
+  "fallback": true
 }
