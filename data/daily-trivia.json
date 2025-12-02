@@ -1,9 +1,9 @@
 {
-  "date": "2025-12-01",
-  "timestamp": "2025-12-01T09:21:59.558Z",
-  "question": "How many different cities has the Braves franchise called home throughout their history?",
-  "answer": "The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
-  "raw_content": "Question: How many different cities has the Braves franchise called home throughout their history? Answer: The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
+  "date": "2025-12-02",
+  "timestamp": "2025-12-02T09:20:35.677Z",
+  "question": "What year did the Braves franchise begin, making them the oldest continuously operating professional sports franchise in America?",
+  "answer": "The Braves franchise began in 1871 as the Boston Red Stockings.",
+  "raw_content": "Question: What year did the Braves franchise begin, making them the oldest continuously operating professional sports franchise in America? Answer: The Braves franchise began in 1871 as the Boston Red Stockings.",
   "error": true,
   "fallback": true
 }
