@@ -1,9 +1,9 @@
 {
-  "date": "2025-12-19",
-  "timestamp": "2025-12-19T09:18:26.202Z",
-  "question": "What was unique about the Braves' 1995 World Series championship team's pitching rotation?",
-  "answer": "The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
-  "raw_content": "Question: What was unique about the Braves' 1995 World Series championship team's pitching rotation? Answer: The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
+  "date": "2025-12-20",
+  "timestamp": "2025-12-20T09:14:30.424Z",
+  "question": "Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s?",
+  "answer": "Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
+  "raw_content": "Question: Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s? Answer: Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
   "error": true,
   "fallback": true
 }
