@@ -1,9 +1,9 @@
 {
-  "date": "2026-01-03",
-  "timestamp": "2026-01-03T09:15:06.583Z",
-  "question": "What historic achievement did Hank Aaron accomplish on April 8, 1974?",
-  "answer": "Hank Aaron broke Babe Ruth's all-time home run record by hitting his 715th home run at Atlanta-Fulton County Stadium.",
-  "raw_content": "Question: What historic achievement did Hank Aaron accomplish on April 8, 1974? Answer: Hank Aaron broke Babe Ruth's all-time home run record by hitting his 715th home run at Atlanta-Fulton County Stadium.",
+  "date": "2026-01-04",
+  "timestamp": "2026-01-04T09:14:27.640Z",
+  "question": "What was unique about the Braves' 1995 World Series championship team's pitching rotation?",
+  "answer": "The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
+  "raw_content": "Question: What was unique about the Braves' 1995 World Series championship team's pitching rotation? Answer: The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
   "error": true,
   "fallback": true
 }
