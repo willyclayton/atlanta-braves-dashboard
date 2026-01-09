@@ -1,9 +1,9 @@
 {
-  "date": "2026-01-08",
-  "timestamp": "2026-01-08T09:22:54.568Z",
-  "question": "Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s?",
-  "answer": "Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
-  "raw_content": "Question: Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s? Answer: Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
+  "date": "2026-01-09",
+  "timestamp": "2026-01-09T09:22:31.254Z",
+  "question": "What year did the Braves franchise begin, making them the oldest continuously operating professional sports franchise in America?",
+  "answer": "The Braves franchise began in 1871 as the Boston Red Stockings.",
+  "raw_content": "Question: What year did the Braves franchise begin, making them the oldest continuously operating professional sports franchise in America? Answer: The Braves franchise began in 1871 as the Boston Red Stockings.",
   "error": true,
   "fallback": true
 }
