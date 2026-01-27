@@ -1,9 +1,9 @@
 {
-  "date": "2026-01-26",
-  "timestamp": "2026-01-26T09:28:37.992Z",
-  "question": "Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s?",
-  "answer": "Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
-  "raw_content": "Question: Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s? Answer: Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
+  "date": "2026-01-27",
+  "timestamp": "2026-01-27T09:27:04.581Z",
+  "question": "What historic achievement did Hank Aaron accomplish on April 8, 1974?",
+  "answer": "Hank Aaron broke Babe Ruth's all-time home run record by hitting his 715th home run at Atlanta-Fulton County Stadium.",
+  "raw_content": "Question: What historic achievement did Hank Aaron accomplish on April 8, 1974? Answer: Hank Aaron broke Babe Ruth's all-time home run record by hitting his 715th home run at Atlanta-Fulton County Stadium.",
   "error": true,
   "fallback": true
 }
