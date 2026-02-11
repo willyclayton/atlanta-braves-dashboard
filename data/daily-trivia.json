@@ -1,9 +1,9 @@
 {
-  "date": "2026-02-10",
-  "timestamp": "2026-02-10T09:55:04.406Z",
-  "question": "What was unique about the Braves' 1995 World Series championship team's pitching rotation?",
-  "answer": "The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
-  "raw_content": "Question: What was unique about the Braves' 1995 World Series championship team's pitching rotation? Answer: The 1995 Braves featured three Cy Young Award winners in their rotation: Greg Maddux, Tom Glavine, and John Smoltz.",
+  "date": "2026-02-11",
+  "timestamp": "2026-02-11T09:45:43.175Z",
+  "question": "How many different cities has the Braves franchise called home throughout their history?",
+  "answer": "The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
+  "raw_content": "Question: How many different cities has the Braves franchise called home throughout their history? Answer: The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
   "error": true,
   "fallback": true
 }
