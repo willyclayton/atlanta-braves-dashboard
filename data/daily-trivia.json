@@ -1,9 +1,9 @@
 {
-  "date": "2026-02-15",
-  "timestamp": "2026-02-15T09:25:13.963Z",
-  "question": "How many different cities has the Braves franchise called home throughout their history?",
-  "answer": "The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
-  "raw_content": "Question: How many different cities has the Braves franchise called home throughout their history? Answer: The Braves franchise has called three cities home: Boston (1871-1952), Milwaukee (1953-1965), and Atlanta (1966-present).",
+  "date": "2026-02-16",
+  "timestamp": "2026-02-16T09:45:58.081Z",
+  "question": "Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s?",
+  "answer": "Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
+  "raw_content": "Question: Which Braves pitcher won the Cy Young Award three consecutive years in the 1990s? Answer: Greg Maddux won the Cy Young Award from 1993-1995 while playing for the Atlanta Braves.",
   "error": true,
   "fallback": true
 }
